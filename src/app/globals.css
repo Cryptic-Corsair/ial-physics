@@ -248,6 +248,27 @@ html[data-scale="XL"] {
   --ui-knob: 1.5;
 }
 
+/* ————— the nav freeze —————
+   The navbar keeps its M rung whatever the reading state does:
+   --ui-scale is pinned to the viewport growth alone (--ui-grow),
+   so the S/L/XL text knob never re-flows the pill, its buttons,
+   the logo or the labels — the pill measures exactly as it does at
+   the factory default. The composed type vars pin the same way
+   (the M factors are 1, so M = grow), pinning the outputs rather
+   than the inputs — the same bulletproof freeze the spec map uses,
+   minus the growth (the nav rides the growth so its labels stop
+   being the smallest text on a big monitor). */
+.site-header {
+  --ui-scale: var(--ui-grow);
+  --ts-heading: var(--ui-grow);
+  --ts-sub: var(--ui-grow);
+  --ts-body: var(--ui-grow);
+  --ts-other: var(--ui-grow);
+  --ts-width: var(--ui-grow);
+  --tch: 1;
+  --tch-ed: var(--ui-grow);
+}
+
 /* the frozen surface. --ui-scale inherits, so pinning it back to 1
    on a subtree makes every descendant — however deeply shared (the
    spec map's tiles ride the same freeze) — measure against 1 again,

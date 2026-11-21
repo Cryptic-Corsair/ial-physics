@@ -274,24 +274,20 @@ function viewIdentity(view: View): string {
 }
 
 /* ————— the brand mark —————
-   The site's own object, drawn at logo size: the beaker itself —
-   glass, chunky outline, liquid caught mid-fizz, measurement ticks
-   — the mascot's visual language condensed to a mark. No tile and
-   no pedestal (those made it read as a button rather than a brand),
-   so it stands bare on the nav pill and on the cocoa footer alike.
-   A bubble escapes the rim because something is always reacting
-   here.
+   The site's own object, drawn at logo size: the atom — two
+   crossing orbits about a bright nucleus, an electron on each
+   shell. No tile and no pedestal (those made it read as a button
+   rather than a brand), so it stands bare on the nav pill and on
+   the cocoa footer alike.
 
    The shape never changes; the dress follows the room — one edition
    per lab, so the mark lives in whatever room it's standing in:
-   · light — the daylight original: warm white glass, cocoa outline,
-     coral liquid;
-   · classic — the reading-room edition: cream glass, espresso
-     outline, amber liquid — the same palette the notes wear there;
-   · night & dune — line art: the outline steps up to the room's own
-     ink and the glass fill steps out entirely, so on the dark pill
-     the mark is a drawn vessel with the liquid as its one bright
-     body (the old cocoa outline vanished into the dark chrome).
+   · light — the daylight original: cocoa orbits, coral nucleus;
+   · classic — the reading-room edition: espresso orbits, amber
+     nucleus — the same palette the notes wear there;
+   · night & dune — the orbits step up to the room's own ink and the
+     nucleus stays the mark's one bright body, so on the dark pill
+     the atom is drawn in the room's own chrome.
    The footer sits on the same cocoa ground in every lab, so it pins
    the daylight edition and never re-dresses. */
 function LogoMark({ size = 38, lab }: { size?: number; lab?: Lab }) {
@@ -309,9 +305,6 @@ function LogoMark({ size = 38, lab }: { size?: number; lab?: Lab }) {
     room === "classic" ? "#C58A36" :
     room === "dune" ? "#D9A65F" :
     room === "dark" ? "#C79ACD" : "#E97862";
-  const glass =
-    room === "dark" || room === "dune" ? "none" :
-    room === "classic" ? "#F7EEDB" : "#FFF9EF";
 
   return (
     <m.span
@@ -323,45 +316,32 @@ function LogoMark({ size = 38, lab }: { size?: number; lab?: Lab }) {
       style={size !== 38 ? { width: size, height: size } : undefined}
     >
       <svg viewBox="0 0 48 48" width="100%" height="100%" fill="none">
-        {/* A single, continuous flask silhouette: broad shoulders,
-            narrow neck and a weighted rounded base. */}
-        <path
-          d="M18 6.5h12M20 6.5v13L10.8 36.2A4.1 4.1 0 0 0 14.4 42h19.2a4.1 4.1 0 0 0 3.6-5.8L28 19.5v-13"
+        {/* Two crossing elliptical orbits — the drawn shell of the
+            atom, rotated ±60° about the nucleus. */}
+        <ellipse
+          cx="24" cy="24" rx="19" ry="8"
+          transform="rotate(-60 24 24)"
           stroke={ink}
-          strokeWidth="2.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill={glass}
+          strokeWidth="2.6"
+        />
+        <ellipse
+          cx="24" cy="24" rx="19" ry="8"
+          transform="rotate(60 24 24)"
+          stroke={ink}
+          strokeWidth="2.6"
         />
 
-        {/* The reaction line gives the liquid a deliberate, dynamic
-            profile instead of the old cartoon wave. */}
-        <path
-          d="M14.2 33.1c4.1-2.7 7.1-2.5 10.1-.6 3.2 2 5.7 1.8 9.5-.5l3.1 5.5a2.5 2.5 0 0 1-2.2 3.7H13.3a2.5 2.5 0 0 1-2.2-3.7l3.1-4.4Z"
-          fill={liquid}
-        />
-        <path
-          d="M15.2 33.4c3.6-2.1 6.1-1.9 9-.2 2.8 1.7 5.4 1.7 8.7-.1"
-          stroke={ink}
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          opacity=".62"
-        />
+        {/* The nucleus — the one bright body at the centre. */}
+        <circle cx="24" cy="24" r="5.4" fill={liquid} />
 
-        {/* Three measured bubbles, balanced as a recognisable
-            signature at small navigation sizes. */}
-        <circle cx="21.5" cy="27.5" r="1.45" fill={ink} opacity=".72" />
-        <circle cx="27" cy="23.5" r="1.9" fill={liquid} stroke={ink} strokeWidth=".9" />
-        <circle cx="32.5" cy="29" r="1.15" fill={ink} opacity=".55" />
-
-        {/* Small reaction spark — offset, not a floating mascot bubble. */}
-        <path
-          d="M37.2 8.2l1.15 3.05 3.05 1.15-3.05 1.15-1.15 3.05-1.15-3.05L33 12.4l3.05-1.15 1.15-3.05Z"
-          fill={liquid}
-          stroke={ink}
-          strokeWidth=".8"
-          strokeLinejoin="round"
-        />
+        {/* Two electrons riding the orbits, one per shell, placed
+            asymmetrically so the mark doesn't read as a clock. */}
+        <g transform="rotate(-60 24 24)">
+          <circle cx="43" cy="24" r="2.1" fill={ink} />
+        </g>
+        <g transform="rotate(60 24 24)">
+          <circle cx="5" cy="24" r="1.6" fill={liquid} stroke={ink} strokeWidth=".9" />
+        </g>
       </svg>
     </m.span>
   );
