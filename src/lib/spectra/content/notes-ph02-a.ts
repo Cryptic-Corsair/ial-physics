@@ -414,6 +414,41 @@ export const SECTIONS_PH02_A: SpecSection[] = [
         eq: "D = 6πηrv",
         note: "Stokes' law: the viscous drag on a sphere = 6 × π × the viscosity of the fluid × the radius of the sphere × the speed of the sphere. The specification prints this drag as F; these notes call it D, so the force balances read W = U + D. The v is a ==velocity==, not a volume.",
       },
+      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
+         for the falling sphere: where the drag comes from, the
+         terminal-velocity formula derived from the balance, and the
+         map of what changes what. Approved groups below keep their
+         approved text and position. ————— */
+      { k: "h", text: "Where the drag comes from" },
+      {
+        k: "bullets",
+        items: [
+          "The layers of a fluid slide past each other, and the viscosity of the fluid measures how strongly the layers resist that sliding: the viscosity belongs to the ==fluid==, not to the object moving through it.",
+          "The fluid touching the surface of the sphere is dragged along with the sphere, and each layer beyond it is dragged along a little less, so the sphere is always dragging the fluid's layers with it: that pull back on the sphere ==is== the viscous drag.",
+          "In Stokes' law the drag is proportional to each factor separately: double the viscosity and the drag doubles, double the radius and the drag doubles, double the speed and the drag doubles (**D = 6πηrv**).",
+        ],
+      },
+      { k: "h", text: "The terminal velocity formula, derived" },
+      {
+        k: "bullets",
+        items: [
+          "Start from the balance at terminal velocity: the weight of the sphere = the upthrust on it + the drag on it (**W = U + D**).",
+          "Write each side with its formula: the weight = ρ~sphere~ × (4/3)πr³ × g, the upthrust = ρ~fluid~ × (4/3)πr³ × g, and the drag = 6πηrv~term~.",
+          "The balance becomes one equation: ρ~sphere~ × (4/3)πr³ × g = ρ~fluid~ × (4/3)πr³ × g + 6πηrv~term~.",
+          "Subtract the upthrust from the weight: (4/3)πr³ × g × (ρ~sphere~ − ρ~fluid~) = 6πηrv~term~.",
+          "Divide both sides by 6πηr: one r cancels from the volume term, and the formula appears:",
+        ],
+      },
+      {
+        k: "eq",
+        eq: "v~term~ = 2r²g × (ρ~sphere~ − ρ~fluid~) ÷ (9η)",
+        note: "The terminal velocity of a small sphere in a viscous fluid. The formula is not printed on the data sheet — derive it from the balance, as above, and the derivation earns the marks. Worked numbers: a steel sphere (ρ ≈ 7800 kg m⁻³) of radius 1.0 mm in a liquid of density 900 kg m⁻³ and viscosity 0.20 Pa s gives v~term~ = 2 × (1.0 × 10⁻³)² × 9.81 × (7800 − 900) ÷ (9 × 0.20) ≈ 0.075 m s⁻¹.",
+      },
+      {
+        k: "note",
+        label: "The map in words",
+        text: "A larger sphere falls faster: the weight and the upthrust grow as r³ but the drag only as r, so the balance is met at a higher speed, and the terminal velocity is proportional to the square of the radius; a denser sphere falls faster, because the weight grows while the upthrust does not; a denser fluid slows the fall, because the upthrust grows; a warmer liquid speeds the fall up, because the viscosity of a liquid falls as its temperature rises; a sphere sinking into colder, deeper water slows down, because that water is both denser and more viscous.",
+      },
       { k: "h", text: "When Stokes' law applies" },
       {
         k: "bullets",
@@ -537,6 +572,20 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The drag is given by Stokes' law (**D = 6πηrv**), so the viscosity follows from **η = (W − U) ÷ (6πrv)**.",
           "Each quantity on the right is measured in the experiment.",
           "The upthrust comes from the ==displaced liquid==, so use the density of the liquid, not the density of the ball.",
+        ],
+      },
+      /* ————— Foundations addendum, part 2 (2026-11-22) — the logic
+         of the viscometer: the two assumptions the method makes and
+         why each design choice protects one of them. Approved groups
+         below keep their approved text and position. ————— */
+      { k: "h", text: "The two assumptions behind the method" },
+      {
+        k: "bullets",
+        items: [
+          "The method assumes two things, and every design choice protects one of them: first, that Stokes' law applies during the timed fall; second, that the ball has reached terminal velocity ==before the timing starts==.",
+          "Only at terminal velocity does the balance **W = U + D** hold, so only there can the drag be replaced by **W − U** and the viscosity follow from **η = (W − U) ÷ (6πrv)**.",
+          "If the timing began too early, the ball would still be accelerating: the drag on it would be smaller than W − U and its speed smaller than the terminal velocity, so the computed viscosity would come out ==too large==.",
+          "A wide tube and a small ball keep the flow laminar, so the conditions for Stokes' law hold; a top marker well below the surface gives the speed time to stop changing, so the terminal-velocity condition holds.",
         ],
       },
       { k: "h", text: "The measurements" },

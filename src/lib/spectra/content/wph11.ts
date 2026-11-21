@@ -74,8 +74,9 @@ export const WPH11_TOPICS: Topic[] = [
     summary:
       "The second half of WPH11: density and upthrust, Stokes' law and the falling-ball viscometer, then Hooke's law, stress, strain and the Young modulus — every graph feature defined, both core practicals in full, and the real questions examiners keep asking.",
     /* minutes scaled with the foundations addendum (2026-11-22):
-       the ropes layer adds a real reading step before the scenarios */
-    minutes: 60,
+       the ropes layer adds a real reading step before the scenarios;
+       part 2 extends the ropes to statements 25–32 */
+    minutes: 70,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
@@ -85,7 +86,7 @@ export const WPH11_TOPICS: Topic[] = [
       {
         k: "def",
         term: "Upthrust",
-        text: "An upward force on an object in a fluid, caused by the ==displacement== of the fluid — equal to the weight of the fluid displaced. A floating object floats because upthrust *equals* weight, not because it is less than it (the June 2024 report calls that the clearest misconception of the series).",
+        text: "An upward force on an object in a fluid, caused by the ==displacement== of the fluid — equal to the weight of the fluid displaced. A floating object floats because upthrust *equals* weight, not because it is less than it — the examiner reports call that swap the clearest misconception of the series.",
       },
       {
         k: "def",
@@ -99,27 +100,19 @@ export const WPH11_TOPICS: Topic[] = [
         note: "Stokes' law is printed — but the *conditions* are not: small spherical object, low speed, laminar (non-turbulent) flow. Those two marks appear in nearly every paper.",
       },
       {
-        k: "ex",
-        title: "Real question · WPH11 January 2024 Q15(b)(ii) — is it glycerol?",
-        steps: [
-          "A ball-bearing of radius 2.30 mm falls through a liquid at terminal velocity 0.0824 m s^−1^. Its weight is 4.00 × 10^−3^ N; the liquid's density is 1.26 × 10^3^ kg m^−3^; glycerol's viscosity is 0.934 Pa s. Deduce whether the liquid is glycerol. (6)",
-          "V = (4/3)πr³ = (4/3)π × (2.30 × 10^−3^)³ = 5.10 × 10^−8^ m³",
-          "Upthrust = ρVg = 1.26 × 10^3^ × 5.10 × 10^−8^ × 9.81 = 6.31 × 10^−4^ N",
-          "At terminal velocity: drag = weight − upthrust = 4.00 × 10^−3^ − 6.31 × 10^−4^ = 3.37 × 10^−3^ N",
-          "F = 6πηrv → η = 3.37 × 10^−3^ ÷ (6π × 2.30 × 10^−3^ × 0.0824)",
-        ],
-        answer: "η = 0.94 Pa s ≈ 0.934 Pa s, so the liquid is glycerol (comparison + conclusion stated)",
+        k: "p",
+        text: "The note now teaches the ropes before the scenarios: every statement opens on its ==equation stated first== and unpacked in a sentence, works the central balance or derivation step by step, names ==who owns each variable==, and closes the traps the examiner reports keep recording — the rejected wordings flagged as Not accepted notes. The scenarios keep their build-ups: one logical step per bullet, cause before effect.",
       },
       {
         k: "p",
-        text: "The recurring traps are written down by the examiners themselves: using the ==diameter as the radius== (June 2025: “questions to include data about the radius or diameter of a sphere” are routine), forgetting ==cm³ → m³ is ×10^−6^==, reading the 'v' in Stokes' law as a volume, and stopping at a value when the question says *deduce*. Every one of those is a mark you can simply refuse to lose.",
+        text: "The recurring traps are written down by the examiners themselves: using the ==diameter as the radius==, forgetting ==cm³ to m³ is ×10^−6^==, reading the 'v' in Stokes' law as a volume, and stopping at a value when the question says *deduce*. Every one of those is a mark you can simply refuse to lose.",
       },
       {
         k: "tips",
         items: [
           "Strain has **no unit** (a percentage is fine); stress is Pa = N m^−2^; viscosity is Pa s. Marks are lost for bare numbers.",
-          "The area under a **force–extension** graph is energy in joules; the area under a **stress–strain** graph is energy *per unit volume* — proportional to it, the October 2024 report insists, not equal.",
-          "Limit of proportionality (end of the straight line) ≠ elastic limit (last point of full recovery) ≠ yield point (sudden plastic flow). October 2023 put all three in one multiple-choice item.",
+          "The area under a **force–extension** graph is energy in joules; the area under a **stress–strain** graph is energy *per unit volume* — ==proportional== to the energy, not equal to it, exactly as the examiner reports warn.",
+          "Limit of proportionality (end of the straight line) is not the elastic limit (last point of full recovery), and neither is the yield point (sudden plastic flow) — the examiners like all three in one multiple-choice item.",
           "Gradient technique: use **more than half the drawn line**, and quote to one more significant figure than the question's value.",
         ],
       },
@@ -128,7 +121,7 @@ export const WPH11_TOPICS: Topic[] = [
         items: [
           "Terminal velocity in a fluid: weight = upthrust + drag, then solve with Stokes.",
           "“Does Stokes' law apply?” — calculate the drag it predicts, compare with the real drag, conclude.",
-          "Hotter liquid → lower viscosity → faster terminal fall (liquids; gases are the opposite way round).",
+          "Hotter liquid, lower viscosity, faster terminal fall (liquids; gases are the opposite way round).",
           "Young modulus from a graph: gradient × (length ÷ area), or E = Fl/(AΔx) straight off the data.",
           "Deduce questions end with a number, a comparison and a sentence — always.",
         ],

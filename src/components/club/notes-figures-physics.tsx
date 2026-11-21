@@ -231,7 +231,7 @@ export function FigPhForceExtension({ accent = "#339AF0" }: { accent?: string })
       <text x={368} y={124} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">yield point</text>
       <text x={168} y={204} textAnchor="middle" fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">ΔEel = ½FΔx</text>
       <text x={168} y={222} textAnchor="middle" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">area under the line</text>
-      <text x={430} y={70} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">plastic region → breaking</text>
+      <text x={430} y={70} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">plastic region, then breaking</text>
     </Frame>
   );
 }
@@ -275,7 +275,7 @@ export function FigPhFallingBall({ accent = "#339AF0" }: { accent?: string }) {
       <text x={150} y={340} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">wide tube — laminar flow</text>
       <line x1={90} y1={120} x2={90} y2={270} stroke={INK} strokeWidth="2" markerEnd="url(#phb-a)" />
       <text x={78} y={200} textAnchor="middle" fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)" transform="rotate(-90 78 200)">measure d</text>
-      <text x={225} y={370} textAnchor="middle" fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">v = d ÷ t → F = 6πηrv → η = F/(6πrv)</text>
+      <text x={225} y={370} textAnchor="middle" fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">v = d ÷ t, then F = 6πηrv, then η = F/(6πrv)</text>
     </svg>
   );
 }
@@ -300,7 +300,7 @@ export function FigPhYoungRig({ accent = "#339AF0" }: { accent?: string }) {
       <line x1={160} y1={42} x2={230} y2={150} stroke={INK} strokeWidth="2.6" />
       <line x1={300} y1={164} x2={160} y2={278} stroke={FAINT} strokeWidth="2" />
       <text x={120} y={300} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">mass hanger: F = mg, added in steps</text>
-      <text x={160} y={220} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">original length x: clamp → marker</text>
+      <text x={160} y={220} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">original length x: from clamp to marker</text>
       <g transform="translate(470 120)">
         <text x={0} y={-6} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">micrometer:</text>
         <text x={0} y={12} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">diameter, several</text>
