@@ -17,21 +17,56 @@ export const SECTIONS_PH02_A: SpecSection[] = [
     spec: "23",
     statement: "be able to use the equation density ρ = m/V",
     title: "Density",
+    /* Foundations addendum (owner review draft 1): this section
+       replaces the old compressed bullet list — the ropes are taught
+       first, the calculation carried-overs close the section. */
     blocks: [
       {
         k: "eq",
         eq: "ρ = m/V",
-        note: "The density of a sample = the mass of the sample ÷ the volume of the sample.",
+        note: "The density of a sample of a material = the mass of that sample ÷ the volume of that sample. Read the equation as a sentence: density asks how much mass is packed into each cubic metre of the material — a dense material packs a lot of mass into a small space.",
       },
       {
         k: "bullets",
         items: [
-          "The unit of density is **kg m⁻³**.",
-          "Density is a property of the **material**: the density does not change when the size or the shape of the sample changes.",
-          "Stiffness is different: stiffness is a property of the **object**, so the stiffness of an object does change when the dimensions of the object change.",
-          "Water has a density of 1000 kg m⁻³; convert g cm⁻³ to kg m⁻³ by multiplying by 1000.",
-          "In multiple choice questions, check the ==units of every option==: the wrong options usually carry the wrong units.",
+          "The unit of density is **kg m⁻³**; convert **g cm⁻³** to **kg m⁻³** by multiplying by 1000.",
+          "Density is a property of the **material**: the density does not change when the size or the shape of the sample changes. A half-length wire has the same density as the full-length wire.",
+          "Contrast (learn this pair, it is examined): density belongs to the **material**; stiffness belongs to the **object**, so the stiffness changes when the dimensions change.",
+          "The density of an **object** can differ from the density of the material it is made of: the density of the object = its total mass ÷ its total volume, and the total volume includes any air inside it.",
+          "Every floating argument in this topic compares two densities: the density of the object (its average density if it is hollow) and the density of the fluid.",
         ],
+      },
+      {
+        k: "eq",
+        eq: "ρ~avg~ = m~total~ ÷ V~total~",
+        note: "The average density of a hollow or composite object = its total mass ÷ its total volume, and the average density is the density to use in any floating argument: a ship is made of steel (ρ ≈ 7800 kg m⁻³) and still floats, because the air inside the hull pulls the average density below the density of water.",
+      },
+      {
+        k: "table",
+        caption: "Reference densities to memorise",
+        head: ["Material", "Density (kg m⁻³)"],
+        rows: [
+          ["air", "≈ 1.2"],
+          ["ice", "≈ 920"],
+          ["water", "≈ 1000 (printed values are usually 997 to 1000)"],
+          ["sea water", "≈ 1025"],
+          ["steel", "≈ 7800"],
+          ["lead", "≈ 11 300"],
+        ],
+      },
+      {
+        k: "bullets",
+        items: [
+          "Sense-check every calculated density against the table. A density of water of 0.001 kg m⁻³ or 100 000 kg m⁻³ is a ==power-of-ten slip==, not physics; unit and power-of-ten slips are named as a recurring error in the examiner reports.",
+          "In multiple choice questions, check the ==units of every option==: the wrong options usually carry the wrong units.",
+          "Measuring the density of a regular solid: measure the mass with a balance; measure the dimensions (the diameter of a sphere with a calliper), then compute the volume from the dimensions.",
+          "Measuring the density of a liquid: measure the mass of a measured volume, then **ρ = m ÷ V**; the volume of a liquid is read from a measuring cylinder.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Not accepted",
+        text: "Reading the calliper as if it measured the ==radius==. The calliper measures a diameter; halve it yourself (**r = d ÷ 2**). The examiner report calls this a common misconception.",
       },
       { k: "h", text: "Volumes you are asked for" },
       {
@@ -73,6 +108,168 @@ export const SECTIONS_PH02_A: SpecSection[] = [
         k: "eq",
         eq: "U = ρ~fluid~ × V~disp~ × g",
         note: "The weight of displaced fluid = the density of the fluid × the displaced volume × g. For a fully submerged object, the displaced volume = the whole volume of the object (**V~disp~ = V~object~**).",
+      },
+      /* ————— Foundations addendum (owner review draft 1) — the ropes
+         taught before the scenarios: where the force comes from, the
+         floating balance and its fraction rule, the variable map that
+         every flotation question follows, and the wordings the mark
+         schemes print. The scenario groups below keep their approved
+         text and position, self-contained as ever. ————— */
+      { k: "h", text: "Where the upthrust comes from" },
+      {
+        k: "bullets",
+        items: [
+          "A **fluid** = a liquid or a gas. Fluids exert forces on any object placed in them.",
+          "**Upthrust** is an upward force that a fluid exerts on an object placed in the fluid.",
+          "Why the force points upward: the fluid presses on every surface of the object, and the press is larger on the deeper surfaces. The bottom of the object is pushed up harder than the top is pushed down, so the net push from the fluid is ==upward==.",
+          "**Displacement** = the fluid that had to move out of the way because the object now occupies that space. The word is compulsory in definitions and explanations.",
+          "The displaced volume = the ==submerged volume== (**V~disp~ = V~sub~**); for a fully submerged object, the submerged volume = the whole volume of the object.",
+          "The upthrust is set by the **weight** of the displaced fluid, not its mass: compute the displaced mass first (**m~disp~ = ρ~fluid~ × V~sub~**), then multiply by **g**.",
+        ],
+      },
+      {
+        k: "note",
+        label: "The ownership of the variables",
+        text: "The upthrust depends on the ==fluid== (its density) and on ==how much of the object is in the fluid== (the submerged volume) — the density of the object appears nowhere in the upthrust equation. The weight depends on the **object** only (**W = ρ~object~ × V~object~ × g**): changing the fluid cannot change the weight, and changing the object's material cannot directly change the upthrust.",
+      },
+      { k: "h", text: "The floating balance" },
+      {
+        k: "bullets",
+        items: [
+          "A floating object is in equilibrium, so the resultant force on it = zero, and the upthrust on it = the weight of the object (**U = W**).",
+          "The sentence to memorise: a floating object ==displaces its own weight of fluid==.",
+          "Where the fraction rule comes from, step by step. First write both sides: the upthrust on the object = **ρ~fluid~ × V~sub~ × g**, and the weight of the object = **ρ~object~ × V~object~ × g**.",
+          "Floating makes the two equal, and **g** cancels: **ρ~fluid~ × V~sub~ = ρ~object~ × V~object~**.",
+          "Rearranging gives the fraction rule:",
+        ],
+      },
+      {
+        k: "eq",
+        eq: "V~sub~ ÷ V~object~ = ρ~object~ ÷ ρ~fluid~",
+        note: "The fraction of a floating object that is submerged = the density of the object ÷ the density of the fluid. Worked fraction: ice (ρ ≈ 920 kg m⁻³) floating in sea water (ρ ≈ 1025 kg m⁻³) gives 920 ÷ 1025 ≈ 0.90, so about 90% of the ice sits below the surface.",
+      },
+      {
+        k: "bullets",
+        items: [
+          "Read the fraction rule as three cases. If the density of the object < the density of the fluid, the fraction is below 1, so the object floats with part of it above the surface.",
+          "If the density of the object = the density of the fluid, the fraction is exactly 1, so the object floats fully submerged, hanging at any depth like a fish holding still.",
+          "If the density of the object > the density of the fluid, the fraction is above 1, which no real submersion can satisfy, so the object cannot float: it sinks until it rests on the bottom.",
+          "The cliff edge in words: floating stays possible only while the object's density is below the fluid's density. If the fluid's density falls below the object's density, even complete submersion gives an upthrust smaller than the weight, and the object sinks.",
+          "Precision rule (learn the difference, examiners cannot tell them apart): when the object still floats and sits deeper, write *the object floats lower in the water* or *the submerged depth increases*. Keep the word *sinks* for the case where floating fails and the object drops to the bottom.",
+        ],
+      },
+      { k: "h", text: "The variable map — what changes what" },
+      {
+        k: "note",
+        label: "The skeleton every flotation question follows",
+        text: "First fix the balance that must hold (floating: **U = W**; steady lift: **T + U = W**; sinking at terminal velocity: **W = U + D**). Then identify the one quantity that changed. Then find which variable must compensate — and for a floating object the compensating variable is always the ==submerged volume==, the only variable both sides of the balance share.",
+      },
+      { k: "h", text: "The fluid gets denser — the hydrometer question" },
+      {
+        k: "bullets",
+        items: [
+          "The object still floats, so the balance still holds: the upthrust on it = its weight (**U = W**).",
+          "The weight of the object has not changed, so the upthrust must stay the same size as before.",
+          "The density of the fluid has increased, so the submerged volume must decrease (**U = ρ~fluid~ × V~sub~ × g**).",
+          "The object rises in the water until the balance holds again.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*The upthrust equals the weight of the hydrometer*; *(So) a smaller volume of seawater needs to be displaced (because seawater has a greater density)*.",
+      },
+      { k: "h", text: "The fluid gets less dense — the object rides lower" },
+      {
+        k: "bullets",
+        items: [
+          "The balance still holds: **U = W**, with the weight unchanged, so the upthrust is unchanged.",
+          "The density of the fluid has decreased, so the submerged volume must increase.",
+          "The object floats lower in the water, displacing a larger volume.",
+          "Floating stays possible only while the object's density is below the fluid's density; below that, the object sinks (the cliff edge).",
+          "Worked numbers: an object of density 700 kg m⁻³ in water of density 1000 kg m⁻³ has 0.70 of its volume submerged. If the water density falls to 900 kg m⁻³, the fraction rises to 700 ÷ 900 ≈ 0.78: it rides visibly lower but still floats, because 700 < 900.",
+        ],
+      },
+      { k: "h", text: "The object gets less dense — the unloaded ship" },
+      {
+        k: "bullets",
+        items: [
+          "The weight decreases: **W = ρ~object~ × V~object~ × g**, with the object's density smaller and its volume unchanged.",
+          "The object still floats, so the upthrust must equal the new, smaller weight.",
+          "The density of the fluid is unchanged, so the submerged volume must decrease.",
+          "The object rises in the water and displaces less water than before.",
+        ],
+      },
+      { k: "h", text: "The object is lifted out of the water — the crane and the submarine" },
+      {
+        k: "bullets",
+        items: [
+          "The submarine is lifted at a steady speed, so the forces on it balance at every moment: the tension + the upthrust = the weight (**T + U = W**).",
+          "While the submarine is fully underwater, the tension in the cable = the weight of the submarine − the upthrust on it (**T = W − U**).",
+          "As the submarine emerges, the submerged volume decreases, so the upthrust decreases.",
+          "The weight does not change, so the tension increases continuously while the submarine leaves the water.",
+          "Once the submarine is fully clear, the submerged volume = 0, so the upthrust = 0, and the tension in the cable = the full weight of the submarine (**T = W**).",
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "Indicative content: *tension = weight − upthrust*; *As the submarine leaves the water, the volume / mass / weight of water displaced decreases*; *the upthrust on the submarine decreases*; *the tension in the cable increases*; *When the submarine is out of the water the tension in the cable is equal (in magnitude) to the weight of the submarine*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "The least well described idea was the decreasing displaced water ==as the submarine emerges==. Answers that described only the fully-underwater stage and the fully-out stage, but not the transition between them, lost the middle marks.",
+      },
+      { k: "h", text: "The object sinks through colder, deeper water" },
+      {
+        k: "bullets",
+        items: [
+          "Sinking at terminal velocity: the resultant force = zero, so the weight = the upthrust + the drag (**W = U + D**).",
+          "The deeper water is colder and denser, so the upthrust increases.",
+          "The deeper water is also more viscous, so the drag at the same speed increases.",
+          "The weight remains constant (the mark scheme explicitly rejects *mass* written for the weight).",
+          "The balance **W = U + D** can now be met at a smaller speed, so the terminal velocity decreases as the object sinks deeper.",
+        ],
+      },
+      { k: "h", text: "The fluid gets less dense as the object rises — the weather balloon" },
+      {
+        k: "bullets",
+        items: [
+          "At release, the upthrust is greater than the weight, so the balloon accelerates upwards.",
+          "The density of air decreases with height, so as the balloon rises the upthrust decreases (**U = ρ~air~ × V × g**).",
+          "When the upthrust falls below the weight, the resultant force acts downwards and the balloon decelerates to rest at its maximum height.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "Candidates confused decreasing acceleration with decreasing velocity. While the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly.",
+      },
+      {
+        k: "note",
+        label: "The map in words",
+        text: "A denser fluid lifts a floating object higher; a less dense fluid lets it ride lower; a less dense object rises and displaces less; a denser object rides lower and, past the cliff edge, sinks; an object emerging from a fluid loses upthrust, so any cable holding it takes over the share smoothly; an object sinking through denser, more viscous fluid sinks more slowly.",
+      },
+      { k: "h", text: "How mark schemes want flotation worded" },
+      {
+        k: "bullets",
+        items: [
+          "Name the owner of every force and weight: *the upthrust on the hydrometer*, *the weight of the displaced water*, *the weight of the object*. The examiner report records that many candidates wrote *weight* without specifying whether they meant the weight of the object, of the displaced pure water or of the displaced sea water, and lost the mark.",
+          "Use the word *displace* in every flotation explanation: the mark scheme wording is built on displacement.",
+          "The accepted explanation skeleton for *why does it float higher in the denser liquid* (two marks): first the balance (*the upthrust equals the weight of the hydrometer*), then the compensation (*a smaller volume of seawater needs to be displaced because seawater has a greater density*).",
+          "Every full-mark flotation explanation keeps the balance visible: candidates who jump straight to *so it floats higher* without the upthrust-equals-weight step lose the middle marks.",
+        ],
+      },
+      {
+        k: "note",
+        label: "The printed definition",
+        text: "*An upwards force caused by the displacement of fluid (by an object)*, or *(a force equal and opposite to) the weight of fluid displaced (by an object)* — the wording printed by the mark scheme, either of which scores.",
+      },
+      {
+        k: "note",
+        label: "Not accepted",
+        text: "*G* written as the label on the weight arrow — it is not an acceptable abbreviation for weight. And *mass* written where the mark scheme wants *weight*.",
       },
       { k: "h", text: "Floating" },
       {
