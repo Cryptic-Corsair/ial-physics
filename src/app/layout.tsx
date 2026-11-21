@@ -130,7 +130,7 @@ export const metadata: Metadata = {
 
 /* The whole-site structured data — who runs this address and what
    site lives here. Kept truthful and small: the pages themselves are
-   the content, and /club's rooms render client-side behind a
+   the content, and the workspace rooms render client-side behind a
    deliberate noindex. */
 const siteJsonLd = {
   "@context": "https://schema.org",

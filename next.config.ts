@@ -1,12 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* The showcase landing lived at /portal before it was promoted to
-     the homepage; every old link — bookmarks, the club's history,
-     anything external — now redirects to /. Permanent, so crawlers
-     fold the old address into the new one. */
+  /* Retired front-door addresses fold onto the desk at /. The
+     showcase landing lived at /portal before it was promoted to the
+     homepage; now the showcase is retired and the workspace itself
+     has moved to the root (the desk is the main page). Every old
+     link — bookmarks, share links, the alternate doors' exit buttons,
+     anything external — redirects to its room's new root-form address
+     (query strings ride along untouched). Permanent, so crawlers
+     fold the old addresses into the new ones. */
   async redirects() {
-    return [{ source: "/portal", destination: "/", permanent: true }];
+    return [
+      { source: "/portal", destination: "/", permanent: true },
+      { source: "/club", destination: "/", permanent: true },
+      { source: "/club/:path*", destination: "/:path*", permanent: true },
+    ];
   },
   /* Expose the exact source revision used by Vercel (or CI) so the
      footer can identify the deployed build. Local builds say "local". */

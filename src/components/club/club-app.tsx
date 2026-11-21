@@ -13,7 +13,6 @@ import {
   ClipboardList,
   ArrowUp,
   ArrowRight,
-  ArrowUpRight,
   Command,
   ShieldCheck,
   BookMarked,
@@ -138,28 +137,31 @@ type View =
   | { kind: "sticker" }
   | { kind: "legal" };
 
-/* ————— deep links into the shelved workspace —————
-   The showcase homepage at / is the front door now, and its buttons
-   land straight in the room they name instead of dropping the
-   visitor at the desk. Two address forms reach the same rooms:
+/* ————— deep links into the workspace —————
+   The workspace lives at the root now — the desk at / is the main
+   page, and every room has its own root-form address. Two address
+   forms reach the same rooms:
 
    PATHS (the canonical form — the URL tracks the room, so every
    room has an address worth keeping):
 
-     /club/notes/wph11-t02/24    — the notes reader, opened at one
-                                   doc, optionally one clause
-     /club/notes/wph11-t02       — the notes reader, one doc
-     /club/notes                 — the notes reader, first doc
-     /club/spec | /club/pack     — the spec index / pack bench
-     /club/sticker | /club/legal — the sticker book / colophon
-     /club/wph11                 — a unit walk
-     /club                       — the desk (and the introduction)
+     /notes/wph11-t02/24    — the notes reader, opened at one
+                              doc, optionally one clause
+     /notes/wph11-t02       — the notes reader, one doc
+     /notes                 — the notes reader, first doc
+     /spec | /pack          — the spec index / pack bench
+     /sticker | /legal      — the sticker book / colophon
+     /wph11                 — a unit walk
+     /                      — the desk (and the introduction)
 
    QUERY (the legacy form, still honoured): ?v=notes&doc=wph11-t02
    &spec=24, ?v=spec | pack | sticker | legal | WPH11 — parsed
    first, then upgraded to its path form in the address bar with
-   history.replaceState, so old bookmarks and the front door's
+   history.replaceState, so old bookmarks and the alternate doors'
    buttons keep working while new shares carry clean paths.
+
+   /club/… addresses from the showcase era are redirected to their
+   root-form room by next.config.ts before this shell ever mounts.
 
    Unknown doc ids fall back to the library's first note; unknown
    paths and unknown query values fall through to null and the
@@ -191,8 +193,8 @@ function deepViewOf(
 
 /* ————— the URL↔room bridge —————
    viewToPath writes the room's address; viewFromPath reads one back
-   (case-insensitive, trailing slashes tolerated, segments after
-   /club). viewFromLocation prefers the legacy query — an upgrade must
+   (case-insensitive, trailing slashes tolerated, the root serves the
+   desk). viewFromLocation prefers the legacy query — an upgrade must
    never lose to a path — then falls back to the path itself.
    viewIdentity is what the sync effect classifies deltas by: same
    identity = the same room, so a clause jump REPLACES the address
@@ -201,26 +203,26 @@ function deepViewOf(
 function viewToPath(view: View): string {
   switch (view.kind) {
     case "home":
-      return "/club";
+      return "/";
     case "unit":
-      return `/club/${view.code.toLowerCase()}`;
+      return `/${view.code.toLowerCase()}`;
     case "topic":
-      return `/club/topic/${view.code.toLowerCase()}/${view.topicId.toLowerCase()}`;
+      return `/topic/${view.code.toLowerCase()}/${view.topicId.toLowerCase()}`;
     case "notes":
-      return `/club/notes/${view.docId}${view.spec ? `/${view.spec}` : ""}`;
+      return `/notes/${view.docId}${view.spec ? `/${view.spec}` : ""}`;
     case "spec":
-      return "/club/spec";
+      return "/spec";
     case "pack":
-      return "/club/pack";
+      return "/pack";
     case "sticker":
-      return "/club/sticker";
+      return "/sticker";
     case "legal":
-      return "/club/legal";
+      return "/legal";
   }
 }
 
 function viewFromPath(pathname: string): View | null {
-  const segs = pathname.replace(/\/+$/, "").split("/").slice(2);
+  const segs = pathname.replace(/\/+$/, "").split("/").slice(1);
   if (segs.length === 0) return { kind: "home" };
   const [a, b, c] = segs;
   const key = (a ?? "").toLowerCase();
@@ -1000,24 +1002,6 @@ function Footer({
               © 2026 IAL PHYSICS · Notes for the Pearson Edexcel International Advanced Level Physics (2018) specification, WPH11. Not affiliated with or endorsed by Pearson Education Ltd.
             </p>
             <div className="flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 self-start sm:self-auto">
-              {/* The front door. The showcase landing was promoted from
-                  /portal to the homepage itself, and this workspace was
-                  shelved at /club. The homepage now opens only on a
-                  visitor's first visit (src/middleware.ts redirects
-                  returning visitors to this desk), so the pill points
-                  at /?front — the explicit escape hatch that always
-                  serves the landing page, keeping a deliberate visit
-                  from bouncing straight back here. A full-page
-                  hand-off keeps both wrappers' scroll/theme state
-                  honest. */}
-              <a
-                href="/?front"
-                aria-label="View the showcase homepage — the site's front door"
-                className="footer-portal-link inline-flex items-center gap-1.5 rounded-full border border-white/[0.16] bg-white/[0.05] px-3 py-1.5 text-[calc(11px*var(--ts-other))] font-bold text-milk/70 transition-colors hover:border-white/[0.3] hover:bg-white/[0.1] hover:text-milk"
-              >
-                Showcase home
-                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
-              </a>
               <button
                 type="button"
                 onClick={onOpenLegal}
@@ -1065,17 +1049,17 @@ export default function ClubApp() {
     visitHandled.current = true;
     const returning = markLandingSeen();
     setLanding(!returning);
-    /* A deep link — legacy ?v=… or a clean /club/… path — skips the
-       introduction entirely: someone who followed a button from the
-       front page is already through the door. It also banks the visit
+    /* A deep link — legacy ?v=… or a clean root-form path — skips the
+       introduction entirely: someone who followed a button from a
+       front door is already through the door. It also banks the visit
        as engagement so the next direct visit opens the desk. */
     const deep = viewFromLocation();
     if (!deep) {
-      /* an unknown address (/club/nonsense) renders the desk but must
+      /* an unknown address (/nonsense) renders the desk but must
          not leave junk in the address bar — normalize in place, no
          history entry */
-      if (window.location.pathname !== "/club")
-        window.history.replaceState(null, "", "/club");
+      if (window.location.pathname !== "/")
+        window.history.replaceState(null, "", "/");
       return;
     }
     markDeskEntered();
@@ -1122,7 +1106,7 @@ export default function ClubApp() {
         setView(v);
         urlIdentity.current = viewIdentity(v);
       } else {
-        window.history.replaceState(null, "", "/club");
+        window.history.replaceState(null, "", "/");
         setView({ kind: "home" });
         urlIdentity.current = "home";
       }

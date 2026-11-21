@@ -5,12 +5,13 @@ import { SITE_URL } from "@/lib/site";
    it reads SITE_URL — the one source of the site's address — at build
    time, on Vercel or anywhere else.
 
-   Only indexed routes belong here: / (the showcase portal, the
-   canonical homepage) is the whole indexable surface. /club is
-   deliberately noindexed (src/app/club/page.tsx — its rooms render
-   client-side from localStorage), so it must NOT be listed: a
+   Only indexed routes belong here: / — the desk, the canonical
+   homepage — is the whole indexable surface. The workspace rooms are
+   deliberately noindexed (src/app/[...room]/page.tsx — they render
+   client-side from localStorage), so they must NOT be listed: a
    noindexed URL in the sitemap earns a Search Console warning and
-   wastes crawl budget. The 308 /portal → / redirect needs no entry. */
+   wastes crawl budget. The retired /portal and /club/… addresses are
+   permanent redirects and need no entry. */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

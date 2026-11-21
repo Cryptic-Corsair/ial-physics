@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import PortalApp from "@/components/portal/App";
-import "@/components/portal/portal.css";
+import ClubApp from "@/components/club/club-app";
 
-/* The portal wears the club's own typeset: the root layout's font
-   loaders put --font-display / --font-body / --font-plex on <html>,
-   and portal.css re-points the three Tailwind tokens at them, so the
-   showcase reads Fredoka + Quicksand + IBM Plex Mono (or whatever the
-   customize panel swapped in) exactly like every workspace page. It
-   declares no faces of its own. */
+/* THE homepage — the desk. The showcase landing (the old front door)
+   and the middleware that rotated first-time visitors through it are
+   retired; the workspace itself is the site now, and its desk — the
+   homepage for members — is the main page every visitor gets, first
+   visit or hundredth. The room addresses moved with it: every room
+   lives at the root (/notes/wph11-t02/24, /spec, /wph11 …) through
+   src/app/[...room]/page.tsx, and every /club/… address from the
+   showcase era folds permanently onto the same room (next.config.ts
+   redirects — old bookmarks, share links and the alternate doors'
+   exit buttons all keep working).
 
-/* THE homepage. The showcase landing — ported from the landingiaL-
-   clone — was promoted from /portal to the front door, and the
-   workspace shell it once handed visitors over to moved to /club
-   (see src/app/club/page.tsx). It is its own room — theme tokens
-   scoped to .portal-root in portal.css (the club's dune lab is the
-   factory dress, the daylight cream lab one toggle away), its own
-   Lenis smooth scroll — so nothing here can leak into the workspace
-   routes at /club. Unlike the shelved workspace, this page is the
+   It is its own room — the workspace renders client-side from
+   localStorage, so nothing here can leak into or out of the static
+   showcase leaves. Unlike the retired showcase, this page is the
    canonical homepage and is indexed. Old /portal links redirect
    here (next.config.ts). */
 export const metadata: Metadata = {
@@ -33,5 +31,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <PortalApp />;
+  return <ClubApp />;
 }
