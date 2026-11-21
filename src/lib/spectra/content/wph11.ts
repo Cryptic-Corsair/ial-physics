@@ -23,12 +23,12 @@ export const WPH11_TOPICS: Topic[] = [
     blocks: [
       {
         k: "p",
-        text: "Unit 1 of IAL Physics is the scenario paper: every session wraps the same specification statements in a fresh context — a bungee jump, a crane, a submarine, a shot put, a bascule bridge. The physics never changes; the dressing does. This note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
+        text: "Unit 1 of IAL Physics is the scenario paper: every session sets the same specification statements in a new context — a bungee jump, a crane, a submarine, a shot put, a bascule bridge. This note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
       },
       {
         k: "def",
         term: "Resultant force",
-        text: "The (vector) sum of all the forces acting on an object — the single force that would have the same effect as all the others acting together. Treat as a synonym of *net force* in your head, but write **resultant**: mark schemes credit the physics either way, examiners read it faster.",
+        text: "The (vector) sum of all the forces acting on an object — or, in the mark scheme's words, ==the single force that would have the same effect as all the other forces acting together==. Write **resultant force** in definitions: one printed scheme rejects *net force* as a synonym there, even though it accepts the swap inside calculations.",
       },
       {
         k: "def",
@@ -43,7 +43,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation — a rocket lifting off, a ball sinking towards terminal velocity, a bridge balanced on two supports — is built up as ==its own short section==, one logical step per bullet, cause before effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes: the slogan that scores nothing, the cosine that was never needed, the energy story in a forces question.",
+        text: "Each situation — a rocket lifting off, a ball sinking towards terminal velocity, a bridge balanced on two supports — is built up as ==its own short section==, one logical step per bullet, cause before effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes.",
       },
       {
         k: "tips",

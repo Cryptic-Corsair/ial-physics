@@ -35,17 +35,17 @@ export const SECTIONS_PH01_B: SpecSection[] = [
         caption:
           "A block held stationary on a slope: weight from the centre of gravity, normal contact force perpendicular to the surface, friction along it. Three forces, three directions, no others.",
       },
-      { k: "h", text: "Completing a free-body diagram — constant velocity" },
+      { k: "h", text: "Completing a free-body diagram at constant velocity" },
       {
         k: "bullets",
         items: [
           "Constant velocity means the resultant force is zero, so the forces balance in every direction — count what is drawn before drawing anything new.",
           "An engine pushing a truck forwards experiences, by ==Newton's third law==, an equal backwards force from the truck on the engine.",
           "Whatever the horizontal balance still needs — for example a backwards drag arrow — is drawn to the size that makes the leftward and rightward lengths match.",
-          "Draw the arrows with lengths that balance: the examiner reports measure them *to within 2 mm*.",
+          "Draw the arrows with lengths that balance: the mark scheme compares the lengths *to within 2 mm*.",
         ],
       },
-      { k: "h", text: "Completing a free-body diagram — terminal velocity" },
+      { k: "h", text: "Completing a free-body diagram at terminal velocity" },
       {
         k: "bullets",
         items: [
@@ -74,32 +74,32 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "def",
         term: "Newton's second law",
-        text: "For constant mass, the resultant force = mass × acceleration, **ΣF = ma**, with the acceleration ==in the direction of the resultant force==. The examiner reports' standing complaint: answers that discuss *a force* instead of discussing ==the resultant force on the object==.",
+        text: "For constant mass, the resultant force = mass × acceleration, **ΣF = ma**, with the acceleration ==in the direction of the resultant force==. The examiner reports repeat one complaint: answers that discuss *a force* instead of ==the resultant force on the object==.",
       },
       {
         k: "eq",
         eq: "ΣF = ma        a = 0 means ΣF = 0        P − W = ma  (push upwards)        W − U − D = ma  (falling through fluid)",
         note: "Write the force balance for the actual direction of motion before substituting. The data sheet prints ΣF = ma — identifying the resultant is the examined skill.",
       },
-      { k: "h", text: "Writing the balance first" },
+      { k: "h", text: "The force balance" },
       {
         k: "bullets",
         items: [
-          "Thrust, weight, drag and tension are ==ingredients==; ΣF is their sum, and only the sum gets multiplied by m. The examiner report opens its rocket question with the warning that treating the engine thrust as the resultant force was *a common mistake*.",
-          "A gymnast pushed upwards by a trampoline: the push must ==cancel the weight and then accelerate her==, so P − W = ma and P = ma + W — the documented error was subtracting the weight from the resultant instead of adding it to find the push.",
+          "Thrust, weight, drag and tension are the ==individual forces==; ΣF is their sum, and only the sum is multiplied by m. Treating the thrust of an engine as the resultant ignores the weight and the drag that act alongside it.",
+          "A gymnast pushed upwards by a trampoline: the push must ==cancel the weight and then accelerate her==, so P − W = ma and P = ma + W — the examiner report records candidates who ==subtracted the weight from the resultant force instead of adding it to find the upward force==.",
           "A rocket lifting off: the weight comes off the thrust first (W = mg), the remainder is the resultant, and the acceleration is that remainder ÷ the mass.",
-          "As the rocket rises the acceleration ==increases==: fuel burns, so the mass and the weight fall while the thrust stays constant — the resultant force per kilogram grows. Stating *thrust beats weight* is not the answer; the increase of a is.",
+          "As the rocket rises the acceleration ==increases==: fuel burns, so the mass and the weight fall while the thrust stays constant — the resultant force per kilogram grows, and that ==increase in the acceleration== is the answer.",
           "ΣF = ma applies to the ==whole system==: a car plus its passengers accelerates as one body, so the total mass comes from ΣF ÷ a, and the people's mass is the total minus the car's.",
         ],
       },
-      { k: "h", text: "Terminal velocity — the six-step chain" },
+      { k: "h", text: "Terminal velocity" },
       {
         k: "p",
-        text: "Every paper's extended answer is built from the same chain, and the mark schemes print the same indicative content each time — for a rising balloon, a balloon rocket, a bungee jump, a submarine lifted by a crane, a skydiver. Learn the chain once as six sentences; deploy it in whatever costume the paper provides.",
+        text: "Every paper's extended answer is built from the same chain, and the mark schemes print the same indicative content each time — for a rising balloon, a balloon rocket, a bungee jump, a submarine lifted by a crane, a skydiver. Learn the six sentences once, and use the same chain for whichever situation the question gives.",
       },
       {
         k: "steps",
-        caption: "The terminal-velocity chain (the mark scheme's own sentences)",
+        caption: "The terminal-velocity chain",
         items: [
           {
             title: "1 · Start",
@@ -111,7 +111,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           },
           {
             title: "3 · Drag grows",
-            text: "As the velocity increases, the drag force on the object increases — this is the engine of the whole story.",
+            text: "As the velocity increases, the drag force on the object increases.",
           },
           {
             title: "4 · Resultant falls",
@@ -133,7 +133,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
         caption:
           "The v–t signature of terminal velocity: gradient g at the start (drag negligible), the gradient decaying as drag grows, then a horizontal line when the forces balance.",
       },
-      { k: "h", text: "The chain in other costumes" },
+      { k: "h", text: "The chain in other situations" },
       {
         k: "bullets",
         items: [
@@ -147,7 +147,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "Energy stories in a forces question — the examiner reports close the door: *there were no marks available for discussions of energy* when the stem says forces. And the acceleration/velocity confusion: when the acceleration decreases the velocity ==still increases==; when the acceleration is zero the velocity is constant, not zero. On the bungee: maximum acceleration does not sit at the equilibrium point — the resultant there is zero.",
+        text: "Energy stories in a forces question — the examiner report prints *there were no marks available for discussions of energy*. And the acceleration/velocity confusion: when the acceleration decreases the velocity ==still increases==; when the acceleration is zero the velocity is constant, not zero. On the bungee: maximum acceleration does not sit at the equilibrium point — the resultant there is zero.",
       },
     ],
   },
@@ -164,7 +164,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "eq",
         eq: "W = mg        g = F/m        g = 9.81 N kg⁻¹ = 9.81 m s⁻²",
-        note: "W = mg is the quiet first marking point of rocket, balloon, crane, lift and terminal-velocity questions alike — the weight comes first, then the balance. Use ==9.81== (9.8 is accepted); g = 10 loses a mark.",
+        note: "W = mg is the first marking point of rocket, balloon, crane, lift and terminal-velocity questions alike — the weight comes first, then the balance. Use ==9.81== (9.8 is accepted); g = 10 loses a mark.",
       },
       {
         k: "bullets",
@@ -172,7 +172,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           "When a question gives a weight and asks for anything involving mass, the conversion m = W ÷ g is a marking point — write it, even mid-chain.",
           "The mass feeds the next equation unchanged: a weight of 680 N gives m = 680 ÷ 9.81 = 69.3 kg, and that mass then goes into Ek = ½mv².",
           "On another planet g appears through the acceleration, not as 9.81 — the ratio of landing speeds on Mars is √0.38 ≈ 0.62 of the Earth's.",
-          "The two units are one quantity wearing two coats: 9.81 N kg⁻¹ and 9.81 m s⁻² are equally creditable.",
+          "The two units describe the same quantity: 9.81 N kg⁻¹ and 9.81 m s⁻² are equally creditable.",
         ],
       },
       {
@@ -189,7 +189,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "Three methods appear across the papers — ==strobe photography==, ==timing a fall with light gates==, and ==plotting the data as s against t²== — and all three end in the same place: g from a gradient. The examiner reports single out the same skill each time: explaining how a graph of the results should be used to determine a value is exactly what candidates need to practise.",
+        text: "Three methods appear across the papers — ==strobe photography==, ==timing a fall with light gates==, and ==plotting the data as s against t²== — and all three end in the same place: g from a gradient. The examiner report names the same skill each time: ==explaining how a graph of the results should be used to determine a value== is what candidates need to practise.",
       },
       {
         k: "steps",
@@ -205,7 +205,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           },
           {
             title: "Double the gradient",
-            text: "Gradient of the s–t² line = g ÷ 2, so **g = 2 × gradient**. The examiner report was pleased by the gradients and flagged the doubling as the step some candidates skipped.",
+            text: "Gradient of the s–t² line = g ÷ 2, so **g = 2 × gradient**. The examiner report records that some candidates ==did not then double this value==.",
           },
         ],
       },
@@ -239,7 +239,7 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "Quoting g = 9.81 m s⁻² with no working — the examiner report gave such answers ==no credit==: the value must come from the experiment. And the gradient left undoubled: the line's gradient is g ÷ 2, not g.",
+        text: "Quoting g = 9.81 m s⁻² with no working — such answers ==gained no credit==: the value must come from the experiment. And the gradient left undoubled: the line's gradient is g ÷ 2, not g.",
       },
     ],
   },
@@ -252,21 +252,21 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "def",
         term: "Newton's third law pair",
-        text: "When body A exerts a force on body B, body B exerts a force on body A that is ==equal in magnitude, opposite in direction, of the same type==, and — the property everyone forgets — ==acts on the other body==. Two forces failing any one property are not a pair.",
+        text: "When body A exerts a force on body B, body B exerts a force on body A that is ==equal in magnitude, opposite in direction, of the same type==, and ==acts on the other body==. Two forces failing any one property are not a pair.",
       },
       {
         k: "table",
-        caption: "The five properties, and the wording that costs the mark",
-        head: ["Property", "The reject that costs the mark"],
+        caption: "The five properties of a third-law pair",
+        head: ["Property", "The wording that loses the mark"],
         rows: [
           ["Equal magnitude", "*equal and opposite reaction* — name the magnitudes, not the slogan"],
           ["Opposite directions", "*the same but opposite force* is ambiguous — same type? same size?"],
           ["Same type of force", "weight (gravitational) vs normal contact force are different types"],
           ["Act on different bodies", "both acting on the same object disqualifies the pair instantly"],
-          ["Act for the same time", "implied by *interaction*; stating it can rescue a two-property answer"],
+          ["Act for the same time", "implied by *interaction*; stating it completes a two-property answer"],
         ],
       },
-      { k: "h", text: "Finding the true pair" },
+      { k: "h", text: "Identifying the pair" },
       {
         k: "bullets",
         items: [
@@ -276,11 +276,11 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           "Weight and normal contact force fail twice at once: they act on the ==same body== and they are of ==different types==.",
         ],
       },
-      { k: "h", text: "The third law as the engine of an explanation" },
+      { k: "h", text: "The third law in explanations" },
       {
         k: "bullets",
         items: [
-          "A rocket or module accelerating: the motor exerts a force on the exhaust gases; by Newton's third law the gases exert an equal, opposite force on the motor; there is a resultant force on the module, so by Newton's second law it accelerates — ==name both laws==, the reports only credit the chain when the laws are named.",
+          "A rocket or module accelerating: the motor exerts a force on the exhaust gases; by Newton's third law the gases exert an equal, opposite force on the motor; there is a resultant force on the module, so by Newton's second law it accelerates — ==name both laws==: the examiner report records that without the names of the laws ==only one mark could be scored at best==.",
           "An athlete jumping: he pushes down on the ground with 890 N; by the third law the ground pushes up on him with 890 N; 890 N > 680 N weight, so there is a resultant force upwards.",
           "A magnetic push between two gliders: the forces are equal and opposite — a third-law pair — so the ==momentum of the system== is unchanged: the answer must say *on the system*.",
           "Forces between two colliding bodies are an interaction pair, which is why momentum transfers between them without changing the system's total.",
@@ -306,14 +306,14 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "eq",
         eq: "p = mv        1 N s = 1 kg m s⁻¹",
-        note: "Because p is a vector, opposite directions carry opposite signs — the convention that makes the conservation calculations work. In free fall the only force on an object is its weight, so each second of falling adds **Δp = mg × t** to its momentum: a heavier object gains momentum twice as fast *because the force on it is larger*, even though its acceleration is the same.",
+        note: "Because p is a vector, opposite directions carry opposite signs — the convention that makes the conservation calculations work. In free fall the only force on an object is its weight, so each second of falling adds **Δp = mg × t** to its momentum: a heavier object gains momentum faster ==because the force on it is larger==, even though its acceleration is the same.",
       },
       {
         k: "bullets",
         items: [
           "The unit is examined as a multiple-choice item: kg m s⁻¹ and N s are both creditable.",
           "The vector test pairs momentum with work done — momentum has a direction, kinetic energy does not.",
-          "A change of momentum question is a subtraction with signs: a bat losing Δp gives that momentum to a stationary ball, which leaves with the same Δp = mv.",
+          "A change of momentum question is a subtraction with signs: an object losing Δp gives that momentum to a stationary object, which leaves with the same Δp = mv.",
           "Momenta at right angles combine exactly like force components: subtract the opposite pair on one axis, then Pythagoras with the perpendicular one.",
         ],
       },
@@ -350,14 +350,14 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           "Zero-total chains work the same way: if the total momentum before separation is zero, the parts leave with equal and opposite momenta — a heavy module moving slowly balances a light one moving quickly.",
         ],
       },
-      { k: "h", text: "Where the kinetic energy goes" },
+      { k: "h", text: "Inelastic collisions" },
       {
         k: "bullets",
         items: [
           "In an inelastic collision the kinetic energy after is less than before: the forces between the bodies ==did work==, and that work transferred energy to thermal energy and other stores.",
-          "The examiner report is precise: *no marks can be easily awarded without mentioning work being done* — *energy was transformed*, alone, says nothing.",
-          "Momentum still conserves exactly — the energy bookkeeping and the momentum bookkeeping are independent ledgers.",
-          "When a question asks for an explanation *in terms of momentum*, every sentence must be a momentum sentence: the reports gave no credit for a good Newton's-laws answer to a momentum question.",
+          "The examiner report is precise: ==no marks can be easily awarded without mentioning work being done== — candidates who *simply stated that energy was transformed without telling us how* scored nothing.",
+          "Momentum still conserves exactly — the energy accounting does not affect the momentum accounting.",
+          "When a question asks for an explanation *in terms of momentum*, every sentence must be a momentum sentence: the examiner report records a correct Newton's-laws explanation that ==gained no credit== because the question asked for an explanation ==in terms of momentum==.",
         ],
       },
       {

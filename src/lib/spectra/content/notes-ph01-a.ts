@@ -26,14 +26,15 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "eq",
         eq: "v = u + at        s = ut + ½at²        v² = u² + 2as        s = ½(u + v)t",
-        note: "All four are printed on the WPH11 data sheet, so no mark is ever awarded for recalling them. Each equation links four of the five quantities: v = u + at has no s · s = ut + ½at² has no v · v² = u² + 2as has no t · s = ½(u + v)t has no a. ==The missing quantity names your equation==.",
+        note: "All four are printed on the WPH11 data sheet, so no mark is ever awarded for recalling them. Each equation links four of the five quantities s, u, v, a, t: v = u + at has no s · s = ut + ½at² has no v · v² = u² + 2as has no t · s = ½(u + v)t has no a. ==The equation to use is the one that does not contain the missing quantity==.",
       },
       {
         k: "bullets",
         items: [
           "List what the question gives you, note which of s, u, v, a, t is missing, and pick the equation that does not contain it.",
           "Convert every unit before substituting — mm to m by dividing by 1 000, km h⁻¹ to m s⁻¹ by dividing by 3.6.",
-          "Substitute first, calculate once, round at the end. The examiner reports repeat the same standing instruction: final answers must be correctly ==rounded, not truncated== — truncated values in multi-stage calculations do not generally yield the value the final mark needs. Keep every guard digit in the calculator; write the rounded value only on the final line.",
+          "Substitute first, calculate once, round at the end — keep all the digits in the calculator and write the rounded value only on the final line.",
+          "The standing instruction printed in every examiner report: final answers must be correctly ==rounded, not truncated==, and ==truncated values in multi-stage calculations will not generally yield the required value for the final mark==.",
           "Finish every calculation with the ==unit== and a sensible number of significant figures — normally the same count as the data in the question.",
         ],
       },
@@ -49,7 +50,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["starts from rest", "—", "set u = 0 and the equations simplify"],
         ],
       },
-      { k: "h", text: "The show-that contract" },
+      { k: "h", text: "Show-that questions" },
       {
         k: "bullets",
         items: [
@@ -71,7 +72,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "SUVAT on a curved slide — the acceleration is not constant, and the mark scheme rejects the equations outright. And *truncated* values (0.139 written as 0.1, 417 × 10⁶ written as 410 × 10⁶) — round, never chop.",
+        text: "SUVAT on a curved slide — the acceleration is not constant, and the mark scheme rejects the equations outright. And *truncated* values (0.139 written as 0.1, 417 × 10⁶ written as 410 × 10⁶) — round, never truncate.",
       },
     ],
   },
@@ -84,8 +85,8 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Three graphs describe the same journey, each one hand-span away from the others: the ==gradient== of a displacement–time graph is velocity, the gradient of a velocity–time graph is acceleration, and the ==area== under a velocity–time graph is displacement.",
-          "Graph questions are cheap marks if you describe what the *graph* shows. The examiner report on the worst-answered graph question is blunt: the answers ==did not refer to the graph==, and most scored nothing at all.",
+          "Three graphs describe the same journey: the ==gradient== of a displacement–time graph is velocity, the gradient of a velocity–time graph is acceleration, and the ==area== under a velocity–time graph is displacement.",
+          "Graph explanations are marked against what the *graph* shows. The examiner report on the worst-answered graph question records that the answers ==did not often refer to the graph==, and most candidates ==scored no marks==.",
         ],
       },
       {
@@ -96,7 +97,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "The shape dictionary — what each feature means",
+        caption: "What each graph feature means",
         head: ["Graph feature", "Means"],
         rows: [
           ["s–t: straight line", "constant velocity (gradient = v)"],
@@ -108,16 +109,16 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["a–t: any value above zero", "velocity still increasing — even while acceleration itself falls"],
         ],
       },
-      { k: "h", text: "Explaining a graph's shape, step by step" },
+      { k: "h", text: "Explaining a graph's shape" },
       {
         k: "bullets",
         items: [
           "Name the feature first, then explain the physics behind it: *the gradient starts at zero because the ball starts from rest*, then the forces that make the gradient change.",
-          "The fall-through-liquid chain, in three sentences: the gradient of the v–t graph = the acceleration; at the start the only force is the weight, so the gradient is steep, close to g; as the velocity grows the drag on the ball grows, the resultant force falls, so the curve flattens — and when the drag + upthrust = the weight, the acceleration is zero and the graph becomes a horizontal line: ==terminal velocity==.",
-          "The mark schemes allow the points in any order, but every sentence must touch the graph — a gradient, an area, an intercept or a shape.",
+          "The fall through a liquid, step by step: the gradient of the v–t graph = the acceleration; at the start the only force is the weight, so the gradient is steep, close to g; as the velocity grows the drag on the ball grows, the resultant force falls, so the curve flattens — and when the drag + upthrust = the weight, the acceleration is zero and the graph becomes a horizontal line: ==terminal velocity==.",
+          "The mark schemes allow the points in any order, but every sentence must ==refer to the graph== — a gradient, an area, an intercept or a shape.",
         ],
       },
-      { k: "h", text: "Drawing graphs that score" },
+      { k: "h", text: "Drawing a graph" },
       {
         k: "bullets",
         items: [
@@ -130,7 +131,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "An answer that never mentions gradient, area, intercept or shape — it is a general-physics answer, and scores as one. On a terminal-velocity sketch: the final horizontal line floats ==above the time axis== (the velocity is not zero), and the gradient must be ==continuous== where the acceleration changes.",
+        text: "An answer that never mentions a gradient, an area, an intercept or a shape is not an answer about the graph — the examiner report records such answers as scoring ==no marks==. On a terminal-velocity sketch: the final horizontal line floats ==above the time axis== (the velocity is not zero), and the gradient must be ==continuous== where the acceleration changes.",
       },
     ],
   },
@@ -142,11 +143,11 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "The motion-graph rules have a second life in non-uniform motion. When the graph is a curve, the gradient of a ==tangent== gives the instantaneous quantity, and the area under the curve — counted square by square or by trapezium strips — still gives the accumulated one. The specification itself names the two skills: drawing and using the slope of a tangent to a curve as a measure of rate of change, and realising the physical significance of the area between a curve and the x-axis.",
+        text: "The motion-graph rules still work when the acceleration is not uniform. When the graph is a curve, the gradient of a ==tangent== gives the instantaneous quantity, and the area under the curve — counted square by square or by trapezium strips — still gives the accumulated one. The specification names the two skills: ==using the slope of a tangent to a curve as a measure of rate of change==, and ==realising the physical significance of the area that has been determined==.",
       },
       {
         k: "table",
-        caption: "The complete slope-and-area table",
+        caption: "Slopes and areas",
         head: ["Graph", "Slope gives", "Area gives"],
         rows: [
           ["displacement–time", "velocity (tangent = instantaneous velocity)", "no physical quantity"],
@@ -158,12 +159,12 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Draw the tangent ==at the exact time== asked — the mark scheme's first marking point is literally *draws tangent at the stated time*.",
+          "Draw the tangent ==at the exact time== asked — the first marking point of the printed scheme is the tangent itself, ==drawn at the stated time==.",
           "Read two ==well-separated== points on your own tangent and find the gradient: Δv ÷ Δt. Close points amplify your drawing error.",
           "The answer carries the sign: a diver rising through water has velocity upwards and acceleration downwards, so the gradient is negative.",
         ],
       },
-      { k: "h", text: "Areas in three costumes" },
+      { k: "h", text: "Areas under a curve" },
       {
         k: "bullets",
         items: [
@@ -197,7 +198,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "The pairs the papers recycle",
+        caption: "The scalar and vector pairs",
         head: ["Vector (magnitude *and* direction)", "Scalar partner (magnitude only)"],
         rows: [
           ["displacement", "distance"],
@@ -211,12 +212,12 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       },
       {
         k: "p",
-        text: "==Vector notation==: in print a vector is written in bold (**F**) or with a small arrow above the letter, while its magnitude is plain italic (F). An equilibrium condition written as one vector sentence — **W** + **T**₁ + **T**₂ = **0** — is a statement about arrows: three vectors of different lengths, added nose-to-tail, closing back on themselves. Written as bare numbers it is false, because W, T₁ and T₂ point in different directions; that is exactly what the vector-equation multiple-choice item tests, and only the form with everything summing to **0** survives.",
+        text: "==Vector notation==: in print a vector is written in bold (**F**) or with a small arrow above the letter, while its magnitude is plain italic (F). An equilibrium condition written as one vector sentence — **W** + **T**₁ + **T**₂ = **0** — is a statement about arrows: three vectors of different lengths, added nose-to-tail, closing back on themselves. Written as bare numbers it is false, because W, T₁ and T₂ point in different directions; the vector-equation multiple-choice item is exactly this test, and only the form that sums to **0** is the credited answer.",
       },
       {
         k: "bullets",
         items: [
-          "The unit test is a quick sieve: a unit carrying a direction-bearing quantity — N, N s, N m — suggests a vector. The hard version offers J, kg, N and W and wants the ==newton==, the unit of a vector.",
+          "The unit is a quick test: N, N s and N m all belong to direction-bearing quantities. The hard version offers J, kg, N and W and wants the ==newton==, the unit of a vector.",
           "The pairs most often confused: the **moment of a force** is a vector (it has a turning direction — clockwise or anticlockwise), **work done** is not; **momentum** is a vector, **kinetic energy** is not; **weight** is a vector, **mass** is not.",
         ],
       },
@@ -244,17 +245,17 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         caption:
           "Left: resolving a force at 35° into horizontal and vertical components. Right: the same forces added nose-to-tail to find a resultant — the two skills are inverses of each other.",
       },
-      { k: "h", text: "The measured angle decides sin or cos" },
+      { k: "h", text: "Which function applies" },
       {
         k: "bullets",
         items: [
           "θ measured ==from the horizontal==: the horizontal component is F cos θ and the vertical component is F sin θ.",
           "θ measured ==from the vertical==: the roles swap — the vertical component is F cos θ and the horizontal component is F sin θ.",
           "A weight hanging from a wire passing over two supports, each side at θ to the horizontal: each tension pulls up with T sin θ, and two sides share the weight (**2T sin θ = W**), so **T = W ÷ (2 sin θ)**.",
-          "The identical physics with the angle given to the vertical posts instead: the vertical component of each tension is T cos θ, so **2T cos θ = W** and **T = W ÷ (2 cos θ)** — same equilibrium, one different measured angle, deliberately set as the same trap twice.",
+          "The identical physics with the angle measured from the vertical instead: the vertical component of each tension is T cos θ, so **2T cos θ = W** and **T = W ÷ (2 cos θ)** — same equilibrium, one different measured angle.",
         ],
       },
-      { k: "h", text: "Components are the engine inside half the syllabus" },
+      { k: "h", text: "Where components are used again" },
       {
         k: "bullets",
         items: [
@@ -266,7 +267,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "Reaching for sin where the angle is measured from the vertical — the examiner report records candidates who used sin *where it should be cos and should form the denominator*. And reading a calliper-style angle off the wrong reference line: always ask *measured from where?*",
+        text: "sin used where the angle is measured from the vertical — the printed rejected option explains that the vertical components ==should be cos and should form the denominator==. Ask which reference line θ is measured from before choosing the function.",
       },
     ],
   },
@@ -278,11 +279,11 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "Two skills, and the question tells you which one it wants: *at any angle* means a ==scaled vector drawing==; *at right angles* means ==calculation== with Pythagoras. Every paper carries one scale-diagram question, and the examiner reports say the same thing each time — many candidates drew a free-body diagram instead of a vector triangle, and scored one mark at most.",
+        text: "Two skills, and the wording tells you which one is wanted: *at any angle* means a ==scaled vector drawing==; *at right angles* means ==calculation== with Pythagoras. On the scale-diagram question the examiner report records that many candidates ==drew a free-body force diagram rather than a scaled vector diagram==.",
       },
       {
         k: "steps",
-        caption: "The scaled vector diagram, step by step (the examiners' own rules)",
+        caption: "The scaled vector diagram",
         items: [
           {
             title: "Choose a scale",
@@ -305,7 +306,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           "Horizontal and vertical components combine by Pythagoras: **R = √(F~x~² + F~y~²)**, with the direction from **tan θ = F~y~ ÷ F~x~**.",
           "Worked magnitude: 2300 N horizontal with 1200 N vertical gives R = √(2300² + 1200²) ≈ 2600 N — drawn answers are judged against printed tolerances, calculated answers against the usual significant-figure rules.",
           "Where the components pull ==against== each other on one axis, subtract before squaring: 15 000 kg m s⁻¹ east with 14 500 kg m s⁻¹ west leaves 500 kg m s⁻¹ east, and a 200 kg m s⁻¹ north component makes the resultant √(500² + 200²).",
-          "If you do the calculation on a *drawing* question, the mark schemes still award the answer mark — but the construction marks are only for the triangle, so draw it anyway.",
+          "If you do the calculation on a *drawing* question, the answer mark still scores — but the construction marks belong to the triangle, so draw the triangle as well.",
         ],
       },
       {
@@ -329,7 +330,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "eq",
         eq: "Horizontal: a = 0, s = v~H~t        Vertical: a = −9.81 m s⁻², s = u~V~t + ½at²        v~H~ = v cos θ, u~V~ = v sin θ",
-        note: "Time is the bridge: the flight time computed from the vertical column is the same time the horizontal column must use. Set the two columns up before touching the calculator — one labelled column per direction is the discipline the examiners keep asking for by name.",
+        note: "Time is the bridge: the flight time computed from the vertical column is the same time the horizontal column must use. Set the two columns up before touching the calculator — the examiners' own advice is to ==set calculations out in two columns== so the horizontal and vertical components stay clearly separated.",
       },
       {
         k: "figure",
@@ -347,13 +348,13 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           "The ==time== is the only quantity both columns share — never move a velocity between columns.",
         ],
       },
-      { k: "h", text: "Deduce questions — the comparison is the mark" },
+      { k: "h", text: "Deduce questions" },
       {
         k: "bullets",
         items: [
           "*Does it clear the wall?* Compute the height at the wall: the horizontal column gives the time (t = distance ÷ v~H~), the vertical column gives the height at that time.",
           "Then finish with the explicit comparison and the verdict in words: the height at the wall = 2.7 m, the wall's top = 3.0 m, 2.7 < 3.0 — the ball does not clear the wall.",
-          "Stopping at the computed height earns nothing for the final mark — ==the comparison sentence== is the marking point.",
+          "Stopping at the computed height earns nothing — ==the comparison== is the final marking point.",
         ],
       },
       { k: "h", text: "Angled launches — impact speed and angle" },
@@ -369,7 +370,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "Finding the time to maximum height and ==doubling it== — that works only when the projectile lands at its launch height; a golfer landing 11 m below the launch point needs the full quadratic. Forgetting to ==add the launch height== above sea level. Using a = g in the horizontal column, or u = v~H~ in the vertical column — the two-column layout prevents both, which is exactly why the examiners recommend it.",
+        text: "Finding the time to maximum height and ==doubling it== — that works only when the projectile lands at its launch height; a golfer landing 11 m below the launch point needs the full quadratic. Forgetting to ==add the launch height== above sea level. Using a = g in the horizontal column, or u = v~H~ in the vertical column — the two-column layout prevents both, which is why the examiners recommend it.",
       },
     ],
   },

@@ -27,7 +27,7 @@ export const NOTES_DOCS: NotesDoc[] = [
     intro: [
       {
         k: "p",
-        text: "WPH11/01 is the scenario paper: the same 22 specification statements, dressed each session in a new context — a bungee jump, a crane, a submarine, a bascule bridge. This note teaches every statement of Mechanics in specification order, written ==the way the mark schemes mark it==: the ==equation is stated first== and then unpacked in a sentence, the working symbols — =, ×, >, < — sit inside the sentences, and every force is named with its owner and its direction. The sections cover the ==equations of motion== and the three ==motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's laws== and ==terminal velocity==, ==momentum==, ==moments==, then ==work, energy, power and efficiency==.",
+        text: "WPH11/01 is the scenario paper: the same 22 specification statements, set each session in a new context — a bungee jump, a crane, a submarine, a bascule bridge. This note teaches every statement of Mechanics in specification order, written ==the way the mark schemes mark it==: the ==equation is stated first== and then unpacked in a sentence, the working symbols — =, ×, >, < — sit inside the sentences, and every force is named with its owner and its direction. The sections cover the ==equations of motion== and the three ==motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's laws== and ==terminal velocity==, ==momentum==, ==moments==, then ==work, energy, power and efficiency==.",
       },
       {
         k: "p",

@@ -35,15 +35,15 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         caption:
           "A beam pivoted at one end: each force turns the beam about the pivot, and each moment is force × perpendicular distance. The weight's moment acts through the centre of gravity, at the beam's midpoint.",
       },
-      { k: "h", text: "Where the distances come from" },
+      { k: "h", text: "Perpendicular distances" },
       {
         k: "bullets",
         items: [
           "A uniform body's weight acts at its ==midpoint== — for a stone resting on a step with part of its length overhanging, the centre of gravity can sit ==beyond the step's edge==, which is what makes the stone topple.",
           "At the point of lifting, the body pivots on the edge: take moments about the edge, with the weight turning one way and the applied force the other.",
-          "Annotate the figure first — the examiner reports ask students to mark the distances between the points of action of the forces clearly, because the geometry is the whole question.",
+          "Annotate the figure first: the examiner report asks for ==the distances between the points of action of the forces to be clearly seen== — the geometry is the whole question.",
           "**Minimum force**: the force is smallest where its perpendicular distance from the pivot is largest — at the far end, applied ==perpendicular== to the lever.",
-          "Check the calculator is in ==degrees== — the reports found candidates working in radians, which wrecks every trigonometric value.",
+          "Check the calculator is in ==degrees== — the examiner report found calculators left in radians, which changes every trigonometric value.",
         ],
       },
       {
@@ -56,7 +56,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "sin where cos belongs: the examiner report credits the equation mark even when the wrong function was used — ==the method survives, the value does not==. The unit written as N m⁻¹ or bare N instead of N m.",
+        text: "sin used where cos belongs — the examiner report records that candidates who used sin instead of cos ==could still score the equation mark==; the value does not. The unit written as N m⁻¹ or bare N instead of N m.",
       },
     ],
   },
@@ -78,11 +78,11 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       },
       {
         k: "steps",
-        caption: "The moments method — the five moves every question wants",
+        caption: "The moments method",
         items: [
           {
             title: "1 · Choose a pivot",
-            text: "Any point works in equilibrium, so choose the one that kills the most unknowns — usually where an unknown force acts. State the pivot clearly: not stating it is the most-documented lost mark in the whole topic.",
+            text: "Any point works in equilibrium, so choose the one that removes the most unknowns — usually where an unknown force acts. State the pivot clearly: the examiner report records that ==a large number missed a mark by not specifying a pivot point==.",
           },
           {
             title: "2 · Mark the centre of gravity",
@@ -102,7 +102,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           },
         ],
       },
-      { k: "h", text: "The method on a real structure" },
+      { k: "h", text: "A bridge on two supports" },
       {
         k: "bullets",
         items: [
@@ -110,7 +110,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "The deck's weight acts at its ==midpoint==: clockwise moments = deck weight × half-span + load × its distance from the pivot.",
           "The far support's force = the total clockwise moment ÷ the full span.",
           "Then the ==force balance== finishes it: the near support's force = the deck's weight + the load − the far support's force.",
-          "Units on both answers — the mark schemes cap the whole question when answers carry no unit.",
+          "Units on both answers — a missing unit costs the final calculation mark.",
         ],
       },
       { k: "h", text: "Explaining with calculations" },
@@ -119,7 +119,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         items: [
           "An *explain why it stays put* question needs ==the numbers==: compute the clockwise moment and the anticlockwise moment about the hinge and compare them.",
           "When the two computed moments differ, name what supplies the difference — a stop block pressing on the board — and the block's force is found from the imbalance: F × its distance = the moment difference.",
-          "The examiner report records how rare it was to see the relevant calculations in an explain question — explanation here *requires* the arithmetic.",
+          "The examiner report records candidates who ==did not attempt calculations==, not realising that ==a full explanation does require relevant calculations==.",
           "Testing a claim (*does it hold 3 portions?*): compute one portion's weight from the first equilibrium, then compute what the new geometry supports, then conclude with the comparison.",
           "A tipping question: compute where the load would have to sit for balance, compare with the real position, and state which way it goes.",
         ],
@@ -147,12 +147,12 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         eq: "ΔW = FΔs        ΔW = FΔs cos θ        work done against gravity = mgΔh",
         note: "The cosine version is ==not== printed on the data sheet — ΔW = FΔs is. The angle handling is a skill the papers test explicitly: θ is the angle between the force and the displacement.",
       },
-      { k: "h", text: "Deciding whether the cosine is needed" },
+      { k: "h", text: "Work done at an angle" },
       {
         k: "bullets",
         items: [
           "A rope inclined at 40° pulling a box along the ground: only the component of the tension along the motion does work — F cos 40° — so ΔW = F cos θ × d.",
-          "A force ==already along== the motion needs no cosine at all: a cyclist pushing along a 4.0° slope does work = F × the distance along the slope. The documented error was multiplying the distance by a cosine of the angle anyway.",
+          "A force ==already along== the motion needs no cosine at all: a cyclist pushing along a 4.0° slope does work = F × the distance along the slope. The common error is multiplying the distance by a cosine of the angle anyway.",
           "Work done against gravity uses the ==vertical== height only: Δh = the slope distance × sin θ, then mgΔh.",
           "Total work splits across the resistances: the work the cyclist does = the work against gravity + the work against air resistance.",
         ],
@@ -161,7 +161,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The kinetic energy a resistive force removes = the work that force does: a truck losing 8.0 × 10⁶ J of kinetic energy to a 3.5 × 10⁵ N resistive force travels Δs = ΔW ÷ F ≈ 23 m. The examiner reports call this work–energy equivalence the step most candidates missed.",
+          "The kinetic energy a resistive force removes = the work that force does: a truck losing 8.0 × 10⁶ J of kinetic energy to a 3.5 × 10⁵ N resistive force travels Δs = ΔW ÷ F ≈ 23 m. The examiner report: the majority ==did not pick up on the idea that the change in kinetic energy is equivalent to the work done by the resistive force==.",
           "The increase in gravitational potential energy of a lifting machine is the work it does ==against== the force of gravity — that is what mgΔh is.",
           "In collision energy questions the marking point is the word ==work==: forces between the bodies did work, and that work moved energy to thermal energy.",
           "The area under a force–displacement graph is the work done — the same statement 32 uses for force–extension graphs.",
@@ -192,17 +192,17 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The square is the physics examiners love to probe: double the landing speed and the kinetic energy ==quadruples==, so the struck object could rise four times as far — *the height gained does not double*.",
+          "Double the landing speed and the kinetic energy ==quadruples==, so the struck object could rise four times as far — *the height gained does not double*.",
           "Double the kinetic energy and the new speed is √2 × the old one — the square root undoes the square.",
           "Equal kinetic energies for two very different masses put the speeds in the ==inverse ratio of the square roots of the masses==: a particle 1/2000 the mass moves √2000 times faster.",
           "The weight-to-mass conversion comes first in every chain: m = W ÷ g, then Ek = ½mv² — both substitutions are marking points before the value.",
-          "The ½ and the square are the two traps in every costume; the unit is the plain joule, energy, not N m s⁻¹.",
+          "Check the ==½== and the ==square== every time; the unit is the joule, energy, not N m s⁻¹.",
         ],
       },
       {
         k: "note",
         label: "Not accepted",
-        text: "Direction words in a kinetic-energy answer — it is a ==scalar==. And quoting v = 3.4 m s⁻¹ for *show that v ≈ 3.4 m s⁻¹* — the show-that contract (statement 1) wants the extra significant figure first.",
+        text: "Direction words in a kinetic-energy answer — it is a ==scalar==. And quoting v = 3.4 m s⁻¹ for *show that v ≈ 3.4 m s⁻¹* — the show-that rule (statement 1) wants the extra significant figure first.",
       },
     ],
   },
@@ -222,15 +222,21 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         eq: "ΔEgrav = mgΔh        Δh = L sin θ  (distance L along a slope at θ to the horizontal)",
         note: "The vertical drop is the geometry step the papers examine: straight pipes 350 m long inclined at 55° carry water down a ==vertical== drop of 350 × sin 55° ≈ 287 m, not 350 m.",
       },
-      { k: "h", text: "Chains that end in power" },
+      { k: "h", text: "A hydroelectric station" },
       {
         k: "bullets",
         items: [
-          "A hydro station chain, marking point by marking point: mass per minute from the density and the volume (m = ρV); the vertical drop from the pipe geometry (Δh = L sin θ); the energy per minute (mgΔh); then the power (P = E ÷ t, with t = 60 s for a per-minute flow).",
+          "The chain, marking point by marking point: mass per minute from the density and the volume (m = ρV); the vertical drop from the pipe geometry (Δh = L sin θ); the energy per minute (mgΔh); then the power (P = E ÷ t, with t = 60 s for a per-minute flow).",
           "The mark schemes also credit an alternative route through the exit speed and ½mv² — two valid chains to the same power.",
-          "A train climbing at constant speed: the engine's output energy (P × t) splits into the gain in gravitational potential energy (mgΔh) and the work done against resistive forces — subtract, and the resistive work is left.",
           "Quote the intermediate value correctly rounded — 417 × 10⁶ J rounds to 420 × 10⁶ J; the examiner report flags truncation to 410 × 10⁶ as the documented loss.",
           "When a later part hands you a *show that* value (about 88 MW), carry it forward — the question expects the given value to be used.",
+        ],
+      },
+      { k: "h", text: "A train on an incline" },
+      {
+        k: "bullets",
+        items: [
+          "A train climbing at constant speed: the engine's output energy (P × t) splits into the gain in gravitational potential energy (mgΔh) and the work done against resistive forces — subtract, and the resistive work is left.",
         ],
       },
       {
@@ -249,14 +255,14 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "def",
         term: "The principle of conservation of energy",
-        text: "Energy cannot be created or destroyed — only ==transferred between stores== (kinetic, gravitational, elastic, thermal…). In any real situation some energy is dissipated, usually as work done against resistive forces; the bookkeeping must still balance.",
+        text: "Energy cannot be created or destroyed — only ==transferred between stores== (kinetic, gravitational, elastic, thermal…). In any real situation some energy is dissipated, usually as work done against resistive forces; the totals must still balance.",
       },
       {
         k: "eq",
         eq: "mgΔh = ½mv²        ΔEgrav = ΔEel        Ek lost = work done by resistive forces        total in = useful out + dissipated",
-        note: "When the mass appears on both sides of a chain it cancels: the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass== — three papers have asked exactly that comparison.",
+        note: "When the mass appears on both sides of a chain it cancels: the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass==.",
       },
-      { k: "h", text: "The slide — why SUVAT is rejected" },
+      { k: "h", text: "A curved slide" },
       {
         k: "bullets",
         items: [
@@ -266,7 +272,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Do not import drag and friction into an answer when the question says resistive forces are ignored.",
         ],
       },
-      { k: "h", text: "The bungee deduce" },
+      { k: "h", text: "The bungee jump" },
       {
         k: "bullets",
         items: [
@@ -283,7 +289,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "The mark scheme's own complete chain: gravitational potential energy decreases throughout.",
           "While accelerating, kinetic energy increases — and work is done against air resistance at every stage.",
           "At terminal velocity the kinetic energy is constant, so ==all the lost gravitational potential energy is dissipated== by work done against the drag.",
-          "The how is the marking point: name the force doing the work and the store the energy lands in.",
+          "Name the force doing the work and the store the energy lands in — that naming is the marking point.",
         ],
       },
       {
@@ -313,28 +319,34 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         k: "bullets",
         items: [
           "A boat or vehicle at constant (terminal) velocity has constant kinetic energy — the engine's work goes into ==pushing the water or air aside==, at the rate P = F × v.",
-          "Calculating the kinetic energy of the body is the documented wrong route — the question is about the ==rate of working==, not the stored energy.",
+          "Calculating the kinetic energy of the body is the wrong route the examiner report records — some candidates ==attempted to add the kinetic energy also, which is not required==: the question is about the ==rate of working==, not the stored energy.",
           "State the unit: the reports record missing and wrong units on power answers.",
         ],
       },
-      { k: "h", text: "Testing a display, and finding a time" },
+      { k: "h", text: "The display question" },
       {
         k: "bullets",
         items: [
           "*Is the displayed power honest?* Work per pull = FΔs; total work = pulls × work per pull; power = total work ÷ the time; then compare with the display and state the verdict.",
           "The mark schemes also credit working backwards from the displayed power to the time, count, force or distance — any valid comparison.",
           "Use the force ==given in the question part==, not a force carried over from an earlier part with different conditions.",
+        ],
+      },
+      { k: "h", text: "A time from a power" },
+      {
+        k: "bullets",
+        items: [
           "A time from a power: t = mgΔh ÷ P for a motor lifting a mass — the mcq distractors omit g or mishandle the kilo- prefix.",
           "An escalator raising you through 5000 J in 42 s at efficiency 0.63: the ==input== power = 5000 ÷ (42 × 0.63) — the efficiency divides (statement 22).",
         ],
       },
-      { k: "h", text: "One question, three regimes" },
+      { k: "h", text: "A BMX track" },
       {
         k: "bullets",
         items: [
-          "An athlete's useful power over a jump: accelerating on the flat, P = Fv with a growing v — the power grows.",
+          "Accelerating on the flat: with a constant driving force, P = Fv with a growing v — the useful power output ==increases==.",
           "Climbing at constant speed: P = mgv — constant, set by the weight and the climb rate.",
-          "Airborne with no contact force: the useful power is ==zero== — nothing is being pushed.",
+          "Airborne with no contact force: the useful power output is ==zero== — nothing is being pushed.",
         ],
       },
       {
@@ -355,27 +367,27 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         eq: "efficiency = useful energy output ÷ total energy input        efficiency = useful power output ÷ total power input",
         note: "The data sheet prints both, with the words — the marks are in deciding ==which number is the useful output== and ==which the total input==. An efficiency above 1 (100%) means the accounting is wrong: the examiner reports tell students to be suspicious of one.",
       },
-      { k: "h", text: "The five costumes, and the slip each hides" },
+      { k: "h", text: "The recurring efficiency calculations" },
       {
         k: "bullets",
         items: [
-          "**Input from output**: input = output ÷ efficiency — the escalator raises 5000 J in 42 s at efficiency 0.63, so the input power = 5000 ÷ (42 × 0.63) ≈ 190 W; multiplying by the efficiency instead is the documented slip.",
-          "**Dissipated power**: the waste = (1 − efficiency) × the ==total input== — using the useful output here breaks the accounting.",
+          "**Input from output**: input = output ÷ efficiency — the escalator raises 5000 J in 42 s at efficiency 0.63, so the input power = 5000 ÷ (42 × 0.63) ≈ 190 W; multiplying by the efficiency instead is the rejected option.",
+          "**Dissipated power**: the waste = (1 − efficiency) × the ==total input== — using the useful output here gives the wrong waste.",
           "**Power-station accounting**: the total input = the useful output + the waste — the waste does not go in the numerator.",
-          "**A bank of generators**: the useful output is the number of generators × each one's output — forgetting to multiply is the slip.",
+          "**A bank of generators**: the useful output is the number of generators × each one's output — forgetting to multiply loses the output.",
           "**A net input**: a car braking while climbing loses kinetic energy but gains height — the energy available to charge the battery = ΔEk − ΔEgrav, and the efficiency = the charge delivered ÷ that net input. Only about a quarter of candidates scored this in full.",
           "In percentage form the ==% symbol is required==; as a decimal it is a plain number between 0 and 1.",
         ],
       },
       {
         k: "table",
-        caption: "Efficiency costumes and their traps",
-        head: ["Costume", "The trap"],
+        caption: "The five calculations and the error in each",
+        head: ["Calculation", "The error"],
         rows: [
           ["Dissipated power = (1 − efficiency) × total input", "using the output instead of the input"],
           ["Input from output: input = output ÷ efficiency", "multiplying by the efficiency"],
           ["Total input = useful output + waste", "putting the waste in the numerator"],
-          ["Hydro bank: output = 4 × one station's output − wasted", "treating the bank's gross figure as the useful output"],
+          ["Four identical pipes: useful output = 4 × one pipe's output − wasted", "treating the gross figure as the useful output"],
           ["Net input = ΔEk − ΔEgrav", "forgetting the height gain"],
           ["Efficiency < 1 always", "an answer over 100% is an accounting error"],
         ],
@@ -383,18 +395,18 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       { k: "h", text: "The marking rules that never change" },
       {
         k: "p",
-        text: "These are the standing rules printed in every WPH11 mark scheme across the series. They are worth more marks per minute of revision than anything else in this unit, because they apply to every calculation you will ever be asked.",
+        text: "These are the standing rules printed in every WPH11 mark scheme across the series. They apply to every calculation in this unit, so they are worth more marks per minute of revision than any single topic point.",
       },
       {
         k: "table",
-        caption: "The WPH11 calculation contract",
-        head: ["Rule", "Exact terms"],
+        caption: "The standing calculation rules",
+        head: ["Rule", "The mark scheme's wording"],
         rows: [
           ["*Use of …* marks", "The correct equation with physically correct values substituted earns the method mark — even with a power-of-ten slip afterwards. Show the substitution, always."],
           ["ecf — error carried forward", "A wrong earlier answer does not sink later parts; the marks are re-marked with your value. Never abandon a part because the last one went wrong."],
           ["Significant figures", "Quote *show that* answers to at least 1 more s.f. than the given value. Carry all digits through; round only on the final line. Rounding, never truncating (417 becomes 420, not 410)."],
           ["Units", "A missing or wrong unit on a final answer normally loses that answer's mark (once per question; never in show-that). Strain has no unit."],
-          ["g", "Use 9.81 (9.8 accepted); g = 10 costs one mark per question."],
+          ["g", "Use 9.81 (9.8 accepted); g = 10 costs one mark, once per paper."],
           ["Deduce questions", "Calculate, compare with the question's value (<, >, =, ≈), and state the conclusion in words. The bare number never earns the final mark."],
           ["Reverse working", "Full credit on 2-mark show-thats; capped at 2 of 3 on 3-mark ones."],
           ["Bald correct answers", "Full marks — except in show-that and extended calculations, where working is the marks."],
@@ -402,7 +414,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       },
       {
         k: "p",
-        text: "And the examiners' own revision advice, repeated across every report: practise in ==varied contexts== — *new or more unfamiliar contexts* is how each report describes the paper; read the command word — *state*, *calculate*, *explain*, *deduce* each demand a different shape of answer; and when a 3-mark explanation is set, *a 3-mark explanation is likely to need 3 different points*. Leave nothing blank — the schemes are written to reward simple, correct statements wherever they can be found.",
+        text: "And the examiners' own revision advice, repeated across the reports: practise in ==varied contexts== — the reports describe the paper as *new or more unfamiliar contexts*; read the command word — *state*, *calculate*, *explain* and *deduce* each demand a different shape of answer; and when a 3-mark explanation is set, *a 3-mark explanation is likely to need 3 different points*. Leave nothing blank — every correct statement can still earn its mark.",
       },
     ],
   },
