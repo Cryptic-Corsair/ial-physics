@@ -16,9 +16,11 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Forces, motion and energy",
     summary:
       "The whole of WPH11 mechanics — motion graphs and the equations of motion, vectors and projectiles, Newton's laws and terminal velocity, momentum, moments, work, energy and power — statement by statement, written the way the mark schemes mark it.",
-    /* minutes scaled with the register rebuild (2026-11-22): the
-       scenario chains add depth per statement, same as t02's step */
-    minutes: 60,
+    /* minutes rescaled for the scenario rebuild (2026-11-22): the
+       restored worked chains grew the note by about a third, and
+       the topic's own words-per-minute calibration puts the read
+       near an hour and a quarter */
+    minutes: 75,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
