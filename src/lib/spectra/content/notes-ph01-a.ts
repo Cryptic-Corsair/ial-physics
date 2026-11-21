@@ -5,10 +5,15 @@ import type { SpecSection } from "../notes-types";
    Spec statements 1–7: the equations of motion, motion graphs,
    scalars and vectors, components, resultants, projectiles.
 
-   Worked examples are real WPH11/01 questions with the official
-   mark schemes' working; examiner-report excerpts are verbatim
-   from the Principal Examiners' reports, 2019–2025.
-   Highlighting kept deliberately light: one mark per key term.
+   The approved physics register (the t02 specimen): the named
+   equation is stated first in an equation band, then unpacked in a
+   sentence; the working symbols (=, ×, >, <) sit inside the
+   sentences; one bullet = one mark-earning sentence; scenarios are
+   built up as their own headed groups, one logical step per bullet;
+   rejected wordings live in "Not accepted" notes; no arrows, no
+   session citations — the evidence trail lives in research/wph11/.
+   This supersedes the earlier worked-example register at the
+   owner's direction (handover Phase E).
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH01_A: SpecSection[] = [
@@ -19,13 +24,18 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     title: "The equations of uniformly accelerated motion",
     blocks: [
       {
-        k: "p",
-        text: "All four equations are printed on the WPH11 data sheet, so no mark is ever awarded for recalling them. Every mark lives in three skills: ==choosing== the right equation for what you know, ==converting== units before substituting, and finishing with the unit and the right significant figures. Each equation links four of the five quantities s, u, v, a, t — so list what you are given, note which one is missing, and pick the equation that does not contain it.",
-      },
-      {
         k: "eq",
         eq: "v = u + at        s = ut + ½at²        v² = u² + 2as        s = ½(u + v)t",
-        note: "v = u + at has no s · s = ut + ½at² has no v · v² = u² + 2as has no t · s = ½(u + v)t has no a. The missing quantity names your equation.",
+        note: "All four are printed on the WPH11 data sheet, so no mark is ever awarded for recalling them. Each equation links four of the five quantities: v = u + at has no s · s = ut + ½at² has no v · v² = u² + 2as has no t · s = ½(u + v)t has no a. ==The missing quantity names your equation==.",
+      },
+      {
+        k: "bullets",
+        items: [
+          "List what the question gives you, note which of s, u, v, a, t is missing, and pick the equation that does not contain it.",
+          "Convert every unit before substituting — mm to m by dividing by 1 000, km h⁻¹ to m s⁻¹ by dividing by 3.6.",
+          "Substitute first, calculate once, round at the end. The examiner reports repeat the same standing instruction: final answers must be correctly ==rounded, not truncated== — truncated values in multi-stage calculations do not generally yield the value the final mark needs. Keep every guard digit in the calculator; write the rounded value only on the final line.",
+          "Finish every calculation with the ==unit== and a sensible number of significant figures — normally the same count as the data in the question.",
+        ],
       },
       {
         k: "table",
@@ -39,52 +49,29 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["starts from rest", "—", "set u = 0 and the equations simplify"],
         ],
       },
-      { k: "h", text: "Real questions, worked in full" },
+      { k: "h", text: "The show-that contract" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2024 Q12 — the dart",
-        question:
-          "A dart is thrown with a velocity of 15.6 m s⁻¹ at an angle of 5.0° to the horizontal. Just before the dart hits the board, the vertical component of its velocity is zero. Air resistance is negligible. (a) Show that the time taken to reach the dartboard is about 0.14 s. (3) (b) Calculate the horizontal distance D to the board. (2)",
-        steps: [
-          "(a) Resolve the initial velocity into its vertical component: u_V = 15.6 × sin 5.0° = 1.36 m s⁻¹",
-          "The vertical velocity ends at zero, and a = −9.81 m s⁻² (taking up as positive): v = u + at → 0 = 1.36 − 9.81t",
-          "t = 1.36 ÷ 9.81 = **0.139 s** — one more significant figure than the “about 0.14 s” in the question, exactly as the mark scheme demands",
-          "(b) Horizontal motion has a = 0, so s = ut: D = 15.6 × cos 5.0° × 0.139",
+        k: "bullets",
+        items: [
+          "The mark schemes print the same three rules in every series. **One:** quote a show-that answer to ==at least one more significant figure== than the given value — for *show that t ≈ 0.14 s* you write 0.139 s; writing 0.14 s exactly scores nothing for that marking point.",
+          "**Two:** reverse working — starting from the given answer and going backwards — earns both marks on a 2-mark show-that, but only 2 of the 3 marks on a 3-mark one.",
+          "**Three:** once shown, use the rounded given value in the later parts. The examiner reports penalise candidates who persist in using their own unrounded value when the question handed them one to use.",
         ],
-        answer:
-          "D = 2.2 m (ecf allowed from your time — a wrong (a) does not have to sink (b))",
       },
+      { k: "h", text: "When the equations do not apply" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 June 2024 Q13(a) — the racing cars",
-        question:
-          "Two cars approach the finish line. Car A moves at a constant 93 m s⁻¹ with 100 m left. Car B, 9.0 m behind A's position, moves at the same 93 m s⁻¹ and accelerates at 14 m s⁻². Show that B draws level with A about 1.1 s later. (3)",
-        steps: [
-          "Both cars cover the same 93 m s⁻¹ of “shared” distance — what closes the gap is B's *extra* accelerating motion",
-          "Extra distance B gains: s = ut + ½at² with u = 0 and a = 14 m s⁻² → s = 7t²",
-          "Level when the extra distance equals the gap: 9.0 = 7t²",
+        k: "bullets",
+        items: [
+          "The equations require ==constant acceleration==. On a curved slide the gradient varies from point to point, so the acceleration is not constant — the route is energy conservation instead, and the mark scheme prints *Do not accept use of equations of motion*.",
+          "A dropped ball with air resistance still falls with roughly constant g at low speed, but the real time is *greater* and the real landing speed *less* than the SUVAT prediction, because drag opposes the motion.",
+          "On another planet, substitute the local acceleration into the equations — for Mars, a = 0.38g — and take a ==ratio== of two equations when two situations share the same variables: the unknown g cancels.",
+          "Questions with ==two objects== are solved by the shared quantity: write one equation per object and set the times equal, or set the distances equal at the passing moment.",
         ],
-        answer:
-          "t = √(9.0 ÷ 7.0) = 1.13 s ≈ 1.1 s (the MS credits “any valid suvat method”; quoting 1.13 shows the “about 1.1 s”)",
       },
       {
         k: "note",
-        label: "Examiner's report — January 2023, Q11",
-        text: "“Teaching students to set calculations out in two columns would help them to keep horizontal and vertical components clearly separated.” In that series candidates “used a = g in the horizontal plane, or u = 3.8 m s⁻¹ in the vertical plane”. Two labelled columns cost nothing and prevent the most common projectile error there is.",
-      },
-      {
-        k: "note",
-        label: "The 'show that' contract",
-        text: "The mark schemes print the same three rules in every series. **One:** quote your answer to at least one more significant figure than the given value — for “show that t ≈ 0.14 s” you write 0.139 s; 0.14 s exactly scores nothing for that marking point. **Two:** reverse working (starting from the given answer) earns both marks on a 2-mark show-that but only 2 of 3 marks on a 3-mark one. **Three:** once shown, you may use the rounded given value in later parts — the October 2021 report penalised candidates who “persisted in using a = 9.81 m s⁻² in subsequent parts despite having a ‘show that’ value that they could use”.",
-      },
-      {
-        k: "note",
-        label: "If the question were asked differently",
-        text: "SUVAT appears in disguise as often as in the open. **A dropped ball with air resistance** (January 2024 Q5): the real time is *greater* and the real landing speed *less* than the SUVAT prediction, because drag opposes motion. **A curved slide** (January 2024 Q14): SUVAT is rejected outright — the gradient of the slide varies, so the acceleration is not constant; you must use energy conservation, and the mark scheme prints “Do not accept use of equations of motion”. **An unknown on Mars** (June 2023 Q11): substitute a = 0.38g into v² = u² + 2as and take a ratio of the two equations.",
-      },
-      {
-        k: "p",
-        text: "One habit protects every calculation mark at once: **substitute first, calculate once, round at the end**. The October 2021 report puts it as a standing instruction — “Final answers must be correctly rounded, not truncated, and truncated values in multi-stage calculations will not generally yield the required value for the final mark.” Keep every guard digit in the calculator; write the rounded value only on the final line.",
+        label: "Not accepted",
+        text: "SUVAT on a curved slide — the acceleration is not constant, and the mark scheme rejects the equations outright. And *truncated* values (0.139 written as 0.1, 417 × 10⁶ written as 410 × 10⁶) — round, never chop.",
       },
     ],
   },
@@ -95,8 +82,11 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     title: "Reading and drawing motion graphs",
     blocks: [
       {
-        k: "p",
-        text: "Three graphs describe the same journey, each one hand-span away from the others: the ==gradient== of a displacement–time graph is velocity, the gradient of a velocity–time graph is acceleration, and the ==area== under a velocity–time graph is displacement. Graph questions are cheap marks if you describe what the *graph* shows — and the October 2023 report records that when candidates “did not often refer to the graph”, most scored nothing at all.",
+        k: "bullets",
+        items: [
+          "Three graphs describe the same journey, each one hand-span away from the others: the ==gradient== of a displacement–time graph is velocity, the gradient of a velocity–time graph is acceleration, and the ==area== under a velocity–time graph is displacement.",
+          "Graph questions are cheap marks if you describe what the *graph* shows. The examiner report on the worst-answered graph question is blunt: the answers ==did not refer to the graph==, and most scored nothing at all.",
+        ],
       },
       {
         k: "figure",
@@ -110,7 +100,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         head: ["Graph feature", "Means"],
         rows: [
           ["s–t: straight line", "constant velocity (gradient = v)"],
-          ["s–t: curve steepening", "velocity increasing (accelerating) — e.g. a falling ball (Oct 2023 Q4)"],
+          ["s–t: curve steepening", "velocity increasing (accelerating) — a falling ball"],
           ["s–t: curve flattening", "velocity decreasing towards zero"],
           ["v–t: straight line", "constant acceleration (gradient = a)"],
           ["v–t: horizontal line", "constant velocity, a = 0 — terminal velocity"],
@@ -118,33 +108,29 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["a–t: any value above zero", "velocity still increasing — even while acceleration itself falls"],
         ],
       },
+      { k: "h", text: "Explaining a graph's shape, step by step" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 June 2023 Q12 — the cliff diver (interpretation)",
-        question:
-          "A diver leaves a platform and falls. The graph of velocity against time shows a curve starting at zero whose gradient decreases, becoming a straight line. Explain the shape of the graph. (3)",
-        steps: [
-          "Gradient of a v–t graph = acceleration. At the start the only force is weight (drag ≈ 0), so the gradient is steep — close to g",
-          "As velocity increases, the drag force increases, so the resultant force and hence the acceleration decrease — the curve flattens",
-          "When drag + upthrust = weight the resultant force is zero: acceleration is zero and the graph becomes a horizontal straight line — terminal velocity",
+        k: "bullets",
+        items: [
+          "Name the feature first, then explain the physics behind it: *the gradient starts at zero because the ball starts from rest*, then the forces that make the gradient change.",
+          "The fall-through-liquid chain, in three sentences: the gradient of the v–t graph = the acceleration; at the start the only force is the weight, so the gradient is steep, close to g; as the velocity grows the drag on the ball grows, the resultant force falls, so the curve flattens — and when the drag + upthrust = the weight, the acceleration is zero and the graph becomes a horizontal line: ==terminal velocity==.",
+          "The mark schemes allow the points in any order, but every sentence must touch the graph — a gradient, an area, an intercept or a shape.",
         ],
-        answer:
-          "The mark scheme allows the points in any order; the June 2025 skydiver sketch (Q20b) wants exactly this: “curved line starting at zero with negative gradient decreasing in magnitude”, then a horizontal line — not along the axis.",
+      },
+      { k: "h", text: "Drawing graphs that score" },
+      {
+        k: "bullets",
+        items: [
+          "The mark schemes carry the same drawing rules in every series: axes ==labelled with the quantity and the unit==.",
+          "A scale that spreads the plotted points ==over more than half of each axis==, and is not awkward — never multiples of 3 or 7.",
+          "Points plotted ==to within 1 mm== of the true values.",
+          "The best-fit line is *a thin continuous line* — a sketch graph earns shape marks: a curve through the origin with increasing gradient for constant acceleration from rest, joining a straight line smoothly once the acceleration reaches zero.",
+        ],
       },
       {
         k: "note",
-        label: "Examiner's report — October 2023, Q18(b)(i)",
-        text: "“Most candidates scored no marks on this question. The most common reason for this was that the answers did not often refer to the graph.” The creditable answers name the feature — “the gradient starts at zero because the ball starts from rest” — before explaining the physics behind it. A graph answer that never mentions gradient, area, intercept or shape is a general-physics answer, and scores as one.",
-      },
-      {
-        k: "note",
-        label: "Drawing graphs — the four printed rules",
-        text: "The mark schemes carry graph-drawing rules identical in every series: axes ==labelled with quantity and unit==; a scale that spreads the plotted points ==over more than half of each axis== and is not awkward (never multiples of 3 or 7); points plotted ==to within 1 mm==; and the best-fit line “a thin continuous line”. Sketch graphs earn shape marks: a curve through the origin with increasing gradient for constant acceleration from rest, a straight line joining it smoothly once the acceleration reaches zero (October 2025 Q18(a)).",
-      },
-      {
-        k: "note",
-        label: "If the question were asked differently",
-        text: "The same graph can be turned inside out. Given a *displacement–time* graph of a ball thrown up and caught, the matching *acceleration–time* graph is a constant negative line (January 2023 Q7) — the inverted parabola's gradient never stops being −g. Given a *deceleration–time* graph, the shaded area is the ==change in velocity==, not the velocity itself (January 2025 Q5). Given an *acceleration–time* graph that drops to zero, the s–t graph is a parabola that smooths into a straight line — the gradient must be continuous where the acceleration changes (October 2025 Q9).",
+        label: "Not accepted",
+        text: "An answer that never mentions gradient, area, intercept or shape — it is a general-physics answer, and scores as one. On a terminal-velocity sketch: the final horizontal line floats ==above the time axis== (the velocity is not zero), and the gradient must be ==continuous== where the acceleration changes.",
       },
     ],
   },
@@ -156,52 +142,40 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "Statement 2's rules have a second life in non-uniform motion. When the graph is a curve, the gradient of a ==tangent== gives the instantaneous quantity, and the area under the curve — counted square by square or by trapezium strips — still gives the accumulated one. This is the specification's own wording: “drawing and using the slope of a tangent to a curve as a measure of rate of change… the area between a curve and the x-axis and realising the physical significance of the area determined.”",
+        text: "The motion-graph rules have a second life in non-uniform motion. When the graph is a curve, the gradient of a ==tangent== gives the instantaneous quantity, and the area under the curve — counted square by square or by trapezium strips — still gives the accumulated one. The specification itself names the two skills: drawing and using the slope of a tangent to a curve as a measure of rate of change, and realising the physical significance of the area between a curve and the x-axis.",
       },
       {
         k: "table",
         caption: "The complete slope-and-area table",
         head: ["Graph", "Slope gives", "Area gives"],
         rows: [
-          ["displacement–time", "velocity (tangent = instantaneous velocity)", "no physical quantity — the October 2024 Q3 distractor"],
+          ["displacement–time", "velocity (tangent = instantaneous velocity)", "no physical quantity"],
           ["velocity–time", "acceleration (tangent = instantaneous acceleration)", "displacement (areas below the axis count negative)"],
           ["acceleration–time", "rate of change of acceleration (not examined)", "change in velocity — not the final velocity unless u = 0"],
         ],
       },
+      { k: "h", text: "The tangent method" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 October 2024 Q19(b)(ii) — the diver's acceleration from a tangent",
-        question:
-          "The graph of the diver's vertical velocity against time is a curve. Determine the vertical acceleration at t = 70 s. (3)",
-        steps: [
-          "Draw a tangent to the curve at t = 70 s — the mark scheme's first marking point is literally “Draws tangent at 70 s”",
-          "Read two well-separated points on your tangent and find its gradient: Δv ÷ Δt (the MS example reads about −0.50 m s⁻¹ across 65 s)",
-          "a = −0.50 ÷ 65 = −0.0077 m s⁻²",
+        k: "bullets",
+        items: [
+          "Draw the tangent ==at the exact time== asked — the mark scheme's first marking point is literally *draws tangent at the stated time*.",
+          "Read two ==well-separated== points on your own tangent and find the gradient: Δv ÷ Δt. Close points amplify your drawing error.",
+          "The answer carries the sign: a diver rising through water has velocity upwards and acceleration downwards, so the gradient is negative.",
         ],
-        answer:
-          "a ≈ −0.008 m s⁻² (allowed range −0.007 to −0.010 m s⁻² — the tolerance is printed for drawn tangents)",
       },
+      { k: "h", text: "Areas in three costumes" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2025 Q8 — area of a two-stage v–t graph",
-        question:
-          "On a velocity–time graph, velocity falls linearly from 2v to v between times 0 and t, then stays constant at v from t to 2t. What is the distance travelled in time 2t? (1)",
-        steps: [
-          "Distance = total area. First stage: a trapezium of parallel sides 2v and v, width t → area ½(2v + v)t = 3vt/2",
-          "Second stage: a rectangle of height v and width t → area vt",
-          "Total: 3vt/2 + vt",
+        k: "bullets",
+        items: [
+          "**Counting squares** on a printed grid — each square is worth its width × height in unit quantities.",
+          "**Trapezium strips** when the velocity changes in straight segments: a fall from 2v to v over time t gives ½(2v + v)t, then a rectangle vt underneath.",
+          "**Equality of areas** as a physics statement: a diver returns to the surface because the area below the time axis ==equals== the area above it — the total displacement is zero.",
         ],
-        answer: "5vt/2 — option D. Count the trapezium, or split it into a rectangle plus a triangle; both are credited.",
       },
       {
         k: "note",
-        label: "Examiner's report — October 2024, Q19(b)(ii)",
-        text: "“Most candidates who drew a tangent scored well. However, many candidates just read a value of velocity at 70 s and divided one by the other. This approach scored no marks.” v/t at a point is not a gradient — a tangent is. The same report says flatly that “explaining how a graph of the results should be used to determine a value is a skill which candidates need to practice”.",
-      },
-      {
-        k: "note",
-        label: "If the question were asked differently",
-        text: "Areas appear in three costumes. **Counting squares** on a printed grid (each square worth its width × height in unit quantities). **Trapezium strips** for velocity changing in straight segments (January 2025 Q8). **Equality of areas** as a physics statement: October 2024 Q19(b)(i) proves a diver returns to the surface because the area below the time axis equals the area above — total displacement zero — and the report notes that candidates who answered “final velocity is zero” or “the gradient is zero” scored nothing.",
+        label: "Not accepted",
+        text: "Reading the velocity at the point and dividing it by the time — the examiner report records that this approach scored no marks: v ÷ t at a point is not a gradient, a ==tangent== is. And *the final velocity is zero* or *the gradient is zero* as an explanation of returning to the start — zero displacement means the ==areas== cancel.",
       },
     ],
   },
@@ -212,44 +186,44 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     title: "Scalars and vectors",
     blocks: [
       {
-        k: "p",
-        text: "A scalar has magnitude only; a vector has magnitude ==and direction==. That single word decides the multiple-choice item that opens almost every WPH11 paper — and the same dozen quantities are recycled year after year, so learn the lists once and the mark is yours for the rest of the course.",
+        k: "def",
+        term: "Scalar",
+        text: "A quantity with ==magnitude only==: distance, speed, mass, energy, work done, power, density, time, temperature.",
+      },
+      {
+        k: "def",
+        term: "Vector",
+        text: "A quantity with magnitude ==and direction==: displacement, velocity, acceleration, force, weight, tension, thrust, momentum, moment of a force, gravitational field strength.",
       },
       {
         k: "table",
-        caption: "The quantities WPH11 has actually asked about, 2019–2025",
-        head: ["Vectors (magnitude *and* direction)", "Scalars (magnitude only)"],
+        caption: "The pairs the papers recycle",
+        head: ["Vector (magnitude *and* direction)", "Scalar partner (magnitude only)"],
         rows: [
           ["displacement", "distance"],
           ["velocity, acceleration", "speed"],
           ["force, weight, tension, thrust", "mass"],
-          ["momentum (October 2022 Q2)", "energy, work done, kinetic energy"],
-          ["moment of a force (January 2023 Q1 — it has a direction of turning)", "power (January 2023 Q1)"],
+          ["momentum", "kinetic energy"],
+          ["moment of a force (it has a direction of turning)", "work done"],
           ["gravitational field strength", "density, time, temperature"],
-          ["—", "strain, stress, Young modulus (October 2024 Q2)"],
+          ["—", "strain, stress, Young modulus"],
         ],
       },
       {
         k: "p",
-        text: "==Vector notation==: in print, a vector is written in bold (**F**) or with an arrow above it (F⃗), while its magnitude is plain italic (F). Edexcel uses the arrow form in questions about equilibrium — January 2025 Q5 writes the whole condition as one vector sentence: **W**⃗ + **T**⃗₁ + **T**⃗₂ = **0**⃗. An equation like that is a statement about arrows: three vectors of different lengths, added nose-to-tail, close back on themselves.",
+        text: "==Vector notation==: in print a vector is written in bold (**F**) or with a small arrow above the letter, while its magnitude is plain italic (F). An equilibrium condition written as one vector sentence — **W** + **T**₁ + **T**₂ = **0** — is a statement about arrows: three vectors of different lengths, added nose-to-tail, closing back on themselves. Written as bare numbers it is false, because W, T₁ and T₂ point in different directions; that is exactly what the vector-equation multiple-choice item tests, and only the form with everything summing to **0** survives.",
       },
       {
-        k: "worked",
-        title: "Past paper · WPH11 October 2023 Q9 — the vector equation for equilibrium",
-        question:
-          "A box of weight W hangs in equilibrium from two ropes with tensions T₁ and T₂. Which is a vector expression relating the forces on the box? (1)  A  W + T₁ = T₂   B  W + T₂ = T₁   C  W = T₁ + T₂   D  W + T₁ + T₂ = 0",
-        steps: [
-          "Equilibrium means the vector sum of all forces on the box is zero — a statement about direction as well as size",
-          "Options A, B and C add the forces as if they were numbers, ignoring that W, T₁ and T₂ point in different directions",
-          "Only D is written as a vector equation, and its meaning is correct: drawn nose-to-tail, the three arrows close a triangle",
+        k: "bullets",
+        items: [
+          "The unit test is a quick sieve: a unit carrying a direction-bearing quantity — N, N s, N m — suggests a vector. The hard version offers J, kg, N and W and wants the ==newton==, the unit of a vector.",
+          "The pairs most often confused: the **moment of a force** is a vector (it has a turning direction — clockwise or anticlockwise), **work done** is not; **momentum** is a vector, **kinetic energy** is not; **weight** is a vector, **mass** is not.",
         ],
-        answer:
-          "D — the June 2025 paper (Q5) asks the identical question with a submarine, and the answer is the identical sentence.",
       },
       {
         k: "note",
-        label: "If the question were asked differently",
-        text: "The pairs most often confused: **moment of a force** is a vector (it has a turning direction — clockwise or anticlockwise), **work done** is not; **momentum** is a vector, **kinetic energy** is not; **weight** is a vector, **mass** is not. The unit test is a giveaway: a unit containing a direction-bearing quantity (N, N s, N m) suggests a vector — but October 2025 Q1 asks it the hard way, offering J, kg, N and W and wanting the newton, the unit of a vector.",
+        label: "Not accepted",
+        text: "*Speed* written for *velocity*, or *distance* for *displacement* — the direction is the whole distinction, and the multiple-choice options rely on it.",
       },
     ],
   },
@@ -260,13 +234,9 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     title: "Resolving a vector into components",
     blocks: [
       {
-        k: "p",
-        text: "Any vector can be split into two perpendicular components that add to give it back. For a force F at angle θ to a reference direction, the component ==along== that direction is F cos θ and the component ==at right angles== to it is F sin θ. Which is which depends entirely on where θ is measured from — the January 2024 paper measures from the vertical and wants cos where the October papers measure from the horizontal and want sin.",
-      },
-      {
         k: "eq",
-        eq: "F_parallel = F cos θ        F_perpendicular = F sin θ",
-        note: "Check with a special case: at θ = 0° the vector lies entirely along the reference direction, so the parallel component must be the full F — and cos 0° = 1. That single sanity check tells you which function is which, whatever the diagram measures θ from.",
+        eq: "F~parallel~ = F cos θ        F~perpendicular~ = F sin θ",
+        note: "The component ==along== a reference direction and the component ==at right angles== to it. Which function is which depends entirely on where θ is measured from — and one sanity check settles it every time: at θ = 0° the vector lies entirely along the reference direction, so the parallel component must be the full F, and cos 0° = 1.",
       },
       {
         k: "figure",
@@ -274,34 +244,29 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         caption:
           "Left: resolving a force at 35° into horizontal and vertical components. Right: the same forces added nose-to-tail to find a resultant — the two skills are inverses of each other.",
       },
+      { k: "h", text: "The measured angle decides sin or cos" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2025 Q10 — the traffic lights",
-        question:
-          "Traffic lights of weight W hang from a wire passing over two supports, each side of the wire making an angle θ with the horizontal. Write an expression for the tension T in each side of the wire. (1)",
-        steps: [
-          "The vertical component of each tension is T sin θ (θ is measured from the horizontal)",
-          "Two sides of the wire pull up, and together they support the weight: 2T sin θ = W",
+        k: "bullets",
+        items: [
+          "θ measured ==from the horizontal==: the horizontal component is F cos θ and the vertical component is F sin θ.",
+          "θ measured ==from the vertical==: the roles swap — the vertical component is F cos θ and the horizontal component is F sin θ.",
+          "A weight hanging from a wire passing over two supports, each side at θ to the horizontal: each tension pulls up with T sin θ, and two sides share the weight (**2T sin θ = W**), so **T = W ÷ (2 sin θ)**.",
+          "The identical physics with the angle given to the vertical posts instead: the vertical component of each tension is T cos θ, so **2T cos θ = W** and **T = W ÷ (2 cos θ)** — same equilibrium, one different measured angle, deliberately set as the same trap twice.",
         ],
-        answer:
-          "T = W/(2 sin θ) — option B. The distractors are the two classic slips: 2W sin θ (multiplying instead of dividing) and the cos versions (measuring θ from the wrong direction).",
       },
+      { k: "h", text: "Components are the engine inside half the syllabus" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2024 Q6 — the bird on the string",
-        question:
-          "A bird of weight W stands at the middle of a string between two posts; the string makes 80° with each post (i.e. 10° below the horizontal on each side). Which expression gives the tension T in each side? (1)",
-        steps: [
-          "Here the angle given is with the *vertical* posts, so the vertical component of each tension is T cos 80° — not sin",
-          "Equilibrium vertically: 2T cos 80° = W",
+        k: "bullets",
+        items: [
+          "**On a slope**: the component of g along a 14° incline is g sin 14° = 2.4 m s⁻², fed straight into v² = u² + 2as; with friction absent the acceleration along any slope is ==a = g sin θ==.",
+          "**At an angle to the motion**: work done = F cos θ × d — only the component along the displacement does work (statement 17).",
+          "**In a projectile** the launch velocity splits into v cos θ horizontally and v sin θ vertically (statement 7).",
         ],
-        answer:
-          "T = W/(2 cos 80°) — option C. Same physics as the traffic lights, one different measured angle — and the report notes candidates who reached for sin “should be cos and should form the denominator”.",
       },
       {
         k: "note",
-        label: "If the question were asked differently",
-        text: "Components are the engine inside half the syllabus. **On a slope** (January 2025 Q12): the component of g along a 14° incline is g sin 14° = 2.37 m s⁻², fed straight into v² = u² + 2as; October 2021 Q13(b) asks you to *show that* a = g sin θ when friction is absent. **At an angle to the motion** (October 2023 Q10): work done = F cos θ × d, giving 30 × cos 40° × 5 = 115 J. **In a v–t graph** the same trigonometry appears as velocity components of a projectile (statement 7). The two-question pair above — sin measured from the horizontal, cos measured from the vertical — is deliberately the same trap twice.",
+        label: "Not accepted",
+        text: "Reaching for sin where the angle is measured from the vertical — the examiner report records candidates who used sin *where it should be cos and should form the denominator*. And reading a calliper-style angle off the wrong reference line: always ask *measured from where?*",
       },
     ],
   },
@@ -313,7 +278,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "Two skills, and the question tells you which one it wants: *at any angle* → a ==scaled vector drawing==; *at right angles* → ==calculation== with Pythagoras. Since 2022 every paper has carried one scale-diagram question (October 2024: 2 marks; January 2025: 5; October 2025: 4), and both reports say the same thing — many candidates drew a free-body diagram instead of a vector triangle, and scored for one mark at most.",
+        text: "Two skills, and the question tells you which one it wants: *at any angle* means a ==scaled vector drawing==; *at right angles* means ==calculation== with Pythagoras. Every paper carries one scale-diagram question, and the examiner reports say the same thing each time — many candidates drew a free-body diagram instead of a vector triangle, and scored one mark at most.",
       },
       {
         k: "steps",
@@ -321,45 +286,32 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         items: [
           {
             title: "Choose a scale",
-            text: "Big enough that the smallest force is still a long line — the mark schemes demand arrows “at least 6 cm” (October 2023) or “at least 8 cm” (June 2024) representing the longest force, so a scale like 1 cm : 100 N. State it.",
+            text: "Big enough that the smallest force is still a long line — the mark schemes demand arrows *at least 6 cm* (sometimes 8 cm) representing the longest force, so a scale like 1 cm : 100 N. State the scale.",
           },
           {
             title: "Draw tip-to-tail",
-            text: "First vector as an arrow; second vector starting from the *tip* of the first, at the true angle between them. Label each arrow with the force it represents (F, or 70 N, or “wind 350 N”) — never with its drawn length in cm.",
+            text: "First vector as an arrow; second vector starting from the *tip* of the first, at the true angle between them. Label each arrow with the force it represents (F, or 70 N, or *wind 350 N*) — never with its drawn length in cm.",
           },
           {
             title: "Close the triangle",
-            text: "The resultant runs from the *tail of the first* vector to the *tip of the last*. Its arrow points that way round. Measure its length and convert back through the scale; measure the angle with a protractor and state the direction (“30° above the horizontal”, “68° from north towards the east”).",
+            text: "The resultant runs from the *tail of the first* vector to the *tip of the last*, and its arrow points that way round. Measure its length and convert back through the scale; measure the angle with a protractor and state the direction (*30° above the horizontal*).",
           },
         ],
       },
+      { k: "h", text: "Perpendicular vectors — by calculation" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2025 Q18(a) — the submarine",
-        question:
-          "A submarine's engine produces a horizontal force of 70 N forwards. The drag force is 43 N, directed backwards and downwards at 25° to the horizontal. Determine the resultant force using a scaled vector diagram. (5)",
-        steps: [
-          "Draw the 70 N forward arrow to scale (MS: “at least 3.5 cm long”, labelled)",
-          "From its tip, draw the 43 N drag arrow at 25° below the backwards direction, tip-to-tail",
-          "The resultant closes the triangle from the start of the first arrow to the tip of the second; measure it and the angle it makes",
-          "Check by calculation: horizontally 70 − 43 cos 25° = 31.0 N; vertically 43 sin 25° = 18.2 N downwards; magnitude √(31.0² + 18.2²) = 36.0 N at tan⁻¹(18.2/31.0) = 30.4° below the forward direction",
+        k: "bullets",
+        items: [
+          "Horizontal and vertical components combine by Pythagoras: **R = √(F~x~² + F~y~²)**, with the direction from **tan θ = F~y~ ÷ F~x~**.",
+          "Worked magnitude: 2300 N horizontal with 1200 N vertical gives R = √(2300² + 1200²) ≈ 2600 N — drawn answers are judged against printed tolerances, calculated answers against the usual significant-figure rules.",
+          "Where the components pull ==against== each other on one axis, subtract before squaring: 15 000 kg m s⁻¹ east with 14 500 kg m s⁻¹ west leaves 500 kg m s⁻¹ east, and a 200 kg m s⁻¹ north component makes the resultant √(500² + 200²).",
+          "If you do the calculation on a *drawing* question, the mark schemes still award the answer mark — but the construction marks are only for the triangle, so draw it anyway.",
         ],
-        answer:
-          "R ≈ 36 N at about 30° below the horizontal (printed tolerances: 34–38 N and ± 2° — your drawing is judged against them, so use a sharp pencil, a ruler, and measure to the nearest millimetre and degree).",
       },
       {
         k: "note",
-        label: "Examiner's report — January 2025, Q18(a)",
-        text: "“Many candidates drew a free-body force diagram rather than a scaled vector diagram… Many candidates labelled their vectors with the length of the arrow they had drawn, rather than with the size or description of the force that each arrow represented… It was not uncommon for candidates who drew an appropriate triangle to draw the resultant force vector pointing in the wrong direction.” A free-body diagram shows all forces on one object from one point; a vector triangle chains them tip-to-tail. Read the command: “by drawing a scaled vector diagram” means the triangle.",
-      },
-      {
-        k: "p",
-        text: "For perpendicular vectors, calculate. October 2024 Q11 gives 2300 N horizontally and 1200 N vertically: the resultant is √(2300² + 1200²) = 2594 N ≈ 2600 N, with the printed tolerance 2550–2650 N. If you do the calculation on a *drawing* question, the mark schemes still award the answer mark (“whichever method candidates used… marking point 2 was scored”, October 2024) — but the construction marks are only for the triangle, so draw it anyway.",
-      },
-      {
-        k: "note",
-        label: "If the question were asked differently",
-        text: "Resultants come back as **momentum**: June 2025 Q7 combines 15 000 kg m s⁻¹ east with 14 500 kg m s⁻¹ west and 200 kg m s⁻¹ north — the answer is √((15 000 − 14 500)² + 200²), treating the east–west pair first. They come back as **displacements** (June 2019 Q9: a 20 km/12 km journey resolved by scale drawing). And they come back reversed — January 2023 Q6 gives you the resultant and wants the vector triangle that produced it. In every costume the rule is the same: tip-to-tail, label the arrows, state magnitude *and* direction.",
+        label: "Not accepted",
+        text: "A free-body force diagram offered as the scaled vector diagram — a free-body shows all the forces on one object from one point; the triangle chains them ==tip-to-tail==. Labelling arrows with their drawn length in cm. A resultant drawn from the tip of the first arrow to the tail of the last — it points the wrong way.",
       },
     ],
   },
@@ -370,8 +322,14 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     title: "Projectiles — the two independent motions",
     blocks: [
       {
-        k: "p",
-        text: "A projectile is any object moving freely under gravity — the only force on it is its weight. Its two motions run on separate clocks that share one reading: ==horizontal== motion has constant velocity (a = 0, no air resistance), ==vertical== motion has constant acceleration (a = g downwards). Time is the bridge: the flight time computed from the vertical column is the same time the horizontal column must use.",
+        k: "def",
+        term: "Projectile",
+        text: "Any object moving ==freely under gravity==: the only force on it is its weight. Its two motions run on separate clocks that share one reading — the ==horizontal== motion has constant velocity (a = 0), the ==vertical== motion has constant acceleration (a = g downwards).",
+      },
+      {
+        k: "eq",
+        eq: "Horizontal: a = 0, s = v~H~t        Vertical: a = −9.81 m s⁻², s = u~V~t + ½at²        v~H~ = v cos θ, u~V~ = v sin θ",
+        note: "Time is the bridge: the flight time computed from the vertical column is the same time the horizontal column must use. Set the two columns up before touching the calculator — one labelled column per direction is the discipline the examiners keep asking for by name.",
       },
       {
         k: "figure",
@@ -379,51 +337,39 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         caption:
           "The path of a projectile launched at 40°: the horizontal velocity never changes, the vertical velocity loses g every second, and only time belongs to both columns.",
       },
+      { k: "h", text: "The two-column method" },
       {
-        k: "eq",
-        eq: "Horizontal: a = 0, s = v_H t        Vertical: a = −9.81 m s⁻², s = u_V t + ½at²        v_H = v cos θ, u_V = v sin θ",
-        note: "Set up the columns before touching the calculator — the January 2023 report credits exactly this discipline.",
-      },
-      {
-        k: "worked",
-        title: "Past paper · WPH11 October 2022 Q15 — the ball and the wall",
-        question:
-          "A boy throws a ball at 9.70 m s⁻¹ and 49.0° to the horizontal, from ground level, at a wall 5.00 m away whose top is 3.00 m above the release point. (a) Show that the ball reaches the wall in about 0.8 s. (3) (b) Deduce whether the ball goes over the wall. (4)",
-        steps: [
-          "(a) v_H = 9.70 cos 49.0° = 6.36 m s⁻¹; horizontally a = 0 so s = v_H t → t = 5.00 ÷ 6.36",
-          "t = **0.786 s** (one more s.f. than “about 0.8 s”)",
-          "(b) Vertical column: u_V = 9.70 sin 49.0° = 7.32 m s⁻¹; s = u_V t + ½at² = 7.32 × 0.786 − 4.905 × 0.786²",
-          "s = 5.75 − 3.03 = 2.72 m at the wall",
-          "The deduce mark: 2.72 m < 3.00 m",
+        k: "bullets",
+        items: [
+          "**Column 1 — vertical.** Resolve the launch velocity: u~V~ = v sin θ. List what the column knows (u~V~, a = −9.81, s or t) and pick the SUVAT equation that avoids the unknown.",
+          "**Column 2 — horizontal.** a = 0 always, so s = v~H~t with v~H~ = v cos θ — no SUVAT needed, the velocity never changes.",
+          "When the time is the unknown, take it from the column that has enough data — a horizontal launch from a height of 12 m gives 12 = ½ × 9.81 × t², then the horizontal distance is v~H~ × t.",
+          "The ==time== is the only quantity both columns share — never move a velocity between columns.",
         ],
-        answer:
-          "The ball does not clear the wall — and the final mark is for writing that comparison, not for stopping at 2.72.",
       },
+      { k: "h", text: "Deduce questions — the comparison is the mark" },
       {
-        k: "worked",
-        title: "Past paper · WPH11 January 2023 Q11 — the stone off the cliff",
-        question:
-          "A stone is projected horizontally at 3.8 m s⁻¹ from a cliff top 12 m above the sea. Calculate the horizontal distance to where it hits the water. (3)",
-        steps: [
-          "Vertical column first (u_V = 0): 12 = ½ × 9.81 × t² → t = √(12 ÷ 4.905) = 1.56 s",
-          "Horizontal column (a = 0): s = v_H t = 3.8 × 1.56",
+        k: "bullets",
+        items: [
+          "*Does it clear the wall?* Compute the height at the wall: the horizontal column gives the time (t = distance ÷ v~H~), the vertical column gives the height at that time.",
+          "Then finish with the explicit comparison and the verdict in words: the height at the wall = 2.7 m, the wall's top = 3.0 m, 2.7 < 3.0 — the ball does not clear the wall.",
+          "Stopping at the computed height earns nothing for the final mark — ==the comparison sentence== is the marking point.",
         ],
-        answer:
-          "s = 5.9 m. The report's verdict on this question: candidates “used a = g in the horizontal plane, or u = 3.8 m s⁻¹ in the vertical plane” — two columns prevent both.",
       },
+      { k: "h", text: "Angled launches — impact speed and angle" },
       {
-        k: "p",
-        text: "Angled launches add one twist: the vertical velocity at the top is zero, the horizontal velocity never changes, and at any instant the two recombine by Pythagoras. October 2024 Q15(b) drops an athlete 1.4 m past the bar while he carries 3.44 m s⁻¹ horizontally: v_V = √(2 × 9.81 × 1.4) = 5.24 m s⁻¹, so the landing speed is √(5.24² + 3.44²) = 6.3 m s⁻¹ at tan⁻¹(5.24/3.44) = 57° to the horizontal. The report's warning: candidates who treated the vertical component as the final velocity “used incorrect trigonometry to determine the angle… so tended to score no further marks”.",
+        k: "bullets",
+        items: [
+          "At the top of the path the ==vertical== velocity is zero; the horizontal velocity never changed.",
+          "At any instant the two components recombine by Pythagoras: landing speed = √(v~V~² + v~H~²), at the angle tan⁻¹(v~V~ ÷ v~H~) to the horizontal.",
+          "The vertical component at landing comes from the drop: v~V~ = √(2 × 9.81 × Δh) when the launch is horizontal.",
+          "A larger launch speed leaves v~V~ unchanged and grows v~H~, so tan(impact angle) = v~V~ ÷ v~H~ falls — the ball meets the ground at a ==shallower== angle.",
+        ],
       },
       {
         k: "note",
-        label: "Examiner's report — June 2022, Q18(b)",
-        text: "“The most common incorrect approach was to find the time to maximum height and double it, giving a time that is too long.” Doubling works only when the projectile lands at its launch height. The June 2022 golfer lands 11 m *below* the launch point, so the full quadratic is needed: 11 = 34.1t − 4.91t² → t = 6.62 s (the other root, 0.34 s, is the pass through height 11 m on the way up).",
-      },
-      {
-        k: "note",
-        label: "If the question were asked differently",
-        text: "The papers' favourite variants: **add the launch height** — January 2025 Q19 lands a projectile 2.0 km above sea level and the report says candidates “forgot to add the initial height of the projectile”; the answer is 961 m + 2000 m = 3.0 × 10³ m. **Angle of impact** — October 2023 Q13(b): a larger launch speed leaves v_V unchanged and grows v_H, so tan(impact angle) = v_V/v_H falls — the ball meets the ground at a *shallower* angle. **Why SUVAT is valid at all** — October 2025 Q19(a): the shot is dense and massive, so drag is negligible against its weight and the only acceleration is the constant g. **Range reasoning** — January 2025 Q19(b): raising the launch angle grows v_V (longer flight) but shrinks v_H (slower across); range = v_H × t, and the maximum sits where those competing effects balance — mentioning “45°” earns nothing.",
+        label: "Not accepted",
+        text: "Finding the time to maximum height and ==doubling it== — that works only when the projectile lands at its launch height; a golfer landing 11 m below the launch point needs the full quadratic. Forgetting to ==add the launch height== above sea level. Using a = g in the horizontal column, or u = v~H~ in the vertical column — the two-column layout prevents both, which is exactly why the examiners recommend it.",
       },
     ],
   },

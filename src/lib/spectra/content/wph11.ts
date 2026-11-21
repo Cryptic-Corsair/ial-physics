@@ -15,13 +15,15 @@ export const WPH11_TOPICS: Topic[] = [
     label: "Topic 1",
     title: "Forces, motion and energy",
     summary:
-      "The whole of WPH11 mechanics — motion graphs and SUVAT, vectors and projectiles, Newton's laws and terminal velocity, momentum, moments, work, energy and power — statement by statement, with real past-paper questions worked in full.",
-    minutes: 58,
+      "The whole of WPH11 mechanics — motion graphs and the equations of motion, vectors and projectiles, Newton's laws and terminal velocity, momentum, moments, work, energy and power — statement by statement, written the way the mark schemes mark it.",
+    /* minutes scaled with the register rebuild (2026-11-22): the
+       scenario chains add depth per statement, same as t02's step */
+    minutes: 60,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Unit 1 of IAL Physics is the scenario paper: every session wraps the same specification statements in a fresh context — a bungee jump, a crane, a submarine, a shot put, a bascule bridge. The physics never changes; the dressing does. This note teaches each statement from the ==official specification==, then shows exactly how WPH11/01 has examined it since 2019, quoting the ==mark schemes' own wording== and the ==Principal Examiner's reports==.",
+        text: "Unit 1 of IAL Physics is the scenario paper: every session wraps the same specification statements in a fresh context — a bungee jump, a crane, a submarine, a shot put, a bascule bridge. The physics never changes; the dressing does. This note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
       },
       {
         k: "def",
@@ -40,25 +42,14 @@ export const WPH11_TOPICS: Topic[] = [
         note: "All four appear on the WPH11 data sheet. The marks are never for remembering them — they are for choosing the right one, converting units, and finishing with a comparison and a conclusion when the command word is *deduce*.",
       },
       {
-        k: "ex",
-        title: "Real question · WPH11 October 2023 Q11 — rocket launch",
-        steps: [
-          "A rocket of mass 5.0 × 10^6^ kg lifts off with engine thrust 7.3 × 10^7^ N. Calculate the initial acceleration. (3)",
-          "W = mg = 5.0 × 10^6^ × 9.81 = 4.91 × 10^7^ N — the thrust is *not* the resultant force",
-          "ΣF = thrust − weight = 7.3 × 10^7^ − 4.91 × 10^7^ = 2.39 × 10^7^ N",
-          "a = ΣF/m = 2.39 × 10^7^ ÷ 5.0 × 10^6^",
-        ],
-        answer: "a = 4.8 m s^−2^ (2 s.f., unit attached)",
-      },
-      {
         k: "p",
-        text: "The examiner's reports say the same things every single series: candidates lose the final mark of a *deduce* question by ==not writing the comparison==; they lose calculation marks to ==truncation instead of rounding==; they answer force questions ==with energy stories==; and they quote definitions almost right — *the weight acts at the centre of gravity* instead of *may be taken to act*. This page fixes the wording of every one of those.",
+        text: "Each situation — a rocket lifting off, a ball sinking towards terminal velocity, a bridge balanced on two supports — is built up as ==its own short section==, one logical step per bullet, cause before effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes: the slogan that scores nothing, the cosine that was never needed, the energy story in a forces question.",
       },
       {
         k: "tips",
         items: [
-          "A 3-mark explanation almost always needs **3 distinct points** — the June 2025 report says exactly this.",
-          "“Show that X ≈ 300 N” means quote **at least one more significant figure** than 300 — 281 N or 296 N, never 300 exactly. Reverse working caps you at 2 of 3 marks.",
+          "A 3-mark explanation almost always needs **3 distinct points** — the examiners' reports say exactly this.",
+          "*Show that X ≈ 300 N* means quote **at least one more significant figure** than 300 — 281 N or 296 N, never 300 exactly. Reverse working caps you at 2 of 3 marks.",
           "After a show-that, **use the given value** in later parts — ecf protects you, and the question expects it.",
           "g = 9.81 (or 9.8). Using 10 costs one mark per question. Missing units cost the final calculation mark.",
         ],
@@ -66,10 +57,10 @@ export const WPH11_TOPICS: Topic[] = [
       {
         k: "recap",
         items: [
-          "SUVAT only when acceleration is constant — on a curved slide, switch to energy conservation.",
+          "The equations of motion only when acceleration is constant — on a curved slide, switch to energy conservation.",
           "Projectiles: two columns, horizontal a = 0, vertical a = g, time is the bridge.",
           "ΣF = ma with the *resultant* force — draw the free-body diagram first.",
-          "Momentum is conserved in a closed system; say “total”, say “system”, say the condition.",
+          "Momentum is conserved in a closed system; say *total*, say *system*, say the condition.",
           "Deduce questions end with a number, a comparison (<, >, =, ≈) and a sentence.",
         ],
       },

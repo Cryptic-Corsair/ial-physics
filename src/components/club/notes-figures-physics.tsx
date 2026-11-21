@@ -181,7 +181,7 @@ export function FigPhTerminal({ accent = "#339AF0" }: { accent?: string }) {
       <Arrow />
       <path d="M 52 242 Q 140 60 320 52 L 520 52" fill="none" stroke={accent} strokeWidth="3.6" strokeLinecap="round" className="fig-draw" pathLength={1} />
       <line x1={340} y1={242} x2={340} y2={52} stroke={FAINT} strokeWidth="1.8" strokeDasharray="5 7" />
-      <text x={344} y={230} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">terminal velocity: gradient → 0, ΣF = 0</text>
+      <text x={344} y={230} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">terminal velocity: gradient falls to 0, ΣF = 0</text>
       <line x1={52} y1={120} x2={92} y2={84} stroke={INK} strokeWidth="2.2" markerEnd="url(#pharrow)" />
       <text x={96} y={80} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">initial gradient ≈ g (drag ≈ 0)</text>
       <text x={180} y={160} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gradient decays as drag grows —</text>

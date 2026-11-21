@@ -27,11 +27,11 @@ export const NOTES_DOCS: NotesDoc[] = [
     intro: [
       {
         k: "p",
-        text: "WPH11/01 is the scenario paper: the same 22 specification statements, dressed each session in a new context — a bungee jump, a crane, a submarine, a bascule bridge. This note teaches every statement of Mechanics in specification order: the ==SUVAT equations== and the three ==motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's laws== and ==terminal velocity==, ==momentum==, ==moments==, then ==work, energy, power and efficiency==.",
+        text: "WPH11/01 is the scenario paper: the same 22 specification statements, dressed each session in a new context — a bungee jump, a crane, a submarine, a bascule bridge. This note teaches every statement of Mechanics in specification order, written ==the way the mark schemes mark it==: the ==equation is stated first== and then unpacked in a sentence, the working symbols — =, ×, >, < — sit inside the sentences, and every force is named with its owner and its direction. The sections cover the ==equations of motion== and the three ==motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's laws== and ==terminal velocity==, ==momentum==, ==moments==, then ==work, energy, power and efficiency==.",
       },
       {
         k: "p",
-        text: "Every section carries the same apparatus: the official statement verbatim, the concepts, then ==real WPH11 questions worked in full== from the official mark schemes — with the ==examiners' own words== beside them on what earns and loses the marks, and a note on ==how the question changes costume== when it is asked differently. Learn the physics once here, and the dressing never surprises you again.",
+        text: "Each situation — a bungee jump below the equilibrium point, a truck on an escape lane, a ball sinking towards terminal velocity — is built up as ==its own short section==, one logical step per bullet, so the pattern and its logic can be followed from cause to effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes, and the note closes with ==the marking rules that never change== from one series to the next.",
       },
     ],
     sections: [...SECTIONS_PH01_A, ...SECTIONS_PH01_B, ...SECTIONS_PH01_C],

@@ -289,7 +289,7 @@ function NotesEditorialBody({
   const spentHere = topicSeconds(time, `${unit.code}/${doc.topicId}`);
   const stats = [
     plural(doc.sections.length, "spec section"),
-    plural(count("worked"), "worked example"),
+    plural(count("eq"), "equation band"),
     plural(count("figure"), "diagram"),
     ...(spentHere >= 60 ? [`${fmtClock(spentHere)} of your time here`] : []),
   ];
