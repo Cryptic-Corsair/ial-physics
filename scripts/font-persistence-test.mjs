@@ -41,7 +41,7 @@ for (const id of HEAD) {
     (payload) => localStorage.setItem('reaction-club-prefs-v1', payload),
     JSON.stringify({ theme: 'classic', iface: 'gallery', headFont: id, bodyFont: 'quicksand', v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   const got = await page.evaluate(() => ({
     head: document.documentElement.dataset.head,
     ff: getComputedStyle(document.documentElement).getPropertyValue('--font-display'),
@@ -65,7 +65,7 @@ for (const id of BODY) {
     (payload) => localStorage.setItem('reaction-club-prefs-v1', payload),
     JSON.stringify({ theme: 'classic', iface: 'gallery', headFont: 'fredoka', bodyFont: id, v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   const got = await page.evaluate(() => ({
     body: document.documentElement.dataset.body,
     ff: getComputedStyle(document.documentElement).getPropertyValue('--font-body'),
@@ -91,7 +91,7 @@ for (const id of BODY) {
     },
     JSON.stringify({ theme: 'classic', iface: 'gallery', headFont: 'fraunces', bodyFont: 'figtree', v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   await page.reload({ waitUntil: 'networkidle' });
   const got = await page.evaluate((k) => JSON.parse(localStorage.getItem(k) || 'null'), KEY);
   check(
@@ -115,7 +115,7 @@ for (const id of BODY) {
     },
     JSON.stringify({ theme: 'classic', iface: 'gallery', headFont: 'comic-sans', bodyFont: 42, v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   /* load() sanitizes for DISPLAY (applyPrefs corrects the dataset so
      the factory pair renders) without rewriting the save — picks
      persist, loads don't (same contract the theme suite asserts) */

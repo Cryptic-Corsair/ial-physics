@@ -1,5 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   the homepage — the showcase landing (promoted from /portal to /).
+   the showcase landing — RETIRED from the route table (2026-11-22:
+   both homepages came off and the desk at / is the main page). The
+   tree stays: it hosts the shared kit the alternate leaves import
+   (FlaskMark, ialData, lib/motion, lib/still) and keeps the showcase
+   restorable — the branch keep/homepages carries the old route.
 
    Everything here is scoped under .portal-root so the workspace design
    system in globals.css stays untouched. Since 2026-11-17 the factory

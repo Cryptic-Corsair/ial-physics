@@ -29,7 +29,7 @@ const ctx = await browser.newContext({
 const page = await ctx.newPage();
 
 const openDrawer = async () => {
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(1200);
   await page.click('[aria-label="Customize the site"]');
   await page.waitForTimeout(600);
@@ -75,7 +75,7 @@ const kicker = async () => {
 };
 
 // — fresh 1280 → factory XL: sliders born at 150%, XL lit —
-await page.goto(url + '/club', { waitUntil: 'domcontentloaded' });
+await page.goto(url + '/', { waitUntil: 'domcontentloaded' });
 await page.evaluate((k) => localStorage.removeItem(k), KEY);
 await openDrawer();
 await unfoldAdv();

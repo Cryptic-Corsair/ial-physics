@@ -55,7 +55,7 @@ const browser = await chromium.launch({ headless: true });
     },
     JSON.stringify({ theme: 'classic', iface: 'gallery', v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   let cls = await classesOf(page);
   check('classic+gallery first load wears classic', cls.includes('classic') && !cls.includes('dark'));
   await page.reload({ waitUntil: 'networkidle' });
@@ -79,7 +79,7 @@ const browser = await chromium.launch({ headless: true });
     },
     JSON.stringify({ theme: 'dark', iface: 'gallery', v: 3, mood: OTHER_MOOD }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   let mood = await page.evaluate(() => document.documentElement.dataset.mood);
   check(`cached mood renders (picked ${OTHER_MOOD}, today is ${DAY_MOOD})`, mood === String(OTHER_MOOD), `got ${mood}`);
   await page.reload({ waitUntil: 'networkidle' });
@@ -103,7 +103,7 @@ const browser = await chromium.launch({ headless: true });
     },
     JSON.stringify({ theme: 'dark', iface: 'gallery', v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   const mood = await page.evaluate(() => document.documentElement.dataset.mood);
   check('legacy save falls back to today\u2019s mood', mood === String(DAY_MOOD), `got ${mood}`);
   const st = await storedPrefs(page);
@@ -127,7 +127,7 @@ const browser = await chromium.launch({ headless: true });
     },
     JSON.stringify({ theme: 'classic', iface: 'editorial', v: 3 }),
   );
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   let cls = await classesOf(page);
   check('editorial+classic displays as light (no classic class)', !cls.includes('classic') && !cls.includes('dark'));
   const st0 = await storedPrefs(page);
@@ -165,8 +165,8 @@ const browser = await chromium.launch({ headless: true });
       JSON.stringify({ theme: 'classic', iface: 'gallery', v: 3 }),
     );
   }
-  await pageA.goto(url + '/club', { waitUntil: 'networkidle' });
-  await pageB.goto(url + '/club', { waitUntil: 'networkidle' });
+  await pageA.goto(url + '/', { waitUntil: 'networkidle' });
+  await pageB.goto(url + '/', { waitUntil: 'networkidle' });
   /* pick Night on B through the navbar dropdown */
   await pageB.click('button[aria-label^="Theme:"]');
   await pageB.click('[aria-label="Appearance themes"] button:has-text("Night")');
@@ -191,7 +191,7 @@ const browser = await chromium.launch({ headless: true });
 {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const page = await ctx.newPage();
-  await page.goto(url + '/club', { waitUntil: 'domcontentloaded' });
+  await page.goto(url + '/', { waitUntil: 'domcontentloaded' });
   await page.evaluate((k) => localStorage.setItem(k, JSON.stringify({ theme: 'pistachio', iface: 'gallery', v: 3 })), KEY);
   await page.reload({ waitUntil: 'networkidle' });
   const cls = await classesOf(page);

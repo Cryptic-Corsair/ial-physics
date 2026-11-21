@@ -1,8 +1,8 @@
 // url-routing-test.mjs <url>
 // THE URL↔ROOM TEST — every room owns an accurate address:
-//  · a clean /club/… path lands in its room and the URL stays put
+//  · a clean root-form path lands in its room and the URL stays put
 //  · a legacy ?v= deep link upgrades to its path form (replaceState)
-//  · an unknown /club/… path normalizes to /club (no junk address)
+//  · an unknown path normalizes to / (no junk address)
 //  · the browser's real back/forward walks rooms (popstate re-derives)
 //  · in-app room changes push paths; the URL never drifts from the room
 import { createRequire } from 'module';
@@ -46,13 +46,13 @@ const page = await ctx.newPage();
 
 /* — 1 · clean paths land in their room, address stays put — */
 const cleanPaths = [
-  ['/club', 'home'],
-  ['/club/spec', 'spec'],
-  ['/club/pack', 'pack'],
-  ['/club/sticker', 'sticker'],
-  ['/club/legal', 'legal'],
-  ['/club/wch12', 'unit-WCH12'],
-  ['/club/notes/wch11-t02', 'notes-wch11-t02'],
+  ['/', 'home'],
+  ['/spec', 'spec'],
+  ['/pack', 'pack'],
+  ['/sticker', 'sticker'],
+  ['/legal', 'legal'],
+  ['/wph11', 'unit-WPH11'],
+  ['/notes/wph11-t02', 'notes-wph11-t02'],
 ];
 for (const [path, view] of cleanPaths) {
   const ok = await visit(page, path);
@@ -66,21 +66,21 @@ for (const [path, view] of cleanPaths) {
 /* the notes reader at one clause — the doc view is the same room, so
    the view id is the doc; the clause rides in the URL only */
 {
-  const ok = await visit(page, '/club/notes/wch11-t02/2.3');
+  const ok = await visit(page, '/notes/wph11-t02/24');
   const s = await stateOf(page);
   check(
-    'deep path /club/notes/wch11-t02/2.3 → notes at clause 2.3',
-    ok && s.view === 'notes-wch11-t02' && s.path === '/club/notes/wch11-t02/2.3',
+    'deep path /notes/wph11-t02/24 → notes at clause 24',
+    ok && s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02/24',
     `view=${s.view} path=${s.path}`,
   );
 }
 
 /* — 2 · legacy ?v= links upgrade to their path form — */
 {
-  await page.goto(url + '/club?v=notes&doc=wch11-t02&spec=2.3', { waitUntil: 'networkidle' });
+  await page.goto(url + '/?v=notes&doc=wph11-t02&spec=24', { waitUntil: 'networkidle' });
   const ok = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'notes-wch11-t02' && s.path === '/club/notes/wch11-t02/2.3' && s.search === '';
+    return s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02/24' && s.search === '';
   });
   const s = await stateOf(page);
   check(
@@ -89,19 +89,19 @@ for (const [path, view] of cleanPaths) {
   );
 }
 {
-  await page.goto(url + '/club?v=WCH12', { waitUntil: 'networkidle' });
+  await page.goto(url + '/?v=WPH11', { waitUntil: 'networkidle' });
   const ok = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'unit-WCH12' && s.path === '/club/wch12' && s.search === '';
+    return s.view === 'unit-WPH11' && s.path === '/wph11' && s.search === '';
   });
   const s = await stateOf(page);
-  check('legacy ?v=WCH12 upgrades to /club/wch12', ok, `view=${s.view} path=${s.path}`);
+  check('legacy ?v=WPH11 upgrades to /wph11', ok, `view=${s.view} path=${s.path}`);
 }
 {
-  await page.goto(url + '/club?v=notes', { waitUntil: 'networkidle' });
+  await page.goto(url + '/?v=notes', { waitUntil: 'networkidle' });
   const ok = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'notes-wch11-t01' && s.path === '/club/notes/wch11-t01' && s.search === '';
+    return s.view === 'notes-wph11-t01' && s.path === '/notes/wph11-t01' && s.search === '';
   });
   const s = await stateOf(page);
   check('bare legacy ?v=notes lands on the first doc', ok, `view=${s.view} path=${s.path}`);
@@ -109,30 +109,30 @@ for (const [path, view] of cleanPaths) {
 
 /* — 3 · an unknown path renders the desk and normalizes its address — */
 {
-  await page.goto(url + '/club/nonsense', { waitUntil: 'networkidle' });
+  await page.goto(url + '/nonsense', { waitUntil: 'networkidle' });
   const ok = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'home' && s.path === '/club' && s.search === '';
+    return s.view === 'home' && s.path === '/' && s.search === '';
   });
   const s = await stateOf(page);
-  check('unknown /club/nonsense → desk at /club', ok, `view=${s.view} path=${s.path}`);
+  check('unknown /nonsense → desk at /', ok, `view=${s.view} path=${s.path}`);
 }
 
 /* — 4 · the browser's real back/forward walks rooms — */
 {
-  await visit(page, '/club/notes/wch11-t02');
-  await visit(page, '/club/spec');
+  await visit(page, '/notes/wph11-t02');
+  await visit(page, '/spec');
   await page.goBack({ waitUntil: 'networkidle' });
   const backOk = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'notes-wch11-t02' && s.path === '/club/notes/wch11-t02';
+    return s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02';
   });
   const s1 = await stateOf(page);
-  check('real back from /club/spec → notes room + address', backOk, `view=${s1.view} path=${s1.path}`);
+  check('real back from /spec → notes room + address', backOk, `view=${s1.view} path=${s1.path}`);
   await page.goForward({ waitUntil: 'networkidle' });
   const fwdOk = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'spec' && s.path === '/club/spec';
+    return s.view === 'spec' && s.path === '/spec';
   });
   const s2 = await stateOf(page);
   check('real forward → spec room + address', fwdOk, `view=${s2.view} path=${s2.path}`);
@@ -140,7 +140,7 @@ for (const [path, view] of cleanPaths) {
 
 /* — 5 · in-app navigation writes the room's address (no drift) — */
 {
-  await visit(page, '/club/spec');
+  await visit(page, '/spec');
   /* the navbar's home tool — stable aria-label, in-app setView */
   const homeBtn = page.locator('[aria-label="Home"]').first();
   const present = (await homeBtn.count()) > 0;
@@ -148,11 +148,11 @@ for (const [path, view] of cleanPaths) {
     await homeBtn.click();
     const ok = await waitFor(page, async () => {
       const s = await stateOf(page);
-      return s.view === 'home' && s.path === '/club' && s.search === '';
+      return s.view === 'home' && s.path === '/' && s.search === '';
     });
     const s = await stateOf(page);
     check(
-      'in-app nav (spec → home) writes /club into the address bar',
+      'in-app nav (spec → home) writes / into the address bar',
       ok, `view=${s.view} path=${s.path} search=${s.search || '∅'}`,
     );
   } else {

@@ -47,7 +47,7 @@ await probe('/', {
   bandRow: '.portal-band-row',
   noteBody: null,
 });
-await probe('/club', {
+await probe('/', {
   kicker: null,
   lede: null,
   bandRow: null,

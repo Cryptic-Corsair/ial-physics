@@ -49,7 +49,7 @@ const gotoPortal = async () => {
   await page.waitForTimeout(1100);
 };
 const gotoClub = async () => {
-  await page.goto(url + '/club', { waitUntil: 'networkidle' });
+  await page.goto(url + '/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(1100);
 };
 const readClub = () =>
@@ -181,7 +181,7 @@ check('clamp tch ratio = type/preset', norm(r.tch), 'calc(1.6 / 1)');
 for (const extreme of [1.6, 0.8]) {
   for (const w of [600, 820, 1280]) {
     await page.setViewportSize({ width: w, height: Math.round(w * 0.78) });
-    for (const path of ['/?front', '/club']) {
+    for (const path of ['/']) {
       await page.goto(url + path, { waitUntil: 'networkidle' });
       await page.waitForTimeout(900);
       // apply the extreme the same way applyPrefs does, then reflow
