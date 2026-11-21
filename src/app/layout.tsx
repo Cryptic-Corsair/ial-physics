@@ -125,7 +125,10 @@ export const metadata: Metadata = {
       "Complete statement-by-statement notes for the Pearson Edexcel International A Level Physics spec (WPH11).",
     images: ["/og.png"],
   },
-  icons: { icon: "/favicon.svg" },
+  /* the icon URL carries a cache-busting version — favicons are
+     cached harder than any other asset, and the atom replacing the
+     flask only shows up once the browser is forced to re-fetch */
+  icons: { icon: "/favicon.svg?v=2" },
 };
 
 /* The whole-site structured data — who runs this address and what
