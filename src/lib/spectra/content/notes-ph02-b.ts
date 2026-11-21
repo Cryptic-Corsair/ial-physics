@@ -6,9 +6,12 @@ import type { SpecSection } from "../notes-types";
    first in an equation band, then unpacked in a sentence; the
    working symbols (=, ×, >, <) inside the sentences; every force
    named with its owner; each situation built up one logical step
-   per bullet; rejected wordings in "Not accepted" notes. Closes
-   with the marking rules that never change, after the same
-   pattern as Topic 1.
+   per bullet; rejected wordings in "Not accepted" notes. Mark
+   scheme wordings and examiner report lines are quoted in "Mark
+   scheme wording" and "Examiner's report" notes, verbatim from
+   the WPH11 papers held in research/wph11. Closes with the
+   marking rules that never change, after the same pattern as
+   Topic 1.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH02_B: SpecSection[] = [
@@ -31,28 +34,9 @@ export const SECTIONS_PH02_B: SpecSection[] = [
           "The Young modulus is a property of the **material**, so it does not change with the dimensions of the sample.",
           "The extension of a spring = the new length − the original length. Use the difference, never the final length on its own.",
           "With two loads on one spring, the stiffness = the change in the force ÷ the change in the extension, using the differences between the two states.",
+          "The specification prints the law as ΔF = kΔx so that it applies to ==changes==: a spring already carrying a load obeys **k = ΔF ÷ Δx** between the two loads, not F ÷ x.",
           "Two-step spring problems use **F = kΔx** twice: first find k from a known load and its extension, then apply that k to the new load.",
         ],
-      },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for Hooke's law: the law as proportionality, when changes
-         (ΔF, Δx) are needed instead of totals, and the ownership of
-         the variables. Approved groups below keep their position. ————— */
-      { k: "h", text: "What Hooke's law says" },
-      {
-        k: "bullets",
-        items: [
-          "The law itself is the proportionality: while the sample stays within the limit of proportionality, the extension is ==directly proportional== to the force applied to it. Double the force, double the extension; halve the force, halve the extension.",
-          "The stiffness k is the constant of proportionality: it answers ==how many newtons are needed per metre of extension==, which is why its unit is **N m⁻¹**.",
-          "The force is the ==cause== and the extension is the ==response==: a load applied to a spring causes the extension, and the stiffness of the spring decides how large the extension is.",
-          "When the sample starts unloaded, the change in force = the force and the change in length = the extension, so the data-sheet form **F = kΔx** applies directly.",
-          "When the sample is already carrying a load (an already taut wire, or a second load on the same spring), the law connects the ==changes==: **k = ΔF ÷ Δx**, the difference in force ÷ the difference in extension. This is why the specification prints the law as ΔF = kΔx, and why the substitution mark is awarded for *use of ΔF = kΔx* with the changes used when the graph line does not start at the origin.",
-        ],
-      },
-      {
-        k: "note",
-        label: "The ownership of the variables",
-        text: "The stiffness belongs to the ==object==: it is set by the material (the Young modulus) and by the dimensions (the cross-sectional area and the original length), so the same metal makes a different spring when it is drawn longer or thinner. The force belongs to whatever loads the spring; the extension is the response. Only k stays fixed for a given object, and the Young modulus stays fixed for a given material.",
       },
       { k: "h", text: "Stiffness from a graph" },
       {
@@ -83,15 +67,9 @@ export const SECTIONS_PH02_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Where the formula comes from: start from the Young modulus **E = σ/ε**, with the stress **σ = F/A** and the strain **ε = Δx/x**.",
-          "Substitute both into the ratio: **E = (F/A) ÷ (Δx/x) = Fx ÷ (AΔx)**.",
-          "Rearrange for the force: **F = (EA/x) × Δx**, and compare with **F = kΔx**: the stiffness of a wire = **k = EA/x**.",
-          "Read the scaling off the formula: a longer wire (larger x) has a smaller stiffness, and a thicker wire (larger A) has a larger stiffness. Doubling the length halves the stiffness; doubling the diameter multiplies the stiffness by four, because the area is proportional to the diameter squared.",
-        ],
-      },
-      {
-        k: "bullets",
-        items: [
+          "Start from the Young modulus **E = (F/A) ÷ (Δx/x) = Fx ÷ (AΔx)**, rearrange for the force **F = (EA/x) × Δx**, and compare with **F = kΔx**: the stiffness of a wire = **k = EA/x**.",
+          "Read the scaling off the formula: doubling the length halves k; doubling the diameter multiplies k by four, because the area is proportional to the diameter squared.",
+          "The same relation rearranged gives the Young modulus from a measured stiffness: **E = kx ÷ A**.",
           "Hooke's law holds only up to the ==limit of proportionality==: beyond it, the force is no longer proportional to the extension, and the law no longer applies.",
         ],
       },
@@ -108,29 +86,12 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         eq: "σ = F/A        ε = Δx/x        E = σ/ε",
         note: "The stress on a sample = the force ÷ the cross-sectional area; the strain of a sample = the change in length ÷ the original length; the Young modulus = the stress ÷ the strain.",
       },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for stress, strain and the Young modulus: why the two
-         quotients exist (they normalise the sample's size away) and
-         a worked strain. Approved groups below keep their position. ————— */
-      { k: "h", text: "Why stress and strain exist" },
       {
         k: "bullets",
         items: [
-          "A raw force cannot describe a material: the same steel snaps under 10 kN in a thin wire and carries 100 kN in a thick cable. The force must be ==divided by the area it acts over== before two samples can be compared: that quotient is the stress.",
-          "A raw extension cannot describe a material either: a 2 mm stretch is huge for a 10 cm wire and tiny for a 10 m wire. The extension must be ==divided by the original length==: that quotient is the strain.",
-          "Stress and strain strip the size of the sample out of the measurement, so their ratio belongs to the ==material alone==: that ratio is the Young modulus.",
-        ],
-      },
-      {
-        k: "bullets",
-        items: [
-          "Worked strain: a steel wire (E = 200 GPa) carrying a stress of 100 MPa strains by **ε = σ ÷ E = 100 × 10⁶ ÷ 200 × 10⁹ = 5.0 × 10⁻⁴ = 0.05%**. Young moduli are huge because strains are tiny: even a large stress stretches a wire by a fraction of a percent.",
-          "The multiple choice description of a large Young modulus is ==the ratio of tensile stress to tensile strain is large==: it is not the breaking stress, not the density, and not the elastic limit.",
-        ],
-      },
-      {
-        k: "bullets",
-        items: [
+          "A force on its own does not describe a material: the same steel snaps under 10 kN in a thin wire and carries 100 kN in a thick cable. Stress ==divides the force by the area it acts over==, and strain ==divides the extension by the original length==, so both quotients strip the size of the sample out and their ratio belongs to the ==material alone==: that ratio is the Young modulus.",
+          "Worked strain: a steel wire (E = 200 GPa) carrying a stress of 100 MPa strains by **ε = σ ÷ E = 100 × 10⁶ ÷ 200 × 10⁹ = 5.0 × 10⁻⁴**. Young moduli are huge because strains are tiny: even a large stress stretches a wire by a fraction of a percent.",
+          "The multiple choice description of a large Young modulus is ==the ratio of tensile stress to tensile strain is large==; the rejected options are *a large breaking force*, *a large density* and *a large elastic limit*.",
           "The unit of stress = the pascal (Pa) = **N m⁻²**; the unit of the Young modulus = Pa. The same definitions apply to compression, where the length decreases.",
           "Strain has ==no unit==; a percentage is accepted.",
           "The Young modulus is a property of the **material alone**: it is the same for a short wire and a long wire of the same material.",
@@ -238,33 +199,11 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         k: "bullets",
         items: [
           "The three named points are different, and they come in this order: ==limit of proportionality first, then elastic limit, then yield point==.",
+          "Between the limit of proportionality and the elastic limit the line curves away, so force and extension are no longer proportional, but the deformation is ==still elastic==: unload there and the sample still returns to its original length.",
           "At the elastic limit itself the material is still behaving elastically; plastic deformation starts beyond it.",
+          "Multiple choice: a sample ==at== its elastic limit is described as elastically deformed; *plastically deformed*, *at maximum extension* and *about to snap* are each rejected in the mark scheme.",
           "A spring stretched beyond its elastic limit keeps a permanent extension when the force is removed.",
           "A rubber band deformed elastically returns to zero extension when the force is removed.",
-        ],
-      },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for the graphs: reading the line region by region, the
-         unloading line for a wire loaded past its elastic limit, and
-         the energy story attached to each area. Approved groups
-         below keep their position. ————— */
-      { k: "h", text: "Reading the graph region by region" },
-      {
-        k: "bullets",
-        items: [
-          "Region 1, origin to the limit of proportionality: a straight line through the origin — Hooke's law obeyed, the deformation elastic, the gradient = the stiffness.",
-          "Region 2, limit of proportionality to the elastic limit: the line curves away, so force and extension are no longer proportional, but the deformation is ==still elastic== — unload here and the sample still returns to its original length.",
-          "Region 3, beyond the elastic limit: the deformation is plastic, so the graph keeps climbing but the sample never fully returns.",
-          "The multiple choice trap: a sample ==at== its elastic limit is described as elastically deformed — the options claiming it is plastically deformed, at maximum extension, or about to snap are each rejected in the mark scheme.",
-        ],
-      },
-      { k: "h", text: "The unloading line and the energy left behind" },
-      {
-        k: "bullets",
-        items: [
-          "Unloaded from within the elastic region, the line ==retraces== the loading line: all the work done stretching the sample is stored as elastic strain energy and all of it comes back.",
-          "Unloaded from beyond the elastic limit, the unloading line runs ==parallel to the original loading line== but lower, and meets the extension axis at a positive value: that intercept = the permanent extension.",
-          "The area between the loading and unloading lines = the energy that does not come back: it has gone into the permanent deformation and warms the sample (for a rubber band, the mark scheme calls it the energy causing heating).",
         ],
       },
       { k: "h", text: "Areas under a force-extension graph" },
@@ -272,8 +211,9 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         k: "bullets",
         items: [
           "The work done stretching a sample = the area under the force-extension graph, and that area = the elastic strain energy stored.",
+          "Unloaded from within the elastic region, the unloading line ==retraces== the loading line, so all the stored energy comes back.",
+          "Unloaded from beyond the elastic limit, the unloading line runs ==parallel to the loading line== and meets the extension axis at a positive value: that intercept = the permanent extension, and the area between the two lines = the energy that does not come back (for a rubber band, the mark scheme words it as the energy causing heating).",
           "Loading and unloading curves drawn with different gradients mean the ==stiffness of the object== has changed.",
-          "The area between the loading and unloading lines = the energy dissipated (the hysteresis loss, for example in a rubber band).",
           "If the original length was forgotten when plotting, the graph keeps the same shape but starts at a positive extension.",
           "On a force-length graph, convert to extension before using it: for a force rising from zero to R while the length goes from p to q, the work done = ½ × R × (q − p).",
           "Convert the graph axes to SI units before estimating an area.",
@@ -282,7 +222,7 @@ export const SECTIONS_PH02_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "“A greater Young modulus” as the reason for a changed gradient: the Young modulus belongs to the ==material== and has not changed.",
+        text: "“A greater Young modulus” as the reason for a changed gradient: the Young modulus belongs to the ==material== and has not changed. And *elastic* means the sample ==returns to its original length after the load is removed==: writing only that the material “stops behaving elastically” does not score (examiner report).",
       },
     ],
   },
@@ -308,25 +248,12 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         items: [
           "The gradient of the initial straight section of a stress-strain graph = the Young modulus; a steeper initial gradient means a stiffer material with a larger E.",
           "The stress-strain graph depends only on the material, not on the size or the shape of the sample.",
-          "The area under a stress-strain graph = the work done ==per unit volume==, not the work done; the energy = the area × the volume of the sample.",
+          "A force-extension graph describes ==one sample==: the same steel drawn into a thicker wire gives a different graph. A stress-strain graph describes ==the material==, which is why compare questions are set on stress-strain axes.",
+          "The area under a stress-strain graph = the work done ==per unit volume==, not the work done: stress × strain = (F/A) × (Δx/x) = FΔx ÷ (A × x), and A × x = the volume of the sample, so the area is the energy per unit volume in J m⁻³.",
+          "The energy stored by a real sample = the area under its stress-strain graph ==multiplied by the volume of the sample==.",
           "A large plastic region means the material is ==ductile==; a graph that fractures soon after the linear section, with little plastic deformation, means the material is ==brittle==.",
           "Compare-and-contrast marks come from: the initial gradient, the way the gradient changes, the breaking stress, the breaking strain, and the area under the graph.",
           "Concrete is stronger in compression than in tension: quote the two breaking stresses from the graph and compare them.",
-        ],
-      },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for the stress-strain axes: why they are the axes for
-         comparing materials, the printed per-unit-volume derivation,
-         and the proportional-not-equal warning. Approved groups
-         below keep their position. ————— */
-      { k: "h", text: "Why stress-strain graphs compare materials" },
-      {
-        k: "bullets",
-        items: [
-          "A force-extension graph describes ==one sample==: the same steel drawn into a thicker wire gives a different graph. A stress-strain graph describes ==the material==: the same steel gives the same stress-strain graph whichever sample is tested.",
-          "That is why compare questions are set on stress-strain axes: the initial gradient compares stiffness (the Young modulus), the height at fracture compares strength (the breaking stress), and the area under the graph compares the energy each material absorbs per unit volume before it fractures.",
-          "Why the area is per unit volume, following the printed derivation: the area = stress × strain = (F/A) × (Δx/x) = FΔx ÷ (A × x), and A × x = the volume of the sample, so the area = the energy ÷ the volume, in J m⁻³.",
-          "So the energy stored by a real sample = the area under its stress-strain graph ==multiplied by the volume of the sample==. The area alone is only ==proportional== to the energy: the examiner report rejects answers that call the area under a stress-strain graph equal to the elastic strain energy.",
         ],
       },
       { k: "h", text: "Using the breaking stress" },
@@ -343,7 +270,7 @@ export const SECTIONS_PH02_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "The Young modulus is the ==gradient== of the graph, not the area under it; and keep the two definitions apart — the yield stress sits at the top of the straight section, the breaking stress at the end of the line.",
+        text: "The Young modulus is the ==gradient== of the graph, not the area under it. The area under a stress-strain graph is ==proportional to== the energy stored, not equal to it: multiply by the volume of the sample. And keep the two definitions apart — the yield stress sits at the top of the straight section, the breaking stress at the end of the line.",
       },
     ],
   },
@@ -376,20 +303,15 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         label: "Not accepted",
         text: "Writing “measure the extension” as a method point scores nothing: you measure the ==initial length and the extended length and subtract==.",
       },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         of the rig: what each piece is for (reference wire, small
-         initial load, load-and-unload steps, vernier) and what each
-         measured quantity feeds. Approved groups below keep their
-         position. ————— */
-      { k: "h", text: "Why the rig is built this way" },
+      { k: "h", text: "Design choices" },
       {
         k: "bullets",
         items: [
-          "The unloaded reference wire hangs beside the test wire so that everything that is ==not== the load cancels: if the frame moves or the temperature changes, both wires move together, and the vernier scale reads only the ==difference== between them — the extension caused by the load alone.",
-          "The small initial load straightens the wire: kinks and slack would otherwise be measured as extension, so the original length is only read once the wire hangs taut.",
-          "The masses are added and then removed in equal steps: if the readings come back the same on unloading, the wire stayed inside its ==elastic limit== and the gradient of the straight section is a valid Young modulus.",
-          "The extension readings come from a vernier scale, not a metre rule: the vernier's resolution (0.1 mm) is finer, so the percentage uncertainty in each extension reading is smaller — and the extensions here are a few millimetres, which is exactly when the resolution matters.",
-          "The diameter is measured at several positions and orientations and averaged because it is the smallest measurement and it is ==squared== inside the area: a 1% error in the diameter becomes about a 2% error in the area, and the area divides every stress.",
+          "The unloaded reference wire hangs beside the test wire: if the frame moves or the temperature changes, both wires move together, and the vernier reads only the ==difference== caused by the load.",
+          "The small initial load straightens the wire: kinks and slack would otherwise be read as extension, so the original length is measured only once the wire hangs taut.",
+          "The masses are added and removed in equal steps: matching readings on unloading confirm the wire stayed inside its ==elastic limit==, so the gradient of the straight section is a valid Young modulus.",
+          "The extension readings come from a vernier scale (0.1 mm), not a metre rule: the resolution is finer, so the percentage uncertainty in a few-millimetre extension is smaller.",
+          "The diameter is the smallest measurement and it is ==squared== inside the area, so it is measured at several positions and orientations and averaged: a 1% error in the diameter becomes about a 2% error in the area.",
         ],
       },
       {
@@ -441,32 +363,9 @@ export const SECTIONS_PH02_B: SpecSection[] = [
         items: [
           "This equation is only valid for a ==straight-line force-extension graph==.",
           "With Hooke's law (**F = kΔx**), the energy can also be written as **½kΔx²**, or as **F²/2k**.",
+          "To show why the energy grows as the square of the force: the energy = the area = **½FΔx**, and on the straight section **Δx = F ÷ k**, so **ΔE~el~ = ½F × (F ÷ k) = F² ÷ 2k**; k is fixed for the spring, so the stored energy is ==proportional to F²==.",
           "The energy stored is therefore proportional to the square of the extension, and to the square of the force.",
           "To find an extension from the energy, rearrange to **Δx = 2E~el~ ÷ F**.",
-        ],
-      },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for strain energy: the substitution route the mark scheme
-         prints (½FΔx to F²/2k), the audit of where the energy goes,
-         and the series/parallel contrast computed. Approved groups
-         below keep their position. ————— */
-      { k: "h", text: "The substitution route the mark scheme prints" },
-      {
-        k: "bullets",
-        items: [
-          "To explain why the stored energy grows as the square of the force: the energy stored = the area under the force-extension graph = **½FΔx**.",
-          "On the straight section Hooke's law applies: **F = kΔx**, so **Δx = F ÷ k**.",
-          "Substitute: **ΔE~el~ = ½F × (F ÷ k) = F² ÷ 2k**, and since k is constant for the spring, the stored energy is ==proportional to F²==.",
-        ],
-      },
-      { k: "h", text: "Where the strain energy goes, and the spring combinations" },
-      {
-        k: "bullets",
-        items: [
-          "Unloaded from within the elastic region, the unloading line retraces the loading line, so ==all== the stored energy comes back.",
-          "Unloaded from beyond the elastic limit, the unloading line sits lower than the loading line: the area between the two lines = the energy that does not come back, because it has gone into the permanent deformation.",
-          "Two identical springs in series under the same force: the combined stiffness is k/2, so the energy stored = F² ÷ (2 × k/2) = F² ÷ k ==twice== the energy of one spring, at twice the total extension.",
-          "Two identical springs in parallel sharing the same force: the combined stiffness is 2k, so the energy stored = F² ÷ (2 × 2k) = F² ÷ 4k ==half== the energy of one spring, at half the extension.",
         ],
       },
       { k: "h", text: "Area under the graph" },
@@ -476,7 +375,7 @@ export const SECTIONS_PH02_B: SpecSection[] = [
           "The elastic strain energy = the area under the force-extension graph.",
           "For a straight-line graph, the area is the triangle ½FΔx.",
           "The change in energy between two loads = the trapezium area: ½ × (the sum of the two forces) × the change in extension.",
-          "It is wrong to use the change in force multiplied by the change in extension.",
+          "It is wrong to use the change in force multiplied by the change in extension: multiplying ΔF by Δx misses the area of the rectangle under the first part of the line.",
           "For a curved graph, estimate the area by counting squares, or by splitting it into rectangles and triangles.",
         ],
       },
@@ -487,7 +386,9 @@ export const SECTIONS_PH02_B: SpecSection[] = [
           "When a spring launches an object, the elastic strain energy stored in the spring becomes the kinetic energy of the object.",
           "When the object also changes height, include the work done by gravity: the elastic strain energy = the kinetic energy gained + the gravitational potential energy gained (**ΔE~el~ = ΔE~k~ + ΔE~grav~**).",
           "The energy stored in a compressed spring can be greater than the work done by the person compressing it, because gravity has also done work on it during the compression.",
-          "Springs in parallel share the force, so each stores less energy than a single spring carrying the whole force.",
+          "Two identical springs in series carry the same force at twice the total extension, so the pair stores ==twice== the energy of one spring (**F² ÷ k** against **F² ÷ 2k**).",
+          "Two identical springs in parallel share the force, so the pair stores ==half== the energy of one spring carrying the whole force (**F² ÷ 4k**).",
+          "Three identical springs in parallel stretched by a force 2F store **4/3** of the energy of one spring stretched by F: twice the force, two thirds of the extension — the multiple choice combination that most candidates miss.",
           "Some questions compare the gravitational potential energy lost with the elastic strain energy stored: calculate both, compare the values, and give a conclusion.",
           "Check the sanity of a result: an extension longer than the original sample, or a force far beyond the breaking stress, means something has gone wrong.",
         ],

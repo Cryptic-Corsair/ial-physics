@@ -7,9 +7,11 @@ import type { SpecSection } from "../notes-types";
    unpacked in a sentence; the working symbols (=, ×, >, <) sit
    inside the sentences; every force carries its owner and its
    direction; each situation is built up as its own short section,
-   one logical step per bullet. Rejected wordings live in
-   "Not accepted" notes. This supersedes the earlier plain-register
-   version (no symbols-as-prose) at the owner's direction.
+   one logical step per bullet. Mark scheme wordings and examiner
+   report lines are quoted in "Mark scheme wording" and
+   "Examiner's report" notes, verbatim from the WPH11 papers held
+   in research/wph11. Rejected wordings live in "Not accepted"
+   notes.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH02_A: SpecSection[] = [
@@ -17,21 +19,18 @@ export const SECTIONS_PH02_A: SpecSection[] = [
     spec: "23",
     statement: "be able to use the equation density ρ = m/V",
     title: "Density",
-    /* Foundations addendum (owner review draft 1): this section
-       replaces the old compressed bullet list — the ropes are taught
-       first, the calculation carried-overs close the section. */
     blocks: [
       {
         k: "eq",
         eq: "ρ = m/V",
-        note: "The density of a sample of a material = the mass of that sample ÷ the volume of that sample. Read the equation as a sentence: density asks how much mass is packed into each cubic metre of the material — a dense material packs a lot of mass into a small space.",
+        note: "The density of a sample = the mass of the sample ÷ the volume of the sample.",
       },
       {
         k: "bullets",
         items: [
           "The unit of density is **kg m⁻³**; convert **g cm⁻³** to **kg m⁻³** by multiplying by 1000.",
           "Density is a property of the **material**: the density does not change when the size or the shape of the sample changes. A half-length wire has the same density as the full-length wire.",
-          "Contrast (learn this pair, it is examined): density belongs to the **material**; stiffness belongs to the **object**, so the stiffness changes when the dimensions change.",
+          "Stiffness is different: stiffness is a property of the **object**, so the stiffness of an object does change when the dimensions of the object change.",
           "The density of an **object** can differ from the density of the material it is made of: the density of the object = its total mass ÷ its total volume, and the total volume includes any air inside it.",
           "Every floating argument in this topic compares two densities: the density of the object (its average density if it is hollow) and the density of the fluid.",
         ],
@@ -43,7 +42,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "Reference densities to memorise",
+        caption: "Reference densities worth knowing",
         head: ["Material", "Density (kg m⁻³)"],
         rows: [
           ["air", "≈ 1.2"],
@@ -57,16 +56,16 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Sense-check every calculated density against the table. A density of water of 0.001 kg m⁻³ or 100 000 kg m⁻³ is a ==power-of-ten slip==, not physics; unit and power-of-ten slips are named as a recurring error in the examiner reports.",
+          "Sense-check every calculated density against the table: a density of 0.001 kg m⁻³ or 100 000 kg m⁻³ for water is a ==power-of-ten slip==, not physics.",
           "In multiple choice questions, check the ==units of every option==: the wrong options usually carry the wrong units.",
-          "Measuring the density of a regular solid: measure the mass with a balance; measure the dimensions (the diameter of a sphere with a calliper), then compute the volume from the dimensions.",
+          "Measuring the density of a regular solid: measure the mass with a balance, measure the dimensions (the diameter of a sphere with a calliper), then compute the volume from the dimensions.",
           "Measuring the density of a liquid: measure the mass of a measured volume, then **ρ = m ÷ V**; the volume of a liquid is read from a measuring cylinder.",
         ],
       },
       {
         k: "note",
         label: "Not accepted",
-        text: "Reading the calliper as if it measured the ==radius==. The calliper measures a diameter; halve it yourself (**r = d ÷ 2**). The examiner report calls this a common misconception.",
+        text: "Reading the calliper as if it measured the ==radius==. The calliper measures a diameter; halve it yourself (**r = d ÷ 2**). Examiner reports name the radius–diameter mix-up as a recurring error.",
       },
       { k: "h", text: "Volumes you are asked for" },
       {
@@ -102,45 +101,35 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "def",
         term: "Upthrust",
-        text: "The upward force a fluid exerts on an object placed in the fluid. Upthrust is caused by the ==displacement of the fluid==: the upthrust on an object = the weight of the fluid the object displaces.",
+        text: "The upward force a fluid exerts on an object placed in the fluid. Upthrust is caused by the ==displacement of the fluid==: the upthrust on an object = the weight of the fluid the object displaces. The fluid presses on every surface of the object, and the pressure is greater on the deeper surfaces, so the net push from the fluid is ==upward==.",
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*An upwards force caused by the displacement of fluid (by an object)*, or *(a force equal and opposite to) the weight of fluid displaced (by an object)* — the wording printed by the mark scheme, either of which scores. Examiner reports record that few candidates state this definition in full.",
       },
       {
         k: "eq",
         eq: "U = ρ~fluid~ × V~disp~ × g",
-        note: "The weight of displaced fluid = the density of the fluid × the displaced volume × g. For a fully submerged object, the displaced volume = the whole volume of the object (**V~disp~ = V~object~**).",
+        note: "The weight of displaced fluid = the density of the fluid × the displaced volume × g. For a fully submerged object, the displaced volume = the whole volume of the object (**V~disp~ = V~object~**); for a floating object, it = the ==submerged volume only==.",
       },
-      /* ————— Foundations addendum (owner review draft 1) — the ropes
-         taught before the scenarios: where the force comes from, the
-         floating balance and its fraction rule, the variable map that
-         every flotation question follows, and the wordings the mark
-         schemes print. The scenario groups below keep their approved
-         text and position, self-contained as ever. ————— */
-      { k: "h", text: "Where the upthrust comes from" },
       {
         k: "bullets",
         items: [
-          "A **fluid** = a liquid or a gas. Fluids exert forces on any object placed in them.",
-          "**Upthrust** is an upward force that a fluid exerts on an object placed in the fluid.",
-          "Why the force points upward: the fluid presses on every surface of the object, and the press is larger on the deeper surfaces. The bottom of the object is pushed up harder than the top is pushed down, so the net push from the fluid is ==upward==.",
-          "**Displacement** = the fluid that had to move out of the way because the object now occupies that space. The word is compulsory in definitions and explanations.",
-          "The displaced volume = the ==submerged volume== (**V~disp~ = V~sub~**); for a fully submerged object, the submerged volume = the whole volume of the object.",
-          "The upthrust is set by the **weight** of the displaced fluid, not its mass: compute the displaced mass first (**m~disp~ = ρ~fluid~ × V~sub~**), then multiply by **g**.",
+          "The upthrust depends on the ==fluid== (its density) and on ==how much of the object is submerged==: the density of the object appears nowhere in the upthrust equation.",
+          "The weight depends on the **object** only (**W = ρ~object~ × V~object~ × g**): changing the fluid cannot change the weight.",
+          "Use the density of the ==fluid==, not the density of the object, inside the upthrust: the common slip named in examiner reports is using the wrong density and making the weight equal to the upthrust.",
         ],
       },
-      {
-        k: "note",
-        label: "The ownership of the variables",
-        text: "The upthrust depends on the ==fluid== (its density) and on ==how much of the object is in the fluid== (the submerged volume) — the density of the object appears nowhere in the upthrust equation. The weight depends on the **object** only (**W = ρ~object~ × V~object~ × g**): changing the fluid cannot change the weight, and changing the object's material cannot directly change the upthrust.",
-      },
-      { k: "h", text: "The floating balance" },
+      { k: "h", text: "Floating" },
       {
         k: "bullets",
         items: [
-          "A floating object is in equilibrium, so the resultant force on it = zero, and the upthrust on it = the weight of the object (**U = W**).",
-          "The sentence to memorise: a floating object ==displaces its own weight of fluid==.",
-          "Where the fraction rule comes from, step by step. First write both sides: the upthrust on the object = **ρ~fluid~ × V~sub~ × g**, and the weight of the object = **ρ~object~ × V~object~ × g**.",
-          "Floating makes the two equal, and **g** cancels: **ρ~fluid~ × V~sub~ = ρ~object~ × V~object~**.",
-          "Rearranging gives the fraction rule:",
+          "A floating object is in equilibrium, so the resultant force on it = zero.",
+          "For a floating object, the upthrust on the object = the weight of the object (**U = W**).",
+          "A floating object therefore displaces a weight of fluid equal to its own weight.",
+          "Floating needs the two forces ==equal==: weight less than upthrust means the object is accelerating upwards, not floating.",
+          "The upthrust on the floating object = **ρ~fluid~ × V~sub~ × g** and the weight of the object = **ρ~object~ × V~object~ × g**; floating makes the two equal and g cancels:",
         ],
       },
       {
@@ -151,136 +140,13 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Read the fraction rule as three cases. If the density of the object < the density of the fluid, the fraction is below 1, so the object floats with part of it above the surface.",
-          "If the density of the object = the density of the fluid, the fraction is exactly 1, so the object floats fully submerged, hanging at any depth like a fish holding still.",
-          "If the density of the object > the density of the fluid, the fraction is above 1, which no real submersion can satisfy, so the object cannot float: it sinks until it rests on the bottom.",
-          "The cliff edge in words: floating stays possible only while the object's density is below the fluid's density. If the fluid's density falls below the object's density, even complete submersion gives an upthrust smaller than the weight, and the object sinks.",
-          "Precision rule (learn the difference, examiners cannot tell them apart): when the object still floats and sits deeper, write *the object floats lower in the water* or *the submerged depth increases*. Keep the word *sinks* for the case where floating fails and the object drops to the bottom.",
-        ],
-      },
-      { k: "h", text: "The variable map — what changes what" },
-      {
-        k: "note",
-        label: "The skeleton every flotation question follows",
-        text: "First fix the balance that must hold (floating: **U = W**; steady lift: **T + U = W**; sinking at terminal velocity: **W = U + D**). Then identify the one quantity that changed. Then find which variable must compensate — and for a floating object the compensating variable is always the ==submerged volume==, the only variable both sides of the balance share.",
-      },
-      { k: "h", text: "The fluid gets denser — the hydrometer question" },
-      {
-        k: "bullets",
-        items: [
-          "The object still floats, so the balance still holds: the upthrust on it = its weight (**U = W**).",
-          "The weight of the object has not changed, so the upthrust must stay the same size as before.",
-          "The density of the fluid has increased, so the submerged volume must decrease (**U = ρ~fluid~ × V~sub~ × g**).",
-          "The object rises in the water until the balance holds again.",
-        ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "*The upthrust equals the weight of the hydrometer*; *(So) a smaller volume of seawater needs to be displaced (because seawater has a greater density)*.",
-      },
-      { k: "h", text: "The fluid gets less dense — the object rides lower" },
-      {
-        k: "bullets",
-        items: [
-          "The balance still holds: **U = W**, with the weight unchanged, so the upthrust is unchanged.",
-          "The density of the fluid has decreased, so the submerged volume must increase.",
-          "The object floats lower in the water, displacing a larger volume.",
-          "Floating stays possible only while the object's density is below the fluid's density; below that, the object sinks (the cliff edge).",
-          "Worked numbers: an object of density 700 kg m⁻³ in water of density 1000 kg m⁻³ has 0.70 of its volume submerged. If the water density falls to 900 kg m⁻³, the fraction rises to 700 ÷ 900 ≈ 0.78: it rides visibly lower but still floats, because 700 < 900.",
-        ],
-      },
-      { k: "h", text: "The object gets less dense — the unloaded ship" },
-      {
-        k: "bullets",
-        items: [
-          "The weight decreases: **W = ρ~object~ × V~object~ × g**, with the object's density smaller and its volume unchanged.",
-          "The object still floats, so the upthrust must equal the new, smaller weight.",
-          "The density of the fluid is unchanged, so the submerged volume must decrease.",
-          "The object rises in the water and displaces less water than before.",
-        ],
-      },
-      { k: "h", text: "The object is lifted out of the water — the crane and the submarine" },
-      {
-        k: "bullets",
-        items: [
-          "The submarine is lifted at a steady speed, so the forces on it balance at every moment: the tension + the upthrust = the weight (**T + U = W**).",
-          "While the submarine is fully underwater, the tension in the cable = the weight of the submarine − the upthrust on it (**T = W − U**).",
-          "As the submarine emerges, the submerged volume decreases, so the upthrust decreases.",
-          "The weight does not change, so the tension increases continuously while the submarine leaves the water.",
-          "Once the submarine is fully clear, the submerged volume = 0, so the upthrust = 0, and the tension in the cable = the full weight of the submarine (**T = W**).",
-        ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "Indicative content: *tension = weight − upthrust*; *As the submarine leaves the water, the volume / mass / weight of water displaced decreases*; *the upthrust on the submarine decreases*; *the tension in the cable increases*; *When the submarine is out of the water the tension in the cable is equal (in magnitude) to the weight of the submarine*.",
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "The least well described idea was the decreasing displaced water ==as the submarine emerges==. Answers that described only the fully-underwater stage and the fully-out stage, but not the transition between them, lost the middle marks.",
-      },
-      { k: "h", text: "The object sinks through colder, deeper water" },
-      {
-        k: "bullets",
-        items: [
-          "Sinking at terminal velocity: the resultant force = zero, so the weight = the upthrust + the drag (**W = U + D**).",
-          "The deeper water is colder and denser, so the upthrust increases.",
-          "The deeper water is also more viscous, so the drag at the same speed increases.",
-          "The weight remains constant (the mark scheme explicitly rejects *mass* written for the weight).",
-          "The balance **W = U + D** can now be met at a smaller speed, so the terminal velocity decreases as the object sinks deeper.",
-        ],
-      },
-      { k: "h", text: "The fluid gets less dense as the object rises — the weather balloon" },
-      {
-        k: "bullets",
-        items: [
-          "At release, the upthrust is greater than the weight, so the balloon accelerates upwards.",
-          "The density of air decreases with height, so as the balloon rises the upthrust decreases (**U = ρ~air~ × V × g**).",
-          "When the upthrust falls below the weight, the resultant force acts downwards and the balloon decelerates to rest at its maximum height.",
-        ],
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "Candidates confused decreasing acceleration with decreasing velocity. While the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly.",
-      },
-      {
-        k: "note",
-        label: "The map in words",
-        text: "A denser fluid lifts a floating object higher; a less dense fluid lets it ride lower; a less dense object rises and displaces less; a denser object rides lower and, past the cliff edge, sinks; an object emerging from a fluid loses upthrust, so any cable holding it takes over the share smoothly; an object sinking through denser, more viscous fluid sinks more slowly.",
-      },
-      { k: "h", text: "How mark schemes want flotation worded" },
-      {
-        k: "bullets",
-        items: [
-          "Name the owner of every force and weight: *the upthrust on the hydrometer*, *the weight of the displaced water*, *the weight of the object*. The examiner report records that many candidates wrote *weight* without specifying whether they meant the weight of the object, of the displaced pure water or of the displaced sea water, and lost the mark.",
-          "Use the word *displace* in every flotation explanation: the mark scheme wording is built on displacement.",
-          "The accepted explanation skeleton for *why does it float higher in the denser liquid* (two marks): first the balance (*the upthrust equals the weight of the hydrometer*), then the compensation (*a smaller volume of seawater needs to be displaced because seawater has a greater density*).",
-          "Every full-mark flotation explanation keeps the balance visible: candidates who jump straight to *so it floats higher* without the upthrust-equals-weight step lose the middle marks.",
-        ],
-      },
-      {
-        k: "note",
-        label: "The printed definition",
-        text: "*An upwards force caused by the displacement of fluid (by an object)*, or *(a force equal and opposite to) the weight of fluid displaced (by an object)* — the wording printed by the mark scheme, either of which scores.",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "*G* written as the label on the weight arrow — it is not an acceptable abbreviation for weight. And *mass* written where the mark scheme wants *weight*.",
-      },
-      { k: "h", text: "Floating" },
-      {
-        k: "bullets",
-        items: [
-          "A floating object is in equilibrium, so the resultant force on it = zero.",
-          "For a floating object, the upthrust on the object = the weight of the object (**U = W**).",
-          "A floating object therefore displaces a weight of fluid equal to its own weight.",
-          "The fraction of a floating object that is submerged = the density of the object ÷ the density of the fluid.",
+          "If the density of the object < the density of the fluid, the fraction is below 1, so the object floats with part of it above the surface.",
+          "If the density of the object = the density of the fluid, the fraction is exactly 1, so the object floats fully submerged.",
+          "If the density of the object > the density of the fluid, no displaced volume can balance the weight, so the object sinks until it rests on the bottom.",
+          "Worked fraction: an object of density 700 kg m⁻³ in water (1000 kg m⁻³) floats with 0.70 of its volume submerged; in a liquid of density 900 kg m⁻³ the fraction rises to 700 ÷ 900 ≈ 0.78, so it rides lower but still floats, because 700 < 900.",
           "In a denser liquid, a smaller displaced volume is enough to balance the same weight, so the object floats higher.",
-          "If the fluid is less dense, a floating object must displace a larger volume, so that the weight of the displaced fluid still = the weight of the object.",
+          "In a less dense liquid, a floating object must displace a larger volume, so that the weight of the displaced fluid still = the weight of the object.",
+          "Wording rule: *floats lower in the water* (still floating) is not the same as *sinks* (floating has failed). Keep the word *sinks* for an object that drops to the bottom.",
           "A hollow object floats because its overall (average) density is less than the density of the liquid.",
         ],
       },
@@ -315,6 +181,16 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "In a denser liquid, each unit of displaced volume provides a greater weight of displaced liquid, so a smaller displaced volume is enough: the hydrometer floats higher.",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "Any two from: *the upthrust is equal to the weight of water displaced*; *the upthrust equals the weight of the hydrometer* or *the upthrust is the same (in both types of water)*; *the weight of displaced water equals the weight of the hydrometer*; then *(so) a smaller volume of seawater needs to be displaced (because seawater has a greater density)*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "Many referred to weight, but did not specify whether this was the weight of the hydrometer, the weight of the displaced pure water or the weight of the displaced seawater. Many did not use the term ==displacement== at all, and alternatives such as *replacement* were not sufficient.",
+      },
       { k: "h", text: "A submarine moving into less dense water" },
       {
         k: "bullets",
@@ -335,6 +211,16 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The tension in the cable therefore increases, until the submarine hangs clear of the water and the tension in the cable = the full weight of the submarine (**T = W**).",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "Indicative content: *the resultant force on the submarine is zero*; *so tension = weight − upthrust*; *as the submarine leaves the water, the volume / mass / weight of water displaced decreases*; *so the upthrust on the submarine decreases*; *and the tension in the cable increases*; *when the submarine is out of the water the tension in the cable is equal (in magnitude) to the weight of the submarine*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "The idea that the volume / mass / weight of displaced water decreases as the submarine leaves the water was the idea least well described by candidates. Responses that described only the fully-submerged stage and the fully-out stage, but not the transition between them, lost the middle marks.",
+      },
       { k: "h", text: "A Cartesian diver" },
       {
         k: "bullets",
@@ -346,6 +232,11 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The diver therefore accelerates downwards and sinks.",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*(As the volume of the air bubble decreases) the upthrust (of the bubble) decreases* or *(as water enters the diver) the weight (of the tube, air bubble and water inside) increases*; *(so) weight is greater than upthrust*; *(so) there is a resultant force downwards*. One mark for *the density of the diver becomes greater than the density of water* if no other mark is scored.",
+      },
       { k: "h", text: "A Galilean thermometer" },
       {
         k: "bullets",
@@ -356,12 +247,23 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "A bulb for which the weight of the bulb > the upthrust on the bulb now has a resultant force downwards, so that bulb sinks.",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*Upthrust on a bulb is equal to weight of liquid displaced*; *when upthrust equals / exceeds weight of bulb / disc, bulb floats*; *weight of a bulb / disc is constant*; *as temperature increases the weight of displaced liquid decreases*, or *as temperature increases upthrust on bulb decreases*; *until weight of a bulb / disc exceeds the upthrust*; *there is a resultant force and bulb will sink*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "No marks were available for simply comparing densities: an explanation of ==why== the density matters was required. A common error was to bring the viscosity of the liquid into the explanation — viscosity only has an effect while the bulb is moving. The narrative that scores is: the bulb floats, the temperature rises, the bulb sinks.",
+      },
       { k: "h", text: "Ballast tanks" },
       {
         k: "bullets",
         items: [
           "Filling the ballast tanks increases the weight of the boat.",
           "The boat must displace more water so that the upthrust on it still = the weight of the boat (**U = W**), so the boat sits lower.",
+          "Emptying the tanks does the reverse: the weight falls, so a smaller displaced volume balances it, and the boat rises in the water.",
           "The centre of gravity of the displaced water moves lower, which makes the boat more stable.",
         ],
       },
@@ -377,7 +279,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "==Displaced==, not *replaced* — the mark schemes print the word *displaced*. And an object does not float *because the upthrust on it is greater than its weight*: upthrust greater than weight means the object is accelerating upwards. Floating means the two forces are equal.",
+        text: "==Displaced==, not *replaced* — the mark schemes print the word *displaced*. An object does not float *because the upthrust on it is greater than its weight*: upthrust greater than weight means the object is accelerating upwards; floating means the two forces are equal. *G* is not an acceptable label on the weight arrow, and *mass* is not accepted where the mark scheme wants the weight. Name the owner of every weight in a flotation explanation: the weight of the object, the weight of the displaced pure water, the weight of the displaced seawater — a bare *weight* loses the mark.",
       },
     ],
   },
@@ -414,40 +316,12 @@ export const SECTIONS_PH02_A: SpecSection[] = [
         eq: "D = 6πηrv",
         note: "Stokes' law: the viscous drag on a sphere = 6 × π × the viscosity of the fluid × the radius of the sphere × the speed of the sphere. The specification prints this drag as F; these notes call it D, so the force balances read W = U + D. The v is a ==velocity==, not a volume.",
       },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the ropes
-         for the falling sphere: where the drag comes from, the
-         terminal-velocity formula derived from the balance, and the
-         map of what changes what. Approved groups below keep their
-         approved text and position. ————— */
-      { k: "h", text: "Where the drag comes from" },
       {
         k: "bullets",
         items: [
-          "The layers of a fluid slide past each other, and the viscosity of the fluid measures how strongly the layers resist that sliding: the viscosity belongs to the ==fluid==, not to the object moving through it.",
-          "The fluid touching the surface of the sphere is dragged along with the sphere, and each layer beyond it is dragged along a little less, so the sphere is always dragging the fluid's layers with it: that pull back on the sphere ==is== the viscous drag.",
-          "In Stokes' law the drag is proportional to each factor separately: double the viscosity and the drag doubles, double the radius and the drag doubles, double the speed and the drag doubles (**D = 6πηrv**).",
+          "The fluid touching the surface of the sphere is dragged along with it, and each layer beyond is dragged along a little less, so the fluid pulls back on the sphere: that pull ==is== the viscous drag.",
+          "Drag is proportional to each factor separately: double the viscosity and the drag doubles; double the radius and the drag doubles; double the speed and the drag doubles.",
         ],
-      },
-      { k: "h", text: "The terminal velocity formula, derived" },
-      {
-        k: "bullets",
-        items: [
-          "Start from the balance at terminal velocity: the weight of the sphere = the upthrust on it + the drag on it (**W = U + D**).",
-          "Write each side with its formula: the weight = ρ~sphere~ × (4/3)πr³ × g, the upthrust = ρ~fluid~ × (4/3)πr³ × g, and the drag = 6πηrv~term~.",
-          "The balance becomes one equation: ρ~sphere~ × (4/3)πr³ × g = ρ~fluid~ × (4/3)πr³ × g + 6πηrv~term~.",
-          "Subtract the upthrust from the weight: (4/3)πr³ × g × (ρ~sphere~ − ρ~fluid~) = 6πηrv~term~.",
-          "Divide both sides by 6πηr: one r cancels from the volume term, and the formula appears:",
-        ],
-      },
-      {
-        k: "eq",
-        eq: "v~term~ = 2r²g × (ρ~sphere~ − ρ~fluid~) ÷ (9η)",
-        note: "The terminal velocity of a small sphere in a viscous fluid. The formula is not printed on the data sheet — derive it from the balance, as above, and the derivation earns the marks. Worked numbers: a steel sphere (ρ ≈ 7800 kg m⁻³) of radius 1.0 mm in a liquid of density 900 kg m⁻³ and viscosity 0.20 Pa s gives v~term~ = 2 × (1.0 × 10⁻³)² × 9.81 × (7800 − 900) ÷ (9 × 0.20) ≈ 0.075 m s⁻¹.",
-      },
-      {
-        k: "note",
-        label: "The map in words",
-        text: "A larger sphere falls faster: the weight and the upthrust grow as r³ but the drag only as r, so the balance is met at a higher speed, and the terminal velocity is proportional to the square of the radius; a denser sphere falls faster, because the weight grows while the upthrust does not; a denser fluid slows the fall, because the upthrust grows; a warmer liquid speeds the fall up, because the viscosity of a liquid falls as its temperature rises; a sphere sinking into colder, deeper water slows down, because that water is both denser and more viscous.",
       },
       { k: "h", text: "When Stokes' law applies" },
       {
@@ -462,8 +336,13 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       },
       {
         k: "note",
+        label: "Mark scheme wording",
+        text: "*Small spherical object* or *spherical object moving at low speed*; *laminar flow* (allow *non-turbulent flow*) — the two printed conditions. Mark schemes also print the rejections: the law does not apply to ==all spheres==, and it ==applies at all viscosities==.",
+      },
+      {
+        k: "note",
         label: "Not accepted",
-        text: "“Small” on its own when the stem already states the sphere is small; “the flow around the sphere was turbulent” offered as a measurement error; “the densities used were incorrect”; “mass” written where the mark scheme wants the weight.",
+        text: "“Small” on its own when the stem already states the sphere is small; “the flow around the sphere was turbulent” offered as a measurement error; “the densities used were incorrect”; “mass” written where the mark scheme wants the weight; *laminar* applied to the ==object== (“the object must be laminar” does not score — laminar describes the flow).",
       },
       {
         k: "def",
@@ -479,6 +358,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The weight of the sphere downwards is balanced by the upthrust plus the drag upwards (**W = U + D**).",
           "The drag on the sphere is therefore the difference between the weight and the upthrust (**D = W − U**).",
           "To calculate the terminal velocity: **D = W − U** first, then **v = D ÷ (6πηr)**.",
+          "Write the balance as one equation: the examiner report warns that *weight = drag and upthrust* can be read as two separate equalities (*weight = drag* and *weight = upthrust*), so write **W = U + D**.",
         ],
       },
       { k: "h", text: "Reaching terminal velocity" },
@@ -493,6 +373,16 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "On a velocity-time graph, the gradient = the acceleration: the curve starts steep, becomes less steep as the drag builds up, and levels off horizontal at the terminal velocity.",
           "In a vacuum there is no drag and no upthrust on the object, so the resultant force on it = its weight, and the gradient of the velocity-time graph stays constant.",
         ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*(Initially) weight is greater than upthrust (+ drag)*, or *(initially) there is a resultant force downwards*; *(so) the sphere accelerates*; *drag increases (and upthrust remains constant)* — dependent on the acceleration mark; *(until) the resultant force becomes 0 (and the sphere moves at constant / terminal velocity)*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "Some answers described the ==conditions for Stokes' law== instead of answering the question about the motion. Answers that stated only that drag increases as speed increases, without stating that the sphere ==speeds up==, missed the middle marks.",
       },
       { k: "h", text: "Deducing whether Stokes' law applies" },
       {
@@ -516,6 +406,16 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "When terminal velocity is measured for spheres of different diameters, a graph of v against d² is a straight line through the origin.",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*(For the larger sphere at the same speed) drag is greater (because drag is proportional to radius)*; *but upthrust and weight increase by a greater factor than drag*, or *weight and upthrust are both proportional to diameter / radius cubed*; *(so) the new sphere had a greater (terminal) velocity, and therefore time taken (for the new sphere) was less*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "Most answers considered only ==one force==. Considering only the drag leads to the wrong conclusion (drag greater, so terminal velocity lower): all three forces are needed before the comparison.",
+      },
       { k: "h", text: "Rising objects" },
       {
         k: "bullets",
@@ -535,8 +435,18 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The balloon expands as it rises, until it reaches its full volume.",
           "Above that point, the volume of the balloon is fixed while the air gets less dense, so the upthrust on the balloon falls (**U = ρ~air~ × V × g**).",
           "When the upthrust on the balloon < the weight of the balloon, the resultant force on it acts downwards, so the balloon slows down.",
-          "The balloon stops rising when the upthrust on it has fallen to equal its weight (**U = W**).",
+          "The balloon stops rising when its velocity has fallen to zero at the maximum height.",
         ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "Indicative content: *upthrust greater than weight*; *the resultant force is upward*; *velocity increases / the balloon accelerates (upwards)*; *after the balloon reaches maximum volume, upthrust decreases as height increases (density of surrounding air decreases)*; *until upthrust is less than weight so there is a resultant force downwards*; *velocity decreases to zero / the balloon decelerates to rest*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "Many responses confused ==decreasing acceleration== with ==decreasing velocity==: while the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly. Answers that described only the approach to terminal velocity did not finish the story the question asked for.",
       },
       { k: "h", text: "A sphere sinking into colder, deeper water" },
       {
@@ -550,6 +460,11 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "At the old terminal velocity, the upthrust plus the drag on the sphere is now greater than the weight of the sphere, so the resultant force on the sphere acts upwards.",
           "The sphere slows down until the forces balance again, at a lower speed: the terminal velocity of the sphere is lower in the deeper water.",
         ],
+      },
+      {
+        k: "note",
+        label: "Not accepted",
+        text: "*Mass* written where the mark scheme wants the *weight*; the v in **D = 6πηrv** read as a volume (examiner reports name this twice); “the densities used were incorrect”; terminal velocity quoted from a set-piece formula when the question says “without calculation” — one sentence comparing the viscosities scores.",
       },
     ],
   },
@@ -571,21 +486,8 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "At terminal velocity, the weight of the ball = the upthrust on it + the drag on it (**W = U + D**).",
           "The drag is given by Stokes' law (**D = 6πηrv**), so the viscosity follows from **η = (W − U) ÷ (6πrv)**.",
           "Each quantity on the right is measured in the experiment.",
+          "The method assumes the ball has reached ==terminal velocity before the timing starts== and that Stokes' law applies during the timed fall: both are needed for **W = U + D** and **D = 6πηrv** to hold at the same time.",
           "The upthrust comes from the ==displaced liquid==, so use the density of the liquid, not the density of the ball.",
-        ],
-      },
-      /* ————— Foundations addendum, part 2 (2026-11-22) — the logic
-         of the viscometer: the two assumptions the method makes and
-         why each design choice protects one of them. Approved groups
-         below keep their approved text and position. ————— */
-      { k: "h", text: "The two assumptions behind the method" },
-      {
-        k: "bullets",
-        items: [
-          "The method assumes two things, and every design choice protects one of them: first, that Stokes' law applies during the timed fall; second, that the ball has reached terminal velocity ==before the timing starts==.",
-          "Only at terminal velocity does the balance **W = U + D** hold, so only there can the drag be replaced by **W − U** and the viscosity follow from **η = (W − U) ÷ (6πrv)**.",
-          "If the timing began too early, the ball would still be accelerating: the drag on it would be smaller than W − U and its speed smaller than the terminal velocity, so the computed viscosity would come out ==too large==.",
-          "A wide tube and a small ball keep the flow laminar, so the conditions for Stokes' law hold; a top marker well below the surface gives the speed time to stop changing, so the terminal-velocity condition holds.",
         ],
       },
       { k: "h", text: "The measurements" },
@@ -597,6 +499,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The density of the liquid, to find the upthrust (**U = ρVg**).",
           "The time to fall between two fixed marks, to find the terminal velocity (**v = s/t**).",
           "The temperature of the liquid, because the viscosity depends on it.",
+          "When a question asks for ==one other measurement==, the mass of the ball is the expected answer (its weight is accepted); the diameter, the density of the ball and the temperature of the liquid are all rejected as extras.",
         ],
       },
       { k: "h", text: "The method" },
@@ -615,7 +518,8 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The tube is wide, so the flow around the ball stays laminar and the ball never falls near the walls.",
+          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls: the condition for Stokes' law.",
+          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins: the condition for **W = U + D**.",
           "The fall is timed over a long distance, which reduces the percentage uncertainty in the velocity.",
         ],
       },
@@ -628,11 +532,17 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "Label the forces clearly: W or mg for the weight, U for the upthrust.",
         ],
       },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*Upwards arrow labelled upthrust or U, and downward arrow labelled weight or W or mg; both arrows start from the dot*; *length of weight arrow ≈ length of drag arrow + length of upthrust arrow*.",
+      },
       { k: "h", text: "Errors and validity" },
       {
         k: "bullets",
         items: [
           "A larger sphere has a greater terminal velocity, so the time between the markers is shorter; the stopwatch uncertainty stays the same, so the percentage uncertainty is greater.",
+          "Timing that begins too early gives a speed still rising: the drag on the ball is then smaller than W − U and the computed viscosity comes out ==too large==.",
           "A measured viscosity lower than the accepted value can come from: the liquid being warmer than stated, the diameter measured too small, the time measured too short, or the marker distance measured too large.",
           "Keep the temperature of the liquid constant during the measurement, because the viscosity of a liquid depends on its temperature.",
         ],
