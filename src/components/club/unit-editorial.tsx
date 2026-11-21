@@ -65,7 +65,7 @@ export function UnitEditorial({
                 <Target className="h-3.5 w-3.5" /> UNIT {unit.code}
               </span>
               <span className="legal-meta">
-                IAL CHEM · {unit.stage} · {unit.topicRange}
+                IAL PHYSICS · {unit.stage} · {unit.topicRange}
               </span>
             </div>
             <h1 className="mt-5 max-w-[24ch] font-display text-[calc(clamp(2.4rem,6vw,4.6rem)*var(--tch-ed))] leading-[1.06] font-bold tracking-[-.05em] text-ink">

@@ -19,7 +19,7 @@ const SECTIONS: Section[] = [
     eyebrow: "01 / THE PLATFORM",
     title: "Purpose and scope",
     body: [
-      "IAL CHEM is an independent revision resource for the Pearson Edexcel International Advanced Level Chemistry specification (2018), units WCH11–WCH16, and the International Advanced Level Physics specification (2018), unit WPH11. The site provides revision notes and worked examples for educational use. It is not a course, tutoring service, textbook or official Pearson resource.",
+      "IAL PHYSICS is an independent revision resource for the Pearson Edexcel International Advanced Level Physics specification (2018, Issue 3), unit WPH11 — Mechanics and Materials. The site provides revision notes for educational use. It is not a course, tutoring service, textbook or official Pearson resource.",
       "Use this material alongside instruction from your teachers, your course materials, the current specification and official past papers. It is intended to supplement, not replace, those resources.",
     ],
   },
@@ -39,8 +39,8 @@ const SECTIONS: Section[] = [
     eyebrow: "03 / INDEPENDENCE",
     title: "Affiliation and trademarks",
     body: [
-      "IAL CHEM is independent and is not affiliated with, endorsed by, sponsored by or otherwise associated with Pearson Education Limited, Edexcel or any examination board. The names “Pearson” and “Edexcel”, and their associated marks, are used only to identify the qualification and specification to which this resource relates. Those names and marks remain the property of their respective owners.",
-      "Any brief extracts from the 2018 specification are included for educational reference. Their use does not imply approval or endorsement by Pearson, and does not give IAL CHEM any official status in relation to the qualification.",
+      "IAL PHYSICS is independent and is not affiliated with, endorsed by, sponsored by or otherwise associated with Pearson Education Limited, Edexcel or any examination board. The names “Pearson” and “Edexcel”, and their associated marks, are used only to identify the qualification and specification to which this resource relates. Those names and marks remain the property of their respective owners.",
+      "Any brief extracts from the 2018 specification are included for educational reference. Their use does not imply approval or endorsement by Pearson, and does not give IAL PHYSICS any official status in relation to the qualification.",
     ],
   },
   {
@@ -49,7 +49,7 @@ const SECTIONS: Section[] = [
     eyebrow: "04 / OWNERSHIP",
     title: "Copyright and permitted use",
     body: [
-      "Unless otherwise indicated, the notes, worked examples, illustrations and software on this site are original materials created for IAL CHEM. They may not be copied or reused except as permitted by applicable law or with prior written permission. Official examination papers and mark schemes should be obtained from the relevant examination board.",
+      "Unless otherwise indicated, the notes, worked examples, illustrations and software on this site are original materials created for IAL PHYSICS. They may not be copied or reused except as permitted by applicable law or with prior written permission. Official examination papers and mark schemes should be obtained from the relevant examination board.",
       "You may access and use the materials for your own personal study. You must not reproduce, distribute, sell, publish or systematically extract site content without prior permission, unless applicable law permits that use. If you believe material on the site infringes your rights, contact the site operator with details of the material and the basis of your claim.",
     ],
   },
@@ -59,7 +59,7 @@ const SECTIONS: Section[] = [
     eyebrow: "05 / YOUR DATA",
     title: "Data and local storage",
     body: [
-      "IAL CHEM does not require an account. Your revision progress, goals, reading information, saved revision-pack items and display preferences are stored in your browser’s local storage. This information is held in that browser on that device and is not available to us through the site.",
+      "IAL PHYSICS does not require an account. Your revision progress, goals, reading information, saved revision-pack items and display preferences are stored in your browser’s local storage. This information is held in that browser on that device and is not available to us through the site.",
       "Local storage is specific to the browser and device in which the information was saved. Clearing that browser’s site data, using a different browser or changing devices may remove or make the information unavailable. We cannot restore locally stored progress if it is lost.",
     ],
   },
@@ -69,7 +69,7 @@ const SECTIONS: Section[] = [
     eyebrow: "06 / RESPONSIBILITY",
     title: "Limitation of liability",
     body: [
-      "To the fullest extent permitted by applicable law, IAL CHEM and its contributors exclude liability for loss or damage arising from, or in connection with, use of the site or reliance on its content. This includes, without limitation, indirect or consequential loss, loss of data, and academic or examination outcomes. You remain responsible for checking information and decisions relating to your studies with your teachers and the relevant examination board.",
+      "To the fullest extent permitted by applicable law, IAL PHYSICS and its contributors exclude liability for loss or damage arising from, or in connection with, use of the site or reliance on its content. This includes, without limitation, indirect or consequential loss, loss of data, and academic or examination outcomes. You remain responsible for checking information and decisions relating to your studies with your teachers and the relevant examination board.",
       "Nothing in this disclaimer excludes or limits liability where such exclusion or limitation is prohibited by law. Any rights that cannot lawfully be excluded remain unaffected.",
     ],
   },
@@ -100,7 +100,7 @@ export function Legal({ onBack }: { onBack: () => void }) {
         <div className="relative z-10 max-w-3xl">
           <div className="flex flex-wrap items-center gap-2">
             <span className="legal-kicker"><ShieldCheck className="h-3.5 w-3.5" /> DISCLAIMER</span>
-            <span className="legal-meta">IAL CHEM · CHEMISTRY</span>
+            <span className="legal-meta">IAL PHYSICS · WPH11</span>
           </div>
           <h1 className="mt-7 max-w-[760px] font-display text-[calc(clamp(2.65rem,7vw,5.6rem)*var(--tch-ed))] leading-[.98] font-semibold tracking-[-.065em] text-ink">
             Disclaimer and
@@ -108,7 +108,7 @@ export function Legal({ onBack }: { onBack: () => void }) {
             <span className="legal-heading-accent">terms of use.</span>
           </h1>
           <p className="mt-6 max-w-[570px] text-[calc(15px*var(--ts-body))] leading-[1.85] text-ink-soft sm:text-[calc(16px*var(--ts-body))]">
-            Please read the following information before using IAL CHEM. It explains the scope of this resource, permitted use of its content, and how information saved by the site is stored.
+            Please read the following information before using IAL PHYSICS. It explains the scope of this resource, permitted use of its content, and how information saved by the site is stored.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-ink/10 pt-5">
             <span className="legal-meta">INDEPENDENT STUDY RESOURCE</span>
@@ -212,7 +212,7 @@ export function Legal({ onBack }: { onBack: () => void }) {
                 <p className="legal-meta">IMPORTANT</p>
               </div>
               <p className="mt-4 max-w-[72ch] text-[calc(14px*var(--ts-body))] leading-[1.9] sm:text-[calc(14.5px*var(--ts-body))]">
-                IAL CHEM is an independent study companion, not an official Pearson or Edexcel resource. Its original notes are provided as is for personal revision. No account is needed, and your saved progress remains in your browser. Use the site as a helpful supplement, and check important information against the official specification and your teachers' guidance.
+                IAL PHYSICS is an independent study companion, not an official Pearson or Edexcel resource. Its original notes are provided as is for personal revision. No account is needed, and your saved progress remains in your browser. Use the site as a helpful supplement, and check important information against the official specification and your teachers' guidance.
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-current/15 pt-4">
                 <span className="legal-meta">END OF DISCLAIMER</span>

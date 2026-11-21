@@ -594,7 +594,7 @@ export function CustomizePanel({
           />
           <m.aside
             role="dialog"
-            aria-label="Customize IAL CHEM"
+            aria-label="Customize IAL PHYSICS"
             initial={{ x: "110%" }}
             animate={{ x: 0 }}
             exit={{ x: "110%" }}

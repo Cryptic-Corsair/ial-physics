@@ -517,11 +517,11 @@ function TopBar({
             type="button"
             onClick={onHome}
             className="flex shrink-0 cursor-pointer items-center gap-2 pr-1 sm:gap-2.5 sm:pr-1.5"
-            aria-label="IAL CHEM — home"
+            aria-label="IAL PHYSICS — home"
           >
             <LogoMark />
             <span className="hidden font-display text-[16px] font-semibold tracking-tight text-ink md:block">
-              IAL CHEM
+              IAL PHYSICS
             </span>
           </button>
 
@@ -875,10 +875,10 @@ function Footer({
               <LogoMark size={44} lab="light" />
               <div className="min-w-0">
                 <div className="font-display text-[calc(21px*var(--ts-sub))] font-bold leading-none tracking-tight">
-                  IAL CHEM
+                  IAL PHYSICS
                 </div>
                 <p className="mt-2 text-[calc(11px*var(--ts-other))] font-bold uppercase tracking-[0.16em] text-milk/45">
-                  Pearson Edexcel · International A Levels · Chemistry & Physics
+                  Pearson Edexcel · International Advanced Level · Physics
                 </p>
               </div>
             </div>
@@ -911,7 +911,7 @@ function Footer({
                   </h2>
                 </div>
                 <span className="pb-1 font-mono text-[calc(10.5px*var(--ts-other))] tracking-[0.12em] text-milk/35">
-                  WCH11 — WCH16 · WPH11
+                  {UNITS.map((u) => u.code).join(" — ")}
                 </span>
               </div>
 
@@ -998,7 +998,7 @@ function Footer({
 
           <div className="flex flex-col gap-4 py-5 pb-[calc(1.25rem+var(--sa-bottom))] sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-[calc(10.5px*var(--ts-other))] leading-relaxed font-semibold text-milk/40">
-              © 2026 IAL CHEM · Notes for the Pearson Edexcel International A Level Chemistry (2018) specification, WCH11–WCH16, and Physics (2018), WPH11. Not affiliated with or endorsed by Pearson Education Ltd.
+              © 2026 IAL PHYSICS · Notes for the Pearson Edexcel International Advanced Level Physics (2018) specification, WPH11. Not affiliated with or endorsed by Pearson Education Ltd.
             </p>
             <div className="flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 self-start sm:self-auto">
               {/* The front door. The showcase landing was promoted from

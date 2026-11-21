@@ -426,7 +426,7 @@ function NotesGalleryBody({
               style={{ background: GAL_ACCENT }}
             />
             <span className="font-display text-[calc(10.5px*var(--ts-other))] font-semibold tracking-[0.24em] uppercase text-ink-faint">
-              IAL CHEM · {unit.code} · {topicLabel}
+              IAL PHYSICS · {unit.code} · {topicLabel}
             </span>
           </div>
           <h1 className="mt-5 max-w-[15ch] font-display text-[calc(clamp(2.7rem,6.4vw,4.9rem)*var(--tch-ed))] leading-[1.03] font-medium tracking-[-0.045em] text-ink">

@@ -115,10 +115,10 @@ function CandyBtn({
 
 function Ticker({ units }: { units: Unit[] }) {
   const facts = [
-    `${units.length} units, WCH11 → WPH11`,
+    `${units.length} ${units.length === 1 ? "unit" : "units"} · WPH11`,
     `${TOTALS.topics} topics in spec order`,
     `≈${Math.round(TOTALS.minutes / 60)} hours of reading`,
-    `${TOTALS.examples} worked examples`,
+    "mark-scheme-wise, statement by statement",
     "definitions, equations, diagrams",
     "progress saved in your browser",
   ];
@@ -226,7 +226,7 @@ export function Home({ units, onOpenUnit, onOpenSticker, onOpenTopic, onOpenPack
             <div>
               <PopIn>
                 <SectionTag main="#12B886" tilt={-2}>
-                  Edexcel IAL Chemistry · 2018 spec
+                  Edexcel IAL Physics · 2018 spec
                 </SectionTag>
               </PopIn>
 
@@ -241,9 +241,9 @@ export function Home({ units, onOpenUnit, onOpenSticker, onOpenTopic, onOpenPack
 
               <PopIn delay={0.16}>
                 <p className="mt-6 max-w-[50ch] text-[calc(15.5px*var(--ts-body))] leading-[1.78] text-ink-soft sm:text-[calc(16.5px*var(--ts-body))] sm:leading-[1.8]">
-                  Welcome to <strong className="font-extrabold text-ink">IAL CHEM</strong> —
-                  revision notes for Pearson Edexcel IAL Chemistry (WCH11–WCH16 · WPH11) and Physics (WPH11). Every unit runs
-                  the 2018 spec in order: definitions, equations and fully worked examples. Your
+                  Welcome to <strong className="font-extrabold text-ink">IAL PHYSICS</strong> —
+                  revision notes for Pearson Edexcel IAL Physics (WPH11). Every unit runs
+                  the 2018 spec in order: the equations stated first and the notes written the way the mark schemes mark them. Your
                   progress saves itself in your browser.
                 </p>
               </PopIn>
@@ -370,7 +370,7 @@ export function Home({ units, onOpenUnit, onOpenSticker, onOpenTopic, onOpenPack
                   className="hero-sticker sticker inline-block rotate-[6deg] rounded-full px-4 py-2 font-display text-[calc(12.5px*var(--ts-other))] font-bold text-white"
                   style={{ background: "#9775FA", boxShadow: "0 3px 0 #7048E8" }}
                 >
-                  WCH11–WCH16
+                  WPH11
                 </span>
               </Float>
 
@@ -815,7 +815,7 @@ export function Home({ units, onOpenUnit, onOpenSticker, onOpenTopic, onOpenPack
                 </CandyBtn>
                 <button
                   type="button"
-                  onClick={() => onOpenUnit("WCH11")}
+                  onClick={() => onOpenUnit("WPH11")}
                   className="sticker inline-flex min-h-[calc(48px*var(--ui-scale))] cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-[calc(15.5px*var(--ts-body))] font-semibold select-none"
                   style={{ background: "rgb(255 255 255 / 0.94)", color: "#4a2f18", boxShadow: "0 4px 0 rgb(0 0 0 / 0.32)" }}
                 >

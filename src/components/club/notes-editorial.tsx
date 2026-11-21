@@ -335,7 +335,7 @@ function NotesEditorialBody({
               <span className="legal-kicker">
                 <BookOpen className="h-3.5 w-3.5" /> REVISION NOTE
               </span>
-              <span className="legal-meta">IAL CHEM · {unit.code} · {topicLabel.toUpperCase()}</span>
+              <span className="legal-meta">IAL PHYSICS · {unit.code} · {topicLabel.toUpperCase()}</span>
             </div>
             <h1 className="mt-5 max-w-[16ch] font-display text-[calc(clamp(2.65rem,7vw,5.6rem)*var(--tch-ed))] leading-[1.04] font-bold tracking-[-.065em] text-ink">
               {doc.title}<span className="legal-heading-accent">.</span>

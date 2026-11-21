@@ -6,6 +6,7 @@ import { AnimatePresence, m } from "framer-motion";
 import { ArrowRight, Search, X } from "./icons";
 import { Mascot } from "./bits";
 import type { UnitCode } from "@/lib/spectra/types";
+import { UNITS } from "@/lib/spectra/units";
 import { SEARCH_INDEX, searchTopics, type SearchRow } from "@/lib/spectra/search-index";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -108,7 +109,7 @@ export function SearchPalette({
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-label="IAL CHEM course search"
+            aria-label="IAL PHYSICS course search"
             tabIndex={-1}
             initial={{ y: "104%" }}
             animate={{ y: 0 }}
@@ -140,7 +141,7 @@ export function SearchPalette({
                       Course search
                     </span>
                     <span className="min-w-0 truncate font-display text-[12px] font-bold uppercase tracking-[0.08em] text-ink">
-                      IAL CHEM · PEARSON EDEXCEL
+                      IAL PHYSICS · PEARSON EDEXCEL
                     </span>
                   </div>
                   <p className="mt-1.5 truncate text-[12.5px] font-semibold text-ink-soft">
@@ -262,7 +263,9 @@ export function SearchPalette({
               </div>
 
               <footer className="flex shrink-0 items-center justify-between gap-3 border-t border-ink/10 px-4 py-2.5 text-[10px] font-medium text-ink-faint sm:px-6">
-                <span>6 units · {SEARCH_INDEX.length} topics · WCH11–WCH16</span>
+                <span>
+                  {UNITS.length} {UNITS.length === 1 ? "unit" : "units"} · {SEARCH_INDEX.length} topics · {UNITS.map((u) => u.code).join("–")}
+                </span>
                 <span className="hidden sm:inline">↑ ↓ navigate · Enter open · Esc close</span>
               </footer>
             </div>

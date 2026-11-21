@@ -95,34 +95,34 @@ export const metadata: Metadata = {
      absolute, on Vercel and off it. */
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IAL CHEM — Edexcel IAL Chemistry revision notes",
-    template: "%s · IAL CHEM",
+    default: "IAL PHYSICS — Edexcel IAL Physics revision notes",
+    template: "%s · IAL PHYSICS",
   },
   description:
-    "IAL CHEM provides revision notes for Edexcel IAL Chemistry (WCH11–WCH16), written to the 2018 specification. Definitions, equations and fully worked examples for every topic, with progress and reading time saved in your browser.",
+    "IAL PHYSICS provides revision notes for Edexcel IAL Physics (WPH11), written to the 2018 specification. Equations stated first and mark-scheme-wise notes for every statement, with progress and reading time saved in your browser.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "IAL CHEM",
+    siteName: "IAL PHYSICS",
     url: "/",
     locale: "en_GB",
-    title: "IAL CHEM — revision notes, written the way they're taught",
+    title: "IAL PHYSICS — revision notes, written the way they're taught",
     description:
-      "Complete class notes for every topic in the Pearson Edexcel International A Level Chemistry spec (WCH11–WCH16) — six units, thirty-three topics, thirty worked examples, and revision packs built from the spec points you tick.",
+      "Complete statement-by-statement notes for the Pearson Edexcel International A Level Physics spec (WPH11) — Mechanics and Materials in the mark schemes' own wording, and revision packs built from the spec points you tick.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "IAL CHEM — Edexcel IAL Chemistry revision notes",
+        alt: "IAL PHYSICS — Edexcel IAL Physics revision notes",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IAL CHEM — revision notes, written the way they're taught",
+    title: "IAL PHYSICS — revision notes, written the way they're taught",
     description:
-      "Complete class notes for every topic in the Pearson Edexcel International A Level Chemistry spec (WCH11–WCH16).",
+      "Complete statement-by-statement notes for the Pearson Edexcel International A Level Physics spec (WPH11).",
     images: ["/og.png"],
   },
   icons: { icon: "/favicon.svg" },
@@ -137,15 +137,15 @@ const siteJsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      name: "IAL CHEM",
+      name: "IAL PHYSICS",
       url: SITE_URL,
       inLanguage: "en",
       description:
-        "Revision notes for Edexcel International A Level Chemistry (WCH11–WCH16), written to the 2018 specification.",
+        "Revision notes for Edexcel International A Level Physics (WPH11), written to the 2018 specification.",
     },
     {
       "@type": "Organization",
-      name: "IAL CHEM",
+      name: "IAL PHYSICS",
       url: SITE_URL,
       logo: `${SITE_URL}/logo.svg`,
     },

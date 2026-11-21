@@ -280,7 +280,7 @@ export function StickerBook({
                   boxShadow: `0 4px 0 ${shade(suggestion.unit.candy.main)}`,
                 }}
               >
-                {suggestion.unit.code.replace("WCH", "")}
+                {suggestion.unit.code.replace("WPH", "")}
               </span>
               <div className="min-w-[calc(230px*var(--ui-scale))] flex-1">
                 <div className="flex items-center gap-2 font-display text-[calc(11.5px*var(--ts-other))] font-bold tracking-[0.16em] text-ink-faint uppercase">
@@ -338,7 +338,7 @@ export function StickerBook({
                       className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl font-display text-[calc(15px*var(--ts-body))] font-bold text-white"
                       style={{ background: main, boxShadow: `0 4px 0 ${shade(main)}` }}
                     >
-                      {u.code.replace("WCH", "")}
+                      {u.code.replace("WPH", "")}
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block truncate font-display text-[calc(16.5px*var(--ts-body))] font-semibold text-ink group-hover:underline">
@@ -497,7 +497,7 @@ export function StickerBook({
                     className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl font-display text-[calc(15px*var(--ts-body))] font-bold text-white"
                     style={{ background: main, boxShadow: `0 4px 0 ${shade(main)}` }}
                   >
-                    {u.code.replace("WCH", "")}
+                    {u.code.replace("WPH", "")}
                   </span>
                   <span className="min-w-0">
                     <span className="block font-display text-[calc(17px*var(--ts-sub))] font-semibold text-ink group-hover:underline">
