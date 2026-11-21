@@ -4,10 +4,9 @@ import type { ReactNode } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · physics figures — the mechanics and materials diagrams
-   for the physics notes, in the same candy-styled SVG language as
-   the chemistry library (notes-figures.tsx). Theme-aware inks ride
-   the mood tokens; motion classes follow the §16 toolkit: curves
-   draw on once, nothing loops.
+   for the physics notes, in the candy-styled SVG language. Theme-
+   aware inks ride the mood tokens; motion classes follow the §16
+   toolkit: curves draw on once, nothing loops.
    ═══════════════════════════════════════════════════════════════ */
 
 const INK = "var(--color-ink)";
