@@ -4,17 +4,19 @@ import { useSyncExternalStore } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the desk
-   The browser remembers whether the introduction has been seen.
-   The first site visit shows it and records that visit immediately;
-   every later visit opens the desk. A separate engagement flag
-   records entry into the desk or the opening of a unit or topic,
-   keeping the return-to-desk path distinct from first-visit history.
+   The desk is the home surface; the store remembers how far a
+   visitor got so the desk can pick up where they left off. The
+   engagement flag records entry into the desk or the opening of a
+   unit or topic; lastUnit/lastTopic/lastAt drive the continue card.
+   seenLanding (a relic of the retired first-visit introduction)
+   stays in the schema so old saved states keep parsing — new
+   writes always set it alongside engagement.
 
    No account, no sign-in: these markers live in localStorage,
    alongside the revised marks and the reading clock.
 
    localStorage · key "reaction-club-desk-v1"
-   { seenLanding: boolean       — the introduction has been shown once
+   { seenLanding: boolean       — kept for saved-state compatibility
      engaged: boolean           — has entered the desk or opened a unit/topic
      lastUnit: string | null    — last unit code tapped
      lastTopic: string | null   — last topic id tapped
@@ -82,15 +84,6 @@ function set(next: DeskState) {
   state = next;
   persist();
   emit();
-}
-
-/** Mark the introduction as seen for this browser. Returns true when this
-    visitor had already seen it before the current site visit. */
-export function markLandingSeen(): boolean {
-  load();
-  const returning = state.seenLanding || state.engaged;
-  if (!returning) set({ ...state, seenLanding: true });
-  return returning;
 }
 
 /** The visitor has chosen to enter the study workspace. */

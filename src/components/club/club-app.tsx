@@ -30,7 +30,7 @@ import {
 } from "@/lib/spectra/notes-meta";
 import { useTimeScope } from "@/lib/spectra/time";
 import { usePacks } from "@/lib/spectra/packs";
-import { useDesk, markUnit, markTopic, markLandingSeen, markDeskEntered } from "@/lib/spectra/desk";
+import { useDesk, markUnit, markTopic, markDeskEntered } from "@/lib/spectra/desk";
 import {
   applyPrefs,
   GALLERY_DOCS,
@@ -45,7 +45,6 @@ import {
   type Iface,
   type Lab,
 } from "@/lib/spectra/prefs";
-import { Home } from "./home";
 import { Desk } from "./desk";
 import { Mascot } from "./bits";
 import { SpecMapProvider, SpecMapTrigger } from "./spec-map";
@@ -152,7 +151,7 @@ type View =
      /spec | /pack          — the spec index / pack bench
      /sticker | /legal      — the sticker book / colophon
      /wph11                 — a unit walk
-     /                      — the desk (and the introduction)
+     /                      — the desk
 
    QUERY (the legacy form, still honoured): ?v=notes&doc=wph11-t02
    &spec=24, ?v=spec | pack | sticker | legal | WPH11 — parsed
@@ -165,7 +164,7 @@ type View =
 
    Unknown doc ids fall back to the library's first note; unknown
    paths and unknown query values fall through to null and the
-   ordinary first-visit flow plays: the introduction, then the desk. */
+   desk plays. */
 function deepViewOf(
   v: string,
   doc: string | null,
@@ -1036,23 +1035,19 @@ export default function ClubApp() {
      keeps playing on every close */
   const [searchMounted, setSearchMounted] = useState(false);
   const [customizeMounted, setCustomizeMounted] = useState(false);
-  /* The introduction is a one-time first-visit experience. Its
-     appearance is remembered separately from opening a unit, so even
-     a visitor who leaves without studying lands on the desk next time. */
+  /* The desk is the home surface — the introduction that once gated
+     it for first-time visitors has been retired, so every arrival
+     lands straight on the bench. The desk store still remembers the
+     last unit/topic for the continue card. */
   const desk = useDesk();
-  const [landing, setLanding] = useState(false);
   const visitHandled = useRef(false);
-  const deskActive = (desk.seenLanding || desk.engaged) && !landing;
 
   useEffect(() => {
     if (visitHandled.current) return;
     visitHandled.current = true;
-    const returning = markLandingSeen();
-    setLanding(!returning);
-    /* A deep link — legacy ?v=… or a clean root-form path — skips the
-       introduction entirely: someone who followed a button from a
-       front door is already through the door. It also banks the visit
-       as engagement so the next direct visit opens the desk. */
+    /* A deep link — legacy ?v=… or a clean root-form path — lands in
+       its room; it also banks the visit as engagement so the desk's
+       continue card stays honest. */
     const deep = viewFromLocation();
     if (!deep) {
       /* an unknown address (/nonsense) renders the desk but must
@@ -1063,7 +1058,6 @@ export default function ClubApp() {
       return;
     }
     markDeskEntered();
-    setLanding(false);
     setView(deep);
   }, []);
 
@@ -1140,10 +1134,6 @@ export default function ClubApp() {
   useEffect(() => {
     if (customizeOpen) setCustomizeMounted(true);
   }, [customizeOpen]);
-  /* leaving home always lands you back on the desk next time */
-  useEffect(() => {
-    if (view.kind !== "home") setLanding(false);
-  }, [view.kind]);
 
   /* ————— the eye vs the layout —————
      BROWSER page zoom (Chrome accessibility zoom, a remembered
@@ -1394,13 +1384,8 @@ export default function ClubApp() {
     else setView({ kind: "topic", code, topicId });
   }, []);
   const goHome = () => {
-    setLanding(false);
     setView({ kind: "home" });
   };
-  const startRevision = useCallback(() => {
-    markDeskEntered();
-    setLanding(false);
-  }, []);
   const openSticker = useCallback(() => setView({ kind: "sticker" }), []);
   const openPack = useCallback(() => setView({ kind: "pack" }), []);
   const openSpec = useCallback(() => setView({ kind: "spec" }), []);
@@ -1494,31 +1479,18 @@ export default function ClubApp() {
                 exit={{ opacity: 0, y: -14, scale: 0.995 }}
                 transition={{ type: "spring", stiffness: 260, damping: 26 }}
               >
-                {view.kind === "home" &&
-                  (deskActive ? (
-                    <Desk
-                      units={UNITS}
-                      desk={desk}
-                      onOpenUnit={openUnit}
-                      onOpenTopic={openTopic}
-                      onOpenSticker={openSticker}
-                      onOpenPack={openPack}
-                      onOpenSpec={openSpec}
-                      onSearch={openSearch}
-                      onShowLanding={() => { markDeskEntered(); setLanding(true); }}
-                    />
-                  ) : (
-                    <Home
-                      units={UNITS}
-                      onOpenUnit={openUnit}
-                      onOpenSticker={openSticker}
-                      onOpenTopic={openTopic}
-                      onOpenPack={openPack}
-                      onOpenSpec={openSpec}
-                      onBackToDesk={desk.engaged ? () => setLanding(false) : undefined}
-                      onStartRevision={startRevision}
-                    />
-                  ))}
+                {view.kind === "home" && (
+                  <Desk
+                    units={UNITS}
+                    desk={desk}
+                    onOpenUnit={openUnit}
+                    onOpenTopic={openTopic}
+                    onOpenSticker={openSticker}
+                    onOpenPack={openPack}
+                    onOpenSpec={openSpec}
+                    onSearch={openSearch}
+                  />
+                )}
   
                 {view.kind === "unit" && unit && (
                   <UnitEditorial
@@ -1611,11 +1583,8 @@ export default function ClubApp() {
               onOpenLegal={openLegal}
               onSearch={openSearch}
               bandFrom={
-                /* the desk ends on cream, the introduction on its own
-                   last band — each hands the footer its own sky */
-                view.kind === "home" && !deskActive
-                  ? "var(--home-band-b, var(--color-cream))"
-                  : "var(--color-cream)"
+                /* the desk ends on cream and hands the footer its sky */
+                "var(--color-cream)"
               }
             />
           </main>

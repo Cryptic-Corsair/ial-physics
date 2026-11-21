@@ -33,14 +33,13 @@ import { activeDaysOf, lastNDays } from "@/lib/spectra/dashboard";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the desk — the homepage for members (no account,
-   just a flag in the browser). Where the introduction sells the
-   club, the desk assumes you're in: your last topic up front, your
-   week at a glance, and every topic of the course one quiet tap
-   away — rows, not brochures. Nothing here animates: a returning
-   visitor wants the bench, not a show. Paints once, answers with
-   CSS hovers, saves every tap. The one spring in the room is the
-   week card's bars, inherited from the dashboard kit they came
-   from.
+   just a flag in the browser). The desk assumes you're in: your
+   last topic up front, your week at a glance, and every topic of
+   the course one quiet tap away — rows, not brochures. Nothing
+   here animates: a returning visitor wants the bench, not a show.
+   Paints once, answers with CSS hovers, saves every tap. The one
+   spring in the room is the week card's bars, inherited from the
+   dashboard kit they came from.
    ═══════════════════════════════════════════════════════════════ */
 
 /** the streak maths lives in progress-derive.ts — shared with the
@@ -55,7 +54,6 @@ export function Desk({
   onOpenPack,
   onOpenSpec,
   onSearch,
-  onShowLanding,
 }: {
   units: Unit[];
   desk: DeskState;
@@ -65,7 +63,6 @@ export function Desk({
   onOpenPack: () => void;
   onOpenSpec: () => void;
   onSearch: () => void;
-  onShowLanding: () => void;
 }) {
   const hydrated = useHydrated();
   const revised = useRevised();
@@ -413,17 +410,6 @@ export function Desk({
             ))}
           </div>
 
-          {/* the escape hatch back to the introduction */}
-          <p className="mt-10 text-center text-[calc(12.5px*var(--ts-other))] font-semibold text-ink-faint">
-            New here, or feeling nostalgic?{" "}
-            <button
-              type="button"
-              onClick={onShowLanding}
-              className="cursor-pointer font-bold text-ink-soft underline decoration-ink/20 underline-offset-4 transition-colors hover:text-ink"
-            >
-              Read the introduction
-            </button>
-          </p>
         </div>
       </section>
 

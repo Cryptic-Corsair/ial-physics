@@ -3,10 +3,10 @@
 
    The night lab keeps a small wardrobe of four night palettes
    (see html.dark in globals.css — plum night, ink night, aurora,
-   ember night) and the home seams ride the same rotation — each
-   mood pairs with its own two seam grounds (--home-band-a/b),
-   keyed off the same html[data-mood] attribute; the note bands
-   hold one fixed pair and never rotate.
+   ember night) keyed off the html[data-mood] attribute; the note
+   bands hold one fixed pair and never rotate. (The retired home
+   introduction's seam grounds — --home-band-a/b — once rode this
+   same rotation; they were removed with the introduction.)
 
    The rotation is CACHED, not calendared: the mood a visitor sees
    is stamped into their save (prefs.mood) when they pick Night,

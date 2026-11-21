@@ -442,8 +442,6 @@ html.dark:not(.dune) {
 
   --note-band-a: #1e1826;
   --note-band-b: #251d30;
-  --home-band-a: #120e19;
-  --home-band-b: #191421;
 
   --sunk-share: 14%;
   --sunk-base: #261e32;
@@ -469,24 +467,18 @@ html.dark:not(.dune)[data-mood="1"] {
   --color-paper: #302d39;
   --color-cocoa: #100e14;
   --tint-base: #403b4b;
-  --home-band-a: #131118;
-  --home-band-b: #1b1922;
 }
 html.dark:not(.dune)[data-mood="2"] {
   --color-cream: #1b1420;
   --color-paper: #34243a;
   --color-cocoa: #100b15;
   --tint-base: #47334e;
-  --home-band-a: #150f1a;
-  --home-band-b: #211829;
 }
 html.dark:not(.dune)[data-mood="3"] {
   --color-cream: #1c1518;
   --color-paper: #35272f;
   --color-cocoa: #110b0e;
   --tint-base: #49343d;
-  --home-band-a: #150f12;
-  --home-band-b: #23191e;
 }
 
 /* ————— the dune lab —————
@@ -532,8 +524,6 @@ html.dune {
      Ink keeps 14.5:1 / 14.0:1 on the pair. */
   --note-band-a: #231e15;
   --note-band-b: #2c2415;
-  --home-band-a: #1a1610;
-  --home-band-b: #211c12;
   /* content-surface grading, re-derived for the chocolate grounds —
      same three families as the night lab, wells sunk into roasted
      chocolate a half-step under the card:
@@ -610,8 +600,8 @@ html.classic .room {
    cocoa headings, a body tier with a full step more presence than
    the site's soft ink, a quiet meta tier — plus the hairline pair
    that feeds the divided lines (banner rules, subhead rules, ruled
-   pull-quotes, table rows, clause rules). The desk, the home
-   introduction and the editorial family never wear the marker, so
+   pull-quotes, table rows, clause rules). The desk and the
+   editorial family never wear the marker, so
    they keep the site tokens byte-for-byte. Note & pack sections go
    one step further inside .note-rooms (end of this file), which
    re-points the same ladder over its own parchment grounds; the
