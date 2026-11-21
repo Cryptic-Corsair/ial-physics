@@ -163,8 +163,9 @@ type View =
    root-form room by next.config.ts before this shell ever mounts.
 
    Unknown doc ids fall back to the library's first note; unknown
-   paths and unknown query values fall through to null and the
-   desk plays. */
+   query values fall through to null and the desk plays. Unknown
+   PATHS never reach the shell: the room catch-all 404s any address
+   that is not a room (see src/app/[...room]/page.tsx). */
 function deepViewOf(
   v: string,
   doc: string | null,
@@ -1050,9 +1051,11 @@ export default function ClubApp() {
        continue card stays honest. */
     const deep = viewFromLocation();
     if (!deep) {
-      /* an unknown address (/nonsense) renders the desk but must
-         not leave junk in the address bar — normalize in place, no
-         history entry */
+      /* an unknown client-side address (a stale popstate entry, a
+         hand-edited URL after the room moved) renders the desk but
+         must not leave junk in the address bar — normalize in
+         place, no history entry. Direct visits to unknown paths
+         never reach the shell: the catch-all 404s them first. */
       if (window.location.pathname !== "/")
         window.history.replaceState(null, "", "/");
       return;

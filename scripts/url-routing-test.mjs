@@ -2,7 +2,8 @@
 // THE URL↔ROOM TEST — every room owns an accurate address:
 //  · a clean root-form path lands in its room and the URL stays put
 //  · a legacy ?v= deep link upgrades to its path form (replaceState)
-//  · an unknown path normalizes to / (no junk address)
+//  · an unknown path 404s at the server — the catch-all never
+//    serves the shell for a non-room address
 //  · the browser's real back/forward walks rooms (popstate re-derives)
 //  · in-app room changes push paths; the URL never drifts from the room
 import { createRequire } from 'module';
@@ -107,15 +108,17 @@ for (const [path, view] of cleanPaths) {
   check('bare legacy ?v=notes lands on the first doc', ok, `view=${s.view} path=${s.path}`);
 }
 
-/* — 3 · an unknown path renders the desk and normalizes its address — */
+/* — 3 · an unknown path is a real 404 (the catch-all never serves
+   the shell for a non-room address) — */
 {
-  await page.goto(url + '/nonsense', { waitUntil: 'networkidle' });
-  const ok = await waitFor(page, async () => {
-    const s = await stateOf(page);
-    return s.view === 'home' && s.path === '/' && s.search === '';
-  });
-  const s = await stateOf(page);
-  check('unknown /nonsense → desk at /', ok, `view=${s.view} path=${s.path}`);
+  for (const junk of ['/nonsense', '/_vercel/insights/script.js', '/wch11', '/spec/extra']) {
+    const res = await fetch(url + junk);
+    check(
+      `unknown path ${junk} → 404`,
+      res.status === 404,
+      `status=${res.status} type=${res.headers.get('content-type') ?? '∅'}`,
+    );
+  }
 }
 
 /* — 4 · the browser's real back/forward walks rooms — */
