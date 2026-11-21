@@ -1,4 +1,4 @@
-# IAL CHEM · Two Interfaces — The Roadmap
+# IAL PHYSICS · Two Interfaces — The Roadmap
 
 **Goal:** a second, site-wide interface — the editorial dress already proven by the
 disclaimer page and the sample note — selectable by the user, applied everywhere except

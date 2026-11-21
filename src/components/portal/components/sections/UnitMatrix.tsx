@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { GLOBAL_METRICS, IAL_UNITS, type IalUnit } from '../../data/ialData';
 import { EASE_EXPO } from '../../lib/motion';
@@ -13,61 +13,37 @@ interface UnitMatrixProps {
 }
 
 /* The syllabus coverage, second pass — specimen-sheet cards on the
-   deepening ground. Each of the six units keeps its honest facts
-   (code, topic count, minutes, share of the 756) and its own
-   miniature loop from the same shelf the living laboratory draws
-   from, now wearing plate chrome: a mono ordinal pinned to the
-   motif stage (01–06, the course's own order), a hairline ring that
-   warms under a fine pointer, an index arrow that slides in, and a
-   deep-shadow veil that fades up beneath the lifting card. Motion
-   follows one rule book: the header and grid breathe in together
-   the first time the room scrolls on stage (shrinking gaps, one
-   entrance per container), the AS/A2 capsule crossfades the stage
-   with popLayout — the leaving view departs while the arriving one
-   rises, exits shorter than entrances — and hover is gated to
-   fine pointers so touch never gets sticky states. Tapping a card
-   still opens the command palette filtered to the unit's code. */
-
-type CourseStage = 'as' | 'a2';
+   deepening ground. Each unit keeps its honest facts (code, topic
+   count, minutes, share of the reading time) and its own miniature
+   loop from the same shelf the living laboratory draws from, now
+   wearing plate chrome: a mono ordinal pinned to the motif stage,
+   a hairline ring that warms under a fine pointer, an index arrow
+   that slides in, and a deep-shadow veil that fades up beneath the
+   lifting card. Motion follows one rule book: the header and grid
+   breathe in together the first time the room scrolls on stage
+   (shrinking gaps, one entrance per container), and hover is gated
+   to fine pointers so touch never gets sticky states. Tapping a
+   card still opens the command palette filtered to the unit's code. */
 
 const MOTIF_BY_CODE: Record<IalUnit['code'], UnitMotifId> = {
-  WCH11: 'atom',
-  WCH12: 'hill',
-  WCH13: 'drop',
-  WCH14: 'equilibrate',
-  WCH15: 'complex',
-  WCH16: 'distill',
+  WPH11: 'drop',
 };
 
-const STAGES: Array<{
-  id: CourseStage;
-  big: string;
-  sub: string;
-  units: readonly IalUnit[];
-}> = [
-  { id: 'as', big: 'AS', sub: 'Units 1–3', units: IAL_UNITS.slice(0, 3) },
-  { id: 'a2', big: 'A2', sub: 'Units 4–6', units: IAL_UNITS.slice(3) },
-];
-
 /* Entrance choreography — one beat per element, gaps shrink as the
-   wave travels (0 → 60 → 120 → 180 → 230ms), the lead travels
+   wave travels (0 → 60 → 120 → 230ms), the lead travels
    furthest and support rises less, decoration fades in place. */
 const HEADER_BEATS = [
   { y: 14, duration: 0.55, delay: 0 }, // kicker — decoration, fades only
   { y: 14, duration: 0.55, delay: 0.06 }, // heading — the lead
   { y: 9, duration: 0.5, delay: 0.12 }, // meta line
-  { y: 7, duration: 0.5, delay: 0.18 }, // stage capsule
 ];
 const CARD_DELAYS = [0, 0.07, 0.12]; // shrinking gaps inside the grid
 
 export function UnitMatrix({ reducedMotion, onSelectUnit }: UnitMatrixProps) {
-  const [stage, setStage] = useState<CourseStage>('as');
-  const stageSpec = STAGES.find((s) => s.id === stage) ?? STAGES[0];
-  // the six motifs run only while the units room is the one on stage
+  // the unit motif runs only while the units room is the one on stage
   const { ref, live } = useRoomLive<HTMLElement>();
   // the room's first entrance: one wave, triggered once from the
-  // viewport observer below; stage swaps afterwards crossfade the
-  // grid itself and their cards arrive with it (no second stagger)
+  // viewport observer below
   const [revealed, setRevealed] = useState(reducedMotion);
 
   return (
@@ -113,97 +89,30 @@ export function UnitMatrix({ reducedMotion, onSelectUnit }: UnitMatrixProps) {
                   className="font-display font-semibold leading-[1.12]"
                   style={{ fontSize: 'calc(clamp(1.75rem, 3.4vw, 2.6rem) * var(--tch))' }}
                 >
-                  The six units, in{' '}
+                  Unit 1, taught in{' '}
                   <span className="portal-ed-heading-accent">
                     specification order.
                   </span>
                 </h2>
               ) : (
-                'Tap a unit to browse its spec points in the index — each card shows how much of the course it takes.'
+                'Tap a unit to browse its spec points in the index — each card shows how much of the course it takes. WPH12–WPH16 join one unit at a time, research-first.'
               )}
             </motion.div>
           ))}
         </div>
 
-        {/* The glass stage capsule — AS / A2 */}
-        <motion.div
-          className="mt-9 flex justify-center"
-          initial={false}
-          animate={revealed ? 'shown' : 'held'}
-          variants={{
-            held: { opacity: 0, y: HEADER_BEATS[3].y },
-            shown: {
-              opacity: 1,
-              y: 0,
-              transition: reducedMotion
-                ? { duration: 0 }
-                : {
-                    duration: HEADER_BEATS[3].duration,
-                    ease: EASE_EXPO,
-                    delay: HEADER_BEATS[3].delay,
-                  },
-            },
-          }}
-        >
-          <div
-            role="tablist"
-            aria-label="Course stage"
-            className="portal-glass-capsule"
-            data-testid="stage-capsule"
+        {/* The motion graphics cards */}
+        <div className="mx-auto mt-10 max-w-5xl">
+          <motion.div
+            id="units-document"
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+            initial={
+              revealed && !reducedMotion ? { opacity: 0, y: 10 } : false
+            }
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: EASE_EXPO }}
           >
-            {STAGES.map((spec) => {
-              const active = stage === spec.id;
-              return (
-                <button
-                  key={spec.id}
-                  role="tab"
-                  aria-selected={active}
-                  aria-controls="units-document"
-                  data-active={active}
-                  data-testid={`stage-tab-${spec.id}`}
-                  type="button"
-                  onClick={() => setStage(spec.id)}
-                  className="portal-capsule-tab"
-                >
-                  {active && !reducedMotion && (
-                    <motion.span
-                      layoutId="stage-capsule-pill"
-                      className="portal-capsule-pill"
-                      transition={{ type: 'spring', stiffness: 380, damping: 32, mass: 0.85 }}
-                    />
-                  )}
-                  {active && reducedMotion && (
-                    <span className="portal-capsule-pill" />
-                  )}
-                  <span className="portal-capsule-big">{spec.big}</span>
-                  <span className="portal-capsule-sub">{spec.sub}</span>
-                </button>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* The motion graphics cards — crossfaded by stage */}
-        <div className="mx-auto mt-8 max-w-5xl">
-          <AnimatePresence mode="popLayout" initial={false}>
-            <motion.div
-              key={stage}
-              id="units-document"
-              role="tabpanel"
-              aria-label={`${stageSpec.big} units — ${stageSpec.sub}`}
-              className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
-              initial={
-                revealed && !reducedMotion ? { opacity: 0, y: 10 } : false
-              }
-              animate={{ opacity: 1, y: 0 }}
-              exit={
-                reducedMotion
-                  ? undefined
-                  : { opacity: 0, y: -6, transition: { duration: 0.18, ease: 'easeOut' } }
-              }
-              transition={{ duration: 0.3, ease: EASE_EXPO }}
-            >
-              {stageSpec.units.map((unit, i) => {
+            {IAL_UNITS.map((unit, i) => {
                 const ordinal = String(IAL_UNITS.indexOf(unit) + 1).padStart(2, '0');
                 const sharePct = Math.round(
                   (unit.minutes / GLOBAL_METRICS.totalMinutes) * 100,
@@ -212,7 +121,7 @@ export function UnitMatrix({ reducedMotion, onSelectUnit }: UnitMatrixProps) {
                 // row; the odd third spans the full width so the row
                 // reads as a deliberate editorial close, not a stranded
                 // card. Desktop returns to three across.
-                const last = i === stageSpec.units.length - 1;
+                const last = i === IAL_UNITS.length - 1;
                 return (
                   <motion.button
                     key={unit.code}
@@ -300,8 +209,7 @@ export function UnitMatrix({ reducedMotion, onSelectUnit }: UnitMatrixProps) {
                   </motion.button>
                 );
               })}
-            </motion.div>
-          </AnimatePresence>
+          </motion.div>
         </div>
       </motion.div>
       </StillProvider>

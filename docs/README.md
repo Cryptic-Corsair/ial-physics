@@ -15,7 +15,7 @@ All project documentation, operating guides, architecture notes and engineering 
 - Keep the root README concise: product summary, quick start and links into this directory.
 - Do not scatter new Markdown guides across the repository root.
 - Root-level `AGENTS.md` is an intentional exception: it is a short discovery pointer so AI coding agents find the rules before editing. The full documentation remains here.
-- Keep application source and user-facing site content in their existing source locations. This directory is for repository/development documentation, not chemistry note content displayed by the site.
+- Keep application source and user-facing site content in their existing source locations. This directory is for repository/development documentation, not note content displayed by the site.
 
 ## Documentation maintenance
 

@@ -29,7 +29,7 @@ import {
 } from "./gallery-section";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the notes reader, in the gallery dress.
+   IAL PHYSICS · the notes reader, in the gallery dress.
    The same note — same doc, same sections, same diagrams, same
    spec map registration, same pack ticks — hung on white walls
    instead of set as a document: a quiet hero, a ledger-style
@@ -331,7 +331,7 @@ function NotesGalleryBody({
      (see useGalleryHop). */
   const hop = useGalleryHop();
   /* the note's own name for itself — "Topic 9" on the class notes,
-     "Practical 1" on WCH13, straight from the unit's topic list
+     "Topic 1" on WPH11, straight from the unit's topic list
      (the same label the unit page and the desk serve). The number
      is only the fallback for a doc whose topic never joined. The
      editorial reader derives the identical line. */

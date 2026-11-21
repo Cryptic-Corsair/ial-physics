@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CandyApp from "@/components/candy/App";
 import "@/components/candy/candy.css";
 
-/* The candy lab front door — IAL CHEM's alternate homepage, the fun one,
+/* The candy lab front door — IAL PHYSICS's alternate homepage, the fun one,
    rebuilt from the user's correction: the first alternate (/lumen, the
    night laboratory) read too much like the dark daylight portal, and the
    ask was "fun, playful and engaging, a lot of animations, a mascot —
@@ -11,7 +11,7 @@ import "@/components/candy/candy.css";
    the beaker mascot front and centre (blinking, waving, pupil-glide,
    boopable with confetti), a tilted two-way formula marquee, sticker
    cards, a flame stage, three canvas machines (Maxwell–Boltzmann, the
-   self-computing titration, dynamic 2NO₂⇌N₂O₄), the wobbly periodic
+   self-drawing graphs, the Stokes force race), the wobbling unit
    snack table, the marching method thread, sticker-sheet counters, and
    the after-hours footer where Bubbles sleeps.
 
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
      not a front door's brand line. No openGraph here: a child
      openGraph replaces the layout's wholesale (Next merges top-level
      fields only), which would drop og:image/og:type. */
-  title: { absolute: "IAL CHEM — the candy lab" },
+  title: { absolute: "IAL PHYSICS — the candy lab" },
   description:
-    "The fun alternate front door for IAL CHEM: the complete Pearson Edexcel International A Level Chemistry course (WCH11–WCH16) in its candy colours — sticker cards, figures that move, a boopable beaker mascot, and serious notes underneath the silly wrapper. Progress stays in your browser.",
+    "The fun alternate front door for IAL PHYSICS: WPH11 — Mechanics and Materials — in its candy colours — sticker cards, figures that move, a boopable beaker mascot, and serious notes underneath the silly wrapper. Progress stays in your browser.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/candy" },
 };

@@ -5,67 +5,63 @@ import { EASE_LUM, Meniscus, Reveal, SectionHead } from './bits';
 import { useLive } from './lib';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   a taste — a real WCH11-style titration question, solved the bench way.
+   a taste — a real WPH11 question, solved the bench way.
 
    The numbers are the machine's own (the motion section runs this same
-   titration live): 25.0 cm³ of 0.100 mol dm⁻³ NaOH against a 20.0 cm³
-   titre of HCl gives exactly 0.125 mol dm⁻³ — verified in
-   scripts/lumen-numbers.py. The question card stays pinned while the
-   four steps light up in order, and the answer arrives as a pill.
+   launch live): m = 5.0 × 10⁶ kg lifting off on 7.3 × 10⁷ N of thrust
+   gives exactly a = 4.8 m s⁻² — verified in scripts/lumen-numbers.py.
+   The question card stays pinned while the four steps light up in
+   order, and the answer arrives as a pill.
    ═══════════════════════════════════════════════════════════════════════ */
 
 const INK70 = 'rgba(242,238,250,0.7)';
 const INK40 = 'rgba(242,238,250,0.4)';
 
-/* the little rig on the question card — burette, drop, flask whose
-   phenolphthalein pink drains at the endpoint, on a loop */
-function MiniTitration() {
+/* the little rig on the question card — the rocket on its pad, its
+   thrust arrow glowing while the weight arrow holds it down, and the
+   velocity–time line drawing itself up as it climbs */
+function MiniLaunch() {
   return (
     <svg viewBox="0 0 320 150" aria-hidden="true">
-      {/* burette */}
-      <rect x="40" y="10" width="12" height="60" rx="2" fill="rgba(116,215,255,0.16)" stroke={INK70} strokeWidth="2" />
-      <line x1="41" y1="22" x2="51" y2="22" stroke="#74d7ff" strokeWidth="2.2" />
-      <path d="M52 18 h4 M52 28 h3 M52 38 h3 M52 48 h3" stroke={INK40} strokeWidth="1.5" />
-      <path d="M44 70 L45.4 80 M48 70 L46.6 80 M45.4 80 H46.6" stroke={INK70} strokeWidth="1.8" fill="none" />
-      {/* the drop */}
-      <circle className="lum-loop lum-drip" style={{ transformBox: 'fill-box' }} cx="46" cy="86" r="3" fill="#74d7ff" />
-      {/* flask */}
-      <path d="M40 100 V110 L16 138 Q14 142 19 142 H73 Q78 142 76 138 L52 110 V100" fill="none" stroke={INK70} strokeWidth="2.2" />
-      <path d="M36 100 H56" stroke={INK70} strokeWidth="2.4" strokeLinecap="round" />
-      {/* the liquid — pink while alkaline, drained past the endpoint */}
-      <path className="lum-loop lum-pinkcycle" d="M30 124 L22 136 Q21 139 25 139 H67 Q71 139 70 136 L62 124 Z" fill="#ff8fd6" opacity="0.8" />
-      {/* labels */}
-      <text x="62" y="20" fontSize="10" fontFamily="var(--font-plex), monospace" fill={INK40}>
-        HCl
+      {/* launch pad */}
+      <path d="M20 128 H110" stroke={INK70} strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M34 128 V138 M62 128 V138 M90 128 V138" stroke={INK40} strokeWidth="1.6" />
+      {/* the rocket, climbing slowly on the loop */}
+      <g className="lum-loop lum-rise" style={{ transformBox: 'fill-box' }}>
+        <path d="M60 118 L60 96 L68 84 L76 96 L76 118 Z" fill="rgba(116,215,255,0.14)" stroke="#74d7ff" strokeWidth="2.2" />
+        <circle cx="68" cy="102" r="3.4" fill="none" stroke="#74d7ff" strokeWidth="1.6" />
+      </g>
+      {/* exhaust drips falling away below the pad line */}
+      <circle className="lum-loop lum-drip" cx="64" cy="124" r="2.2" fill="#ff8fd6" />
+      <circle className="lum-loop lum-drip d2" cx="72" cy="124" r="2.2" fill="#74d7ff" />
+      {/* thrust — the long arrow up, labelled */}
+      <path d="M92 116 V78" stroke="#74d7ff" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M92 78 L87.6 87 M92 78 L96.4 87" stroke="#74d7ff" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <text x="98" y="92" fontSize="10" fontFamily="var(--font-plex), monospace" fill="#74d7ff">
+        thrust
       </text>
-      <text x="96" y="132" fontSize="10" fontFamily="var(--font-plex), monospace" fill={INK40}>
-        25.0 cm
-        <tspan dy="3" fontSize="7.5">
-          3
-        </tspan>
-        <tspan dy="-3"> · 0.100 mol dm</tspan>
-        <tspan dy="-4" fontSize="7.5">
-          −3
-        </tspan>
-        <tspan dy="4"> NaOH</tspan>
+      {/* weight — the shorter arrow down */}
+      <path d="M44 98 V122" stroke="#ff8fd6" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M44 122 L39.6 113 M44 122 L48.4 113" stroke="#ff8fd6" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      <text x="22" y="136" fontSize="10" fontFamily="var(--font-plex), monospace" fill="#ff8fd6">
+        weight
       </text>
-      {/* the pH curve, miniature */}
+      {/* the v–t graph, miniature — the line drawing on */}
       <path d="M180 30 H310" stroke={INK40} strokeWidth="1.4" strokeDasharray="2 5" />
       <path d="M180 24 V136" stroke={INK40} strokeWidth="1.4" strokeDasharray="2 5" />
       <path
         className="lum-loop lum-drawcurve"
-        d="M182 34 C 230 36, 236 128, 246 130 C 256 132, 262 38, 308 40"
+        d="M182 132 C 214 130, 248 96, 276 62 C 288 48, 298 40, 308 38"
         fill="none"
         stroke="#6fe8a3"
         strokeWidth="3"
         strokeLinecap="round"
       />
-      <circle cx="246" cy="130" r="4.5" fill="#ffc46b" />
       <text x="252" y="146" fontSize="9.5" fontFamily="var(--font-plex), monospace" fill={INK40}>
-        equivalence
+        v = u + at
       </text>
       <text x="312" y="146" fontSize="9.5" fontFamily="var(--font-plex), monospace" fill={INK40} textAnchor="end">
-        acid added →
+        time →
       </text>
     </svg>
   );
@@ -76,9 +72,11 @@ const STEPS: Array<{ n: string; body: React.ReactNode }> = [
     n: '1',
     body: (
       <>
-        <b>Write the equation.</b>{' '}
-        <span className="lum-mono">HCl + NaOH → NaCl + H<sub>2</sub>O</span> — one acid, one
-        base, and a clean 1&nbsp;:&nbsp;1 ratio across the arrow.
+        <b>Weight first.</b>{' '}
+        <span className="lum-mono">
+          W = mg = 5.0 × 10<sup>6</sup> × 9.81 = 4.91 × 10<sup>7</sup> N
+        </span>{' '}
+        — the thrust is <em>not</em> the resultant force; the weight is still there.
       </>
     ),
   },
@@ -86,11 +84,12 @@ const STEPS: Array<{ n: string; body: React.ReactNode }> = [
     n: '2',
     body: (
       <>
-        <b>Count the base.</b> n(NaOH) = c × V ={' '}
+        <b>Take the difference.</b>{' '}
         <span className="lum-mono">
-          0.100 × 0.0250 dm<sup>3</sup> = 2.50 × 10<sup>−3</sup> mol
+          ΣF = thrust − weight = 7.3 × 10<sup>7</sup> − 4.91 × 10<sup>7</sup> = 2.39 ×
+          10<sup>7</sup> N
         </span>{' '}
-        — the pipette did the measuring; you only convert it.
+        — the resultant acts upwards.
       </>
     ),
   },
@@ -98,11 +97,11 @@ const STEPS: Array<{ n: string; body: React.ReactNode }> = [
     n: '3',
     body: (
       <>
-        <b>Cross the ratio.</b> The equation says 1&nbsp;:&nbsp;1, so{' '}
+        <b>Apply the second law.</b>{' '}
         <span className="lum-mono">
-          n(HCl) = 2.50 × 10<sup>−3</sup> mol
+          a = ΣF/m = 2.39 × 10<sup>7</sup> ÷ 5.0 × 10<sup>6</sup>
         </span>{' '}
-        — the same amount, delivered in a 20.0 cm<sup>3</sup> titre.
+        — one line, straight into the calculator.
       </>
     ),
   },
@@ -110,12 +109,8 @@ const STEPS: Array<{ n: string; body: React.ReactNode }> = [
     n: '4',
     body: (
       <>
-        <b>Share it out.</b> V(HCl) = 20.0 cm<sup>3</sup> ={' '}
-        <span className="lum-mono">0.0200 dm<sup>3</sup></span>, so{' '}
-        <span className="lum-mono">
-          c = n ÷ V = 2.50 × 10<sup>−3</sup> ÷ 0.0200
-        </span>
-        .
+        <b>Round honestly.</b> The data carries two significant figures, so the answer does
+        too — and the unit rides on the end.
       </>
     ),
   },
@@ -133,21 +128,20 @@ export function TasteBand() {
           dot="#ff8fd6"
           eyebrow="a taste of the notes"
           title="Watch a question react."
-          lead="A WCH11 classic — the same titration the machine below the shelf is running live. Four steps, no skipped lines, the way every worked example in the notes is written."
+          lead="A WPH11 classic — the same launch the machine below the shelf is running live. Four steps, no skipped lines, the way every worked example in the notes is written."
         />
         <div className="lum-taste-grid">
           <Reveal className="lum-qcard">
-            <span className="lum-qchip">WCH11 · formulae &amp; amount of substance</span>
+            <span className="lum-qchip">WPH11 · the equations of motion</span>
             <p className="lum-qtext">
-              25.0 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> sodium hydroxide is titrated with
-              hydrochloric acid. The titre is 20.0 cm<sup>3</sup>. Find the concentration of the
-              hydrochloric acid.
+              A rocket of mass 5.0 × 10<sup>6</sup> kg lifts off with engine thrust
+              7.3 × 10<sup>7</sup> N. Calculate the initial acceleration.
             </p>
             <span className="lum-qeq">
-              HCl + NaOH → NaCl + H<sub>2</sub>O
+              ΣF = ma
             </span>
             <div className="lum-tsvg">
-              <MiniTitration />
+              <MiniLaunch />
             </div>
             <p className="lum-qfoot">the rig on the left, the curve on the right — one loop, every 8 seconds</p>
           </Reveal>
@@ -188,8 +182,8 @@ export function TasteBand() {
             >
               <span className="lum-stepn">∴</span>
               <p>
-                <b>Three significant figures,</b> as the paper expects — four marks, gently
-                earned.
+                <b>Two significant figures with the unit attached,</b> as the paper expects —
+                three marks, gently earned.
                 <br />
                 <motion.span
                   className="lum-answer"
@@ -199,7 +193,7 @@ export function TasteBand() {
                   transition={{ type: 'spring', stiffness: 260, damping: 15, delay: 0.5 }}
                   style={{ display: 'inline-flex', marginTop: 10 }}
                 >
-                  c(HCl) = 0.125 mol dm<sup>−3</sup>
+                  a = 4.8 m s<sup>−2</sup>
                 </motion.span>
               </p>
               <svg

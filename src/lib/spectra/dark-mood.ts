@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · night moods
+   IAL PHYSICS · night moods
 
    The night lab keeps a small wardrobe of four night palettes
    (see html.dark in globals.css — plum night, ink night, aurora,

@@ -9,7 +9,7 @@ import { Fmt } from "./format";
 import { PopIn, Reveal, SoftButton } from "./bits";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the unit walk, in the editorial dress.
+   IAL PHYSICS · the unit walk, in the editorial dress.
    The same unit — same facts, same topics, same revised marks
    read from the same store — set as a document instead of a dot
    trail: the disclaimer page's hero, the paper facts as a stat

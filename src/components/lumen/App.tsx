@@ -7,7 +7,7 @@ import { GLOBAL_METRICS } from '../portal/data/ialData';
 import { UNITS } from '@/lib/spectra/units';
 import { Reveal } from './bits';
 import { HeroField, MotionBand } from './Scenes';
-import { FlameBand, UnitsBand } from './Units';
+import { UnitsBand } from './Units';
 import { ProtocolBand, ReadoutBand } from './Method';
 import { TasteBand } from './Example';
 import { AnatomyBand, CtaBand, DressBand } from './Features';
@@ -15,15 +15,15 @@ import { LumenFlask } from './Flask';
 import { motionAllowed, useLive, useRotator } from './lib';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   the luminous laboratory — IAL CHEM’s night front door.
+   the luminous laboratory — IAL PHYSICS’s night front door.
 
-   The page in one breath: a pill nav with a reaction-progress hairline;
-   the hero (the drift field behind, the living flask beside, formula
-   chips and quips orbiting it); the two-way formula marquee; the shelf
-   of six units; the flame bench; three canvas machines; the scroll-
-   drawn bench protocol; the instrument readout; a fully worked
-   titration; the anatomy of a note; the five labs and two dresses; the
-   closing panel; and the after-hours footer, where the flask sleeps.
+   The page in one breath: a pill nav with a progress hairline; the
+   hero (the drift field behind, the living flask beside, formula chips
+   and quips orbiting it); the two-way formula marquee; the unit shelf;
+   three canvas machines; the scroll-drawn bench protocol; the
+   instrument readout; a fully worked launch; the anatomy of a note;
+   the five labs and two dresses; the closing panel; and the
+   after-hours footer, where the flask sleeps.
 
    Exits are the same ?v= deep links the daylight door and twilight use;
    the front doors cross-link each other in the footer. Nothing here
@@ -39,21 +39,21 @@ const NAV_LINKS: Array<[string, string]> = [
 ];
 
 const QUIPS = [
-  'hi — I’m the reaction. nice bench, isn’t it.',
-  'every mole gets counted here. twice.',
-  'exothermic? that’s just chemistry for cosy.',
-  'watch the curve — the endpoint’s a show.',
-  'equilibrium: when both ways feel the same.',
-  'I run on collisions and encouragement.',
+  'hi — I’m the resultant. nice bench, isn’t it.',
+  'every mark is earned here. twice checked.',
+  'g = 9.81 — the bench runs on it.',
+  'watch the curve — terminal velocity is a show.',
+  'equilibrium: when every force cancels.',
+  'I run on resultants and encouragement.',
 ];
 
 const CHIPS: Array<{ t: ReactNode; style: CSSProperties; hide?: boolean }> = [
-  { t: <>PV = nRT</>, style: { top: '-2%', left: '5%', ['--d' as string]: '6.2s', ['--r' as string]: '-3deg' } },
-  { t: <>ΔG = ΔH − TΔS</>, style: { top: '23%', right: '-2%', ['--d' as string]: '7.4s', ['--r' as string]: '3deg' } },
-  { t: <>n = m / M<sub>r</sub></>, style: { top: '45%', left: '-3%', ['--d' as string]: '5.8s', ['--r' as string]: '-2deg' } },
-  { t: <>K<sub>c</sub></>, style: { top: '61%', right: '1%', ['--d' as string]: '6.6s', ['--r' as string]: '4deg' }, hide: true },
-  { t: <>pH = −log[H<sup>+</sup>]</>, style: { bottom: '6%', left: '3%', ['--d' as string]: '7s', ['--r' as string]: '2deg' } },
-  { t: <>1 mol = 6.02 × 10<sup>23</sup></>, style: { bottom: '-1%', right: '9%', ['--d' as string]: '6.4s', ['--r' as string]: '-2deg' }, hide: true },
+  { t: <>v = u + at</>, style: { top: '-2%', left: '5%', ['--d' as string]: '6.2s', ['--r' as string]: '-3deg' } },
+  { t: <>F = 6πηrv</>, style: { top: '23%', right: '-2%', ['--d' as string]: '7.4s', ['--r' as string]: '3deg' } },
+  { t: <>ρ = m / V</>, style: { top: '45%', left: '-3%', ['--d' as string]: '5.8s', ['--r' as string]: '-2deg' } },
+  { t: <>E<sub>k</sub></>, style: { top: '61%', right: '1%', ['--d' as string]: '6.6s', ['--r' as string]: '4deg' }, hide: true },
+  { t: <>E = σ/ε</>, style: { bottom: '6%', left: '3%', ['--d' as string]: '7s', ['--r' as string]: '2deg' } },
+  { t: <>ΣF = ma</>, style: { bottom: '-1%', right: '9%', ['--d' as string]: '6.4s', ['--r' as string]: '-2deg' }, hide: true },
 ];
 
 const SPARKS: Array<{ style: CSSProperties; c: string; s: number }> = [
@@ -67,25 +67,25 @@ const SPARKS: Array<{ style: CSSProperties; c: string; s: number }> = [
 const MQ_COLORS = ['#FF6B6B', '#ffc46b', '#6fe8a3', '#74d7ff', '#b8a3ff'];
 
 const MQ_A: ReactNode[] = [
-  <>n = m / M<sub>r</sub></>,
-  <>PV = nRT</>,
-  <>Q = m × c × ΔT</>,
-  <>ΔH = −Q / n</>,
-  <>pH = −log<sub>10</sub>[H<sup>+</sup>(aq)]</>,
-  <>rate = k[A]<sup>m</sup>[B]<sup>n</sup></>,
-  <>amount n = c × V</>,
-  <>E = h × f</>,
+  <>v = u + at</>,
+  <>s = ut + ½at²</>,
+  <>v² = u² + 2as</>,
+  <>ΣF = ma</>,
+  <>p = mv</>,
+  <>Στ = 0</>,
+  <>W = FΔx</>,
+  <>P = W / t</>,
 ];
 
 const MQ_B: ReactNode[] = [
-  <>ΔG = ΔH − TΔS</>,
-  <>K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup></>,
-  <>K<sub>a</sub> = [H<sup>+</sup>][A<sup>−</sup>] / [HA]</>,
-  <>% yield = actual ÷ theoretical × 100</>,
-  <>atom economy = M<sub>r</sub> wanted ÷ M<sub>r</sub> all × 100</>,
-  <>2NO<sub>2</sub> ⇌ N<sub>2</sub>O<sub>4</sub></>,
-  <>1 mol = 6.02 × 10<sup>23</sup> particles</>,
-  <>ΔT = q / (m × c)</>,
+  <>ρ = m / V</>,
+  <>U = ρ<sub>fluid</sub> × V<sub>disp</sub> × g</>,
+  <>F = 6πηrv</>,
+  <>ΔF = kΔx</>,
+  <>σ = F / A</>,
+  <>ε = Δx / x</>,
+  <>E = σ / ε</>,
+  <>ΔE<sub>el</sub> = ½FΔx</>,
 ];
 
 function MarqueeRow({ items, rev }: { items: ReactNode[]; rev?: boolean }) {
@@ -254,27 +254,27 @@ export default function LumenApp() {
               <Reveal>
                 <span className="lum-eyebrow">
                   <span className="dot" />
-                  Edexcel IAL Chemistry · WCH11–WCH16
+                  Edexcel IAL Physics · WPH11
                 </span>
               </Reveal>
               <Reveal delay={0.06}>
                 <h1>
-                  Every reaction,
+                  Every force,
                   <br />
                   <span className="lum-glowword">illuminated.</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="lum-lead">
-                  IAL CHEM after dark — the same six units and thirty-three topics as the
-                  daylight door, retold as a night laboratory: notes keyed statement by
-                  statement to the specification, figures that move, and a bench that never
-                  stops reacting.
+                  IAL PHYSICS after dark — the same units and topics as the daylight
+                  door, retold as a night laboratory: notes keyed statement by statement
+                  to the specification, figures that move, and a bench that never stops
+                  running.
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
                 <div className="lum-cta-row">
-                  <a className="lum-btn" href="/club?v=notes&doc=wch11-t01">
+                  <a className="lum-btn" href="/club?v=notes&doc=wph11-t01">
                     Start with Topic 1
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M4 12h14M13 6.5 18.5 12 13 17.5" />
@@ -351,7 +351,6 @@ export default function LumenApp() {
         <Marquee />
         <main>
           <UnitsBand />
-          <FlameBand />
           <MotionBand />
           <ProtocolBand />
           <ReadoutBand />
@@ -419,11 +418,11 @@ function LumenFooter({ go }: { go: (hash: string) => void }) {
           <div>
             <div className="lum-foot-brand">
               <FlaskMark size={40} />
-              IAL CHEM
+              IAL PHYSICS
             </div>
             <p className="lum-foot-tag">
-              The luminous laboratory — IAL CHEM’s night front door. The same notes, the same
-              packs, the same progress, kept in the same browser you left them in.
+              The luminous laboratory — IAL PHYSICS’s night front door. The same notes, the
+              same packs, the same progress, kept in the same browser you left them in.
             </p>
           </div>
           <div className="lum-foot-col">
@@ -433,8 +432,8 @@ function LumenFooter({ go }: { go: (hash: string) => void }) {
             <a href="/club">The workspace</a>
           </div>
           <div className="lum-foot-col">
-            <h5>the six units</h5>
-            {UNITS.slice(0, 6).map((u) => (
+            <h5>the units</h5>
+            {UNITS.map((u) => (
               <a key={u.code} href={`/club?v=${u.code.toLowerCase()}`}>
                 {u.code} · {u.shortTitle}
               </a>
@@ -444,8 +443,8 @@ function LumenFooter({ go }: { go: (hash: string) => void }) {
             <h5>this page</h5>
             {(
               [
-                ['The shelf of six', '#units'],
-                ['Chemistry in motion', '#motion'],
+                ['The unit shelf', '#units'],
+                ['Physics in motion', '#motion'],
                 ['The bench protocol', '#method'],
                 ['A taste of the notes', '#taste'],
               ] as Array<[string, string]>
@@ -457,10 +456,10 @@ function LumenFooter({ go }: { go: (hash: string) => void }) {
           </div>
         </div>
         <div className="lum-foot-bottom">
-          <span>© 2026 IAL CHEM — written the way it’s taught</span>
+          <span>© 2026 IAL PHYSICS — written the way it’s taught</span>
           <span style={{ maxWidth: '58ch' }}>
-            Notes for the Pearson Edexcel International A Level Chemistry (2018)
-            specification, WCH11–WCH16. Not affiliated with or endorsed by Pearson Education
+            Notes for the Pearson Edexcel International Advanced Level Physics (2018)
+            specification, WPH11. Not affiliated with or endorsed by Pearson Education
             Ltd.
           </span>
         </div>

@@ -3,14 +3,14 @@
 import { useCallback, useSyncExternalStore } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · reading time
+   IAL PHYSICS · reading time
    While the club is open we keep a quiet stopwatch: seconds land
    on the day they happen and, when a topic page is on the bench,
    on that topic too — so "how long did Topic 4 get vs Topic 7"
    is one lookup away.
 
    localStorage · key "reaction-club-time-v1"
-   { days: { "YYYY-MM-DD": { total: s, topics: { "WCH11/t04": s } } },
+   { days: { "YYYY-MM-DD": { total: s, topics: { "WPH11/t01": s } } },
      goalMin: minutes-per-week target }
 
    Honesty rules baked in:
@@ -28,7 +28,7 @@ const IDLE_MS = 5 * 60_000;
 export interface DaySheet {
   /** seconds earned this day, whole site */
   total: number;
-  /** seconds earned this day, per topic ("WCH11/t04") */
+  /** seconds earned this day, per topic ("WPH11/t01") */
   topics: Record<string, number>;
 }
 
@@ -157,7 +157,7 @@ function ensureTicker() {
   window.addEventListener("pagehide", onLeave);
 }
 
-/** Point the stopwatch at a topic ("WCH11/t04") or at the whole site (null). */
+/** Point the stopwatch at a topic ("WPH11/t01") or at the whole site (null). */
 export function setScope(key: string | null) {
   load();
   ensureTicker();
@@ -260,7 +260,7 @@ export function weekSeconds(d: TimeData): number {
   return s;
 }
 
-/** all-time seconds for one topic, "WCH11/t04" */
+/** all-time seconds for one topic, "WPH11/t01" */
 export function topicSeconds(d: TimeData, key: string): number {
   let s = 0;
   for (const day of Object.values(d.days)) s += day.topics[key] ?? 0;

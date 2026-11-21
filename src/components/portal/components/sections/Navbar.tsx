@@ -52,11 +52,11 @@ export function Navbar({ onOpenNotes }: NavbarProps) {
           }}
           className="flex items-center gap-2 whitespace-nowrap shrink-0 rounded-lg pl-1 pr-1.5 focus-visible:outline-2 focus-visible:outline-offset-4"
           style={{ color: 'var(--accent)' }}
-          aria-label="IAL CHEM — back to the top of the showcase"
+          aria-label="IAL PHYSICS — back to the top of the showcase"
         >
           <FlaskMark size={22} />
           <span className="font-display text-xs font-bold tracking-[0.12em] uppercase">
-            IAL CHEM
+            IAL PHYSICS
           </span>
           <span
             aria-hidden="true"

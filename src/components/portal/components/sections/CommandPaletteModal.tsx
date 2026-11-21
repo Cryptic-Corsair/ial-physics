@@ -136,7 +136,7 @@ export function CommandPaletteModal({
                   setQuery(e.target.value);
                   setActivePreview(null);
                 }}
-                placeholder="Jump to WCH11–WCH16, Hess's Law, Buffers, Practicals..."
+                placeholder="Jump to WPH11, Upthrust, Projectiles, Young modulus..."
                 className="w-full bg-transparent text-sm outline-none placeholder:opacity-50"
                 style={{ color: 'var(--ink)' }}
               />
@@ -271,7 +271,7 @@ export function CommandPaletteModal({
                   <div className="py-12 text-center">
                     <p className="text-sm font-medium">No matching units or topics.</p>
                     <p className="mt-1 text-xs" style={{ color: 'var(--ink-muted)' }}>
-                      Try searching WCH11, Hess, Uncertainty, Equilibria, or Arenes.
+                      Try searching WPH11, Projectiles, Upthrust, or Young modulus.
                     </p>
                   </div>
                 ) : (

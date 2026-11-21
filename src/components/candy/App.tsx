@@ -7,7 +7,7 @@ import { GLOBAL_METRICS } from '../portal/data/ialData';
 import { UNITS } from '@/lib/spectra/units';
 import { BlobDivider, Reveal } from './bits';
 import { HeroField, MotionBand } from './Scenes';
-import { FlameBand, UnitsBand } from './Units';
+import { UnitsBand } from './Units';
 import { MethodBand, StickerBand } from './Method';
 import { TasteBand } from './Example';
 import { CtaBand, DressBand, SnackBand } from './Features';
@@ -15,7 +15,7 @@ import { Bubbles } from './Mascot';
 import { boopConfetti, motionAllowed, useLive, useRotator } from './lib';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   the candy lab — IAL CHEM's alternate homepage, the fun one.
+   the candy lab — IAL PHYSICS's alternate homepage, the fun one.
 
    A bright candy workshop deliberately unlike the dark sea-slate portal:
    cream grounds, Fredoka headlines, sticker cards, blob seams, and
@@ -34,21 +34,21 @@ const NAV_LINKS: Array<[string, string]> = [
 
 const QUIPS = [
   'boop me. i dare you.',
-  'i’m 60% water, 40% enthusiasm.',
-  'moles are friends, not pests.',
+  'i’m 100% resultant force, 0% friction.',
+  'moles? wrong subject — try newtons.',
   'shake well before use. that’s me.',
-  'ΔG < 0 — this way happens on its own.',
-  'every bond here has a story.',
+  'a = 0 — this way moves on its own.',
+  'every force here has a story.',
 ];
 
 const BOOP_LINES = ['hehe — that tickles!', 'wow! do it again!', 'boop received. science intensified.'];
 
 const CHIPS: Array<{ t: ReactNode; style: CSSProperties; c: string; hide?: boolean }> = [
-  { t: <>PV = nRT</>, c: '#FF6B6B', style: { top: '-2%', left: '5%', ['--d' as string]: '6.2s', ['--r' as string]: '-3deg' } },
-  { t: <>ΔG = ΔH − TΔS</>, c: '#FF922B', style: { top: '22%', right: '-2%', ['--d' as string]: '7.4s', ['--r' as string]: '3deg' } },
-  { t: <>n = m / M<sub>r</sub></>, c: '#12B886', style: { top: '45%', left: '-3%', ['--d' as string]: '5.8s', ['--r' as string]: '-2deg' } },
-  { t: <>K<sub>c</sub></>, c: '#9775FA', style: { top: '62%', right: '0%', ['--d' as string]: '6.6s', ['--r' as string]: '4deg' }, hide: true },
-  { t: <>pH = −log[H<sup>+</sup>]</>, c: '#5BB4E8', style: { bottom: '6%', left: '3%', ['--d' as string]: '7s', ['--r' as string]: '2deg' } },
+  { t: <>v = u + at</>, c: '#FF6B6B', style: { top: '-2%', left: '5%', ['--d' as string]: '6.2s', ['--r' as string]: '-3deg' } },
+  { t: <>F = 6πηrv</>, c: '#FF922B', style: { top: '22%', right: '-2%', ['--d' as string]: '7.4s', ['--r' as string]: '3deg' } },
+  { t: <>ρ = m / V</>, c: '#12B886', style: { top: '45%', left: '-3%', ['--d' as string]: '5.8s', ['--r' as string]: '-2deg' } },
+  { t: <>E<sub>k</sub></>, c: '#9775FA', style: { top: '62%', right: '0%', ['--d' as string]: '6.6s', ['--r' as string]: '4deg' }, hide: true },
+  { t: <>E = σ/ε</>, c: '#5BB4E8', style: { bottom: '6%', left: '3%', ['--d' as string]: '7s', ['--r' as string]: '2deg' } },
   { t: <>1 mol = 6.02 × 10<sup>23</sup></>, c: '#F06595', style: { bottom: '-1%', right: '8%', ['--d' as string]: '6.4s', ['--r' as string]: '-2deg' }, hide: true },
 ];
 
@@ -269,12 +269,12 @@ export default function CandyApp() {
               <Reveal>
                 <span className="cd-eyebrow">
                   <span className="dot" style={{ background: 'var(--cd-green)' }} />
-                  Edexcel IAL Chemistry · WCH11–WCH16
+                  Edexcel IAL Physics · WPH11
                 </span>
               </Reveal>
               <Reveal delay={0.06}>
                 <h1>
-                  Chemistry,
+                  Physics,
                   <br />
                   but make it{' '}
                   <span style={{ position: 'relative', display: 'inline-block' }}>
@@ -306,7 +306,7 @@ export default function CandyApp() {
               </Reveal>
               <Reveal delay={0.18}>
                 <div className="cd-cta-row">
-                  <a className="cd-btn cd-btn-coral" href="/club?v=notes&doc=wch11-t01">
+                  <a className="cd-btn cd-btn-coral" href="/club?v=notes&doc=wph11-t01">
                     Start with Topic 1
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M4 12h14M13 6.5 18.5 12 13 17.5" />
@@ -320,7 +320,7 @@ export default function CandyApp() {
                       go('#units');
                     }}
                   >
-                    Wander the six units
+                    Wander the unit shelf
                   </a>
                 </div>
                 <div className="cd-proof">
@@ -379,7 +379,6 @@ export default function CandyApp() {
         <Marquee />
         <main>
           <UnitsBand />
-          <FlameBand />
           <MotionBand />
           <TasteBand />
           <SnackBand />
@@ -441,10 +440,10 @@ function CandyFooter({ go }: { go: (hash: string) => void }) {
           <div>
             <div className="cd-foot-brand">
               <FlaskMark size={40} />
-              IAL CHEM
+              IAL PHYSICS
             </div>
             <p className="cd-foot-tag">
-              The candy lab — IAL CHEM’s alternate front door. The same notes, the same packs,
+              The candy lab — IAL PHYSICS’s alternate front door. The same notes, the same packs,
               the same progress, kept in the same browser you left them in.
             </p>
           </div>
@@ -455,8 +454,8 @@ function CandyFooter({ go }: { go: (hash: string) => void }) {
             <a href="/club">The workspace</a>
           </div>
           <div className="cd-foot-col">
-            <h5>the six units</h5>
-            {UNITS.slice(0, 6).map((u) => (
+            <h5>the units</h5>
+            {UNITS.map((u) => (
               <a key={u.code} href={`/club?v=${u.code.toLowerCase()}`}>
                 {u.code} · {u.shortTitle}
               </a>
@@ -467,7 +466,7 @@ function CandyFooter({ go }: { go: (hash: string) => void }) {
             {(
               [
                 ['The sticker shelf', '#units'],
-                ['Chemistry in motion', '#motion'],
+                ['Physics in motion', '#motion'],
                 ['Try one on me', '#taste'],
                 ['The snack table', '#snack'],
                 ['How Bubbles helps', '#method'],
@@ -480,10 +479,10 @@ function CandyFooter({ go }: { go: (hash: string) => void }) {
           </div>
         </div>
         <div className="cd-foot-bottom">
-          <span>© 2026 IAL CHEM — serious notes, silly wrapper</span>
+          <span>© 2026 IAL PHYSICS — serious notes, silly wrapper</span>
           <span style={{ maxWidth: '58ch' }}>
-            Notes for the Pearson Edexcel International A Level Chemistry (2018)
-            specification, WCH11–WCH16. Not affiliated with or endorsed by Pearson Education
+            Notes for the Pearson Edexcel International Advanced Level Physics (2018)
+            specification, WPH11. Not affiliated with or endorsed by Pearson Education
             Ltd.
           </span>
         </div>

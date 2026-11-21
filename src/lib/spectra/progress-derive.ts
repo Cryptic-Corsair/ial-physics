@@ -7,7 +7,7 @@ import type { Unit } from "./types";
 import { TOTALS } from "./units";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · progress derivations
+   IAL PHYSICS · progress derivations
    The pure maths behind the progress room and the desk — what was
    once computed inline inside sticker-book.tsx and desk.tsx. Lifted
    so any presentation (today's rooms, tomorrow's second interface)

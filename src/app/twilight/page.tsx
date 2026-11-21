@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import TwilightApp from "@/components/twilight/App";
 import "@/components/twilight/twilight.css";
 
-/* The twilight front door — an ALTERNATE landing page for IAL CHEM,
+/* The twilight front door — an ALTERNATE landing page for IAL PHYSICS,
    rebuilt faithfully on the water reference (water-shafer.vercel.app):
    one continuous caustic water field, the monsoon rain, the pond
    sculpture, the refracted reading frame, two-tone serif quotes, the
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
      pages, not a front door's brand line. No openGraph here: a child
      openGraph replaces the layout's wholesale (Next merges top-level
      fields only), which would drop og:image/og:type. */
-  title: { absolute: "IAL CHEM — the twilight showcase" },
+  title: { absolute: "IAL PHYSICS — the twilight showcase" },
   description:
-    "An alternate front door for IAL CHEM: revision notes for every topic in the Pearson Edexcel International A Level Chemistry spec (WCH11–WCH16), written over living water. Progress and reading time stay in your browser.",
+    "An alternate front door for IAL PHYSICS: revision notes for every statement of the Pearson Edexcel International A Level Physics spec (WPH11), written over living water. Progress and reading time stay in your browser.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/twilight" },
 };

@@ -99,7 +99,7 @@ export function KineticInterlude({
             color: 'var(--ink-muted)',
           }}
         >
-          WCH11 — WCH16
+          WPH11 — the whole of Unit 1
         </div>
 
         <div className="w-full overflow-hidden py-2">

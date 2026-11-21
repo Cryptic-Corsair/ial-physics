@@ -1,7 +1,7 @@
 "use client";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · Spec Map — the note's contents, living inside the
+   IAL PHYSICS · Spec Map — the note's contents, living inside the
    nav itself. The reader registers its sections + current stop with
    the provider; the nav then wears one quiet "you are here" stop,
    same 40px rhythm as every other nav button. A tap pulls the map

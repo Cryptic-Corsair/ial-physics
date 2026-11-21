@@ -7,7 +7,7 @@ Before inspecting or changing this repository, read:
 3. The relevant specialist guide in `docs/`.
 4. [docs/HANDOVER-IAL-PHYSICS.md](docs/HANDOVER-IAL-PHYSICS.md) — if your task involves the physics fork (cloning this site into the physics project, stripping chemistry, rebranding, or continuing WPH11 development), read it before planning. It carries the mission, the approved physics register and the traps already found.
 
-The handbook defines protected chemistry content, architecture and design boundaries, persistence compatibility, safe implementation workflow and verification expectations.
+The handbook defines protected note content, architecture and design boundaries, persistence compatibility, safe implementation workflow and verification expectations. (This repository is the IAL PHYSICS fork; the handover's phase plan and register contract remain authoritative for physics work.)
 
 **Journal requirement:** every meaningful code, content, styling, architecture, configuration or documentation task must append a factual entry to [docs/WORK-LOG.md](docs/WORK-LOG.md), preferably in the same commit. Record investigation, decisions, files changed, preserved invariants, checks actually run, deployment status, commit SHA and remaining limitations. Never invent verification or rewrite historical entries.
 

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import LumenApp from "@/components/lumen/App";
 import "@/components/lumen/lumen.css";
 
-/* The lumen front door — IAL CHEM's second alternate homepage (/twilight
-   is the first): the luminous laboratory, a night bench of glassware on
-   deep aubergine where the whole course glows. One long page: the living
-   flask, the two-way formula marquee, the shelf of six units, the flame
-   bench, three canvas machines (Maxwell–Boltzmann breathing, a titration
-   drawing its own curve, dynamic equilibrium finding its balance), the
+/* The lumen front door — IAL PHYSICS's second alternate homepage
+   (/twilight is the first): the luminous laboratory, a night bench of
+   glassware on deep aubergine where the whole course glows. One long
+   page: the living flask, the two-way formula marquee, the unit shelf,
+   three canvas machines (a terminal-velocity curve drawing on, a
+   projectile landing, the Stokes force race settling), the
    scroll-drawn bench protocol, the instrument readout, a fully worked
-   question, the anatomy of a note, the five labs and two dresses, and
+   launch, the anatomy of a note, the five labs and two dresses, and
    the after-hours footer.
 
    A leaf like its siblings: noindexed, self-canonical, not in the
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
      not a front door's brand line. No openGraph here: a child
      openGraph replaces the layout's wholesale (Next merges top-level
      fields only), which would drop og:image/og:type. */
-  title: { absolute: "IAL CHEM — the luminous laboratory" },
+  title: { absolute: "IAL PHYSICS — the luminous laboratory" },
   description:
-    "An alternate front door for IAL CHEM: the complete Pearson Edexcel International A Level Chemistry course (WCH11–WCH16) retold as a night laboratory — 33 topics of specification-keyed notes, figures that move, and a bench that never stops reacting. Progress stays in your browser.",
+    "An alternate front door for IAL PHYSICS: WPH11 — Mechanics and Materials — retold as a night laboratory, statement-keyed notes, figures that move, and a bench that never stops running. Progress stays in your browser.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/lumen" },
 };

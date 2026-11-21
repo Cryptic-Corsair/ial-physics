@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the desk
+   IAL PHYSICS · the desk
    The browser remembers whether the introduction has been seen.
    The first site visit shows it and records that visit immediately;
    every later visit opens the desk. A separate engagement flag

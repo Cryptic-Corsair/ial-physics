@@ -1,11 +1,13 @@
-# IAL CHEM — Site Handbook
+# IAL PHYSICS — Site Handbook
 
 **Purpose:** the authoritative orientation and operating manual for human developers and AI agents working on this repository. It explains the product, architecture, protected material, design boundaries, development workflow and verification requirements.
 
-**Repository:** Cryptic-Corsair/revision-club  
+**Repository:** the IAL PHYSICS fork (cloned from Cryptic-Corsair/revision-club; the fork's own home is set up in Phase B of the handover)  
 **Primary branch:** main  
-**Product:** IAL CHEM  
-**Scope:** Pearson Edexcel International A Level Chemistry (2018 specification), units WCH11–WCH16.
+**Product:** IAL PHYSICS  
+**Scope:** Pearson Edexcel International A Level Physics (2018, Issue 3), unit WPH11 — Mechanics and Materials (statements 1–32); WPH12–WPH16 join one unit at a time, research-first.
+
+> This handbook was written for the chemistry site this codebase was forked from and was updated for the fork's identity in the rebrand pass; the architecture, workflow and invariants carry over unchanged. Where a rule below still says "chemistry", read it as the site's note content (physics) — the protected-prose rule applies with the same force.
 
 > Read this before changing the site. Then read the relevant sections of DEVELOPMENT.md and INTERFACES-ROADMAP.md. This handbook describes the current intended architecture; current source code is the final authority when implementation and prose disagree.
 
@@ -50,22 +52,17 @@ Comments and documents can become stale. Verify claims against code and update d
 
 ## 2. Product identity and purpose
 
-IAL CHEM is an educational revision site, not a generic chemistry portal or social platform. Its core value is structured, specification-aligned learning material and the ability to navigate, revise and track personal study activity.
+IAL PHYSICS is an educational revision site, not a generic physics portal or social platform. Its core value is structured, specification-aligned learning material and the ability to navigate, revise and track personal study activity.
 
-The site covers Pearson Edexcel International A Level Chemistry (2018 specification):
+The site covers Pearson Edexcel International A Level Physics (2018, Issue 3), built one unit at a time:
 
-- WCH11 — Unit 1
-- WCH12 — Unit 2
-- WCH13 — Unit 3
-- WCH14 — Unit 4
-- WCH15 — Unit 5
-- WCH16 — Unit 6
+- WPH11 — Unit 1: Mechanics and Materials (live; statements 1–32)
 
 The product includes a home/desk experience, unit and topic navigation, specification-organised notes, Rooms and Editorial interfaces, revision packs, progress/sticker features, topic search, a specification map and a customization panel.
 
 ### Brand and language rules
 
-- The public-facing product name is **IAL CHEM**.
+- The public-facing product name is **IAL PHYSICS**.
 - Do not reintroduce the old public-facing name Reaction Club in visible copy, metadata, logos, labels or UI.
 - Some browser storage keys still contain the historical string reaction-club. These are compatibility identifiers, not public branding. Do not rename them casually; doing so can make existing saved preferences and progress appear to disappear.
 - The site UI is English.
@@ -87,7 +84,7 @@ The product includes a home/desk experience, unit and topic navigation, specific
 | Authentication | None |
 | Deployment target | Vercel |
 | Main route | `/` — the showcase portal (`src/components/portal/`), the canonical homepage, indexed, outside the app shell with its own scoped styles and Lenis scroll. Its hero's backdrop is the water caustic field — the shared `WaterCanvas` port of the water reference (one field, both room palettes crossfaded in-shader, dissolved into `--bg` at the hero's bottom+top edges); the pre-water three.js hero shader was removed with it (`three` left the dependency tree). Since 2026-11-17 the portal's factory dress is its own SEA room (`portal.css`: deep sea-slate #141d2b ground → #283650 raised, milk #eaf3fa ink, champagne #e6c99e chrome, sea-glass warm line, #0a111c band — the water interface's family), with the hero's dusk water art re-derived to the same family; the reader's dune lab keeps its chocolate, and the daylight cream dress is one toggle away |
-| Second route | `/club` (+ `/club/…` paths) — the shelved workspace: the client-side app shell (club-app.tsx) served by an optional catch-all (`src/app/club/[[...room]]/page.tsx`), noindexed, every room owning a clean path (`/club/notes/wch11-t02/2.3`, `/club/spec`, `/club/wch12` …) written by the shell's URL↔room bridge; legacy `?v=` deep links still land and upgrade in place |
+| Second route | `/club` (+ `/club/…` paths) — the shelved workspace: the client-side app shell (club-app.tsx) served by an optional catch-all (`src/app/club/[[...room]]/page.tsx`), noindexed, every room owning a clean path (`/club/notes/wph11-t02/24`, `/club/spec`, `/club/wph11` …) written by the shell's URL↔room bridge; legacy `?v=` deep links still land and upgrade in place |
 | Legacy address | `/portal` — permanent redirect to `/`; the showcase's original address before it was promoted to the homepage |
 | Alternate front door | `/twilight` — an alternate landing page rebuilt faithfully on the water reference (water-shafer.vercel.app; source recovered from its bundle into `.external/water-ref/`): ONE continuous caustic water field behind the whole page (the Paper-design water program ported verbatim to WebGL1 in `water.frag.ts`, refracting a baked gradient wash), the monsoon-rain machine over the hero, the arch pond sculpture, a water-refracted reading frame, two-tone serif quotes, a scroll-scrubbed collections carousel with horizon-wave art cards, a spec marquee, a drawn-on-scroll chronology thread and a diagonal-cut footer with its own golden water layer. A leaf like the portal: noindexed, self-canonical, not in the sitemap, tokens scoped under `.twilight-root`, persists nothing, exits into `/club` via the same `?v=` deep links. Its own self-hosted typeset (Cormorant / Plus Jakarta Sans / Syne, `preload:false`) lives in `src/app/fonts`. The lag contract: every water instance carries device-pixel budgets (software-GL 160k–220k / mobile 260k / desktop 260k–400k) and a 30 fps accumulator, drops shader-time to 0 when its room isn't the referee's live room (or reduced motion = one static frame), lazy-mounts near the viewport, and the rain + wave machines render in CSS-pixel space behind IntersectionObserver + referee gates with 32 ms gaps — the reference's own budgets, extended with the §17 discipline |
 
@@ -144,7 +141,7 @@ The application source lives under src/.
         notes-editorial.tsx    Editorial notes reader
         note-section.tsx       Rooms section/block renderer
         spec-section-editorial.tsx Editorial section/block renderer
-        notes-figures.tsx      Chemistry SVG figure library
+        notes-figures-physics.tsx  Physics SVG figure library (WPH11)
         spec-map.tsx           Shared spec-map provider and drawer
         spec-index.tsx         Rooms specification index
         spec-editorial.tsx     Editorial specification index
@@ -164,7 +161,7 @@ The application source lives under src/.
       lib/spectra/
         types.ts               Shared unit/topic types
         units.ts               Unit registry and derived totals
-        content/               Unit topic lists and authored chemistry notes
+        content/               Unit topic lists and authored physics notes
         notes-types.ts         Note document, section, block and figure model
         notes.ts               Note document registry/loading
         notes-meta.ts          Lightweight note metadata for navigation
@@ -191,7 +188,7 @@ Keep these responsibilities separate.
 
 ### Data
 
-Chemistry content and the unit/topic catalog live in src/lib/spectra/. This is the source of truth for what the site teaches and how it is organised.
+Note content and the unit/topic catalog live in src/lib/spectra/. This is the source of truth for what the site teaches and how it is organised.
 
 ### State
 
@@ -205,15 +202,15 @@ React components under src/components/club/ render data and state. CSS in src/ap
 
 ---
 
-## 6. Chemistry content: protected source material
+## 6. Note content: protected source material
 
-This is the most important preservation rule in the repository.
+This is the most important preservation rule in the repository. (For the fork: the owner's explicit instruction authorised the removal of the chemistry content — that authorisation covered the fork strip only; the rules below protect the physics notes from exactly the same class of edit.)
 
 ### 6.1 What must remain verbatim and intact
 
 Treat the following as protected educational source material:
 
-- Approved chemistry note prose in src/lib/spectra/content/notes-*.ts.
+- Approved physics note prose in src/lib/spectra/content/notes-*.ts.
 - Official specification statements stored in each SpecSection.statement.
 - The order of paragraphs, lists, worked examples, tables and figures where it reflects the source teaching sequence.
 - Chemical equations, formulae, charges, state symbols, units, significant figures, reaction conditions and numerical data.
@@ -222,7 +219,7 @@ Treat the following as protected educational source material:
 - Unit/topic identity, topic ordering and specification numbering.
 - Source attribution and document metadata identifying the origin of material.
 
-**Do not paraphrase, rewrite, simplify, polish, shorten, expand, reorder or silently correct chemistry prose.** A stylistic improvement is still a content alteration. A developer or AI agent must not decide that wording is awkward and rewrite it.
+**Do not paraphrase, rewrite, simplify, polish, shorten, expand, reorder or silently correct note prose.** A stylistic improvement is still a content alteration. A developer or AI agent must not decide that wording is awkward and rewrite it.
 
 If a scientific error, typo or inconsistency is suspected:
 
@@ -270,13 +267,13 @@ Do not edit content merely to make a screenshot look more balanced.
 
 ## 7. Unit and topic registry
 
-src/lib/spectra/units.ts is the central unit catalog. It imports topic arrays for WCH11–WCH16 and exposes helpers such as getUnit, getTopic and derived totals.
+src/lib/spectra/units.ts is the central unit catalog. It imports the topic array for WPH11 and exposes helpers such as getUnit, getTopic and derived totals.
 
 The content/wchNN.ts files define each unit's topic list and order. Note documents are registered separately through the note registry and metadata.
 
 Registry invariants:
 
-- A unit code is an identity, not a decorative label. Keep WCH11–WCH16 exact.
+- A unit code is an identity, not a decorative label. Keep WPH11 exact (WPH12–WPH16 join one unit at a time, research-first).
 - A topic id must remain stable when referenced by notes, search, saved progress, packs or navigation.
 - Topic ordering must match the intended syllabus structure.
 - Do not duplicate a topic in another unit to make a view easier to render.
@@ -301,13 +298,13 @@ The interface preference is independent of the theme preference. They are two se
 
 The following remain based on shared data and shared behaviour:
 
-- Unit/topic/note registries and chemistry text.
+- Unit/topic/note registries and note text.
 - Saved progress and revision-pack data.
 - User preferences and persistence mechanisms.
 - Navigation state and deep-link meaning.
 - Specification point identities.
 - Scroll targets and active specification tracking.
-- Chemistry figure definitions.
+- Figure definitions.
 - Search results and destination identities.
 
 Interfaces must not create separate copies of notes or separate progress histories.
@@ -406,7 +403,7 @@ The site should feel deliberately art-directed, polished and readable—not like
 - Use spacing and indentation to show semantic nesting; do not replace actual indentation with a long decorative vertical line.
 - Keep table headers legible, prominent and correctly aligned with their columns.
 - Use bright accents with restraint and sufficient contrast.
-- Preserve calm reading surfaces; decoration must not compete with chemistry content.
+- Preserve calm reading surfaces; decoration must not compete with note content.
 - Avoid excessive gloss or glassmorphism. A treatment that looks attractive in isolation may not fit the surrounding visual language.
 - Avoid unnecessary gradients, glow, borders and shadows.
 - Do not add ambient infinite animations. Motion should be purposeful and settle.
@@ -485,7 +482,7 @@ Do not implement a preference in only one of these places. Theme/interface/scale
 
 club-app.tsx is the app shell. It owns current view state, navigation transitions, top navigation, shared footer/chrome, global drawers and selection of Rooms/Editorial twins. The shell is mounted at `/club` via an optional catch-all (`src/app/club/[[...room]]/page.tsx` — every `/club/…` path serves the same component; unknown paths normalize to `/club` in the address bar) — it was the homepage until the showcase portal was promoted to `/`.
 
-Since the user's explicit request for accurate per-room addresses (2026-11-15), the shell owns the address bar through its URL↔room bridge (club-app.tsx: `viewToPath` / `viewFromPath` / `viewIdentity` + a sync effect and a `popstate` listener). Every room writes its path: room changes PUSH (`/club/notes/wch11-t02`, `/club/notes/wch11-t02/2.3`, `/club/spec`, `/club/pack`, `/club/sticker`, `/club/legal`, `/club/topic/wch11/t03`, `/club/wch12 … /club/wch16`), clause-level changes inside one doc REPLACE (document-style history, no flood), back/forward re-derives the room from the path, and the browser's address always names the room on screen. The legacy `?v=` deep-link reader is still honoured on mount — query first, then path — and upgrades to its path form with `history.replaceState`, so old bookmarks and the front door's buttons keep working: `?v=notes&doc=<id>&spec=<x.y>`, `?v=spec`, `?v=pack`, `?v=sticker`, `?v=legal` and `?v=WCH11..WCH16` land straight in the named room (skipping the first-visit introduction), unknown values fall through to the ordinary desk flow. Keep `deepViewOf`, the path grammar and `viewToPath` in step with the front door's exit ramps. A `data-view` attribute on the shell's keyed room wrapper exposes the current room for tests (scripts/url-routing-test.mjs).
+Since the user's explicit request for accurate per-room addresses (2026-11-15), the shell owns the address bar through its URL↔room bridge (club-app.tsx: `viewToPath` / `viewFromPath` / `viewIdentity` + a sync effect and a `popstate` listener). Every room writes its path: room changes PUSH (`/club/notes/wph11-t02`, `/club/notes/wph11-t02/24`, `/club/spec`, `/club/pack`, `/club/sticker`, `/club/legal`, `/club/wph11`), clause-level changes inside one doc REPLACE (document-style history, no flood), back/forward re-derives the room from the path, and the browser's address always names the room on screen. The legacy `?v=` deep-link reader is still honoured on mount — query first, then path — and upgrades to its path form with `history.replaceState`, so old bookmarks and the front door's buttons keep working: `?v=notes&doc=<id>&spec=<n>`, `?v=spec`, `?v=pack`, `?v=sticker`, `?v=legal` and `?v=WPH11` land straight in the named room (skipping the first-visit introduction), unknown values fall through to the ordinary desk flow. Keep `deepViewOf`, the path grammar and `viewToPath` in step with the front door's exit ramps. A `data-view` attribute on the shell's keyed room wrapper exposes the current room for tests (scripts/url-routing-test.mjs).
 
 The other deliberate exception is the portal itself (src/app/page.tsx, src/components/portal/): the showcase landing, promoted to the homepage at `/` at the user's request. It renders outside club-app.tsx, carries its own theme tokens scoped under `.portal-root`, persists nothing, and hands visitors into the workspace at `/club` through explicit CTAs (the navbar's Open Notes, the hero workbench's per-clause exit, the palette's graduate button, the footer's Launch CTA). It must stay a leaf: do not wire it into prefs, progress or the shell's navigation state.
 
@@ -557,9 +554,9 @@ Never silently discard, reset, re-key or reinterpret saved progress.
 
 ---
 
-## 16. Chemistry figures and visual assets
+## 16. Figures and visual assets
 
-notes-figures.tsx contains a large, specialised library of chemistry diagrams rendered as SVG. These are educational assets, not disposable decoration.
+The physics figures live in notes-figures-physics.tsx — ten hand-drawn WPH11 diagrams (motion graphs, projectile, vectors, free-body, terminal velocity, moments, force-extension, stress-strain, falling-ball rig, Young rig) rendered as SVG and dispatched through the shared figureArt switch in note-section.tsx. These are educational assets, not disposable decoration. (The fork stripped the chemistry figure library that this codebase was born with; the rules below apply to the physics figures unchanged.)
 
 Preserve scientific geometry and relationships, chemical labels/symbols/charges, axis direction and scale, plotted data and legends, legibility at realistic size, theme-aware contrast and consistent framing in Rooms and Editorial.
 
@@ -567,7 +564,7 @@ Do not replace an existing figure with generic stock art or a visually similar b
 
 A figure change requires visual inspection at realistic reading size, in all five themes and both interfaces where the figure appears. Check narrow screens for clipping and label collisions.
 
-MOTION GRAPHICS span the whole figure library (2026-11-17) through a shared CSS toolkit in globals.css: `.fig-live` (per-figure root — every dashed stroke inside becomes a slow current at a 1320 px dash-cycle LCM, so every dasharray in the library loops without a jump; opt in ONLY where every dashed stroke is a moving thing, `.fig-still` opts one element back out) plus element classes — `.fig-flow`/`.fig-flow-rev` (dashed current, adds its own dasharray), `.fig-draw` (path draw-on with `pathLength={1}`, resting state = the full curve), `.fig-bar`/`.fig-bars` (bars grow in with a stagger), `.fig-breathe`, `.fig-glow`, `.fig-drift`/`.fig-drift-up`, `.fig-jiggle`, `.fig-spring`, `.fig-sway`. Everything is transform/opacity/stroke-dashoffset only, and every class freezes to the figure's static truth under prefers-reduced-motion or the motion switch — `html[data-motion="off"]`, set by the boot script and kept in step by applyPrefs, gates them all in one place. Two flagship figures are bespoke components: `atom-3d` (`FigAtom3D` — pure-DOM CSS-3D atom, three tilted orbits, travelling electrons, ±11° sway, pointer drag to tilt, billboarded nucleon cluster) and `ion-form` (`FigIonForm` — the sodium→chlorine transfer on a 7 s loop whose RESTING state is the completed, labelled transfer). Motion follows meaning: dashed arrows and beams flow (ion flight paths, field lines, the electrochemical wire, condenser water, delocalised seas, curly electron-pair arrows via the shared `curlyPair` helper), reaction-profile and distribution curves draw themselves on, molecules jiggle (collision theory), the IR water molecule vibrates in all three modes, equilibrium rate curves draw toward balance, titration drops fall, spectra grow in bar by bar. Figures whose dashes are grids, separators, lattices or reference lines stay still — as do pure label arrows (`t3Arrow`'s unflagged call sites). The toolkit grew with the second pass (2026-11-17, later): `.fig-drift-x` (horizontal gas drift), `.fig-appear` (an arrowhead fades in a beat after its line draws), `.fig-bar-l` (horizontal bars grow from the left), and `t3Arrow` gained an optional trailing `draw` flag that turns one arrow into a draw-on with a fading head — the five Hess cycles and the halogenoalkane reaction map pass it on every route arrow, energy levels draw their rungs, Group 2 solubility bars grow, flame-test flames flicker and the sulfate-ladder descenders flow. Six figures were BORN moving for the docs that had none: `gas-syringe` and `meniscus-band` (wch13-p01), `limewater-test` and `ionic-ppt` (wch13-p05), `mole-piles` and `atom-balance` (topic 1's mole sections) — so every figure-bearing document now carries motion, and the sweep script counts live animations per doc to prove it. One deliberate exception: a precipitate is objectively white in every lab, so the limewater figure's milk is a literal `#FFFFFF` overlay rather than a lab-adaptive token. HalogenColours stays still on purpose — its swatches ARE data colours. No figure may introduce a canvas: the one-ambient-canvas rule of §17 stands.
+MOTION GRAPHICS run through a shared CSS toolkit in globals.css (built 2026-11-17 for the chemistry library this fork inherited; the toolkit itself is intact and the physics figures ride it): `.fig-live` (per-figure root — every dashed stroke inside becomes a slow current at a 1320 px dash-cycle LCM, so every dasharray in the library loops without a jump; opt in ONLY where every dashed stroke is a moving thing, `.fig-still` opts one element back out) plus element classes — `.fig-flow`/`.fig-flow-rev` (dashed current, adds its own dasharray), `.fig-draw` (path draw-on with `pathLength={1}`, resting state = the full curve), `.fig-bar`/`.fig-bars` (bars grow in with a stagger), `.fig-breathe`, `.fig-glow`, `.fig-drift`/`.fig-drift-up`, `.fig-jiggle`, `.fig-spring`, `.fig-sway`. Everything is transform/opacity/stroke-dashoffset only, and every class freezes to the figure's static truth under prefers-reduced-motion or the motion switch — `html[data-motion="off"]`, set by the boot script and kept in step by applyPrefs, gates them all in one place. Two flagship figures are bespoke components: `atom-3d` (`FigAtom3D` — pure-DOM CSS-3D atom, three tilted orbits, travelling electrons, ±11° sway, pointer drag to tilt, billboarded nucleon cluster) and `ion-form` (`FigIonForm` — the sodium→chlorine transfer on a 7 s loop whose RESTING state is the completed, labelled transfer). Motion follows meaning: dashed arrows and beams flow (ion flight paths, field lines, the electrochemical wire, condenser water, delocalised seas, curly electron-pair arrows via the shared `curlyPair` helper), reaction-profile and distribution curves draw themselves on, molecules jiggle (collision theory), the IR water molecule vibrates in all three modes, equilibrium rate curves draw toward balance, titration drops fall, spectra grow in bar by bar. Figures whose dashes are grids, separators, lattices or reference lines stay still — as do pure label arrows (`t3Arrow`'s unflagged call sites). The toolkit grew with the second pass (2026-11-17, later): `.fig-drift-x` (horizontal gas drift), `.fig-appear` (an arrowhead fades in a beat after its line draws), `.fig-bar-l` (horizontal bars grow from the left), and `t3Arrow` gained an optional trailing `draw` flag that turns one arrow into a draw-on with a fading head — the five Hess cycles and the halogenoalkane reaction map pass it on every route arrow, energy levels draw their rungs, Group 2 solubility bars grow, flame-test flames flicker and the sulfate-ladder descenders flow. Six figures were BORN moving for the docs that had none: `gas-syringe` and `meniscus-band` (wch13-p01), `limewater-test` and `ionic-ppt` (wch13-p05), `mole-piles` and `atom-balance` (topic 1's mole sections) — so every figure-bearing document now carries motion, and the sweep script counts live animations per doc to prove it. One deliberate exception: a precipitate is objectively white in every lab, so the limewater figure's milk is a literal `#FFFFFF` overlay rather than a lab-adaptive token. HalogenColours stays still on purpose — its swatches ARE data colours. No figure may introduce a canvas: the one-ambient-canvas rule of §17 stands.
 
 ---
 
@@ -712,8 +709,8 @@ If a requested change requires altering one of these, first explain the impact a
 
 Before committing, confirm:
 
-- [ ] Product remains IAL CHEM; no old public brand references reintroduced.
-- [ ] Chemistry prose and official specification statements remain verbatim unless explicitly authorised.
+- [ ] Product remains IAL PHYSICS; no old public brand references reintroduced.
+- [ ] Note prose and official specification statements remain verbatim unless explicitly authorised.
 - [ ] Unit/topic/spec identities and ordering remain stable.
 - [ ] No user data or storage keys were silently reset, renamed or discarded.
 - [ ] Rooms and Editorial still render the same underlying data and provide equivalent behaviour.
@@ -744,6 +741,6 @@ If a change makes any of these documents inaccurate, update the relevant documen
 
 ## 24. Final operating principle
 
-IAL CHEM is an existing, carefully tuned educational product. Treat it as a system with established content, data contracts, visual decisions and compatibility obligations—not as a blank canvas.
+IAL PHYSICS is an existing, carefully tuned educational product. Treat it as a system with established content, data contracts, visual decisions and compatibility obligations—not as a blank canvas.
 
 **Preserve the source. Trace the system. Respect ownership boundaries. Change only what is needed. Verify the result. Document any new rule that future contributors must know.**

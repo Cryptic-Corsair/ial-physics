@@ -75,7 +75,7 @@ const STATIONS = [
     n: '2',
     icon: IcoWatch,
     title: 'Watch it move',
-    body: 'The figure library animates the physics: bonding currents, titration drops, rate curves drawing on, electrons in orbit. Understanding arrives before notation does.',
+    body: 'The figure library animates the physics: curves that draw on, force arrows that grow, projectile trails, the falling-ball rig. Understanding arrives before notation does.',
   },
   {
     n: '3',
@@ -181,7 +181,7 @@ export function ReadoutBand() {
         <SectionHead
           dot="#b8a3ff"
           eyebrow="the bench, measured"
-          title={<>Counted like a titration.</>}
+          title={<>Counted to the last joule.</>}
           lead="No invented numbers on this bench. Every figure below is the registry’s own count — the same totals the workspace’s navigation derives from, measured to the unit."
         />
         <div className="lum-readout">
@@ -193,7 +193,7 @@ export function ReadoutBand() {
               <div className="lbl">
                 units
                 <br />
-                WCH11–WCH16
+                WPH11
               </div>
             </div>
           </Reveal>

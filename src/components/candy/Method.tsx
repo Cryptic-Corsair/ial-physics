@@ -202,7 +202,7 @@ export function StickerBand() {
         />
         <div className="cd-stickers">
           <Reveal>
-            <Sticker value="6" label={'units\nWCH11–WCH16'} color="#FF6B6B" tilt="-1.6deg" countRef={cUnits} />
+            <Sticker value={String(GLOBAL_METRICS.units)} label={'units\nWPH11'} color="#FF6B6B" tilt="-1.6deg" countRef={cUnits} />
           </Reveal>
           <Reveal delay={0.06}>
             <Sticker value="33" label={'topics\nspec-aligned'} color="#5BB4E8" tilt="1.1deg" countRef={cTopics} />

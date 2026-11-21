@@ -138,7 +138,7 @@ export function DressBand() {
           </Reveal>
         </div>
         <Reveal className="cd-dress-note" delay={0.15}>
-          one product, one set of study records — the dress changes, the chemistry doesn’t
+          one product, one set of study records — the dress changes, the physics doesn’t
         </Reveal>
       </div>
     </section>
@@ -175,7 +175,7 @@ export function CtaBand() {
             specification index first. Either way, Bubbles will be here when you get back.
           </p>
           <div className="cd-cta-row" style={{ justifyContent: 'center' }}>
-            <a className="cd-btn cd-btn-coral" href="/club?v=notes&doc=wch11-t01">
+            <a className="cd-btn cd-btn-coral" href="/club?v=notes&doc=wph11-t01">
               Start reading Topic 1
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 12h14M13 6.5 18.5 12 13 17.5" />

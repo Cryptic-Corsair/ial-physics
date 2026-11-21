@@ -30,7 +30,7 @@ import {
 } from "@/lib/spectra/prefs";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the customize panel
+   IAL PHYSICS · the customize panel
    ONE control panel for both interfaces. The drawer used to
    re-dress itself per interface — a legal-room workshop under the
    editorial dress, a white-wall leaflet under the gallery one —

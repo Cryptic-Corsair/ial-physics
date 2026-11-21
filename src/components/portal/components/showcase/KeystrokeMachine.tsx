@@ -9,9 +9,9 @@ interface KeystrokeMachineProps {
 }
 
 const MINI_COMMANDS = [
-  { code: 'WCH11', label: 'Atomic Structure & Orbitals' },
-  { code: '2.7a', label: "Enthalpy Cycles & Hess's Law" },
-  { code: 'WCH14', label: 'Buffer Calculations' },
+  { code: 'WPH11', label: 'Forces, Motion & Energy' },
+  { code: '24', label: 'Upthrust and Flotation' },
+  { code: '28', label: 'Stress, Strain & Young Modulus' },
 ];
 
 export function KeystrokeMachine({ reducedMotion }: KeystrokeMachineProps) {

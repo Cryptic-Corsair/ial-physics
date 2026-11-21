@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "react";
 import { DARK_MOOD_COUNT, pickDarkMood } from "./dark-mood";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · site preferences
+   IAL PHYSICS · site preferences
    The knobs behind the customize panel: lab (light/dark/dune/
    classic), the interface (cards/document), the accent wheel, content
    scale, heading & body fonts, polka dots, decorative motion.

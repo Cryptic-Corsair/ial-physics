@@ -124,11 +124,11 @@ export function PrismSweepMachine({ reducedMotion }: PrismSweepMachineProps) {
             }}
           >
             <div className="flex items-center justify-between font-mono text-[9px]">
-              <span style={{ color: activeTheme.accent }}>WCH14</span>
+              <span style={{ color: activeTheme.accent }}>WPH11</span>
               <span style={{ color: activeTheme.inkMuted }}>{activeTheme.label}</span>
             </div>
             <p className="mt-1 font-display text-base font-bold leading-snug tracking-tight">
-              Rates &amp; Equilibria
+              Mechanics &amp; Materials
             </p>
           </div>
         </div>

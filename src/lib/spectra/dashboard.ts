@@ -6,7 +6,7 @@ import { unitDoneOf } from "./progress-derive";
 import type { Unit } from "./types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · dashboard derivations
+   IAL PHYSICS · dashboard derivations
    The maths behind the desk's dashboard and the progress room's
    charts — day bars, the activity grid, per-unit canvases and the
    small records (best day, average, topics started). Same rule as
@@ -170,7 +170,7 @@ export interface UnitStat {
   pct: number;
   /** all-time seconds across the unit's topics */
   seconds: number;
-  /** the topic key with the most banked time ("WCH11/t04") */
+  /** the topic key with the most banked time ("WPH11/t01") */
   busiestKey: string | null;
 }
 

@@ -2,7 +2,7 @@
    'dune' is the workspace's chocolate room (html.dune in globals.css —
    the factory dress) and 'light' is the daylight cream lab. The toggle
    in the portal navbar re-dresses the page between the two rooms. */
-import { UNITS as CLUB_UNITS } from '@/lib/spectra/units';
+import { UNITS as CLUB_UNITS, TOTALS } from '@/lib/spectra/units';
 
 export type SiteTheme = 'dune' | 'light';
 /* The hero's workbench preview dots try the club's four labs on the
@@ -18,7 +18,7 @@ export interface GlobalMetrics {
 }
 
 export interface IalUnit {
-  code: 'WCH11' | 'WCH12' | 'WCH13' | 'WCH14' | 'WCH15' | 'WCH16';
+  code: 'WPH11';
   shortLabel: string;
   levelTag: string;
   title: string;
@@ -41,7 +41,7 @@ export interface SpecChip {
    workspace's units.ts and nowhere else — so the portal looks the unit
    colours up there instead of carrying a second copy of the pairing. */
 export function unitCandy(code: string): string {
-  return CLUB_UNITS.find((u) => u.code === code)?.candy.main ?? '#ff6b6b';
+  return CLUB_UNITS.find((u) => u.code === code)?.candy.main ?? '#339AF0';
 }
 
 export interface SearchEntry {
@@ -115,142 +115,57 @@ export interface WorkflowChapter {
   detail: string;
 }
 
+/* The course facts are read straight off the workspace's registry —
+   one source of truth, zero drift (the same numbers the club's own
+   home ticker and footer show). */
 export const GLOBAL_METRICS: GlobalMetrics = {
-  units: 6,
-  topics: 33,
-  hoursLabel: '~13 Hours',
-  totalMinutes: 756,
-  workedExamples: 30,
+  units: CLUB_UNITS.length,
+  topics: TOTALS.topics,
+  hoursLabel: `≈${Math.max(Math.round(TOTALS.minutes / 60), 1)} Hours`,
+  totalMinutes: TOTALS.minutes,
+  workedExamples: TOTALS.examples,
 };
+
+const WPH11 = CLUB_UNITS[0];
 
 export const IAL_UNITS: readonly IalUnit[] = [
   {
-    code: 'WCH11',
+    code: 'WPH11',
     shortLabel: 'Unit 1 · IAS',
     levelTag: 'IAS',
-    title: 'Structure, Bonding and Introduction to Organic Chemistry',
-    topicsCount: 5,
-    minutes: 120,
-    scope: 'Topics 1–5: Formulae, atomic structure, bonding, periodicity, and alkanes/alkenes.',
-    sampleTopics: [
-      'Topic 1 · Formulae, equations and amounts',
-      'Topic 2 · Atomic structure and periodicity',
-      'Topic 3 · Bonding and structure',
-      'Topic 4 · Introductory organic chemistry',
-      'Topic 5 · Alkenes and reaction pathways',
-    ],
-  },
-  {
-    code: 'WCH12',
-    shortLabel: 'Unit 2 · IAS',
-    levelTag: 'IAS',
-    title: 'Energetics, Group Chemistry, Halogenoalkanes and Alcohols',
-    topicsCount: 5,
-    minutes: 130,
-    scope: 'Topics 6–10: Enthalpy, kinetics, equilibria, Group 1/2/7, and organic mechanisms.',
-    sampleTopics: [
-      'Topic 6 · Energetics and Hess cycles',
-      'Topic 7 · Intermolecular forces',
-      'Topic 8 · Redox and Group 1, 2 & 7',
-      'Topic 9 · Kinetics and equilibria',
-      'Topic 10 · Halogenoalkanes, alcohols and spectra',
-    ],
-  },
-  {
-    code: 'WCH13',
-    shortLabel: 'Unit 3 · IAS · Practical',
-    levelTag: 'Practical',
-    title: 'Practical Skills in Chemistry I',
-    topicsCount: 9,
-    minutes: 182,
-    scope: 'Qualitative ion and gas tests, core practicals, apparatus rigs, and uncertainty.',
-    sampleTopics: [
-      'Qualitative anion and cation analysis',
-      'Gas identification procedures',
-      'Titration accuracy and burette precision',
-      'Percentage uncertainty propagation',
-    ],
-  },
-  {
-    code: 'WCH14',
-    shortLabel: 'Unit 4 · IA2',
-    levelTag: 'IA2',
-    title: 'Rates, Equilibria and Further Organic Chemistry',
-    topicsCount: 6,
-    minutes: 142,
-    scope: 'Topics 11–16: Rate equations, entropy, acid–base equilibria, carbonyls, and chirality.',
-    sampleTopics: [
-      'Topic 11 · Kinetics and rate equations',
-      'Topic 12 · Entropy and energetics',
-      'Topic 13 · Chemical equilibria',
-      'Topic 14 · Acid–base equilibria and buffers',
-      'Topic 15 · Chirality, carbonyls and carboxylic acids',
-    ],
-  },
-  {
-    code: 'WCH15',
-    shortLabel: 'Unit 5 · IA2',
-    levelTag: 'IA2',
-    title: 'Transition Metals and Organic Nitrogen Chemistry',
-    topicsCount: 5,
-    minutes: 122,
-    scope: 'Topics 17–21: Electrode potentials, transition complexes, arenes, and nitrogen synthesis.',
-    sampleTopics: [
-      'Topic 17 · Redox equilibria and electrode potentials',
-      'Topic 18 · Transition metals and ligand exchange',
-      'Topic 19 · Arenes and electrophilic substitution',
-      'Topic 20 · Organic nitrogen compounds',
-      'Topic 21 · Multi-stage organic synthesis',
-    ],
-  },
-  {
-    code: 'WCH16',
-    shortLabel: 'Unit 6 · IA2 · Practical',
-    levelTag: 'Practical',
-    title: 'Practical Skills in Chemistry II',
-    topicsCount: 3,
-    minutes: 60,
-    scope: 'A2 kinetics experiments, organic synthesis techniques, and practical exam method.',
-    sampleTopics: [
-      'Continuous and initial-rate kinetics rigs',
-      'Reflux, distillation and recrystallisation',
-      'Planning and evaluation method',
-    ],
+    title: WPH11.title,
+    topicsCount: WPH11.topics.length,
+    minutes: WPH11.topics.reduce((m, t) => m + t.minutes, 0),
+    scope:
+      'Physics 1.3 & 1.4: Mechanics — motion graphs, SUVAT, vectors, projectiles, Newton\'s laws, momentum, moments, work, energy, power — and Materials — fluids, Stokes\' law, Hooke\'s law, the Young modulus.',
+    sampleTopics: WPH11.topics.map((t) => `${t.label} · ${t.title}`),
   },
 ];
 
 export const SPEC_CHIPS: readonly SpecChip[] = [
   {
-    id: 'spec-1.4c',
-    code: '1.4c',
-    label: '1.4c · Ionisation energy trends',
-    unitCode: 'WCH11',
-    minutes: 14,
-    pages: 4,
-  },
-  {
-    id: 'spec-2.7a',
-    code: '2.7a',
-    label: '2.7a · Hess cycle calculations',
-    unitCode: 'WCH12',
-    minutes: 12,
+    id: 'spec-1',
+    code: '1',
+    label: '1 · The equations of motion',
+    unitCode: 'WPH11',
+    minutes: 16,
     pages: 5,
   },
   {
-    id: 'spec-4.3b',
-    code: '4.3b',
-    label: '4.3b · Buffer calculations',
-    unitCode: 'WCH14',
+    id: 'spec-24',
+    code: '24',
+    label: '24 · Upthrust and flotation',
+    unitCode: 'WPH11',
+    minutes: 14,
+    pages: 5,
+  },
+  {
+    id: 'spec-28',
+    code: '28',
+    label: '28 · Stress, strain and the Young modulus',
+    unitCode: 'WPH11',
     minutes: 16,
     pages: 6,
-  },
-  {
-    id: 'spec-5.2e',
-    code: '5.2e',
-    label: '5.2e · Electrophilic substitution',
-    unitCode: 'WCH15',
-    minutes: 14,
-    pages: 5,
   },
 ];
 
@@ -271,145 +186,61 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     id: 'topic-1',
     kind: 'topic',
     code: 'Topic 1',
-    title: 'Topic 1 · Amount of substance',
-    unitCode: 'WCH11',
-    unitTitle: 'WCH11 · Unit 1',
+    title: 'Topic 1 · Forces, motion and energy',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 24,
+    minutes: 58,
     targetAnchor: '#units',
-    keywords: ['moles', 'titration', 'empirical formula', 'ideal gas'],
+    keywords: ['suvat', 'motion graphs', 'projectile', 'newton', 'momentum', 'moments', 'energy', 'power'],
   },
   {
-    id: 'topic-atomic',
+    id: 'topic-suvat',
     kind: 'topic',
-    code: '1.4c',
-    title: 'Atomic Structure & Ionisation Energy',
-    unitCode: 'WCH11',
-    unitTitle: 'WCH11 · Unit 1',
-    category: 'Spec 1.4c',
-    minutes: 22,
+    code: '1',
+    title: 'The equations of uniformly accelerated motion',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'Spec 1',
+    minutes: 12,
     targetAnchor: '#units',
-    keywords: ['orbitals', 'subshells', 'successive ionisation', 'periodicity'],
+    keywords: ['suvat', 'v = u + at', 'show that', 'displacement', 'acceleration'],
   },
   {
-    id: 'topic-6',
+    id: 'topic-2',
     kind: 'topic',
-    code: 'Topic 6',
-    title: 'Topic 6 · Energetics',
-    unitCode: 'WCH12',
-    unitTitle: 'WCH12 · Unit 2',
+    code: 'Topic 2',
+    title: 'Topic 2 · Materials — fluids, viscosity and elasticity',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 26,
+    minutes: 52,
     targetAnchor: '#units',
-    keywords: ['enthalpy', 'combustion', 'formation', 'bond enthalpy'],
+    keywords: ['upthrust', 'stokes', 'viscosity', 'hooke', 'young modulus', 'stress', 'strain'],
   },
   {
-    id: 'topic-hess',
+    id: 'topic-upthrust',
     kind: 'topic',
-    code: '2.7a',
-    title: "Enthalpy Cycles & Hess's Law",
-    unitCode: 'WCH12',
-    unitTitle: 'WCH12 · Unit 2',
-    category: 'Spec 2.7a',
-    minutes: 25,
+    code: '24',
+    title: 'Upthrust and flotation',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'Spec 24',
+    minutes: 14,
     targetAnchor: '#units',
-    keywords: ['hess cycle', 'calorimetry', 'mean bond enthalpy'],
+    keywords: ['upthrust', 'flotation', 'archimedes', 'displaced', 'floating', 'free-body'],
   },
   {
-    id: 'topic-maxwell',
+    id: 'topic-young',
     kind: 'topic',
-    code: '2.9b',
-    title: 'Maxwell–Boltzmann & Equilibria',
-    unitCode: 'WCH12',
-    unitTitle: 'WCH12 · Unit 2',
-    category: 'Spec 2.9b',
-    minutes: 24,
+    code: '28',
+    title: 'Stress, strain and the Young modulus',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'Spec 28',
+    minutes: 16,
     targetAnchor: '#units',
-    keywords: ['activation energy', 'catalyst', 'le chatelier', 'yield'],
-  },
-  {
-    id: 'topic-practical-1',
-    kind: 'topic',
-    code: '3.2a',
-    title: 'Core Practicals & Uncertainty',
-    unitCode: 'WCH13',
-    unitTitle: 'WCH13 · Unit 3',
-    category: 'IAS Practical',
-    minutes: 28,
-    targetAnchor: '#units',
-    keywords: ['burette', 'pipette', 'percentage error', 'ion test'],
-  },
-  {
-    id: 'topic-titration',
-    kind: 'topic',
-    code: 'CP 02',
-    title: 'Core Practical · Titration & uncertainty',
-    unitCode: 'WCH13',
-    unitTitle: 'WCH13 · Unit 3',
-    category: 'IAS Practical',
-    minutes: 20,
-    targetAnchor: '#units',
-    keywords: ['standard solution', 'concordant titres', 'apparatus uncertainty'],
-  },
-  {
-    id: 'topic-13',
-    kind: 'topic',
-    code: 'Topic 13',
-    title: 'Topic 13 · Acid–base equilibria',
-    unitCode: 'WCH14',
-    unitTitle: 'WCH14 · Unit 4',
-    category: 'IA2 Topic',
-    minutes: 28,
-    targetAnchor: '#units',
-    keywords: ['pH', 'Ka', 'pKa', 'buffer', 'titration curve'],
-  },
-  {
-    id: 'topic-buffers',
-    kind: 'topic',
-    code: '4.3b',
-    title: 'Buffer Calculations & Titration Curves',
-    unitCode: 'WCH14',
-    unitTitle: 'WCH14 · Unit 4',
-    category: 'Spec 4.3b',
-    minutes: 22,
-    targetAnchor: '#units',
-    keywords: ['henderson', 'weak acid', 'equivalence point', 'indicator'],
-  },
-  {
-    id: 'topic-18',
-    kind: 'topic',
-    code: 'Topic 18',
-    title: 'Topic 18 · Transition metals',
-    unitCode: 'WCH15',
-    unitTitle: 'WCH15 · Unit 5',
-    category: 'IA2 Topic',
-    minutes: 26,
-    targetAnchor: '#units',
-    keywords: ['d-block', 'ligands', 'coordination', 'redox catalyst'],
-  },
-  {
-    id: 'topic-arenes',
-    kind: 'topic',
-    code: '5.2e',
-    title: 'Transition Metal Complexes & Arenes',
-    unitCode: 'WCH15',
-    unitTitle: 'WCH15 · Unit 5',
-    category: 'Spec 5.2e',
-    minutes: 24,
-    targetAnchor: '#units',
-    keywords: ['benzene', 'nitration', 'friedel-crafts', 'ligand exchange'],
-  },
-  {
-    id: 'topic-a2-kinetics',
-    kind: 'topic',
-    code: '6.1c',
-    title: 'A2 Kinetics & Organic Analysis',
-    unitCode: 'WCH16',
-    unitTitle: 'WCH16 · Unit 6',
-    category: 'IA2 Practical',
-    minutes: 20,
-    targetAnchor: '#units',
-    keywords: ['iodine clock', 'recrystallisation', 'melting point', 'synthesis'],
+    keywords: ['young modulus', 'stress', 'strain', 'wire', 'core practical 3', 'gradient'],
   },
 ];
 
@@ -464,7 +295,7 @@ export const PREVIEW_THEMES: Record<PreviewThemeId, PreviewThemeTokens> = {
   },
 };
 
-/* Three real notes from the workspace's own corpus (NOTES_META in
+/* Two real notes from the workspace's own corpus (NOTES_META in
    src/lib/spectra/notes-meta.ts — same ids, same titles, same spec
    ranges, the real per-topic reading minutes), each cut down to a
    handful of its actual specification sections. Every statement,
@@ -472,188 +303,103 @@ export const PREVIEW_THEMES: Record<PreviewThemeId, PreviewThemeTokens> = {
    from the notes docs in src/lib/spectra/notes.ts. */
 export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
   {
-    id: 'wch11-t02',
-    unitCode: 'WCH11',
-    topicLabel: 'Topic 2',
-    title: 'Atomic structure & the periodic table',
-    specRange: '2.1 → 2.18',
-    sectionsTotal: 18,
-    readMinutes: 26,
+    id: 'wph11-t01',
+    unitCode: 'WPH11',
+    topicLabel: 'Topic 1',
+    title: 'Forces, motion and energy',
+    specRange: '1 → 22',
+    sectionsTotal: 22,
+    readMinutes: 58,
     clauses: [
       {
-        spec: '2.3',
-        title: 'Atomic number and mass number',
+        spec: '1',
+        title: 'The equations of uniformly accelerated motion',
         statement:
-          'know what is meant by the terms ‘atomic (proton) number’ and ‘mass number’',
+          'be able to use the equations for uniformly accelerated motion in one dimension: s = (u + v)t/2, v = u + at, s = ut + ½at², v² = u² + 2as',
         blocks: [
           {
+            kind: 'eq',
+            eq: 'v = u + at        s = ut + ½at²        v² = u² + 2as        s = ½(u + v)t',
+          },
+          {
+            kind: 'worked',
+            title: 'Worked example · the dart',
+            question:
+              'A dart is thrown with a velocity of 15.6 m s⁻¹ at an angle of 5.0° to the horizontal. Just before the dart hits the board, the vertical component of its velocity is zero. Air resistance is negligible. (a) Show that the time taken to reach the dartboard is about 0.14 s. (3) (b) Calculate the horizontal distance D to the board. (2)',
+            steps: 4,
+            answer: 'D = 2.2 m (ecf allowed from your time — a wrong (a) does not have to sink (b))',
+          },
+        ],
+      },
+      {
+        spec: '2',
+        title: 'Reading and drawing motion graphs',
+        statement:
+          'be able to draw and interpret displacement-time, velocity-time and acceleration-time graphs',
+        blocks: [
+          {
+            kind: 'eq',
+            eq: 'gradient of s–t = velocity        gradient of v–t = acceleration        area under v–t = displacement',
+          },
+          {
             kind: 'def',
-            term: 'Atomic (proton) number, Z',
-            text: 'The number of ==protons== in the nucleus. The Periodic Table is arranged in order of it.',
+            term: "Newton's first law",
+            text: 'An object at rest stays at rest, and an object moving with constant velocity keeps that velocity, ==unless a resultant force acts on it==. Constant velocity (including terminal velocity) always means ΣF = 0 — forces may be present, but they cancel.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wph11-t02',
+    unitCode: 'WPH11',
+    topicLabel: 'Topic 2',
+    title: 'Materials — fluids, viscosity and elasticity',
+    specRange: '23 → 32',
+    sectionsTotal: 10,
+    readMinutes: 52,
+    clauses: [
+      {
+        spec: '23',
+        title: 'Density',
+        statement: 'be able to use the equation density ρ = m/V',
+        blocks: [
+          {
+            kind: 'eq',
+            eq: 'ρ = m/V',
           },
           {
             kind: 'eq',
-            eq: 'number of neutrons = A − Z    protons = Z    electrons = Z − charge',
+            eq: 'V = (4/3)πr³',
           },
         ],
       },
       {
-        spec: '2.4',
-        title: 'Counting subatomic particles',
+        spec: '24',
+        title: 'Upthrust and flotation',
         statement:
-          'be able to use the atomic number and the mass number to determine the number of each type of subatomic particle in an atom or ion',
-        blocks: [
-          {
-            kind: 'worked',
-            title: 'Worked example · the aluminium ion',
-            question:
-              'Determine the number of protons, neutrons and electrons in ^27^~13~Al^3+^.',
-            steps: 3,
-            answer: '^27^~13~Al^3+^: **13 protons, 14 neutrons, 10 electrons**.',
-          },
-        ],
-      },
-      {
-        spec: '2.5',
-        title: 'Isotopes',
-        statement: 'understand the term ‘isotope’',
+          'understand how to use the relationship upthrust = weight of fluid displaced',
         blocks: [
           {
             kind: 'def',
-            term: 'Isotopes',
-            text: 'Isotopes are atoms of the ==same element== having the ==same number of protons== but ==different number of neutrons==.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'wch12-t06',
-    unitCode: 'WCH12',
-    topicLabel: 'Topic 6',
-    title: 'Energetics',
-    specRange: '6.1 → 6.11',
-    sectionsTotal: 11,
-    readMinutes: 24,
-    clauses: [
-      {
-        spec: '6.2',
-        title: 'Exothermic and endothermic reactions',
-        statement:
-          'know that, by convention, exothermic reactions have a negative enthalpy change and endothermic reactions have a positive enthalpy change',
-        blocks: [
-          {
-            kind: 'def',
-            term: 'Exothermic reactions',
-            text: 'Reactions which ==liberate heat energy== to the surrounding. Enthalpy of reactants ==> enthalpy of products==. The sign on ΔH = ==− ve==.',
+            term: 'Upthrust',
+            text: 'The upward force a fluid exerts on an object placed in the fluid. Upthrust is caused by the ==displacement of the fluid==: the upthrust on an object = the weight of the fluid the object displaces.',
           },
           {
-            kind: 'def',
-            term: 'Endothermic reactions',
-            text: 'Reactions which ==absorb heat energy== from the surrounding. Enthalpy of reactants ==< enthalpy of products==. The sign on ΔH = ==+ ve==.',
+            kind: 'eq',
+            eq: 'U = ρ~fluid~ × V~disp~ × g',
           },
         ],
       },
       {
-        spec: '6.5',
-        title: 'Measuring enthalpy changes',
+        spec: '28',
+        title: 'Stress, strain and the Young modulus',
         statement:
-          'be able to use experimental data to calculate: i energy transferred in a reaction recalling and using the expression: energy transferred (J) = mass (g) × specific heat capacity (J g−1 °C−1) × temperature change (°C)…',
-        blocks: [
-          { kind: 'eq', eq: 'Q = m × c × ΔT' },
-          {
-            kind: 'worked',
-            title: 'Worked example · calculating enthalpy change of combustion',
-            question:
-              'From the results above, calculate the enthalpy change of combustion of ethanol, Δ~c~H^θ^, in kJ mol^−1^. The specific heat capacity of water is 4.18 J g^−1^ °C^−1^.',
-            steps: 3,
-            answer:
-              'Δ~c~H^θ^ of ethanol = ==−1213.7 kJ mol^−1^== — [negative sign because it is exothermic].',
-          },
-        ],
-      },
-      {
-        spec: '6.6',
-        title: "Hess's law",
-        statement:
-          'know Hess’s Law and be able to apply it to: i constructing enthalpy cycles ii calculating enthalpy changes of reaction using data provided, or data selected from a table or obtained from experiments',
+          'understand how to use the relationships (tensile or compressive) stress = force/cross-sectional area, (tensile or compressive) strain = change in length/original length, Young modulus = stress/strain',
         blocks: [
           {
-            kind: 'def',
-            term: "Hess's Law",
-            text: 'The enthalpy change of a chemical reaction is independent of the path taken in converting reactants into products, provided the initial and final conditions are the same.',
-          },
-        ],
-      },
-      {
-        spec: '6.7',
-        title: 'Core Practical 2',
-        statement:
-          'CORE PRACTICAL 2 — determination of the enthalpy change of a reaction using Hess’s Law',
-        blocks: [
-          {
-            kind: 'worked',
-            title: 'Worked example · the thermal decomposition of calcium carbonate',
-            question:
-              'Calculate Δ~r~H^θ^ for the thermal decomposition of calcium carbonate into calcium oxide and carbon dioxide given the following data. CaCO~3~(s) + 2HCl(aq) → CaCl~2~(aq) + H~2~O(l) + CO~2~(g), Δ~r~H^θ^ = −17 kJ/mol. CaO(s) + 2HCl(aq) → CaCl~2~(aq) + H~2~O(l), Δ~r~H^θ^ = −195 kJ/mol.',
-            steps: 4,
-            answer:
-              'Δ~r~H^θ^ = ==+178 kJ mol^−1^== — endothermic, as a decomposition that needs heating should be.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'wch12-t10',
-    unitCode: 'WCH12',
-    topicLabel: 'Topic 10',
-    title: 'Halogenoalkanes, alcohols and spectra',
-    specRange: '10.6 → 10.22',
-    sectionsTotal: 14,
-    readMinutes: 30,
-    clauses: [
-      {
-        spec: '10.7',
-        title: 'Primary, secondary or tertiary',
-        statement:
-          'understand the distinction between primary, secondary and tertiary halogenoalkanes',
-        blocks: [],
-      },
-      {
-        spec: '10.10',
-        title: 'Comparing the rates of hydrolysis',
-        statement:
-          'understand that experimental observations and data can be used to compare the relative rates of hydrolysis of: i primary, secondary and tertiary structural isomers of a halogenoalkane ii primary chloro-, bromo- and iodoalkanes using aqueous silver nitrate in ethanol',
-        blocks: [
-          {
-            kind: 'def',
-            term: 'Hydrolysis',
-            text: 'Hydrolysis reaction is a reaction in which water or hydroxide ions ==replace an atom in a molecule with an -OH group==.',
-          },
-          { kind: 'eq', eq: 'RX + H~2~O → ROH + HX' },
-        ],
-      },
-      {
-        spec: '10.13',
-        title: 'The nature of the halogen',
-        statement:
-          'understand, in terms of bond enthalpy, the trend in reactivity of chloro-, bromo- and iodoalkanes',
-        blocks: [],
-      },
-      {
-        spec: '10.21',
-        title: 'Mass spectra — the molecular ion and its fragments',
-        statement:
-          'be able to interpret data from mass spectra to suggest possible structures of simple organic compounds using the m/z of the molecular ion and fragmentation patterns',
-        blocks: [
-          {
-            kind: 'worked',
-            title: 'Worked example · the M+1 height',
-            question:
-              'The relative height of the M peak for benzoic acid (contains 7 carbon atoms) is 85%. Find the height of its M+1 peak.',
-            steps: 3,
-            answer: 'M+1 is 7% of 85 = 5.95',
+            kind: 'eq',
+            eq: 'σ = F/A        ε = Δx/x        E = σ/ε',
           },
         ],
       },
@@ -667,7 +413,7 @@ export const WORKFLOW_CHAPTERS: readonly WorkflowChapter[] = [
     index: '01',
     label: 'Find',
     summary: 'Search the spec, statement by statement.',
-    detail: 'Type a code like 2.7a, a core practical, or just a topic name — nothing to dig through.',
+    detail: 'Type a code like 24, a core practical, or just a topic name — nothing to dig through.',
   },
   {
     id: 'assemble',

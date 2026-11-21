@@ -12,8 +12,8 @@ catch { ({ chromium } = require('/home/z/.npm-global/lib/node_modules/playwright
 const html = `<!doctype html>
 <html><head><meta charset="utf-8">
 <style>
-  @font-face { font-family: "Fredoka"; src: url("file:///home/z/my-project/src/app/fonts/fredoka-var.woff2") format("woff2"); font-weight: 300 700; }
-  @font-face { font-family: "Nunito"; src: url("file:///home/z/my-project/src/app/fonts/nunito-var.woff2") format("woff2"); font-weight: 400 800; }
+  @font-face { font-family: "Fredoka"; src: url("file:///home/z/my-project/revision-club/src/app/fonts/fredoka-var.woff2") format("woff2"); font-weight: 300 700; }
+  @font-face { font-family: "Nunito"; src: url("file:///home/z/my-project/revision-club/src/app/fonts/nunito-var.woff2") format("woff2"); font-weight: 400 800; }
   * { margin: 0; box-sizing: border-box; }
   body {
     width: 1200px; height: 630px; overflow: hidden;
@@ -30,8 +30,8 @@ const html = `<!doctype html>
   .brand { position: relative;
     font-family: "Fredoka", sans-serif; font-weight: 600;
     font-size: 64px; letter-spacing: 0.02em; line-height: 1; }
-  .brand .chem { color: #b3541e; }
-  .rule { position: relative; width: 132px; height: 5px; background: #b3541e;
+  .brand .chem { color: #1c6ed2; }
+  .rule { position: relative; width: 132px; height: 5px; background: #1c6ed2;
     border-radius: 3px; margin: 28px 0 0; }
   h1 { position: relative;
     font-family: "Fredoka", sans-serif; font-weight: 600;
@@ -47,15 +47,15 @@ const html = `<!doctype html>
 <body><div class="card">
   <div class="dots"></div>
   <div>
-    <div class="brand">IAL <span class="chem">CHEM</span></div>
+    <div class="brand">IAL <span class="chem">PHYSICS</span></div>
     <div class="rule"></div>
     <h1>Revision notes, written the way they're taught</h1>
-    <div class="sub">Complete class notes for the Pearson Edexcel International A Level Chemistry spec — six units, thirty-three topics, thirty worked examples.</div>
+    <div class="sub">Statement-by-statement notes for the Pearson Edexcel International A Level Physics spec — Mechanics and Materials, in the mark schemes' own wording.</div>
   </div>
   <div class="chips">
-    <div class="chip alt">WCH11</div><div class="chip">WCH12</div>
-    <div class="chip">WCH13</div><div class="chip">WCH14</div>
-    <div class="chip">WCH15</div><div class="chip">WCH16</div>
+    <div class="chip alt">WPH11</div><div class="chip">Mechanics</div>
+    <div class="chip">Materials</div><div class="chip">CP2</div>
+    <div class="chip">CP3</div>
   </div>
 </div></body></html>`;
 
@@ -65,6 +65,6 @@ writeFileSync('/tmp/og-card.html', html);
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 await page.goto('file:///tmp/og-card.html', { waitUntil: 'networkidle' });
-await page.screenshot({ path: '/home/z/my-project/public/og.png' });
+await page.screenshot({ path: '/home/z/my-project/revision-club/public/og.png' });
 await browser.close();
 console.log('og.png written');

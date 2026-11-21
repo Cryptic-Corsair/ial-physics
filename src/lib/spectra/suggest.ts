@@ -3,7 +3,7 @@ import type { TimeData } from "./time";
 import { topicSeconds } from "./time";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · today's pick
+   IAL PHYSICS · today's pick
    One topic, chosen for today: the next un-revised one in course
    order; once everything is marked, the topic with the least
    recorded time gets another pass.
@@ -12,7 +12,7 @@ import { topicSeconds } from "./time";
 export interface Suggestion {
   unit: Unit;
   topic: Topic;
-  /** unit-pair key, "WCH11/t04" */
+  /** unit-pair key, "WPH11/t01" */
   key: string;
   /** short human reason shown under the title */
   reason: string;

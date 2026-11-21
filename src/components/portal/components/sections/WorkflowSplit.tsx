@@ -26,22 +26,18 @@ interface WorkflowSplitProps {
 }
 
 const PROGRESS_ROWS = [
-  { code: 'WCH11', title: 'Structure & Bonding', pct: 100, minutes: 120 },
-  { code: 'WCH12', title: 'Energetics & Equilibria', pct: 80, minutes: 104 },
-  { code: 'WCH14', title: 'Rates & Further Organic', pct: 67, minutes: 95 },
+  { code: 'WPH11', title: 'Mechanics & Materials', pct: 100, minutes: 110 },
 ];
 
 export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: WorkflowSplitProps) {
   const [activeId, setActiveId] = useState<WorkflowChapter['id']>('pinpoint');
   const [selectedChipIds, setSelectedChipIds] = useState<string[]>([
-    'spec-1.4c',
-    'spec-2.7a',
-    'spec-4.3b',
+    'spec-1',
+    'spec-24',
+    'spec-28',
   ]);
   const [completedUnits, setCompletedUnits] = useState<Record<string, boolean>>({
-    WCH11: true,
-    WCH12: false,
-    WCH14: false,
+    WPH11: true,
   });
 
   const toggleChip = (id: string) => {
@@ -173,7 +169,7 @@ export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: 
                   <div>
                     <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-muted)' }}>
                       <span>01 · THE SPEC INDEX</span>
-                      <span className="tabular-nums">WCH11–WCH16</span>
+                      <span className="tabular-nums">WPH11 · MECHANICS & MATERIALS</span>
                     </div>
                     <h3 className="mt-2 font-display text-lg font-semibold tracking-tight">
                       Go straight to the statement
@@ -181,7 +177,7 @@ export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: 
                   </div>
 
                   <div className="space-y-2">
-                    {IAL_UNITS.slice(0, 4).map((unit) => (
+                    {IAL_UNITS.map((unit) => (
                       <button
                         key={unit.code}
                         type="button"

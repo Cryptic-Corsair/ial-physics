@@ -10,7 +10,7 @@ import { UNITS } from "@/lib/spectra/units";
 import { SEARCH_INDEX, searchTopics, type SearchRow } from "@/lib/spectra/search-index";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the course search — one palette, both interfaces.
+   IAL PHYSICS · the course search — one palette, both interfaces.
    The palette is shared chrome like the spec map and the customize
    panel, so it speaks the ACTIVE interface's own ink: the whole
    sheet reads var(--search-accent), resolved per dress in

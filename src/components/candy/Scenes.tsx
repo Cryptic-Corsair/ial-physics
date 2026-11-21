@@ -9,17 +9,15 @@ import { monoFont, useCanvasScene, useLive } from './lib';
    DPR cap + one static frame for reduced motion).
 
    Same physics as the syllabus demands, dressed for the workshop:
-   · HeroField        — pastel motes bonding as they drift, bubbles
-                        rising through the cream, slow sparks
-   · SceneMaxwell     — the Maxwell–Boltzmann distribution breathing
-                        between two temperatures (properly normalised —
-                        the area never changes), the tail past Ea
-                        fattening with heat
-   · SceneTitration   — 25.0 cm³ of 0.100 mol dm⁻³ NaOH against 0.125
-                        mol dm⁻³ HCl, the pH curve computed from real
-                        points, plunging exactly at 20.0 cm³
-   · SceneEquilibrium — 2NO₂ ⇌ N₂O₄ in one sealed bulb, pairs merging
-                        and splitting with the temperature cycle
+   · HeroField       — pastel motes drifting, bubbles rising through
+                       the cream, slow sparks (abstract ambience)
+   · SceneTerminal   — the falling ball's velocity–time curve computed
+                       from the linear-drag solution: steep at g,
+                       flattening as drag grows, horizontal at terminal
+   · SceneProjectile — the two independent columns, computed: equal-time
+                       ticks, constant spacing across, growing down
+   · SceneStokes     — the falling-ball rig as a force race: weight
+                       against upthrust + drag, settling to W = U + D
    ═══════════════════════════════════════════════════════════════════════ */
 
 const INK = 'rgba(61, 43, 31,';
@@ -229,75 +227,55 @@ export function HeroField() {
 
 /* ————————————————————— Maxwell–Boltzmann ————————————————————— */
 
-export function SceneMaxwell() {
+export function SceneTerminal() {
   const ref = useCanvasScene(() => {
-    const mols = Array.from({ length: 34 }, () => ({
-      x: Math.random(),
-      y: Math.random(),
-      vx: Math.random() - 0.5,
-      vy: Math.random() - 0.5,
-      f: 0.45 + Math.random() * 0.75,
-    }));
-    let last = 0;
+    /* the linear-drag solution — computed, not sketched: the shape the
+       mark schemes ask for (steep at g, flattening, horizontal) */
+    const vT = 1.0;
+    const tau = 0.62;
+    const TMAX = 2.8;
+    const VMAX = 1.35;
 
     return ({ ctx, w, h, t }) => {
-      const dt = Math.min(last ? t - last : 0.033, 0.1);
-      last = t;
       ctx.clearRect(0, 0, w, h);
-
-      /* the temperature cycle — 300 K ↔ 520 K */
-      const cyc = 0.5 - 0.5 * Math.cos(t * 0.5);
-      const kT = 1 + cyc * 1.1;
-      const TK = Math.round(300 + cyc * 220);
 
       const padL = 46;
       const padR = 20;
-      const padT = 40;
-      const plotH = h * 0.52;
+      const padT = 34;
+      const plotH = h * 0.62;
       const baseY = padT + plotH;
       const plotW = w - padL - padR;
-      const Emax = 9;
-      const Ea = 3.1;
-      const X = (E: number) => padL + (E / Emax) * plotW;
+      const X = (tt: number) => padL + (tt / TMAX) * plotW;
+      const Y = (vv: number) => baseY - (vv / VMAX) * plotH;
 
-      /* f(E) = N·(2/√π)·√E·e^(−E/kT)/(kT)^{3/2} — the area stays
-         constant, so the hot curve is lower, wider, longer-tailed */
-      const norm = 2 / Math.sqrt(Math.PI);
-      const peakLow = norm * Math.sqrt(0.5) * Math.exp(-0.5);
-      const SCALE = (plotH * 0.86) / peakLow;
-      const f = (E: number) =>
-        (norm * Math.sqrt(E) * Math.exp(-E / kT)) / Math.pow(kT, 1.5);
+      /* draw window: the loop relaunches the ball every 8 s */
+      const cyc = t % 8;
+      const shown = Math.min(cyc * (TMAX / 2.4), TMAX);
 
-      /* axis */
+      /* axes */
       ctx.strokeStyle = `${INK}0.2)`;
       ctx.lineWidth = 1.6;
       ctx.setLineDash([2, 6]);
       line(ctx, padL - 10, baseY, w - padR, baseY);
+      line(ctx, padL, padT - 8, padL, baseY);
       ctx.setLineDash([]);
 
-      /* the reacting fraction — the tail past Ea, filling with heat */
-      ctx.beginPath();
-      ctx.moveTo(X(Ea), baseY);
-      for (let E = Ea; E <= Emax; E += 0.06) ctx.lineTo(X(E), baseY - f(E) * SCALE);
-      ctx.lineTo(X(Emax), baseY);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(255, 146, 43, 0.2)';
-      ctx.fill();
+      /* the terminal-velocity line */
+      ctx.setLineDash([5, 5]);
+      ctx.strokeStyle = 'rgba(245, 159, 0, 0.85)';
+      ctx.lineWidth = 1.8;
+      line(ctx, padL - 10, Y(vT), w - padR, Y(vT));
+      ctx.setLineDash([]);
 
-      /* the whole distribution */
-      ctx.beginPath();
-      ctx.moveTo(X(0), baseY);
-      for (let E = 0; E <= Emax; E += 0.06) ctx.lineTo(X(E), baseY - f(E) * SCALE);
-      ctx.lineTo(X(Emax), baseY);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(255, 107, 107, 0.12)';
-      ctx.fill();
-
+      /* the computed curve */
       ctx.beginPath();
       let first = true;
-      for (let E = 0; E <= Emax; E += 0.06) {
-        const px = X(E);
-        const py = baseY - f(E) * SCALE;
+      let vNow = 0;
+      for (let tt = 0; tt <= shown; tt += 0.02) {
+        const vv = vT * (1 - Math.exp(-tt / tau));
+        vNow = vv;
+        const px = X(tt);
+        const py = Y(vv);
         if (first) {
           ctx.moveTo(px, py);
           first = false;
@@ -308,46 +286,24 @@ export function SceneMaxwell() {
       ctx.lineJoin = 'round';
       ctx.stroke();
 
-      /* the activation energy marker */
-      ctx.setLineDash([5, 5]);
-      ctx.strokeStyle = 'rgba(245, 159, 0, 0.85)';
-      ctx.lineWidth = 1.8;
-      line(ctx, X(Ea), padT - 8, X(Ea), baseY);
-      ctx.setLineDash([]);
+      /* the ball riding the curve */
+      ctx.beginPath();
+      ctx.arc(X(shown), Y(vNow), 5.4, 0, Math.PI * 2);
+      ctx.fillStyle = '#FF6B6B';
+      ctx.fill();
 
       ctx.font = monoFont(600, 11);
       ctx.textAlign = 'center';
       ctx.fillStyle = `${INK}0.55)`;
-      ctx.fillText('kinetic energy →', padL + plotW / 2, baseY + 18);
+      ctx.fillText('time →', padL + plotW / 2, baseY + 18);
       ctx.textAlign = 'left';
-      ctx.fillStyle = 'rgba(245, 159, 0, 0.95)';
-      ctx.fillText('Ea', X(Ea) + 5, padT - 12);
+      ctx.fillText('v', padL - 24, padT + 2);
+      ctx.fillStyle = 'rgba(181, 94, 0, 0.95)';
+      ctx.fillText('v\u209c — terminal', padL + 8, Y(vT) - 8);
+      ctx.fillStyle = `${INK}0.5)`;
+      ctx.fillText('gradient = a', X(0.9), Y(0.62) - 12);
 
-      chip(ctx, w - 14, 14, [`T = ${TK} K`], '#B25E00');
-
-      /* the molecules — faster when hot, orange once past Ea */
-      const molTop = baseY + 30;
-      const molH = h - molTop - 18;
-      ctx.strokeStyle = `${INK}0.18)`;
-      ctx.lineWidth = 1.4;
-      rrect(ctx, padL - 10, molTop, plotW + 10, molH, 12);
-      ctx.stroke();
-      const speed = Math.sqrt(kT);
-      for (const m of mols) {
-        m.x += m.vx * m.f * speed * dt * 0.22;
-        m.y += m.vy * m.f * speed * dt * 0.16;
-        if (m.x < 0) m.x += 1;
-        else if (m.x > 1) m.x -= 1;
-        if (m.y < 0) m.y += 1;
-        else if (m.y > 1) m.y -= 1;
-        const px = padL - 4 + m.x * plotW;
-        const py = molTop + 7 + m.y * (molH - 14);
-        const fast = m.f * speed > 1.12;
-        ctx.fillStyle = fast ? 'rgba(255, 146, 43, 0.95)' : 'rgba(18, 184, 134, 0.8)';
-        ctx.beginPath();
-        ctx.arc(px, py, 2.8, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      chip(ctx, w - 14, 14, [vNow > 0.985 * vT ? 'a = 0 — terminal' : `v = ${vNow.toFixed(2)} v\u209c`], vNow > 0.985 * vT ? '#B25E00' : '#12B886');
     };
   });
 
@@ -355,169 +311,97 @@ export function SceneMaxwell() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: the Maxwell–Boltzmann distribution breathing as temperature cycles, the shaded tail of molecules beyond the activation energy growing as the mixture warms"
+      aria-label="Animation: a computed velocity-time curve for a falling ball, steep where only the weight acts, flattening as drag grows, horizontal at terminal velocity"
     />
   );
 }
 
-/* ————————————————————— the self-computing titration ————————————————————— */
-
-export function SceneTitration() {
+export function SceneProjectile() {
   const ref = useCanvasScene(() => {
-    /* the worked example's own numbers — computed, not sketched */
-    const cAcid = 0.125;
-    const vBase = 0.025;
-    const cBase = 0.1;
-    const pHof = (vcm: number) => {
-      const nH = (cAcid * vcm) / 1000;
-      const nOH = cBase * vBase;
-      const V = (vcm + 25) / 1000;
-      const d = nH - nOH;
-      if (Math.abs(d) < 1e-12) return 7;
-      if (d < 0) return 14 + Math.log10(-d / V);
-      return -Math.log10(d / V);
-    };
-    const samples: Array<[number, number]> = [];
-    for (let v = 0; v <= 40.0001; v += 0.1) samples.push([v, pHof(v)]);
-    for (let v = 19.6; v <= 20.4; v += 0.02) samples.push([v, pHof(v)]);
-    samples.sort((a, b) => a[0] - b[0]);
+    /* the two-column model, computed: x = v\u2093t, y = v\u1d67t − ½gt² —
+       equal-time ticks show constant spacing across, growing spacing down */
+    const T = 2.0;
+    const g = 9.81;
+    const vx = 2.4;
+    const vy = 4.0;
+    const vmax = vy * T * 0.5;
 
     return ({ ctx, w, h, t }) => {
       ctx.clearRect(0, 0, w, h);
-      const vNow = (t * 4.4) % 40;
-      const curPH = pHof(vNow);
 
-      /* ——— left: the apparatus ——— */
-      const ax = 64;
-      ctx.strokeStyle = `${INK}0.75)`;
-      ctx.lineWidth = 2.2;
-      const tubeTop = 20;
-      const tubeBot = 116;
-      line(ctx, ax - 9, tubeTop, ax - 9, tubeBot);
-      line(ctx, ax + 9, tubeTop, ax + 9, tubeBot);
-      const level = tubeTop + 6 + (vNow / 40) * (tubeBot - tubeTop - 14);
-      ctx.fillStyle = 'rgba(91, 180, 232, 0.35)';
-      ctx.fillRect(ax - 8, level, 16, tubeBot - level);
-      ctx.strokeStyle = 'rgba(91, 180, 232, 0.9)';
-      ctx.lineWidth = 1.8;
-      line(ctx, ax - 8, level, ax + 8, level);
-      ctx.strokeStyle = `${INK}0.5)`;
-      ctx.lineWidth = 1.5;
-      for (let i = 0; i <= 4; i++) line(ctx, ax + 9, tubeTop + 8 + i * 22, ax + 15, tubeTop + 8 + i * 22);
-      ctx.strokeStyle = `${INK}0.75)`;
-      ctx.lineWidth = 2.2;
-      line(ctx, ax - 12, tubeBot + 4, ax + 12, tubeBot + 4);
-      line(ctx, ax - 4, tubeBot, ax - 2, tubeBot + 12);
-      line(ctx, ax + 4, tubeBot, ax + 2, tubeBot + 12);
-      line(ctx, ax - 2, tubeBot + 12, ax + 2, tubeBot + 12);
-      /* the falling drop */
-      const dropPhase = (t * 2.2) % 1;
-      ctx.globalAlpha = dropPhase < 0.12 ? dropPhase / 0.12 : Math.max(0, 1 - (dropPhase - 0.8) / 0.2);
-      ctx.fillStyle = '#5BB4E8';
+      const padL = 24;
+      const padR = 24;
+      const groundY = h - 34;
+      const apexY = 30;
+      const x0 = padL + 30;
+      const spanX = w - padL - padR - 60;
+
+      /* the loop: the flight replays every 8 s, dots persist then fade */
+      const cyc = t % 8;
+      const shown = Math.min(cyc * (T / 2.2), T);
+
+      /* the computed trajectory */
+      const px = (tt: number) => x0 + (vx * tt) * (spanX / (vx * T));
+      const py = (tt: number) => groundY - (vy * tt - 0.5 * g * tt * tt) * ((groundY - apexY) / vmax);
+
       ctx.beginPath();
-      ctx.ellipse(ax, tubeBot + 18 + dropPhase * 22, 2.7, 4.4, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = 1;
-      /* the flask — pink while alkaline, drained past the endpoint */
-      ctx.strokeStyle = `${INK}0.75)`;
-      ctx.lineWidth = 2.4;
-      line(ctx, ax - 7, tubeBot + 48, ax - 7, tubeBot + 58);
-      line(ctx, ax + 7, tubeBot + 48, ax + 7, tubeBot + 58);
-      ctx.beginPath();
-      ctx.moveTo(ax - 7, tubeBot + 58);
-      ctx.lineTo(ax - 26, tubeBot + 92);
-      ctx.arcTo(ax - 28, tubeBot + 96, ax - 22, tubeBot + 96, 5);
-      ctx.lineTo(ax + 22, tubeBot + 96);
-      ctx.arcTo(ax + 28, tubeBot + 96, ax + 26, tubeBot + 92, 5);
-      ctx.lineTo(ax + 7, tubeBot + 58);
-      ctx.stroke();
-      const pink = curPH > 8.2 ? Math.min(1, (curPH - 8.2) / 1.2) : 0;
-      ctx.beginPath();
-      ctx.moveTo(ax - 20, tubeBot + 78);
-      ctx.lineTo(ax - 24, tubeBot + 92);
-      ctx.lineTo(ax + 24, tubeBot + 92);
-      ctx.lineTo(ax + 20, tubeBot + 78);
-      ctx.closePath();
-      ctx.fillStyle = `rgba(240, 101, 149, ${0.1 + 0.55 * pink})`;
-      ctx.fill();
-
-      /* ——— right: the curve, drawn from real points ——— */
-      const plotL = 150;
-      const plotR = w - 18;
-      const plotT = 26;
-      const plotB = h - 40;
-      const plotW = plotR - plotL;
-      const plotH = plotB - plotT;
-      const VX = (v: number) => plotL + (v / 40) * plotW;
-      const PY = (p: number) => plotB - (Math.min(Math.max(p, 0), 14) / 14) * plotH;
-
-      ctx.strokeStyle = `${INK}0.2)`;
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([2, 6]);
-      line(ctx, plotL - 8, plotB, plotR, plotB);
-      line(ctx, plotL - 8, plotT, plotL - 8, plotB);
-      line(ctx, plotL - 8, PY(7), plotR, PY(7));
-      ctx.setLineDash([]);
-
-      ctx.font = monoFont(600, 10.5);
-      ctx.fillStyle = `${INK}0.5)`;
-      ctx.textAlign = 'right';
-      ctx.fillText('14', plotL - 12, plotT + 4);
-      ctx.fillText('7', plotL - 12, PY(7) + 4);
-      ctx.fillText('0', plotL - 12, plotB + 4);
-      ctx.textAlign = 'center';
-      ctx.fillText('acid added / cm³', (plotL + plotR) / 2, h - 12);
-      for (const vt of [10, 20, 30]) {
-        ctx.fillText(String(vt), VX(vt), plotB + 16);
-        ctx.strokeStyle = `${INK}0.12)`;
-        ctx.lineWidth = 1.2;
-        line(ctx, VX(vt), plotT, VX(vt), plotB);
+      let first = true;
+      for (let tt = 0; tt <= shown; tt += 0.03) {
+        const ax = px(tt);
+        const ay = py(tt);
+        if (first) {
+          ctx.moveTo(ax, ay);
+          first = false;
+        } else ctx.lineTo(ax, ay);
       }
-      ctx.save();
-      ctx.translate(16, (plotT + plotB) / 2);
-      ctx.rotate(-Math.PI / 2);
-      ctx.fillText('pH', 0, 0);
-      ctx.restore();
-
-      /* the equivalence marker */
-      ctx.setLineDash([5, 5]);
-      ctx.strokeStyle = 'rgba(245, 159, 0, 0.75)';
-      ctx.lineWidth = 1.8;
-      line(ctx, VX(20), plotT, VX(20), plotB);
-      ctx.setLineDash([]);
-      ctx.textAlign = 'left';
-      ctx.fillStyle = 'rgba(178, 94, 0, 0.95)';
-      ctx.fillText('equivalence · 20.0', VX(20) + 6, plotT + 14);
-
-      /* the curve so far */
-      ctx.beginPath();
-      let started = false;
-      for (const [v, p] of samples) {
-        if (v > vNow) break;
-        const px = VX(v);
-        const py = PY(p);
-        if (!started) {
-          ctx.moveTo(px, py);
-          started = true;
-        } else ctx.lineTo(px, py);
-      }
-      ctx.strokeStyle = '#9775FA';
+      ctx.strokeStyle = '#12B886';
       ctx.lineWidth = 3.4;
       ctx.lineJoin = 'round';
       ctx.stroke();
 
-      /* the leading dot — glowing amber at the endpoint */
-      const dotX = VX(vNow);
-      const dotY = PY(curPH);
-      ctx.beginPath();
-      ctx.arc(dotX, dotY, 6, 0, Math.PI * 2);
-      ctx.fillStyle = Math.abs(vNow - 20) < 2 ? '#F59F00' : '#9775FA';
-      ctx.fill();
-      ctx.strokeStyle = '#FFFDF9';
-      ctx.lineWidth = 2.2;
-      ctx.stroke();
+      /* ground line */
+      ctx.strokeStyle = `${INK}0.25)`;
+      ctx.lineWidth = 1.6;
+      ctx.setLineDash([2, 6]);
+      line(ctx, padL - 8, groundY, w - padR + 8, groundY);
+      ctx.setLineDash([]);
 
-      chip(ctx, w - 14, 14, [`pH ${curPH.toFixed(1)}`], curPH > 8.2 ? '#C2255C' : '#12B886');
+      /* the equal-time ticks — the two columns */
+      const steps = 8;
+      for (let i = 1; i <= steps; i++) {
+        const tt = (i / steps) * shown;
+        const ax = px(tt);
+        const ay = py(tt);
+        ctx.beginPath();
+        ctx.arc(ax, ay, 3.6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(28, 126, 214, 0.85)';
+        ctx.fill();
+        /* the horizontal-column dot, riding the launch height */
+        ctx.beginPath();
+        ctx.arc(ax, groundY, 2.6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(28, 126, 214, 0.4)';
+        ctx.fill();
+        /* the vertical-column dot, riding the launch line */
+        ctx.beginPath();
+        ctx.arc(x0, py(tt), 2.6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(194, 37, 92, 0.55)';
+        ctx.fill();
+      }
+
+      /* the flying ball at the trajectory's head */
+      ctx.beginPath();
+      ctx.arc(px(shown), py(shown), 5.8, 0, Math.PI * 2);
+      ctx.fillStyle = '#3D2B1F';
+      ctx.fill();
+
+      ctx.font = monoFont(600, 11);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(28, 126, 214, 0.9)';
+      ctx.fillText('a\u2093 = 0 — equal spacing across', padL + 6, apexY + 6);
+      ctx.fillStyle = 'rgba(194, 37, 92, 0.85)';
+      ctx.fillText('a\u1d67 = g — spacing grows down', padL + 6, apexY + 22);
+
+      chip(ctx, w - 14, 14, ['time is the bridge'], '#B25E00');
     };
   });
 
@@ -525,141 +409,92 @@ export function SceneTitration() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: a burette drips hydrochloric acid into 25 cubic centimetres of sodium hydroxide while the pH curve draws itself, plunging at the 20 cubic centimetre equivalence point"
+      aria-label="Animation: a computed projectile arc with equal-time dots, horizontal spacing constant and vertical spacing growing, the two independent columns joined by time"
     />
   );
 }
 
-/* ————————————————————— dynamic equilibrium ————————————————————— */
-
-export function SceneEquilibrium() {
+export function SceneStokes() {
   const ref = useCanvasScene(() => {
-    /* each unit is a pair of NO₂ — split (two orange dots) or merged
-       into one N₂O₄ (one pale blue dot). Cold folds them into N₂O₄;
-       warmth pushes the balance back to brown NO₂. */
-    const units = Array.from({ length: 18 }, () => ({
-      x: Math.random(),
-      y: Math.random(),
-      vx: (Math.random() - 0.5) * 0.03,
-      vy: (Math.random() - 0.5) * 0.024,
-      split: Math.random() < 0.5,
-      jx: Math.random() * Math.PI * 2,
-    }));
-    let last = 0;
+    /* the force race in a tube: the ball accelerates while drag grows,
+       then settles to equal spacing once W = U + D — terminal velocity */
+    const vT = 1.0;
+    const tau = 0.5;
 
     return ({ ctx, w, h, t }) => {
-      const dt = Math.min(last ? t - last : 0.033, 0.1);
-      last = t;
       ctx.clearRect(0, 0, w, h);
 
-      const cyc = 0.5 - 0.5 * Math.cos(t * 0.42); // the warming cycle
-      const TK = Math.round(280 + cyc * 120);
+      const tubeL = w * 0.16;
+      const tubeR = w * 0.5;
+      const topY = 24;
+      const botY = h - 30;
 
-      const bx = 18;
-      const by = 44;
-      const bw = w - 36;
-      const bh = h - 118;
-
-      /* conversions — merge when cool, split when warm */
-      const pMerge = (0.62 * (1 - cyc) + 0.05) * dt;
-      const pSplit = (0.62 * cyc + 0.05) * dt;
-      for (const u of units) {
-        if (u.split && Math.random() < pMerge) u.split = false;
-        else if (!u.split && Math.random() < pSplit) u.split = true;
-      }
-      const nSplit = units.reduce((n, u) => n + (u.split ? 1 : 0), 0);
-
-      /* the sealed bulb, tinted by the NO₂ fraction */
-      rrect(ctx, bx, by, bw, bh, 28);
-      const brown = nSplit / units.length;
-      ctx.fillStyle = `rgba(255, 146, 43, ${0.05 + 0.17 * brown})`;
-      ctx.fill();
-      ctx.strokeStyle = `${INK}0.45)`;
+      /* the tube and the liquid */
+      ctx.strokeStyle = `${INK}0.3)`;
       ctx.lineWidth = 2.2;
+      rrect(ctx, tubeL, topY, tubeR - tubeL, botY - topY, 10);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(28, 126, 214, 0.07)';
+      ctx.fill();
+
+      /* the release cycle: 9 s — fall, settle, hold, restart */
+      const cyc = t % 9;
+      /* distance fallen in normalised units: grows fast, then linear */
+      const dist = vT * (cyc - tau * (1 - Math.exp(-cyc / tau)));
+      const travel = botY - topY - 60;
+      const norm = Math.min(dist / 2.2, 1);
+      const by = topY + 26 + norm * travel;
+      const frac = 1 - Math.exp(-cyc / tau); /* v / vT */
+
+      /* spacing ticks behind the ball — equal spacing shows the constant v */
+      ctx.strokeStyle = `${INK}0.18)`;
+      ctx.lineWidth = 1.3;
+      for (let i = 0; i < 7; i++) {
+        const d = vT * (cyc - tau * (1 - Math.exp(-cyc / tau))) - i * 0.16;
+        const n = d / 2.2;
+        if (n <= 0 || n >= 1) continue;
+        const ty = topY + 26 + n * travel;
+        line(ctx, tubeL + 8, ty, tubeL + 16, ty);
+      }
+
+      /* the ball */
+      ctx.beginPath();
+      ctx.arc((tubeL + tubeR) / 2, by, 8, 0, Math.PI * 2);
+      ctx.fillStyle = '#12B886';
+      ctx.fill();
+      ctx.strokeStyle = `${INK}0.5)`;
+      ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      /* the population */
-      for (const u of units) {
-        u.x += u.vx * dt;
-        u.y += u.vy * dt;
-        if (u.x < 0) u.x += 1;
-        else if (u.x > 1) u.x -= 1;
-        if (u.y < 0) u.y += 1;
-        else if (u.y > 1) u.y -= 1;
-        const px = bx + 12 + u.x * (bw - 24) + Math.sin(t * 2 + u.jx) * 2;
-        const py = by + 12 + u.y * (bh - 24) + Math.cos(t * 1.7 + u.jx) * 2;
-        if (u.split) {
-          /* two brown NO₂ dots, circling each other */
-          const a = t * 2.4 + u.jx;
-          ctx.fillStyle = 'rgba(255, 146, 43, 0.22)';
-          ctx.beginPath();
-          ctx.arc(px, py, 9, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.fillStyle = '#FF922B';
-          ctx.beginPath();
-          ctx.arc(px + Math.cos(a) * 3.8, py + Math.sin(a) * 3.8, 3.1, 0, Math.PI * 2);
-          ctx.arc(px - Math.cos(a) * 3.8, py - Math.sin(a) * 3.8, 3.1, 0, Math.PI * 2);
-          ctx.fill();
-        } else {
-          /* one pale N₂O₄ dot */
-          ctx.fillStyle = 'rgba(91, 180, 232, 0.18)';
-          ctx.beginPath();
-          ctx.arc(px, py, 9, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.strokeStyle = 'rgba(91, 180, 232, 0.95)';
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.arc(px, py, 4.6, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.fillStyle = 'rgba(91, 180, 232, 0.55)';
-          ctx.beginPath();
-          ctx.arc(px, py, 1.9, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
+      /* the force race, right of the tube: W down, U + D up */
+      const fx = tubeR + 44;
+      const arrow = (x: number, y1: number, y2: number, c: string) => {
+        ctx.strokeStyle = c;
+        ctx.lineWidth = 2.9;
+        ctx.lineCap = 'round';
+        line(ctx, x, y1, x, y2);
+        const sgn = Math.sign(y2 - y1);
+        ctx.beginPath();
+        ctx.moveTo(x - 5.5, y2 - sgn * 7);
+        ctx.lineTo(x, y2);
+        ctx.lineTo(x + 5.5, y2 - sgn * 7);
+        ctx.stroke();
+      };
+      const L = 46;
+      arrow(fx, by - 14, by - 14 - L, '#C2255C'); /* weight, down */
+      arrow(fx, by + 14, by + 14 + L * 0.42, '#1C7ED6'); /* upthrust, up */
+      arrow(fx + 26, by + 14, by + 14 + L * 0.42 * frac, '#12B886'); /* drag, up, growing */
 
-      /* the flame underneath — bigger as the bath warms */
-      const fx = w / 2;
-      const fy = by + bh + 8;
-      const fh = 10 + 20 * cyc + Math.sin(t * 9) * 2.2;
-      ctx.strokeStyle = `${INK}0.45)`;
-      ctx.lineWidth = 2.2;
-      line(ctx, fx - 5, fy + 30, fx - 5, fy + 6);
-      line(ctx, fx + 5, fy + 30, fx + 5, fy + 6);
-      ctx.beginPath();
-      ctx.moveTo(fx - 6, fy + 5);
-      ctx.quadraticCurveTo(fx, fy - fh, fx + 6, fy + 5);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(255, 146, 43, 0.8)';
-      ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(fx - 3, fy + 5);
-      ctx.quadraticCurveTo(fx, fy - fh * 0.55, fx + 3, fy + 5);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(255, 224, 130, 0.9)';
-      ctx.fill();
+      ctx.font = monoFont(600, 11);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = 'rgba(194, 37, 92, 0.95)';
+      ctx.fillText('W', fx + 9, by - 20);
+      ctx.fillStyle = 'rgba(28, 126, 214, 0.95)';
+      ctx.fillText('U', fx + 9, by + 30);
+      ctx.fillStyle = 'rgba(18, 184, 134, 0.95)';
+      ctx.fillText('D', fx + 35, by + 30);
 
-      /* the census bars */
-      const barY = h - 34;
-      drawRich(ctx, 22, barY - 8, ['NO', { sub: '2' }, `  ${nSplit}`], '#C25E00');
-      const rightParts: Seg[] = ['N', { sub: '2' }, 'O', { sub: '4' }, `  ${units.length - nSplit}`];
-      const rightW = richWidth(ctx, rightParts);
-      drawRich(ctx, w - 22 - rightW, barY - 8, rightParts, '#1C7ED6');
-      ctx.fillStyle = 'rgba(255, 146, 43, 0.8)';
-      ctx.fillRect(22, barY, (bw / 2 - 12) * (nSplit / units.length), 5);
-      ctx.fillStyle = 'rgba(91, 180, 232, 0.65)';
-      const bw2 = (bw / 2 - 12) * ((units.length - nSplit) / units.length);
-      ctx.fillRect(w - 22 - bw2, barY, bw2, 5);
-
-      chip(
-        ctx,
-        20,
-        14,
-        ['2NO', { sub: '2' }, '(g) ⇌ N', { sub: '2' }, 'O', { sub: '4' }, '(g)  ·  ΔH = −57 kJ mol', { sup: '−1' }],
-        '#3D2B1F',
-        'left',
-      );
-      chip(ctx, w - 14, 14, [`T = ${TK} K`], cyc > 0.55 ? '#C25E00' : '#1C7ED6');
+      chip(ctx, w - 14, 14, [frac > 0.985 ? 'W = U + D — terminal' : 'drag growing…'], frac > 0.985 ? '#B25E00' : '#12B886');
     };
   });
 
@@ -667,12 +502,10 @@ export function SceneEquilibrium() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: a sealed bulb of nitrogen dioxide in equilibrium with dinitrogen tetroxide — pairs merge and split as the mixture is warmed and cooled, the orange tint following the balance"
+      aria-label="Animation: a ball falling through liquid in a tube, its spacing settling to equal as drag grows, with the weight arrow balanced by the upthrust and growing drag arrows at terminal velocity"
     />
   );
 }
-
-/* ————————————————————— the section ————————————————————— */
 
 export function MotionBand() {
   const liveRef = useLive<HTMLElement>();
@@ -682,7 +515,7 @@ export function MotionBand() {
       <div className="cd-wrap">
         <SectionHead
           dot="var(--cd-sky)"
-          eyebrow="chemistry in motion"
+          eyebrow="physics in motion"
           title={
             <>
               The syllabus, <em>running live.</em>
@@ -694,39 +527,38 @@ export function MotionBand() {
           <Reveal className="cd-stagecell">
             <div className="cd-stage">
               <h3>
-                the distribution breathes <span className="cd-spec-chip">kinetics</span>
+                the curve gives up <span className="cd-spec-chip">motion graphs</span>
               </h3>
-              <SceneMaxwell />
+              <SceneTerminal />
               <p className="cd-stage-cap">
-                Maxwell–Boltzmann, warm and cool. The area under the curve never changes — but
-                the tail past E<sub>a</sub> fattens as T rises, which is the whole reason heat
-                speeds a reaction up.
+                The computed velocity–time curve of a falling ball: steep where only the weight
+                acts, flattening as the drag grows, horizontal once drag and weight balance —
+                terminal velocity, exactly as the mark scheme draws it.
               </p>
             </div>
           </Reveal>
           <Reveal className="cd-stagecell" delay={0.08}>
             <div className="cd-stage">
               <h3>
-                the titration draws itself <span className="cd-spec-chip">amount of substance</span>
+                the parabola lands <span className="cd-spec-chip">projectiles</span>
               </h3>
-              <SceneTitration />
+              <SceneProjectile />
               <p className="cd-stage-cap">
-                25.0 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> NaOH against the HCl from the
-                worked example below — the curve is computed, not sketched, and it plunges
-                exactly at 20.0 cm<sup>3</sup>.
+                The two independent columns, computed live: constant spacing across (a = 0),
+                growing spacing down (a = g), and time the one bridge between them.
               </p>
             </div>
           </Reveal>
           <Reveal className="cd-stagecell wide" delay={0.05}>
             <div className="cd-stage">
               <h3>
-                the balance finds itself <span className="cd-spec-chip">equilibria</span>
+                the force race settles <span className="cd-spec-chip">Stokes&apos; law</span>
               </h3>
-              <SceneEquilibrium />
+              <SceneStokes />
               <p className="cd-stage-cap">
-                2NO<sub>2</sub>(g) ⇌ N<sub>2</sub>O<sub>4</sub>(g) in one sealed bulb. Warming
-                pushes the balance toward brown NO<sub>2</sub>; cooling folds it back into pale
-                N<sub>2</sub>O<sub>4</sub> — Le Chatelier, watched live.
+                The falling ball in its tube: the weight holds, the upthrust holds, the drag
+                grows with speed — and when W = U + D the spacing goes equal. Terminal
+                velocity, watched live.
               </p>
             </div>
           </Reveal>

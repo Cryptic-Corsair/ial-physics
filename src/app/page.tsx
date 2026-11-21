@@ -26,10 +26,10 @@ export const metadata: Metadata = {
      top-level fields only), which would drop og:image/og:type — the
      layout's OG already carries the front-door copy and image. */
   title: {
-    absolute: "IAL CHEM — revision notes, written the way they're taught",
+    absolute: "IAL PHYSICS — revision notes, written the way they're taught",
   },
   description:
-    "Complete class notes for every topic in the Pearson Edexcel International A Level Chemistry spec (WCH11–WCH16) — six units, thirty-three topics, thirty worked examples, and revision packs built from the spec points you tick.",
+    "Statement-by-statement revision notes for the Pearson Edexcel International A Level Physics spec (WPH11) — Mechanics and Materials, and revision packs built from the spec points you tick.",
 };
 
 export default function HomePage() {

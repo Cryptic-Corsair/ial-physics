@@ -8,7 +8,7 @@ import { Fmt } from "./format";
 import { PopIn, Reveal, SoftButton, Mascot } from "./bits";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the spec index, in the editorial dress.
+   IAL PHYSICS · the spec index, in the editorial dress.
    The same index — derived from the notes by the registry, the
    same search, the same filters, the same whole-topic select and
    the same ticks into the pack store — set as a document: the

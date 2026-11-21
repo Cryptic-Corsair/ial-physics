@@ -6,10 +6,10 @@ import { LumenFlask } from './Flask';
 
 /* ═══════════════════════════════════════════════════════════════════════
    anatomy of a note — a miniature of the real reader clause (the same
-   WCH12 6.2 material the daylight portal previews, verbatim), with
-   callouts for what every clause carries; then dress the bench (the
-   workspace's five real labs and two interfaces); then the closing
-   panel with the flask in its cheer mood.
+   WPH11 statement 24 material the daylight portal previews, verbatim),
+   with callouts for what every clause carries; then dress the bench
+   (the workspace's five real labs and two interfaces); then the
+   closing panel with the flask in its cheer mood.
    ═══════════════════════════════════════════════════════════════════════ */
 
 const CALLOUTS_L = [
@@ -38,8 +38,8 @@ const CALLOUTS_R = [
     c: '#74d7ff',
     text: (
       <>
-        <b>Equations with conditions.</b> Every formula carries its units, its state symbols
-        and its caveats.
+        <b>Equations with conditions.</b> Every formula carries its units and the conditions
+        the mark scheme asks for.
       </>
     ),
   },
@@ -47,7 +47,7 @@ const CALLOUTS_R = [
     c: '#ffc46b',
     text: (
       <>
-        <b>Worked examples, every step.</b> Thirty across the course — no skipped lines, no
+        <b>Worked examples, every step.</b> Real past-paper questions — no skipped lines, no
         magic numbers.
       </>
     ),
@@ -56,8 +56,8 @@ const CALLOUTS_R = [
     c: '#b8a3ff',
     text: (
       <>
-        <b>Figures that move.</b> Currents, curves, mechanisms — the physics animated, not
-        just drawn.
+        <b>Figures that move.</b> Curves that draw, rigs that run — the physics animated,
+        not just drawn.
       </>
     ),
   },
@@ -80,7 +80,7 @@ export function AnatomyBand() {
           dot="#6fe8a3"
           eyebrow="what's inside a note"
           title="One clause, anatomised."
-          lead="Every clause of every note is built the same way. This is a real one — WCH12, Topic 6, the heart of energetics — shown the way the reader shows it."
+          lead="Every clause of every note is built the same way. This is a real one — WPH11, statement 24, the heart of flotation — shown the way the reader shows it."
         />
         <div className="lum-anatomy-grid">
           <div className="lum-callouts">
@@ -93,21 +93,20 @@ export function AnatomyBand() {
           <Reveal delay={0.05}>
             <div className="lum-mock">
               <span className="lum-mock-tag">the reader, miniaturised</span>
-              <span className="specno">6.2 · WCH12 · TOPIC 6</span>
-              <h5>Exothermic and endothermic reactions</h5>
+              <span className="specno">24 · WPH11 · TOPIC 2</span>
+              <h5>Upthrust and flotation</h5>
               <p className="statement">
-                know that, by convention, exothermic reactions have a negative enthalpy change
-                and endothermic reactions have a positive enthalpy change
+                understand how to use the relationship upthrust = weight of fluid displaced
               </p>
               <div className="def">
-                <b>Exothermic reactions</b> — reactions which{' '}
-                <mark>liberate heat energy</mark> to the surrounding. Enthalpy of reactants{' '}
-                <b>&gt;</b> enthalpy of products. The sign on ΔH = <b>− ve</b>.
+                <b>Upthrust</b> — the upward force a fluid exerts on an object placed in the
+                fluid, caused by the <mark>displacement of the fluid</mark>: the upthrust on
+                an object = the weight of the fluid the object displaces.
               </div>
-              <div className="eq">Q = m × c × ΔT</div>
+              <div className="eq">U = ρ<sub>fluid</sub> × V<sub>disp</sub> × g</div>
               <div className="worked">
-                <span className="tick">✓</span> worked example · Δ<sub>c</sub>H of ethanol,
-                all three steps
+                <span className="tick">✓</span> the balance reading chain — one step per
+                bullet, cause before effect
               </div>
             </div>
           </Reveal>
@@ -204,7 +203,7 @@ export function DressBand() {
           </Reveal>
         </div>
         <Reveal className="lum-dress-note" delay={0.15}>
-          one product, one set of study records — the dress changes, the chemistry doesn’t
+          one product, one set of study records — the dress changes, the physics doesn’t
         </Reveal>
       </div>
     </section>
@@ -241,7 +240,7 @@ export function CtaBand() {
             specification index first. Either way, the flask will be here when you get back.
           </p>
           <div className="lum-cta-row" style={{ justifyContent: 'center' }}>
-            <a className="lum-btn" href="/club?v=notes&doc=wch11-t01">
+            <a className="lum-btn" href="/club?v=notes&doc=wph11-t01">
               Start reading Topic 1
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M4 12h14M13 6.5 18.5 12 13 17.5" />

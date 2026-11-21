@@ -156,7 +156,7 @@ export default function App() {
   // Topic one — the course's own first note, where "Start reading"
   // lands from the hero and the closing room.
   const startReading = useCallback(() => {
-    router.push('/club?v=notes&doc=wch11-t01');
+    router.push('/club?v=notes&doc=wph11-t01');
   }, [router]);
 
   const openPackBench = useCallback(() => {
@@ -233,7 +233,7 @@ export default function App() {
             theme={theme}
             reducedMotion={reducedMotion}
             onStartReading={startReading}
-            onFindTopic={() => openSearch('WCH11')}
+            onFindTopic={() => openSearch('WPH11')}
             onOpenNote={openNoteInWorkspace}
           />
 

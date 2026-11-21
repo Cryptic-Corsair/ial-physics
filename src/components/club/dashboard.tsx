@@ -18,7 +18,7 @@ import {
 import { shade, tint } from "./bits";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the dashboard system
+   IAL PHYSICS · the dashboard system
    A kit of Material-3-flavoured widgets dressed in the club's own
    candy: Rings, WeekBars, the Heatmap, Segmented controls, StatTiles
    and the two buttons. Everything reads the shared ledgers through

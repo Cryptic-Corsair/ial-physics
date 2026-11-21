@@ -59,7 +59,7 @@ import {
 } from "./bits";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · progress page
+   IAL PHYSICS · progress page
    Two ledgers in one room: the topics you've marked as revised,
    and the minutes the site has quietly banked — today, this week
    against your goal, and topic by topic, so "how long did Topic 4

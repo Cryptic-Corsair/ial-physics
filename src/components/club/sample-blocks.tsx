@@ -8,7 +8,7 @@ import { figureArt, isWideFigure } from "./note-section";
 import type { NotesBlock } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the sample note's editorial blocks.
+   IAL PHYSICS · the sample note's editorial blocks.
    The reader renders note blocks in its own candy dress — chips,
    washes, drop-downs. This room is the disclaimer's document
    aesthetic, so the very same blocks (same text, same diagrams,

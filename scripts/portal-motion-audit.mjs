@@ -136,8 +136,8 @@ try {
   // client JS actually hydrated (a dead renderer once answered with
   // SSR HTML — every referee verdict empty, controls frozen). Probe
   // the hero's referee verdict and reload once if it never spoke.
-  const title = await page.evaluate(() => document.title.slice(0, 8));
-  checkEq('driver reaches page', 'IAL CHEM', title);
+  const title = await page.evaluate(() => document.title.slice(0, 11));
+  checkEq('driver reaches page', 'IAL PHYSICS', title);
   const hydrated = () =>
     page.evaluate(() => document.querySelector('#top')?.getAttribute('data-live') ?? '');
   if ((await hydrated()) === '') {

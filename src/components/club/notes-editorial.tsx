@@ -25,7 +25,7 @@ import { EditorialSectionView, figOffsetsOf } from "./spec-section-editorial";
 import { EditorialLabel, SampleBlockView } from "./sample-blocks";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the notes reader, in the editorial dress.
+   IAL PHYSICS · the notes reader, in the editorial dress.
    The same note — same doc, same sections, same diagrams, same
    spec map registration, same pack ticks — set as a document
    instead of a band walk: the disclaimer page's hero, a sticky
@@ -247,7 +247,7 @@ function NotesEditorialBody({
      dress it wears */
   const jump = useCallback((spec: string) => scrollToSpec(spec), []);
   /* the note's own name for itself — "Topic 9" on the class notes,
-     "Practical 1" on WCH13, straight from the unit's topic list (the
+     "Topic 1" on WPH11, straight from the unit's topic list (the
      same label the unit page and the desk serve). The number is only
      the fallback for a doc whose topic never joined. The gallery
      reader derives the identical line. */

@@ -20,7 +20,7 @@ const hours = Math.round(GLOBAL_METRICS.totalMinutes / 60);
    a full-page hand-off keeps both wrappers' scroll and theme state
    honest), a look-around column for the homepage's own rooms, and the
    small print. Bubbles perches on the wave's crest, as she does on
-   every IAL CHEM page. */
+   every IAL PHYSICS page. */
 export function FooterSection({
   theme,
   onNavigate,
@@ -48,7 +48,7 @@ export function FooterSection({
   ];
 
   const workspaceRows: Array<{ label: string; href: string }> = [
-    { label: 'Open the notes', href: '/club?v=notes&doc=wch11-t01' },
+    { label: 'Open the notes', href: '/club?v=notes&doc=wph11-t01' },
     { label: 'The spec index', href: '/club?v=spec' },
     { label: 'The pack bench', href: '/club?v=pack' },
     { label: 'Your progress', href: '/club?v=sticker' },
@@ -96,7 +96,7 @@ export function FooterSection({
                 <div className="flex items-center gap-3.5">
                   <FlaskMark size={42} />
                   <span className="font-display text-xl font-semibold leading-none tracking-tight">
-                    IAL CHEM
+                    IAL PHYSICS
                   </span>
                 </div>
                 <p
@@ -104,7 +104,7 @@ export function FooterSection({
                   style={{ color: 'var(--band-ink-muted)' }}
                 >
                   Revision notes for the Pearson Edexcel International A
-                  Level Chemistry (2018) specification — written the way
+                  Level Physics (2018) specification — written the way
                   they're taught.
                 </p>
               </div>
@@ -132,7 +132,7 @@ export function FooterSection({
             {/* Row 2 — three quiet columns: the units, this page, the
                 workspace. Every workspace row is a real deep link. */}
             <div className="grid gap-x-10 gap-y-11 py-10 sm:py-11 md:grid-cols-3">
-              <nav aria-label="The six units">
+              <nav aria-label="The units">
                 <p className="portal-band-label">The units</p>
                 <div className="mt-4 flex flex-col">
                   {IAL_UNITS.map((unit) => {
@@ -151,7 +151,7 @@ export function FooterSection({
                             boxShadow: `0 2px 0 color-mix(in oklab, ${candy} 72%, var(--band))`,
                           }}
                         >
-                          {unit.code.replace('WCH', '')}
+                          {unit.code.replace('WPH', '')}
                         </span>
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[13px] font-bold transition-colors group-hover:text-white">
@@ -214,7 +214,7 @@ export function FooterSection({
                 className="max-w-2xl text-[10.5px] font-semibold leading-relaxed"
                 style={{ color: 'var(--band-ink-muted)' }}
               >
-                © 2026 IAL CHEM · Notes for the Pearson Edexcel International A Level Chemistry (2018) specification, WCH11–WCH16. Not affiliated with or endorsed by Pearson Education Ltd.
+                © 2026 IAL PHYSICS · Notes for the Pearson Edexcel International Advanced Level Physics (2018) specification, WPH11. Not affiliated with or endorsed by Pearson Education Ltd.
               </p>
               <div className="flex shrink-0 items-center gap-2.5">
                 <button

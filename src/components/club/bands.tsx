@@ -1,7 +1,7 @@
 "use client";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · band kit — the rotating section palette and the
+   IAL PHYSICS · band kit — the rotating section palette and the
    hand-drawn seam waves. Shared by the home page, the desk, the
    editorial twins and the gallery reader, so a section is dressed
    identically wherever it appears.

@@ -1,4 +1,4 @@
-# DEVELOPMENT.md — IAL CHEM developer guide
+# DEVELOPMENT.md — IAL PHYSICS developer guide
 
 Everything a future developer needs to work on this site: what it is, how it
 runs, how the content and theming systems work, the hard rules, and the
@@ -8,10 +8,11 @@ platform quirks that will bite you if you don't know them.
 
 ## 1. What this is
 
-**IAL CHEM** — revision notes for **Pearson Edexcel International A Level
-Chemistry (2018 spec)**, units **WCH11–WCH16**. Single-page-style app with a
+**IAL PHYSICS** — revision notes for **Pearson Edexcel International A Level
+Physics (2018, Issue 3)**, unit **WPH11** (Mechanics and Materials). Single-page-style app with a
 home feed, unit views, topic readers, flashcard packs, a sticker book, search
-and a customization panel ("control panel").
+and a customization panel ("control panel"). WPH12–WPH16 join one unit at a
+time, research-first.
 
 - **Live repo:** <https://github.com/Cryptic-Corsair/revision-club> (branch `main`)
 - **Deploy target:** Vercel (works out of the box — no env vars, no database)
@@ -68,7 +69,7 @@ src/
 │  ├─ club-app.tsx      App shell + view switching + nav pill + footer
 │  ├─ home.tsx          Homepage: hero, static blobs, bands, glass footer
 │  ├─ bands.tsx         The horizontal "band" sections (BandWave visuals)
-│  ├─ unit-view.tsx     Unit landing (WCH11–16)
+│  ├─ unit-editorial.tsx  Unit walk (editorial dress)
 │  ├─ topic-view.tsx    Topic landing
 │  ├─ notes-reader.tsx  The reader: contents chips, sticky spec rail,
 │  │                    ==marker-pen== highlight rendering
@@ -83,9 +84,9 @@ src/
 │  └─ spec-index.tsx / spec-map.tsx    Spec navigation helpers
 └─ lib/spectra/
    ├─ types.ts          Core shared types
-   ├─ units.ts          Unit registry: WCH11–WCH16 → topic lists
-   ├─ content/          wch11.ts … wch16.ts (unit topic lists) +
-   │                    notes-t01-a.ts … notes-t10-d.ts (the actual notes)
+   ├─ units.ts          Unit registry: WPH11 → topic lists
+   ├─ content/          wph11.ts (topic list) + notes-ph01-*.ts,
+   │                    notes-ph02-*.ts (the actual notes)
    ├─ notes-types.ts    NotesDoc / SpecSection / NotesBlock / FigureKind
    ├─ notes.ts / notes-meta.ts          Notes loading + metadata
    ├─ registry.ts / deck.ts / packs.ts  Flashcard content
@@ -112,7 +113,7 @@ hydration and then owns every change. If you add a preference, wire it into
 
 Notes live in `src/lib/spectra/content/` as typed TS modules (no CMS, no MDX):
 
-- `wch11.ts` … `wch16.ts` — per-unit topic ordering (`WCH11_TOPICS`, …).
+- `wph11.ts` — the unit's topic ordering (`WPH11_TOPICS`).
 - `notes-tNN-x.ts` — one file per topic part (`-a`, `-b`, `-c`): e.g. topic 8
   is split `notes-t08-a/b/c.ts`. Registered in the unit's topic list.
 
@@ -137,7 +138,7 @@ four labs in the reader (contents chips clamp, spec rail, highlights).
 ### Content hard rules (violations have been reverted before — don't repeat them)
 
 1. **Verbatim only.** Note sentences come verbatim from the approved source
-   notes. Never paraphrase, "improve", or reorder the chemistry prose. The
+   notes. Never paraphrase, "improve", or reorder the note prose. The
    value of this site is that the text is exactly what students were given.
 2. **Marker-pen highlights are rationed.** `==term==` renders as a highlighter
    mark. Use it only for genuinely load-bearing terms (a section gets a
@@ -379,11 +380,11 @@ nothing in dark room mode uses light-only tokens — and there are many.
 - **Iconography is centralized.** Every icon comes from `icons.tsx`. Never
   inline a stray `<svg>` in a view or import a second icon library.
 - **Units don't wear names that aren't theirs.** A unit is its code
-  (`WCH11`…) and its chemistry — never an element tag ("Li · lithium"), a
+  (`WPH11`) and its physics — never an element tag, a
   colour name ("pink"), or flame lore speaking for it. That data
   (`element`, `lines`, `spectrumNote`, dead `color`/`cssVar`) was stripped
-  from `units.ts`/`types.ts` on purpose — don't reintroduce it. Chemistry
-  prose about flame tests stays, of course; it just never claims a unit
+  from `units.ts`/`types.ts` on purpose — don't reintroduce it. Note
+  prose stays, of course; it just never claims a unit
   *is* a colour or an element.
 - **Units are just numbers.** Wherever a unit needs a badge — home cards, the
   unit header pill, desk tray, footer, sticker book — render its plain number

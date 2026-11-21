@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · <Fmt/> — inline markup → typography
+   IAL PHYSICS · <Fmt/> — inline markup → typography
    **bold** · *em* · ==highlight== · ~subscript~ · ^superscript^
 
    Plus plural() — the count-word helper the hero stat lines share

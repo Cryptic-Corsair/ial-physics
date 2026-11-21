@@ -19,7 +19,7 @@ import { accentOf } from "./bands";
 import { EditorialLabel, EditorialTable } from "./sample-blocks";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the topic reader, in the editorial dress.
+   IAL PHYSICS · the topic reader, in the editorial dress.
    The same stop on the trail — same blocks, same revised toggle,
    same deep link into the full note — set as a document: the
    disclaimer page's hero, the note CTA as an exhibit, the blocks

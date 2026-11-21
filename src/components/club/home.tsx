@@ -44,7 +44,7 @@ import {
 import { BandWave, homeBandOf } from "./bands";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · home — Bubbles' candy lab, v2
+   IAL PHYSICS · home — Bubbles' candy lab, v2
    The rebuilt rooms front door: a sticker-built hero where Bubbles
    boops back (confetti included), a candy ticker drifting the
    course facts, and every unit as a candy tin you can't help but

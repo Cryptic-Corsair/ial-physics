@@ -8,7 +8,7 @@ import { specAnchorId } from "@/lib/spectra/scroll-helpers";
 import type { NotesBlock, SpecSection } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the gallery section — the white-wall dress's one true
+   IAL PHYSICS · the gallery section — the white-wall dress's one true
    way a spec section looks. The sibling of SpecSectionView and
    EditorialSectionView: same data, same anchors, a different room.
 

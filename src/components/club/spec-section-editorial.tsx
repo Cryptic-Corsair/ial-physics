@@ -8,7 +8,7 @@ import { specAnchorId } from "@/lib/spectra/scroll-helpers";
 import type { SpecSection } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the editorial section — the document room's one true
+   IAL PHYSICS · the editorial section — the document room's one true
    way a spec section looks. The sibling of SpecSectionView: same
    idea, same data, the disclaimer page's dress — a numbered clause
    rail, the official statement under its five-point rule, and the
@@ -42,7 +42,7 @@ export function EditorialSectionView({
       document figures; specification headers remain text-only */
   accent: string;
   /** the small caps line above the clause title —
-      "SPEC 2.6 · WCH11 TOPIC 3" */
+      "SPEC 24 · WPH11 TOPIC 2" */
   eyebrow?: string;
   /** the DOM id prefix of this document's anchors — "spec-" on the
       real notes, matching each room's anchor prefix */

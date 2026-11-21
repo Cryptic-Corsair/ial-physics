@@ -27,7 +27,7 @@ import { PopIn, Reveal, SoftButton, Mascot } from "./bits";
 import type { SpecSection } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the revision pack, in the editorial dress.
+   IAL PHYSICS · the revision pack, in the editorial dress.
    The same assembly — the registry resolves each tick to its
    SpecSection via packGroupsOf, and every section is rendered by
    EditorialSectionView, the very renderer the editorial reader

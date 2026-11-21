@@ -4,7 +4,7 @@ import { useEffect, useId, useMemo, useRef, useState, type CSSProperties, type R
 import { AnimatePresence, m } from "framer-motion";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · bits — the candy box
+   IAL PHYSICS · bits — the candy box
    Mascot (Bubbles the beaker) · doodles · buttons · bubbles ·
    waves · confetti · scroll reveals · progress beaker
    ═══════════════════════════════════════════════════════════════ */

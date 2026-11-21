@@ -5,27 +5,23 @@ import { Meniscus, Reveal, SectionHead } from './bits';
 import { useLive } from './lib';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   the shelf of six — the whole registry (WCH11–WCH16) as six lit tiles.
+   the shelf — the registry's units as lit tiles.
 
    Every fact on a tile is the registry's own: the code, the topic range,
    the paper duration and marks, the candy colour, and the first three
    real topic titles. Each tile carries its unit's motif — a small
-   machine that means the unit (an atom, a Hess cycle, a burette, a
-   balance, a benzene ring, a reflux rig) — and opens straight into the
-   unit's room in the workspace.
-
-   Below it, the flame bench: Unit 3's flame tests as six idling flames
-   in their real colours — chemistry's own light show, not decoration.
+   machine that means the unit — and opens straight into the unit's
+   room in the workspace.
    ═══════════════════════════════════════════════════════════════════════ */
 
 const INK70 = 'rgba(242,238,250,0.7)';
 const INK40 = 'rgba(242,238,250,0.4)';
 
 function stageTag(code: string, stage: string) {
-  return code === 'WCH13' || code === 'WCH16' ? 'Practical' : stage;
+  return stage;
 }
 
-/* ————— the six motifs ————— */
+/* ————— the motifs ————— */
 
 function MotifAtom({ candy }: { candy: string }) {
   return (
@@ -166,12 +162,12 @@ export function UnitsBand() {
       <div className="lum-wrap">
         <SectionHead
           dot="#FF6B6B"
-          eyebrow="the shelf of six"
-          title={<>Six units, six lights.</>}
-          lead="The whole Pearson Edexcel IAL — WCH11 to WCH16 — as six tiles on one shelf. Each keeps its registry colour, its paper facts and its first three topics; each opens straight into its room in the workspace."
+          eyebrow="the shelf"
+          title={<>The units, lit.</>}
+          lead="The Pearson Edexcel IAL Physics units — WPH11 today, WPH12–WPH16 joining one at a time — as lit tiles on one shelf. Each keeps its registry colour, its paper facts and its first three topics; each opens straight into its room in the workspace."
         />
         <div className="lum-tiles">
-          {UNITS.slice(0, 6).map((u, i) => {
+          {UNITS.map((u, i) => {
             const Motif = MOTIFS[i];
             const minutes = u.topics.reduce((n, t) => n + t.minutes, 0);
             const preview = u.topics.slice(0, 3);
@@ -221,73 +217,6 @@ export function UnitsBand() {
             );
           })}
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ————— the flame bench ————— */
-
-const FLAMES: Array<{ el: string; name: string; c: string }> = [
-  { el: 'Li', name: 'crimson', c: '#ff5d7e' },
-  { el: 'Na', name: 'golden', c: '#ffc46b' },
-  { el: 'K', name: 'lilac', c: '#cbb3ff' },
-  { el: 'Ca', name: 'brick red', c: '#ff8a5c' },
-  { el: 'Cu', name: 'blue-green', c: '#52e0c8' },
-  { el: 'Ba', name: 'pale green', c: '#a9f0a0' },
-];
-
-function FlameSvg({ el, c }: { el: string; c: string }) {
-  const id = `flame-${el}`;
-  return (
-    <svg viewBox="0 0 60 112" aria-hidden="true">
-      <defs>
-        <radialGradient id={`${id}-glow`} cx="0.5" cy="0.42" r="0.5">
-          <stop offset="0" stopColor={c} stopOpacity="0.4" />
-          <stop offset="1" stopColor={c} stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <ellipse cx="30" cy="48" rx="27" ry="46" fill={`url(#${id}-glow)`} />
-      <rect x="25" y="88" width="10" height="20" rx="2" fill="#1e1633" stroke={INK70} strokeWidth="2" />
-      <circle cx="30" cy="95" r="1.8" fill="none" stroke={INK40} strokeWidth="1.4" />
-      <path className="lum-loop f-outer" d="M30 88 C 17 71, 14 45, 30 16 C 46 45, 43 71, 30 88 Z" fill={c} opacity="0.72" />
-      <path className="lum-loop f-mid" d="M30 88 C 21 73, 19 52, 30 29 C 41 52, 39 73, 30 88 Z" fill={c} opacity="0.85" />
-      <path className="lum-loop f-core" d="M30 88 C 24 78, 23 62, 30 46 C 37 62, 36 78, 30 88 Z" fill="#fff6e3" opacity="0.92" />
-    </svg>
-  );
-}
-
-export function FlameBand() {
-  const liveRef = useLive<HTMLElement>();
-  return (
-    <section ref={liveRef} className="lum-flameband" aria-label="The flame test colours, idling at the bench">
-      <Meniscus />
-      <div className="lum-wrap">
-        <Reveal className="lum-head lum-flamehead">
-          <span className="lum-eyebrow">
-            <span className="dot" style={{ background: '#ff8a5c', boxShadow: '0 0 10px #ff8a5c' }} />
-            the flame bench
-          </span>
-          <h2>Six elements, still burning.</h2>
-          <p className="lum-lead">
-            Unit 3 opens with these — the flame tests in their true colours, kept warm between
-            revisions. No quiz yet; just the light show the way the bench sees it.
-          </p>
-        </Reveal>
-        <div className="lum-flames">
-          {FLAMES.map((f, i) => (
-            <Reveal key={f.el} className="lum-flame" delay={i * 0.09}>
-              <FlameSvg el={f.el} c={f.c} />
-              <div className="lum-flame-label">
-                <b>{f.el}</b>
-                {f.name}
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="lum-flamenote" delay={0.2}>
-          qualitative analysis · WCH13 — the same six flames live in the notes, flickering
-        </Reveal>
       </div>
     </section>
   );

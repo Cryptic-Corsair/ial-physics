@@ -32,7 +32,7 @@ import { WeekBars } from "./dashboard";
 import { activeDaysOf, lastNDays } from "@/lib/spectra/dashboard";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the desk — the homepage for members (no account,
+   IAL PHYSICS · the desk — the homepage for members (no account,
    just a flag in the browser). Where the introduction sells the
    club, the desk assumes you're in: your last topic up front, your
    week at a glance, and every topic of the course one quiet tap

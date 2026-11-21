@@ -32,7 +32,7 @@ import {
 } from "./notes-figures-physics";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the note section renderer — the one true way a
+   IAL PHYSICS · the note section renderer — the one true way a
    spec section looks, wherever it appears.
 
    The note reader and the revision pack both render <SpecSectionView/>:

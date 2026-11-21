@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · verified hops & the scroll spy
+   IAL PHYSICS · verified hops & the scroll spy
    Shared by every notes surface — the classic reader and the
    editorial document dress alike. Lifted verbatim from
    notes-reader.tsx (where the recipe was hand-measured and

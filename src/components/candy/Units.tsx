@@ -5,16 +5,13 @@ import { Reveal, SectionHead } from './bits';
 import { useLive } from './lib';
 
 /* ═══════════════════════════════════════════════════════════════════════
-   the sticker shelf — the whole registry (WCH11–WCH16) as six tilted
-   sticker cards, straightening themselves when you reach for them.
+   the sticker shelf — the registry's units as tilted sticker cards,
+   straightening themselves when you reach for them.
 
    Every fact on a card is the registry's own: code, topic range, paper
    duration and marks, candy colour, the first three real topic titles.
    Each carries its unit's motif — a small machine that means the unit —
    and opens straight into the unit's room in the workspace.
-
-   Below it, the flame stage: Unit 3's flame tests idling on a dark
-   stage inside the bright page — the room's one "lights-off" moment.
    ═══════════════════════════════════════════════════════════════════════ */
 
 const INK = '#3D2B1F';
@@ -23,10 +20,10 @@ const INK40 = 'rgba(61, 43, 31, 0.42)';
 const MO="var(--font-plex), monospace";
 
 function stageTag(code: string, stage: string) {
-  return code === 'WCH13' || code === 'WCH16' ? 'Practical' : stage;
+  return stage;
 }
 
-/* ————— the six motifs ————— */
+/* ————— the motifs ————— */
 
 function MotifAtom({ candy }: { candy: string }) {
   return (
@@ -167,7 +164,7 @@ export function UnitsBand() {
           dot="var(--cd-coral)"
           eyebrow="the sticker shelf"
           title={<>Six units, six flavours.</>}
-          lead="The whole Pearson Edexcel IAL — WCH11 to WCH16 — as six stickers on the fridge door. Every one wears its registry colour, carries its paper facts and its first three topics, and opens straight into its room in the workspace."
+          lead="The Pearson Edexcel IAL Physics units — WPH11 today, WPH12–WPH16 joining one at a time — as stickers on the fridge door. Every one wears its registry colour, carries its paper facts and its first three topics, and opens straight into its room in the workspace."
         />
         <div className="cd-tiles">
           {UNITS.slice(0, 6).map((u, i) => {
@@ -222,77 +219,6 @@ export function UnitsBand() {
             );
           })}
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ————— the flame stage ————— */
-
-const FLAMES: Array<{ el: string; name: string; c: string }> = [
-  { el: 'Li', name: 'crimson', c: '#ff5d7e' },
-  { el: 'Na', name: 'golden', c: '#ffc46b' },
-  { el: 'K', name: 'lilac', c: '#cbb3ff' },
-  { el: 'Ca', name: 'brick red', c: '#ff8a5c' },
-  { el: 'Cu', name: 'blue-green', c: '#52e0c8' },
-  { el: 'Ba', name: 'pale green', c: '#a9f0a0' },
-];
-
-function FlameSvg({ el, c }: { el: string; c: string }) {
-  const id = `cdflame-${el}`;
-  const HOT = 'rgba(255, 246, 229, 0.8)';
-  return (
-    <svg viewBox="0 0 60 112" aria-hidden="true">
-      <defs>
-        <radialGradient id={`${id}-glow`} cx="0.5" cy="0.42" r="0.5">
-          <stop offset="0" stopColor={c} stopOpacity="0.4" />
-          <stop offset="1" stopColor={c} stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <ellipse cx="30" cy="48" rx="27" ry="46" fill={`url(#${id}-glow)`} />
-      <rect x="25" y="88" width="10" height="20" rx="2" fill="#1B1526" stroke={HOT} strokeWidth="2" />
-      <circle cx="30" cy="95" r="1.8" fill="none" stroke="rgba(255, 246, 229, 0.45)" strokeWidth="1.5" />
-      <path className="cd-loop f-outer" d="M30 88 C 17 71, 14 45, 30 16 C 46 45, 43 71, 30 88 Z" fill={c} opacity="0.72" />
-      <path className="cd-loop f-mid" d="M30 88 C 21 73, 19 52, 30 29 C 41 52, 39 73, 30 88 Z" fill={c} opacity="0.85" />
-      <path className="cd-loop f-core" d="M30 88 C 24 78, 23 62, 30 46 C 37 62, 36 78, 30 88 Z" fill="#FFF6E3" opacity="0.92" />
-    </svg>
-  );
-}
-
-export function FlameBand() {
-  const liveRef = useLive<HTMLElement>();
-  return (
-    <section ref={liveRef} className="cd-sec cd-flamesec" aria-label="The flame test colours, idling on the stage">
-      <div className="cd-wrap">
-        <Reveal>
-          <div className="cd-flamestage">
-            <div className="cd-flamehead">
-              <span className="cd-eyebrow">
-                <span className="dot" style={{ background: '#ff8a5c' }} />
-                the flame stage
-              </span>
-              <h2>Lights off. Six elements, still burning.</h2>
-              <p className="cd-lead">
-                Unit 3 opens with these — the flame tests in their true colours, kept warm on
-                the stage between revisions. No quiz yet; just the light show.
-              </p>
-            </div>
-            <div className="cd-flames">
-              {FLAMES.map((f, i) => (
-                <Reveal key={f.el} className="cd-flame" delay={i * 0.09}>
-                  <FlameSvg el={f.el} c={f.c} />
-                  <div className="cd-flame-label">
-                    <b>{f.el}</b>
-                    {f.name}
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal className="cd-flamenote" delay={0.2}>
-              qualitative analysis · WCH13 — the same six flames live in the notes, flickering
-            </Reveal>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

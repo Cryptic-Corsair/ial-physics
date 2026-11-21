@@ -193,10 +193,10 @@ interface CollectionSlide {
 const COLLECTION_SLIDES: CollectionSlide[] = [
   {
     id: 'units',
-    title: 'The six units',
+    title: 'The units',
     quote:
-      'Structure to synthesis, one unit at a time — WCH11 to WCH16, each opening straight into its topics.',
-    meta: '6 units · 33 topics',
+      'Mechanics and Materials, one unit at a time — WPH11 today, WPH12 to WPH16 joining one by one.',
+    meta: '1 unit · 2 topics',
     cta: 'Open the unit map',
     href: '/club',
     colors: [
@@ -241,12 +241,12 @@ const COLLECTION_SLIDES: CollectionSlide[] = [
   },
   {
     id: 'practicals',
-    title: 'The practicals',
+    title: 'The core practicals',
     quote:
-      'Titration rigs, ion and gas tests, uncertainty — WCH13 and WCH16, written as method.',
-    meta: 'Units 3 & 6 · core practicals',
-    cta: 'Open the practicals',
-    href: '/club?v=wch13',
+      'The falling-ball viscometer and the Young modulus wire — CP2 and CP3, written as method.',
+    meta: 'Unit 1 · core practicals 2 & 3',
+    cta: 'Open the notes',
+    href: '/club?v=notes&doc=wph11-t02',
     colors: [
       'rgba(198, 190, 180, 0.55)',
       'rgba(178, 194, 212, 0.52)',
@@ -505,7 +505,7 @@ export default function TwilightApp() {
     useRoomLive<HTMLElement>();
 
   const startReading = useCallback(() => {
-    router.push('/club?v=notes&doc=wch11-t01');
+    router.push('/club?v=notes&doc=wph11-t01');
   }, [router]);
 
   const openWorkspace = useCallback(() => {
@@ -561,11 +561,11 @@ export default function TwilightApp() {
                   window.scrollTo({ top: 0, behavior: 'auto' });
                 }}
                 className="flex items-center gap-2 whitespace-nowrap rounded-lg pl-1 pr-1.5"
-                aria-label="IAL CHEM — back to the top"
+                aria-label="IAL PHYSICS — back to the top"
               >
                 <FlaskMark size={20} />
                 <span className="font-display text-sm font-semibold tracking-wide text-[#171A21]">
-                  IAL CHEM
+                  IAL PHYSICS
                 </span>
               </a>
               <div className="hidden items-center gap-1 sm:flex">
@@ -615,7 +615,7 @@ export default function TwilightApp() {
               <div>
                 <Reveal>
                   <p className="twilight-eyebrow font-mono text-[10px] font-medium uppercase tracking-[0.22em]">
-                    IAL CHEM · Pearson Edexcel · 2018 spec
+                    IAL PHYSICS · Pearson Edexcel · 2018 spec
                   </p>
                 </Reveal>
                 <Reveal delay={0.08}>
@@ -626,9 +626,9 @@ export default function TwilightApp() {
                 <Reveal delay={0.16}>
                   <div className="twilight-rule mt-8 h-px w-56" />
                   <p className="mt-6 max-w-[46ch] font-display text-lg italic leading-relaxed text-[#F6F4EF]/78 sm:text-xl">
-                    Every topic in the 2018 chemistry specification —
-                    definitions, equations and thirty worked examples — with
-                    your progress and reading time saved in your browser.
+                    Every statement of the 2018 physics specification —
+                    equations stated first, the mark scheme's own wording —
+                    with your progress and reading time saved in your browser.
                   </p>
                 </Reveal>
                 <Reveal delay={0.24}>
@@ -668,7 +668,7 @@ export default function TwilightApp() {
                 <ArrowDown size={13} aria-hidden="true" />
               </button>
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#F6F4EF]/48">
-                WCH11–WCH16 · 2018–2028
+                WPH11 · 2018–2028
               </p>
             </div>
           </section>
@@ -721,7 +721,7 @@ export default function TwilightApp() {
               <div className="order-1 lg:order-2">
                 <Reveal>
                   <p className="twilight-eyebrow font-mono text-[10px] font-medium uppercase tracking-[0.22em]">
-                    The method · WCH11–WCH16
+                    The method · WPH11
                   </p>
                   <h2 className="twilight-quote mt-4 max-w-[22ch] font-display text-[clamp(1.9rem,4vw,3rem)] font-medium leading-[1.1] text-[#F6F4EF]">
                     Written to the spec, read like a book.
@@ -788,26 +788,26 @@ export default function TwilightApp() {
               <div className="flex flex-col gap-24 sm:gap-32">
                 <QuoteBlock
                   index="01"
-                  source="WCH11 · Topic 1"
-                  lead="Isotopes are atoms of the same element,"
-                  accent="same protons, different neutrons"
-                  note="Topic 1 · Atomic structure and periodicity — every definition carries the clause it belongs to."
+                  source="WPH11 · Statement 24"
+                  lead="The upthrust on an object = the weight of the fluid"
+                  accent="the fluid the object displaces"
+                  note="Statement 24 · Upthrust and flotation — every definition carries the statement it belongs to."
                   align="left"
                 />
                 <QuoteBlock
                   index="02"
-                  source="WCH12 · Topic 6"
-                  lead="Reactions which liberate heat energy to the surrounding,"
-                  accent="the sign on ΔH is negative"
-                  note="Topic 6 · Energetics and Hess cycles — worked examples set out the way the marks fall."
+                  source="WPH11 · Statement 1"
+                  lead="s = (u + v)t/2, v = u + at,"
+                  accent="s = ut + ½at², v² = u² + 2as"
+                  note="Statement 1 · The equations of motion — the missing quantity names your equation."
                   align="center"
                 />
                 <QuoteBlock
                   index="03"
-                  source="WCH15 · Topic 18"
-                  lead="Transition metals, ligand exchange,"
-                  accent="electrode potentials read from the data book"
-                  note="Topics 17–21 · redox equilibria, arenes and nitrogen chemistry, to the last clause."
+                  source="WPH11 · Statement 28"
+                  lead="Young modulus = stress ÷ strain,"
+                  accent="a property of the material alone"
+                  note="Statement 28 · Stress, strain and the Young modulus — the wire experiment, to the last clause."
                   align="right"
                 />
               </div>
@@ -833,12 +833,12 @@ export default function TwilightApp() {
                     className="twilight-marquee-group"
                   >
                     {[
-                      '1.4c · Ionisation energy trends',
-                      '2.7a · Hess cycle calculations',
-                      '4.3b · Buffer calculations',
-                      '5.2e · Electrophilic substitution',
-                      '1.5b · Alkene reaction pathways',
-                      '3.2c · Qualitative ion tests',
+                      '1 · The equations of motion',
+                      '24 · Upthrust and flotation',
+                      '25 · Stokes\u2019 law conditions',
+                      '27 · Hooke\u2019s law and stiffness',
+                      '28 · Stress, strain and the Young modulus',
+                      '32 · Elastic strain energy',
                     ].map((chip) => (
                       <span
                         key={`${copy}-${chip}`}
@@ -945,14 +945,14 @@ export default function TwilightApp() {
               <div className="flex flex-wrap items-end justify-between gap-8">
                 <div>
                   <p className="font-display text-sm font-semibold tracking-wide text-[#F6F4EF]">
-                    IAL CHEM ·{' '}
+                    IAL PHYSICS ·{' '}
                     <span className="text-[#DFBC91]">
                       the twilight front door
                     </span>
                   </p>
                   <p className="mt-2 max-w-[52ch] font-body text-xs leading-relaxed text-[#F6F4EF]/60">
-                    Pearson Edexcel International A Level Chemistry (2018
-                    specification), WCH11–WCH16. Progress and reading time
+                    Pearson Edexcel International Advanced Level Physics
+                    (2018 specification), WPH11. Progress and reading time
                     stay in your browser.
                   </p>
                 </div>
@@ -997,7 +997,7 @@ export default function TwilightApp() {
                   ))}
                 </nav>
                 <p className="max-w-[56ch] font-body text-[11px] leading-relaxed text-[#F6F4EF]/45">
-                  IAL CHEM is an independent revision resource, not affiliated
+                  IAL PHYSICS is an independent revision resource, not affiliated
                   with, sponsored or endorsed by Pearson Education Ltd. Edexcel
                   and Pearson are registered trademarks of Pearson Education
                   Ltd.

@@ -684,16 +684,16 @@
 
 /* ————— the six unit motifs (each means its unit) ————— */
 
-/* WCH11 · the atom — two orbits, electrons travelling opposite ways */
+/* the atom — two orbits, electrons travelling opposite ways */
 .lum-orbit { animation: lum-spin 9s linear infinite; transform-box: fill-box; transform-origin: 50% 50%; }
 .lum-orbit-rev { animation: lum-spin 13s linear infinite reverse; transform-box: fill-box; transform-origin: 50% 50%; }
 @keyframes lum-spin { to { transform: rotate(360deg); } }
 
-/* WCH12 · the Hess cycle — three routes, dashes marching round the loop */
+/* the cycle triangle — three routes, dashes marching round the loop */
 .lum-flowdash { stroke-dasharray: 4 9; animation: lum-march 1.05s linear infinite; }
 @keyframes lum-march { to { stroke-dashoffset: -13; } }
 
-/* WCH13 · the burette — one drop falling, again and again */
+/* the drip — one drop falling, again and again */
 .lum-drip { animation: lum-drip 2.3s ease-in infinite; transform-box: fill-box; }
 .lum-drip.d2 { animation-delay: 1.15s; }
 @keyframes lum-drip {
@@ -703,17 +703,17 @@
   100% { transform: translateY(21px); opacity: 0; }
 }
 
-/* WCH14 · the balance — the two rate curves breathing toward equal */
+/* the balance — the two curves breathing toward equal */
 .lum-balance { animation: lum-balance 4.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 0% 100%; }
 @keyframes lum-balance {
   0%, 100% { transform: scaleX(0.68); }
   50%      { transform: scaleX(1); }
 }
 
-/* WCH15 · benzene — the delocalised ring, going round */
+/* the ring — the delocalised hexagon, going round */
 .lum-benzring { animation: lum-spin 7s linear infinite; transform-box: fill-box; transform-origin: 50% 50%; }
 
-/* WCH16 · the reflux — bubbles rising through the condenser's wash */
+/* the rise — bubbles climbing through the wash */
 .lum-rise { animation: lum-rise 2.8s ease-out infinite; transform-box: fill-box; }
 .lum-rise.r2 { animation-delay: 0.9s; }
 .lum-rise.r3 { animation-delay: 1.8s; }

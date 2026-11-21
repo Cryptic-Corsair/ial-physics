@@ -123,7 +123,7 @@ const Legal = dynamic(() => import("./legal").then((m) => m.Legal), {
   loading: RoomLoading,
 });
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · app shell — pill nav, views, footer
+   IAL PHYSICS · app shell — pill nav, views, footer
    The nav stays lean: home, then the tools. Units live on the
    home page, where they have room to breathe.
    ═══════════════════════════════════════════════════════════════ */
@@ -146,18 +146,17 @@ type View =
    PATHS (the canonical form — the URL tracks the room, so every
    room has an address worth keeping):
 
-     /club/notes/wch11-t02/2.3   — the notes reader, opened at one
+     /club/notes/wph11-t02/24    — the notes reader, opened at one
                                    doc, optionally one clause
-     /club/notes/wch11-t02       — the notes reader, one doc
+     /club/notes/wph11-t02       — the notes reader, one doc
      /club/notes                 — the notes reader, first doc
      /club/spec | /club/pack     — the spec index / pack bench
      /club/sticker | /club/legal — the sticker book / colophon
-     /club/topic/wch11/t03       — a topic with no note doc behind it
-     /club/wch12 … /club/wch16   — a unit walk
+     /club/wph11                 — a unit walk
      /club                       — the desk (and the introduction)
 
-   QUERY (the legacy form, still honoured): ?v=notes&doc=wch11-t02
-   &spec=2.3, ?v=spec | pack | sticker | legal | WCH12…WCH16 — parsed
+   QUERY (the legacy form, still honoured): ?v=notes&doc=wph11-t02
+   &spec=24, ?v=spec | pack | sticker | legal | WPH11 — parsed
    first, then upgraded to its path form in the address bar with
    history.replaceState, so old bookmarks and the front door's
    buttons keep working while new shares carry clean paths.

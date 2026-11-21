@@ -313,7 +313,7 @@ export function HeroSection({
               className="font-mono text-[11px] tracking-[0.18em] uppercase tabular-nums"
               style={{ color: 'var(--ink-muted)' }}
             >
-              EDEXCEL IAL · WCH11–WCH16
+              EDEXCEL IAL · WPH11
             </span>
           </div>
 
@@ -357,8 +357,8 @@ export function HeroSection({
             className="mx-auto mt-6 max-w-[54ch] text-[15.5px] leading-[1.8] sm:text-[17px]"
             style={{ color: 'var(--ink-muted)' }}
           >
-            Complete class notes for every topic in the Edexcel IAL
-            Chemistry spec — read them in order, or tick the spec points
+            Statement-by-statement notes for the Edexcel IAL
+            Physics spec — read them in order, or tick the spec points
             you need and take just those.
           </motion.p>
 
@@ -405,7 +405,7 @@ export function HeroSection({
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--accent)' }} />
             <span>{GLOBAL_METRICS.topics}&nbsp;Topics</span>
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--portal-rust)' }} />
-            <span>~13&nbsp;Hours</span>
+            <span>~{GLOBAL_METRICS.hoursLabel.replace('≈', '')}&nbsp;of&nbsp;reading</span>
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--accent-warm)' }} />
             <span>{GLOBAL_METRICS.workedExamples}&nbsp;Worked&nbsp;Examples</span>
           </p>
@@ -447,7 +447,7 @@ export function HeroSection({
             >
               <div className="flex min-w-0 items-center gap-2 font-mono text-xs">
                 <span className="font-semibold tracking-[0.12em] uppercase">
-                  IAL CHEM — REVISION NOTES
+                  IAL PHYSICS — REVISION NOTES
                 </span>
                 <span
                   aria-hidden="true"
