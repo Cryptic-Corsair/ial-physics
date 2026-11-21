@@ -121,9 +121,7 @@ export function UnitEditorial({
             <div>
               <p className="legal-meta">THE TOPICS</p>
               <h2 className="mt-1 font-display text-[calc(25px*var(--ts-sub))] font-semibold tracking-tight text-ink">
-                {unit.code === "WCH13" || unit.code === "WCH16"
-                  ? "Practical skills, in order"
-                  : "Topics in this unit"}
+                Topics in this unit
               </h2>
             </div>
             <span className="legal-meta hidden sm:block">

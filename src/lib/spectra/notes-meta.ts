@@ -1,7 +1,7 @@
 import type { UnitCode } from "./types";
 
 /* ═══════════════════════════════════════════════════════════════
-   IAL CHEM · the notes card index — who has a note, where
+   the notes card index — who has a note, where
 
    The shell (club-app) needs to know *that* a topic has a revision
    note — its id, unit, topic, title and spec range — long before it
@@ -15,7 +15,7 @@ import type { UnitCode } from "./types";
    ═══════════════════════════════════════════════════════════════ */
 
 export interface NotesMeta {
-  /** note doc id, e.g. "wch11-t02" */
+  /** note doc id, e.g. "wph11-t02" */
   id: string;
   unitCode: UnitCode;
   /** topic id inside the unit, e.g. "t02" */
@@ -28,168 +28,6 @@ export interface NotesMeta {
 }
 
 export const NOTES_META: NotesMeta[] = [
-  {
-    id: "wch11-t01",
-    unitCode: "WCH11",
-    topicId: "t01",
-    kicker: "Unit 1 · Topic 1 — the complete class note, spec by spec",
-    title: "Formulae, equations & amount of substance",
-    source: "the complete class note (CHSE Grade 11, Unit 1.3 · Topic 1 · 2020, semester 1)",
-    specRange: "1.1 → 1.12",
-  },
-  {
-    id: "wch11-t02",
-    unitCode: "WCH11",
-    topicId: "t02",
-    kicker: "Unit 1 · Topic 2 — the complete class note, spec by spec",
-    title: "Atomic structure & the periodic table",
-    source: "the complete class note (CHSE Grade 11, Unit 1 · Topic 2 · 2021)",
-    specRange: "2.1 → 2.18",
-  },
-  {
-    id: "wch11-t03",
-    unitCode: "WCH11",
-    topicId: "t03",
-    kicker: "Unit 1 · Topic 3 — the complete class note, spec by spec",
-    title: "Bonding & structure — covalent, shapes and polarity",
-    source: "the complete class note (CHSE Grade 11, Unit 1 · Topic 3 · 2020) — Part II: covalent bonding and shapes. The ionic part (Part I) joins later.",
-    specRange: "3.10 → 3.20",
-  },
-  {
-    id: "wch11-t04",
-    unitCode: "WCH11",
-    topicId: "t04",
-    kicker: "Unit 1 · Topic 4 — the complete class note, spec by spec",
-    title: "Introductory organic chemistry & alkanes",
-    source: "the complete class note (CHSE Grade 11, Unit 1 · Topic 4 · 2020)",
-    specRange: "4.1 → 4.18",
-  },
-  {
-    id: "wch11-t05",
-    unitCode: "WCH11",
-    topicId: "t05",
-    kicker: "Unit 1 · Topic 5 — the complete class note, spec by spec",
-    title: "Alkenes",
-    source: "the complete class note (CHSE Grade 11, Unit 1 · Topic 5 · 2020)",
-    specRange: "5.1 → 5.8",
-  },
-  {
-    id: "wch12-t06",
-    unitCode: "WCH12",
-    topicId: "t06",
-    kicker: "Unit 2 · Topic 6 — the complete class note, spec by spec",
-    title: "Energetics",
-    source: "the complete class note (CHSE Grade 11, Unit 2 · Topic 6 · 2021, semester 2)",
-    specRange: "6.1 → 6.11",
-  },
-  {
-    id: "wch12-t07",
-    unitCode: "WCH12",
-    topicId: "t07",
-    kicker: "Unit 2 · Topic 7 — the complete class note, spec by spec",
-    title: "Intermolecular forces",
-    source: "the complete class note (CHSE Grade 11, Unit 2 · Topic 7 · 2021, semester 2)",
-    specRange: "7.1 → 7.6",
-  },
-  {
-    id: "wch12-t08",
-    unitCode: "WCH12",
-    topicId: "t08",
-    kicker: "Unit 2 · Topic 8 — the complete class note, spec by spec",
-    title: "Redox chemistry and Groups 1, 2 and 7",
-    source: "the complete class note (CHSE Grade 11, Unit 2 · Topics 8A, 8B & 8C · 2021, semester 2) — Redox Chemistry and the elements of Groups 1, 2 and 7.",
-    specRange: "8.1 → 8.28",
-  },
-  {
-    id: "wch12-t09",
-    unitCode: "WCH12",
-    topicId: "t09",
-    kicker: "Unit 2 · Topic 9 — the complete class note, spec by spec",
-    title: "Kinetics and equilibria",
-    source: "the complete class note (CHSE Grade 11, Unit 2 · Topic 9, Parts 9A & 9B · 2021, semester 2) — Introduction to kinetics and equilibria.",
-    specRange: "9.1 → 9.11",
-  },
-  {
-    id: "wch12-t10",
-    unitCode: "WCH12",
-    topicId: "t10",
-    kicker: "Unit 2 · Topic 10 — the complete class note, spec by spec",
-    title: "Halogenoalkanes, alcohols and spectra",
-    source: "the complete class note (CHSE Grade 11, Unit 2 · Topic 10, Parts 10B, 10C, 10D & 10E · 2021/2019, semester 2) — the halogenoalkanes, the alcohols, and the spectra: mass and infrared.",
-    specRange: "10.6 → 10.22",
-  },
-  {
-    id: "wch13-p01",
-    unitCode: "WCH13",
-    topicId: "p01",
-    kicker: "Unit 3 · Practical 1 — the complete practical note, technique by technique",
-    title: "Measurements, gas volumes and uncertainty",
-    source: "the core practical reference notes (CHSE, Unit 3 · 2020) — safety and hazards, measuring gas volumes, and the uncertainty toolkit",
-    specRange: "P1.1 → P1.5",
-  },
-  {
-    id: "wch13-p02",
-    unitCode: "WCH13",
-    topicId: "p02",
-    kicker: "Unit 3 · Practical 2 — the complete practical note, technique by technique",
-    title: "Solutions and titrations — Core Practicals 3 & 4",
-    source: "the core practical reference notes (CHSE, Unit 3 · 2020) — Core Practical 3+4: make up a volumetric solution and carry out a simple acid–base titration",
-    specRange: "P2.1 → P2.8",
-  },
-  {
-    id: "wch13-p04",
-    unitCode: "WCH13",
-    topicId: "p04",
-    kicker: "Unit 3 · Practical 4 — the complete practical note, technique by technique",
-    title: "Flame tests and cation tests",
-    source: "the Unit 3 practical notes (CHSE Grade 11 · Laboratory Chemistry) and the core practical reference notes (CHSE, Unit 3 · 2020) — Core Practical 8+15: testing for cations",
-    specRange: "P4.1 → P4.6",
-  },
-  {
-    id: "wch13-p05",
-    unitCode: "WCH13",
-    topicId: "p05",
-    kicker: "Unit 3 · Practical 5 — the complete practical note, technique by technique",
-    title: "Tests for gases and anions",
-    source: "the Unit 3 practical notes (CHSE Grade 11 · Laboratory Chemistry) and the core practical reference notes (CHSE, Unit 3 · 2020) — the gas tests, the anion tests, and the precipitation pages",
-    specRange: "P5.1 → P5.6",
-  },
-  {
-    id: "wch13-p06",
-    unitCode: "WCH13",
-    topicId: "p06",
-    kicker: "Unit 3 · Practical 6 — the complete practical note, technique by technique",
-    title: "Tests for halides and halogens",
-    source: "the Unit 3 practical notes (CHSE Grade 11 · Laboratory Chemistry) and the core practical reference notes (CHSE, Unit 3 · 2020) — the halide-ion tests, the solid halides with concentrated sulfuric acid, and the halogen tests",
-    specRange: "P6.1 → P6.5",
-  },
-  {
-    id: "wch13-p07",
-    unitCode: "WCH13",
-    topicId: "p07",
-    kicker: "Unit 3 · Practical 7 — the complete practical note, technique by technique",
-    title: "Distillation, reflux and separation",
-    source: "the Unit 3 practical notes (CHSE Grade 11 · Laboratory Chemistry) and the core practical reference notes (CHSE, Unit 3 · 2020) — the apparatus pages, purifying an organic liquid, and measuring boiling point",
-    specRange: "P7.1 → P7.7",
-  },
-  {
-    id: "wch13-p08",
-    unitCode: "WCH13",
-    topicId: "p08",
-    kicker: "Unit 3 · Practical 8 — the complete practical note, technique by technique",
-    title: "Molar volume, crucible and calorimetry — Core Practicals 1 & 2",
-    source: "the core practical reference notes (CHSE, Unit 3 · 2020) — Core Practical 1, heating in a crucible, and Core Practical 2, with the sheet's Examples 1–5 worked in full",
-    specRange: "P8.1 → P8.6",
-  },
-  {
-    id: "wch13-p09",
-    unitCode: "WCH13",
-    topicId: "p09",
-    kicker: "Unit 3 · Practical 9 — the complete practical note, technique by technique",
-    title: "Organic reactions and tests — Core Practicals 5, 6 & 7",
-    source: "the core practical reference notes (CHSE, Unit 3 · 2020) — Core Practicals 5, 6 and 7, the cyclohexene and ester preparations, and the organic unknowns of Core Practical 8+15",
-    specRange: "P9.1 → P9.7",
-  },
   {
     id: "wph11-t01",
     unitCode: "WPH11",
