@@ -24,7 +24,7 @@ export const UNITS: Unit[] = [
     },
     candy: { main: "#339AF0" },
     blurb:
-      "The first physics unit, WPH11/01: the whole of Mechanics — motion, vectors, projectiles, Newton's laws, momentum, moments, work, energy and power — and the whole of Materials — fluids, Stokes' law, Hooke's law and the Young modulus — in four complete notes built from the specification, past papers, mark schemes and examiner reports.",
+      "The first physics unit, WPH11/01: the whole of Mechanics — motion, vectors, projectiles, Newton's laws, momentum, moments, work, energy and power — and the fluids half of Materials — density, upthrust, Stokes' law and viscosity, with the elasticity statements to follow — in four notes built from the specification, past papers, mark schemes and examiner reports.",
     topics: WPH11_TOPICS,
   },
 ];

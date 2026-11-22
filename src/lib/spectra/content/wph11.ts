@@ -6,11 +6,10 @@ import type { Topic } from "../types";
    Edexcel International Advanced Level Physics specification
    (2018, Issue 3) — statements 1–32, taught in four pages:
    Forces · Moments and momentum · Work, energy and power ·
-   Materials. The mechanics split follows the owner's three-way
-   cut (2026-11-22): the flat 22-statement note divided into the
-   motion-and-laws run (1–11), the pairs-momentum-moments run
-   (12–16) and the work-energy-power run (17–22), every statement
-   byte-identical where it stood.
+   Density, upthrust and viscosity. The mechanics split follows
+   the owner's three-way cut (2026-11-22); the fluids statements
+   (23–26) were rebuilt from scratch as the owner's new Topic 4
+   (2026-11-23), the elasticity statements (27–32) to follow.
    ═══════════════════════════════════════════════════════════════ */
 
 export const WPH11_TOPICS: Topic[] = [
@@ -184,61 +183,54 @@ export const WPH11_TOPICS: Topic[] = [
     id: "t04",
     no: "04",
     label: "Topic 4",
-    title: "Materials — fluids, viscosity and elasticity",
+    title: "Density, upthrust and viscosity",
     summary:
-      "The second half of WPH11: density and upthrust, Stokes' law and the falling-ball viscometer, then Hooke's law, stress, strain and the Young modulus — every graph feature defined, both core practicals in full, and the real questions examiners keep asking.",
-    /* minutes scaled with the register rebuild and the paper-gap
-       closure (2026-11-22): the wording notes, kept derivations
-       and the drag-direction, measuring and unloading corrections
-       add a small reading step */
-    minutes: 66,
+      "The fluids half of WPH11's Materials, rebuilt from scratch in the breathing register — density from mass and volume, upthrust as the weight of fluid displaced, floating and the fraction rule, Stokes' law with its four conditions, terminal velocity as a three-force balance, and the falling-ball viscometer — statement by statement, written the way the mark schemes mark it.",
+    /* minutes recalibrated after the from-scratch rebuild (2026-11-23,
+       scripts/minutes-check.ts): 9705 w at the mechanics rate */
+    minutes: 40,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Materials is the half of Unit 1 where the marks are most predictable. Since 2019 almost every paper has carried a ==falling-ball viscosity question== and a ==Young modulus graph question==, and the mark schemes ask for the same sentences each time: ==upthrust equals the weight of fluid displaced==, ==small sphere at low speed with laminar flow==, ==the point where the weight may be taken to act==. Learn the wording once, bank the marks every series.",
+        text: "Density, upthrust and viscosity close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==an upwards force caused by the displacement of fluid==, ==upthrust = weight of fluid displaced==, ==a small spherical object moving at low speed with laminar flow==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols =, ×, <, > inside the sentences, and every force named with its owner and direction.",
       },
       {
         k: "def",
         term: "Upthrust",
-        text: "An upward force on an object in a fluid, caused by the ==displacement== of the fluid — equal to the weight of the fluid displaced. A floating object floats because upthrust *equals* weight, not because it is less than it — the examiner reports call that swap the clearest misconception of the series.",
+        text: "The upward force a fluid exerts on an object in it — ==the weight of the fluid the object displaces==. A floating object floats because upthrust ==equals== weight, not because it is greater — the examiner reports call that swap the clearest misconception of the series.",
       },
       {
         k: "def",
-        term: "Young modulus",
-        text: "The ratio of tensile stress to tensile strain, E = σ/ε — a property of the *material* alone, and the ==gradient of the linear part== of its stress–strain graph. Twice the stiffness for the same shape; unchanged when the wire is doubled over or recast.",
+        term: "Terminal velocity",
+        text: "The constant, maximum velocity of an object falling through a fluid: the point where the drag has grown until ==upthrust + drag = weight== and the resultant force is zero.",
       },
       {
         k: "eq",
-        title: "The materials set on the data sheet",
-        eq: "ρ = m/V        F = 6πηrv        ΔF = kΔx        ΔEel = ½FΔx        E = σ/ε",
-        note: "Stokes' law is printed — but the *conditions* are not: small spherical object, low speed, laminar (non-turbulent) flow. Those two marks appear in nearly every paper.",
+        title: "The three equations this topic turns on",
+        eq: "$\\rho = \\dfrac{m}{V}$        $U = \\rho_{\\text{fluid}} V_{\\text{disp}} g$        $F = 6\\pi\\eta r v$",
+        note: "Stokes' law is printed on the data sheet — its ==conditions== are not: small, spherical, low speed, laminar flow. Those two marks appear in nearly every paper.",
       },
       {
         k: "p",
-        text: "The note now teaches the ropes before the scenarios: every statement opens on its ==equation stated first== and unpacked in a sentence, works the central balance or derivation step by step, names ==who owns each variable==, and closes the traps the examiner reports keep recording — the rejected wordings flagged as Not accepted notes. The scenarios keep their build-ups: one logical step per bullet, cause before effect.",
-      },
-      {
-        k: "p",
-        text: "The recurring traps are written down by the examiners themselves: using the ==diameter as the radius==, forgetting ==cm³ to m³ is ×10^−6^==, reading the 'v' in Stokes' law as a volume, and stopping at a value when the question says *deduce*. Every one of those is a mark you can simply refuse to lose.",
+        text: "Each situation — a sphere lowered into water on a balance, a submarine in less salty water, a hollow brass cylinder 63% submerged, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings line by line, and the answer sealed underneath.",
       },
       {
         k: "tips",
         items: [
-          "Strain has **no unit** (a percentage is fine); stress is Pa = N m^−2^; viscosity is Pa s. Marks are lost for bare numbers.",
-          "The area under a **force–extension** graph is energy in joules; the area under a **stress–strain** graph is energy *per unit volume* — ==proportional== to the energy, not equal to it, exactly as the examiner reports warn.",
-          "Limit of proportionality (end of the straight line) is not the elastic limit (last point of full recovery), and neither is the yield point (sudden plastic flow) — the examiners like all three in one multiple-choice item.",
-          "Gradient technique: use **more than half the drawn line**, and quote to one more significant figure than the question's value.",
+          "Write the falling balance as ==one equation==: W = U + D. The examiner reports warn that *weight = drag and upthrust* reads as two separate equalities.",
+          "Halve the diameter ==before== cubing: the calliper measures d, Stokes' law wants r.",
+          "Convert cm³ to m³ by ÷ 10⁶ — the power-of-ten slip the reports keep recording.",
+          "A *deduce whether Stokes' law applies* answer = two computed drags, a comparison, and a sentence.",
         ],
       },
       {
         k: "recap",
         items: [
-          "Terminal velocity in a fluid: weight = upthrust + drag, then solve with Stokes.",
-          "“Does Stokes' law apply?” — calculate the drag it predicts, compare with the real drag, conclude.",
-          "Hotter liquid, lower viscosity, faster terminal fall (liquids; gases are the opposite way round).",
-          "Young modulus from a graph: gradient × (length ÷ area), or E = Fl/(AΔx) straight off the data.",
-          "Deduce questions end with a number, a comparison and a sentence — always.",
+          "Floating: upthrust = weight — a floater displaces its own weight of fluid.",
+          "Fraction submerged = ρ(object) ÷ ρ(fluid) — ice in sea water sits 89% below the surface.",
+          "Terminal velocity: W = U + D with D = 6πηrv — then solve for v.",
+          "Warmer liquid, lower viscosity, faster terminal fall; colder and deeper water, slower.",
         ],
       },
     ],

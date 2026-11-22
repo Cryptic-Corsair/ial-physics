@@ -63,11 +63,11 @@ export const NOTES_META: NotesMeta[] = [
     id: "wph11-t04",
     unitCode: "WPH11",
     topicId: "t04",
-    kicker: "Physics Unit 1 · Materials — the WPH11 note, statement by statement",
-    title: "Materials — fluids, viscosity and elasticity",
+    kicker: "Physics Unit 1 · Density, upthrust and viscosity — the WPH11 note, statement by statement",
+    title: "Density, upthrust and viscosity",
     source:
-      "the complete WPH11 Materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
-    specRange: "23 → 32",
+      "the WPH11 fluids note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+    specRange: "23 → 26",
   },
 ];
 

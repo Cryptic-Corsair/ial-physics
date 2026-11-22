@@ -3,8 +3,9 @@ import { SECTIONS_PH01F_A } from "./content/notes-ph01f-a";
 import { SECTIONS_PH01F_B } from "./content/notes-ph01f-b";
 import { SECTIONS_PH01_C } from "./content/notes-ph01-c";
 import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
-import { SECTIONS_PH02_A } from "./content/notes-ph02-a";
-import { SECTIONS_PH02_B } from "./content/notes-ph02-b";
+import { SECTIONS_PH04_A } from "./content/notes-ph04-a";
+import { SECTIONS_PH04_B } from "./content/notes-ph04-b";
+import { SECTIONS_PH04_C } from "./content/notes-ph04-c";
 import { NOTES_META } from "./notes-meta";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -15,7 +16,12 @@ import { NOTES_META } from "./notes-meta";
    power (17–22) — with Materials (23–32) the fourth. The Forces
    doc was rebuilt from scratch the same day against the 2020–2024
    mark schemes (notes-ph01f-a/b; the old part files a/b stay on
-   disk untouched); the other three keep their sections.
+   disk untouched); the other two mechanics docs keep their
+   sections. The fluids half of the Materials doc (statements
+   23–26) was rebuilt from scratch the next day as the owner's new
+   Topic 4, Density, upthrust and viscosity (notes-ph04-a/b/c; the
+   old ph02 files stay on disk untouched — the elasticity
+   statements 27–32 leave the page until their own rebuild).
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -88,21 +94,21 @@ export const NOTES_DOCS: NotesDoc[] = [
     id: "wph11-t04",
     unitCode: "WPH11",
     topicId: "t04",
-    kicker: "Physics Unit 1 · Materials — the WPH11 note, statement by statement",
-    title: "Materials — fluids, viscosity and elasticity",
+    kicker: "Physics Unit 1 · Density, upthrust and viscosity — the WPH11 note, statement by statement",
+    title: "Density, upthrust and viscosity",
     source:
-      "the complete WPH11 Materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 fluids note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
     intro: [
       {
         k: "p",
-        text: "This note covers the ten Materials statements of WPH11 Unit 1. Each section starts from the ==specification statement==, and the content under it is written the way the mark schemes mark it: the ==equation is stated first== and then unpacked in a sentence, the working symbols — =, ×, >, < — sit inside the sentences, and every force is named with its owner and its direction: ==the upthrust on the sphere==, the weight of the sphere, the drag upwards. The sections cover ==density==, ==upthrust==, ==Stokes' law== and viscosity (including the falling-ball experiment), then ==Hooke's law==, ==stress==, ==strain== and the ==Young modulus== (including the wire experiment), the ==force-extension== and ==stress-strain== graphs, and ==elastic strain energy==.",
+        text: "This note covers the four fluids statements of WPH11 Unit 1, in specification order: ==density== (ρ = m/V), ==upthrust== — an upwards force caused by the displacement of fluid, and always ==the weight of the fluid displaced== — ==viscosity== and ==Stokes' law== with terminal velocity, and ==Core Practical 2==, the falling-ball method. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and every force named with its owner and its direction: ==the upthrust on the sphere==, the weight of the sphere, the drag upwards.",
       },
       {
         k: "p",
-        text: "Each situation — a Cartesian diver, a submarine lifted by a crane, a sphere sinking into colder, deeper water — is built up as ==its own short section==, one logical step per bullet, so the pattern and its logic can be followed from cause to effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes, and the note closes with ==the marking rules that never change== from one series to the next.",
+        text: "Every situation from the papers — a sphere lowered into water on a balance, a submarine in less salty water, a floating brass cylinder, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
     ],
-    sections: [...SECTIONS_PH02_A, ...SECTIONS_PH02_B],
+    sections: [...SECTIONS_PH04_A, ...SECTIONS_PH04_B, ...SECTIONS_PH04_C],
   },
 ];
 

@@ -137,7 +137,7 @@ export const IAL_UNITS: readonly IalUnit[] = [
     topicsCount: WPH11.topics.length,
     minutes: WPH11.topics.reduce((m, t) => m + t.minutes, 0),
     scope:
-      'Physics 1.3 & 1.4: Mechanics — motion graphs, SUVAT, vectors, projectiles, Newton\'s laws, momentum, moments, work, energy, power — and Materials — fluids, Stokes\' law, Hooke\'s law, the Young modulus.',
+      'Physics 1.3 & 1.4: Mechanics — motion graphs, SUVAT, vectors, projectiles, Newton\'s laws, momentum, moments, work, energy, power — and Materials — density, upthrust, Stokes\' law and viscosity.',
     sampleTopics: WPH11.topics.map((t) => `${t.label} · ${t.title}`),
   },
 ];
@@ -222,13 +222,13 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     id: 'topic-4',
     kind: 'topic',
     code: 'Topic 4',
-    title: 'Topic 4 · Materials — fluids, viscosity and elasticity',
+    title: 'Topic 4 · Density, upthrust and viscosity',
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 66,
+    minutes: 40,
     targetAnchor: '#units',
-    keywords: ['upthrust', 'stokes', 'viscosity', 'hooke', 'young modulus', 'stress', 'strain'],
+    keywords: ['density', 'upthrust', 'flotation', 'stokes', 'viscosity', 'terminal velocity', 'laminar', 'core practical 2'],
   },
   {
     id: 'topic-suvat',
@@ -462,10 +462,10 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     id: 'wph11-t04',
     unitCode: 'WPH11',
     topicLabel: 'Topic 4',
-    title: 'Materials \u2014 fluids, viscosity and elasticity',
-    specRange: '23 → 32',
-    sectionsTotal: 10,
-    readMinutes: 66,
+    title: 'Density, upthrust and viscosity',
+    specRange: '23 → 26',
+    sectionsTotal: 4,
+    readMinutes: 40,
     clauses: [
       {
         spec: '23',
@@ -474,11 +474,15 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
         blocks: [
           {
             kind: 'eq',
-            eq: '\u03c1 = m/V',
+            eq: '$\\rho = \\dfrac{m}{V}$        $V = \\tfrac{4}{3}\\pi r^3$',
           },
           {
-            kind: 'eq',
-            eq: 'V = (4/3)\u03c0r\u00b3',
+            kind: 'worked',
+            title: 'Worked example · a steel sphere for a Newton\'s cradle',
+            question:
+              'Each sphere of a Newton\'s cradle has a radius of 7.0 \u00d7 10\u207b\u00b3 m. Calculate the mass of one sphere. density of steel = 7.8 \u00d7 10\u00b3 kg m\u207b\u00b3 (3)',
+            steps: 2,
+            answer: 'm = 1.1 \u00d7 10\u207b\u00b2 kg',
           },
         ],
       },
@@ -491,23 +495,47 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
           {
             kind: 'def',
             term: 'Upthrust',
-            text: 'The upward force a fluid exerts on an object placed in the fluid. Upthrust is caused by the ==displacement of the fluid==: the upthrust on an object = the weight of the fluid the object displaces.',
+            text: 'The upward force a fluid exerts on an object placed in it. Both printed wordings score the definition mark: ==an upwards force caused by the displacement of fluid==, or ==a force equal and opposite to the weight of fluid displaced== (WPH11 October 2023, Q17(a)).',
           },
           {
-            kind: 'eq',
-            eq: 'U = \u03c1~fluid~ \u00d7 V~disp~ \u00d7 g',
+            kind: 'worked',
+            title: 'Worked example · the sphere lowered into water',
+            question:
+              'A sphere hangs from a thread and is lowered into a beaker of water on a balance; the reading rises from 0.315 kg to 0.465 kg. (a) Draw the free-body force diagram of the sphere. (3) (b)(i) Explain the increase in the reading, with a reference to Newton\'s third law. (3) (b)(ii) Determine the mass of the sphere. density of water = 1000 kg m\u207b\u00b3, density of sphere = 2000 kg m\u207b\u00b3 (4) (b)(iii) The water is replaced by the same mass of oil, of lower density \u2014 what happens to the final reading? (2)',
+            steps: 7,
+            answer: '(b)(ii) 0.30 kg \u00b7 (b)(iii) final reading < 465 g',
           },
         ],
       },
       {
-        spec: '28',
-        title: 'Stress, strain and the Young modulus',
+        spec: '25',
+        title: "Viscosity, Stokes' law and terminal velocity",
         statement:
-          'understand how to use the relationships (tensile or compressive) stress = force/cross-sectional area, (tensile or compressive) strain = change in length/original length, Young modulus = stress/strain',
+          "a be able to use the equation for viscous drag (Stokes' Law), F = 6\u03c0\u03b7rv. b understand that this equation applies only to small spherical objects moving at low speeds with laminar flow (or in the absence of turbulent flow) and that viscosity is temperature dependent",
         blocks: [
           {
             kind: 'eq',
-            eq: '\u03c3 = F/A        \u03b5 = \u0394x/x        E = \u03c3/\u03b5',
+            eq: '$F = 6\\pi\\eta r v$        $W = U + D$',
+          },
+          {
+            kind: 'worked',
+            title: 'Worked example · the steel ball bearing in water',
+            question:
+              'A sphere falls through water at a constant speed of 0.50 m s\u207b\u00b9. Assess whether Stokes\' law can be applied to the falling sphere, with calculations. diameter = 6.0 \u00d7 10\u207b\u00b3 m, mass = 9.1 \u00d7 10\u207b\u2074 kg, upthrust = 1.1 \u00d7 10\u207b\u00b3 N, viscosity of water = 8.9 \u00d7 10\u207b\u2074 Pa s (5)',
+            steps: 5,
+            answer: 'D = 7.8 \u00d7 10\u207b\u00b3 N, F = 2.5 \u00d7 10\u207b\u2075 N \u2014 Stokes\' law does not apply',
+          },
+        ],
+      },
+      {
+        spec: '26',
+        title: 'Core Practical 2 \u2014 falling-ball viscometer',
+        statement:
+          'CORE PRACTICAL 2: Use a falling-ball method to determine the viscosity of a liquid',
+        blocks: [
+          {
+            kind: 'eq',
+            eq: '$\\eta = (W - U) \\div 6\\pi r v$',
           },
         ],
       },
