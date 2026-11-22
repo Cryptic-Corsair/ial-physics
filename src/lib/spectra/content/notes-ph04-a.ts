@@ -2,21 +2,22 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part A (statements 23–24)
-   The rebuilt fluids note, condensed after the owner's review
-   (2026-11-23): the same teaching — the equation first, every
-   scenario described before its cards (the balance, the
-   hydrometer, the two submarines, the diver, the thermometer, the
-   ballast tanks, the iceberg), the worked example cards grouped
-   and folded at the end of each spec section — with every bullet
-   cut to one idea, the repeated warnings said once (the calliper
-   measures a diameter; the density inside the upthrust is the
-   fluid's), and the three density comparisons set as a table.
-   Mark scheme and examiner-report wordings stay quoted verbatim
-   (scripts/t04-quotes.ts; every number re-computed by
-   scripts/t04-numbers.ts). The old part files stay on disk
-   untouched, no longer imported; the elasticity statements (27–32)
-   leave the page until their own rebuild, as the owner set aside
-   for later.
+   Polish pass (2026-11-23, owner review): the worked questions are
+   now set out the way the papers set them — scenario first, then
+   each part on its own line with its mark count, the given data
+   where the paper prints it, the citation on the last line (the
+   question text itself is unchanged; only its layout moves). The
+   subheadings are cut to the plain exam register — "Volumes of
+   solids", "The balance experiment" — and the teaching is
+   condensed: the density-inside-the-upthrust warning said once (in
+   the equation band), the iceberg group folded into the fraction
+   rule and the iceberg card. The spacing and block rhythm the
+   owner approved stay untouched. Mark scheme and examiner-report
+   wordings stay quoted verbatim (scripts/t04-quotes.ts; every
+   number re-computed by scripts/t04-numbers.ts). The old part
+   files stay on disk untouched, no longer imported; the elasticity
+   statements (27–32) leave the page until their own rebuild, as
+   the owner set aside for later.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_A: SpecSection[] = [
@@ -41,7 +42,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "Reference densities worth knowing",
+        caption: "Reference densities",
         head: ["Material", "Density (kg m⁻³)"],
         rows: [
           ["air", "≈ 1.2"],
@@ -61,7 +62,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "Liquid: weigh a measured volume, then $\\rho = m \\div V$; read the volume from a measuring cylinder.",
         ],
       },
-      { k: "h", text: "Volumes you are asked for" },
+      { k: "h", text: "Volumes of solids" },
       {
         k: "eq",
         eq: "$V = \\tfrac{4}{3}\\pi r^3$        $V = \\pi r^2 L$",
@@ -74,7 +75,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "Cube questions hide the volume step: a cube of weight $W$ and density $\\rho$ has sides of $\\left(\\dfrac{W}{\\rho g}\\right)^{1/3}$ (WPH11 January 2024, Q8).",
         ],
       },
-      { k: "h", text: "Conversions and flow" },
+      { k: "h", text: "Conversions and flow rate" },
       {
         k: "bullets",
         items: [
@@ -97,7 +98,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "A steel sphere for a Newton's cradle",
         question:
-          "Each sphere of a Newton's cradle has a radius of $7.0 \\times 10^{-3}\\ \\text{m}$. Calculate the mass of one sphere. density of steel $= 7.8 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3) — *WPH11 June 2025, Q18(a)*",
+          "Each sphere of a Newton's cradle has a radius of $7.0 \\times 10^{-3}$ m. Calculate the mass of one sphere.\ndensity of steel $= 7.8 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3)\n*WPH11 June 2025, Q18(a)*",
         steps: [
           "The volume comes first — cube the radius:\n$V = \\tfrac{4}{3}\\pi r^3 = \\tfrac{4}{3}\\pi \\times (7.0 \\times 10^{-3})^3 = 1.44 \\times 10^{-6}\\ \\text{m}^3$",
           "Then rearrange $\\rho = m/V$ for the mass:\n$m = \\rho V = 7.8 \\times 10^3 \\times 1.44 \\times 10^{-6} = 0.011\\ \\text{kg}$",
@@ -134,14 +135,13 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "eq",
         eq: "$U = \\rho_{\\text{fluid}} \\times V_{\\text{disp}} \\times g$",
-        note: "Read it as the definition: the upthrust = the weight of the displaced fluid, and the density inside is the ==fluid's==. Fully submerged, $V_{\\text{disp}} = V_{\\text{object}}$; floating, the ==submerged volume only==.",
+        note: "Read it as the definition: the upthrust = the weight of the displaced fluid, and the density inside is the ==fluid's== — substituting the object's density there is the classic slip. Fully submerged, $V_{\\text{disp}} = V_{\\text{object}}$; floating, the ==submerged volume only==.",
       },
       {
         k: "bullets",
         items: [
           "The upthrust is decided by the ==fluid== alone: its density, the displaced volume, nothing else.",
           "The weight belongs to the ==object==: $W = \\rho_{\\text{object}} V_{\\text{object}} g$.",
-          "The classic slip: the object's density substituted inside the upthrust.",
           "Change the fluid and $U$ changes, never $W$ — during a fall, neither changes (WPH11 June 2022, Q2).",
           "A temperature change reaches the upthrust only through the density of the fluid (WPH11 January 2020, Q10).",
         ],
@@ -163,7 +163,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "Object density against fluid density — what it decides",
+        caption: "Object density against fluid density",
         head: ["The densities", "What happens"],
         rows: [
           ["object < fluid", "fraction below 1 — floats with part of it above the surface"],
@@ -203,7 +203,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "The apparent weight of an object under water = the weight of the object − the upthrust on it ($W_{\\text{app}} = W - U$).",
         ],
       },
-      { k: "h", text: "An object lowered into a liquid standing on a balance" },
+      { k: "h", text: "The balance experiment" },
       {
         k: "bullets",
         items: [
@@ -296,21 +296,12 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "The trade: a ballasted boat sits deeper, so a ==greater hull area== touches the water and the ==drag is greater== — stability bought with extra resistance (WPH11 October 2019, Q14).",
         ],
       },
-      { k: "h", text: "An iceberg" },
-      {
-        k: "bullets",
-        items: [
-          "An iceberg floats in equilibrium: its weight = the weight of the displaced seawater.",
-          "So its submerged fraction = the density of ice ÷ the density of seawater.",
-          "In less dense water a greater volume must be displaced to balance the same weight — the iceberg sits deeper.",
-        ],
-      },
       { k: "h", text: "Worked examples" },
       {
         k: "worked",
         title: "The sphere lowered into water",
         question:
-          "A uniform, solid sphere hangs from a thread and is lowered into a beaker of water that stands on a balance. As the sphere enters the water, the balance reading rises from 0.315 kg to 0.465 kg. **(a)** Draw a free-body force diagram for the sphere when it is suspended in the water. (3) **(b)(i)** Explain the increase in the reading on the balance. Your answer should include a reference to Newton's third law. (3) **(b)(ii)** Determine the mass of the sphere. density of water $= 1000\\ \\text{kg m}^{-3}$, density of sphere $= 2000\\ \\text{kg m}^{-3}$ (4) **(b)(iii)** The water is replaced with the same mass of oil, whose density is lower. Explain what happens to the final reading on the balance. (2) — *WPH11 January 2020, Q19*",
+          "A uniform, solid sphere hangs from a thread and is lowered into a beaker of water that stands on a balance. As the sphere enters the water, the balance reading rises from 0.315 kg to 0.465 kg.\n**(a)** Draw a free-body force diagram for the sphere when it is suspended in the water. (3)\n**(b)(i)** Explain the increase in the reading on the balance. Your answer should include a reference to Newton's third law. (3)\n**(b)(ii)** Determine the mass of the sphere.\ndensity of water $= 1000\\ \\text{kg m}^{-3}$, density of sphere $= 2000\\ \\text{kg m}^{-3}$ (4)\n**(b)(iii)** The water is replaced with the same mass of oil, whose density is lower. Explain what happens to the final reading on the balance. (2)\n*WPH11 January 2020, Q19*",
         steps: [
           "(a) Three forces act on the sphere: the tension of the thread on the sphere upwards, the upthrust of the water on the sphere upwards, the weight of the sphere downwards.\nAll three arrows start from a dot — each extra force, or an arrow off the dot, costs a mark.",
           "(b)(i) The water exerts an upthrust on the sphere, upwards.\nBy Newton's third law the sphere exerts an equal and opposite force on the water, downwards.",
@@ -330,7 +321,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "The submarine in less salty water",
         question:
-          "A submarine is stationary and completely submerged. Its volume is $5.83 \\times 10^{3}\\ \\text{m}^3$ and the density of the seawater around it is $1.03 \\times 10^{3}\\ \\text{kg m}^{-3}$. **(a)(i)** Calculate the upthrust exerted on the submarine by the seawater. (2) **(a)(ii)** Explain why the mass of the submarine must be $6.0 \\times 10^{6}$ kg. (2) **(b)(i)** The submarine moves into less salty water, of density $1.01 \\times 10^{3}\\ \\text{kg m}^{-3}$. Explain what happens to the submarine. (3) **(b)(ii)** The submarine adjusts its weight by pumping water in or out of its tanks. Determine the mass of water it should pump out to hold its depth. (2) — *WPH11 June 2021, Q13*",
+          "A submarine is stationary and completely submerged. Its volume is $5.83 \\times 10^{3}\\ \\text{m}^3$ and the density of the seawater around it is $1.03 \\times 10^{3}\\ \\text{kg m}^{-3}$.\n**(a)(i)** Calculate the upthrust exerted on the submarine by the seawater. (2)\n**(a)(ii)** Explain why the mass of the submarine must be $6.0 \\times 10^{6}$ kg. (2)\n**(b)(i)** The submarine moves into less salty water, of density $1.01 \\times 10^{3}\\ \\text{kg m}^{-3}$. Explain what happens to the submarine. (3)\n**(b)(ii)** The submarine adjusts its weight by pumping water in or out of its tanks. Determine the mass of water it should pump out to hold its depth. (2)\n*WPH11 June 2021, Q13*",
         steps: [
           "(a)(i) Fully submerged, so the displaced volume = the whole volume:\n$U = \\rho_{\\text{water}} V g = 1.03 \\times 10^3 \\times 5.83 \\times 10^3 \\times 9.81 = 5.9 \\times 10^7\\ \\text{N}$",
           "(a)(ii) Stationary means equilibrium: the weight of the submarine = the upthrust on it.\n$m = \\dfrac{U}{g} = \\dfrac{5.89 \\times 10^7}{9.81} = 6.0 \\times 10^6\\ \\text{kg}$",
@@ -349,7 +340,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "The hollow cylinder that floats",
         question:
-          "A hollow brass cylinder with closed ends floats on water with 63% of its volume submerged. Its length is 4.0 cm and its external diameter is 2.1 cm. **(a)** Explain why the brass cylinder floats. (2) **(b)(i)** Show that the mass of the cylinder is about $9 \\times 10^{-3}$ kg. density of water $= 1.0 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4) **(b)(ii)** Deduce whether an identical cylinder made of solid gold would also float. density of gold $= 19.3 \\times 10^{3}\\ \\text{kg m}^{-3}$, density of brass $= 8.7 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4) — *WPH11 January 2022, Q15*",
+          "A hollow brass cylinder with closed ends floats on water with 63% of its volume submerged. Its length is 4.0 cm and its external diameter is 2.1 cm.\n**(a)** Explain why the brass cylinder floats. (2)\n**(b)(i)** Show that the mass of the cylinder is about $9 \\times 10^{-3}$ kg.\ndensity of water $= 1.0 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4)\n**(b)(ii)** Deduce whether an identical cylinder made of solid gold would also float.\ndensity of gold $= 19.3 \\times 10^{3}\\ \\text{kg m}^{-3}$, density of brass $= 8.7 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4)\n*WPH11 January 2022, Q15*",
         steps: [
           "(a) The floating argument uses the cylinder's ==average== density — the air inside shares the volume.\nThe overall density of the cylinder is less than the density of the water, so it floats.",
           "(b)(i) The whole volume:\n$V = \\pi r^2 L = \\pi \\times (1.05 \\times 10^{-2})^2 \\times 4.0 \\times 10^{-2} = 1.39 \\times 10^{-5}\\ \\text{m}^3$",
@@ -370,7 +361,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "The iceberg",
         question:
-          "An iceberg floats in seawater with 6.7 m of its height below the surface. Model the iceberg as a rectangular block of horizontal cross-sectional area $3500\\ \\text{m}^2$. **(a)** Calculate the weight of the block of ice. density of seawater $= 1.03 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3) **(b)** An identical block floats in water of lower density, with a larger volume below the surface. Explain why. (2) — *WPH11 June 2024, Q12*",
+          "An iceberg floats in seawater with 6.7 m of its height below the surface. Model the iceberg as a rectangular block of horizontal cross-sectional area $3500\\ \\text{m}^2$.\n**(a)** Calculate the weight of the block of ice.\ndensity of seawater $= 1.03 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3)\n**(b)** An identical block floats in water of lower density, with a larger volume below the surface. Explain why. (2)\n*WPH11 June 2024, Q12*",
         steps: [
           "(a) A floater displaces its own weight, so the weight of the block = the weight of the displaced seawater:\n$V_{\\text{disp}} = 3500 \\times 6.7 = 2.35 \\times 10^4\\ \\text{m}^3$",
           "$W = \\rho_{\\text{water}} V_{\\text{disp}} g = 1.03 \\times 10^3 \\times 2.35 \\times 10^4 \\times 9.81 = 2.4 \\times 10^8\\ \\text{N}$",
@@ -387,7 +378,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "The hydrometer",
         question:
-          "A hydrometer floats vertically in a liquid. Its weight is 0.324 N and its diameter is 1.23 cm. **(a)** Complete the free-body diagram of the hydrometer floating in water at equilibrium. (2) **(b)(i)** Seawater is more dense than pure water. Explain why the hydrometer floats higher in the seawater. (3) **(b)(ii)** Calculate the change in the vertical position of the hydrometer when it is moved from pure water, density $997\\ \\text{kg m}^{-3}$, into seawater, density $1025\\ \\text{kg m}^{-3}$. (5) — *WPH11 October 2024, Q16*",
+          "A hydrometer floats vertically in a liquid. Its weight is 0.324 N and its diameter is 1.23 cm.\n**(a)** Complete the free-body diagram of the hydrometer floating in water at equilibrium. (2)\n**(b)(i)** Seawater is more dense than pure water. Explain why the hydrometer floats higher in the seawater. (3)\n**(b)(ii)** Calculate the change in the vertical position of the hydrometer when it is moved from pure water, density $997\\ \\text{kg m}^{-3}$, into seawater, density $1025\\ \\text{kg m}^{-3}$. (5)\n*WPH11 October 2024, Q16*",
         steps: [
           "(a) Two forces only: the upthrust of the water on the hydrometer upwards, the weight of the hydrometer downwards.\nBoth arrows start from the dot and are drawn ==equal in length== — the hydrometer is in equilibrium.",
           "(b)(i) Floating holds the upthrust equal to the weight of the hydrometer, which is the same in both liquids.\nSeawater is denser, so a ==smaller volume== of it provides that same weight of displaced liquid.",
@@ -407,7 +398,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "A Cartesian diver",
         question:
-          "A 'cartesian diver' toy floats inside a sealed plastic bottle of water. The diver is a tube closed at one end with air trapped inside by water. The student squeezes the bottle: more water is forced into the tube and the volume of the trapped air decreases. Explain why the cartesian diver accelerates downwards. (3) — *WPH11 January 2024, Q13*",
+          "A 'cartesian diver' toy floats inside a sealed plastic bottle of water. The diver is a tube closed at one end with air trapped inside by water.\nThe student squeezes the bottle: more water is forced into the tube and the volume of the trapped air decreases. Explain why the cartesian diver accelerates downwards. (3)\n*WPH11 January 2024, Q13*",
         steps: [
           "Less trapped air means the diver displaces less water.\nThe upthrust on the diver decreases.",
           "The weight of the diver does not change.\nSo the weight of the diver is now greater than the upthrust on it.",
@@ -423,7 +414,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "A Galilean thermometer",
         question:
-          "A Galilean thermometer is a sealed glass cylinder of liquid holding several identical sealed bulbs, each with a metal disc of a different mass attached. As the temperature increases, the density of the liquid decreases. Explain why a particular bulb will float until the temperature of the liquid exceeds a certain value. (6) — *WPH11 June 2022, Q15*",
+          "A Galilean thermometer is a sealed glass cylinder of liquid holding several identical sealed bulbs, each with a metal disc of a different mass attached. As the temperature increases, the density of the liquid decreases.\nExplain why a particular bulb will float until the temperature of the liquid exceeds a certain value. (6)\n*WPH11 June 2022, Q15*",
         steps: [
           "The upthrust on a bulb = the weight of the liquid the bulb displaces.",
           "A bulb floats while the upthrust on it equals or exceeds the weight of the bulb and its disc.",
@@ -443,7 +434,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "The weather balloon",
         question:
-          "A weather balloon carries equipment into the upper atmosphere. At ground level the balloon and equipment have a volume of $1.63\\ \\text{m}^3$ and an initial upward acceleration of $4.80\\ \\text{m s}^{-2}$. The density of the air at ground level is $1.23\\ \\text{kg m}^{-3}$. **(a)(i)** Show that the weight of the balloon and equipment is about 13 N. (3) **(a)(ii)** At a height of 25 km the density of the air is about $0.050\\ \\text{kg m}^{-3}$. The balloon bursts if its volume exceeds $50\\ \\text{m}^3$. Deduce whether the balloon can support the equipment at 25 km without bursting. (4) — *WPH11 October 2023, Q17*",
+          "A weather balloon carries equipment into the upper atmosphere. At ground level the balloon and equipment have a volume of $1.63\\ \\text{m}^3$ and an initial upward acceleration of $4.80\\ \\text{m s}^{-2}$. The density of the air at ground level is $1.23\\ \\text{kg m}^{-3}$.\n**(a)(i)** Show that the weight of the balloon and equipment is about 13 N. (3)\n**(a)(ii)** At a height of 25 km the density of the air is about $0.050\\ \\text{kg m}^{-3}$. The balloon bursts if its volume exceeds $50\\ \\text{m}^3$. Deduce whether the balloon can support the equipment at 25 km without bursting. (4)\n*WPH11 October 2023, Q17*",
         steps: [
           "(a)(i) The upthrust of the air on the balloon = the weight of the air it displaces:\n$U = \\rho_{\\text{air}} V g = 1.23 \\times 1.63 \\times 9.81 = 19.67\\ \\text{N}$",
           "Newton's second law, with $W = mg$:\n$U - mg = ma \\Rightarrow m = \\dfrac{U}{g + a} = \\dfrac{19.67}{9.81 + 4.80} = 1.35\\ \\text{kg}$",
@@ -461,7 +452,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "worked",
         title: "Lifting bags on the seabed",
         question:
-          "Two spherical lifting bags, each of diameter 50 cm, are attached to a box of dimensions $0.25\\ \\text{m} \\times 0.50\\ \\text{m} \\times 1.10\\ \\text{m}$ on the seabed and filled with air. The total weight of the box and the filled bags is 2500 N. Deduce whether the box will lift from the bottom of the sea. density of seawater $= 1020\\ \\text{kg m}^{-3}$ (6) — *WPH11 October 2025, Q17(a)*",
+          "Two spherical lifting bags, each of diameter 50 cm, are attached to a box of dimensions $0.25\\ \\text{m} \\times 0.50\\ \\text{m} \\times 1.10\\ \\text{m}$ on the seabed and filled with air. The total weight of the box and the filled bags is 2500 N.\nDeduce whether the box will lift from the bottom of the sea.\ndensity of seawater $= 1020\\ \\text{kg m}^{-3}$ (6)\n*WPH11 October 2025, Q17(a)*",
         steps: [
           "Both the bags and the box displace water:\n$V_{\\text{bag}} = \\tfrac{4}{3}\\pi \\times 0.25^3 = 0.065\\ \\text{m}^3$",
           "$V_{\\text{box}} = 0.25 \\times 0.50 \\times 1.10 = 0.138\\ \\text{m}^3$\n$V_{\\text{total}} = 2 \\times 0.065 + 0.138 = 0.269\\ \\text{m}^3$",
