@@ -1,6 +1,6 @@
 import type { NotesDoc } from "./notes-types";
-import { SECTIONS_PH01_A } from "./content/notes-ph01-a";
-import { SECTIONS_PH01_B } from "./content/notes-ph01-b";
+import { SECTIONS_PH01F_A } from "./content/notes-ph01f-a";
+import { SECTIONS_PH01F_B } from "./content/notes-ph01f-b";
 import { SECTIONS_PH01_C } from "./content/notes-ph01-c";
 import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH02_A } from "./content/notes-ph02-a";
@@ -12,8 +12,10 @@ import { NOTES_META } from "./notes-meta";
    The old mechanics note was one doc (wph11-t01, statements 1–22);
    since the owner's three-way split (2026-11-22) it is three docs
    — Forces (1–11), Moments and momentum (12–16), Work, energy and
-   power (17–22) — with Materials (23–32) the fourth. The docs'
-   sections moved untouched; only the doc wrappers are new.
+   power (17–22) — with Materials (23–32) the fourth. The Forces
+   doc was rebuilt from scratch the same day against the 2020–2024
+   mark schemes (notes-ph01f-a/b; the old part files a/b stay on
+   disk untouched); the other three keep their sections.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -33,14 +35,14 @@ export const NOTES_DOCS: NotesDoc[] = [
     intro: [
       {
         k: "p",
-        text: "Forces opens the mechanics half of WPH11. The sections run in specification order: the ==equations of uniformly accelerated motion==, ==reading and drawing the three motion graphs== and what their ==slopes and areas== give, ==scalars and vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's second law== (ΣF = ma) with the ==first law== and ==terminal velocity==, ==weight== and ==gravitational field strength==, and ==Core Practical 1==, the acceleration of free fall. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and every force named with its owner and its direction.",
+        text: "Forces opens the mechanics half of WPH11. The sections run in specification order: the ==equations of uniformly accelerated motion==, the ==three motion graphs== and what their ==slopes and areas== give, ==scalars and vectors==, ==components== and ==resultants==, ==projectiles== on their two independent columns, ==free-body diagrams==, ==ΣF = ma== with the first law and ==terminal velocity==, ==weight==, and ==Core Practical 1==, the acceleration of free fall. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==.",
       },
       {
         k: "p",
-        text: "Each situation from the papers — a dart at a dartboard, a car braking, the scales in a lift, a projectile from a mountain — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Every situation from the papers — a dart at a dartboard, two cars racing, the scales in a lift, a projectile from a mountain — is ==a worked example card==: the question stated as the paper sets it, with the paper and question number on it, one marking point per step, and the answer sealed underneath. The workings are set out line by line, the mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
     ],
-    sections: [...SECTIONS_PH01_A, ...SECTIONS_PH01_B],
+    sections: [...SECTIONS_PH01F_A, ...SECTIONS_PH01F_B],
   },
   {
     id: "wph11-t02",

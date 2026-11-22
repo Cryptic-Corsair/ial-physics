@@ -21,16 +21,15 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Forces",
     summary:
       "The opening of WPH11 mechanics — the equations of motion and the three motion graphs, vectors resolved and combined, projectiles with their two independent columns, free-body diagrams, Newton's first and second laws with terminal velocity, weight and Core Practical 1 — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated for the split (2026-11-22): the old
-       80-minute mechanics read divided at its own words-per-minute
-       rate (~241 w/min), Forces taking statements 1–11 plus the
-       landing paragraph */
-    minutes: 44,
+    /* minutes recalibrated after the from-scratch rebuild (2026-11-22,
+       scripts/minutes-check.ts): 8812 w at the mechanics rate — the
+       rebuilt note is cut shorter and wider apart, same statements */
+    minutes: 37,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Forces opens WPH11's mechanics: the ==equations of motion== and the ==three motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, then ==free-body diagrams==, ==Newton's first and second laws== with ==terminal velocity==, ==weight== and ==Core Practical 1==. Every session sets these statements in a new context — a dart at a dartboard, a car braking, a submarine surfacing, a projectile from a mountain — and this note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
+        text: "Forces opens WPH11's mechanics: the ==equations of motion==, the ==three motion graphs==, ==vectors== resolved and combined, ==projectiles== on their two independent columns, ==free-body diagrams==, ==Newton's laws== with ==terminal velocity==, ==weight== and ==Core Practical 1==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols =, ×, <, > inside the sentences, and every force named with its owner and direction.",
       },
       {
         k: "def",
@@ -45,20 +44,20 @@ export const WPH11_TOPICS: Topic[] = [
       {
         k: "eq",
         title: "The four equations the paper prints for you",
-        eq: "v = u + at        s = ut + ½at²        v² = u² + 2as        s = ½(u + v)t",
+        eq: "$v = u + at$        $s = ut + \\tfrac{1}{2}at^2$        $v^2 = u^2 + 2as$        $s = \\tfrac{1}{2}(u + v)t$",
         note: "All four appear on the WPH11 data sheet. The marks are never for remembering them — they are for choosing the right one, converting units, and finishing with a comparison and a conclusion when the command word is *deduce*.",
       },
       {
         k: "p",
-        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, the scales in a lift — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Each situation — a dart at a dartboard, two cars racing, the scales in a lift — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings set out line by line, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards.",
       },
       {
         k: "tips",
         items: [
           "A 3-mark explanation almost always needs **3 distinct points** — the examiners' reports say exactly this.",
-          "*Show that X ≈ 300 N* means quote **at least one more significant figure** than 300 — 281 N or 296 N, never 300 exactly. Reverse working caps you at 2 of 3 marks.",
+          "*Show that X ≈ 300 N* means quote **at least one more significant figure** than 300 — 281 N or 296 N, never 300 exactly.",
           "After a show-that, **use the given value** in later parts — ecf protects you, and the question expects it.",
-          "g = 9.81 (or 9.8). Using 10 costs one mark per question. Missing units cost the final calculation mark.",
+          "g = 9.81 (9.8 is accepted). Using 10 costs one mark, once per paper. Missing units cost the final calculation mark.",
         ],
       },
       {

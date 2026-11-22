@@ -29,7 +29,19 @@ export type NotesBlock =
   | { k: "def"; term: string; text: string }
   | { k: "eq"; eq: string; note?: string }
   | { k: "table"; head: string[]; rows: string[][]; caption?: string }
-  | { k: "worked"; title: string; question: string; steps: string[]; answer: string }
+  | {
+      k: "worked";
+      title: string;
+      question: string;
+      /** one marking point per step; a "\n" inside a step breaks the
+          line, and a line that is a single $...$ span is typeset as
+          its own ruled working line (KaTeX) */
+      steps: string[];
+      answer: string;
+      /** optional verbatim examiner-report / mark-scheme note, shown
+          after the steps and before the answer */
+      ms?: { label: string; text: string };
+    }
   | { k: "steps"; caption?: string; items: { title: string; text: string; icon?: string }[] }
   | { k: "figure"; kind: FigureKind; caption?: string }
   | { k: "wow"; text: string };

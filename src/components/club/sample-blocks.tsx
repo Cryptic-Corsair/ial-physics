@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Sparkles } from "./icons";
 import { ScrollFade } from "./bits";
 import { Fmt } from "./format";
-import { figureArt, isWideFigure } from "./note-section";
+import { figureArt, isWideFigure, StepLines, WorkedMsNote } from "./note-section";
 import type { NotesBlock } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -158,6 +158,7 @@ export function SampleBlockView({
           question={b.question}
           steps={b.steps}
           answer={b.answer}
+          ms={b.ms}
         />
       );
 
@@ -290,11 +291,13 @@ function EditorialWorked({
   question,
   steps,
   answer,
+  ms,
 }: {
   title: string;
   question: string;
   steps: string[];
   answer: string;
+  ms?: { label: string; text: string };
 }) {
   /* “Worked example · counting σ and π” — the label already says it */
   const bare = title.replace(/^Worked example\s*·\s*/i, "");
@@ -320,11 +323,16 @@ function EditorialWorked({
               {String(i + 1).padStart(2, "0")}
             </span>
             <span className="min-w-0">
-              <Fmt text={s} />
+              <StepLines text={s} />
             </span>
           </li>
         ))}
       </ol>
+      {ms && (
+        <div className="mt-3 [&>div]:mt-0">
+          <WorkedMsNote ms={ms} accent="var(--legal-rust)" />
+        </div>
+      )}
       <div className="mt-4 flex items-start gap-3.5 border-t border-ink/10 pt-4">
         <span className="shrink-0 pt-[calc(4px*var(--ui-scale))] font-display text-[calc(10.5px*var(--ts-other))] font-extrabold tracking-[0.2em] uppercase text-[var(--legal-rust)]">
           Answer

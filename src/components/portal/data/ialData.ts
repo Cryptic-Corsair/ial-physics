@@ -190,7 +190,7 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 44,
+    minutes: 37,
     targetAnchor: '#units',
     keywords: ['suvat', 'motion graphs', 'projectile', 'vector', 'newton', 'terminal velocity', 'free-body', 'core practical'],
   },
@@ -238,7 +238,7 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'Spec 1',
-    minutes: 12,
+    minutes: 4,
     targetAnchor: '#units',
     keywords: ['suvat', 'v = u + at', 'show that', 'displacement', 'acceleration'],
   },
@@ -333,7 +333,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     title: 'Forces',
     specRange: '1 → 11',
     sectionsTotal: 11,
-    readMinutes: 44,
+    readMinutes: 37,
     clauses: [
       {
         spec: '1',
@@ -343,15 +343,15 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
         blocks: [
           {
             kind: 'eq',
-            eq: 'v = u + at        s = ut + ½at²        v² = u² + 2as        s = ½(u + v)t',
+            eq: '$v = u + at$        $s = ut + \\tfrac{1}{2}at^2$        $v^2 = u^2 + 2as$        $s = \\tfrac{1}{2}(u + v)t$',
           },
           {
             kind: 'worked',
-            title: 'Worked example · the dart',
+            title: 'Worked example · a dart thrown at a dartboard',
             question:
-              'A dart is thrown with a velocity of 15.6 m s⁻¹ at an angle of 5.0° to the horizontal. Just before the dart hits the board, the vertical component of its velocity is zero. Air resistance is negligible. (a) Show that the time taken to reach the dartboard is about 0.14 s. (3) (b) Calculate the horizontal distance D to the board. (2)',
+              'A dart is thrown with a velocity of 15.6 m s⁻¹ at an angle of 5.0° to the horizontal, and it travels a horizontal distance D to the dartboard. Just before the dart hits the dartboard the vertical component of its velocity is zero. The air resistance acting on the dart is negligible. (a) Show that the time taken to reach the dartboard is about 0.14 s. (3) (b) Calculate D. (2)',
             steps: 4,
-            answer: 'D = 2.2 m (ecf allowed from your time — a wrong (a) does not have to sink (b))',
+            answer: '(a) t = 0.139 s · (b) D = 2.2 m',
           },
         ],
       },
@@ -362,13 +362,17 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
           'be able to draw and interpret displacement-time, velocity-time and acceleration-time graphs',
         blocks: [
           {
-            kind: 'eq',
-            eq: 'gradient of s–t = velocity        gradient of v–t = acceleration        area under v–t = displacement',
+            kind: 'def',
+            term: 'The gradient test',
+            text: 'The gradient of a displacement–time graph is the velocity. The gradient of a velocity–time graph is the acceleration. The area under a velocity–time graph is the displacement. Explain a graph through the graph: name its gradient, an area, an intercept or a shape.',
           },
           {
-            kind: 'def',
-            term: "Newton's first law",
-            text: 'An object at rest stays at rest, and an object moving with constant velocity keeps that velocity, ==unless a resultant force acts on it==. Constant velocity (including terminal velocity) always means ΣF = 0 — forces may be present, but they cancel.',
+            kind: 'worked',
+            title: 'Worked example · the platform diver',
+            question:
+              'A man dives from a platform into a swimming pool, 12 m above the water surface. The graph shows his vertical displacement after leaving the platform. (a)(i) State how the graph shows that the man\'s initial vertical velocity is zero. (1) (a)(ii) Determine the vertical velocity of the man as he enters the water. (2) (b) Draw the velocity-time graph for the man. (2)',
+            steps: 4,
+            answer: '(a)(ii) 14 m s⁻¹ downwards · (b) straight from 0 to −14 m s⁻¹ at 1.5 s, then straight back to 0 at 2.1 s',
           },
         ],
       },

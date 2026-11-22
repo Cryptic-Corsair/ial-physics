@@ -6,6 +6,7 @@ import { Fmt } from "./format";
 import { ScrollFade } from "./bits";
 import { specAnchorId } from "@/lib/spectra/scroll-helpers";
 import type { NotesBlock, SpecSection } from "@/lib/spectra/notes-types";
+import { StepLines, WorkedMsNote } from "./note-section";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the gallery section — the white-wall dress's one true
@@ -196,6 +197,7 @@ export function GalleryBlockView({
           question={b.question}
           steps={b.steps}
           answer={b.answer}
+          ms={b.ms}
         />
       );
 
@@ -319,11 +321,13 @@ function GalleryWorked({
   question,
   steps,
   answer,
+  ms,
 }: {
   title: string;
   question: string;
   steps: string[];
   answer: string;
+  ms?: { label: string; text: string };
 }) {
   /* “Worked example · counting σ and π” — the label already says it */
   const bare = title.replace(/^Worked example\s*·\s*/i, "");
@@ -347,7 +351,7 @@ function GalleryWorked({
           {steps.map((s, i) => (
             <li
               key={i}
-              className="flex items-start gap-3.5 border-b py-3 last:border-b-0"
+              className="flex items-start gap-3.5 border-b py-3.5 last:border-b-0"
               style={{ borderColor: hair(8) }}
             >
               <span
@@ -358,11 +362,16 @@ function GalleryWorked({
                 {pad2(i + 1)}
               </span>
               <span className="min-w-0 text-[calc(14px*var(--ts-body))] leading-[1.8] text-ink-soft">
-                <Fmt text={s} />
+                <StepLines text={s} />
               </span>
             </li>
           ))}
         </ol>
+        {ms && (
+          <div className="mt-3 [&>div]:mt-0">
+            <WorkedMsNote ms={ms} />
+          </div>
+        )}
         <div
           className="mt-1 flex items-start gap-3.5 border-t pt-3.5"
           style={{ borderColor: hair(10) }}

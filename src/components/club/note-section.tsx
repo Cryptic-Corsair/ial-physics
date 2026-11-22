@@ -15,7 +15,7 @@ import {
   StickyNote,
 } from "./icons";
 import type { NotesBlock, SpecSection } from "@/lib/spectra/notes-types";
-import { Fmt } from "./format";
+import { Fmt, TeX } from "./format";
 import { fade, Kicker, liftWash, Reveal, ScrollFade, readableInk, shade, sunkWash, tint } from "./bits";
 import { inkMix } from "./bands";
 import {
@@ -297,7 +297,7 @@ function BlockView({
                 className="rounded-[calc(10px*var(--ui-scale))] bg-paper px-3.5 py-2 font-display text-[calc(16px*var(--ts-body))] font-semibold tracking-tight text-ink"
                 style={{ boxShadow: "0 2px 0 var(--edge)" }}
               >
-                <Fmt text={part.trim()} />
+                <EqPart text={part.trim()} />
               </span>
             ))}
           </div>
@@ -324,6 +324,7 @@ function BlockView({
           question={b.question}
           steps={b.steps}
           answer={b.answer}
+          ms={b.ms}
           accent={accent}
         />
       );
@@ -446,6 +447,92 @@ function CandyTable({
   );
 }
 
+/* ————— equation chips —————
+   An eq band's parts may carry $…$ LaTeX — the Forces rebuild's
+   equations are typeset, the older topics' stay plain. A part that
+   is one math span typesets whole; anything else keeps <Fmt/> so
+   the legacy ==highlight==/~sub~ markup still works. */
+
+function EqPart({ text }: { text: string }) {
+  const m = /^\$([^$]+)\$$/.exec(text);
+  if (m) return <TeX tex={m[1]} />;
+  return <Fmt text={text} />;
+}
+
+/* ————— step lines —————
+   A worked step may carry "\n" breaks: the marking point's sentence
+   first, then the working on ruled lines of its own. A line that is
+   a single $…$ span typesets as a maths line, indented like the
+   workings on paper; prose lines keep the inline markup. Exported —
+   the gallery and editorial readers re-cut the same steps. */
+
+export function StepLines({ text }: { text: string }) {
+  const lines = text.split("\n");
+  return (
+    <>
+      {lines.map((ln, i) => {
+        const t = ln.trim();
+        if (!t) return null;
+        const m = /^\$([^$]+)\$$/.exec(t);
+        if (m) {
+          return (
+            <span
+              key={i}
+              className="my-2 block pl-1 text-ink"
+              style={{ lineHeight: 1.9 }}
+            >
+              <TeX tex={m[1]} />
+            </span>
+          );
+        }
+        return (
+          <span key={i} className={i > 0 ? "mt-1.5 block" : "block"}>
+            <Fmt text={t} />
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
+/* ————— the verbatim worked note —————
+   The examiner-report / mark-scheme line a card was built from,
+   set apart from the working. Shared furniture: the three readers
+   (note, gallery, editorial) each dress it in their own room. */
+
+export function WorkedMsNote({
+  ms,
+  accent,
+}: {
+  ms: { label: string; text: string };
+  accent?: string;
+}) {
+  const labelStyle = accent
+    ? { color: inkMix(accent, 70) }
+    : { color: "var(--iface-accent)" };
+  return (
+    <div
+      className="mt-4 rounded-[calc(12px*var(--ui-scale))] border px-4 py-3"
+      style={{
+        borderColor: "var(--rooms-hairline-soft)",
+        background: accent
+          ? `color-mix(in oklab, var(--color-paper) 94%, ${accent} 6%)`
+          : "color-mix(in oklab, var(--color-ink) 3%, transparent)",
+      }}
+    >
+      <p className="text-[calc(13.5px*var(--ts-body))] leading-[1.8] text-ink-soft">
+        <span
+          className="mr-1.5 font-display text-[calc(10.5px*var(--ts-other))] font-extrabold tracking-[0.2em] uppercase"
+          style={labelStyle}
+        >
+          {ms.label}:
+        </span>
+        <Fmt text={ms.text} />
+      </p>
+    </div>
+  );
+}
+
 /* ————— the paper window —————
    Browsers fire beforeprint before the snapshot and afterprint when
    the sheet is done; a tiny hook lets folded things open for the
@@ -483,12 +570,14 @@ function Worked({
   question,
   steps,
   answer,
+  ms,
   accent,
 }: {
   title: string;
   question: string;
   steps: string[];
   answer: string;
+  ms?: { label: string; text: string };
   accent: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -623,12 +712,17 @@ function Worked({
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="min-w-0 text-[calc(14.5px*var(--ts-body))] leading-[1.8] text-ink-soft">
-                      <Fmt text={s} />
+                    <span className="min-w-0 text-[calc(14.5px*var(--ts-body))] leading-[1.85] text-ink-soft">
+                      <StepLines text={s} />
                     </span>
                   </m.li>
                 ))}
               </ol>
+
+              {/* the verbatim note — the examiner's report or mark
+                  scheme line this card was built from, set apart
+                  from the working so neither crowds the other */}
+              {ms && <WorkedMsNote ms={ms} accent={accent} />}
 
               {/* the answer — sealed in a quiet wash of the accent */}
               <m.div

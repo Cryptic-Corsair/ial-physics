@@ -10,6 +10,9 @@ import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import { DARK_MOOD_COUNT } from "@/lib/spectra/dark-mood";
 import { SITE_URL } from "@/lib/site";
+/* KaTeX — the typesetting behind the $...$ math in the notes
+   (formulas, workings, units). The stylesheet carries the fonts. */
+import "katex/dist/katex.min.css";
 import "./globals.css";
 
 /* ————— preload strategy —————
