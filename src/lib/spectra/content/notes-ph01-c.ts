@@ -2,14 +2,12 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 1 Mechanics · Part C (statements 15–22)
-   The formula-first register, as approved for t02 — see the
-   Part A header: eq bands lead, one bullet = one marking point,
-   scenarios as their own headed groups, mark scheme wordings and
-   examiner report lines quoted verbatim in notes, rejected
-   wordings in "Not accepted" notes, no session citations.
-   This part closes the note with "The marking rules that never
-   change", which sits at the end of the LAST section (the doc
-   outro is walked for anchors but never rendered).
+   The worked-example register — see the Part A header: scenarios
+   are worked example cards (question + paper, marking points as
+   steps, sealed answer); the ropes stay outside. This part closes
+   the note with "The marking rules that never change", which sits
+   at the end of the LAST section (the doc outro is walked for
+   anchors but never rendered).
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH01_C: SpecSection[] = [
@@ -48,40 +46,31 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Pushing at a new angle changes the perpendicular component: pushing vertically on a rail instead of perpendicular to it gives a smaller perpendicular component, so ==the force needed is greater== for the same moment.",
         ],
       },
-      { k: "h", text: "A cyclist's pedal" },
       {
-        k: "bullets",
-        items: [
-          "A cyclist of weight 580 N stands on a pedal attached to a crank 0.21 m long, at 24° to the horizontal.",
-          "The weight acts vertically, so its component perpendicular to the crank is W cos 24°.",
-          "Moment = 580 × cos 24° × 0.21 = **110 N m** about the pedal's pivot.",
-          "sin used instead of cos still ==scores the equation mark== — only the value is lost; and a unit written as N m⁻¹ or bare N scores nothing.",
+        k: "worked",
+        title: "A cyclist's pedal",
+        question:
+          "A person of weight 580 N stands on a pedal attached to a chain-ring by a lever of length 0.21 m at an angle of 24° to the horizontal. (a) Determine the moment of the person's weight about the pivot. (b) The chain force F is proportional to the moment of the person's weight. Explain how F changes as the angle increases from 0° to 90°. No calculation is needed. (2) — *WPH11 October 2024, Q13*",
+        steps: [
+          "The weight acts vertically, so its component perpendicular to the crank is W cos 24° — *use of appropriate trigonometry* is marking point 1.",
+          "Moment = 580 × cos 24° × 0.21 = 111 N m — quoted as ==110 N m== to two significant figures, with the ==N m== unit on the end.",
+          "As the angle grows the perpendicular distance between the weight's line of action and the pivot falls (cos θ falls from 1 to 0), so the moment falls and ==F falls to zero==.",
+          "*Examiner's report:* *The most common error was to use incorrect trigonometry. Candidates who used sin instead of cos could still score the equation mark.* · *A small minority of candidates appeared to have their calculator in radians rather than in degrees.* · unit errors were ==N m⁻¹== or bare ==N== instead of N m.",
         ],
+        answer: "(a) 110 N m · (b) F falls to zero as the perpendicular distance falls",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*The most common error was to use incorrect trigonometry. Candidates who used sin instead of cos could still score the equation mark.* · *A small minority of candidates appeared to have their calculator in radians rather than in degrees.*",
-      },
-      { k: "h", text: "A stone on a step" },
-      {
-        k: "bullets",
-        items: [
-          "A uniform stone of weight 415 N and length 0.90 m rests on a step, with 0.50 m of its length overhanging the edge; a builder applies the minimum downward force P at the overhanging end.",
-          "The stone is uniform, so its centre of gravity sits at its midpoint: 0.45 m from either end — 0.05 m ==beyond== the step's edge.",
-          "At the point of lifting the stone pivots on the edge: anticlockwise moment = 415 × 0.05 = 20.8 N m; clockwise moment = P × 0.40.",
+        k: "worked",
+        title: "A stone on a step",
+        question:
+          "A uniform rectangular stone rests horizontally on a step, held in equilibrium by a builder applying the minimum force P at the end of the stone above the step. The stone has a weight of 415 N and a length of 0.90 m, and the length beyond the edge of the step is 0.50 m. Calculate the magnitude of P. (3) — *WPH11 January 2023, Q13*",
+        steps: [
+          "The stone is uniform, so its centre of gravity sits at its midpoint: 0.45 m from either end — ==0.05 m beyond the step's edge==. The step edge is 0.50 m from the overhanging end, so P acts 0.40 m from the edge.",
+          "At the point of lifting the stone pivots on the edge: the weight's moment = 415 × 0.05 = 20.8 N m one way, and P × 0.40 the other — *use of moment of a force = Fx* and *the principle of moments* are the first two marks.",
           "P × 0.40 = 20.8, so **P = 52 N**.",
+          "*Examiner's report:* *This question included the challenge to determine the positions of the forces from the geometry of the figure, and many candidates struggled with this. … Students should be encouraged to annotate figures so that distances between the points of action of forces are clearly seen.*",
         ],
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "*Many candidates struggled with this. Students should be encouraged to annotate figures so that distances between the points of action of forces are clearly seen.*",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "The unit written as N m⁻¹ or bare N instead of ==N m==. And the overhanging geometry skipped — the 0.05 m beyond the edge is where the whole question lives.",
+        answer: "P = 52 N",
       },
     ],
   },
@@ -127,50 +116,48 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           },
         ],
       },
-      { k: "h", text: "A bridge on two supports" },
       {
-        k: "bullets",
-        items: [
-          "A uniform bridge deck of weight 9.8 × 10⁵ N spans 120 m between supports X and Q; a load of 4.2 × 10⁵ N sits 35 m from X.",
+        k: "worked",
+        title: "A bridge on two supports",
+        question:
+          "The diagram shows a bridge carrying a lorry. The bridge is supported at point X and by a column providing force Q. The centre of gravity of the bridge is at its centre, and at a particular time the lorry is 35 m from point X. The weight of the bridge is 9.8 × 10⁵ N and the force from the lorry is 4.2 × 10⁵ N. You should take moments about point X. (a) Calculate the magnitudes of the forces P and Q. (5) (b) Explain why force Q increases as the lorry moves across the bridge. (5) — *WPH11 June 2024, Q18*",
+        steps: [
           "Take moments about X — X's own force acts through the pivot, so it drops out of the equation.",
-          "Clockwise: 9.8 × 10⁵ × 60 + 4.2 × 10⁵ × 35 = 7.35 × 10⁷ N m (the deck's weight acts at its ==midpoint==).",
-          "Q × 120 = 7.35 × 10⁷, so **Q = 6.1 × 10⁵ N**.",
-          "The force balance finishes it: P~X~ + 6.1 × 10⁵ = 9.8 × 10⁵ + 4.2 × 10⁵, so **P~X~ = 7.9 × 10⁵ N**.",
-          "When the load moves towards Q, its moment about X grows, so Q ==increases== and P~X~ falls — the sum of moments stays zero for equilibrium.",
-          "Both answers carry their unit — the printed scheme penalises an incorrect or missing unit by ==four marks== on this question.",
+          "Clockwise: 9.8 × 10⁵ × 60 + 4.2 × 10⁵ × 35 = 7.35 × 10⁷ N m (the deck's weight acts at its ==midpoint==, 60 m from X).",
+          "Q × 120 = 7.35 × 10⁷, so **Q = 6.1 × 10⁵ N**; the force balance finishes it: P + 6.1 × 10⁵ = 9.8 × 10⁵ + 4.2 × 10⁵, so **P = 7.9 × 10⁵ N**.",
+          "(b) As the lorry moves towards Q, its moment about X grows, so Q ==increases== and P falls — ==the sum of moments remains zero for equilibrium==, and the distance from X to Q stays the same.",
+          "Both answers carry their unit — *the printed scheme allows a maximum of 4 marks if incorrect / no unit with answers*: a four-mark penalty on one question.",
         ],
+        answer: "Q = 6.1 × 10⁵ N · P = 7.9 × 10⁵ N",
       },
-      { k: "h", text: "A loft ladder on a hinge" },
       {
-        k: "bullets",
-        items: [
-          "A board hinged to the ceiling carries a ladder on a rail; a small block stops the board rotating. The board and rail weigh 50 N, acting 0.45 m on the block's side of the hinge; the ladder weighs 54 N with 0.85 m of its length on the block's side.",
-          "The ladder's centre of gravity is at its midpoint: 1.35 m from its left end, which is ==0.50 m on the hinge's other side==.",
+        k: "worked",
+        title: "A loft ladder on a hinge",
+        question:
+          "A ladder is attached by a rail to a board that is hinged to the ceiling and covers the roof-space opening; a small block prevents the board rotating into the roof space. The combined weight of the board and rail is 50 N, acting 0.45 m from the hinge on the block's side. The ladder weighs 54 N, is uniform, and has 0.85 m of its length on the block's side of the hinge. (a) Explain why the board and ladder remain in the position shown. (5) (b) A downward force applied 0.80 m from the hinge rotates the board away from the block. Determine the magnitude of this force. (2) — *WPH11 October 2023, Q15*",
+        steps: [
+          "The ladder's centre of gravity is at its midpoint: 1.35 m from its left end, which is ==0.50 m on the hinge's other side== — *determining that distance is the first marking point*.",
           "Clockwise about the hinge: 54 × 0.50 = 27 N m. Anticlockwise: 50 × 0.45 = 22.5 N m.",
-          "27 N m > 22.5 N m, so the assembly presses on the block — the ==block supplies the balancing moment==, and that is why it stays put.",
-          "An *explain* question still needs ==the numbers==: the two computed moments and the comparison are the marks.",
-          "A downward force of 5.6 N applied 0.80 m from the hinge adds 4.5 N m anticlockwise and just rotates the board off the block.",
+          "27 N m > 22.5 N m, so the assembly presses on the block — ==the block supplies a force and hence a moment about the hinge==, so the resultant moment is zero and the board stays put.",
+          "An *explain* question still needs ==the numbers==: the two computed moments and the comparison are the marks — *some candidates did not attempt calculations, perhaps not realising that in some situations a full explanation does require relevant calculations*.",
+          "(b) The spare moment = 27 − 22.5 = 4.5 N m, so F = 4.5 ÷ 0.80 = **5.6 N** — just enough to lift the board off the block.",
+          "*Examiner's report:* *It was rare for candidates to appreciate that the block would also cause a moment about the hinge, so only a small fraction of candidates scored all 5 marks on this question.* · *A majority were able to calculate the distance correctly, but a large number missed a mark by not specifying a pivot point.*",
         ],
+        answer: "27 vs 22.5 N m — the block holds it · 5.6 N at 0.80 m tips it",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*It was rare for candidates to appreciate that the block would also cause a moment about the hinge, so only a small fraction of candidates scored all five marks on this question.* · *Some candidates did not attempt calculations in (b)(i), perhaps not realising that in some situations a full explanation does require relevant calculations.* · *A majority were able to calculate the distance correctly, but a large number missed a mark by not specifying a pivot point. Any point can be taken as a pivot point, the centre of gravity and the wheel being the obvious ones.*",
-      },
-      { k: "h", text: "A crane and its counterweight" },
-      {
-        k: "bullets",
-        items: [
-          "A crane's counterweight sits 11 m on the hinge's far side; the question asks how far out the load can be moved before the crane topples.",
-          "Balance the moments about the pivot for the ==limiting case==, with the counterweight's moment on the other side.",
-          "The worked balance gives a maximum load distance of 15.2 m; the beam's end sits 22.0 m from the pivot.",
+        k: "worked",
+        title: "A crane and its counterweight",
+        question:
+          "The diagram shows a crane lifting a load. The beam is uniform with a weight of 3.0 × 10⁴ N; the counterweight has a weight of 1.1 × 10⁵ N and sits 8.0 m from the pivot on the far side; the load has a weight of 4.4 × 10⁴ N. The beam is 30 m long and the pivot is 8.0 m from the counterweight end. Deduce whether the load can be moved to the end of the beam without the crane toppling. (5) — *WPH11 June 2023, Q19*",
+        steps: [
+          "Annotate the geometry first — *candidates who annotated their diagrams tended to do better with moment problems than those who did not* — the recorded slips were ==assuming the load was 30 m from the pivot== and ==omitting the centre-of-gravity moment==.",
+          "The beam is uniform, so its weight acts 15 m from either end: 7.0 m from the pivot on the load's side. The load's end of the beam sits 30 − 8.0 = 22.0 m from the pivot.",
+          "Balance the moments about the pivot for the ==limiting case==: 1.1 × 10⁵ × 8.0 = 8.8 × 10⁵ N m holds the beam up; the load plus the beam's own weight pull it down.",
+          "Limiting distance: (8.8 × 10⁵ − 3.0 × 10⁴ × 7.0) ÷ 4.4 × 10⁴ = 6.7 × 10⁵ ÷ 4.4 × 10⁴ = **15.2 m**.",
           "15.2 < 22.0, so the crane ==topples== if the load moves to the end of the beam — the verdict needs the comparison, in that order.",
         ],
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "*Clockwise moment = anticlockwise moment* offered as the definition of equilibrium — the ==resultant force== half is missing. Assuming the load sits at a convenient distance instead of reading the geometry. Omitting the centre-of-gravity moment from the balance.",
+        answer: "no — the limit is 15.2 m and the beam's end is 22.0 m from the pivot",
       },
     ],
   },
@@ -200,51 +187,43 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Total work splits across the resistances: the cyclist's work = the work against gravity + the work against air resistance.",
         ],
       },
-      { k: "h", text: "A box pulled by a rope" },
       {
-        k: "bullets",
-        items: [
-          "A box is pulled 5 m along the ground by a rope inclined at 40° to the horizontal, tension 30 N.",
-          "ΔW = F cos 40° × d = 30 × 0.766 × 5 = **115 J**.",
+        k: "worked",
+        title: "A box pulled by a rope",
+        question:
+          "A box is pulled 5 m along the ground by a rope inclined at 40° to the horizontal. The tension in the rope is 30 N. What is the work done on the box?  A 150 J · B 115 J · C 96 J · D 23 J — *WPH11 October 2023, Q10*",
+        steps: [
+          "Only the component of the tension along the motion does work: ΔW = F cos θ × d.",
+          "ΔW = 30 × cos 40° × 5 = **115 J** — option B.",
           "The rejected options are built from the slips: the bare F × d (150 J), the sin version (96 J), and the bare ==force component== 23 N offered as a work.",
         ],
+        answer: "B — 115 J",
       },
-      { k: "h", text: "A cyclist climbing a hill" },
       {
-        k: "bullets",
-        items: [
-          "A cyclist rides up a 4.0° slope at constant speed, exerting a constant force of 150 N along the slope for 215 m; the mass of cyclist and bicycle is 90 kg.",
-          "The force is ==already along== the slope, so (a) ΔW = FΔs = 150 × 215 = 3.2 × 10⁴ J — no cosine anywhere.",
-          "The height gained: Δh = 215 × sin 4.0° = 15.0 m, so the work against gravity = 90 × 9.81 × 15.0 = 1.32 × 10⁴ J.",
-          "Total work = work against gravity + work against air resistance, so the air resistance takes **1.9 × 10⁴ J**.",
-          "One assumption is always available: the only significant forces are ==gravity and air resistance== — friction in the bicycle's bearings is negligible.",
+        k: "worked",
+        title: "A cyclist climbing a hill",
+        question:
+          "A cyclist moves up a slope at a constant speed of 4.0° to the horizontal, exerting a constant force of 150 N oriented along the slope. The cyclist moves a distance of 215 m along the slope, and the mass of the cyclist and bicycle is 90 kg. (a) Show that the work done by the cyclist is about 3 × 10⁴ J. (2) (b) The cyclist does work against gravity and against air resistance. Calculate the work done against air resistance. (4) (c) State one assumption made when calculating the work done against air resistance. (1) — *WPH11 October 2022, Q19*",
+        steps: [
+          "The force is ==already along== the slope, so (a) ΔW = FΔs = 150 × 215 = **3.2 × 10⁴ J** — no cosine anywhere; *the printed scheme bars the cos 4° route in marking point 1*.",
+          "The height gained: Δh = 215 × sin 4.0° = 15.0 m, so the work against gravity = 90 × 9.81 × 15.0 = 1.32 × 10⁴ J — *use of correct trigonometry for Δh* then *use of ΔEgrav = mgΔh*.",
+          "Total work = work against gravity + work against air resistance, so the air resistance takes 3.2 × 10⁴ − 1.32 × 10⁴ = **1.9 × 10⁴ J**.",
+          "(c) The only significant forces are ==gravity and air resistance== — friction in the bicycle's bearings is negligible. *Examiner's report: many students decided that there should be no friction between the cyclist and the road, not realising that that would mean the road was too slippery for the cyclist to make any progress whatsoever.*",
         ],
+        answer: "(a) 3.2 × 10⁴ J · (b) 1.9 × 10⁴ J · (c) gravity and air resistance only",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*A common mistake was to multiply the distance by a cosine or a sine of the angle.* · *Some candidates calculated the change in g.p.e. and left that as a final answer.* · *Many students decided that there should be no friction between the bicycle and the road, not realising that that would mean the road was too slippery for the bicycle to make any progress whatsoever.*",
-      },
-      { k: "h", text: "A truck and an escape lane" },
-      {
-        k: "bullets",
-        items: [
-          "A truck enters an escape lane with kinetic energy 8.0 × 10⁶ J; the sand exerts an average resistive force of 3.5 × 10⁵ N.",
-          "The kinetic energy lost = the work done by the resistive force, so Δs = ΔW ÷ F = 8.0 × 10⁶ ÷ 3.5 × 10⁵ ≈ **23 m**.",
-          "The same equivalence appears wherever a resistive force removes kinetic energy — the change in kinetic energy ==is== the work done.",
-          "The increase in gravitational potential energy of a lifting machine is the work it does ==against== the force of gravity — that is what mgΔh is.",
-          "The area under a force–displacement graph is the work done — the same statement 32 uses for force–extension graphs.",
+        k: "worked",
+        title: "A truck and an escape lane",
+        question:
+          "A horizontal sand escape lane stops vehicles that lose their brakes. A truck enters the escape lane with kinetic energy of 8.0 × 10⁶ J, and the sand exerts an average resistive force of 3.5 × 10⁵ N on the truck. Calculate the distance the truck moves along the escape lane before stopping. (2) — *WPH11 January 2025, Q13*",
+        steps: [
+          "The kinetic energy lost = the work done by the resistive force — the equivalence the reports say most candidates missed.",
+          "Δs = ΔW ÷ F = 8.0 × 10⁶ ÷ 3.5 × 10⁵ ≈ **23 m**.",
+          "The same equivalence runs everywhere: the increase in gravitational potential energy of a lifting machine is the work it does ==against== gravity (that is what mgΔh is), and the area under a force–displacement graph is the work done.",
+          "*Examiner's report:* *the majority did not pick up on the idea that the change in kinetic energy is equivalent to the work done by the resistive force... Some candidates equated a change in kinetic energy with a change in gravitational potential energy, and did not appreciate that the escape lane is horizontal.*",
         ],
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "*The majority did not pick up on the idea that the change in kinetic energy is equivalent to the work done by the resistive force.*",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "The bare force component (F cos θ) offered as the work — it is the ==force==, the work still needs the distance. And the change in gravitational potential energy left as the final answer when the question asks for the work done against air resistance.",
+        answer: "≈ 23 m",
       },
     ],
   },
@@ -261,7 +240,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "eq",
         eq: "Ek = ½mv²        v = √(2Ek ÷ m)",
-        note: "Rearranged, the speed comes from the kinetic energy and the mass — the route the papers set when they hand you an energy and want a velocity to feed into a momentum equation.",
+        note: "Rearranged, the speed comes from the kinetic energy and the mass — the route the papers set when they hand you an energy and want a velocity to feed into a momentum equation. The athlete card in statement 7 works the full chain.",
       },
       {
         k: "bullets",
@@ -269,7 +248,6 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Double the landing speed and the kinetic energy ==quadruples==, so the struck object could rise four times as far — *the height gained does not double*.",
           "Double the kinetic energy and the new speed is √2 × the old one — the square root undoes the square.",
           "Equal kinetic energies for two very different masses put the speeds in the ==inverse ratio of the square roots of the masses==: a particle 1/2000 the mass moves √2000 times faster.",
-          "Worked chain: an athlete of weight 680 N carrying 409 J of kinetic energy has m = 680 ÷ 9.81 = 69.3 kg, and then v = √(2 × 409 ÷ 69.3) = 3.44 m s⁻¹ ≈ **3.4 m s⁻¹** — the mass conversion and the equation are marking points before the value.",
           "Check the ==½== and the ==square== every time; the unit is the joule, energy, not N m s⁻¹.",
         ],
       },
@@ -294,39 +272,34 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "eq",
         eq: "ΔEgrav = mgΔh        Δh = L sin θ  (distance L along a slope at θ to the horizontal)",
-        note: "The vertical drop is the geometry step the papers examine: straight pipes 350 m long inclined at 55° carry water down a ==vertical== drop of 350 × sin 55° ≈ 287 m, not 350 m.",
+        note: "The vertical drop is the geometry step the papers examine: L sin θ, not L — the hydro card below works it in full.",
       },
-      { k: "h", text: "A hydroelectric station" },
       {
-        k: "bullets",
-        items: [
-          "Water flows down straight pipes of length 350 m inclined at 55° to the horizontal; each minute, each pipe delivers 1700 m³ of water of density 1100 kg m⁻³.",
-          "Mass per minute: m = ρV = 1100 × 1700 = 1.87 × 10⁶ kg.",
+        k: "worked",
+        title: "A hydroelectric station",
+        question:
+          "Water flows through straight pipes of length 350 m inclined at 55° to the horizontal from a lake to a generator at a hydroelectric power station. In one minute, each pipe transfers 1700 m³ of water of density 1100 kg m⁻³. (a) Show that the power transferred by the water in each pipe is about 88 MW. (5) (b) The water travels through 4 identical pipes. The total power wasted by the power station is 256 MW. Calculate the efficiency of the power station. (2) — *WPH11 January 2025, Q15*",
+        steps: [
+          "Mass per minute: m = ρV = 1100 × 1700 = 1.87 × 10⁶ kg — *use of ρ = m/V* is marking point 1.",
           "Vertical drop: Δh = 350 × sin 55° = **287 m** — the vertical height, not the pipe length.",
-          "Energy per minute: ΔEgrav = mgΔh = 1.87 × 10⁶ × 9.81 × 287 ≈ 5.3 × 10⁹ J.",
-          "Power: P = E ÷ t = 5.3 × 10⁹ ÷ 60 ≈ **88 MW** per pipe — a second route runs through the exit speed and ½mv², and reaches the same power.",
-          "With four identical pipes the useful output is ==4 × 88 MW==; forgetting to multiply loses the output, and treating 4 × 88 MW as the gross figure loses the efficiency question that follows.",
+          "Energy per minute: ΔEgrav = mgΔh = 1.87 × 10⁶ × 9.81 × 287 ≈ 5.3 × 10⁹ J; P = E ÷ t = 5.3 × 10⁹ ÷ 60 ≈ **88 MW** per pipe (87.7 MW unrounded).",
+          "(b) Useful output = 4 × 87.7 − 256 = 94.8 MW, so efficiency = 94.8 ÷ 350.8 = **0.27** — the waste comes ==off== the gross, and 88 MW or 4 × 88 MW ==is not== the useful output.",
+          "*Examiner's report:* *It was very common for candidates to add the wasted power to the total input power, and it was very common for candidates to use 88 MW or 4 × 88 MW as the useful power output.*",
         ],
+        answer: "(a) 87.7 MW ≈ 88 MW · (b) 0.27",
       },
-      { k: "h", text: "A train on an incline" },
       {
-        k: "bullets",
-        items: [
-          "A train of mass 1.7 × 10⁶ kg climbs at constant speed through a height of 25 m in 35 s; the engine's output power is 20 MW.",
-          "ΔEgrav = mgΔh = 1.7 × 10⁶ × 9.81 × 25 = **4.2 × 10⁸ J** — computed 4.17 × 10⁸, so it is ==rounded to 420 × 10⁶==, not truncated to 410 × 10⁶.",
+        k: "worked",
+        title: "A train on an incline",
+        question:
+          "A train moves up an inclined track at constant velocity, through a vertical height of 25 m. The mass of the train is 1.7 × 10⁶ kg. (a) Show that the gravitational potential energy gained by the train is about 400 MJ. (2) (b) The train's engine has an output power of 20 MW, and the train takes a time of 35 s to move through the vertical height of 25 m. Calculate the work done by the engine against resistive forces. (3) — *WPH11 June 2024, Q11*",
+        steps: [
+          "ΔEgrav = mgΔh = 1.7 × 10⁶ × 9.81 × 25 = 4.17 × 10⁸ J — ==rounded to 420 × 10⁶==, not truncated to 410 × 10⁶.",
           "The energy supplied in 35 s: P × t = 20 × 10⁶ × 35 = 7.0 × 10⁸ J.",
-          "Work done against resistive forces = 7.0 × 10⁸ − 4.2 × 10⁸ = **2.8 × 10⁸ J** — the climb at constant speed splits the engine's output between the height gain and the resistances.",
+          "Work done against resistive forces = 7.0 × 10⁸ − 4.2 × 10⁸ = **2.8 × 10⁸ J** — the constant-speed climb splits the engine's output between the height gain and the resistances.",
+          "*Examiner's report:* *A small proportion of candidates truncated their calculated answer from 417 × 10⁶ to 410 × 10⁶ instead of correctly rounding it to 420 × 10⁶.* · to score the second mark, *the answer needed to be given correctly to at least one more significant figure than the 'show that' value given in the question.*",
         ],
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "*A small proportion of candidates truncated their calculated answer from 417 × 10⁶ to 410 × 10⁶ instead of correctly rounding it to 420 × 10⁶.* · To score the second mark, *the answer needed to be given correctly to at least one more significant figure than the 'show that' value given in the question.*",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "The slope length used as Δh — gravitational potential energy cares about ==vertical height only==. And a truncated value where a rounded one belongs.",
+        answer: "(a) 4.2 × 10⁸ J · (b) 2.8 × 10⁸ J",
       },
     ],
   },
@@ -346,46 +319,44 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         eq: "mgΔh = ½mv²        ΔEgrav = ΔEel        Ek lost = work done by resistive forces        total in = useful out + dissipated",
         note: "When the mass appears on both sides of a chain it cancels: the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass==.",
       },
-      { k: "h", text: "A curved slide" },
       {
-        k: "bullets",
-        items: [
-          "A slide's gradient varies, so the acceleration varies — the equations of motion need ==constant acceleration==, so the slide needs the energy route instead.",
-          "The energy route instead: all the gravitational potential energy becomes kinetic — mgΔh = ½mv², so v = √(2 × 9.81 × 1.7) ≈ **5.8 m s⁻¹** for a 1.7 m slide.",
-          "A second slide of the same height but a shorter path, carrying a heavier child, gives ==the same speed==: v = √(2gΔh) contains no mass and no path length — only Δh matters.",
-          "Do not import drag and friction into an answer when the question says resistive forces are ignored.",
+        k: "worked",
+        title: "A curved slide",
+        question:
+          "A child's slide has a vertical height of 1.7 m, and a child of mass 24 kg starts from rest at the top. Resistive forces are ignored. (a)(i) Explain why the equations of motion should not be used to determine the maximum speed of the child. (3) (a)(ii) Determine the maximum speed v of the child. (3) (b) Two slides X and Y have the same height; slide X is longer than slide Y, and the child on Y has a greater mass. Explain how v(X) compares with v(Y). (3) — *WPH11 January 2024, Q14*",
+        steps: [
+          "(a)(i) The slide's gradient varies, so the acceleration varies — ==the equations of motion require a constant acceleration==, so they are not usable here.",
+          "(a)(ii) The energy route instead: all the gravitational potential energy becomes kinetic — ΔEgrav = 24 × 9.81 × 1.7 = 400 J, and 400 = ½ × 24 × v², so v = √(2 × 9.81 × 1.7) ≈ **5.8 m s⁻¹**. *Do not accept use of equations of motion* — the printed warning.",
+          "(b) v = √(2gΔh) contains no mass and no path length — only Δh matters, so ==v(X) = v(Y)==: the same speed for both children.",
+          "Do not import drag and friction into an answer when the question says resistive forces are ignored — *the report records candidates discussing drag and friction in their answers, despite the question stating that resistive forces should be ignored*.",
         ],
+        answer: "(a)(ii) 5.8 m s⁻¹ · (b) equal speeds — only Δh matters",
       },
-      { k: "h", text: "A bungee jump" },
       {
-        k: "bullets",
-        items: [
-          "A student of mass 65 kg jumps on a rope of original length 17 m and stiffness 250 N m⁻¹; the river is reached if the rope stretches to 35 m in total.",
-          "Energy released by the jump: ΔEgrav = mgΔh = 65 × 9.81 × 35 ≈ 22 300 J.",
+        k: "worked",
+        title: "A bungee jump",
+        question:
+          "A student bungee-jumps from a bridge on an elastic rope. The student has a mass of 65 kg; the rope has an original length of 17 m and a stiffness of 250 N m⁻¹. The river is reached if the rope stretches to a total length of 35 m. Deduce whether the student reaches the river. (4) — *WPH11 October 2024, Q17*",
+        steps: [
+          "Energy released by the jump: ΔEgrav = mgΔh = 65 × 9.81 × 35 ≈ 22 300 J — *use of ΔEgrav = mgΔh* is marking point 1.",
           "Energy the rope can store by then: F = kΔx = 250 × 18 = 4500 N, and ΔEel = ½FΔx = ½ × 4500 × 18 = **40 500 J**.",
-          "40 500 J > 22 300 J, so ==the student stops short of the river== — the verdict is the final marking point.",
-          "The common wrong route — using F = kΔx with the ==weight== to find the equilibrium position — still scores the Hooke's-law marking point, but not the comparison.",
+          "40 500 J > 22 300 J, so ==the student stops short of the river== — the comparison is the final marking point.",
+          "The common wrong route — using F = kΔx with the ==weight== to find the equilibrium position — *did score marking point 2* in the printed scheme, but not the comparison.",
         ],
+        answer: "no — 40 500 J > 22 300 J, the student stops short",
       },
-      { k: "h", text: "A skydiver's energy chain" },
       {
-        k: "bullets",
-        items: [
-          "The gravitational potential energy ==decreases throughout== the fall.",
-          "While accelerating, the kinetic energy ==increases== — and work is done against air resistance at every stage.",
-          "At terminal velocity the kinetic energy is constant, so ==all the lost gravitational potential energy is dissipated== by work done against the drag.",
-          "Name the force doing the work and the store the energy lands in — that naming is the marking point.",
+        k: "worked",
+        title: "A skydiver's energy chain",
+        question:
+          "After jumping from an aeroplane, the skydiver accelerated and then reached a terminal velocity before opening his parachute. Explain how energy conservation applies to the skydiver before the parachute is opened. (4) — *WPH11 June 2025, Q20*",
+        steps: [
+          "The gravitational potential energy ==decreases throughout== the fall — *Egrav decreases (throughout)* is the first printed point.",
+          "While accelerating, the kinetic energy ==increases== — *and work is done against air resistance* at every stage.",
+          "At terminal velocity the kinetic energy is constant, so ==all the lost gravitational potential energy is dissipated== — *(due to work done against air resistance)*.",
+          "Name the force doing the work and the store the energy lands in — that naming is the marking point. *Examiner's report: many responses ended up describing or explaining how the forces on the skydiver varied, rather than explaining how conservation of energy applied. Some candidates just stated the law of conservation of energy, without applying this to the skydiver.*",
         ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "The printed chain for the skydiver: *Egrav decreases (throughout)*; *while accelerating, Ek increases*; *and work is done against air resistance*; *at terminal velocity (Ek is constant and) all ΔEgrav is dissipated (due to work done against air resistance)*.",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "*Energy was transformed* with no mechanism — the reports record that candidates *simply stated that energy was transformed without telling us how*, and the marks need ==work done by forces== and a ==named store==. Drag or friction appearing in a question that ignores resistive forces. And an energy input computed as the bare kinetic-energy loss when the body was also rising — the gravitational gain comes off first.",
+        answer: "Egrav falls throughout · Ek rises, then constant at terminal velocity · dissipated by work done against drag",
       },
     ],
   },
@@ -404,63 +375,67 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         eq: "P = W/t        P = E/t        P = Fv",
         note: "P = Fv is not printed on the data sheet, but the mark schemes ==allow P = Fv== whenever it fits — derive it in one line: W = FΔs divided by t, with Δs ÷ t = v.",
       },
-      { k: "h", text: "A boat at constant speed" },
       {
-        k: "bullets",
-        items: [
-          "A boat travelling at constant (terminal) velocity has constant kinetic energy — the engine's work goes into ==pushing the water aside==, at the rate P = F × v.",
-          "Worked chain: a forward force of 5.5 kN at a terminal velocity of 4.8 m s⁻¹ gives P = 5500 × 4.8 = **2.6 × 10⁴ W**.",
-          "Calculating the kinetic energy of the boat is the wrong route — the question is about the ==rate of working==, not the stored energy.",
+        k: "worked",
+        title: "A boat at constant speed",
+        question:
+          "A motorboat's engine provides a constant horizontal force of 5.5 kN. As the boat's velocity increases the resultant horizontal force decreases until the boat travels at terminal velocity. (a) State what is meant by a resultant force. (1) (b) At a certain time the drag force on the boat is 3.1 kN and the mass of the boat is 7.5 × 10³ kg. Calculate the acceleration of the boat at this time. (2) (c) The terminal velocity of the boat is 4.8 m s⁻¹. Calculate the output power of the engine. (2) — *WPH11 October 2022, Q11*",
+        steps: [
+          "(a) *The (vector) sum of all forces (acting on an object) or the single force that would have the same effect as all the other forces acting together* — the definition the whole paper leans on.",
+          "(b) Two unequal horizontal forces act: ΣF = 5.5 − 3.1 = 2.4 kN, so a = 2400 ÷ 7500 = **0.32 m s⁻²** — *the report: it was common for candidates to use an incorrect value for resultant force due to forgetting that two unequal horizontal forces were acting on the boat*.",
+          "(c) At terminal velocity the engine's work goes into ==pushing the water aside==, at the rate P = Fv: P = 5500 × 4.8 = **2.6 × 10⁴ W** — the printed scheme allows P = Fv.",
+          "Calculating the boat's kinetic energy is the wrong route — the question is about the ==rate of working==, not the stored energy. *Examiner's report: many candidates attempted to calculate the kinetic energy of the boat, which is irrelevant.*",
         ],
+        answer: "(a) the vector sum of all forces · (b) 0.32 m s⁻² · (c) 2.6 × 10⁴ W",
       },
-      { k: "h", text: "An exercise machine's display" },
       {
-        k: "bullets",
-        items: [
-          "The cable of an exercise machine lifts a 150 N weight by 0.25 m on each pull; the user pulls and releases 90 times in 120 s, and the machine displays an average power of 35 W.",
-          "Work per pull: ΔW = FΔs = 150 × 0.25 = 37.5 J.",
-          "Total work: 90 × 37.5 = 3375 J in 120 s, so P = 3375 ÷ 120 = **28 W**.",
+        k: "worked",
+        title: "An exercise machine's display",
+        question:
+          "The cable of an exercise machine lifts a 150 N weight by 0.25 m on each pull, and the weight returns when the handle is released. A person pulls and releases the handle 90 times in 120 s, and the machine displays an average power of 35 W. Deduce whether the displayed power is consistent with the person's pulls. (3) — *WPH11 October 2023, Q14*",
+        steps: [
+          "Work per pull: ΔW = FΔs = 150 × 0.25 = 37.5 J — with the ==force given in this question part==, not a force carried over from the earlier part (121 N) with different conditions.",
+          "Total work: 90 × 37.5 = 3375 J in 120 s, so P = 3375 ÷ 120 = **28 W** — *use of P = W/t* is the middle mark.",
           "28 W ≠ 35 W, so ==the display is not consistent== — the comparison is the final marking point.",
-          "Working ==backwards== from 35 W — to the time, the count, the force or the distance — reaches the same verdict.",
-          "Use the force ==given in the question part==, not a force carried over from an earlier part with different conditions.",
+          "Working ==backwards== from 35 W — to the time, the count, the force or the distance — reaches the same verdict; *the printed scheme allows those approaches*.",
         ],
+        answer: "no — 28 W ≠ 35 W",
       },
-      { k: "h", text: "A motor lifting a load" },
       {
-        k: "bullets",
-        items: [
-          "A time from a power: t = mgΔh ÷ P — a motor of output power 700 kW lifting 50 000 kg through 25 m takes 50 000 × 9.81 × 25 ÷ 700 000 ≈ **18 s**.",
-          "The rejected options omit ==g== or mishandle the ==kilo-== prefix in the power.",
+        k: "worked",
+        title: "A motor lifting a load",
+        question:
+          "A motor lifts a mass of 50 000 kg through a height of 25 m. The output power of the motor is 700 kW. Which expression gives the time taken for the lift?  A (50 000 × 25) ÷ 700 000 · B (50 000 × 9.81 × 25) ÷ 700 000 · C (50 000 × 25) ÷ 700 · D (50 000 × 9.81 × 25) ÷ 700 — *WPH11 January 2023, Q8*",
+        steps: [
+          "A time from a power: t = energy ÷ power = mgΔh ÷ P.",
+          "The rejected options omit ==g== (A and C) or mishandle the ==kilo-== prefix in the power (D).",
+          "t = (50 000 × 9.81 × 25) ÷ 700 000 ≈ **18 s** — option B.",
         ],
+        answer: "B — ≈ 18 s",
       },
-      { k: "h", text: "An escalator's input power" },
       {
-        k: "bullets",
-        items: [
-          "An escalator raises a person's gravitational potential energy by 5000 J in 42 s, with efficiency 0.63.",
-          "Useful output power = 5000 ÷ 42 ≈ 119 W; efficiency = output ÷ input, so the ==input== power = 5000 ÷ (42 × 0.63) ≈ **190 W**.",
-          "The rejected options invert the ratio, multiply by the efficiency instead of dividing, or jumble the units — the same three slips every efficiency multiple-choice item is built from.",
+        k: "worked",
+        title: "An escalator's input power",
+        question:
+          "A person stands on a moving staircase. The staircase increases the gravitational potential energy of the person by 5000 J in a time of 42 s, and the efficiency of the staircase is 0.63. Which expression gives the power input to the staircase in watts?  A 42 ÷ (5000 × 0.63) · B (42 × 0.63) ÷ 5000 · C 5000 ÷ (42 × 0.63) · D (5000 × 0.63) ÷ 42 — *WPH11 October 2024, Q6*",
+        steps: [
+          "Useful output power = 5000 ÷ 42 ≈ 119 W; efficiency = output ÷ input, so the ==input== power = 5000 ÷ (42 × 0.63) ≈ **190 W** — option C.",
+          "The rejected options invert the ratio, or ==multiply== by the efficiency instead of dividing — *the printed scheme: the useful output power should not be inverted / should be divided by 0.63*.",
         ],
+        answer: "C — ≈ 190 W",
       },
-      { k: "h", text: "A BMX track" },
       {
-        k: "bullets",
-        items: [
-          "Accelerating on the flat: with a constant driving force, P = Fv with a growing v — the useful power output ==increases==.",
-          "Climbing at constant speed: P = mgv — constant, set by the weight and the climb rate.",
-          "Airborne with no contact force: the useful power output is ==zero== — nothing is being pushed.",
-          "The same rate-of-transfer logic runs through all three stages: useful power output = the rate of useful energy transfer.",
+        k: "worked",
+        title: "A BMX track",
+        question:
+          "A person rides a bicycle to the top of a hill with enough speed to leave the ground. Stage A: constant acceleration on a horizontal surface until time T_A. Stage B: constant velocity up a curved ramp until time T_B. Stage C: the bicycle leaves the ground. Explain how the useful power output of the person varies through stages A, B and C. You should consider the energy changes; air resistance is negligible. (6) — *WPH11 October 2025, Q18*",
+        steps: [
+          "Stage A: with a constant driving force and a growing v, P = Fv — the useful power output ==increases== as the chemical store transfers energy to kinetic energy faster and faster.",
+          "Stage B: constant velocity up the ramp — energy is transferred to gravitational potential energy at a constant rate, P = mgv: ==constant==.",
+          "Stage C: airborne, no contact force — the useful power output is ==zero==; nothing is being pushed.",
+          "The linkage is what the 6 marks pay for: useful power output = the rate of useful energy transfer, tracked through all three stages — the same rate-of-transfer logic in each.",
         ],
-      },
-      {
-        k: "note",
-        label: "Examiner's report",
-        text: "*Many candidates attempted to calculate the kinetic energy of the boat, which is irrelevant.* · *Some candidates did not read the question carefully enough, and used the force from the earlier part instead of the weight given in this question.*",
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "The unit written as J s (energy × time) instead of ==J s⁻¹== — and the kinetic energy offered as the answer to a rate-of-working question.",
+        answer: "A increases · B constant · C zero",
       },
     ],
   },
@@ -479,18 +454,24 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "**Input from output**: input = output ÷ efficiency — the escalator above gives 5000 ÷ (42 × 0.63) ≈ 190 W; multiplying by the efficiency instead is the rejected option.",
+          "**Input from output**: input = output ÷ efficiency — the escalator card above gives 5000 ÷ (42 × 0.63) ≈ 190 W; multiplying by the efficiency instead is the rejected option.",
           "**Dissipated power**: the waste = (1 − efficiency) × the ==total input== — using the useful output here gives the wrong waste.",
-          "**Power-station accounting**: the total input = the useful output + the waste — the waste does not go in the numerator.",
-          "**A net input**: a car braking while climbing loses kinetic energy but gains height — the energy available to charge the battery = ΔEk − ΔEgrav, and the efficiency = the charge delivered ÷ that net input.",
-          "Worked net input: ΔEk = ½ × 1800 × 14² = 176 000 J and ΔEgrav = 1800 × 9.81 × 0.76 ≈ 13 400 J, so the input = 162 600 J and the efficiency = 45 000 ÷ 162 600 = **0.28** — only about a quarter of candidates scored this in full.",
+          "**Power-station accounting**: the total input = the useful output + the waste — the waste does not go in the numerator; the hydro card in statement 19 works it in full.",
           "In percentage form the ==% symbol is required==; as a decimal it is a plain number between 0 and 1.",
         ],
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*It was far less common for candidates to determine that the total energy input to the battery was the change in kinetic energy minus the change in gravitational potential energy, so only about a quarter of all candidates managed to gain full credit.*",
+        k: "worked",
+        title: "A car's regenerative braking",
+        question:
+          "The brakes in a car reduce the kinetic energy of the car. In an electric car, some of this energy is transferred to the battery in the car. An electric car of mass 1800 kg moves at a speed of 14 m s⁻¹ up a hill. The driver applies the brakes to bring the car to a stop. During braking, the vertical displacement of the car is 0.76 m and the energy stored in the battery increases by 45 kJ. Calculate the efficiency of using the brakes to charge the battery. (4) — *WPH11 June 2025, Q14*",
+        steps: [
+          "Kinetic energy lost: ΔEk = ½mv² = ½ × 1800 × 14² = 176 000 J — *use of Ek = ½mv²* is marking point 1.",
+          "Height gained while braking: ΔEgrav = 1800 × 9.81 × 0.76 ≈ 13 400 J — the gravitational gain comes ==off the input first==: *use of ΔEgrav = mgΔh* is marking point 2.",
+          "The energy available to charge the battery = ΔEk − ΔEgrav = 176 000 − 13 400 = 162 600 J, so the efficiency = 45 000 ÷ 162 600 = **0.28** (the printed scheme allows 28 %).",
+          "*Examiner's report:* *it was far less common for students to determine that the total energy input to the battery was the change in kinetic energy minus the change in gravitational potential energy, so only about a quarter of all students managed to gain full credit.*",
+        ],
+        answer: "0.28 (28 %)",
       },
       {
         k: "table",

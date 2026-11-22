@@ -31,7 +31,7 @@ export const NOTES_DOCS: NotesDoc[] = [
       },
       {
         k: "p",
-        text: "Each situation — a bungee jump below the equilibrium point, a truck on an escape lane, a ball sinking towards terminal velocity — is built up as ==its own short section==, one logical step per bullet, so the pattern and its logic can be followed from cause to effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes, and the note closes with ==the marking rules that never change== from one series to the next.",
+        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, a bridge on two supports — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the note closes with ==the marking rules that never change== from one series to the next.",
       },
     ],
     sections: [...SECTIONS_PH01_A, ...SECTIONS_PH01_B, ...SECTIONS_PH01_C],

@@ -2,15 +2,16 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 1 Mechanics · Part A (statements 1–7)
-   The formula-first register, as approved for t02: the named
-   equation is stated first in an equation band, then unpacked in
-   a sentence; the working symbols (=, ×, >, <) sit inside the
-   sentences; one bullet = one marking point; each situation from
-   the papers is built up as its own headed group, one logical
-   step per bullet. Mark scheme wordings and examiner report lines
-   are quoted verbatim in "Mark scheme wording" and "Examiner's
-   report" notes, from the WPH11 papers held in research/wph11.
-   Rejected wordings live in "Not accepted" notes.
+   The worked-example register: every situation from the papers is
+   presented as a worked example card — the question as the paper
+   sets it, with the session and question number stated, the method
+   ruled out one marking point per step, and the answer sealed.
+   Nothing of a scenario sits outside its card; the blocks that
+   remain outside are the ropes (equation bands, def cards, tables,
+   figures, method panels), not scenarios. Mark scheme wordings and
+   examiner report lines are quoted verbatim inside the cards, from
+   the WPH11 papers held in research/wph11. Working symbols
+   (=, ×, >, <) sit inside the sentences.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH01_A: SpecSection[] = [
@@ -54,41 +55,45 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         label: "Mark scheme wording",
         text: "*Final answers must be correctly rounded, not truncated, and truncated values in multi-stage calculations will not generally yield the required value for the final mark. It is advisable that students should use calculators to retain all significant figures for values carried forward and only round answers for the final line.*",
       },
-      { k: "h", text: "A dart thrown at a dartboard" },
       {
-        k: "bullets",
-        items: [
-          "A dart is thrown at 15.6 m s⁻¹ at 5.0° to the horizontal, and the vertical component of its velocity reaches zero just before it hits the board.",
-          "Vertical column: u~V~ = 15.6 × sin 5.0° = 1.36 m s⁻¹, and 0 = 1.36 − 9.81t.",
-          "t = 1.36 ÷ 9.81 = **0.139 s** — quoted to one more significant figure than the *about 0.14 s* asked.",
-          "Horizontal column: a = 0, so D = 15.6 × cos 5.0° × 0.139 = **2.2 m**.",
-          "The (a) value 0.139 s feeds (b) — a wrong (a) does not have to sink (b), because the later marks are re-marked with your value.",
+        k: "worked",
+        title: "A dart thrown at a dartboard",
+        question:
+          "A dart is thrown with a velocity of 15.6 m s⁻¹ at an angle of 5.0° to the horizontal, and it travels a horizontal distance D to the dartboard. Just before the dart hits the dartboard the vertical component of its velocity is zero. The air resistance acting on the dart is negligible. (a) Show that the time taken to reach the dartboard is about 0.14 s. (3) (b) Calculate D. (2) — *WPH11 January 2024, Q12*",
+        steps: [
+          "Set the two columns up first — vertical (a = 9.81 m s⁻²) and horizontal (a = 0). The ==vertical== component is the one that falls to zero: u~V~ = 15.6 × sin 5.0° = 1.36 m s⁻¹ — the resolution is marking point 1.",
+          "Use of v = u + at — ==any valid suvat method== is credited: 0 = 1.36 − 9.81t.",
+          "t = 1.36 ÷ 9.81 = **0.139 s** — one more significant figure than the *about 0.14 s* asked. *Examiner's report: it was reasonably common for students to incorrectly round their calculated answer to 0.138 s instead of 0.139 s. Students who made this error only scored 2 marks in part (a).*",
+          "Horizontal column (b): a = 0, so D = 15.6 × cos 5.0° × 0.139 = **2.2 m** (2.16 m unrounded).",
+          "A wrong (a) does not sink (b) — ecf re-marks the later part with your value. The recorded (b) errors — ==a = g in the horizontal plane==, or the ==vertical component== used instead of the horizontal, or 15.6 m s⁻¹ used without resolving — score nothing.",
         ],
-      },
-      { k: "h", text: "Two cars and a finish line" },
-      {
-        k: "bullets",
-        items: [
-          "Car A moves at a constant 93 m s⁻¹ with 100 m left; car B, 9.0 m behind A, moves at 93 m s⁻¹ and accelerates at 14 m s⁻².",
-          "Both cars cover the same 93 m s⁻¹ of shared distance — what closes the 9.0 m gap is B's extra accelerating motion, starting from rest.",
-          "s = ut + ½at² with u = 0 and a = 14 m s⁻² gives s = 7t².",
-          "Level when the extra distance = the gap: 9.0 = 7t², so t = √(9.0 ÷ 7.0) = **1.13 s ≈ 1.1 s** — any valid constant-acceleration route reaches the same value.",
-          "The finish: A needs 100 ÷ 93 = 1.08 s; B needs to cover 109 m, 109 = 93t + 7t², so t = 1.08 s — A still crosses first, 1.08 s < 1.08 s is a comparison that needs both numbers.",
-        ],
-      },
-      { k: "h", text: "On Mars" },
-      {
-        k: "bullets",
-        items: [
-          "Substitute the local acceleration into the equations: on Mars, a = 0.38g = 3.7 m s⁻².",
-          "Take a ==ratio== of two equations when two situations share the same variables: the unknown g cancels.",
-          "Worked ratio: the same drop from the same height gives v² = 2g~E~h on Earth and v² = 2 × 0.38g~E~ × h on Mars, so v~Mars~ ÷ v~Earth~ = √0.38 ≈ 0.62 — the landing speed is about 0.62 of the Earth value.",
-        ],
+        answer: "(a) 0.139 s · (b) D = 2.2 m",
       },
       {
-        k: "note",
-        label: "Not accepted",
-        text: "The equations of motion applied to a curved slide — the acceleration varies from point to point, and the mark scheme prints *Do not accept use of equations of motion* (statement 20 carries the energy route). And a ==show that== answer quoted to the given value: 0.14 s written for *about 0.14 s* is rejected.",
+        k: "worked",
+        title: "Two cars and a finish line",
+        question:
+          "Two cars, A and B, are racing along a track. At a particular instant car A is 9 m ahead of car B, and car A is 100 m from the finish line. Car A has a constant velocity of 93 m s⁻¹. At this instant car B also has a velocity of 93 m s⁻¹, and car B is accelerating with a constant acceleration of 14 m s⁻². (a) Show that car A and car B are side by side after a time of about 1.1 s. (3) (b) Deduce whether car A reaches the finish line before car B. (3) — *WPH11 June 2024, Q13*",
+        steps: [
+          "Both cars share the 93 m s⁻¹ — equal speeds cover equal distances, so what closes the 9 m gap is B's ==extra accelerating motion==, starting from rest.",
+          "s = ut + ½at² with u = 0 and a = 14 m s⁻² gives s = 7t² for the extra distance B gains.",
+          "Side by side when the extra distance = the gap: 9.0 = 7t², so t = √(9.0 ÷ 7.0) = **1.13 s ≈ 1.1 s** — any valid constant-acceleration route reaches the same value.",
+          "To the line: A needs 100 ÷ 93 = **1.075 s**; B needs 109 m, 109 = 93t + 7t², so t = **1.084 s**.",
+          "The ==comparison== is the final marking point: 1.075 s < 1.084 s, so ==car A reaches the finish line first== — a *deduce* verdict needs both numbers and the comparison, never a bare value.",
+        ],
+        answer: "(a) 1.13 s ≈ 1.1 s · (b) yes — 1.075 s < 1.084 s, car A first",
+      },
+      {
+        k: "worked",
+        title: "On Mars",
+        question:
+          "A rock falls from rest through a small distance s to the surface of Mars, and hits Mars with velocity v~M~. Another rock falls from rest through the same distance s to the surface of Earth, and hits Earth with velocity v~E~. Calculate the ratio v~M~ ÷ v~E~. Acceleration due to gravity on Mars = 0.38g. (3) — *WPH11 June 2023, Q11*",
+        steps: [
+          "Substitute the local acceleration into the same equations: on Mars a = 0.38g = 3.7 m s⁻² — the physics does not change, only the number put in for g.",
+          "v² = u² + 2as with u = 0: v~M~² = 0.38gs on Mars and v~E~² = gs on Earth.",
+          "Take a ==ratio== when two situations share the same variables — the unknown s cancels: (v~M~ ÷ v~E~)² = 0.38, so v~M~ ÷ v~E~ = √0.38 = **0.62**.",
+        ],
+        answer: "v~M~ ÷ v~E~ = 0.62",
       },
     ],
   },
@@ -177,34 +182,32 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["acceleration–time", "rate of change of acceleration (not examined)", "change in velocity — not the final velocity unless u = 0"],
         ],
       },
-      { k: "h", text: "Tangents to a curve" },
       {
-        k: "bullets",
-        items: [
-          "Draw the tangent ==at the exact time== asked — the first marking point of the printed scheme is the tangent itself, ==drawn at the stated time==.",
-          "Read two ==well-separated== points on your own tangent and find the gradient: Δv ÷ Δt. Close points amplify your drawing error.",
-          "Worked tangent: the diver's v–t curve, tangent at 70 s reading Δv ≈ −0.50 m s⁻¹ across Δt = 65 s, gives a ≈ −0.008 m s⁻² (printed range −0.007 to −0.010).",
+        k: "worked",
+        title: "Tangents to a curve",
+        question:
+          "The graph shows the vertical velocity of a deep-sea diver against time; the diver is at the surface when the dive begins and is at the surface again 82 s later. Determine the vertical acceleration of the diver at 70 s. (3) — *WPH11 October 2024, Q19*",
+        steps: [
+          "Draw the tangent ==at the exact time asked== — the tangent itself, ==drawn at the stated time==, is the first marking point of the printed scheme.",
+          "Read two ==well-separated== points on your own tangent and find the gradient: Δv ÷ Δt. Close points amplify the drawing error.",
+          "The worked tangent: Δv ≈ −0.50 m s⁻¹ across Δt = 65 s gives a ≈ **−0.008 m s⁻²** (printed range −0.007 to −0.010).",
           "The answer carries the sign: a diver rising through water has velocity upwards and acceleration downwards, so the gradient is negative.",
+          "*Examiner's report:* *most candidates who drew a tangent scored well. However, many candidates just read a value of velocity at 70 s and divided one by the other. This approach scored no marks.* — v ÷ t at a point is not a gradient; a ==tangent== is.",
         ],
+        answer: "a ≈ −0.008 m s⁻² (−0.007 to −0.010)",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*Most candidates who drew a tangent scored well. However, many candidates just read a value of velocity at 70 s and divided one by the other. This approach scored no marks.*",
-      },
-      { k: "h", text: "Areas under a curve" },
-      {
-        k: "bullets",
-        items: [
-          "**Counting squares** on a printed grid — each square is worth its width × height in unit quantities.",
-          "**Trapezium strips** when the velocity changes in straight segments: a fall from 2v to v over time t gives ½(2v + v)t, then a rectangle vt underneath — a total of 5vt ÷ 2.",
-          "**Equality of areas** as a physics statement: a diver returns to the surface because the area below the time axis ==equals== the area above it — the total displacement is zero.",
+        k: "worked",
+        title: "Areas under a curve",
+        question:
+          "The same graph shows the diver's vertical velocity against time. Explain how the graph shows that the diver is at the surface again 82 s after the dive began. (2) — *WPH11 October 2024, Q19*",
+        steps: [
+          "The area between the line and the time axis ==represents displacement== — the first marking point.",
+          "Count it square by square on the printed grid, or by ==trapezium strips== where the velocity changes in straight segments — a fall from 2v to v over time t gives ½(2v + v)t, then a rectangle vt underneath: 5vt ÷ 2 in total.",
+          "The diver is at the surface if the area below the time axis (before 25 s) ==equals== the area above it (after 25 s) — the total displacement is zero.",
+          "*Examiner's report:* *many candidates did not mention the areas on the graph, with many responses referring to either the final velocity being zero, or to the gradient of the graph.* — *the final velocity is zero* and *the gradient is zero* score nothing; the ==areas== cancel.",
         ],
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "Reading the velocity at the point and dividing it by the time — v ÷ t at a point is not a gradient, a ==tangent== is; the report quoted above scores such answers nothing. And *the final velocity is zero* or *the gradient is zero* offered as an explanation of returning to the start — zero displacement means the ==areas== cancel.",
+        answer: "areas below and above the time axis cancel — zero displacement, diver back at the surface",
       },
     ],
   },
@@ -287,34 +290,42 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           "Ask which reference line θ is measured from before choosing the function; the diagram shows it.",
         ],
       },
-      { k: "h", text: "A bird on a wire" },
       {
-        k: "bullets",
-        items: [
-          "Traffic lights of weight W hang from a wire whose two sides each make θ with the horizontal: each tension pulls up with T sin θ, and the two sides share the weight, **2T sin θ = W**, so **T = W ÷ (2 sin θ)**.",
-          "A bird of weight W stands at the middle of a string whose sides make 80° with the two vertical posts: the vertical component of each tension is T cos 80°, so **2T cos 80° = W** and **T = W ÷ (2 cos 80°)**.",
-          "Same equilibrium, one different measured angle — the two questions are the same trap set twice.",
+        k: "worked",
+        title: "Traffic lights on a wire",
+        question:
+          "Traffic lights of weight W hang in equilibrium from a wire, and each side of the wire makes an angle θ with the horizontal. Which expression gives the tension in the wire?  A 2W sin θ · B W ÷ (2 sin θ) · C 2W cos θ · D W ÷ (2 cos θ) — *WPH11 January 2025, Q10*",
+        steps: [
+          "Each side pulls up with the vertical component of its tension, T sin θ, and the two sides share the weight: **2T sin θ = W**.",
+          "Rearrange: **T = W ÷ (2 sin θ)** — option B.",
+          "*The mark scheme's rejected options:* A is the wrong rearrangement (*W = 2 sin θ × tension*); C and D use *T cos θ* — and *T cos θ is the horizontal component of tension T*.",
         ],
+        answer: "B — T = W ÷ (2 sin θ)",
       },
       {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "On the 80° version the rejected options are explained as *the components of T acting vertically should be cos and should form the denominator* — the wording names both slips at once.",
-      },
-      { k: "h", text: "A trolley on a slope" },
-      {
-        k: "bullets",
-        items: [
-          "With friction absent, the acceleration along any slope is ==a = g sin θ==: on a 14° incline, a = 9.81 × sin 14° = 2.4 m s⁻².",
-          "Feed the component straight into the equations of motion: a trolley starting at 7.1 m s⁻¹ and running 15 m down a 14° slope reaches v² = 7.1² + 2 × 2.37 × 15 = 122, so v ≈ 11 m s⁻¹.",
-          "The energy route reaches the same 11 m s⁻¹: the vertical drop is 15 × sin 14° = 3.6 m, and ½mv² = mgΔh — the mass cancels.",
-          "The ==initial velocity== stays in the chain: v² = u² + 2as keeps the u term, and dropping it (or resolving it) gives the wrong speed.",
+        k: "worked",
+        title: "A bird on a wire",
+        question:
+          "A string is stretched between two vertical posts, and a bird of weight W stands at the middle of the string. The string makes an angle of 80° with each post, and the tension in each side is T. Which expression gives T?  A T = W ÷ (2 sin 80°) · B T = W × 2 sin 80° · C T = W ÷ (2 cos 80°) · D T = W × 2 cos 80° — *WPH11 January 2024, Q6*",
+        steps: [
+          "The 80° is measured ==from the vertical== (the posts), so the vertical component of each tension is T cos 80° — the roles swap the moment the reference line changes.",
+          "Same equilibrium as the traffic lights, one different measured angle: **2T cos 80° = W**, so **T = W ÷ (2 cos 80°)** — option C.",
+          "*The printed rejected-option note names both slips at once:* *the components of T acting vertically should be cos and should form the denominator*.",
         ],
+        answer: "C — T = W ÷ (2 cos 80°)",
       },
       {
-        k: "note",
-        label: "Not accepted",
-        text: "sin used where the angle is measured from the vertical — the printed rejected option explains that the vertical components ==should be cos and should form the denominator==.",
+        k: "worked",
+        title: "A skier on a slope",
+        question:
+          "A person on skis slides down a slope at 14° to the horizontal with an initial speed of 7.1 m s⁻¹. Resistive forces are negligible. Calculate the speed of the skier after moving 15 m down the slope. (3) — *WPH11 January 2025, Q12*",
+        steps: [
+          "With friction absent the acceleration along any slope is ==a = g sin θ==: 9.81 × sin 14° = 2.37 m s⁻².",
+          "Feed the component straight into the equations of motion, keeping the initial velocity: v² = u² + 2as = 7.1² + 2 × 2.37 × 15 = 122, so v ≈ **11 m s⁻¹**.",
+          "The energy route reaches the same value: the vertical drop is 15 × sin 14° = 3.6 m, and ½mv² = mgΔh — the mass cancels.",
+          "*Examiner's report:* *a large number of candidates either failed to take account of the initial velocity of the person or used a component of the initial velocity, and therefore ended up with an incorrect answer.* — v² = u² + 2as keeps the u term.",
+        ],
+        answer: "≈ 11 m s⁻¹",
       },
     ],
   },
@@ -326,7 +337,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
     blocks: [
       {
         k: "p",
-        text: "Two skills, and the wording tells you which one is wanted: *at any angle* means a ==scaled vector drawing==; *at right angles* means ==calculation== with Pythagoras. On the drawing question the printed scheme demands arrows ==at least 6 cm== long for the longest force — a scale such as 1 cm : 100 N.",
+        text: "Two skills, and the wording tells you which one is wanted: *at any angle* means a ==scaled vector drawing==; *at right angles* means ==calculation== with Pythagoras. On the drawing questions the printed schemes demand arrows ==at least 6 cm== long for the longest force — a scale such as 1 cm : 100 N.",
       },
       {
         k: "steps",
@@ -346,35 +357,31 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           },
         ],
       },
-      { k: "h", text: "A submarine's resultant force" },
       {
-        k: "bullets",
-        items: [
-          "A submarine's engine produces a horizontal force of 70 N forwards; the drag force is 43 N, directed backwards and downwards at 25° to the horizontal.",
-          "Draw the 70 N forward arrow to scale (at least 3.5 cm for this question), then the 43 N drag from its tip at 25° below the backwards direction.",
-          "The resultant closes the triangle: length measured back through the scale gives ==36 N== (printed tolerance 34 N to 38 N), at ==30°== below the horizontal (tolerance ± 2°).",
-          "Check by calculation: horizontally 70 − 43 cos 25° = 31.0 N, vertically 43 sin 25° = 18.2 N, so R = √(31.0² + 18.2²) ≈ 36 N at tan⁻¹(18.2 ÷ 31.0) ≈ 30°.",
+        k: "worked",
+        title: "A submarine's resultant force",
+        question:
+          "The diagram shows a submarine. The engine produces a horizontal force of 70 N forwards. The drag force on the submarine is 43 N, directed backwards and downwards at 25° to the horizontal. Determine the magnitude and direction of the resultant force on the submarine using a scaled vector diagram. (5) — *WPH11 January 2025, Q18*",
+        steps: [
+          "Draw the 70 N forwards arrow to scale, then the 43 N drag from its tip at 25° below the backwards direction — each arrow ==labelled with the force it represents==, never with its drawn length in cm.",
+          "Close the triangle: the resultant runs from the ==tail of the first== vector to the ==tip of the last==, pointing that way round.",
+          "Measured back through the scale: ==36 N== (printed tolerance 34 N to 38 N), at ==30°== below the horizontal (tolerance ± 2°).",
+          "Check by calculation: horizontally 70 − 43 cos 25° = 31.0 N, vertically 43 sin 25° = 18.2 N, so R = √(31.0² + 18.2²) ≈ 36 N at tan⁻¹(18.2 ÷ 31.0) ≈ 30°. On a *drawing* question the calculation still scores the answer mark — but the construction marks belong to the triangle, so draw the triangle as well.",
+          "*Examiner's report:* *Many candidates drew a free-body force diagram rather than a scaled vector diagram.* · *Many candidates labelled their vectors with the length of the arrow they had drawn, rather than with the size or description of the force that each arrow represented.* · *It was not uncommon for candidates who drew an appropriate triangle to draw the resultant force vector pointing in the wrong direction.*",
         ],
+        answer: "≈ 36 N at 30° below the horizontal",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*Many candidates drew a free-body force diagram rather than a scaled vector diagram.* · *Many candidates labelled their vectors with the length of the arrow they had drawn, rather than with the size or description of the force that each arrow represented.* · *It was not uncommon for candidates who drew an appropriate triangle to draw the resultant force vector pointing in the wrong direction.*",
-      },
-      { k: "h", text: "Perpendicular resultants" },
-      {
-        k: "bullets",
-        items: [
-          "Horizontal and vertical components combine by Pythagoras: **R = √(F~x~² + F~y~²)**, with the direction from **tan θ = F~y~ ÷ F~x~**.",
-          "Worked magnitude: 2300 N horizontal with 1200 N vertical gives R = √(2300² + 1200²) ≈ 2600 N — drawn answers are judged against printed tolerances, calculated answers against the usual significant-figure rules.",
-          "Where the components pull ==against== each other on one axis, subtract before squaring: 15 000 kg m s⁻¹ east with 14 500 kg m s⁻¹ west leaves 500 kg m s⁻¹ east, and a 200 kg m s⁻¹ north component makes the resultant √(500² + 200²).",
-          "If you do the calculation on a *drawing* question, the answer mark still scores — but the construction marks belong to the triangle, so draw the triangle as well.",
+        k: "worked",
+        title: "Perpendicular resultants",
+        question:
+          "Two perpendicular forces act on an object: a force of 2300 N horizontally and a force of 1200 N vertically. Determine the magnitude of the resultant force using a scaled vector diagram. (2) — *WPH11 October 2024, Q11*",
+        steps: [
+          "Draw the vector triangle tip-to-tail, all three arrows in the correct relative directions — the construction is marking point 1.",
+          "Resultant = ==2600 N== (printed tolerance 2550 N to 2650 N). Horizontal and vertical components combine by Pythagoras: R = √(F~x~² + F~y~²) = √(2300² + 1200²) = 2594 N ≈ 2600 N.",
+          "*Examiner's report:* *Most candidates scored at least one mark... but less than half gained both marks.* · *Many candidates drew a free-body force diagram rather than a scaled vector diagram.* · *It was common to see candidates using Pythagoras to calculate the magnitude... Whichever method candidates used to arrive at the correct answer, marking point 2 was scored.*",
         ],
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "A free-body force diagram offered as the scaled vector diagram — a free-body shows all the forces on one object from one point; the triangle chains them ==tip-to-tail==. Labelling arrows with their drawn length in cm. A resultant drawn from the tip of the first arrow to the tail of the last — it points the wrong way.",
+        answer: "2600 N (2550 N to 2650 N)",
       },
     ],
   },
@@ -400,57 +407,70 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         caption:
           "The path of a projectile launched at 40°: the horizontal velocity never changes, the vertical velocity loses g every second, and only time belongs to both columns.",
       },
-      { k: "h", text: "A ball thrown at a wall" },
       {
-        k: "bullets",
-        items: [
-          "A ball is thrown at 9.70 m s⁻¹ and 49.0° to the horizontal, at a wall 5.00 m away whose top is 3.00 m above the release point.",
-          "Vertical column: u~V~ = 9.70 × sin 49.0° = 7.32 m s⁻¹.",
-          "Horizontal column: a = 0, so t = 5.00 ÷ (9.70 × cos 49.0°) = **0.786 s** — one more significant figure than the *about 0.8 s* asked.",
-          "Back to the vertical column: s = 7.32 × 0.786 − 4.905 × 0.786² = 2.72 m at the wall.",
-          "The ==comparison== is the final marking point: 2.72 m < 3.00 m, so ==the ball does not clear the wall==. Stopping at 2.72 m earns nothing.",
+        k: "worked",
+        title: "A ball thrown at a wall",
+        question:
+          "A boy throws a ball at a wall 5.00 m away. The top of the wall is 3.00 m above the release point, and the ball is thrown with an initial velocity of 9.70 m s⁻¹ at 49.0° to the horizontal. (a) Show that the ball travelled the distance to the wall in about 0.8 s. (3) (b) Deduce whether the ball went over the wall. (4) — *WPH11 October 2022, Q15*",
+        steps: [
+          "Horizontal column first (a = 0): v~H~ = 9.70 × cos 49.0° = 6.36 m s⁻¹, so t = 5.00 ÷ 6.36 = **0.786 s** — one more significant figure than the *about 0.8 s* asked.",
+          "Vertical column (b): v~V~ = 9.70 × sin 49.0° = 7.32 m s⁻¹, and s = 7.32 × 0.786 − 4.905 × 0.786² = **2.72 m** at the wall.",
+          "The ==comparison== is the final marking point: 2.72 m < 3.00 m, so ==the ball does not go over the wall==. Stopping at 2.72 m earns nothing.",
+          "*Examiner's report:* *Many candidates lost marks by neglecting units for their values of height.* — every height carries ==m==.",
         ],
+        answer: "(a) 0.786 s · (b) no — 2.72 m < 3.00 m, the ball does not clear the wall",
       },
-      { k: "h", text: "A stone thrown from a cliff" },
       {
-        k: "bullets",
-        items: [
-          "A stone is projected horizontally at 3.8 m s⁻¹ from a cliff top 12 m above the sea.",
+        k: "worked",
+        title: "A stone thrown from a cliff",
+        question:
+          "A stone is projected horizontally from a cliff with an initial horizontal velocity of 3.8 m s⁻¹, from a height of 12 m above the sea. Calculate the horizontal distance travelled by the stone before it lands. (3) — *WPH11 January 2023, Q11*",
+        steps: [
           "Vertical column first (u~V~ = 0): 12 = ½ × 9.81 × t², so t = 1.56 s.",
           "Horizontal column (a = 0): s = v~H~t = 3.8 × 1.56 = **5.9 m**.",
-          "The two-column layout prevents the classic slips — using a = g in the horizontal plane, or u = 3.8 m s⁻¹ in the vertical plane.",
+          "*Examiner's report:* *Others used a = g in the horizontal plane, or u = 3.8 m s⁻¹ in the vertical plane. Teaching students to set calculations out in two columns would help them to keep horizontal and vertical components clearly separated.* — the two-column layout prevents both slips.",
         ],
+        answer: "5.9 m",
       },
-      { k: "h", text: "A golfer's ball" },
       {
-        k: "bullets",
-        items: [
-          "A golfer's ball leaves the club with a vertical component of 34.1 m s⁻¹ and lands 11 m below the launch point.",
-          "The full quadratic is needed: 11 = 34.1t − 4.91t², so t = 6.62 s — the other root, 0.34 s, is the pass through height 11 m on the way up.",
-          "Horizontal column: the range = 39.2 × 6.62 ≈ 260 m, and the question's carry of 255 m falls short, so the ball ==clears the carry== — the verdict needs the comparison, not just 260 m.",
-          "Doubling the time to maximum height works ==only when the projectile lands at its launch height== — 11 m below is not that case.",
+        k: "worked",
+        title: "A golfer's ball",
+        question:
+          "A golfer hit a golf ball into the air at a speed of 52 m s⁻¹ and an angle of 41° to the horizontal. The ball landed on the ground near a hole, and the ground was 11 m higher than the starting point of the ball. (a) Show that the vertical component of the ball's initial velocity was about 30 m s⁻¹. (2) (b) Show that the time taken by the ball to reach the ground was about 7 s. You should ignore the effects of air resistance. (3) (c) The hole is a horizontal distance of 250 m from the starting point of the ball. Deduce whether the ball landed within 5.0 m of the hole. (3) — *WPH11 June 2022, Q18*",
+        steps: [
+          "Vertical component: 52 × sin 41° = **34.1 m s⁻¹** — the mark scheme's own example carries 34.1 into part (b), one more significant figure than the printed show-that value.",
+          "The full quadratic is needed because the ground is ==above== the launch point: 11 = 34.1t − 4.905t², so 4.905t² − 34.1t + 11 = 0, giving t = **6.62 s** (or 0.34 s) — 0.34 s is the pass through the 11 m height on the way up; 6.62 s is the landing.",
+          "Horizontal column (c): v~H~ = 52 × cos 41° = 39.2 m s⁻¹, so the range = 39.2 × 6.62 ≈ **260 m**.",
+          "The comparison: 260 m > 255 m, so ==the ball lands beyond the 5.0 m window around the hole== — no. A *deduce* verdict is the final marking point.",
+          "Doubling the time to maximum height works ==only when the projectile lands at its launch height== — the higher ground is not that case. *Examiner's report:* *The most common incorrect approach was to find the time to maximum height and double it, giving a time that is too long.*",
         ],
+        answer: "(a) 34.1 m s⁻¹ · (b) 6.62 s · (c) no — 260 m > 255 m",
       },
       {
-        k: "note",
-        label: "Examiner's report",
-        text: "*The most common incorrect approach was to find the time to maximum height and double it, giving a time that is too long.*",
-      },
-      { k: "h", text: "Impact speed and angle" },
-      {
-        k: "bullets",
-        items: [
-          "At the top of the path the ==vertical== velocity is zero; the horizontal velocity never changed.",
-          "At any instant the two components recombine by Pythagoras: landing speed = √(v~V~² + v~H~²), at the angle tan⁻¹(v~V~ ÷ v~H~) to the horizontal.",
-          "Worked landing: an athlete crossing the bar at 3.44 m s⁻¹ horizontally then falling 1.4 m gains v~V~ = √(2 × 9.81 × 1.4) = 5.24 m s⁻¹, so the landing velocity is √(5.24² + 3.44²) ≈ 6.3 m s⁻¹ at tan⁻¹(5.24 ÷ 3.44) ≈ 57° to the horizontal.",
-          "A larger launch speed leaves v~V~ unchanged and grows v~H~, so tan(impact angle) = v~V~ ÷ v~H~ falls — the ball meets the ground at a ==shallower== angle.",
-          "Add the ==launch height== when heights are measured from the ground: a projectile launched from a site 2.0 km above sea level that is 961 m above its launch point when it crosses the ship is at 961 + 2000 ≈ 3.0 × 10³ m above sea level.",
+        k: "worked",
+        title: "Impact speed and angle",
+        question:
+          "An athlete of weight 680 N runs horizontally and clears the bar with kinetic energy of 409 J. After clearing the bar he falls 1.4 m vertically before landing. Calculate the magnitude of the athlete's landing velocity and its direction as an angle from the vertical. (4) — *WPH11 October 2024, Q15*",
+        steps: [
+          "The horizontal speed comes from the energy: m = W ÷ g = 680 ÷ 9.81 = 69.3 kg, and v~H~ = √(2 × 409 ÷ 69.3) = **3.44 m s⁻¹** — the mass conversion and Ek = ½mv² are marking points of their own.",
+          "Vertical: falling from rest, v~V~ = √(2 × 9.81 × 1.4) = 5.24 m s⁻¹ — the equations of motion or ΔEgrav = ΔEk both score the mark.",
+          "Recombine by Pythagoras: v = √(5.24² + 3.44²) = **6.3 m s⁻¹** (the show-that value gives 6.2).",
+          "Direction: tan θ = 3.44 ÷ 5.24, so θ = **33° from the vertical** — a larger launch speed leaves v~V~ unchanged and grows v~H~, so the landing gets ==shallower==.",
         ],
+        answer: "6.3 m s⁻¹ at 33° from the vertical",
       },
       {
-        k: "note",
-        label: "Not accepted",
-        text: "Finding the time to maximum height and ==doubling it== — that works only when the projectile lands at its launch height; a golfer landing 11 m below the launch point needs the full quadratic. Forgetting to ==add the launch height== above sea level, or computing the ==maximum height== where the question asks the height at a given point. Using a = g in the horizontal column, or u = v~H~ in the vertical column — the two-column layout prevents both, which is why the examiners recommend it.",
+        k: "worked",
+        title: "A projectile from a mountain",
+        question:
+          "Scientists launched a projectile from a mountain. The launch site was 2.0 km above sea level, and the projectile initially moved with a speed of 500 m s⁻¹ at an angle of 22° to the horizontal. A ship was a horizontal distance of 15 km from the launch site, and the projectile passed over the ship. Determine the height above sea level of the projectile as it passed over the ship. You should ignore the effects of air resistance. (4) — *WPH11 January 2025, Q19*",
+        steps: [
+          "Time to the ship (from the earlier show that): u~H~ = 500 × cos 22° = 464 m s⁻¹, so t = 15 000 ÷ 464 ≈ **32 s** — use the given value in this part; ecf protects it.",
+          "Vertical column: u~V~ = 500 × sin 22° = 187 m s⁻¹, and s = 187 × 32 − 4.905 × 32² ≈ **961 m** above the launch point.",
+          "==Add the launch height== when heights are measured from the ground: 961 + 2000 ≈ **3.0 × 10³ m** above sea level.",
+          "The two recorded slips: forgetting the ==launch height== altogether, and computing the ==maximum height== where the question asks the height at a stated point.",
+        ],
+        answer: "≈ 3.0 × 10³ m above sea level (2.96 × 10³ m)",
       },
     ],
   },

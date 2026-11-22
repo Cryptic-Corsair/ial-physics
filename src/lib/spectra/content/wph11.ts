@@ -45,7 +45,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation — a rocket lifting off, a ball sinking towards terminal velocity, a bridge balanced on two supports — is built up as ==its own short section==, one logical step per bullet, cause before effect. The mark schemes' ==rejected wordings== are flagged as Not accepted notes.",
+        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, a bridge on two supports — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
       {
         k: "tips",
