@@ -54,6 +54,8 @@ const cleanPaths = [
   ['/legal', 'legal'],
   ['/wph11', 'unit-WPH11'],
   ['/notes/wph11-t02', 'notes-wph11-t02'],
+  ['/notes/wph11-t03', 'notes-wph11-t03'],
+  ['/notes/wph11-t04', 'notes-wph11-t04'],
 ];
 for (const [path, view] of cleanPaths) {
   const ok = await visit(page, path);
@@ -67,21 +69,21 @@ for (const [path, view] of cleanPaths) {
 /* the notes reader at one clause — the doc view is the same room, so
    the view id is the doc; the clause rides in the URL only */
 {
-  const ok = await visit(page, '/notes/wph11-t02/24');
+  const ok = await visit(page, '/notes/wph11-t04/24');
   const s = await stateOf(page);
   check(
-    'deep path /notes/wph11-t02/24 → notes at clause 24',
-    ok && s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02/24',
+    'deep path /notes/wph11-t04/24 → notes at clause 24',
+    ok && s.view === 'notes-wph11-t04' && s.path === '/notes/wph11-t04/24',
     `view=${s.view} path=${s.path}`,
   );
 }
 
 /* — 2 · legacy ?v= links upgrade to their path form — */
 {
-  await page.goto(url + '/?v=notes&doc=wph11-t02&spec=24', { waitUntil: 'networkidle' });
+  await page.goto(url + '/?v=notes&doc=wph11-t04&spec=24', { waitUntil: 'networkidle' });
   const ok = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02/24' && s.search === '';
+    return s.view === 'notes-wph11-t04' && s.path === '/notes/wph11-t04/24' && s.search === '';
   });
   const s = await stateOf(page);
   check(
@@ -123,12 +125,12 @@ for (const [path, view] of cleanPaths) {
 
 /* — 4 · the browser's real back/forward walks rooms — */
 {
-  await visit(page, '/notes/wph11-t02');
+  await visit(page, '/notes/wph11-t04');
   await visit(page, '/spec');
   await page.goBack({ waitUntil: 'networkidle' });
   const backOk = await waitFor(page, async () => {
     const s = await stateOf(page);
-    return s.view === 'notes-wph11-t02' && s.path === '/notes/wph11-t02';
+    return s.view === 'notes-wph11-t04' && s.path === '/notes/wph11-t04';
   });
   const s1 = await stateOf(page);
   check('real back from /spec → notes room + address', backOk, `view=${s1.view} path=${s1.path}`);

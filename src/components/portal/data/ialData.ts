@@ -186,13 +186,49 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     id: 'topic-1',
     kind: 'topic',
     code: 'Topic 1',
-    title: 'Topic 1 · Forces, motion and energy',
+    title: 'Topic 1 · Forces',
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 58,
+    minutes: 44,
     targetAnchor: '#units',
-    keywords: ['suvat', 'motion graphs', 'projectile', 'newton', 'momentum', 'moments', 'energy', 'power'],
+    keywords: ['suvat', 'motion graphs', 'projectile', 'vector', 'newton', 'terminal velocity', 'free-body', 'core practical'],
+  },
+  {
+    id: 'topic-2',
+    kind: 'topic',
+    code: 'Topic 2',
+    title: 'Topic 2 · Moments and momentum',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'IAS Topic',
+    minutes: 18,
+    targetAnchor: '#units',
+    keywords: ['momentum', 'conservation of momentum', 'third law', 'moment', 'centre of gravity', 'principle of moments'],
+  },
+  {
+    id: 'topic-3',
+    kind: 'topic',
+    code: 'Topic 3',
+    title: 'Topic 3 · Work, energy and power',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'IAS Topic',
+    minutes: 22,
+    targetAnchor: '#units',
+    keywords: ['work done', 'kinetic energy', 'gravitational potential', 'conservation of energy', 'power', 'efficiency'],
+  },
+  {
+    id: 'topic-4',
+    kind: 'topic',
+    code: 'Topic 4',
+    title: 'Topic 4 · Materials — fluids, viscosity and elasticity',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'IAS Topic',
+    minutes: 66,
+    targetAnchor: '#units',
+    keywords: ['upthrust', 'stokes', 'viscosity', 'hooke', 'young modulus', 'stress', 'strain'],
   },
   {
     id: 'topic-suvat',
@@ -205,18 +241,6 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     minutes: 12,
     targetAnchor: '#units',
     keywords: ['suvat', 'v = u + at', 'show that', 'displacement', 'acceleration'],
-  },
-  {
-    id: 'topic-2',
-    kind: 'topic',
-    code: 'Topic 2',
-    title: 'Topic 2 · Materials — fluids, viscosity and elasticity',
-    unitCode: 'WPH11',
-    unitTitle: 'WPH11 · Unit 1',
-    category: 'IAS Topic',
-    minutes: 52,
-    targetAnchor: '#units',
-    keywords: ['upthrust', 'stokes', 'viscosity', 'hooke', 'young modulus', 'stress', 'strain'],
   },
   {
     id: 'topic-upthrust',
@@ -295,7 +319,7 @@ export const PREVIEW_THEMES: Record<PreviewThemeId, PreviewThemeTokens> = {
   },
 };
 
-/* Two real notes from the workspace's own corpus (NOTES_META in
+/* Four real notes from the workspace's own corpus (NOTES_META in
    src/lib/spectra/notes-meta.ts — same ids, same titles, same spec
    ranges, the real per-topic reading minutes), each cut down to a
    handful of its actual specification sections. Every statement,
@@ -306,10 +330,10 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     id: 'wph11-t01',
     unitCode: 'WPH11',
     topicLabel: 'Topic 1',
-    title: 'Forces, motion and energy',
-    specRange: '1 → 22',
-    sectionsTotal: 22,
-    readMinutes: 58,
+    title: 'Forces',
+    specRange: '1 → 11',
+    sectionsTotal: 11,
+    readMinutes: 44,
     clauses: [
       {
         spec: '1',
@@ -354,23 +378,103 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     id: 'wph11-t02',
     unitCode: 'WPH11',
     topicLabel: 'Topic 2',
-    title: 'Materials — fluids, viscosity and elasticity',
+    title: 'Moments and momentum',
+    specRange: '12 → 16',
+    sectionsTotal: 5,
+    readMinutes: 18,
+    clauses: [
+      {
+        spec: '13',
+        title: 'Momentum',
+        statement: 'understand that momentum is defined as p = mv',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'Momentum',
+            text: 'The product of mass and velocity, **p = mv** — a ==vector== in the direction of the velocity, measured in ==kg m s\u207b\u00b9== (equivalently N s).',
+          },
+          {
+            kind: 'eq',
+            eq: 'p = mv        1 N s = 1 kg m s\u207b\u00b9',
+          },
+        ],
+      },
+      {
+        spec: '16',
+        title: 'Centre of gravity and the principle of moments',
+        statement:
+          'be able to use the concept of centre of gravity of an extended body and apply the principle of moments to an extended body in equilibrium',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'Equilibrium',
+            text: 'A body is in equilibrium when there is ==no resultant force on it== ==and no resultant moment about any point==. Two marks, two sentences \u2014 *clockwise moment = anticlockwise moment* alone is not sufficient, because it omits the forces half.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wph11-t03',
+    unitCode: 'WPH11',
+    topicLabel: 'Topic 3',
+    title: 'Work, energy and power',
+    specRange: '17 → 22',
+    sectionsTotal: 6,
+    readMinutes: 22,
+    clauses: [
+      {
+        spec: '17',
+        title: 'Work done',
+        statement:
+          'be able to use the equation for work \u0394W = F\u0394s, including calculations when the force is not along the line of motion',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'Work done by a force',
+            text: '**\u0394W = F\u0394s** \u2014 force \u00d7 the distance moved ==in the direction of the force==. When the force is not along the motion, use the component along it. Unit: the joule, 1 J = 1 N m.',
+          },
+          {
+            kind: 'eq',
+            eq: '\u0394W = F\u0394s        \u0394W = F\u0394s cos \u03b8        work done against gravity = mg\u0394h',
+          },
+        ],
+      },
+      {
+        spec: '22',
+        title: 'Efficiency',
+        statement:
+          'be able to use the equations efficiency = useful energy output / total energy input and efficiency = useful power output / total power input',
+        blocks: [
+          {
+            kind: 'eq',
+            eq: 'efficiency = useful energy output \u00f7 total energy input        efficiency = useful power output \u00f7 total power input',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wph11-t04',
+    unitCode: 'WPH11',
+    topicLabel: 'Topic 4',
+    title: 'Materials \u2014 fluids, viscosity and elasticity',
     specRange: '23 → 32',
     sectionsTotal: 10,
-    readMinutes: 52,
+    readMinutes: 66,
     clauses: [
       {
         spec: '23',
         title: 'Density',
-        statement: 'be able to use the equation density ρ = m/V',
+        statement: 'be able to use the equation density \u03c1 = m/V',
         blocks: [
           {
             kind: 'eq',
-            eq: 'ρ = m/V',
+            eq: '\u03c1 = m/V',
           },
           {
             kind: 'eq',
-            eq: 'V = (4/3)πr³',
+            eq: 'V = (4/3)\u03c0r\u00b3',
           },
         ],
       },
@@ -387,7 +491,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
           },
           {
             kind: 'eq',
-            eq: 'U = ρ~fluid~ × V~disp~ × g',
+            eq: 'U = \u03c1~fluid~ \u00d7 V~disp~ \u00d7 g',
           },
         ],
       },
@@ -399,7 +503,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
         blocks: [
           {
             kind: 'eq',
-            eq: 'σ = F/A        ε = Δx/x        E = σ/ε',
+            eq: '\u03c3 = F/A        \u03b5 = \u0394x/x        E = \u03c3/\u03b5',
           },
         ],
       },

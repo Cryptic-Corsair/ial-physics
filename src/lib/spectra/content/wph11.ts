@@ -4,8 +4,13 @@ import type { Topic } from "../types";
    WPH11 · Mechanics and Materials
    Topics 1.3 (Mechanics) and 1.4 (Materials) of the Pearson
    Edexcel International Advanced Level Physics specification
-   (2018, Issue 3) — statements 1–32, taught in two pages:
-   Forces, motion and energy · Materials.
+   (2018, Issue 3) — statements 1–32, taught in four pages:
+   Forces · Moments and momentum · Work, energy and power ·
+   Materials. The mechanics split follows the owner's three-way
+   cut (2026-11-22): the flat 22-statement note divided into the
+   motion-and-laws run (1–11), the pairs-momentum-moments run
+   (12–16) and the work-energy-power run (17–22), every statement
+   byte-identical where it stood.
    ═══════════════════════════════════════════════════════════════ */
 
 export const WPH11_TOPICS: Topic[] = [
@@ -13,20 +18,19 @@ export const WPH11_TOPICS: Topic[] = [
     id: "t01",
     no: "01",
     label: "Topic 1",
-    title: "Forces, motion and energy",
+    title: "Forces",
     summary:
-      "The whole of WPH11 mechanics — motion graphs and the equations of motion, vectors and projectiles, Newton's laws and terminal velocity, momentum, moments, work, energy and power — statement by statement, written the way the mark schemes mark it.",
-    /* minutes rescaled twice (2026-11-22): the scenario rebuild grew
-       the read to about an hour and a quarter, and the paper-gap
-       closure (the graph-conversion group, the lift cards and the
-       mark-scheme convention additions) adds about five minutes
-       more at the topic's words-per-minute calibration */
-    minutes: 80,
+      "The opening of WPH11 mechanics — the equations of motion and the three motion graphs, vectors resolved and combined, projectiles with their two independent columns, free-body diagrams, Newton's first and second laws with terminal velocity, weight and Core Practical 1 — statement by statement, written the way the mark schemes mark it.",
+    /* minutes recalibrated for the split (2026-11-22): the old
+       80-minute mechanics read divided at its own words-per-minute
+       rate (~241 w/min), Forces taking statements 1–11 plus the
+       landing paragraph */
+    minutes: 44,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Unit 1 of IAL Physics is the scenario paper: every session sets the same specification statements in a new context — a bungee jump, a crane, a submarine, a shot put, a bascule bridge. This note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
+        text: "Forces opens WPH11's mechanics: the ==equations of motion== and the ==three motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, then ==free-body diagrams==, ==Newton's first and second laws== with ==terminal velocity==, ==weight== and ==Core Practical 1==. Every session sets these statements in a new context — a dart at a dartboard, a car braking, a submarine surfacing, a projectile from a mountain — and this note teaches each statement ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and ==every force named with its owner and direction==.",
       },
       {
         k: "def",
@@ -46,7 +50,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, a bridge on two supports — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, the scales in a lift — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
       {
         k: "tips",
@@ -63,7 +67,6 @@ export const WPH11_TOPICS: Topic[] = [
           "The equations of motion only when acceleration is constant — on a curved slide, switch to energy conservation.",
           "Projectiles: two columns, horizontal a = 0, vertical a = g, time is the bridge.",
           "ΣF = ma with the *resultant* force — draw the free-body diagram first.",
-          "Momentum is conserved in a closed system; say *total*, say *system*, say the condition.",
           "Deduce questions end with a number, a comparison (<, >, =, ≈) and a sentence.",
         ],
       },
@@ -73,6 +76,115 @@ export const WPH11_TOPICS: Topic[] = [
     id: "t02",
     no: "02",
     label: "Topic 2",
+    title: "Moments and momentum",
+    summary:
+      "Newton's third law and the five properties of a force pair, momentum and its conservation in one dimension, then the turning effects — the moment of a force, the centre of gravity and the principle of moments, from a loft ladder to a crane's counterweight — statement by statement, written the way the mark schemes mark it.",
+    /* minutes recalibrated for the split (2026-11-22): statements
+       12–16 at the mechanics words-per-minute rate, the third-law
+       rules leading straight into momentum as the papers pair them */
+    minutes: 18,
+    ao: ["AO1", "AO2", "AO3"],
+    blocks: [
+      {
+        k: "p",
+        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. The situations — two gliders that stick, a spaceship's separating modules, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — are all worked example cards: the question as the paper sets it, the marking points as steps, the answer sealed.",
+      },
+      {
+        k: "def",
+        term: "Momentum",
+        text: "Mass in motion: **p = mv** — a ==vector==, in the direction of the velocity, measured in ==kg m s⁻¹== (equivalently N s). The direction is what the conservation sums lean on: opposite directions carry opposite signs.",
+      },
+      {
+        k: "def",
+        term: "Moment of a force",
+        text: "The turning effect of a force about an axis: **moment = Fx**, with x the ==perpendicular distance== from the axis to the force's ==line of action==. Unit: **N m**.",
+      },
+      {
+        k: "eq",
+        title: "The equations this topic turns on",
+        eq: "p = mv        m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂        moment = Fx",
+        note: "Assign + and − to the two directions ==before== substituting into the conservation equation, and state which way is positive; in the moment equation take x ==perpendicular== to the force — or use the component of the force along the lever. Both habits are the marks the schemes keep awarding.",
+      },
+      {
+        k: "p",
+        text: "The mark schemes' ==rejected wordings== are quoted inside the cards — the *equal and opposite reaction* slogan that scores nothing on its own, the momentum answers that never mention forces — and the Not accepted notes collect the general traps.",
+      },
+      {
+        k: "tips",
+        items: [
+          "The conservation principle is **two marks in one sentence**: ==total momentum before = total momentum after==, ==provided no external resultant force acts on the system== — say both halves when the question asks for the principle in words.",
+          "A third-law pair is checked on **five properties at once**: equal magnitude · opposite directions · same type of force · acting on different bodies · acting at the same time.",
+          "A moments question is a table, not an inspiration: choose the ==pivot==, mark the ==centre of gravity==, list each force's turning direction, write moment = Fx for each, balance.",
+          "The ==limiting case== (toppling, lifting, on the point of sliding) is where the final mark sits: state the comparison first, then the verdict.",
+        ],
+      },
+      {
+        k: "recap",
+        items: [
+          "Momentum is conserved in a closed system; say *total*, say *system*, say the condition.",
+          "Moment = Fx with the ==perpendicular== distance — or F cos θ × d with the force at θ to the lever.",
+          "A uniform beam's weight acts at its ==middle==; the centre of gravity is where the weight *may be taken to act*.",
+          "Starred momentum questions chain: pair rule → resultant → momentum change, with so / because joining the sentences.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "t03",
+    no: "03",
+    label: "Topic 3",
+    title: "Work, energy and power",
+    summary:
+      "The calculation engine of WPH11 — work done at and against the motion, kinetic and gravitational potential energy, the conservation of energy in full chains, power and efficiency, closing with the standing marking rules every WPH11 mark scheme prints — statement by statement, written the way the mark schemes mark it.",
+    /* minutes recalibrated for the split (2026-11-22): statements
+       17–22 at the mechanics words-per-minute rate, carrying the
+       closing "marking rules that never change" group */
+    minutes: 22,
+    ao: ["AO1", "AO2", "AO3"],
+    blocks: [
+      {
+        k: "p",
+        text: "The recurring WPH11 calculation lives here: ==work done== at and against the motion, ==kinetic energy== and ==gravitational potential energy==, ==conservation of energy== chains — a curved slide, a bungee jump, a skydiver's whole fall — then ==power== and ==efficiency==. The question the series keep asking is the same one: ==which number is the useful output==, ==which the total input==, and what happened to the difference. Each situation is a worked example card — the question as the paper sets it, with the paper and question number on it, the marking points as steps and the answer sealed underneath.",
+      },
+      {
+        k: "def",
+        term: "Work done",
+        text: "ΔW = FΔs — the energy transferred when a force moves through a displacement. Only the component ==along the line of motion== counts: at θ to the movement, ΔW = F cos θ × Δs. Unit: **J**.",
+      },
+      {
+        k: "eq",
+        title: "The energy set on the data sheet",
+        eq: "ΔW = FΔs        Ek = ½mv²        ΔEgrav = mgΔh        P = E/t = W/t        efficiency = useful ÷ total",
+        note: "All printed — the marks are in ==choosing==, converting units, and finishing a *deduce* with a comparison and a sentence. The conservation chains add the accounting: the energy lost by one store ==equals== the energy gained by the others.",
+      },
+      {
+        k: "p",
+        text: "The topic closes with ==the marking rules that never change== — the standing rules printed in every WPH11 mark scheme across the series: *use of* marks, ecf, the show-that significant figures, the unit penalty, g = 9.81, the shape of a *deduce* answer and the starred-question structure bands.",
+      },
+      {
+        k: "tips",
+        items: [
+          "Efficiency is a plain decimal (0.28) or a ==percentage== (28 %) — the % symbol is required in percentage form, and an answer above 100 % is an accounting error.",
+          "The waste = (1 − efficiency) × the ==total input==, and the total input = the useful output + the waste — neither goes in the numerator.",
+          "Power is a ==rate==: P = E/t with E in J and t in s. When a force and a speed are both in play, P = Fv.",
+          "*Time from a power* is the rearrangement the papers set — divide the energy by the power, ==don't multiply==.",
+        ],
+      },
+      {
+        k: "recap",
+        items: [
+          "Conservation chains: name the stores, set the losses ==equal== to the gains — a curved slide's speed from height needs no acceleration.",
+          "ΔW = FΔs with the force ==along the motion==; at an angle, F cos θ × Δs.",
+          "Efficiency: useful output ÷ total input — ==which number is the useful one== is the mark.",
+          "Deduce questions end with a number, a comparison and a sentence — always.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "t04",
+    no: "04",
+    label: "Topic 4",
     title: "Materials — fluids, viscosity and elasticity",
     summary:
       "The second half of WPH11: density and upthrust, Stokes' law and the falling-ball viscometer, then Hooke's law, stress, strain and the Young modulus — every graph feature defined, both core practicals in full, and the real questions examiners keep asking.",

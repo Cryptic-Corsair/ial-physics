@@ -1,7 +1,7 @@
 import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
-   WPH11 · Topic 1 Mechanics · Part A (statements 1–7)
+   WPH11 · Topic 1 Forces · Part A (statements 1–7)
    The worked-example register: every situation from the papers is
    presented as a worked example card — the question as the paper
    sets it, with the session and question number stated, the method
@@ -13,6 +13,7 @@ import type { SpecSection } from "../notes-types";
    the WPH11 papers held in research/wph11. Working symbols
    (=, ×, >, <) sit inside the sentences.
    ═══════════════════════════════════════════════════════════════ */
+
 
 export const SECTIONS_PH01_A: SpecSection[] = [
   {
@@ -339,7 +340,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         items: [
           "The change in any vector is itself a vector, found by ==subtraction with signs==: Δv = v~final~ − v~initial~. A car travelling north that slows from +50 m s⁻¹ to +20 m s⁻¹ has changed its velocity by **−30 m s⁻¹** — the change points ==south==, opposite to the motion (WPH11 October 2020, Q4). The printed rationales test each option by adding it to the initial velocity: −30 m s⁻¹ gives the true 20 m s⁻¹ north; the magnitude-only answers give *80 m s⁻¹ N* or *20 m s⁻¹ S*.",
           "Drawn as arrows, the change vector closes the triangle: it runs from the ==tip of the initial== arrow to the ==tip of the final== arrow — the paper sets it with the magnitude unchanged and only the direction turned, which is exactly what the subtraction shows (WPH11 January 2020, Q3).",
-          "The same subtraction with signs is what makes the change-of-momentum sums in statement 14 work — the direction is the physics.",
+          "The same subtraction with signs is what makes the change-of-momentum sums work in the Moments and momentum note (statement 14) — the direction is the physics.",
         ],
       },
     ],

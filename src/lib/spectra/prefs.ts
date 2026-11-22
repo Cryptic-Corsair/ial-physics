@@ -46,15 +46,17 @@ export const IFACE_ORDER: Iface[] = ["gallery", "editorial"];
    A doc id here means the gallery reader may serve it. The dress
    walked the chemistry library one note at a time before the fork
    brought it over; the ledger now carries the whole physics shelf
-   (WPH11's two topics, mark-scheme-wise cut). The gate stays
-   (explicitly, not a wildcard) so a future doc — the Topic 1
-   rebuild in the new register among them — lands on the editorial
-   floor first and joins the gallery only when it is cut for the
-   dress. */
+   (WPH11's four topics — the mechanics split of 2026-11-22 added
+   t02 Moments and momentum and t03 Work, energy and power beside
+   the old two, mark-scheme-wise cut). The gate stays (explicitly,
+   not a wildcard) so a future doc lands on the editorial floor
+   first and joins the gallery only when it is cut for the dress. */
 export const GALLERY_DOCS: ReadonlySet<string> = new Set([
   /* Physics · WPH11 — the mark-scheme-wise notes */
   "wph11-t01",
   "wph11-t02",
+  "wph11-t03",
+  "wph11-t04",
 ]);
 
 /* the candy wheel the site's sections take turns wearing. The full

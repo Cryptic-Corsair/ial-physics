@@ -2,12 +2,18 @@ import type { NotesDoc } from "./notes-types";
 import { SECTIONS_PH01_A } from "./content/notes-ph01-a";
 import { SECTIONS_PH01_B } from "./content/notes-ph01-b";
 import { SECTIONS_PH01_C } from "./content/notes-ph01-c";
+import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH02_A } from "./content/notes-ph02-a";
 import { SECTIONS_PH02_B } from "./content/notes-ph02-b";
 import { NOTES_META } from "./notes-meta";
 
 /* ═══════════════════════════════════════════════════════════════
    the revision-note library
+   The old mechanics note was one doc (wph11-t01, statements 1–22);
+   since the owner's three-way split (2026-11-22) it is three docs
+   — Forces (1–11), Moments and momentum (12–16), Work, energy and
+   power (17–22) — with Materials (23–32) the fourth. The docs'
+   sections moved untouched; only the doc wrappers are new.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -20,27 +26,67 @@ export const NOTES_DOCS: NotesDoc[] = [
     id: "wph11-t01",
     unitCode: "WPH11",
     topicId: "t01",
-    kicker: "Physics Unit 1 · Mechanics — the complete WPH11 note, statement by statement",
-    title: "Forces, motion and energy",
+    kicker: "Physics Unit 1 · Forces — the WPH11 note, statement by statement",
+    title: "Forces",
     source:
-      "the complete WPH11 Mechanics note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 Forces note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
     intro: [
       {
         k: "p",
-        text: "WPH11/01 is the scenario paper: the same 22 specification statements, set each session in a new context — a bungee jump, a crane, a submarine, a bascule bridge. This note teaches every statement of Mechanics in specification order, written ==the way the mark schemes mark it==: the ==equation is stated first== and then unpacked in a sentence, the working symbols — =, ×, >, < — sit inside the sentences, and every force is named with its owner and its direction. The sections cover the ==equations of motion== and the three ==motion graphs==, ==vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's laws== and ==terminal velocity==, ==momentum==, ==moments==, then ==work, energy, power and efficiency==.",
+        text: "Forces opens the mechanics half of WPH11. The sections run in specification order: the ==equations of uniformly accelerated motion==, ==reading and drawing the three motion graphs== and what their ==slopes and areas== give, ==scalars and vectors== resolved and combined, ==projectiles== with their two independent columns, ==free-body diagrams==, ==Newton's second law== (ΣF = ma) with the ==first law== and ==terminal velocity==, ==weight== and ==gravitational field strength==, and ==Core Practical 1==, the acceleration of free fall. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and every force named with its owner and its direction.",
       },
       {
         k: "p",
-        text: "Each situation from the papers — a dart at a dartboard, a trampolinist's push, a bridge on two supports — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the note closes with ==the marking rules that never change== from one series to the next.",
+        text: "Each situation from the papers — a dart at a dartboard, a car braking, the scales in a lift, a projectile from a mountain — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the method ruled out one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
     ],
-    sections: [...SECTIONS_PH01_A, ...SECTIONS_PH01_B, ...SECTIONS_PH01_C],
+    sections: [...SECTIONS_PH01_A, ...SECTIONS_PH01_B],
   },
   {
     id: "wph11-t02",
     unitCode: "WPH11",
     topicId: "t02",
-    kicker: "Physics Unit 1 · Materials — the complete WPH11 note, statement by statement",
+    kicker: "Physics Unit 1 · Moments and momentum — the WPH11 note, statement by statement",
+    title: "Moments and momentum",
+    source:
+      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+    intro: [
+      {
+        k: "p",
+        text: "This note covers the five statements from ==Newton's third law== to the ==principle of moments==, in specification order: the ==force-pair rules== and their five properties, ==momentum== defined as p = mv, the ==principle of conservation of linear momentum== — related to ==Newton's laws of motion==, exactly as the statement asks — and its application in one dimension, then the ==moment of a force==, the ==centre of gravity== of an extended body and the ==principle of moments== in equilibrium. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and every force named with its owner and its direction.",
+      },
+      {
+        k: "p",
+        text: "Each situation — two gliders that collide and stick, a spaceship's separating modules, a stone on a step, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the marking points as steps, and the answer sealed underneath. The mark schemes' ==rejected wordings== — the *equal and opposite reaction* slogan, the conservation answers that never mention forces — are quoted inside the cards.",
+      },
+    ],
+    sections: [...SECTIONS_PH01_C],
+  },
+  {
+    id: "wph11-t03",
+    unitCode: "WPH11",
+    topicId: "t03",
+    kicker: "Physics Unit 1 · Work, energy and power — the WPH11 note, statement by statement",
+    title: "Work, energy and power",
+    source:
+      "the WPH11 Work, energy and power note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+    intro: [
+      {
+        k: "p",
+        text: "This note covers the six calculation statements of WPH11 mechanics, in specification order: ==work done== (ΔW = FΔs, including when the force is not along the line of motion), ==kinetic energy==, ==gravitational potential energy==, the ==principle of conservation of energy== with ==work done==, ==ΔEgrav== and ==ΔEk== in full chains, ==power==, and ==efficiency==. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, >, < — inside the sentences, and the ==stores== the principle transfers between — kinetic, gravitational, elastic, thermal — with the dissipated share always accounted.",
+      },
+      {
+        k: "p",
+        text: "Each situation — a box pulled by a rope, a cyclist climbing a hill, a truck and an escape lane, a hydroelectric station, a bungee jump, a BMX track, a car's regenerative braking — is presented as ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, the marking points as steps, and the answer sealed underneath. The note closes with ==the marking rules that never change== — the standing rules printed in every WPH11 mark scheme, from *use of* marks and ecf to the starred-question structure bands.",
+      },
+    ],
+    sections: [...SECTIONS_PH01_D],
+  },
+  {
+    id: "wph11-t04",
+    unitCode: "WPH11",
+    topicId: "t04",
+    kicker: "Physics Unit 1 · Materials — the WPH11 note, statement by statement",
     title: "Materials — fluids, viscosity and elasticity",
     source:
       "the complete WPH11 Materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
