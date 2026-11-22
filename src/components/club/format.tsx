@@ -10,6 +10,14 @@ import katex from "katex";
    a formula are safe. Named <TeX/> — <Math/> would shadow the
    global Math object inside every client file that imports it.
 
+   A "\n" in the source text becomes a line break. No note prose
+   carries one — the one place they appear by design is a worked
+   card's question, set out the way the paper sets it: the scenario,
+   then each part on its own line with its mark count, the paper
+   and question number underneath (owner instruction, 2026-11-23).
+   Tokens never span a line break, so splitting is safe before the
+   markup scan.
+
    Plus plural() — the count-word helper the hero stat lines share
    ("1 diagram", not "1 diagrams").
    ═══════════════════════════════════════════════════════════════ */
@@ -32,7 +40,13 @@ export function TeX({ tex, block = false }: { tex: string; block?: boolean }) {
 }
 
 export function Fmt({ text }: { text: string }) {
-  return <>{parse(text)}</>;
+  if (!text.includes("\n")) return <>{parse(text)}</>;
+  const out: ReactNode[] = [];
+  text.split("\n").forEach((line, i) => {
+    if (i > 0) out.push(<br key={`br-${i}`} />);
+    out.push(...parse(line, `f${i}`));
+  });
+  return <>{out}</>;
 }
 
 function parse(text: string, keyPrefix = "f"): ReactNode[] {
@@ -93,5 +107,5 @@ export function fmtPlain(text: string): string {
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/==([^=]+)==/g, "$1")
     .replace(/~([^~]+)~/g, "$1")
-    .replace(/\^([^^]+)\^/g, "$1");
+    .replace(/\^([^\^]+)\^/g, "$1");
 }
