@@ -135,6 +135,53 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["a–t: any value above zero", "velocity still increasing — even while acceleration itself falls"],
         ],
       },
+      { k: "h", text: "Building one graph from another" },
+      {
+        k: "steps",
+        caption: "The conversion method",
+        items: [
+          {
+            title: "Pick the direction",
+            text: "s–t to v–t and v–t to a–t read ==gradients==: the gradient at each stage of the source graph becomes a value on the target graph. v–t to s–t and a–t to v–t read ==areas==: the area under each phase becomes a value on the target graph. Converting s–t to a–t needs both steps, through the v–t graph.",
+          },
+          {
+            title: "Split the journey into phases",
+            text: "Cut the source graph where its shape changes. Each phase is one segment of the target graph, and the phase boundaries are the points that must agree across both graphs.",
+          },
+          {
+            title: "Read each phase",
+            text: "Find the gradient (or the area) of each phase ==with its sign==. Constant acceleration on the source graph means the target segment is ==straight==; where the source curve bends, the target gradient itself changes.",
+          },
+          {
+            title: "Plot and join",
+            text: "Plot one point per phase boundary on the target axes, join the segments in order, and label both axes with the quantity and the unit. Check the ==intercept== (the value at t = 0) and that nothing changes instantly where it must not.",
+          },
+        ],
+      },
+      {
+        k: "bullets",
+        items: [
+          "The v–t intercept is the ==initial velocity==; on the s–t graph it is the gradient at t = 0.",
+          "Displacement ==cannot change instantly== — an s–t graph never jumps vertically. Velocity can reverse in a negligible time: at a bounce the v–t line swings from one side of the axis to the other almost vertically.",
+          "A dropped-then-rebounding ball on a v–t graph: the fall and the rebound sit on ==opposite sides of the time axis==, and their areas compare where the ball ends up — ==equal areas== return the ball to its starting height, ==unequal areas== leave it above or below it (WPH11 October 2020, Q9).",
+          "Straight segments on an s–t graph claim ==constant velocity==, which a ball in free flight never has — the s–t graph of a bouncing ball is curved on both sides of the bounce (the printed rejection of the straight-line options: *lines straight, indicating no change in velocity*, WPH11 October 2020, Q10).",
+          "A ball thrown straight up has ==a = g downwards for the whole flight==: its a–t graph is one flat line below the time axis — at the highest point the velocity is zero but the acceleration is not (WPH11 January 2023, Q7).",
+        ],
+      },
+      {
+        k: "worked",
+        title: "Building the velocity-time graph",
+        question:
+          "A man dives from a platform into a swimming pool. The platform is 12 m above the water surface. The graph shows the vertical displacement of the man from the water surface, after leaving the platform. (a) (i) State how the graph shows that the man's initial vertical velocity is zero. (1) (ii) Determine the vertical velocity of the man as he enters the water. (2) (b) Before entering the water, the man has a constant vertical acceleration. After entering the water, the man has a constant vertical deceleration. Draw the velocity-time graph for the man on the axes below. (2) — *WPH11 June 2023, Q12*",
+        steps: [
+          "(a)(i) The ==gradient at t = 0 is zero==: the tangent at the start is horizontal, and the gradient of a displacement-time graph is the velocity. *The printed mark: (initial) gradient = 0 or tangent horizontal (at t = 0).*",
+          "(a)(ii) Draw the tangent ==where the displacement crosses zero==, at the water surface, and read its gradient: **14 m s⁻¹ downwards** — the printed answer is *(−)14 ± 1 m s⁻¹ by graphical method*, the negative sign labelling the downward direction. A suvat calculation with the height ==read from the graph== and a = ±g scores the same two marks.",
+          "(b) The source graph's gradients become the target graph's values: before the water the vertical acceleration is constant (free fall), so the v–t graph is a ==straight line from 0 at t = 0 to −14 m s⁻¹ at 1.5 s== — its gradient is the acceleration, ==g== downwards.",
+          "In the water the deceleration is constant, so a ==second straight line== carries the velocity from −14 m s⁻¹ back to zero at 2.1 s. *The printed marks: straight line from 0 to (1.5, − magnitude from (a)(ii)); second straight line from end of first line to (2.1, 0.0)* — and ==lines beyond 2.1 s are ignored==.",
+          "The conversion discipline the card enacts: ==never copy the source graph's shape== — read its gradient at the start and at each phase boundary, plot those values on the target axes, and join them with the correct straight segments.",
+        ],
+        answer: "(a)(ii) 14 m s⁻¹ downwards · (b) straight from 0 to −14 m s⁻¹ at 1.5 s, then straight back to 0 at 2.1 s",
+      },
       { k: "h", text: "A ball falling through a liquid" },
       {
         k: "bullets",
@@ -183,6 +230,13 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         ],
       },
       {
+        k: "bullets",
+        items: [
+          "A ==tangent== gives the ==instantaneous== value; a ==chord== gives the ==average==: the average velocity over an interval is the displacement between the two times divided by the time interval — *the displacement at 4 hours divided by a time of 4 hours* (WPH11 October 2024, Q3). The paper's rejected options are exactly the two tangent gradients offered as averages.",
+          "The same chord reading gives the ==average acceleration==: the change in velocity divided by the time it took, Δv ÷ Δt, read between two times on the v–t graph (WPH11 January 2024, Q16 — the average acceleration of a skittle during its collision, 86 m s⁻²).",
+        ],
+      },
+      {
         k: "worked",
         title: "Tangents to a curve",
         question:
@@ -220,7 +274,7 @@ export const SECTIONS_PH01_A: SpecSection[] = [
       {
         k: "def",
         term: "Scalar",
-        text: "A quantity with ==magnitude only==: distance, speed, mass, energy, work done, power, density, time, temperature.",
+        text: "A quantity with ==magnitude only==: distance, speed, mass, energy, work done, power, density, time, temperature, efficiency.",
       },
       {
         k: "def",
@@ -238,7 +292,24 @@ export const SECTIONS_PH01_A: SpecSection[] = [
           ["momentum", "kinetic energy"],
           ["moment of a force (it has a direction of turning)", "work done"],
           ["gravitational field strength", "density, time, temperature"],
-          ["—", "strain, stress, Young modulus"],
+          ["—", "strain, stress, Young modulus, viscosity, efficiency"],
+        ],
+      },
+      {
+        k: "table",
+        caption: "The same units rebuilt from the SI base units",
+        head: ["Quantity", "Unit", "In SI base units"],
+        rows: [
+          ["force, weight, tension", "N", "kg m s⁻²"],
+          ["momentum", "kg m s⁻¹", "kg m s⁻¹"],
+          ["work done, energy", "J", "kg m² s⁻²"],
+          ["power", "W", "kg m² s⁻³"],
+        ],
+      },
+      {
+        k: "bullets",
+        items: [
+          "Build the base-unit forms by substitution: N = kg m s⁻², so J = N m = kg m s⁻² × m = **kg m² s⁻²**, and W = J ÷ s = **kg m² s⁻³**. The paper asks it directly — *Which of the following quantities has the SI base units kg m² s⁻³?* is ==power== — and rejects each wrong option by writing its base units: force kg m s⁻², momentum kg m s⁻¹, work done kg m² s⁻² (WPH11 January 2020, Q1).",
         ],
       },
       {
@@ -261,6 +332,15 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         k: "note",
         label: "Not accepted",
         text: "*Speed* written for *velocity*, or *distance* for *displacement* — the direction is the whole distinction, and the multiple-choice options rely on it.",
+      },
+      { k: "h", text: "The change in a vector" },
+      {
+        k: "bullets",
+        items: [
+          "The change in any vector is itself a vector, found by ==subtraction with signs==: Δv = v~final~ − v~initial~. A car travelling north that slows from +50 m s⁻¹ to +20 m s⁻¹ has changed its velocity by **−30 m s⁻¹** — the change points ==south==, opposite to the motion (WPH11 October 2020, Q4). The printed rationales test each option by adding it to the initial velocity: −30 m s⁻¹ gives the true 20 m s⁻¹ north; the magnitude-only answers give *80 m s⁻¹ N* or *20 m s⁻¹ S*.",
+          "Drawn as arrows, the change vector closes the triangle: it runs from the ==tip of the initial== arrow to the ==tip of the final== arrow — the paper sets it with the magnitude unchanged and only the direction turned, which is exactly what the subtraction shows (WPH11 January 2020, Q3).",
+          "The same subtraction with signs is what makes the change-of-momentum sums in statement 14 work — the direction is the physics.",
+        ],
       },
     ],
   },
@@ -383,6 +463,13 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         ],
         answer: "2600 N (2550 N to 2650 N)",
       },
+      {
+        k: "bullets",
+        items: [
+          "Two ==equal== forces F with an angle θ ==between them== give a resultant of **2F cos(θ ÷ 2)** acting along the ==bisector== of the angle: halve the printed angle before applying the cosine. A cable tension of 1200 N meeting at 144° at a wheel: R = 2 × 1200 × cos 72° = 742 N ≈ **740 N** (WPH11 June 2024, Q19).",
+          "The equilibrium cards in statement 5 run the same trigonometry in reverse — there the two tensions must produce a resultant that cancels the weight, so the same halved-angle formula gives 2T cos(θ ÷ 2) = W with θ the angle ==between== the two tensions.",
+        ],
+      },
     ],
   },
   {
@@ -406,6 +493,13 @@ export const SECTIONS_PH01_A: SpecSection[] = [
         kind: "ph-projectile",
         caption:
           "The path of a projectile launched at 40°: the horizontal velocity never changes, the vertical velocity loses g every second, and only time belongs to both columns.",
+      },
+      {
+        k: "bullets",
+        items: [
+          "At the ==highest point== the vertical velocity is ==zero== — and the vertical acceleration is still ==g downwards==. The fact unlocks the show-thats that build a launch speed from a maximum height: v² = u~V~² − 2gΔh with v = 0 gives u~V~ = √(2gΔh), and then u = u~V~ ÷ sin θ (WPH11 January 2021, Q13 — a ball kicked so that it reaches 5.0 m at 35°: u~V~ = √(2 × 9.81 × 5.0) = 9.90 m s⁻¹, u = 9.90 ÷ sin 35° ≈ **17 m s⁻¹**).",
+          "==Only the vertical column stops== at the top: the horizontal velocity never changes, so the horizontal column has no highest-point event at all.",
+        ],
       },
       {
         k: "worked",

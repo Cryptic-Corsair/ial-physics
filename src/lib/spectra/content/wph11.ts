@@ -16,11 +16,12 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Forces, motion and energy",
     summary:
       "The whole of WPH11 mechanics — motion graphs and the equations of motion, vectors and projectiles, Newton's laws and terminal velocity, momentum, moments, work, energy and power — statement by statement, written the way the mark schemes mark it.",
-    /* minutes rescaled for the scenario rebuild (2026-11-22): the
-       restored worked chains grew the note by about a third, and
-       the topic's own words-per-minute calibration puts the read
-       near an hour and a quarter */
-    minutes: 75,
+    /* minutes rescaled twice (2026-11-22): the scenario rebuild grew
+       the read to about an hour and a quarter, and the paper-gap
+       closure (the graph-conversion group, the lift cards and the
+       mark-scheme convention additions) adds about five minutes
+       more at the topic's words-per-minute calibration */
+    minutes: 80,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
@@ -75,11 +76,11 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Materials — fluids, viscosity and elasticity",
     summary:
       "The second half of WPH11: density and upthrust, Stokes' law and the falling-ball viscometer, then Hooke's law, stress, strain and the Young modulus — every graph feature defined, both core practicals in full, and the real questions examiners keep asking.",
-    /* minutes scaled with the register rebuild (2026-11-22):
-       the mark-scheme wording and examiner-report notes and the
-       kept derivations add a reading step, without the ropes
-       duplication */
-    minutes: 65,
+    /* minutes scaled with the register rebuild and the paper-gap
+       closure (2026-11-22): the wording notes, kept derivations
+       and the drag-direction, measuring and unloading corrections
+       add a small reading step */
+    minutes: 66,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {

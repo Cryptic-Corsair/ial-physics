@@ -100,6 +100,8 @@ export const SECTIONS_PH01_B: SpecSection[] = [
         items: [
           "Treating the thrust of an engine as the resultant ignores the weight and the drag that act alongside it.",
           "ΣF = ma applies to the ==whole system==: a car plus its passengers accelerates as one body, so the total mass comes from ΣF ÷ a.",
+          "For a vehicle ==driven by its wheels==, the friction of the road on the tyres points ==forwards== — it ==is== the driving force, and the drag acts backwards (WPH11 June 2021, Q3). Constant velocity still means the two cancel: a zero resultant does not mean zero friction.",
+          "A load hung from a ==moving pulley== is carried by ==two segments of the same rope==, so the tension in the rope is the load ÷ 2 — the printed factor of 2 (WPH11 June 2021, Q17: F = 5000 ÷ 2 = 2500 N). The free end of the rope then moves ==twice== the distance the load moves: the force halves because the distance doubles, and the work checks out either way.",
         ],
       },
       {
@@ -139,6 +141,21 @@ export const SECTIONS_PH01_B: SpecSection[] = [
           "*Examiner's report:* *Some candidates added the mass of the car to the total mass rather than subtracting, and some did not attempt to subtract the mass of the car at all.*",
         ],
         answer: "150 kg",
+      },
+      {
+        k: "worked",
+        title: "The scales in a lift",
+        question:
+          "A student of weight 600 N is standing on weighing scales in a lift. The scales are calibrated to give readings in newtons. The lift moves upwards at constant velocity, then decelerates to rest. As the lift moves, the student looks at the readings on the scales. Explain the readings on the scales. (6) — *WPH11 January 2022, Q14* (starred)",
+        steps: [
+          "The reading on the scales is the ==force of the scales on the student== — the normal contact force — *the printed first point: the force of the lift/scales on the student is the reading on the scales*. The reading equals the weight only when the vertical acceleration is zero.",
+          "At constant velocity the resultant force on the student is zero, so the contact force ==equals the weight==: the reading is **600 N** — *and at rest it would read 600 N too.*",
+          "While the lift decelerates, the velocity points up and the deceleration points ==down==: the resultant force on the student acts ==downwards==.",
+          "So the weight is the larger force: W − R = ma with R the contact force, giving R < W — *the printed points: as the lift decelerates the reaction is less than weight; there is a resultant downward force; the reading will be less than 600 N because the upward force on the student is less than his weight.*",
+          "The ==starred== marking: six indicative points earn four IC marks, and the last two marks pay for ==structure with linkages== — *coherent and logical structure with linkages and fully sustained lines of reasoning demonstrated throughout* scores the top band; a list of unconnected points does not. Chain the sentences: as the lift decelerates, the resultant force is downwards, so the reading falls below 600 N.",
+          "Run the same chain the other way and the reading rises: accelerating upwards, or decelerating while moving downwards, makes the contact force ==greater== than the weight.",
+        ],
+        answer: "600 N at constant velocity (and at rest); below 600 N while the lift decelerates upwards",
       },
       { k: "h", text: "Terminal velocity" },
       {
@@ -279,6 +296,10 @@ export const SECTIONS_PH01_B: SpecSection[] = [
             title: "Double the gradient",
             text: "Gradient × 2 = g. A line through (0.060 s², 0.30 m) has gradient 0.30 ÷ 0.060 = 5.0 m s⁻² per s², so g = **10.0 m s⁻²** (printed range 9.8 to 10.1).",
           },
+          {
+            title: "Convert a photograph",
+            text: "Measurements made ==on a printed photograph== are converted with the ==printed scale== before any use: a 6.2 cm separation on the magnified picture is a real fall of 6.2 ÷ 1.8 = 3.4 cm (WPH11 January 2020, Q16).",
+          },
         ],
       },
       {
@@ -343,17 +364,18 @@ export const SECTIONS_PH01_B: SpecSection[] = [
       {
         k: "def",
         term: "Newton's third law pair",
-        text: "When body A exerts a force on body B, body B exerts a force on body A that is ==equal in magnitude, opposite in direction, of the same type==, and ==acts on the other body==. Two forces failing any one property are not a pair.",
+        text: "When body A exerts a force on body B, body B exerts a force on body A that is ==equal in magnitude, opposite in direction, of the same type==, ==acts on the other body==, and ==acts at the same time== — the pair forms together and disappears together. Two forces failing any one property are not a pair.",
       },
       {
         k: "table",
-        caption: "The four properties of a third-law pair",
+        caption: "The five properties of a third-law pair",
         head: ["Property", "The wording that loses the mark"],
         rows: [
           ["Equal magnitude", "'equal and opposite reaction' — name the magnitudes, not the slogan"],
           ["Opposite directions", "'the same but opposite force' is ambiguous — same type? same size?"],
           ["Same type of force", "weight (gravitational) vs normal contact force are different types"],
           ["Act on different bodies", "both acting on the same object disqualifies the pair"],
+          ["Act at the same time", "one force cannot act without the other — they begin and end together (WPH11 June 2023, Q5)"],
         ],
       },
       {

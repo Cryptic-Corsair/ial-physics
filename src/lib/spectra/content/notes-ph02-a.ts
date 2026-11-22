@@ -265,6 +265,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
           "The boat must displace more water so that the upthrust on it still = the weight of the boat (**U = W**), so the boat sits lower.",
           "Emptying the tanks does the reverse: the weight falls, so a smaller displaced volume balances it, and the boat rises in the water.",
           "The centre of gravity of the displaced water moves lower, which makes the boat more stable.",
+          "The trade the other way: a ballasted boat sits deeper, so a ==greater area of hull== is in contact with the water and the ==drag on it is greater== — the stability is bought with extra resistance (WPH11 October 2019, Q14).",
         ],
       },
       { k: "h", text: "An iceberg" },
@@ -302,7 +303,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "def",
         term: "Viscosity",
-        text: "A fluid's resistance to flow, measured in **Pa s**. As the temperature of a liquid increases, the viscosity of the liquid decreases; as the temperature decreases, the viscosity increases.",
+        text: "A fluid's resistance to flow, measured in **Pa s**. As the temperature of a liquid increases, the viscosity of the liquid decreases; as the temperature decreases, the viscosity increases. Viscosity is a ==scalar== — a resistance to flow has no direction (WPH11 January 2021, Q8).",
       },
       {
         k: "bullets",
@@ -420,7 +421,7 @@ export const SECTIONS_PH02_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The drag on an object always acts in the direction opposite to its motion: downwards on a falling object, upwards on a rising object.",
+          "The drag on an object always acts in the direction opposite to its motion: ==upwards== on a falling object, ==downwards== on a rising object.",
           "A rising object at terminal velocity has zero resultant force: the upthrust on it = the weight of the object + the drag on it (**U = W + D**).",
           "The upthrust on a rising object is therefore greater than its weight.",
           "A rising bubble has the upthrust acting upwards and the drag acting downwards on it; the weight of the bubble is negligible.",

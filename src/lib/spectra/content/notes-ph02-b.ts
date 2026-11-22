@@ -151,7 +151,8 @@ export const SECTIONS_PH02_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Measure the diameter with a ==micrometer screw gauge== (or digital callipers), at several positions along the wire and in several orientations, then average before computing the area.",
+          "Measure the diameter with a ==micrometer screw gauge== (or digital callipers), at several positions along the wire and in several orientations, then average before computing the area. A ==vernier calliper is not accepted== for the diameter — the printed answer names *micrometer (screw gauge) or digital (not Vernier) calliper(s)*: its 0.1 mm resolution is too coarse for a wire (WPH11 January 2021, Q16). The vernier ==scale== in the next bullet is a different tool — it reads the extension against a rule, not the diameter.",
+          "Discard ==anomalous readings== before averaging — one mis-read diameter dragged into the mean corrupts the area and every stress behind it (*the anomalous point has not been ignored* is a printed rejection, WPH11 October 2019, Q3).",
           "A vernier scale has a better resolution (0.1 mm) than a millimetre rule, so the percentage uncertainty in the reading is smaller.",
           "Reduce parallax: place the rule against the wire, use a set square between the rule and the wire, and read at right angles to the scale.",
         ],
@@ -213,7 +214,7 @@ export const SECTIONS_PH02_B: SpecSection[] = [
           "The work done stretching a sample = the area under the force-extension graph, and that area = the elastic strain energy stored.",
           "Unloaded from within the elastic region, the unloading line ==retraces== the loading line, so all the stored energy comes back.",
           "Unloaded from beyond the elastic limit, the unloading line runs ==parallel to the loading line== and meets the extension axis at a positive value: that intercept = the permanent extension, and the area between the two lines = the energy that does not come back (for a rubber band, the mark scheme words it as the energy causing heating).",
-          "Loading and unloading curves drawn with different gradients mean the ==stiffness of the object== has changed.",
+          "Loading and unloading curves drawn with different gradients mean the ==stiffness of the object== has changed — *the printed answer: the spring constant/stiffness (not Young modulus) is smaller or has changed; do not allow greater stiffness* (WPH11 October 2020, Q16). A spring stretched beyond its elastic limit can keep a permanently different stiffness, which is why the unloading gradient moves.",
           "If the original length was forgotten when plotting, the graph keeps the same shape but starts at a positive extension.",
           "On a force-length graph, convert to extension before using it: for a force rising from zero to R while the length goes from p to q, the work done = ½ × R × (q − p).",
           "Convert the graph axes to SI units before estimating an area.",
@@ -222,7 +223,7 @@ export const SECTIONS_PH02_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "“A greater Young modulus” as the reason for a changed gradient: the Young modulus belongs to the ==material== and has not changed. And *elastic* means the sample ==returns to its original length after the load is removed==: writing only that the material “stops behaving elastically” does not score (examiner report).",
+        text: "“A greater Young modulus” as the reason for a changed gradient: the Young modulus belongs to the ==material== and has not changed. The same rejection bites when the Young modulus really has changed: when a question asks ==why a treatment helps a material==, answer in stiffness, flexibility or breaking-stress language — *the concrete is less flexible or the concrete is stiffer (do not accept a greater Young modulus)* (WPH11 January 2019, Q17). And *elastic* means the sample ==returns to its original length after the load is removed==: writing only that the material “stops behaving elastically” does not score (examiner report).",
       },
     ],
   },

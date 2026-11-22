@@ -320,6 +320,13 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         note: "When the mass appears on both sides of a chain it cancels: the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass==.",
       },
       {
+        k: "bullets",
+        items: [
+          "When the stem does ==not== say that resistive forces are ignored, a complete explanation still states the assumption: ==work done against resistive forces is negligible== — it is the printed final marking point of the mass-independence chain (WPH11 June 2024, Q19).",
+          "Energies from separate stages ==combine; speeds do not==. Speeds combine only through their ==squares==: v² = u² + 2gΔh uses the height difference directly, while v₁ − v₂ subtracts two separate fall speeds and answers a different question — the paper's own rejected options are exactly those speed differences (WPH11 October 2020, Q3).",
+        ],
+      },
+      {
         k: "worked",
         title: "A curved slide",
         question:
@@ -357,6 +364,20 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Name the force doing the work and the store the energy lands in — that naming is the marking point. *Examiner's report: many responses ended up describing or explaining how the forces on the skydiver varied, rather than explaining how conservation of energy applied. Some candidates just stated the law of conservation of energy, without applying this to the skydiver.*",
         ],
         answer: "Egrav falls throughout · Ek rises, then constant at terminal velocity · dissipated by work done against drag",
+      },
+      {
+        k: "worked",
+        title: "A lift and its counterweight",
+        question:
+          "The diagram shows a lift system for moving people up and down a tall building. There is a counterweight to balance the weight of the lift. An electric motor is used to raise and lower the lift. (a) Explain how the counterweight affects the amount of work required from the electric motor to raise the lift. (2) (b) The electric motor raises the lift through a height of 40.0 m in a time of 30.0 s. Show that the output power of the electric motor is about 12 kW. total mass of lift and people = 2 250 kg, mass of counterweight = 1 300 kg (4) — *WPH11 January 2022, Q12*",
+        steps: [
+          "(a) As the lift rises, the counterweight ==descends== and transfers its stored gravitational potential energy ==to the lift side== of the system — *the printed points: the amount of work from the electric motor is reduced; because there is energy transfer between the counterweight and the lift* (or *the counterweight reduces the force required from the motor*).",
+          "(b) Two gravitational energy changes share the same 40.0 m: the lift gains ΔEgrav = 2250 × 9.81 × 40.0 = 8.829 × 10⁵ J while the counterweight loses ΔEgrav = 1300 × 9.81 × 40.0 = 5.101 × 10⁵ J — *use of ΔEgrav = mgΔh* on ==both== masses is the first marking point.",
+          "The motor supplies only the ==difference==: ΔW = 8.829 × 10⁵ − 5.101 × 10⁵ = 3.728 × 10⁵ J — *use of conservation of energy* is the next marking point.",
+          "P = W ÷ t = 3.728 × 10⁵ ÷ 30.0 = 1.243 × 10⁴ W ≈ **12 kW** — *use of P = W/t* then the answer. The lift alone would have needed 8.829 × 10⁵ ÷ 30.0 ≈ 29 kW; the counterweight's contribution brings the motor down to ≈ 12 kW.",
+          "The alternative printed route works through forces: the motor's force = (m~lift~ − m~cw~)g = (2250 − 1300) × 9.81 = 9319.5 N, then ΔW = FΔx = 9319.5 × 40.0 = 3.728 × 10⁵ J and the same power — *the scheme allows: calculates resultant force; use of ΔW = FΔx; use of P = W/t*.",
+        ],
+        answer: "(a) the descending counterweight transfers energy to the lift, so the motor's work is reduced · (b) 12.4 kW ≈ 12 kW",
       },
     ],
   },
@@ -502,6 +523,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           ["Units", "A missing or wrong unit on a final answer normally loses that answer's mark (once per question; never in show-that). Strain has no unit."],
           ["g", "Use 9.81 (9.8 accepted); g = 10 costs one mark, once per paper."],
           ["Deduce questions", "Calculate, compare with the question's value (<, >, =, ≈), and state the conclusion in words. The bare number never earns the final mark."],
+          ["Starred (*) questions", "The final marks pay for structure: *coherent and logical structure with linkages and fully sustained lines of reasoning demonstrated throughout* scores the top band; *partially structured with some linkages* scores the middle. Chain the points with so / because / therefore — the lift-scales card in statement 9 shows the shape."],
           ["Reverse working", "Full credit on 2-mark show-thats; capped at 2 of 3 on 3-mark ones."],
           ["Bald correct answers", "Full marks — except in show-that and extended calculations, where working is the marks."],
         ],
