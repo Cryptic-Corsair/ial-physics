@@ -2,18 +2,17 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part A (statements 23–24)
-   The rebuilt fluids note, polished after the owner's review
-   (2026-11-23): the subheadings name the physics or the scenario,
-   the way the old approved note did; every scenario from the
-   papers is described first as teaching — the balance, the
+   The rebuilt fluids note, condensed after the owner's review
+   (2026-11-23): the same teaching — the equation first, every
+   scenario described before its cards (the balance, the
    hydrometer, the two submarines, the diver, the thermometer, the
-   ballast tanks, the iceberg — and the worked example cards sit
-   together at the end of each spec section, collapsed until
-   clicked. Register: short sentences, one idea per bullet, at
-   most two linked facts per line, workings set out line by line
-   and typeset in KaTeX ($…$). Mark scheme and examiner-report
-   wordings are quoted verbatim (verified against research/wph11
-   by scripts/t04-quotes.ts; every number re-computed by
+   ballast tanks, the iceberg), the worked example cards grouped
+   and folded at the end of each spec section — with every bullet
+   cut to one idea, the repeated warnings said once (the calliper
+   measures a diameter; the density inside the upthrust is the
+   fluid's), and the three density comparisons set as a table.
+   Mark scheme and examiner-report wordings stay quoted verbatim
+   (scripts/t04-quotes.ts; every number re-computed by
    scripts/t04-numbers.ts). The old part files stay on disk
    untouched, no longer imported; the elasticity statements (27–32)
    leave the page until their own rebuild, as the owner set aside
@@ -29,15 +28,15 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "eq",
         eq: "$\\rho = \\dfrac{m}{V}$",
-        note: "The density of a sample = its mass ÷ its volume. Check the units before substituting: mass in kg, volume in m³, density out in kg m⁻³.",
+        note: "Density = mass ÷ volume. Check the units before substituting: mass in kg, volume in m³, density out in kg m⁻³.",
       },
       {
         k: "bullets",
         items: [
-          "Density is a property of the ==material==. The same material has the same density at any size or shape (WPH11 January 2021, Q5).",
-          "The unit is **kg m⁻³**. Convert g cm⁻³ to kg m⁻³ by × 1000.",
-          "Water is the anchor: $1000\\ \\text{kg m}^{-3}$, which is $1\\ \\text{g cm}^{-3}$.",
-          "If the question gives a weight, find the mass first: $m = W \\div g$ (WPH11 June 2021, Q2).",
+          "Density belongs to the ==material==: same material, any size or shape, same density (WPH11 January 2021, Q5).",
+          "The unit is **kg m⁻³**; g cm⁻³ × 1000.",
+          "Water anchors the scale: $1000\\ \\text{kg m}^{-3}$, which is $1\\ \\text{g cm}^{-3}$.",
+          "Given a weight, find the mass first: $m = W \\div g$ (WPH11 June 2021, Q2).",
         ],
       },
       {
@@ -56,47 +55,41 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Sense-check every calculated density against the table: $0.001\\ \\text{kg m}^{-3}$ or $100\\,000\\ \\text{kg m}^{-3}$ for water is a ==power-of-ten slip==, not physics.",
-          "In multiple choice, check the ==units of every option==: the wrong options usually carry the wrong units.",
-          "Measuring the density of a regular solid: measure the mass with a balance, measure the dimensions (the diameter of a sphere with a calliper), then compute the volume from the dimensions.",
-          "Measuring the density of a liquid: measure the mass of a measured volume, then $\\rho = m \\div V$; the volume of a liquid is read from a measuring cylinder.",
+          "Sense-check the answer against the table: $0.001\\ \\text{kg m}^{-3}$ or $100\\,000\\ \\text{kg m}^{-3}$ for water is a ==power-of-ten slip==, not physics.",
+          "In multiple choice, check the ==units of every option== — the wrong options usually carry the wrong units.",
+          "Regular solid: balance for the mass, calliper for the dimensions, volume from the dimensions.",
+          "Liquid: weigh a measured volume, then $\\rho = m \\div V$; read the volume from a measuring cylinder.",
         ],
       },
       { k: "h", text: "Volumes you are asked for" },
       {
         k: "eq",
         eq: "$V = \\tfrac{4}{3}\\pi r^3$        $V = \\pi r^2 L$",
-        note: "The sphere from its radius, the cylinder from its radius and length. A calliper or a micrometer measures a ==diameter== — halve it yourself ($r = d \\div 2$) before cubing.",
+        note: "The sphere from its radius, the cylinder from its radius and length. A calliper measures a ==diameter== — halve it before cubing ($r = d \\div 2$): a diameter used as a radius makes the volume 8 times too big, the recurring examiner-report error.",
       },
       {
         k: "bullets",
         items: [
           "A rectangular block: length × width × height.",
           "Cube questions hide the volume step: a cube of weight $W$ and density $\\rho$ has sides of $\\left(\\dfrac{W}{\\rho g}\\right)^{1/3}$ (WPH11 January 2024, Q8).",
-          "The radius is what gets cubed. A diameter used as a radius makes the volume 8 times too big.",
         ],
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "Reading the calliper or micrometer as if it measured the ==radius==. The instrument measures a diameter; halve it before cubing. Examiner reports name the radius–diameter mix-up as a recurring error.",
       },
       { k: "h", text: "Conversions and flow" },
       {
         k: "bullets",
         items: [
-          "Convert cm³ to m³ by ÷ 1 000 000; convert mm to m by ÷ 1000.",
+          "cm³ → m³ by ÷ 1 000 000; mm → m by ÷ 1000.",
           "Volume per second = mass per second ÷ the density of the fluid.",
-          "Volume per second also = the cross-sectional area × the speed of the flow ($Q = Av$).",
+          "It is also the cross-sectional area × the flow speed: $Q = Av$.",
         ],
       },
       { k: "h", text: "Hollow objects" },
       {
         k: "bullets",
         items: [
-          "The density of an object = its total mass ÷ its total volume.",
+          "An object's density = its total mass ÷ its total volume.",
           "The total volume counts the air inside: a hollow brass cylinder floats even though solid brass sinks (WPH11 January 2022, Q15).",
-          "Every floating argument compares two densities: the object's ==average== density against the fluid's.",
+          "Every floating argument compares the object's ==average== density with the fluid's.",
         ],
       },
       { k: "h", text: "Worked examples" },
@@ -121,7 +114,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "def",
         term: "Upthrust",
-        text: "The upward force a fluid exerts on an object placed in it. Both printed wordings score the definition mark: ==an upwards force caused by the displacement of fluid==, or ==a force equal and opposite to the weight of fluid displaced== (WPH11 October 2023, Q17(a)).",
+        text: "The upward force a fluid exerts on an object placed in it. Either printed wording scores — ==displacement== is the word that carries the mark (WPH11 October 2023, Q17(a)).",
       },
       {
         k: "note",
@@ -133,8 +126,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "bullets",
         items: [
           "The fluid presses on every surface of the object.",
-          "Pressure grows with depth, so the push on the bottom face is greater than the push on the top face.",
-          "The pushes on the sides cancel in pairs.",
+          "Pressure grows with depth: the push on the bottom face beats the push on the top, and the side pushes cancel in pairs.",
           "The leftover push points up — that force ==is== the upthrust.",
           "Every object in a fluid feels it: floating, sinking, or held by a string (WPH11 January 2020, Q19(a)).",
         ],
@@ -142,15 +134,15 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "eq",
         eq: "$U = \\rho_{\\text{fluid}} \\times V_{\\text{disp}} \\times g$",
-        note: "Read the equation as the definition: the upthrust = the weight of the displaced fluid. The density inside is the ==fluid's==. Fully submerged, $V_{\\text{disp}} = V_{\\text{object}}$; floating, it is the ==submerged volume only==.",
+        note: "Read it as the definition: the upthrust = the weight of the displaced fluid, and the density inside is the ==fluid's==. Fully submerged, $V_{\\text{disp}} = V_{\\text{object}}$; floating, the ==submerged volume only==.",
       },
       {
         k: "bullets",
         items: [
-          "The upthrust is decided by the ==fluid== alone: its density, the displaced volume, and nothing else.",
-          "The weight belongs to the ==object==: $W = \\rho_{\\text{object}} \\times V_{\\text{object}} \\times g$.",
-          "The classic slip is the object's density substituted inside the upthrust.",
-          "Changing the fluid changes $U$, never $W$ — and during a fall neither of them changes (WPH11 June 2022, Q2).",
+          "The upthrust is decided by the ==fluid== alone: its density, the displaced volume, nothing else.",
+          "The weight belongs to the ==object==: $W = \\rho_{\\text{object}} V_{\\text{object}} g$.",
+          "The classic slip: the object's density substituted inside the upthrust.",
+          "Change the fluid and $U$ changes, never $W$ — during a fall, neither changes (WPH11 June 2022, Q2).",
           "A temperature change reaches the upthrust only through the density of the fluid (WPH11 January 2020, Q10).",
         ],
       },
@@ -170,14 +162,21 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         note: "The fraction submerged = the density of the object ÷ the density of the fluid — the $g$ cancels. Ice ($917\\ \\text{kg m}^{-3}$ in the printed question) in sea water ($1025\\ \\text{kg m}^{-3}$): 917 ÷ 1025 = 0.89, so about 89% of the berg sits below the surface (WPH11 June 2026 01A, Q19).",
       },
       {
+        k: "table",
+        caption: "Object density against fluid density — what it decides",
+        head: ["The densities", "What happens"],
+        rows: [
+          ["object < fluid", "fraction below 1 — floats with part of it above the surface"],
+          ["object = fluid", "fraction exactly 1 — floats fully submerged"],
+          ["object > fluid", "no displaced volume balances the weight — sinks to the bottom"],
+        ],
+      },
+      {
         k: "bullets",
         items: [
-          "Density of the object < density of the fluid: the fraction is below 1, so the object floats with part of it above the surface.",
-          "Density of the object = density of the fluid: the fraction is exactly 1, so it floats fully submerged.",
-          "Density of the object > density of the fluid: no displaced volume can balance the weight, so it sinks to the bottom.",
           "In a denser liquid the same weight needs a smaller displaced volume, so the object floats ==higher==.",
           "In a less dense liquid it must displace more, so it rides ==lower== (WPH11 June 2024, Q12(b)).",
-          "*Floats lower* is still floating. *Sinks* means dropping to the bottom — keep the two apart.",
+          "*Floats lower* is still floating; *sinks* means dropping to the bottom — keep the two apart.",
         ],
       },
       {
@@ -189,8 +188,8 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "A sphere floating with half its volume submerged has $U = W$: no extra force is needed.",
-          "Pushed fully under, the displaced volume doubles, so the upthrust on it doubles.",
+          "A sphere floating with half its volume submerged has $U = W$: no extra force needed.",
+          "Pushed fully under, the displaced volume doubles, so the upthrust doubles.",
           "The force holding it under = the extra upthrust = $W$ (WPH11 June 2019, Q3).",
         ],
       },
@@ -199,7 +198,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "bullets",
         items: [
           "One upward arrow labelled upthrust (or U), one downward arrow labelled weight (or W or mg).",
-          "Both arrows start from the same point on the object, and the two arrows are drawn the same length.",
+          "Both arrows start from the same point on the object, drawn the same length.",
           "Draw only the forces acting on the object: every extra force arrow loses one mark.",
           "The apparent weight of an object under water = the weight of the object − the upthrust on it ($W_{\\text{app}} = W - U$).",
         ],
@@ -209,11 +208,11 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "bullets",
         items: [
           "The liquid exerts an upthrust on the object, upwards.",
-          "By Newton's third law, the object exerts a force on the liquid that is equal in size and opposite in direction, downwards.",
-          "That extra downward force on the liquid increases the reading on the balance.",
-          "The increase in the balance reading = the weight of the displaced liquid.",
-          "The mass of the displaced liquid = the increase in the balance reading; then $V = m \\div \\rho_{\\text{liquid}}$; then the mass of the object = $\\rho_{\\text{object}} \\times V$.",
-          "If the water is replaced by a lower-density liquid, the upthrust on the object is less, so the downward force of the object on the liquid is less, so the increase in the balance reading is less. The second mark depends on the first.",
+          "By Newton's third law the object pushes the liquid down — equal in size, opposite in direction.",
+          "That extra downward force loads the balance: the reading rises.",
+          "The increase in the reading = the weight of the displaced liquid.",
+          "So: mass of displaced liquid = the increase in the reading, then $V = m \\div \\rho_{\\text{liquid}}$, then mass of object = $\\rho_{\\text{object}} V$.",
+          "Lower-density liquid → less upthrust → less downward push → less increase. The second mark depends on the first.",
         ],
       },
       { k: "h", text: "A hydrometer" },
@@ -222,7 +221,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         items: [
           "A hydrometer floating in a liquid is in equilibrium, so the upthrust on it = its weight ($U = W$).",
           "The weight of the hydrometer is the same in every liquid.",
-          "In a denser liquid, each unit of displaced volume provides a greater weight of displaced liquid, so a smaller displaced volume is enough: the hydrometer floats higher.",
+          "In a denser liquid each unit of displaced volume carries more weight, so a smaller displaced volume balances: the hydrometer floats higher.",
         ],
       },
       {
@@ -234,20 +233,20 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "A submarine underwater is in equilibrium: the upthrust of the seawater on the submarine = the weight of the submarine.",
-          "When the submarine moves into less dense water, the upthrust on it decreases, while the weight of the submarine does not change.",
-          "The resultant force on the submarine now acts downwards, so the submarine begins to sink.",
-          "To hold its depth, the submarine must reduce its weight by pumping water out.",
+          "Underwater and stationary: equilibrium — the upthrust of the seawater = the weight of the submarine.",
+          "Less dense water: the upthrust falls, the weight does not change.",
+          "The resultant force now acts downwards, so the submarine begins to sink.",
+          "To hold its depth it must shed weight — pump water out.",
         ],
       },
       { k: "h", text: "A submarine lifted from the water" },
       {
         k: "bullets",
         items: [
-          "While the submarine is fully underwater, the tension in the crane cable = the weight of the submarine − the upthrust on it ($T = W - U$).",
-          "As the submarine emerges from the water, the submerged volume decreases, so the upthrust on it decreases ($U = \\rho_{\\text{water}} \\times V_{\\text{sub}} \\times g$).",
+          "Fully underwater, the tension in the crane cable = the weight − the upthrust ($T = W - U$).",
+          "As the submarine emerges, the submerged volume shrinks, so the upthrust falls ($U = \\rho_{\\text{water}} V_{\\text{sub}} g$).",
           "The weight of the submarine does not change.",
-          "The tension in the cable therefore increases, until the submarine hangs clear of the water and the tension in the cable = the full weight of the submarine ($T = W$).",
+          "The tension rises until the submarine hangs clear: then $T = W$, the full weight.",
         ],
       },
       {
@@ -264,21 +263,21 @@ export const SECTIONS_PH04_A: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Squeezing the bottle raises the pressure of the water, which forces water into the diver, so the volume of the trapped air decreases.",
-          "The diver now displaces less water, so the upthrust on the diver decreases.",
+          "Squeezing the bottle raises the water's pressure, which forces water into the diver: the volume of trapped air decreases.",
+          "Less displaced water, so the upthrust on the diver decreases.",
           "The weight of the diver does not change.",
-          "When the weight of the diver > the upthrust on the diver, the resultant force on the diver acts downwards.",
-          "The diver therefore accelerates downwards and sinks.",
+          "Now weight > upthrust: a resultant force acts downwards.",
+          "The diver accelerates downwards and sinks.",
         ],
       },
       { k: "h", text: "A Galilean thermometer" },
       {
         k: "bullets",
         items: [
-          "When the temperature of the liquid rises, the liquid expands, so the density of the liquid falls.",
-          "The upthrust on each bulb = the density of the liquid × the volume of the bulb × g, so the upthrust on each bulb falls.",
+          "Warmer liquid expands, so the density of the liquid falls.",
+          "The upthrust on each bulb = the liquid's density × the bulb's volume × g, so the upthrust falls.",
           "The weight of each bulb does not change.",
-          "A bulb for which the weight of the bulb > the upthrust on the bulb now has a resultant force downwards, so that bulb sinks.",
+          "A bulb whose weight > the upthrust on it now has a resultant force downwards: that bulb sinks.",
         ],
       },
       {
@@ -291,19 +290,19 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "bullets",
         items: [
           "Filling the ballast tanks increases the weight of the boat.",
-          "The boat must displace more water so that the upthrust on it still = the weight of the boat ($U = W$), so the boat sits lower.",
-          "Emptying the tanks does the reverse: the weight falls, so a smaller displaced volume balances it, and the boat rises in the water.",
+          "The boat must displace more water for the upthrust to still equal the weight: it sits lower.",
+          "Emptying the tanks does the reverse — the weight falls, a smaller displaced volume balances it, the boat rises.",
           "The centre of gravity of the displaced water moves lower, which makes the boat more stable.",
-          "The trade the other way: a ballasted boat sits deeper, so a ==greater area of hull== is in contact with the water and the ==drag on it is greater== — the stability is bought with extra resistance (WPH11 October 2019, Q14).",
+          "The trade: a ballasted boat sits deeper, so a ==greater hull area== touches the water and the ==drag is greater== — stability bought with extra resistance (WPH11 October 2019, Q14).",
         ],
       },
       { k: "h", text: "An iceberg" },
       {
         k: "bullets",
         items: [
-          "An iceberg floats in equilibrium: the weight of the iceberg = the weight of the displaced seawater.",
-          "So the submerged fraction of the iceberg = the density of ice ÷ the density of seawater.",
-          "In less dense water, a greater volume must be displaced to balance the same weight, so the iceberg sits deeper.",
+          "An iceberg floats in equilibrium: its weight = the weight of the displaced seawater.",
+          "So its submerged fraction = the density of ice ÷ the density of seawater.",
+          "In less dense water a greater volume must be displaced to balance the same weight — the iceberg sits deeper.",
         ],
       },
       { k: "h", text: "Worked examples" },

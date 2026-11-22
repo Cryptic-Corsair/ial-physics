@@ -186,15 +186,15 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Density, upthrust and viscosity",
     summary:
       "The fluids half of WPH11's Materials, rebuilt from scratch in the breathing register — density from mass and volume, upthrust as the weight of fluid displaced, floating and the fraction rule, Stokes' law with its four conditions, terminal velocity as a three-force balance, and the falling-ball viscometer — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated after the polish pass (2026-11-23,
-       scripts/minutes-check.ts): 11574 w at the mechanics rate —
-       the scenario sections came back, so the read grew */
-    minutes: 48,
+    /* minutes recalibrated after the condense pass (2026-11-23,
+       scripts/minutes-check.ts): 11052 w at the mechanics rate —
+       the teaching half tightened, the cards untouched */
+    minutes: 46,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Density, upthrust and viscosity close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==an upwards force caused by the displacement of fluid==, ==upthrust = weight of fluid displaced==, ==a small spherical object moving at low speed with laminar flow==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols =, ×, <, > inside the sentences, and every force named with its owner and direction.",
+        text: "Density, upthrust and viscosity close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==an upwards force caused by the displacement of fluid==, ==upthrust = weight of fluid displaced==, ==a small spherical object moving at low speed with laminar flow==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, and every force named with its owner and direction.",
       },
       {
         k: "def",
@@ -214,7 +214,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation — a sphere lowered into water on a balance, a submarine in less salty water, a hollow brass cylinder 63% submerged, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row==: a click opens the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings line by line, and the answer sealed underneath.",
+        text: "Each situation — the balance, the hydrometer, the two submarines, the diver, the thermometer, the ballast tanks, the iceberg, the sinking foram — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row==: a click opens the question as the paper sets it, one marking point per step, the workings line by line, the answer sealed underneath.",
       },
       {
         k: "tips",

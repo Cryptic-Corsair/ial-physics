@@ -465,7 +465,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     title: 'Density, upthrust and viscosity',
     specRange: '23 → 26',
     sectionsTotal: 4,
-    readMinutes: 48,
+    readMinutes: 46,
     clauses: [
       {
         spec: '23',
@@ -495,7 +495,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
           {
             kind: 'def',
             term: 'Upthrust',
-            text: 'The upward force a fluid exerts on an object placed in it. Both printed wordings score the definition mark: ==an upwards force caused by the displacement of fluid==, or ==a force equal and opposite to the weight of fluid displaced== (WPH11 October 2023, Q17(a)).',
+            text: 'The upward force a fluid exerts on an object placed in it. Either printed wording scores — ==displacement== is the word that carries the mark (WPH11 October 2023, Q17(a)).',
           },
           {
             kind: 'worked',

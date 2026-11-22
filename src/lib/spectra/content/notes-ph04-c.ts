@@ -2,13 +2,15 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part C (statement 26)
-   Core Practical 2, the falling-ball viscometer — polished after
-   the owner's review (2026-11-23): the free-body diagram section
-   restored to the teaching half, plain subheadings throughout, and
-   the worked example cards grouped at the end of the section,
-   collapsed until clicked. Same register as Parts A and B; quotes
-   verified by scripts/t04-quotes.ts, numbers by
-   scripts/t04-numbers.ts.
+   Core Practical 2, the falling-ball viscometer — condensed after
+   the owner's review (2026-11-23): the same teaching — the
+   free-body diagram section in the teaching half, plain
+   subheadings — with the method bullets tightened and the
+   repeated terminal-velocity-before-timing warning said once in
+   the principle and once in the design choices. Worked cards
+   grouped at the end of the section, collapsed until clicked.
+   Same register as Parts A and B; quotes verified by
+   scripts/t04-quotes.ts, numbers by scripts/t04-numbers.ts.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_C: SpecSection[] = [
@@ -27,8 +29,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "bullets",
         items: [
           "A small ball is released into a tall tube of liquid and falls until it reaches terminal velocity.",
-          "At terminal velocity the balance holds: $W = U + D$.",
-          "Stokes' law supplies the drag: $D = 6\\pi\\eta r v$.",
+          "At terminal velocity the balance holds: $W = U + D$, and Stokes' law supplies the drag: $D = 6\\pi\\eta r v$.",
           "Rearranged, the viscosity follows from measured quantities only: $\\eta = (W - U) \\div 6\\pi r v$.",
           "The method assumes the ball has reached ==terminal velocity before the timing starts==, and that the Stokes' law conditions hold during the timed fall.",
           "The upthrust comes from the ==displaced liquid== — use the density of the liquid, never the density of the ball.",
@@ -54,10 +55,9 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "bullets",
         items: [
           "The mass of the ball, for its weight ($W = mg$).",
-          "The diameter of the ball, with a micrometer, for the radius and the volume ($V = \\tfrac{4}{3}\\pi r^3$).",
+          "The diameter, with a micrometer, for the radius and the volume ($V = \\tfrac{4}{3}\\pi r^3$).",
           "The density of the liquid, for the upthrust ($U = \\rho V g$).",
-          "The time to fall between two fixed marks, for the terminal velocity ($v = s \\div t$).",
-          "The temperature of the liquid, because the viscosity depends on it.",
+          "The time to fall between two fixed marks, for the terminal velocity ($v = s \\div t$) — and the temperature, because the viscosity depends on it.",
           "*One other measurement* questions expect the ==mass of the ball== (its weight is accepted); the density of the liquid is accepted too (WPH11 June 2025, Q16(a)).",
         ],
       },
@@ -67,18 +67,17 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         items: [
           "Fill a tall measuring cylinder with the liquid and wrap rubber bands around it as markers.",
           "The top marker sits far enough below the surface that the ball has reached terminal velocity before the timing begins.",
-          "Measure the distance between the markers with a metre rule, and the time between them with a stopwatch.",
-          "Repeat the timing and average.",
+          "Measure the distance between the markers with a metre rule; time the fall with a stopwatch; repeat and average.",
           "Better: time several different distances and take the ==gradient of a distance-time graph== — the gradient is the terminal velocity.",
-          "A data logger or motion sensor can record the fall automatically: on a displacement-time graph, the terminal velocity = ==the gradient of the straight section==, not a single point.",
+          "A data logger or motion sensor can record the fall: on a displacement-time graph the terminal velocity = ==the gradient of the straight section==, not a single point.",
         ],
       },
       { k: "h", text: "Design choices" },
       {
         k: "bullets",
         items: [
-          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls: the Stokes' law condition.",
-          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins: the $W = U + D$ condition.",
+          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls — the Stokes' law condition.",
+          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins — the $W = U + D$ condition.",
           "The fall is timed over a long distance, which cuts the percentage uncertainty in the velocity.",
         ],
       },
@@ -86,8 +85,8 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Draw the weight of the ball downwards, the upthrust of the liquid on it upwards and the drag of the liquid on it upwards, all starting from the centre of the ball.",
-          "The arrow for the weight is equal in length to the arrows for the upthrust and the drag combined.",
+          "Draw the weight downwards, the upthrust of the liquid upwards and the drag of the liquid upwards, all starting from the centre of the ball.",
+          "The weight arrow's length equals the upthrust and drag arrows combined.",
           "Label the forces clearly: W or mg for the weight, U for the upthrust.",
         ],
       },
@@ -102,7 +101,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         items: [
           "Timing that begins too early catches the ball still speeding up: the computed viscosity comes out ==too large==.",
           "A measured viscosity lower than the accepted value can come from: the liquid warmer than stated, the diameter measured too small, the time measured too short, or the marker distance measured too large (WPH11 October 2020, Q15(b)(iv)).",
-          "A larger sphere has a greater terminal velocity, so the time between the markers is shorter; the stopwatch uncertainty stays the same, so the percentage uncertainty is greater.",
+          "A larger sphere falls faster, so the time between the markers is shorter; the stopwatch uncertainty stays the same, so the percentage uncertainty is greater.",
           "Keep the temperature of the liquid constant during the measurement: the viscosity of a liquid depends on it (WPH11 June 2022, Q19(a)).",
         ],
       },

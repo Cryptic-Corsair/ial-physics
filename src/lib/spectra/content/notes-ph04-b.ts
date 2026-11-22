@@ -2,14 +2,16 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part B (statement 25)
-   Viscosity, Stokes' law and terminal velocity — polished after
-   the owner's review (2026-11-23): plain subheadings, the scenario
-   sections restored as teaching (the rising balloon, the sphere
-   sinking into colder deeper water), examiner-report lines quoted
-   verbatim in the teaching notes, and the worked example cards
-   grouped at the end of the section, collapsed until clicked.
-   Same register as Parts A and C; quotes verified by
-   scripts/t04-quotes.ts, numbers by scripts/t04-numbers.ts.
+   Viscosity, Stokes' law and terminal velocity — condensed after
+   the owner's review (2026-11-23): the same teaching — plain
+   subheadings, the scenario sections described before the cards
+   (the rising balloon, the sphere sinking into colder deeper
+   water) — with the overlapping viscosity bullets merged, every
+   bullet cut to one idea, and the examiner-report lines still
+   quoted verbatim in the teaching notes. Worked cards grouped at
+   the end of the section, collapsed until clicked. Same register
+   as Parts A and C; quotes verified by scripts/t04-quotes.ts,
+   numbers by scripts/t04-numbers.ts.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_B: SpecSection[] = [
@@ -42,33 +44,31 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Honey pours slowly, water pours fast: the difference is viscosity.",
-          "A warmer liquid is less viscous, so the drag on a moving object at a given speed is smaller (WPH11 October 2025, Q4).",
-          "A warmer liquid therefore gives a higher terminal velocity; a cooler liquid gives a lower one and a longer fall.",
-          "Viscosity is a property of the ==fluid==: it never appears in a weight or an upthrust.",
-          "The unit is **Pa s** — and the Pa s option in a Young modulus MCQ is the viscosity distractor (WPH11 June 2026, Q1).",
+          "Honey pours slowly, water pours fast — that difference is viscosity.",
+          "Warmer liquid, less viscous: less drag at a given speed (WPH11 October 2025, Q4), so a higher terminal velocity; cooler, a longer fall.",
+          "Viscosity belongs to the ==fluid==: it never appears in a weight or an upthrust.",
+          "The Pa s option in a Young modulus MCQ is the viscosity distractor (WPH11 June 2026, Q1).",
         ],
       },
       {
         k: "eq",
         eq: "$F = 6\\pi\\eta r v$",
-        note: "Stokes' law: the viscous drag on a sphere = 6π × viscosity × radius × speed. The specification prints this drag as F; the force balances below write it as D. The v is a ==speed== — read it as a volume and every mark in the question is gone.",
+        note: "Stokes' law: the viscous drag on a sphere = 6π × viscosity × radius × speed. The specification prints this drag as F; the force balances below write it as D. The v is a ==speed== — read it as a volume and every mark is gone.",
       },
       {
         k: "bullets",
         items: [
           "The layer of fluid touching the sphere is dragged along with it; each layer beyond moves a little less.",
           "The pull the fluid exerts back on the sphere ==is== the viscous drag.",
-          "The drag is proportional to each factor on its own: double the viscosity, the radius, or the speed, and the drag doubles.",
+          "The drag is proportional to each factor on its own: double the viscosity, the radius or the speed, and the drag doubles.",
         ],
       },
       { k: "h", text: "When Stokes' law applies" },
       {
         k: "bullets",
         items: [
-          "All four conditions together: a ==small== object, ==spherical==, moving at a ==low speed==, in ==laminar== flow.",
-          "There is no low-viscosity condition: Stokes' law ==applies at all viscosities== (WPH11 October 2022, Q3).",
-          "Nor does it apply to ==all spheres== — the object must be small.",
+          "All four together: a ==small== object, ==spherical==, moving at a ==low speed==, in ==laminar== flow.",
+          "No low-viscosity condition: Stokes' law ==applies at all viscosities== (WPH11 October 2022, Q3) — but not to ==all spheres==: the object must be small.",
           "Two-mark versions want the printed pair: a small spherical object, and laminar flow (or a low speed).",
           "Give only as many conditions as the question asks — a wrong extra statement can cost the mark.",
         ],
@@ -97,7 +97,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Three forces act on a sinking sphere: the weight of the sphere downwards, the upthrust of the fluid on the sphere upwards, and the drag of the fluid on the sphere upwards.",
+          "Three forces on a sinking sphere: the weight downwards, the upthrust of the fluid upwards, the drag of the fluid upwards.",
           "At terminal velocity the resultant force is zero.",
           "Write the balance as one equation: $W = U + D$.",
           "The drag is the difference: $D = W - U$.",
@@ -114,8 +114,8 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "bullets",
         items: [
           "At release the speed is zero, so the drag is zero.",
-          "The weight is greater than the upthrust, so a resultant force acts downwards and the sphere accelerates.",
-          "As the speed grows, the drag grows ($D = 6\\pi\\eta r v$), while the weight and the upthrust stay the same.",
+          "Weight > upthrust: a resultant force downwards, and the sphere accelerates.",
+          "As the speed grows the drag grows ($D = 6\\pi\\eta r v$); the weight and the upthrust stay the same.",
           "The resultant force shrinks, so the acceleration shrinks — the velocity-time curve flattens.",
           "When $U + D = W$ the resultant force is zero: the speed stops rising at the ==terminal velocity==.",
         ],
@@ -134,10 +134,10 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The drag always opposes the motion: ==upwards== on a falling object, ==downwards== on a rising object.",
-          "A rising object at terminal velocity has zero resultant force: $U = W + D$.",
+          "The drag always opposes the motion: ==upwards== on a falling object, ==downwards== on a rising one.",
+          "A rising object at terminal velocity: zero resultant force, so $U = W + D$.",
           "So the upthrust on a rising object is greater than its weight.",
-          "A rising air bubble carries a negligible weight: the upthrust on it balances the drag alone.",
+          "A rising air bubble carries a negligible weight: the upthrust balances the drag alone.",
           "A bubble that grows as it rises gains upthrust with the ==cube== of its radius and drag with the radius — the upthrust wins, and the bubble speeds up (WPH11 June 2026, Q17(b)).",
         ],
       },
@@ -145,10 +145,10 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The weight of a sphere and the upthrust on it both scale with its volume — with $r^3$.",
+          "A sphere's weight and the upthrust on it both scale with its volume — with $r^3$.",
           "The drag on it at a given speed scales with the radius — with $r$.",
           "A larger sphere gains more weight than drag, so its forces balance at a higher speed: it falls faster.",
-          "The terminal velocity of a sphere is proportional to $r^2$ — so the papers plot $v$ against $d^2$ and read a straight line through the origin (WPH11 June 2021, Q18).",
+          "Terminal velocity is proportional to $r^2$ — so the papers plot $v$ against $d^2$ and read a straight line through the origin (WPH11 June 2021, Q18).",
         ],
       },
       {
@@ -186,11 +186,11 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "On the ground, the upthrust of the air on the balloon is greater than the weight of the balloon, so the resultant force on it acts upwards, and it accelerates.",
-          "The balloon expands as it rises, until it reaches its full volume.",
-          "Above that point, the volume of the balloon is fixed while the air gets less dense, so the upthrust on the balloon falls ($U = \\rho_{\\text{air}} \\times V \\times g$).",
-          "When the upthrust on the balloon < the weight of the balloon, the resultant force on it acts downwards, so the balloon slows down.",
-          "The balloon stops rising when its velocity has fallen to zero at the maximum height.",
+          "On the ground: upthrust > weight, resultant force upwards — the balloon accelerates.",
+          "It expands as it rises, until it reaches its full volume.",
+          "Above that, the volume is fixed while the air thins, so the upthrust falls ($U = \\rho_{\\text{air}} V g$).",
+          "When the upthrust < the weight, the resultant force acts downwards and the balloon slows.",
+          "It stops rising when its velocity reaches zero at the maximum height.",
         ],
       },
       {
@@ -202,13 +202,12 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Start: a sphere sinking through seawater at terminal velocity, so the weight of the sphere = the upthrust on it + the drag on it ($W = U + D$).",
-          "Deeper water is colder, and the viscosity of water increases as its temperature falls, so the viscosity of the water around the sphere is greater.",
-          "So the drag on the sphere at any given speed is larger: a larger $\\eta$ gives a larger $D$ at the same $v$.",
-          "Deeper water is also denser, so the upthrust on the sphere is larger: a larger $\\rho$ gives a larger $U$.",
+          "Start: a sphere sinking at terminal velocity — $W = U + D$.",
+          "Deeper water is colder, and colder water is more viscous: a larger $\\eta$ gives a larger drag at any given speed.",
+          "Deeper water is also denser: a larger $\\rho$ gives a larger upthrust.",
           "The weight of the sphere does not change.",
-          "At the old terminal velocity, the upthrust plus the drag on the sphere is now greater than the weight of the sphere, so the resultant force on the sphere acts upwards.",
-          "The sphere slows down until the forces balance again, at a lower speed: the terminal velocity of the sphere is lower in the deeper water.",
+          "At the old speed, $U + D$ now beats $W$ — a resultant force acts upwards.",
+          "The sphere slows until the forces balance again: a ==lower== terminal velocity in the deeper water.",
         ],
       },
       {
