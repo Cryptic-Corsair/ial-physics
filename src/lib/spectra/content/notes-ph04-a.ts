@@ -2,19 +2,22 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part A (statements 23–24)
-   The rebuilt fluids note (2026-11-23): written from scratch
-   against the 2020–2024 mark schemes — with the 2019, 2025 and
-   2026 sessions mined as extra evidence — replacing the fluids
-   half of notes-ph02-a/b on the t04 page. The register is the
-   owner's: short sentences, one idea per bullet, at most two
-   linked facts per line, workings set out line by line and
-   typeset in KaTeX ($…$). Mark scheme and examiner-report
-   wordings are quoted verbatim (verified against
-   research/wph11/txt and the digests by scripts/t04-quotes.ts;
-   every number re-computed by scripts/t04-numbers.ts). The old
-   part files stay on disk untouched, no longer imported; the
-   elasticity statements (27–32) leave the page until their own
-   rebuild, as the owner set aside for later.
+   The rebuilt fluids note, polished after the owner's review
+   (2026-11-23): the subheadings name the physics or the scenario,
+   the way the old approved note did; every scenario from the
+   papers is described first as teaching — the balance, the
+   hydrometer, the two submarines, the diver, the thermometer, the
+   ballast tanks, the iceberg — and the worked example cards sit
+   together at the end of each spec section, collapsed until
+   clicked. Register: short sentences, one idea per bullet, at
+   most two linked facts per line, workings set out line by line
+   and typeset in KaTeX ($…$). Mark scheme and examiner-report
+   wordings are quoted verbatim (verified against research/wph11
+   by scripts/t04-quotes.ts; every number re-computed by
+   scripts/t04-numbers.ts). The old part files stay on disk
+   untouched, no longer imported; the elasticity statements (27–32)
+   leave the page until their own rebuild, as the owner set aside
+   for later.
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_A: SpecSection[] = [
@@ -28,7 +31,6 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         eq: "$\\rho = \\dfrac{m}{V}$",
         note: "The density of a sample = its mass ÷ its volume. Check the units before substituting: mass in kg, volume in m³, density out in kg m⁻³.",
       },
-      { k: "h", text: "What density is" },
       {
         k: "bullets",
         items: [
@@ -56,9 +58,11 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         items: [
           "Sense-check every calculated density against the table: $0.001\\ \\text{kg m}^{-3}$ or $100\\,000\\ \\text{kg m}^{-3}$ for water is a ==power-of-ten slip==, not physics.",
           "In multiple choice, check the ==units of every option==: the wrong options usually carry the wrong units.",
+          "Measuring the density of a regular solid: measure the mass with a balance, measure the dimensions (the diameter of a sphere with a calliper), then compute the volume from the dimensions.",
+          "Measuring the density of a liquid: measure the mass of a measured volume, then $\\rho = m \\div V$; the volume of a liquid is read from a measuring cylinder.",
         ],
       },
-      { k: "h", text: "Finding the volume" },
+      { k: "h", text: "Volumes you are asked for" },
       {
         k: "eq",
         eq: "$V = \\tfrac{4}{3}\\pi r^3$        $V = \\pi r^2 L$",
@@ -77,7 +81,16 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         label: "Not accepted",
         text: "Reading the calliper or micrometer as if it measured the ==radius==. The instrument measures a diameter; halve it before cubing. Examiner reports name the radius–diameter mix-up as a recurring error.",
       },
-      { k: "h", text: "The density of a hollow object" },
+      { k: "h", text: "Conversions and flow" },
+      {
+        k: "bullets",
+        items: [
+          "Convert cm³ to m³ by ÷ 1 000 000; convert mm to m by ÷ 1000.",
+          "Volume per second = mass per second ÷ the density of the fluid.",
+          "Volume per second also = the cross-sectional area × the speed of the flow ($Q = Av$).",
+        ],
+      },
+      { k: "h", text: "Hollow objects" },
       {
         k: "bullets",
         items: [
@@ -86,6 +99,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "Every floating argument compares two densities: the object's ==average== density against the fluid's.",
         ],
       },
+      { k: "h", text: "Worked examples" },
       {
         k: "worked",
         title: "A steel sphere for a Newton's cradle",
@@ -114,7 +128,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         label: "Mark scheme wording",
         text: "*An upwards force caused by the displacement of fluid (by an object)* · *(a force equal and opposite to) the weight of fluid displaced (by an object)* — the two alternatives the printed scheme accepts.",
       },
-      { k: "h", text: "Where the upthrust comes from" },
+      { k: "h", text: "Pressure and depth" },
       {
         k: "bullets",
         items: [
@@ -130,7 +144,6 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         eq: "$U = \\rho_{\\text{fluid}} \\times V_{\\text{disp}} \\times g$",
         note: "Read the equation as the definition: the upthrust = the weight of the displaced fluid. The density inside is the ==fluid's==. Fully submerged, $V_{\\text{disp}} = V_{\\text{object}}$; floating, it is the ==submerged volume only==.",
       },
-      { k: "h", text: "Which density belongs where" },
       {
         k: "bullets",
         items: [
@@ -172,7 +185,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         label: "Not accepted",
         text: "==Displaced==, not *replaced* — the mark schemes print *displaced*. A bare *weight* loses the mark: name the owner — the weight of the object, the weight of the displaced pure water, the weight of the displaced seawater.",
       },
-      { k: "h", text: "Pushed under" },
+      { k: "h", text: "A sphere pushed fully under" },
       {
         k: "bullets",
         items: [
@@ -181,6 +194,119 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           "The force holding it under = the extra upthrust = $W$ (WPH11 June 2019, Q3).",
         ],
       },
+      { k: "h", text: "The free-body diagram of a floating object" },
+      {
+        k: "bullets",
+        items: [
+          "One upward arrow labelled upthrust (or U), one downward arrow labelled weight (or W or mg).",
+          "Both arrows start from the same point on the object, and the two arrows are drawn the same length.",
+          "Draw only the forces acting on the object: every extra force arrow loses one mark.",
+          "The apparent weight of an object under water = the weight of the object − the upthrust on it ($W_{\\text{app}} = W - U$).",
+        ],
+      },
+      { k: "h", text: "An object lowered into a liquid standing on a balance" },
+      {
+        k: "bullets",
+        items: [
+          "The liquid exerts an upthrust on the object, upwards.",
+          "By Newton's third law, the object exerts a force on the liquid that is equal in size and opposite in direction, downwards.",
+          "That extra downward force on the liquid increases the reading on the balance.",
+          "The increase in the balance reading = the weight of the displaced liquid.",
+          "The mass of the displaced liquid = the increase in the balance reading; then $V = m \\div \\rho_{\\text{liquid}}$; then the mass of the object = $\\rho_{\\text{object}} \\times V$.",
+          "If the water is replaced by a lower-density liquid, the upthrust on the object is less, so the downward force of the object on the liquid is less, so the increase in the balance reading is less. The second mark depends on the first.",
+        ],
+      },
+      { k: "h", text: "A hydrometer" },
+      {
+        k: "bullets",
+        items: [
+          "A hydrometer floating in a liquid is in equilibrium, so the upthrust on it = its weight ($U = W$).",
+          "The weight of the hydrometer is the same in every liquid.",
+          "In a denser liquid, each unit of displaced volume provides a greater weight of displaced liquid, so a smaller displaced volume is enough: the hydrometer floats higher.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*Many referred to weight, but did not specify whether this was the weight of the hydrometer, the weight of the displaced pure water or the weight of the displaced seawater. Similarly, many did not use the term displacement at all, and alternatives such as replacement were not sufficient* (WPH11 October 2024, Q16(b)(i)).",
+      },
+      { k: "h", text: "A submarine moving into less dense water" },
+      {
+        k: "bullets",
+        items: [
+          "A submarine underwater is in equilibrium: the upthrust of the seawater on the submarine = the weight of the submarine.",
+          "When the submarine moves into less dense water, the upthrust on it decreases, while the weight of the submarine does not change.",
+          "The resultant force on the submarine now acts downwards, so the submarine begins to sink.",
+          "To hold its depth, the submarine must reduce its weight by pumping water out.",
+        ],
+      },
+      { k: "h", text: "A submarine lifted from the water" },
+      {
+        k: "bullets",
+        items: [
+          "While the submarine is fully underwater, the tension in the crane cable = the weight of the submarine − the upthrust on it ($T = W - U$).",
+          "As the submarine emerges from the water, the submerged volume decreases, so the upthrust on it decreases ($U = \\rho_{\\text{water}} \\times V_{\\text{sub}} \\times g$).",
+          "The weight of the submarine does not change.",
+          "The tension in the cable therefore increases, until the submarine hangs clear of the water and the tension in the cable = the full weight of the submarine ($T = W$).",
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "Indicative content: *the resultant force on the submarine is zero* · *So tension = weight – upthrust* · *As the submarine leaves the water, the volume / mass / weight of water displaced decreases* · *So the upthrust on the submarine decreases* · *and the tension in the cable increases* · *When the submarine is out of the water the tension in the cable is equal (in magnitude) to the weight of the submarine* (WPH11 January 2025, Q18(b)).",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*The idea that the volume / mass / weight of displaced water decreased as the submarine moved out of the water was probably the idea that was least well described by candidates. Some responses described the situation when the submarine was fully submerged, and then when the submarine was completely out of the water, but not how the forces changed as the submarine moved between the two situations* (WPH11 January 2025, Q18(b)).",
+      },
+      { k: "h", text: "A Cartesian diver" },
+      {
+        k: "bullets",
+        items: [
+          "Squeezing the bottle raises the pressure of the water, which forces water into the diver, so the volume of the trapped air decreases.",
+          "The diver now displaces less water, so the upthrust on the diver decreases.",
+          "The weight of the diver does not change.",
+          "When the weight of the diver > the upthrust on the diver, the resultant force on the diver acts downwards.",
+          "The diver therefore accelerates downwards and sinks.",
+        ],
+      },
+      { k: "h", text: "A Galilean thermometer" },
+      {
+        k: "bullets",
+        items: [
+          "When the temperature of the liquid rises, the liquid expands, so the density of the liquid falls.",
+          "The upthrust on each bulb = the density of the liquid × the volume of the bulb × g, so the upthrust on each bulb falls.",
+          "The weight of each bulb does not change.",
+          "A bulb for which the weight of the bulb > the upthrust on the bulb now has a resultant force downwards, so that bulb sinks.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*No marks were available for simply comparing densities, an explanation as to why the density is important was required. A common error was to bring the viscosity of the liquid into the explanation. Viscosity only has an effect while the bulb is moving* (WPH11 June 2022, Q15). And on how to answer: *the narrative is: the bulb floats, the temperature rises, the bulb sinks. A clear account of each stage in the right order is the most likely way to score all the marks*.",
+      },
+      { k: "h", text: "Ballast tanks" },
+      {
+        k: "bullets",
+        items: [
+          "Filling the ballast tanks increases the weight of the boat.",
+          "The boat must displace more water so that the upthrust on it still = the weight of the boat ($U = W$), so the boat sits lower.",
+          "Emptying the tanks does the reverse: the weight falls, so a smaller displaced volume balances it, and the boat rises in the water.",
+          "The centre of gravity of the displaced water moves lower, which makes the boat more stable.",
+          "The trade the other way: a ballasted boat sits deeper, so a ==greater area of hull== is in contact with the water and the ==drag on it is greater== — the stability is bought with extra resistance (WPH11 October 2019, Q14).",
+        ],
+      },
+      { k: "h", text: "An iceberg" },
+      {
+        k: "bullets",
+        items: [
+          "An iceberg floats in equilibrium: the weight of the iceberg = the weight of the displaced seawater.",
+          "So the submerged fraction of the iceberg = the density of ice ÷ the density of seawater.",
+          "In less dense water, a greater volume must be displaced to balance the same weight, so the iceberg sits deeper.",
+        ],
+      },
+      { k: "h", text: "Worked examples" },
       {
         k: "worked",
         title: "The sphere lowered into water",
@@ -277,21 +403,6 @@ export const SECTIONS_PH04_A: SpecSection[] = [
           label: "Mark scheme",
           text: "*The upthrust is equal to the weight of water displaced* · *The upthrust equals the weight of the hydrometer Or The upthrust is the same (in both types of water)* · *(So) a smaller volume of seawater needs to be displaced (because seawater has a greater density)* · *Change in vertical position = 8 mm*.",
         },
-      },
-      { k: "h", text: "A submarine lifted by a crane" },
-      {
-        k: "bullets",
-        items: [
-          "Fully underwater and at rest: the resultant force on the submarine is zero, so the tension = the weight of the submarine − the upthrust on it.",
-          "As the submarine leaves the water, the volume of water displaced decreases, so the upthrust on it decreases.",
-          "The weight of the submarine does not change, so the tension in the cable increases.",
-          "Out of the water, the tension = the full weight of the submarine (WPH11 January 2025, Q18(b)).",
-        ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "Indicative content: *the resultant force on the submarine is zero* · *So tension = weight – upthrust* · *As the submarine leaves the water, the volume / mass / weight of water displaced decreases* · *So the upthrust on the submarine decreases* · *and the tension in the cable increases* · *When the submarine is out of the water the tension in the cable is equal (in magnitude) to the weight of the submarine*.",
       },
       {
         k: "worked",

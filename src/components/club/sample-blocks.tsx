@@ -1,10 +1,16 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { Sparkles } from "./icons";
+import { useState, type ReactNode } from "react";
+import { ChevronDown, Sparkles } from "./icons";
 import { ScrollFade } from "./bits";
 import { Fmt } from "./format";
-import { figureArt, isWideFigure, StepLines, WorkedMsNote } from "./note-section";
+import {
+  figureArt,
+  isWideFigure,
+  StepLines,
+  WorkedMsNote,
+  usePrinting,
+} from "./note-section";
 import type { NotesBlock } from "@/lib/spectra/notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -282,9 +288,11 @@ export function EditorialTable({
 }
 
 /* ————— the worked example, as an exhibit —————
-   Label, title, question; then the reasoning as a numbered
-   editorial list — always in full, the way a set document reads —
-   and the answer under its own caps label. */
+   A true drop-down: folded, the card is one row — the label, the
+   title, the step count and a chevron — and a click unfolds the
+   question, the reasoning as a numbered editorial list, the
+   examiner's note and the answer under its caps label. Print
+   unfolds the whole exhibit. */
 
 function EditorialWorked({
   title,
@@ -299,48 +307,86 @@ function EditorialWorked({
   answer: string;
   ms?: { label: string; text: string };
 }) {
+  const [open, setOpen] = useState(false);
+  const printing = usePrinting();
+  const shown = open || printing;
   /* “Worked example · counting σ and π” — the label already says it */
   const bare = title.replace(/^Worked example\s*·\s*/i, "");
   return (
-    <div className="legal-card max-w-[68ch] rounded-[calc(18px*var(--ui-scale))] p-5 sm:p-6">
-      <EditorialLabel>Worked example</EditorialLabel>
-      <h4 className="mt-2 font-display text-[calc(17px*var(--ts-sub))] font-semibold tracking-tight text-ink">
-        <Fmt text={bare} />
-      </h4>
-      <p className="mt-2 text-[calc(14.5px*var(--ts-body))] leading-[1.8] text-ink">
-        <Fmt text={question} />
-      </p>
-      <ol className="mt-4 flex flex-col gap-2 border-t border-ink/10 pt-4">
-        {steps.map((s, i) => (
-          <li
-            key={i}
-            className="flex items-start gap-3 text-[calc(14px*var(--ts-body))] leading-[1.8] text-ink-soft"
-          >
-            <span
-              aria-hidden
-              className="w-[calc(18px*var(--ui-scale))] shrink-0 pt-[calc(3px*var(--ui-scale))] font-display text-[calc(11px*var(--ts-other))] font-bold text-[var(--legal-rust)]"
-            >
-              {String(i + 1).padStart(2, "0")}
+    <div
+      className="legal-card max-w-[68ch] overflow-hidden rounded-[calc(18px*var(--ui-scale))]"
+    >
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen((o) => !o);
+          }
+        }}
+        className="worked-head w-full cursor-pointer list-none px-5 py-4 text-left select-none sm:px-6 print:cursor-default"
+      >
+        <div className="flex items-center gap-3 sm:gap-4">
+          <span className="shrink-0">
+            <EditorialLabel>Worked example</EditorialLabel>
+          </span>
+          <span className="h-px min-w-3 flex-1 bg-ink/10" aria-hidden />
+          <span className="shrink-0 font-display text-[calc(10.5px*var(--ts-other))] font-bold tracking-[0.16em] text-ink-faint uppercase tabular-nums">
+            {steps.length} {steps.length === 1 ? "step" : "steps"}
+          </span>
+          <ChevronDown
+            className="h-4 w-4 shrink-0 transition-transform duration-300"
+            style={{
+              transform: open ? "rotate(180deg)" : "rotate(0deg)",
+              color: "var(--legal-rust)",
+            }}
+          />
+        </div>
+        <h4 className="mt-2.5 font-display text-[calc(17px*var(--ts-sub))] font-semibold tracking-tight text-ink">
+          <Fmt text={bare} />
+        </h4>
+      </div>
+      {shown && (
+        <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+          <p className="text-[calc(14.5px*var(--ts-body))] leading-[1.8] text-ink">
+            <Fmt text={question} />
+          </p>
+          <ol className="mt-4 flex flex-col gap-2 border-t border-ink/10 pt-4">
+            {steps.map((s, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-[calc(14px*var(--ts-body))] leading-[1.8] text-ink-soft"
+              >
+                <span
+                  aria-hidden
+                  className="w-[calc(18px*var(--ui-scale))] shrink-0 pt-[calc(3px*var(--ui-scale))] font-display text-[calc(11px*var(--ts-other))] font-bold text-[var(--legal-rust)]"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="min-w-0">
+                  <StepLines text={s} />
+                </span>
+              </li>
+            ))}
+          </ol>
+          {ms && (
+            <div className="mt-3 [&>div]:mt-0">
+              <WorkedMsNote ms={ms} accent="var(--legal-rust)" />
+            </div>
+          )}
+          <div className="mt-4 flex items-start gap-3.5 border-t border-ink/10 pt-4">
+            <span className="shrink-0 pt-[calc(4px*var(--ui-scale))] font-display text-[calc(10.5px*var(--ts-other))] font-extrabold tracking-[0.2em] uppercase text-[var(--legal-rust)]">
+              Answer
             </span>
-            <span className="min-w-0">
-              <StepLines text={s} />
-            </span>
-          </li>
-        ))}
-      </ol>
-      {ms && (
-        <div className="mt-3 [&>div]:mt-0">
-          <WorkedMsNote ms={ms} accent="var(--legal-rust)" />
+            <p className="text-[calc(14.5px*var(--ts-body))] leading-[1.75] font-semibold text-ink">
+              <Fmt text={answer} />
+            </p>
+          </div>
         </div>
       )}
-      <div className="mt-4 flex items-start gap-3.5 border-t border-ink/10 pt-4">
-        <span className="shrink-0 pt-[calc(4px*var(--ui-scale))] font-display text-[calc(10.5px*var(--ts-other))] font-extrabold tracking-[0.2em] uppercase text-[var(--legal-rust)]">
-          Answer
-        </span>
-        <p className="text-[calc(14.5px*var(--ts-body))] leading-[1.75] font-semibold text-ink">
-          <Fmt text={answer} />
-        </p>
-      </div>
     </div>
   );
 }

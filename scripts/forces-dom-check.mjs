@@ -37,6 +37,21 @@ await page.setViewportSize({ width: 1440, height: 2400 });
 const res = await page.goto(`${BASE}/notes/wph11-t01`, { waitUntil: "networkidle" });
 check("t01 loads", res.status() === 200, `status ${res.status()}`);
 await scrollAll();
+
+/* — 0 · the worked cards fold now (site-wide dropdowns): unfold
+   every card before any content check reads the flow — */
+const t1fold = await page.evaluate(() => ({
+  heads: document.querySelectorAll(".worked-head").length,
+  closed: document.querySelectorAll('.worked-head[aria-expanded="false"]').length,
+}));
+check("t01 cards fold by default", t1fold.heads > 0 && t1fold.closed === t1fold.heads, `${t1fold.heads} cards, ${t1fold.closed} closed`);
+await page.evaluate(() =>
+  document
+    .querySelectorAll('.worked-head[aria-expanded="false"]')
+    .forEach((el) => el.click()),
+);
+await page.waitForTimeout(1200);
+await scrollAll();
 const text = await flowText();
 
 /* — 1 · the rebuilt sections all render, in order — */
@@ -68,8 +83,8 @@ check("KaTeX renders", counts.katex > 100, `${counts.katex} nodes`);
 check("no KaTeX errors", counts.katexErrors === 0, `${counts.katexErrors}`);
 check("no raw $ in main", counts.rawDollars === 0, `${counts.rawDollars}`);
 
-/* — 4 · worked cards with the spacious layout (gallery serves them
-   open; the label count is 2 nodes per card — span + wrapper) — */
+/* — 4 · worked cards with the spacious layout (folded open here;
+   the label count is 2 nodes per card — span + wrapper) — */
 const worked = await page.evaluate(() => ({
   cards: [...document.querySelectorAll("main div, main span")].filter(
     (el) => el.textContent?.trim() === "Worked example",
@@ -96,9 +111,12 @@ for (const q of [
   "Balloon continues to move (upwards) at constant velocity",
 ]) check(`verbatim present: ${q.slice(0, 48)}…`, text.includes(q));
 
-/* — 6 · screenshot the dart card (the spacious look, always open) — */
-const dartTitle = page.locator("h4", { hasText: "A dart thrown at a dartboard" }).first();
-await dartTitle.scrollIntoViewIfNeeded();
+/* — 6 · screenshot the dart card (the spacious look, unfolded) — */
+await page.evaluate(() => {
+  const heads = [...document.querySelectorAll(".worked-head")];
+  const target = heads.find((el) => el.textContent?.includes("A dart thrown at a dartboard"));
+  target?.scrollIntoView({ block: "center" });
+});
 await page.waitForTimeout(500);
 await page.screenshot({ path: "/tmp/render/t01-card.png" });
 

@@ -63,6 +63,10 @@ const DOCS: { name: string; files: string[]; enforceWithin: boolean }[] = [
 ];
 const LANDING = "src/lib/spectra/content/wph11.ts";
 const EXEMPT_CROSS_DOC = new Set(["The marking rules that never change"]);
+/* the group heading sits above the worked cards at the end of each
+   spec section — one per section, by design (owner instruction:
+   worked examples stay at the end of the section) */
+const EXEMPT_WITHIN = new Set(["Worked examples"]);
 
 function textsOf(src: string): { kind: string; text: string }[] {
   const out: { kind: string; text: string }[] = [];
@@ -77,7 +81,11 @@ for (const doc of DOCS) {
   for (const f of doc.files) {
     for (const t of textsOf(read(f))) {
       const key = `${t.kind}:${t.text}`;
-      if (doc.enforceWithin && docSeen.has(key)) {
+      if (
+        doc.enforceWithin &&
+        !EXEMPT_WITHIN.has(t.text) &&
+        docSeen.has(key)
+      ) {
         console.log(`FAIL  duplicate within ${doc.name}: ${t.kind} "${t.text}" (${f}, also ${docSeen.get(key)})`);
         fail++;
       }
@@ -116,5 +124,48 @@ for (const doc of DOCS) {
   }
 }
 
-console.log(`\n${fail === 0 ? "ALL PASS" : fail + " FAILURES"} — statements byte-identical, h/worked uniqueness, citations`);
+/* — the worked cards sit at the end of their spec section —
+   after the "Worked examples" heading only worked cards may
+   follow, until the section ends (owner instruction: worked
+   examples stay at the end of the section, only in topic 4) */
+const t04Files = DOCS.find((d) => d.name === "t04 fluids")!.files;
+for (const f of t04Files) {
+  const src = read(f);
+  /* each spec section's chunk of source */
+  const marks = [...src.matchAll(/\n  \{\n    spec: "/g)].map((m) => m.index!);
+  const chunks = marks.map((start, i) =>
+    src.slice(start, i + 1 < marks.length ? marks[i + 1] : undefined),
+  );
+  for (const chunk of chunks) {
+    /* ordered positions of the h tokens, the worked cards and every
+       other block kind inside this section's source */
+    let folded = false;
+    const tokens: { pos: number; kind: string }[] = [];
+    for (const m of chunk.matchAll(/\{ k: "h", text: "(?:[^"]+)" \}/g))
+      tokens.push({ pos: m.index!, kind: "h" });
+    for (const m of chunk.matchAll(/k: "worked",/g))
+      tokens.push({ pos: m.index!, kind: "worked" });
+    for (const m of chunk.matchAll(/\{\s*\n?\s*k: "(?!h"|worked")[a-z]+"/g))
+      tokens.push({ pos: m.index!, kind: "block" });
+    tokens.sort((a, b) => a.pos - b.pos);
+    for (const t of tokens) {
+      if (t.kind === "h") {
+        /* is this h the group heading? */
+        const seg = chunk.slice(t.pos, t.pos + 40);
+        if (seg.includes('"Worked examples"')) folded = true;
+        else if (folded) {
+          console.log(`FAIL  ${f}: a teaching heading follows the worked cards (cards must end the section)`);
+          fail++;
+          folded = false;
+        }
+      } else if (t.kind === "block" && folded) {
+        console.log(`FAIL  ${f}: a non-worked block follows the worked cards (cards must end the section)`);
+        fail++;
+        folded = false;
+      }
+    }
+  }
+}
+
+console.log(`\n${fail === 0 ? "ALL PASS" : fail + " FAILURES"} — statements byte-identical, h/worked uniqueness, citations, cards at the end of their sections`);
 if (fail > 0) process.exit(1);

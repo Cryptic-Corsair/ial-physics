@@ -105,7 +105,7 @@ export const NOTES_DOCS: NotesDoc[] = [
       },
       {
         k: "p",
-        text: "Every situation from the papers — a sphere lowered into water on a balance, a submarine in less salty water, a floating brass cylinder, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==a worked example card==: the question stated as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Every situation from the papers — a sphere lowered into water on a balance, a submarine in less salty water, a floating brass cylinder, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
       },
     ],
     sections: [...SECTIONS_PH04_A, ...SECTIONS_PH04_B, ...SECTIONS_PH04_C],

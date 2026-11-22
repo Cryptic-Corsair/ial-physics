@@ -538,9 +538,10 @@ export function WorkedMsNote({
    the sheet is done; a tiny hook lets folded things open for the
    printer and fold back after. This is how worked examples print
    whole: question, staircase and answer — while the screen keeps
-   guarding its space. */
+   guarding its space. Shared with the editorial and gallery
+   readers, whose worked cards fold the same way. */
 
-function usePrinting() {
+export function usePrinting() {
   const [printing, setPrinting] = useState(false);
   useEffect(() => {
     const before = () => setPrinting(true);
@@ -556,14 +557,16 @@ function usePrinting() {
 }
 
 /* ————— worked example — the folio plate —————
-   The candy staircase retires. The worked example now reads as the
-   document's gallery plate: a hairline card under one soft accent
-   edge, the section's colour breathing as an ambient wash in the
-   corner, the question set large, and the method ruled out line by
-   line — mono numerals in the margin, hairlines carrying the order,
-   the answer sealed in a quiet wash of its own. The only drop-down
-   on the site keeps guarding its space, through a hairline ghost
-   toggle now; print still unfolds the whole plate. */
+   The worked example reads as the document's gallery plate: a
+   hairline card under one soft accent edge, the section's colour
+   breathing as an ambient wash in the corner. The whole plate is a
+   drop-down: folded it shows only the role label, the step count
+   and the card's title; a click unfolds the question, the method
+   ruled out line by line — mono numerals in the margin, hairlines
+   carrying the order — and the answer sealed in a quiet wash of
+   its own. Print unfolds the whole plate. Every reader's worked
+   card folds this way (the editorial and gallery dresses share the
+   pattern), so a long topic scrolls as one clean list. */
 
 function Worked({
   title,
@@ -603,8 +606,30 @@ function Worked({
         background: `${ambientWash(accent)}, var(--color-paper)`,
       }}
     >
-      <div className="p-5 sm:p-6">
-        {/* the plate head — role label, rule, step count */}
+      {/* the folded head — the plate's whole upper half is the
+          click target: role label, rule, step count, chevron and
+          the card's title. One dropdown row per card; the body
+          stays folded until clicked (see .worked-toggle in
+          globals for the hover wash). */}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen((o) => !o);
+          }
+        }}
+        className="worked-head worked-toggle w-full cursor-pointer list-none p-5 pb-4 text-left select-none sm:p-6 sm:pb-4 print:cursor-default"
+        style={
+          {
+            "--wt-rest": open ? fade(accent, 6) : "transparent",
+            "--wt-hover": fade(accent, 12),
+          } as CSSProperties
+        }
+      >
         <div className="flex items-center gap-3">
           <Kicker color={inkMix(accent, 70)}>Worked example</Kicker>
           <span
@@ -622,39 +647,6 @@ function Worked({
           >
             {steps.length} {steps.length === 1 ? "step" : "steps"}
           </span>
-        </div>
-
-        {heading && (
-          <h4 className="mt-3 font-display text-[calc(19px*var(--ts-sub))] leading-snug font-semibold tracking-tight text-ink">
-            <Fmt text={heading} />
-          </h4>
-        )}
-        <p className="mt-2.5 max-w-[62ch] text-[calc(15px*var(--ts-body))] leading-[1.75] font-medium text-ink">
-          <Fmt text={question} />
-        </p>
-
-        {/* the toggle — a hairline ghost pill; the accent wash
-            breathes in on hover (see .worked-toggle in globals) */}
-        <m.button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-expanded={open}
-          whileTap={{ scale: 0.98 }}
-          className="worked-toggle mt-5 inline-flex min-h-[calc(44px*var(--ui-scale))] cursor-pointer items-center gap-2.5 rounded-full border px-5 font-display text-[calc(13px*var(--ts-body))] font-semibold tracking-[0.02em] print:hidden"
-          style={
-            {
-              /* fixed translucent washes, not the token-share lift
-                 recipe — the hover needs a real delta in every lab,
-                 and the glow recipe reads right over the plate's
-                 ambient corner in all four */
-              "--wt-rest": open ? fade(accent, 8) : "transparent",
-              "--wt-hover": fade(accent, 13),
-              color: inkMix(accent, 80),
-              borderColor: open ? tint(accent, 45) : "var(--rooms-hairline)",
-            } as CSSProperties
-          }
-        >
-          {open ? "Hide steps" : "Show steps"}
           <m.span
             animate={{ rotate: open ? 180 : 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -666,21 +658,33 @@ function Worked({
           >
             <ChevronDown className="h-3.5 w-3.5" />
           </m.span>
-        </m.button>
+        </div>
 
-        <AnimatePresence initial={false}>
-          {shown && (
-            <m.div
-              initial={printing ? false : { opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={
-                printing
-                  ? { duration: 0 }
-                  : { type: "spring", stiffness: 280, damping: 30 }
-              }
-              className="overflow-hidden"
-            >
+        {heading && (
+          <h4 className="mt-3 font-display text-[calc(19px*var(--ts-sub))] leading-snug font-semibold tracking-tight text-ink">
+            <Fmt text={heading} />
+          </h4>
+        )}
+      </div>
+
+      <AnimatePresence initial={false}>
+        {shown && (
+          <m.div
+            initial={printing ? false : { opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={
+              printing
+                ? { duration: 0 }
+                : { type: "spring", stiffness: 280, damping: 30 }
+            }
+            className="overflow-hidden"
+          >
+            <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <p className="max-w-[62ch] text-[calc(15px*var(--ts-body))] leading-[1.75] font-medium text-ink">
+                <Fmt text={question} />
+              </p>
+
               {/* the method — ruled out line by line, the divided
                   lines carrying the order the staircase used to */}
               <ol className="mt-5">
@@ -760,10 +764,10 @@ function Worked({
                   <Fmt text={answer} />
                 </p>
               </m.div>
-            </m.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </div>
+          </m.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -2,9 +2,13 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part B (statement 25)
-   Viscosity, Stokes' law and terminal velocity — written from
-   scratch against the 2020–2024 mark schemes (2019/2025 sessions
-   as extra evidence), same register as Part A. Quotes verified by
+   Viscosity, Stokes' law and terminal velocity — polished after
+   the owner's review (2026-11-23): plain subheadings, the scenario
+   sections restored as teaching (the rising balloon, the sphere
+   sinking into colder deeper water), examiner-report lines quoted
+   verbatim in the teaching notes, and the worked example cards
+   grouped at the end of the section, collapsed until clicked.
+   Same register as Parts A and C; quotes verified by
    scripts/t04-quotes.ts, numbers by scripts/t04-numbers.ts.
    ═══════════════════════════════════════════════════════════════ */
 
@@ -18,7 +22,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "def",
         term: "Laminar flow",
-        text: "Flow in which the layers of the fluid slide past each other ==without mixing==, and the velocity of the fluid at a fixed point stays constant. Laminar describes the ==flow==, not the object.",
+        text: "Flow in which the layers of the fluid slide past each other ==without mixing==, and the velocity of the fluid at a fixed point stays constant. Laminar describes the ==flow of the fluid==, not the object.",
       },
       {
         k: "note",
@@ -35,12 +39,12 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         term: "Viscosity",
         text: "A fluid's resistance to flow, measured in **Pa s**. Warming a liquid lowers its viscosity; cooling it raises the viscosity. Viscosity is a ==scalar== — a resistance to flow has no direction (WPH11 January 2021, Q8).",
       },
-      { k: "h", text: "What viscosity does" },
       {
         k: "bullets",
         items: [
           "Honey pours slowly, water pours fast: the difference is viscosity.",
           "A warmer liquid is less viscous, so the drag on a moving object at a given speed is smaller (WPH11 October 2025, Q4).",
+          "A warmer liquid therefore gives a higher terminal velocity; a cooler liquid gives a lower one and a longer fall.",
           "Viscosity is a property of the ==fluid==: it never appears in a weight or an upthrust.",
           "The unit is **Pa s** — and the Pa s option in a Young modulus MCQ is the viscosity distractor (WPH11 June 2026, Q1).",
         ],
@@ -50,13 +54,12 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         eq: "$F = 6\\pi\\eta r v$",
         note: "Stokes' law: the viscous drag on a sphere = 6π × viscosity × radius × speed. The specification prints this drag as F; the force balances below write it as D. The v is a ==speed== — read it as a volume and every mark in the question is gone.",
       },
-      { k: "h", text: "What the drag depends on" },
       {
         k: "bullets",
         items: [
-          "The drag is proportional to each factor on its own: double the viscosity, the radius, or the speed, and the drag doubles.",
           "The layer of fluid touching the sphere is dragged along with it; each layer beyond moves a little less.",
           "The pull the fluid exerts back on the sphere ==is== the viscous drag.",
+          "The drag is proportional to each factor on its own: double the viscosity, the radius, or the speed, and the drag doubles.",
         ],
       },
       { k: "h", text: "When Stokes' law applies" },
@@ -76,19 +79,9 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         text: "*Small spherical object Or Spherical object moving at low speed* · *Laminar flow [allow non-turbulent flow]* — the printed pair (WPH11 October 2023, Q18(a)).",
       },
       {
-        k: "worked",
-        title: "Which row gives Stokes' law its conditions",
-        question:
-          "An object is moving through a fluid. Which row of the table states the conditions which must be met for Stokes' law to apply?  A size any · shape any · flow turbulent  B size any · shape spherical · flow turbulent  C size small · shape spherical · flow laminar  D size small · shape any · flow laminar — *WPH11 June 2024, Q3*",
-        steps: [
-          "Option C: the object must be ==small== and ==spherical==, and the flow ==laminar==.",
-          "A and B fail on size and on flow; D fails on shape — the object must be spherical.",
-        ],
-        answer: "C — small, spherical, laminar",
-        ms: {
-          label: "Mark scheme",
-          text: "*A is incorrect because the object must be small and spherical, and there should be laminar flow* · *B is incorrect because the object must be small and there should be laminar flow* · *D is incorrect because the object must be spherical*.",
-        },
+        k: "note",
+        label: "Not accepted",
+        text: "*Laminar* applied to the ==object== — *a statement that 'the object must be laminar' was not sufficient to score marking point 2*: laminar describes the flow (WPH11 October 2023, Q18(a)). The printed CP2 rejections: *the flow around the sphere is turbulent* offered as an error, and *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and *mass* written where the mark scheme wants the weight.",
       },
       {
         k: "def",
@@ -115,6 +108,129 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "note",
         label: "Examiner's report",
         text: "*A statement such as 'weight = drag and upthrust' could be interpreted as meaning that weight = drag, and weight = upthrust …* ==A more mathematically accurate description of 'weight = drag + upthrust' was sufficient== (WPH11 June 2024, Q14(a)). Write the balance with a plus sign between the two upward forces.",
+      },
+      { k: "h", text: "Reaching terminal velocity" },
+      {
+        k: "bullets",
+        items: [
+          "At release the speed is zero, so the drag is zero.",
+          "The weight is greater than the upthrust, so a resultant force acts downwards and the sphere accelerates.",
+          "As the speed grows, the drag grows ($D = 6\\pi\\eta r v$), while the weight and the upthrust stay the same.",
+          "The resultant force shrinks, so the acceleration shrinks — the velocity-time curve flattens.",
+          "When $U + D = W$ the resultant force is zero: the speed stops rising at the ==terminal velocity==.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "The printed four-mark chain (WPH11 January 2025, Q20(a)): *(Initially) weight is greater than upthrust (+ drag)* · *(so) the sphere accelerates* · *drag increases (and upthrust remains constant)* · *(until) the resultant force becomes 0 (and the sphere moves at constant / terminal velocity)*.",
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*There was a noticeable proportion of answers that described the conditions for Stokes' law instead of answering the question that was asked. Some answers made general statements that drag increases when speed increases, without actually stating that the sphere would increase in speed, and so did not score MP2 or MP3* (WPH11 January 2025, Q20(a)). Say that the sphere ==speeds up==.",
+      },
+      { k: "h", text: "Rising objects" },
+      {
+        k: "bullets",
+        items: [
+          "The drag always opposes the motion: ==upwards== on a falling object, ==downwards== on a rising object.",
+          "A rising object at terminal velocity has zero resultant force: $U = W + D$.",
+          "So the upthrust on a rising object is greater than its weight.",
+          "A rising air bubble carries a negligible weight: the upthrust on it balances the drag alone.",
+          "A bubble that grows as it rises gains upthrust with the ==cube== of its radius and drag with the radius — the upthrust wins, and the bubble speeds up (WPH11 June 2026, Q17(b)).",
+        ],
+      },
+      { k: "h", text: "Comparing spheres of different sizes" },
+      {
+        k: "bullets",
+        items: [
+          "The weight of a sphere and the upthrust on it both scale with its volume — with $r^3$.",
+          "The drag on it at a given speed scales with the radius — with $r$.",
+          "A larger sphere gains more weight than drag, so its forces balance at a higher speed: it falls faster.",
+          "The terminal velocity of a sphere is proportional to $r^2$ — so the papers plot $v$ against $d^2$ and read a straight line through the origin (WPH11 June 2021, Q18).",
+        ],
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*Most answers did not consider all of the forces acting and tended to refer to only one force. This led to incorrect conclusions, for example stating that drag on the larger sphere is greater, so the terminal velocity is lower and the time taken is greater* (WPH11 January 2025, Q20(b)(ii)). All three forces before any comparison.",
+      },
+      { k: "h", text: "Deducing whether Stokes' law applies" },
+      {
+        k: "bullets",
+        items: [
+          "Every *deduce* and *assess* answer ends the same way: ==a comparison of two calculated values followed by a conclusion in words==.",
+          "The same method works in reverse: calculate the speed Stokes' law predicts and compare it with the measured speed.",
+        ],
+      },
+      {
+        k: "steps",
+        caption: "The test, in three lines",
+        items: [
+          {
+            title: "The real drag",
+            text: "From the balance at terminal velocity: $D = W - U$, with $U = \\rho_{\\text{fluid}} V g$ and $V = \\tfrac{4}{3}\\pi r^3$.",
+          },
+          {
+            title: "The Stokes drag",
+            text: "$F = 6\\pi\\eta r v$ at the measured speed, with $r = d \\div 2$.",
+          },
+          {
+            title: "Compare, then conclude",
+            text: "Equal within rounding: Stokes' law applies. Different by far more than rounding: it does not. Finish with a sentence — a bare number is not a conclusion.",
+          },
+        ],
+      },
+      { k: "h", text: "A balloon rising through the atmosphere" },
+      {
+        k: "bullets",
+        items: [
+          "On the ground, the upthrust of the air on the balloon is greater than the weight of the balloon, so the resultant force on it acts upwards, and it accelerates.",
+          "The balloon expands as it rises, until it reaches its full volume.",
+          "Above that point, the volume of the balloon is fixed while the air gets less dense, so the upthrust on the balloon falls ($U = \\rho_{\\text{air}} \\times V \\times g$).",
+          "When the upthrust on the balloon < the weight of the balloon, the resultant force on it acts downwards, so the balloon slows down.",
+          "The balloon stops rising when its velocity has fallen to zero at the maximum height.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Examiner's report",
+        text: "*Many responses … demonstrated confusion that when acceleration decreases, the velocity is still increasing, but is just increasing at a lower rate* (WPH11 October 2023, Q17(c)). While the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly. And finish the story the question asked for: answers that stopped at the terminal-velocity stage never reached the deceleration to rest.",
+      },
+      { k: "h", text: "A sphere sinking into colder, deeper water" },
+      {
+        k: "bullets",
+        items: [
+          "Start: a sphere sinking through seawater at terminal velocity, so the weight of the sphere = the upthrust on it + the drag on it ($W = U + D$).",
+          "Deeper water is colder, and the viscosity of water increases as its temperature falls, so the viscosity of the water around the sphere is greater.",
+          "So the drag on the sphere at any given speed is larger: a larger $\\eta$ gives a larger $D$ at the same $v$.",
+          "Deeper water is also denser, so the upthrust on the sphere is larger: a larger $\\rho$ gives a larger $U$.",
+          "The weight of the sphere does not change.",
+          "At the old terminal velocity, the upthrust plus the drag on the sphere is now greater than the weight of the sphere, so the resultant force on the sphere acts upwards.",
+          "The sphere slows down until the forces balance again, at a lower speed: the terminal velocity of the sphere is lower in the deeper water.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Not accepted",
+        text: "*Mass* written where the mark scheme wants the *weight*; the $v$ in $D = 6\\pi\\eta r v$ read as a volume (examiner reports name this twice); *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and on a *without calculation* question: *many just quoted the terminal velocity formula without any explanation, despite being instructed not to use calculations* — one sentence comparing the viscosities scores (WPH11 June 2022, Q19(c)).",
+      },
+      { k: "h", text: "Worked examples" },
+      {
+        k: "worked",
+        title: "The conditions for Stokes' law",
+        question:
+          "An object is moving through a fluid. Which row of the table states the conditions which must be met for Stokes' law to apply?  A size any · shape any · flow turbulent  B size any · shape spherical · flow turbulent  C size small · shape spherical · flow laminar  D size small · shape any · flow laminar — *WPH11 June 2024, Q3*",
+        steps: [
+          "Option C: the object must be ==small== and ==spherical==, and the flow ==laminar==.",
+          "A and B fail on size and on flow; D fails on shape — the object must be spherical.",
+        ],
+        answer: "C — small, spherical, laminar",
+        ms: {
+          label: "Mark scheme",
+          text: "*A is incorrect because the object must be small and spherical, and there should be laminar flow* · *B is incorrect because the object must be small and there should be laminar flow* · *D is incorrect because the object must be spherical*.",
+        },
       },
       {
         k: "worked",
@@ -149,22 +265,6 @@ export const SECTIONS_PH04_B: SpecSection[] = [
           label: "Mark scheme",
           text: "*Use of ρ = m/V* · *Use of W = mg* · *Weight = 3.3 × 10−4 N* · *Use of upthrust = weight of fluid displaced* · *Upthrust = 3.1 × 10−4 (N)* · *Uses upthrust and weight to determine the viscous force F* · *Use of V = 4/3 π r³ to determine r* · *Use of F = 6πηrv* · *v = 4.8 × 10−3 m s−1*.",
         },
-      },
-      { k: "h", text: "The story of the fall" },
-      {
-        k: "bullets",
-        items: [
-          "At release the speed is zero, so the drag is zero.",
-          "The weight is greater than the upthrust, so a resultant force acts downwards and the sphere accelerates.",
-          "As the speed grows, the drag grows ($D = 6\\pi\\eta r v$), while the weight and the upthrust stay the same.",
-          "The resultant force shrinks, so the acceleration shrinks — the velocity-time curve flattens.",
-          "When $U + D = W$ the resultant force is zero: the speed stops rising at the ==terminal velocity==.",
-        ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "The printed four-mark chain (WPH11 January 2025, Q20(a)): *(Initially) weight is greater than upthrust (+ drag)* · *(so) the sphere accelerates* · *drag increases (and upthrust remains constant)* · *(until) the resultant force becomes 0 (and the sphere moves at constant / terminal velocity)*.",
       },
       {
         k: "worked",
@@ -201,17 +301,6 @@ export const SECTIONS_PH04_B: SpecSection[] = [
           text: "*A is incorrect because viscosity decreases* · *C is incorrect because viscosity decreases* · *D is incorrect because weight of the ball bearing is constant*.",
         },
       },
-      { k: "h", text: "Rising objects" },
-      {
-        k: "bullets",
-        items: [
-          "The drag always opposes the motion: ==upwards== on a falling object, ==downwards== on a rising object.",
-          "A rising object at terminal velocity has zero resultant force: $U = W + D$.",
-          "So the upthrust on a rising object is greater than its weight.",
-          "A rising air bubble carries a negligible weight: the upthrust on it balances the drag alone.",
-          "A bubble that grows as it rises gains upthrust with the ==cube== of its radius and drag with the radius — the upthrust wins, and the bubble speeds up (WPH11 June 2026, Q17(b)).",
-        ],
-      },
       {
         k: "worked",
         title: "The helium balloon released",
@@ -232,16 +321,6 @@ export const SECTIONS_PH04_B: SpecSection[] = [
           label: "Mark scheme (indicative content)",
           text: "*Initially there is a resultant upward force* · *Balloon accelerates (upwards)* · *(Downward) air resistance force, (initially zero) increases as velocity/speed increases* · *Resultant (upward) force decreases so acceleration decreases* · *(Eventually) upthrust = weight + drag* · *Balloon continues to move (upwards) at constant velocity*.",
         },
-      },
-      { k: "h", text: "Comparing spheres" },
-      {
-        k: "bullets",
-        items: [
-          "The weight of a sphere and the upthrust on it both scale with its volume — with $r^3$.",
-          "The drag on it at a given speed scales with the radius — with $r$.",
-          "A larger sphere gains more weight than drag, so its forces balance at a higher speed: it falls faster.",
-          "The terminal velocity of a sphere is proportional to $r^2$ — so the papers plot $v$ against $d^2$ and read a straight line through the origin (WPH11 June 2021, Q18).",
-        ],
       },
       {
         k: "worked",
@@ -279,7 +358,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       },
       {
         k: "worked",
-        title: "Reading the d² graph",
+        title: "The d² graph",
         question:
           "The same student plots $v$ against $d^2$ and the points lie close to a straight line through the origin, of gradient about $6\\ \\text{m}^{-1}\\ \\text{s}^{-1}$. The textbook says that if Stokes' law is obeyed, $v = kd^2$. **(i)** Deduce from the graph whether the flow of liquid around the spheres was laminar. (3) **(iii)** The constant is given by $k = \\dfrac{(\\rho_{\\text{glass}} - \\rho_{\\text{liquid}})g}{18\\eta}$. Determine a value for $\\eta$. (2) — *WPH11 June 2021, Q18(c)*",
         steps: [
@@ -291,25 +370,6 @@ export const SECTIONS_PH04_B: SpecSection[] = [
           label: "Mark scheme",
           text: "*All data points are close to the straight line through origin* · *This consistent with Stokes' Law.* · *Stokes' Law implies laminar flow (for the spheres)* · *η = 99 Pa s (allow ecf from (c)(ii))*.",
         },
-      },
-      { k: "h", text: "The Stokes' law test" },
-      {
-        k: "steps",
-        caption: "The test, in three lines",
-        items: [
-          {
-            title: "The real drag",
-            text: "From the balance at terminal velocity: $D = W - U$, with $U = \\rho_{\\text{fluid}} V g$ and $V = \\tfrac{4}{3}\\pi r^3$.",
-          },
-          {
-            title: "The Stokes drag",
-            text: "$F = 6\\pi\\eta r v$ at the measured speed, with $r = d \\div 2$.",
-          },
-          {
-            title: "Compare, then conclude",
-            text: "Equal within rounding: Stokes' law applies. Different by far more than rounding: it does not. Finish with a sentence — a bare number is not a conclusion.",
-          },
-        ],
       },
       {
         k: "worked",

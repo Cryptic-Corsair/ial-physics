@@ -26,7 +26,7 @@ interface WorkflowSplitProps {
 }
 
 const PROGRESS_ROWS = [
-  { code: 'WPH11', title: 'Mechanics & Materials', pct: 100, minutes: 117 },
+  { code: 'WPH11', title: 'Mechanics & Materials', pct: 100, minutes: 125 },
 ];
 
 export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: WorkflowSplitProps) {

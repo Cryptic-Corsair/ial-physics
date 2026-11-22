@@ -186,9 +186,10 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Density, upthrust and viscosity",
     summary:
       "The fluids half of WPH11's Materials, rebuilt from scratch in the breathing register — density from mass and volume, upthrust as the weight of fluid displaced, floating and the fraction rule, Stokes' law with its four conditions, terminal velocity as a three-force balance, and the falling-ball viscometer — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated after the from-scratch rebuild (2026-11-23,
-       scripts/minutes-check.ts): 9705 w at the mechanics rate */
-    minutes: 40,
+    /* minutes recalibrated after the polish pass (2026-11-23,
+       scripts/minutes-check.ts): 11574 w at the mechanics rate —
+       the scenario sections came back, so the read grew */
+    minutes: 48,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
@@ -213,7 +214,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation — a sphere lowered into water on a balance, a submarine in less salty water, a hollow brass cylinder 63% submerged, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings line by line, and the answer sealed underneath.",
+        text: "Each situation — a sphere lowered into water on a balance, a submarine in less salty water, a hollow brass cylinder 63% submerged, an iceberg, a hydrometer, a Cartesian diver, a Galilean thermometer, a sinking foram, a falling-ball viscometer — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row==: a click opens the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings line by line, and the answer sealed underneath.",
       },
       {
         k: "tips",

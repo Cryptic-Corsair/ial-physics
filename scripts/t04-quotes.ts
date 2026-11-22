@@ -264,6 +264,39 @@ const QUOTES: Array<[string, string]> = [
   /* — errors (Oct-20 Q15b-iv) — */
   ["error temp", "The temperature (of the oil) was greater than 24 °C/had increased - do not accept temperature of the room."],
   ["error rejections", "Do not accept sphere too close to the edge of cylinder or the flow around the sphere is turbulent or densities used were incorrect"],
+
+  /* — teaching-note examiner reports restored in the polish pass
+     (2026-11-23: the scenario descriptions came back, and their
+     ER lines are quoted verbatim in the notes) — */
+
+  /* hydrometer (Oct-24 Q16b-i) */
+  ["hydrometer ER owners", "Many referred to weight, but did not specify whether this was the weight of the hydrometer, the weight of the displaced pure water or the weight of the displaced seawater"],
+  ["hydrometer ER displacement", "many did not use the term displacement at all, and alternatives such as replacement were not sufficient"],
+
+  /* submarine lifted from the water (Jan-25 Q18b) */
+  ["submarine ER least described", "The idea that the volume / mass / weight of displaced water decreased as the submarine moved out of the water was probably the idea that was least well described by candidates"],
+  ["submarine ER two stages", "Some responses described the situation when the submarine was fully submerged, and then when the submarine was completely out of the water, but not how the forces changed as the submarine moved between the two situations"],
+
+  /* Galilean thermometer (Jun-22 Q15) */
+  ["thermometer ER densities", "no marks were available for simply comparing densities, an explanation as to why the density is important was required"],
+  ["thermometer ER viscosity", "A common error was to bring the viscosity of the liquid into the explanation. Viscosity only has an effect while the bulb is moving"],
+  ["thermometer ER narrative", "the narrative is: the bulb floats, the temperature rises, the bulb sinks. A clear account of each stage in the right order is the most likely way to score all the marks"],
+
+  /* reaching terminal velocity (Jan-25 Q20a) */
+  ["terminal ER off-topic", "There was a noticeable proportion of answers that described the conditions for Stokes' law instead of answering the question that was asked"],
+  ["terminal ER speed", "Some answers made general statements that drag increases when speed increases, without actually stating that the sphere would increase in speed, and so did not score MP2 or MP3"],
+
+  /* larger sphere (Jan-25 Q20b-ii) */
+  ["spheres ER one force", "most answers did not consider all of the forces acting and tended to refer to only one force. This led to incorrect conclusions, for example stating that drag on the larger sphere is greater, so the terminal velocity is lower and the time taken is greater"],
+
+  /* the rising balloon (Oct-23 Q17c) */
+  ["balloon ER acceleration", "demonstrated confusion that when acceleration decreases, the velocity is still increasing, but is just increasing at a lower rate"],
+
+  /* laminar applied to the object (Oct-23 Q18a ER) */
+  ["laminar object ER", "was not sufficient to score marking point 2"],
+
+  /* the without-calculation warning (Jun-22 Q19c ER) */
+  ["glycerol ER no calc", "many just quoted the terminal velocity formula without any explanation, despite being instructed not to use calculations"],
 ];
 
 let fail = 0;

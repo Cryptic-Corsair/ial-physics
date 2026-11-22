@@ -1,7 +1,8 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { figureArt, isWideFigure } from "./note-section";
+import { useState, type ReactNode } from "react";
+import { ChevronDown } from "./icons";
+import { figureArt, isWideFigure, usePrinting } from "./note-section";
 import { Fmt } from "./format";
 import { ScrollFade } from "./bits";
 import { specAnchorId } from "@/lib/spectra/scroll-helpers";
@@ -312,9 +313,10 @@ function GalleryTable({
 }
 
 /* ————— the worked example —————
-   A framed plate: label, title, question; the reasoning as
-   accent-numbered lines between hairlines; the answer under its
-   caps label at the foot of the frame. Always in full. */
+   A framed plate that folds: the label, title, step count and
+   chevron stay out; a click unfolds the question, the reasoning
+   as accent-numbered lines between hairlines, the examiner's note
+   and the answer under its caps label. Print unfolds in full. */
 
 function GalleryWorked({
   title,
@@ -329,6 +331,9 @@ function GalleryWorked({
   answer: string;
   ms?: { label: string; text: string };
 }) {
+  const [open, setOpen] = useState(false);
+  const printing = usePrinting();
+  const shown = open || printing;
   /* “Worked example · counting σ and π” — the label already says it */
   const bare = title.replace(/^Worked example\s*·\s*/i, "");
   return (
@@ -336,57 +341,93 @@ function GalleryWorked({
       className="max-w-[var(--gal-measure)] overflow-hidden rounded-[16px] border bg-paper"
       style={{ borderColor: hair(10) }}
     >
-      <div className="p-5 sm:p-6">
-        <GalleryLabel>Worked example</GalleryLabel>
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen((o) => !o);
+          }
+        }}
+        className="worked-head w-full cursor-pointer list-none px-5 py-4 text-left select-none sm:px-6 print:cursor-default"
+      >
+        <div className="flex items-center gap-3">
+          <GalleryLabel>Worked example</GalleryLabel>
+          <span
+            aria-hidden
+            className="h-px min-w-3 flex-1"
+            style={{ background: hair(12) }}
+          />
+          <span
+            className="shrink-0 font-display text-[calc(10.5px*var(--ts-other))] font-semibold tracking-[0.16em] uppercase tabular-nums"
+            style={{ color: GAL_ACCENT }}
+          >
+            {steps.length} {steps.length === 1 ? "step" : "steps"}
+          </span>
+          <ChevronDown
+            className="h-4 w-4 shrink-0 transition-transform duration-300"
+            style={{
+              transform: open ? "rotate(180deg)" : "rotate(0deg)",
+              color: GAL_ACCENT,
+            }}
+          />
+        </div>
         <h4 className="mt-2.5 font-display text-[calc(17.5px*var(--ts-sub))] font-semibold tracking-[-0.01em] text-ink">
           <Fmt text={bare} />
         </h4>
-        <p className="mt-2 text-[calc(15px*var(--ts-body))] leading-[1.8] text-ink">
-          <Fmt text={question} />
-        </p>
-        <ol
-          className="mt-4 flex flex-col border-t"
-          style={{ borderColor: hair(8) }}
-        >
-          {steps.map((s, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-3.5 border-b py-3.5 last:border-b-0"
-              style={{ borderColor: hair(8) }}
-            >
-              <span
-                aria-hidden
-                className="w-[22px] shrink-0 pt-[calc(3px*var(--ui-scale))] font-display text-[calc(11px*var(--ts-other))] font-semibold tabular-nums"
-                style={{ color: GAL_ACCENT }}
-              >
-                {pad2(i + 1)}
-              </span>
-              <span className="min-w-0 text-[calc(14px*var(--ts-body))] leading-[1.8] text-ink-soft">
-                <StepLines text={s} />
-              </span>
-            </li>
-          ))}
-        </ol>
-        {ms && (
-          <div className="mt-3 [&>div]:mt-0">
-            <WorkedMsNote ms={ms} />
-          </div>
-        )}
-        <div
-          className="mt-1 flex items-start gap-3.5 border-t pt-3.5"
-          style={{ borderColor: hair(10) }}
-        >
-          <span
-            className="shrink-0 pt-[calc(4px*var(--ui-scale))] font-display text-[calc(10.5px*var(--ts-other))] font-semibold tracking-[0.22em] uppercase"
-            style={{ color: GAL_ACCENT }}
-          >
-            Answer
-          </span>
-          <p className="text-[calc(15px*var(--ts-body))] leading-[1.75] font-semibold text-ink">
-            <Fmt text={answer} />
-          </p>
-        </div>
       </div>
+      {shown && (
+        <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+          <p className="text-[calc(15px*var(--ts-body))] leading-[1.8] text-ink">
+            <Fmt text={question} />
+          </p>
+          <ol
+            className="mt-4 flex flex-col border-t"
+            style={{ borderColor: hair(8) }}
+          >
+            {steps.map((s, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3.5 border-b py-3.5 last:border-b-0"
+                style={{ borderColor: hair(8) }}
+              >
+                <span
+                  aria-hidden
+                  className="w-[22px] shrink-0 pt-[calc(3px*var(--ui-scale))] font-display text-[calc(11px*var(--ts-other))] font-semibold tabular-nums"
+                  style={{ color: GAL_ACCENT }}
+                >
+                  {pad2(i + 1)}
+                </span>
+                <span className="min-w-0 text-[calc(14px*var(--ts-body))] leading-[1.8] text-ink-soft">
+                  <StepLines text={s} />
+                </span>
+              </li>
+            ))}
+          </ol>
+          {ms && (
+            <div className="mt-3 [&>div]:mt-0">
+              <WorkedMsNote ms={ms} />
+            </div>
+          )}
+          <div
+            className="mt-1 flex items-start gap-3.5 border-t pt-3.5"
+            style={{ borderColor: hair(10) }}
+          >
+            <span
+              className="shrink-0 pt-[calc(4px*var(--ui-scale))] font-display text-[calc(10.5px*var(--ts-other))] font-semibold tracking-[0.22em] uppercase"
+              style={{ color: GAL_ACCENT }}
+            >
+              Answer
+            </span>
+            <p className="text-[calc(15px*var(--ts-body))] leading-[1.75] font-semibold text-ink">
+              <Fmt text={answer} />
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

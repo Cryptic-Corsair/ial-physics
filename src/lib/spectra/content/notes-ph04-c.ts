@@ -2,9 +2,11 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part C (statement 26)
-   Core Practical 2, the falling-ball viscometer — written from
-   scratch against the 2020–2024 mark schemes (2019/2025 sessions
-   as extra evidence), same register as Parts A and B. Quotes
+   Core Practical 2, the falling-ball viscometer — polished after
+   the owner's review (2026-11-23): the free-body diagram section
+   restored to the teaching half, plain subheadings throughout, and
+   the worked example cards grouped at the end of the section,
+   collapsed until clicked. Same register as Parts A and B; quotes
    verified by scripts/t04-quotes.ts, numbers by
    scripts/t04-numbers.ts.
    ═══════════════════════════════════════════════════════════════ */
@@ -32,6 +34,21 @@ export const SECTIONS_PH04_C: SpecSection[] = [
           "The upthrust comes from the ==displaced liquid== — use the density of the liquid, never the density of the ball.",
         ],
       },
+      {
+        k: "table",
+        caption: "The printed viscometer equation, term by term",
+        head: ["Term", "It is"],
+        rows: [
+          ["$(4/3)\\pi r^3 \\rho_{\\text{s}} g$", "the weight of the solid sphere"],
+          ["$(4/3)\\pi r^3 \\rho_{\\text{o}} g$", "the weight of oil displaced by the sphere — the upthrust"],
+          ["$6\\pi r \\eta v$", "the viscous drag"],
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*Weight of (solid) sphere* · *Weight of oil displaced (by the sphere ) Or upthrust* · *Viscous drag or viscous force* (WPH11 October 2020, Q15(b)).",
+      },
       { k: "h", text: "The measurements" },
       {
         k: "bullets",
@@ -44,6 +61,57 @@ export const SECTIONS_PH04_C: SpecSection[] = [
           "*One other measurement* questions expect the ==mass of the ball== (its weight is accepted); the density of the liquid is accepted too (WPH11 June 2025, Q16(a)).",
         ],
       },
+      { k: "h", text: "The method" },
+      {
+        k: "bullets",
+        items: [
+          "Fill a tall measuring cylinder with the liquid and wrap rubber bands around it as markers.",
+          "The top marker sits far enough below the surface that the ball has reached terminal velocity before the timing begins.",
+          "Measure the distance between the markers with a metre rule, and the time between them with a stopwatch.",
+          "Repeat the timing and average.",
+          "Better: time several different distances and take the ==gradient of a distance-time graph== — the gradient is the terminal velocity.",
+          "A data logger or motion sensor can record the fall automatically: on a displacement-time graph, the terminal velocity = ==the gradient of the straight section==, not a single point.",
+        ],
+      },
+      { k: "h", text: "Design choices" },
+      {
+        k: "bullets",
+        items: [
+          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls: the Stokes' law condition.",
+          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins: the $W = U + D$ condition.",
+          "The fall is timed over a long distance, which cuts the percentage uncertainty in the velocity.",
+        ],
+      },
+      { k: "h", text: "The free-body diagram of the falling ball" },
+      {
+        k: "bullets",
+        items: [
+          "Draw the weight of the ball downwards, the upthrust of the liquid on it upwards and the drag of the liquid on it upwards, all starting from the centre of the ball.",
+          "The arrow for the weight is equal in length to the arrows for the upthrust and the drag combined.",
+          "Label the forces clearly: W or mg for the weight, U for the upthrust.",
+        ],
+      },
+      {
+        k: "note",
+        label: "Mark scheme wording",
+        text: "*Upwards arrow labelled upthrust or U, and downward arrow labelled weight or W or mg; both arrows start from the dot* · *length of weight arrow ≈ length of drag arrow + length of upthrust arrow* (WPH11 October 2019, Q15(b)(i)).",
+      },
+      { k: "h", text: "Errors and validity" },
+      {
+        k: "bullets",
+        items: [
+          "Timing that begins too early catches the ball still speeding up: the computed viscosity comes out ==too large==.",
+          "A measured viscosity lower than the accepted value can come from: the liquid warmer than stated, the diameter measured too small, the time measured too short, or the marker distance measured too large (WPH11 October 2020, Q15(b)(iv)).",
+          "A larger sphere has a greater terminal velocity, so the time between the markers is shorter; the stopwatch uncertainty stays the same, so the percentage uncertainty is greater.",
+          "Keep the temperature of the liquid constant during the measurement: the viscosity of a liquid depends on it (WPH11 June 2022, Q19(a)).",
+        ],
+      },
+      {
+        k: "note",
+        label: "Not accepted",
+        text: "*The temperature of the room* — the temperature of the ==oil== is what changed. *The flow around the sphere is turbulent* and *the densities used were incorrect* are both printed rejections (WPH11 October 2020, Q15(b)(iv)).",
+      },
+      { k: "h", text: "Worked examples" },
       {
         k: "worked",
         title: "The vegetable oil",
@@ -75,17 +143,6 @@ export const SECTIONS_PH04_C: SpecSection[] = [
           text: "*B is incorrect because the ball bearing has not reached terminal velocity at W* · *D is incorrect because the ball bearing has not reached terminal velocity at W*.",
         },
       },
-      { k: "h", text: "The method" },
-      {
-        k: "bullets",
-        items: [
-          "Fill a tall measuring cylinder with the liquid and wrap rubber bands around it as markers.",
-          "The top marker sits far enough below the surface that the ball has reached terminal velocity before the timing begins.",
-          "Measure the distance between the markers with a metre rule, and the time between them with a stopwatch.",
-          "Repeat the timing and average.",
-          "Better: time several different distances and take the ==gradient of a distance-time graph== — the gradient is the terminal velocity.",
-        ],
-      },
       {
         k: "worked",
         title: "The washing-up liquid",
@@ -108,45 +165,6 @@ export const SECTIONS_PH04_C: SpecSection[] = [
           label: "Mark scheme",
           text: "*Place two or more rubber bands or markers (on the cylinder)* · *The top band should be far enough below the surface for terminal velocity to have been reached* · *Measure time for the sphere to fall a given distance (using the stopwatch) and measure distance fallen (using the metre rule)* · *Upthrust/U up* · *Drag/friction/D up* · *Weight/W/mg down* · *η = 2.1 (Pa s)*.",
         },
-      },
-      { k: "h", text: "Reading the viscometer equation" },
-      {
-        k: "table",
-        caption: "The printed viscometer equation, term by term",
-        head: ["Term", "It is"],
-        rows: [
-          ["$(4/3)\\pi r^3 \\rho_{\\text{s}} g$", "the weight of the solid sphere"],
-          ["$(4/3)\\pi r^3 \\rho_{\\text{o}} g$", "the weight of oil displaced by the sphere — the upthrust"],
-          ["$6\\pi r \\eta v$", "the viscous drag"],
-        ],
-      },
-      {
-        k: "note",
-        label: "Mark scheme wording",
-        text: "*Weight of (solid) sphere* · *Weight of oil displaced (by the sphere ) Or upthrust* · *Viscous drag or viscous force* (WPH11 October 2020, Q15(b)).",
-      },
-      { k: "h", text: "Design choices" },
-      {
-        k: "bullets",
-        items: [
-          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls: the Stokes' law condition.",
-          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins: the $W = U + D$ condition.",
-          "The fall is timed over a long distance, which cuts the percentage uncertainty in the velocity.",
-        ],
-      },
-      { k: "h", text: "Errors and validity" },
-      {
-        k: "bullets",
-        items: [
-          "Timing that begins too early catches the ball still speeding up: the computed viscosity comes out ==too large==.",
-          "A measured viscosity lower than the accepted value can come from: the liquid warmer than stated, the diameter measured too small, the time measured too short, or the marker distance measured too large (WPH11 October 2020, Q15(b)(iv)).",
-          "Keep the temperature of the liquid constant during the measurement: the viscosity of a liquid depends on it (WPH11 June 2022, Q19(a)).",
-        ],
-      },
-      {
-        k: "note",
-        label: "Not accepted",
-        text: "*The temperature of the room* — the temperature of the ==oil== is what changed. *The flow around the sphere is turbulent* and *the densities used were incorrect* are both printed rejections (WPH11 October 2020, Q15(b)(iv)).",
       },
     ],
   },

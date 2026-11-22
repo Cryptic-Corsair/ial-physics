@@ -226,7 +226,7 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 40,
+    minutes: 48,
     targetAnchor: '#units',
     keywords: ['density', 'upthrust', 'flotation', 'stokes', 'viscosity', 'terminal velocity', 'laminar', 'core practical 2'],
   },
@@ -465,7 +465,7 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     title: 'Density, upthrust and viscosity',
     specRange: '23 → 26',
     sectionsTotal: 4,
-    readMinutes: 40,
+    readMinutes: 48,
     clauses: [
       {
         spec: '23',
