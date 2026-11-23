@@ -26,7 +26,7 @@ interface WorkflowSplitProps {
 }
 
 const PROGRESS_ROWS = [
-  { code: 'WPH11', title: 'Mechanics & Materials', pct: 100, minutes: 123 },
+  { code: 'WPH11', title: 'Mechanics & Materials', pct: 100, minutes: 122 },
 ];
 
 export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: WorkflowSplitProps) {
@@ -412,7 +412,7 @@ export function WorkflowSplit({ reducedMotion, onOpenSearch, onOpenPackBench }: 
 
                   <div className="flex items-center justify-between border-t pt-4 font-mono text-xs tabular-nums" style={{ borderColor: 'var(--border)', color: 'var(--ink-muted)' }}>
                     <span>Kept in this browser — nowhere else</span>
-                    <span>319 / 756 min logged</span>
+                    <span>319 / 755 min logged</span>
                   </div>
                 </motion.div>
               )}
