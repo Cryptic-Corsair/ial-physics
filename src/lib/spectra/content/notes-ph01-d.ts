@@ -23,7 +23,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "def",
         term: "Work done by a force",
-        text: "**ΔW = FΔs** — force × the distance moved ==in the direction of the force==. When the force is not along the motion, use the component along it. Unit: the joule, 1 J = 1 N m.",
+        text: "**ΔW = FΔs** — force × the distance moved ==in the direction of the force==. When the force is not along the motion, use the component along it. The unit is the joule, 1 J = 1 N m.",
       },
       {
         k: "eq",
@@ -34,10 +34,10 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "A rope inclined at 40° pulling a box along the ground: only the component of the tension along the motion does work — F cos 40° — so ΔW = F cos θ × d.",
-          "A force ==already along== the motion needs no cosine at all: a cyclist pushing along a 4.0° slope does work = F × the distance along the slope. Multiplying the distance by a cosine or a sine anyway is the recorded error.",
-          "Work done against gravity uses the ==vertical== height only: Δh = the slope distance × sin θ, then mgΔh.",
-          "Total work splits across the resistances: the cyclist's work = the work against gravity + the work against air resistance.",
+          "A rope inclined at 40° pulling a box along the ground — only the component of the tension along the motion does work, F cos 40°, so ΔW = F cos θ × d.",
+          "A force ==already along== the motion needs no cosine at all — a cyclist pushing along a 4.0° slope does work = F × the distance along the slope.\n*A common mistake was to multiply the distance by a cosine or a sine of the angle* (WPH11 October 2022, Q19).",
+          "Work done against gravity uses the ==vertical== height only — Δh = the slope distance × sin θ, then mgΔh.",
+          "Total work splits across the resistances — the cyclist's work = the work against gravity + the work against air resistance.",
         ],
       },
       {
@@ -48,7 +48,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         steps: [
           "Only the component of the tension along the motion does work: ΔW = F cos θ × d.",
           "ΔW = 30 × cos 40° × 5 = **115 J** — option B.",
-          "The rejected options are built from the slips: the bare F × d (150 J), the sin version (96 J), and the bare ==force component== 23 N offered as a work.",
+          "The rejected options are built from the slips — the bare F × d (150 J), the sin version (96 J), and the bare ==force component== 23 N offered as a work.",
         ],
         answer: "B — 115 J",
       },
@@ -58,10 +58,10 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "A cyclist moves up a slope at a constant speed of 4.0° to the horizontal, exerting a constant force of 150 N oriented along the slope. The cyclist moves a distance of 215 m along the slope, and the mass of the cyclist and bicycle is 90 kg. (a) Show that the work done by the cyclist is about 3 × 10⁴ J. (2) (b) The cyclist does work against gravity and against air resistance. Calculate the work done against air resistance. (4) (c) State one assumption made when calculating the work done against air resistance. (1) — *WPH11 October 2022, Q19*",
         steps: [
-          "The force is ==already along== the slope, so (a) ΔW = FΔs = 150 × 215 = **3.2 × 10⁴ J** — no cosine anywhere; *the printed scheme bars the cos 4° route in marking point 1*.",
-          "The height gained: Δh = 215 × sin 4.0° = 15.0 m, so the work against gravity = 90 × 9.81 × 15.0 = 1.32 × 10⁴ J — *use of correct trigonometry for Δh* then *use of ΔEgrav = mgΔh*.",
+          "The force is ==already along== the slope, so (a) ΔW = FΔs = 150 × 215 = **3.2 × 10⁴ J** — no cosine anywhere; the printed scheme's note is *do not allow if cos 4° used in MP1*.",
+          "The height gained: Δh = 215 × sin 4.0° = 15.0 m, so the work against gravity = 90 × 9.81 × 15.0 = 1.32 × 10⁴ J — *use of correct trigonometry to calculate Δh* then *use of ΔEgrav = mgΔh*.",
           "Total work = work against gravity + work against air resistance, so the air resistance takes 3.2 × 10⁴ − 1.32 × 10⁴ = **1.9 × 10⁴ J**.",
-          "(c) The only significant forces are ==gravity and air resistance== — friction in the bicycle's bearings is negligible. *Examiner's report: many students decided that there should be no friction between the cyclist and the road, not realising that that would mean the road was too slippery for the cyclist to make any progress whatsoever.*",
+          "(c) The only significant forces are ==gravity and air resistance== — friction in the bicycle's bearings is negligible. *Examiner's report:* *many students decided that there should be no friction between the cyclist and the road, not realising that that would mean the road was too slippery for the cyclist to make any progress whatsoever.*",
         ],
         answer: "(a) 3.2 × 10⁴ J · (b) 1.9 × 10⁴ J · (c) gravity and air resistance only",
       },
@@ -71,9 +71,9 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "A horizontal sand escape lane stops vehicles that lose their brakes. A truck enters the escape lane with kinetic energy of 8.0 × 10⁶ J, and the sand exerts an average resistive force of 3.5 × 10⁵ N on the truck. Calculate the distance the truck moves along the escape lane before stopping. (2) — *WPH11 January 2025, Q13*",
         steps: [
-          "The kinetic energy lost = the work done by the resistive force — the equivalence the reports say most candidates missed.",
+          "The kinetic energy lost = the work done by the resistive force.",
           "Δs = ΔW ÷ F = 8.0 × 10⁶ ÷ 3.5 × 10⁵ ≈ **23 m**.",
-          "The same equivalence runs everywhere: the increase in gravitational potential energy of a lifting machine is the work it does ==against== gravity (that is what mgΔh is), and the area under a force–displacement graph is the work done.",
+          "The same equivalence runs everywhere — the increase in gravitational potential energy of a lifting machine is the work it does ==against== gravity (that is what mgΔh is), and the area under a force–displacement graph is the work done.",
           "*Examiner's report:* *the majority did not pick up on the idea that the change in kinetic energy is equivalent to the work done by the resistive force... Some candidates equated a change in kinetic energy with a change in gravitational potential energy, and did not appreciate that the escape lane is horizontal.*",
         ],
         answer: "≈ 23 m",
@@ -98,16 +98,16 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Double the landing speed and the kinetic energy ==quadruples==, so the struck object could rise four times as far — *the height gained does not double*.",
+          "Double the landing speed and the kinetic energy ==quadruples==, so the struck object could rise four times as far — the height gained ==does not double==.",
           "Double the kinetic energy and the new speed is √2 × the old one — the square root undoes the square.",
-          "Equal kinetic energies for two very different masses put the speeds in the ==inverse ratio of the square roots of the masses==: a particle 1/2000 the mass moves √2000 times faster.",
+          "Equal kinetic energies for two very different masses put the speeds in the ==inverse ratio of the square roots of the masses== — a particle 1/2000 the mass moves √2000 times faster.",
           "Check the ==½== and the ==square== every time; the unit is the joule, energy, not N m s⁻¹.",
         ],
       },
       {
         k: "note",
         label: "Not accepted",
-        text: "Direction words in a kinetic-energy answer — it is a ==scalar==. And quoting v = 3.4 m s⁻¹ for *show that v ≈ 3.4 m s⁻¹* — the show-that rule (statement 1, in Forces) wants the extra significant figure first.",
+        text: "Direction words in a kinetic-energy answer score nothing — it is a ==scalar==. Quoting v = 3.4 m s⁻¹ as the answer to a show that v ≈ 3.4 m s⁻¹ part scores nothing either; the show-that rule (statement 1, in Forces) wants the extra significant figure first.",
       },
     ],
   },
@@ -125,7 +125,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "eq",
         eq: "ΔEgrav = mgΔh        Δh = L sin θ  (distance L along a slope at θ to the horizontal)",
-        note: "The vertical drop is the geometry step the papers examine: L sin θ, not L — the hydro card below works it in full.",
+        note: "The vertical drop is the geometry step the papers examine — L sin θ, not L; the hydro card below works it in full.",
       },
       {
         k: "worked",
@@ -170,13 +170,13 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "eq",
         eq: "mgΔh = ½mv²        ΔEgrav = ΔEel        Ek lost = work done by resistive forces        total in = useful out + dissipated",
-        note: "When the mass appears on both sides of a chain it cancels: the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass==.",
+        note: "When the mass appears on both sides of a chain it cancels — the speed at the bottom of a frictionless drop is √(2gΔh), ==whatever the mass==.",
       },
       {
         k: "bullets",
         items: [
-          "When the stem does ==not== say that resistive forces are ignored, a complete explanation still states the assumption: ==work done against resistive forces is negligible== — it is the printed final marking point of the mass-independence chain (WPH11 June 2024, Q19).",
-          "Energies from separate stages ==combine; speeds do not==. Speeds combine only through their ==squares==: v² = u² + 2gΔh uses the height difference directly, while v₁ − v₂ subtracts two separate fall speeds and answers a different question — the paper's own rejected options are exactly those speed differences (WPH11 October 2020, Q3).",
+          "When the stem does ==not== say that resistive forces are ignored, a complete explanation still states the assumption.\n*work done against resistive forces is negligible* was the printed final marking point of the mass-independence chain (WPH11 June 2024, Q19).",
+          "Energies from separate stages ==combine; speeds do not==. Speeds combine only through their ==squares== — v² = u² + 2gΔh uses the height difference directly, while v₁ − v₂ subtracts two separate fall speeds and answers a different question.\nThe rejected options were exactly those speed differences — *would be difference in velocities of cars descending to ground from standing starts at P and Q* (WPH11 October 2020, Q3).",
         ],
       },
       {
@@ -186,9 +186,9 @@ export const SECTIONS_PH01_D: SpecSection[] = [
           "A child's slide has a vertical height of 1.7 m, and a child of mass 24 kg starts from rest at the top. Resistive forces are ignored. (a)(i) Explain why the equations of motion should not be used to determine the maximum speed of the child. (3) (a)(ii) Determine the maximum speed v of the child. (3) (b) Two slides X and Y have the same height; slide X is longer than slide Y, and the child on Y has a greater mass. Explain how v(X) compares with v(Y). (3) — *WPH11 January 2024, Q14*",
         steps: [
           "(a)(i) The slide's gradient varies, so the acceleration varies — ==the equations of motion require a constant acceleration==, so they are not usable here.",
-          "(a)(ii) The energy route instead: all the gravitational potential energy becomes kinetic — ΔEgrav = 24 × 9.81 × 1.7 = 400 J, and 400 = ½ × 24 × v², so v = √(2 × 9.81 × 1.7) ≈ **5.8 m s⁻¹**. *Do not accept use of equations of motion* — the printed warning.",
-          "(b) v = √(2gΔh) contains no mass and no path length — only Δh matters, so ==v(X) = v(Y)==: the same speed for both children.",
-          "Do not import drag and friction into an answer when the question says resistive forces are ignored — *the report records candidates discussing drag and friction in their answers, despite the question stating that resistive forces should be ignored*.",
+          "(a)(ii) The energy route instead — all the gravitational potential energy becomes kinetic, so ΔEgrav = 24 × 9.81 × 1.7 = 400 J, and 400 = ½ × 24 × v², so v = √(2 × 9.81 × 1.7) ≈ **5.8 m s⁻¹**. *Do not accept use of equations of motion* — the printed warning.",
+          "(b) v = √(2gΔh) contains no mass and no path length — only Δh matters, so ==v(X) = v(Y)== — the same speed for both children.",
+          "Do not import drag and friction into an answer when the question says resistive forces are ignored — *some students discussed drag and friction in their answers, despite the question stating that resistive forces should be ignored*.",
         ],
         answer: "(a)(ii) 5.8 m s⁻¹ · (b) equal speeds — only Δh matters",
       },
@@ -214,7 +214,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
           "The gravitational potential energy ==decreases throughout== the fall — *Egrav decreases (throughout)* is the first printed point.",
           "While accelerating, the kinetic energy ==increases== — *and work is done against air resistance* at every stage.",
           "At terminal velocity the kinetic energy is constant, so ==all the lost gravitational potential energy is dissipated== — *(due to work done against air resistance)*.",
-          "Name the force doing the work and the store the energy lands in — that naming is the marking point. *Examiner's report: many responses ended up describing or explaining how the forces on the skydiver varied, rather than explaining how conservation of energy applied. Some candidates just stated the law of conservation of energy, without applying this to the skydiver.*",
+          "Name the force doing the work and the store the energy lands in — that naming is the marking point. *Examiner's report:* *many responses ended up describing or explaining how the forces on the skydiver varied, rather than explaining how conservation of energy applied. Some candidates just stated the law of conservation of energy, without applying this to the skydiver.*",
         ],
         answer: "Egrav falls throughout · Ek rises, then constant at terminal velocity · dissipated by work done against drag",
       },
@@ -224,11 +224,11 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "The diagram shows a lift system for moving people up and down a tall building. There is a counterweight to balance the weight of the lift. An electric motor is used to raise and lower the lift. (a) Explain how the counterweight affects the amount of work required from the electric motor to raise the lift. (2) (b) The electric motor raises the lift through a height of 40.0 m in a time of 30.0 s. Show that the output power of the electric motor is about 12 kW. total mass of lift and people = 2 250 kg, mass of counterweight = 1 300 kg (4) — *WPH11 January 2022, Q12*",
         steps: [
-          "(a) As the lift rises, the counterweight ==descends== and transfers its stored gravitational potential energy ==to the lift side== of the system — *the printed points: the amount of work from the electric motor is reduced; because there is energy transfer between the counterweight and the lift* (or *the counterweight reduces the force required from the motor*).",
-          "(b) Two gravitational energy changes share the same 40.0 m: the lift gains ΔEgrav = 2250 × 9.81 × 40.0 = 8.829 × 10⁵ J while the counterweight loses ΔEgrav = 1300 × 9.81 × 40.0 = 5.101 × 10⁵ J — *use of ΔEgrav = mgΔh* on ==both== masses is the first marking point.",
-          "The motor supplies only the ==difference==: ΔW = 8.829 × 10⁵ − 5.101 × 10⁵ = 3.728 × 10⁵ J — *use of conservation of energy* is the next marking point.",
+          "(a) As the lift rises, the counterweight ==descends== and transfers its stored gravitational potential energy ==to the lift side== of the system. The printed points are *amount of work from the electric motor is reduced* and *because there is energy transfer between the counterweight and the lift* (or *because the counterweight reduces the force required from the motor*).",
+          "(b) Two gravitational energy changes share the same 40.0 m — the lift gains ΔEgrav = 2250 × 9.81 × 40.0 = 8.829 × 10⁵ J while the counterweight loses ΔEgrav = 1300 × 9.81 × 40.0 = 5.101 × 10⁵ J — *use of ΔEgrav = mgΔh* on ==both== masses is the first marking point.",
+          "The motor supplies only the ==difference== — ΔW = 8.829 × 10⁵ − 5.101 × 10⁵ = 3.728 × 10⁵ J. *Use of conservation of energy* is the next marking point.",
           "P = W ÷ t = 3.728 × 10⁵ ÷ 30.0 = 1.243 × 10⁴ W ≈ **12 kW** — *use of P = W/t* then the answer. The lift alone would have needed 8.829 × 10⁵ ÷ 30.0 ≈ 29 kW; the counterweight's contribution brings the motor down to ≈ 12 kW.",
-          "The alternative printed route works through forces: the motor's force = (m~lift~ − m~cw~)g = (2250 − 1300) × 9.81 = 9319.5 N, then ΔW = FΔx = 9319.5 × 40.0 = 3.728 × 10⁵ J and the same power — *the scheme allows: calculates resultant force; use of ΔW = FΔx; use of P = W/t*.",
+          "The alternative printed route works through forces — the motor's force = (m~lift~ − m~cw~)g = (2250 − 1300) × 9.81 = 9319.5 N, then ΔW = FΔx = 9319.5 × 40.0 = 3.728 × 10⁵ J and the same power. The scheme allows *Calculates resultant force*, *use of ΔW = FΔx* and *use of P = W/t*.",
         ],
         answer: "(a) the descending counterweight transfers energy to the lift, so the motor's work is reduced · (b) 12.4 kW ≈ 12 kW",
       },
@@ -247,7 +247,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "eq",
         eq: "P = W/t        P = E/t        P = Fv",
-        note: "P = Fv is not printed on the data sheet, but the mark schemes ==allow P = Fv== whenever it fits — derive it in one line: W = FΔs divided by t, with Δs ÷ t = v.",
+        note: "P = Fv is not printed on the data sheet, but the mark schemes ==allow P = Fv== whenever it fits — derive it in one line, W = FΔs divided by t, with Δs ÷ t = v.",
       },
       {
         k: "worked",
@@ -255,10 +255,10 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "A motorboat's engine provides a constant horizontal force of 5.5 kN. As the boat's velocity increases the resultant horizontal force decreases until the boat travels at terminal velocity. (a) State what is meant by a resultant force. (1) (b) At a certain time the drag force on the boat is 3.1 kN and the mass of the boat is 7.5 × 10³ kg. Calculate the acceleration of the boat at this time. (2) (c) The terminal velocity of the boat is 4.8 m s⁻¹. Calculate the output power of the engine. (2) — *WPH11 October 2022, Q11*",
         steps: [
-          "(a) *The (vector) sum of all forces (acting on an object) or the single force that would have the same effect as all the other forces acting together* — the definition the whole paper leans on.",
-          "(b) Two unequal horizontal forces act: ΣF = 5.5 − 3.1 = 2.4 kN, so a = 2400 ÷ 7500 = **0.32 m s⁻²** — *the report: it was common for candidates to use an incorrect value for resultant force due to forgetting that two unequal horizontal forces were acting on the boat*.",
+          "(a) *The (vector) sum of all forces (acting on an object) or the single force that would have the same effect as all the other forces acting together* — the printed definition.",
+          "(b) Two unequal horizontal forces act — ΣF = 5.5 − 3.1 = 2.4 kN, so a = 2400 ÷ 7500 = **0.32 m s⁻²**. Forgetting the second force was the common slip — *it was common for candidates to use an incorrect value for resultant force due to forgetting that two unequal horizontal forces were acting on the boat*.",
           "(c) At terminal velocity the engine's work goes into ==pushing the water aside==, at the rate P = Fv: P = 5500 × 4.8 = **2.6 × 10⁴ W** — the printed scheme allows P = Fv.",
-          "Calculating the boat's kinetic energy is the wrong route — the question is about the ==rate of working==, not the stored energy. *Examiner's report: many candidates attempted to calculate the kinetic energy of the boat, which is irrelevant.*",
+          "Calculating the boat's kinetic energy is the wrong route — the question is about the ==rate of working==, not the stored energy. *Examiner's report:* *many candidates attempted to calculate the kinetic energy of the boat, which is irrelevant.*",
         ],
         answer: "(a) the vector sum of all forces · (b) 0.32 m s⁻² · (c) 2.6 × 10⁴ W",
       },
@@ -271,7 +271,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
           "Work per pull: ΔW = FΔs = 150 × 0.25 = 37.5 J — with the ==force given in this question part==, not a force carried over from the earlier part (121 N) with different conditions.",
           "Total work: 90 × 37.5 = 3375 J in 120 s, so P = 3375 ÷ 120 = **28 W** — *use of P = W/t* is the middle mark.",
           "28 W ≠ 35 W, so ==the display is not consistent== — the comparison is the final marking point.",
-          "Working ==backwards== from 35 W — to the time, the count, the force or the distance — reaches the same verdict; *the printed scheme allows those approaches*.",
+          "Working ==backwards== from 35 W — to the time, the count, the force or the distance — reaches the same verdict; the printed scheme allows those approaches.",
         ],
         answer: "no — 28 W ≠ 35 W",
       },
@@ -281,7 +281,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "A motor lifts a mass of 50 000 kg through a height of 25 m. The output power of the motor is 700 kW. Which expression gives the time taken for the lift?  A (50 000 × 25) ÷ 700 000 · B (50 000 × 9.81 × 25) ÷ 700 000 · C (50 000 × 25) ÷ 700 · D (50 000 × 9.81 × 25) ÷ 700 — *WPH11 January 2023, Q8*",
         steps: [
-          "A time from a power: t = energy ÷ power = mgΔh ÷ P.",
+          "A time from a power — t = energy ÷ power = mgΔh ÷ P.",
           "The rejected options omit ==g== (A and C) or mishandle the ==kilo-== prefix in the power (D).",
           "t = (50 000 × 9.81 × 25) ÷ 700 000 ≈ **18 s** — option B.",
         ],
@@ -294,7 +294,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
           "A person stands on a moving staircase. The staircase increases the gravitational potential energy of the person by 5000 J in a time of 42 s, and the efficiency of the staircase is 0.63. Which expression gives the power input to the staircase in watts?  A 42 ÷ (5000 × 0.63) · B (42 × 0.63) ÷ 5000 · C 5000 ÷ (42 × 0.63) · D (5000 × 0.63) ÷ 42 — *WPH11 October 2024, Q6*",
         steps: [
           "Useful output power = 5000 ÷ 42 ≈ 119 W; efficiency = output ÷ input, so the ==input== power = 5000 ÷ (42 × 0.63) ≈ **190 W** — option C.",
-          "The rejected options invert the ratio, or ==multiply== by the efficiency instead of dividing — *the printed scheme: the useful output power should not be inverted / should be divided by 0.63*.",
+          "The rejected options invert the ratio, or ==multiply== by the efficiency instead of dividing — the scheme's own notes say *the useful output power should not be inverted* (A and B), and for D, *the useful output power should be divided by 0.63*.",
         ],
         answer: "C — ≈ 190 W",
       },
@@ -307,7 +307,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
           "Stage A: with a constant driving force and a growing v, P = Fv — the useful power output ==increases== as the chemical store transfers energy to kinetic energy faster and faster.",
           "Stage B: constant velocity up the ramp — energy is transferred to gravitational potential energy at a constant rate, P = mgv: ==constant==.",
           "Stage C: airborne, no contact force — the useful power output is ==zero==; nothing is being pushed.",
-          "The linkage is what the 6 marks pay for: useful power output = the rate of useful energy transfer, tracked through all three stages — the same rate-of-transfer logic in each.",
+          "The linkage is what the 6 marks pay for — useful power output = the rate of useful energy transfer, tracked through all three stages.",
         ],
         answer: "A increases · B constant · C zero",
       },
@@ -328,9 +328,9 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "**Input from output**: input = output ÷ efficiency — the escalator card above gives 5000 ÷ (42 × 0.63) ≈ 190 W; multiplying by the efficiency instead is the rejected option.",
-          "**Dissipated power**: the waste = (1 − efficiency) × the ==total input== — using the useful output here gives the wrong waste.",
-          "**Power-station accounting**: the total input = the useful output + the waste — the waste does not go in the numerator; the hydro card in statement 19 works it in full.",
+          "**Input from output** — input = output ÷ efficiency; the escalator card above gives 5000 ÷ (42 × 0.63) ≈ 190 W, and multiplying by the efficiency instead is the rejected option.",
+          "**Dissipated power** — the waste = (1 − efficiency) × the ==total input==; using the useful output here gives the wrong waste.",
+          "**Power-station accounting** — the total input = the useful output + the waste; the waste does not go in the numerator. The hydro card in statement 19 works it in full.",
           "In percentage form the ==% symbol is required==; as a decimal it is a plain number between 0 and 1.",
         ],
       },
@@ -349,7 +349,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       },
       {
         k: "table",
-        caption: "The five calculations and the slip in each",
+        caption: "The calculations and the slip in each",
         head: ["Calculation", "The slip"],
         rows: [
           ["Dissipated power = (1 − efficiency) × total input", "using the output instead of the input"],
@@ -363,27 +363,33 @@ export const SECTIONS_PH01_D: SpecSection[] = [
       { k: "h", text: "The marking rules that never change" },
       {
         k: "p",
-        text: "These are the standing rules printed in every WPH11 mark scheme across the series. They apply to every calculation in this unit, so they are worth more marks per minute of revision than any single topic point.",
+        text: "These are the standing rules printed in every WPH11 mark scheme across the series. They apply to every calculation in this unit, so they decide marks in every topic, not just this one.",
       },
       {
         k: "table",
         caption: "The standing calculation rules",
         head: ["Rule", "The mark scheme's wording"],
         rows: [
-          ["*Use of …* marks", "The correct equation with physically correct values substituted earns the method mark — even with a power-of-ten slip afterwards. Show the substitution, always."],
+          ["*Use of* marks", "The correct equation with physically correct values substituted earns the method mark — even with a power-of-ten slip afterwards. Show the substitution, always."],
           ["ecf — error carried forward", "A wrong earlier answer does not sink later parts; the marks are re-marked with your value. Never abandon a part because the last one went wrong."],
           ["Significant figures", "Quote *show that* answers to at least 1 more s.f. than the given value. Carry all digits through; round only on the final line. Rounding, never truncating (417 becomes 420, not 410)."],
           ["Units", "A missing or wrong unit on a final answer normally loses that answer's mark (once per question; never in show-that). Strain has no unit."],
           ["g", "Use 9.81 (9.8 accepted); g = 10 costs one mark, once per paper."],
           ["Deduce questions", "Calculate, compare with the question's value (<, >, =, ≈), and state the conclusion in words. The bare number never earns the final mark."],
-          ["Starred (*) questions", "The final marks pay for structure: *coherent and logical structure with linkages and fully sustained lines of reasoning demonstrated throughout* scores the top band; *partially structured with some linkages* scores the middle. Chain the points with so / because / therefore — the lift-scales card in statement 9 (Forces) shows the shape."],
+          ["Starred (*) questions", "The final marks pay for structure: *coherent and logical structure with linkages and fully sustained lines of reasoning demonstrated throughout* scores the top band; *partially structured with some linkages* scores the middle. Chain the points with so / because / therefore — the lift-scales card in statement 9 (Forces) works one in full."],
           ["Reverse working", "Full credit on 2-mark show-thats; capped at 2 of 3 on 3-mark ones."],
           ["Bald correct answers", "Full marks — except in show-that and extended calculations, where working is the marks."],
         ],
       },
+      { k: "h", text: "The examiners' own revision advice" },
       {
-        k: "p",
-        text: "And the examiners' own revision advice, repeated across the reports: practise in ==varied contexts== — the reports describe the paper as *new or more unfamiliar contexts*; read the command word — *state*, *calculate*, *explain* and *deduce* each demand a different shape of answer; and *a three-mark explanation is likely to need candidates to give three different points in their answer*. Leave nothing blank — every correct statement can still earn its mark.",
+        k: "bullets",
+        items: [
+          "Practise in ==varied contexts== — the reports describe the paper as covering *new or more unfamiliar contexts* (WPH11 June 2022).",
+          "Read the command word — *state*, *calculate*, *explain* and *deduce* each need a different kind of answer.",
+          "*A 3-mark explanation is likely to need candidates to give 3 different points in their answer* (WPH11 June 2025, Q16).",
+          "Leave nothing blank — every correct statement can still earn its mark.",
+        ],
       },
     ],
   },

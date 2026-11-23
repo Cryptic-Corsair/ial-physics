@@ -60,7 +60,7 @@ export const SECTIONS_PH01F_B: SpecSection[] = [
         steps: [
           "(a) Horizontal column first — $a = 0$:\n$v_{\\text{H}} = 9.70\\cos 49.0^{\\circ} = 6.36\\ \\text{m s}^{-1}$\n$t = \\frac{5.00}{6.36} = 0.786\\ \\text{s}$\nOne more significant figure than the *about 0.8 s* asked.",
           "(b) Vertical column:\n$u_{\\text{V}} = 9.70\\sin 49.0^{\\circ} = 7.32\\ \\text{m s}^{-1}$\n$s = u_{\\text{V}}t + \\tfrac{1}{2}at^2 = (7.32)(0.786) - (4.905)(0.786)^2$",
-          "$s = 2.72\\ \\text{m}$\nEvery height carries its unit — the report records marks lost for bare numbers.",
+          "$s = 2.72\\ \\text{m}$\nEvery height carries its unit — bare numbers have lost marks before.",
           "Compare:\n$2.72\\ \\text{m} < 3.00\\ \\text{m}$\nSo the ball does not go over the wall. The comparison is the final marking point.",
         ],
         answer: "(a) t = 0.786 s · (b) no — 2.72 m < 3.00 m, the ball does not clear the wall",

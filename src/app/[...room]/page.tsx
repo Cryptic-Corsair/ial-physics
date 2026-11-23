@@ -61,7 +61,7 @@ export async function generateMetadata({
   return {
     title: { absolute: "IAL PHYSICS — the workspace" },
     description:
-      "The revision workspace: WPH11's four notes — Forces, Moments and momentum, Work energy and power, Density upthrust and viscosity — plus the notes reader, the spec index and the pack bench for Edexcel International A Level Physics (WPH11).",
+      "The revision workspace: WPH11's five notes — Forces, Moments and momentum, Work energy and power, Density upthrust and viscosity, Hooke's law stress and strain — plus the notes reader, the spec index and the pack bench for Edexcel International A Level Physics (WPH11).",
     robots: { index: false, follow: true },
     /* a noindexed page still owes the crawlers a self-canonical —
        inheriting the layout's canonical ("/") would point every

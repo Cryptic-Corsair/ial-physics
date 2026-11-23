@@ -81,41 +81,43 @@ export const WPH11_TOPICS: Topic[] = [
       "Newton's third law and the five properties of a force pair, momentum and its conservation in one dimension, then the turning effects — the moment of a force, the centre of gravity and the principle of moments, from a loft ladder to a crane's counterweight — statement by statement, written the way the mark schemes mark it.",
     /* minutes recalibrated for the split (2026-11-22): statements
        12–16 at the mechanics words-per-minute rate, the third-law
-       rules leading straight into momentum as the papers pair them */
-    minutes: 18,
+       rules leading straight into momentum as the papers pair them;
+       nudged to 19 after the 2026-11-23 polish pass (minutes-check
+       now reads 18.8) */
+    minutes: 19,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. The situations — two gliders that stick, a spaceship's separating modules, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — are all worked example cards: the question as the paper sets it, the marking points as steps, the answer sealed.",
+        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. The situations — two gliders that stick, a spaceship's separating modules, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — are all worked example cards — the question as the paper sets it, the marking points as steps, the answer sealed.",
       },
       {
         k: "def",
         term: "Momentum",
-        text: "Mass in motion: **p = mv** — a ==vector==, in the direction of the velocity, measured in ==kg m s⁻¹== (equivalently N s). The direction is what the conservation sums lean on: opposite directions carry opposite signs.",
+        text: "Mass in motion — **p = mv**, a ==vector== in the direction of the velocity, measured in ==kg m s⁻¹== (equivalently N s). Opposite directions carry opposite signs.",
       },
       {
         k: "def",
         term: "Moment of a force",
-        text: "The turning effect of a force about an axis: **moment = Fx**, with x the ==perpendicular distance== from the axis to the force's ==line of action==. Unit: **N m**.",
+        text: "The turning effect of a force about an axis: **moment = Fx**, with x the ==perpendicular distance== from the axis to the force's ==line of action==. The unit is **N m**.",
       },
       {
         k: "eq",
         title: "The equations this topic turns on",
         eq: "p = mv        m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂        moment = Fx",
-        note: "Assign + and − to the two directions ==before== substituting into the conservation equation, and state which way is positive; in the moment equation take x ==perpendicular== to the force — or use the component of the force along the lever. Both habits are the marks the schemes keep awarding.",
+        note: "Assign + and − to the two directions ==before== substituting into the conservation equation, and state which way is positive; in the moment equation take x ==perpendicular== to the force, or use the component of the force perpendicular to the lever.",
       },
       {
         k: "p",
-        text: "The mark schemes' ==rejected wordings== are quoted inside the cards — the *equal and opposite reaction* slogan that scores nothing on its own, the momentum answers that never mention forces — and the Not accepted notes collect the general traps.",
+        text: "The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the traps — the third-law slogan on its own, the momentum answers that never mention forces.",
       },
       {
         k: "tips",
         items: [
-          "The conservation principle is **two marks in one sentence**: ==total momentum before = total momentum after==, ==provided no external resultant force acts on the system== — say both halves when the question asks for the principle in words.",
-          "A third-law pair is checked on **five properties at once**: equal magnitude · opposite directions · same type of force · acting on different bodies · acting at the same time.",
-          "A moments question is a table, not an inspiration: choose the ==pivot==, mark the ==centre of gravity==, list each force's turning direction, write moment = Fx for each, balance.",
-          "The ==limiting case== (toppling, lifting, on the point of sliding) is where the final mark sits: state the comparison first, then the verdict.",
+          "The conservation principle is **two marks in one sentence** — ==total momentum before = total momentum after==, ==provided no external resultant force acts on the system==. Say both halves when the question asks for the principle in words.",
+          "A third-law pair is checked on **five properties at once** — equal magnitude · opposite directions · same type of force · acting on different bodies · acting at the same time.",
+          "A moments question is a table — choose the ==pivot==, mark the ==centre of gravity==, list each force's turning direction, write moment = Fx for each, balance.",
+          "The ==limiting case== (toppling, lifting, on the point of sliding) carries the final mark — state the comparison first, then the verdict.",
         ],
       },
       {
@@ -124,7 +126,7 @@ export const WPH11_TOPICS: Topic[] = [
           "Momentum is conserved in a closed system; say *total*, say *system*, say the condition.",
           "Moment = Fx with the ==perpendicular== distance — or F cos θ × d with the force at θ to the lever.",
           "A uniform beam's weight acts at its ==middle==; the centre of gravity is where the weight *may be taken to act*.",
-          "Starred momentum questions chain: pair rule → resultant → momentum change, with so / because joining the sentences.",
+          "Starred momentum questions chain — the pair rule, then the resultant force, then the momentum change, with so / because joining the sentences.",
         ],
       },
     ],
@@ -144,38 +146,38 @@ export const WPH11_TOPICS: Topic[] = [
     blocks: [
       {
         k: "p",
-        text: "The recurring WPH11 calculation lives here: ==work done== at and against the motion, ==kinetic energy== and ==gravitational potential energy==, ==conservation of energy== chains — a curved slide, a bungee jump, a skydiver's whole fall — then ==power== and ==efficiency==. The question the series keep asking is the same one: ==which number is the useful output==, ==which the total input==, and what happened to the difference. Each situation is a worked example card — the question as the paper sets it, with the paper and question number on it, the marking points as steps and the answer sealed underneath.",
+        text: "The recurring WPH11 calculation lives here: ==work done== at and against the motion, ==kinetic energy== and ==gravitational potential energy==, ==conservation of energy== chains — a curved slide, a bungee jump, a skydiver's whole fall — then ==power== and ==efficiency==. The question the series keep asking is the same one — ==which number is the useful output==, ==which the total input==, and what happened to the difference. Each situation is a worked example card — the question as the paper sets it, with the paper and question number on it, the marking points as steps and the answer sealed underneath.",
       },
       {
         k: "def",
         term: "Work done",
-        text: "ΔW = FΔs — the energy transferred when a force moves through a displacement. Only the component ==along the line of motion== counts: at θ to the movement, ΔW = F cos θ × Δs. Unit: **J**.",
+        text: "ΔW = FΔs — the energy transferred when a force moves through a displacement. Only the component ==along the line of motion== counts — at θ to the movement, ΔW = F cos θ × Δs. The unit is **J**.",
       },
       {
         k: "eq",
         title: "The energy set on the data sheet",
         eq: "ΔW = FΔs        Ek = ½mv²        ΔEgrav = mgΔh        P = E/t = W/t        efficiency = useful ÷ total",
-        note: "All printed — the marks are in ==choosing==, converting units, and finishing a *deduce* with a comparison and a sentence. The conservation chains add the accounting: the energy lost by one store ==equals== the energy gained by the others.",
+        note: "All printed — the marks are in ==choosing==, converting units, and finishing a *deduce* with a comparison and a sentence. The conservation chains are the accounting — the energy lost by one store ==equals== the energy gained by the others.",
       },
       {
         k: "p",
-        text: "The topic closes with ==the marking rules that never change== — the standing rules printed in every WPH11 mark scheme across the series: *use of* marks, ecf, the show-that significant figures, the unit penalty, g = 9.81, the shape of a *deduce* answer and the starred-question structure bands.",
+        text: "The topic closes with ==the marking rules that never change== — the standing rules printed in every WPH11 mark scheme across the series, from *use of* marks and ecf to the show-that significant figures, the unit penalty, g = 9.81, what a *deduce* answer needs and the starred-question structure bands.",
       },
       {
         k: "tips",
         items: [
           "Efficiency is a plain decimal (0.28) or a ==percentage== (28 %) — the % symbol is required in percentage form, and an answer above 100 % is an accounting error.",
-          "The waste = (1 − efficiency) × the ==total input==, and the total input = the useful output + the waste — neither goes in the numerator.",
-          "Power is a ==rate==: P = E/t with E in J and t in s. When a force and a speed are both in play, P = Fv.",
+          "The waste = (1 − efficiency) × the ==total input==, and the total input = the useful output + the waste — the numerator is always the ==useful output==.",
+          "Power is a ==rate==, P = E/t with E in J and t in s. When a force and a speed are both in play, P = Fv.",
           "*Time from a power* is the rearrangement the papers set — divide the energy by the power, ==don't multiply==.",
         ],
       },
       {
         k: "recap",
         items: [
-          "Conservation chains: name the stores, set the losses ==equal== to the gains — a curved slide's speed from height needs no acceleration.",
+          "Conservation chains — name the stores, set the losses ==equal== to the gains; a curved slide's speed from height needs no acceleration.",
           "ΔW = FΔs with the force ==along the motion==; at an angle, F cos θ × Δs.",
-          "Efficiency: useful output ÷ total input — ==which number is the useful one== is the mark.",
+          "Efficiency = useful output ÷ total input — ==which number is the useful one== is the mark.",
           "Deduce questions end with a number, a comparison and a sentence — always.",
         ],
       },
@@ -281,7 +283,7 @@ export const WPH11_TOPICS: Topic[] = [
           "Strain carries ==no unit== — a ratio of two lengths. Give it as a decimal or a percentage; the examiner reports say fraction answers do not score.",
           "The gradient of a stress-strain graph is E; the gradient of a force-extension graph is k — swap them and every mark after the first goes.",
           "Use a ==large triangle== for a graph gradient — the schemes give one mark only when the points cover less than half the drawn line.",
-          "A definition of the elastic limit without ==when the load is removed== scores nothing — the reports record it every series.",
+          "A definition of the elastic limit without ==when the load is removed== scores nothing — the examiner reports flag it every series.",
         ],
       },
       {
