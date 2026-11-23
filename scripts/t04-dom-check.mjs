@@ -166,7 +166,7 @@ check(
   layout.perCard.every((c) => c.brs >= 2),
   `min ${Math.min(...layout.perCard.map((c) => c.brs))} breaks, total ${layout.perCard.reduce((n, c) => n + c.brs, 0)}`,
 );
-check("foram card: the paper's five lines", layout.foram && layout.foram.brs === 4, `${layout.foram?.brs} breaks`);
+check("foram card: the paper's six lines (data on its own line, as WPH11 prints it)", layout.foram && layout.foram.brs === 5, `${layout.foram?.brs} breaks`);
 check("foram card: scenario, (i), (ii), (b) and citation all present", text.includes("(i) Show that the viscous drag on it is about") && text.includes("(b) As the forams sink deeper into the sea") && text.includes("WPH11 October 2022, Q17"));
 check("MCQ card: rows one to a line", layout.mcq && layout.mcq.brs >= 5, `${layout.mcq?.brs} breaks`);
 check("no literal \\n leaks into prose", !layout.literalNl);

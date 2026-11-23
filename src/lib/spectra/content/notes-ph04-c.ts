@@ -2,22 +2,14 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part C (statement 26)
-   Polish pass (2026-11-23, owner review): the worked questions are
-   now set out the way the papers set them — scenario first, then
-   each part on its own line with its mark count, the given data
-   where the paper prints it, the multiple-choice rows one to a
-   line, the citation on the last line (the question text, the
-   numbers and the marks are unchanged; only the layout moves).
-   The subheadings stay as the condense pass cut them — "The
-   principle", "The measurements", "The method", "Design choices",
-   "Errors and validity" — and the teaching stays put: the
-   free-body diagram section in the teaching half, the repeated
-   terminal-velocity-before-timing warning said once in the
-   principle and once in the design choices. The spacing and block
-   rhythm the owner approved stay untouched. Mark scheme and
-   examiner-report wordings stay quoted verbatim
-   (scripts/t04-quotes.ts; every number re-computed by
-   scripts/t04-numbers.ts).
+   Register pass (2026-11-23): the prose is rewritten in the same
+   register as the Topic 2 Materials note — full sentences, the
+   working symbols inside the sentences, one logical step per
+   bullet joined with "so", and no rhetorical asides. The worked
+   questions are set out the way the papers print them and their
+   text is unchanged; the mark scheme and examiner-report wordings
+   stay quoted verbatim (scripts/t04-quotes.ts; every number
+   re-computed by scripts/t04-numbers.ts).
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_C: SpecSection[] = [
@@ -36,10 +28,10 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "bullets",
         items: [
           "A small ball is released into a tall tube of liquid and falls until it reaches terminal velocity.",
-          "At terminal velocity the balance holds: $W = U + D$, and Stokes' law supplies the drag: $D = 6\\pi\\eta r v$.",
+          "At terminal velocity the forces balance: $W = U + D$, and Stokes' law gives the drag: $D = 6\\pi\\eta r v$.",
           "Rearranged, the viscosity follows from measured quantities only: $\\eta = (W - U) \\div 6\\pi r v$.",
           "The method assumes the ball has reached ==terminal velocity before the timing starts==, and that the Stokes' law conditions hold during the timed fall.",
-          "The upthrust comes from the ==displaced liquid== — use the density of the liquid, never the density of the ball.",
+          "The upthrust comes from the ==displaced liquid==: use the density of the liquid, never the density of the ball.",
         ],
       },
       {
@@ -61,10 +53,10 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The mass of the ball, for its weight ($W = mg$).",
-          "The diameter, with a micrometer, for the radius and the volume ($V = \\tfrac{4}{3}\\pi r^3$).",
-          "The density of the liquid, for the upthrust ($U = \\rho V g$).",
-          "The time to fall between two fixed marks, for the terminal velocity ($v = s \\div t$) — and the temperature, because the viscosity depends on it.",
+          "The mass of the ball, to calculate its weight ($W = mg$).",
+          "The diameter of the ball, measured with a micrometer, for the radius and the volume ($V = \\tfrac{4}{3}\\pi r^3$).",
+          "The density of the liquid, to calculate the upthrust ($U = \\rho V g$).",
+          "The time to fall between two fixed marks, for the terminal velocity ($v = s \\div t$), and the temperature of the liquid, because the viscosity depends on it.",
           "*One other measurement* questions expect the ==mass of the ball== (its weight is accepted); the density of the liquid is accepted too (WPH11 June 2025, Q16(a)).",
         ],
       },
@@ -75,7 +67,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
           "Fill a tall measuring cylinder with the liquid and wrap rubber bands around it as markers.",
           "The top marker sits far enough below the surface that the ball has reached terminal velocity before the timing begins.",
           "Measure the distance between the markers with a metre rule; time the fall with a stopwatch; repeat and average.",
-          "Better: time several different distances and take the ==gradient of a distance-time graph== — the gradient is the terminal velocity.",
+          "A better method: time the fall over several different distances and take the ==gradient of a distance-time graph==; the gradient is the terminal velocity.",
           "A data logger or motion sensor can record the fall: on a displacement-time graph the terminal velocity = ==the gradient of the straight section==, not a single point.",
         ],
       },
@@ -83,9 +75,9 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls near the walls — the Stokes' law condition.",
-          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins — the $W = U + D$ condition.",
-          "The fall is timed over a long distance, which cuts the percentage uncertainty in the velocity.",
+          "The tube is wide and the ball is small, so the flow around the ball stays laminar and the ball never falls close to the wall of the tube: the Stokes' law condition holds.",
+          "The top marker sits well below the surface, so the speed has stopped changing before the timing begins, as the balance $W = U + D$ requires.",
+          "The fall is timed over a long distance, which reduces the percentage uncertainty in the velocity.",
         ],
       },
       { k: "h", text: "The free-body diagram of the falling ball" },
@@ -106,7 +98,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "Timing that begins too early catches the ball still speeding up: the computed viscosity comes out ==too large==.",
+          "If the timing begins too early, the ball is still speeding up, so the computed viscosity comes out ==too large==.",
           "A measured viscosity lower than the accepted value can come from: the liquid warmer than stated, the diameter measured too small, the time measured too short, or the marker distance measured too large (WPH11 October 2020, Q15(b)(iv)).",
           "A larger sphere falls faster, so the time between the markers is shorter; the stopwatch uncertainty stays the same, so the percentage uncertainty is greater.",
           "Keep the temperature of the liquid constant during the measurement: the viscosity of a liquid depends on it (WPH11 June 2022, Q19(a)).",
@@ -115,7 +107,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "*The temperature of the room* — the temperature of the ==oil== is what changed. *The flow around the sphere is turbulent* and *the densities used were incorrect* are both printed rejections (WPH11 October 2020, Q15(b)(iv)).",
+        text: "*The temperature of the room* is rejected: the temperature that matters is the temperature of the ==oil==. *The flow around the sphere is turbulent* and *the densities used were incorrect* are both printed rejections (WPH11 October 2020, Q15(b)(iv)).",
       },
       { k: "h", text: "Worked examples" },
       {
