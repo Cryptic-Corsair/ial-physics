@@ -6,6 +6,9 @@ import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH04_A } from "./content/notes-ph04-a";
 import { SECTIONS_PH04_B } from "./content/notes-ph04-b";
 import { SECTIONS_PH04_C } from "./content/notes-ph04-c";
+import { SECTIONS_PH05_A } from "./content/notes-ph05-a";
+import { SECTIONS_PH05_B } from "./content/notes-ph05-b";
+import { SECTIONS_PH05_C } from "./content/notes-ph05-c";
 import { NOTES_META } from "./notes-meta";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -20,8 +23,11 @@ import { NOTES_META } from "./notes-meta";
    sections. The fluids half of the Materials doc (statements
    23–26) was rebuilt from scratch the next day as the owner's new
    Topic 4, Density, upthrust and viscosity (notes-ph04-a/b/c; the
-   old ph02 files stay on disk untouched — the elasticity
-   statements 27–32 leave the page until their own rebuild).
+   old ph02 files stay on disk untouched). The elasticity
+   statements 27–32 became the owner's Topic 5, Hooke's law,
+   stress and strain (notes-ph05-a/b/c), built that same day from
+   the 2020–2024 papers and mark schemes — every line an
+   independent bullet.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -109,6 +115,26 @@ export const NOTES_DOCS: NotesDoc[] = [
       },
     ],
     sections: [...SECTIONS_PH04_A, ...SECTIONS_PH04_B, ...SECTIONS_PH04_C],
+  },
+  {
+    id: "wph11-t05",
+    unitCode: "WPH11",
+    topicId: "t05",
+    kicker: "Physics Unit 1 · Hooke's law, stress and strain — the WPH11 note, statement by statement",
+    title: "Hooke's law, stress and strain",
+    source:
+      "the WPH11 solid-materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2020–2024",
+    intro: [
+      {
+        k: "p",
+        text: "This note covers the six elasticity statements of WPH11 Unit 1, in specification order: ==Hooke's law== (ΔF = kΔx) with the ==stiffness of the object==, ==stress== and ==strain== and the ==Young modulus== — the ratio of stress to strain ==for a material== — the ==force-extension== and ==force-compression== graphs with their ==limit points==, the ==stress-strain== graphs and the ==breaking stress==, ==Core Practical 3==, the Young modulus of a wire, and the ==elastic strain energy==, ΔEel = ½FΔx and the area under the graph. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, ÷, >, < — inside the sentences, and every quantity named with its owner — the stiffness of the object, the Young modulus of the material.",
+      },
+      {
+        k: "p",
+        text: "Every situation from the papers — an elastic cord on an air track, a nylon rope in a pulley system, a spring loaded past its elastic limit, a steel cable at its elastic limit, a metal rod under compression, spider silk against steel, two Young modulus experiments, an electromagnet's falling load, a rubber band's hysteresis loop — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+      },
+    ],
+    sections: [...SECTIONS_PH05_A, ...SECTIONS_PH05_B, ...SECTIONS_PH05_C],
   },
 ];
 

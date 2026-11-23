@@ -69,6 +69,16 @@ export const NOTES_META: NotesMeta[] = [
       "the WPH11 fluids note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
     specRange: "23 → 26",
   },
+  {
+    id: "wph11-t05",
+    unitCode: "WPH11",
+    topicId: "t05",
+    kicker: "Physics Unit 1 · Hooke's law, stress and strain — the WPH11 note, statement by statement",
+    title: "Hooke's law, stress and strain",
+    source:
+      "the WPH11 solid-materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2020–2024",
+    specRange: "27 → 32",
+  },
 ];
 
 export function getNotesMeta(docId: string): NotesMeta | undefined {

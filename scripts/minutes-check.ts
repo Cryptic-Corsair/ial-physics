@@ -55,12 +55,16 @@ const rate = 19263 / 80; // w/min, the old t01 calibration
 const se = specWords(read("src/lib/spectra/content/notes-ph04-a.ts"));
 const sf = specWords(read("src/lib/spectra/content/notes-ph04-b.ts"));
 const sg = specWords(read("src/lib/spectra/content/notes-ph04-c.ts"));
+const sh = specWords(read("src/lib/spectra/content/notes-ph05-a.ts"));
+const si = specWords(read("src/lib/spectra/content/notes-ph05-b.ts"));
+const sj = specWords(read("src/lib/spectra/content/notes-ph05-c.ts"));
 
 const rows: [string, number, number][] = [
   ["t01 Forces  ", sum(sa, 1, 6) + sum(sb, 7, 11), landings[0]],
   ["t02 M&M     ", sum(sc, 12, 16), landings[1]],
   ["t03 WEP     ", sum(sd, 17, 22), landings[2]],
   ["t04 fluids  ", sum(se, 23, 24) + sum(sf, 25, 25) + sum(sg, 26, 26), landings[3]],
+  ["t05 elastic ", sum(sh, 27, 28) + sum(si, 29, 30) + sum(sj, 31, 32), landings[4]],
 ];
 for (const [name, sec, land] of rows) {
   const total = sec + land;

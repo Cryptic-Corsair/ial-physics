@@ -222,7 +222,14 @@ function BlockView({
                 style={{ background: tint(accent, 55) }}
               />
               <span>
-                <Fmt text={t} />
+                {/* a bullet may carry one "\n" — two linked lines inside
+                    one bullet, the owner's max-two-lines rule (2026-11-23);
+                    single-line items render exactly as before */}
+                {t.split("\n").map((ln, j) => (
+                  <span key={j} className={j > 0 ? "mt-1.5 block" : "block"}>
+                    <Fmt text={ln} />
+                  </span>
+                ))}
               </span>
             </li>
           ))}

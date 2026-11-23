@@ -4,12 +4,14 @@ import type { Topic } from "../types";
    WPH11 · Mechanics and Materials
    Topics 1.3 (Mechanics) and 1.4 (Materials) of the Pearson
    Edexcel International Advanced Level Physics specification
-   (2018, Issue 3) — statements 1–32, taught in four pages:
+   (2018, Issue 3) — statements 1–32, taught in five pages:
    Forces · Moments and momentum · Work, energy and power ·
-   Density, upthrust and viscosity. The mechanics split follows
-   the owner's three-way cut (2026-11-22); the fluids statements
-   (23–26) were rebuilt from scratch as the owner's new Topic 4
-   (2026-11-23), the elasticity statements (27–32) to follow.
+   Density, upthrust and viscosity · Hooke's law, stress and
+   strain. The mechanics split follows the owner's three-way cut
+   (2026-11-22); the fluids statements (23–26) were rebuilt from
+   scratch as the owner's new Topic 4 (2026-11-23); the elasticity
+   statements (27–32) were built the same day as the owner's
+   Topic 5, from the 2020–2024 papers and mark schemes.
    ═══════════════════════════════════════════════════════════════ */
 
 export const WPH11_TOPICS: Topic[] = [
@@ -186,16 +188,16 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Density, upthrust and viscosity",
     summary:
       "The fluids half of WPH11's Materials, rebuilt from scratch in the breathing register — density from mass and volume, upthrust as the weight of fluid displaced, floating and the fraction rule, Stokes' law with its four conditions, terminal velocity as a three-force balance, and the falling-ball viscometer — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated after the polish pass (2026-11-23,
-       scripts/minutes-check.ts): 10838 w at the mechanics rate —
-       the questions set out as the papers print them, the teaching
-       untouched */
-    minutes: 45,
+    /* minutes recalibrated after the independent-bullet pass
+       (2026-11-23, scripts/minutes-check.ts): 12390 w at the
+       mechanics rate — the owner's density teaching moved in
+       verbatim, which stretches the reading time */
+    minutes: 52,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Density, upthrust and viscosity close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==an upwards force caused by the displacement of fluid==, ==upthrust = weight of fluid displaced==, ==a small spherical object moving at low speed with laminar flow==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, and every force named with its owner and direction.",
+        text: "Density, upthrust and viscosity are the fluids half of WPH11's Materials — and the mark schemes ask for the ==same sentences== every series: ==an upwards force caused by the displacement of fluid==, ==upthrust = weight of fluid displaced==, ==a small spherical object moving at low speed with laminar flow==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, and every force named with its owner and direction.",
       },
       {
         k: "def",
@@ -233,6 +235,62 @@ export const WPH11_TOPICS: Topic[] = [
           "Fraction submerged = ρ(object) ÷ ρ(fluid) — ice in sea water sits 89% below the surface.",
           "Terminal velocity: W = U + D with D = 6πηrv — then solve for v.",
           "Warmer liquid, lower viscosity, faster terminal fall; colder and deeper water, slower.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "t05",
+    no: "05",
+    label: "Topic 5",
+    title: "Hooke's law, stress and strain",
+    summary:
+      "The solid-materials close of WPH11's Materials, built from the 2020–2024 papers — Hooke's law and stiffness as properties of the object, stress, strain and the Young modulus as properties of the material, the force-extension and stress-strain graphs with their limit points read the way the mark schemes mark them, Core Practical 3 from the rig to the graph, and the elastic strain energy as the area under the graph — statement by statement.",
+    /* minutes calibrated after the build (2026-11-23,
+       scripts/minutes-check.ts): 8459 w at the mechanics rate */
+    minutes: 35,
+    ao: ["AO1", "AO2", "AO3"],
+    blocks: [
+      {
+        k: "p",
+        text: "Hooke's law, stress and strain close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==the ratio of stress to strain for a material==, ==the force/stress beyond which the sample does not return to its original length when the load is removed==, ==a sudden or large plastic deformation==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols (=, ×, ÷, >, <) inside the sentences, and every quantity named with its owner — the ==stiffness of the object==, the ==Young modulus of the material==.",
+      },
+      {
+        k: "def",
+        term: "Stiffness",
+        text: "The force per unit extension of an ==object==, k = ΔF/Δx, in N m⁻¹. Longer wire, thinner wire — smaller stiffness. It changes with the object's shape; the Young modulus does not.",
+      },
+      {
+        k: "def",
+        term: "Young modulus",
+        text: "The ratio of stress to strain for a ==material==, E = σ/ε, in Pa. The papers print it as GPa for fibres and rope. It never changes when the sample is made longer or thinner — the examiner reports call that the property that survives the dimension change.",
+      },
+      {
+        k: "eq",
+        title: "The equations this topic turns on",
+        eq: "$\\Delta F = k\\Delta x$        $\\sigma = \\dfrac{F}{A}$        $\\varepsilon = \\dfrac{\\Delta x}{x}$        $E = \\dfrac{\\sigma}{\\varepsilon}$        $\\Delta E_{\\text{el}} = \\tfrac{1}{2}F\\Delta x$",
+        note: "All but k = EA/x are printed on the data sheet — the stiffness-Young-modulus relation appears ==inside the question== when the paper wants it used. The marks are in the definitions (the elastic limit's ==when the load is removed==), the large-triangle gradients and the final comparisons.",
+      },
+      {
+        k: "p",
+        text: "Each situation — an elastic cord on an air track, a nylon rope in a pulley system, a spring loaded past its elastic limit, a steel cable at its elastic limit, a metal rod under compression, spider silk against steel, two Young modulus experiments — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings set out line by line, and the answer sealed underneath.",
+      },
+      {
+        k: "tips",
+        items: [
+          "Strain carries ==no unit== — a ratio of two lengths. Give it as a decimal or a percentage; the examiner reports say fraction answers do not score.",
+          "The gradient of a stress-strain graph is E; the gradient of a force-extension graph is k — swap them and every mark after the first goes.",
+          "Use a ==large triangle== for a graph gradient — the schemes give one mark only when the points cover less than half the drawn line.",
+          "A definition of the elastic limit without ==when the load is removed== scores nothing — the reports record it every series.",
+        ],
+      },
+      {
+        k: "recap",
+        items: [
+          "Hooke's law — ΔF = kΔx up to the limit of proportionality; the gradient of the force-extension graph is the stiffness.",
+          "σ = F/A, ε = Δx/x, E = σ/ε — the Young modulus belongs to the material, the stiffness to the object.",
+          "Limit of proportionality — the force stops being proportional to the extension. Elastic limit — the sample stops returning to its original length when the load is removed. Yield point — a sudden or large ==plastic== deformation.",
+          "ΔEel = ½FΔx = the area under the force-extension graph — count squares when the graph curves, and subtract the unloading area when heating occurs.",
         ],
       },
     ],
