@@ -186,10 +186,11 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Density, upthrust and viscosity",
     summary:
       "The fluids half of WPH11's Materials, rebuilt from scratch in the breathing register — density from mass and volume, upthrust as the weight of fluid displaced, floating and the fraction rule, Stokes' law with its four conditions, terminal velocity as a three-force balance, and the falling-ball viscometer — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated after the condense pass (2026-11-23,
-       scripts/minutes-check.ts): 11052 w at the mechanics rate —
-       the teaching half tightened, the cards untouched */
-    minutes: 46,
+    /* minutes recalibrated after the polish pass (2026-11-23,
+       scripts/minutes-check.ts): 10838 w at the mechanics rate —
+       the questions set out as the papers print them, the teaching
+       untouched */
+    minutes: 45,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
