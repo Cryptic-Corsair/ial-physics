@@ -28,7 +28,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "note",
         label: "Mark scheme wording",
-        text: "*The layers of fluid flow past each other without mixing* · Or *Velocity at a fixed point (relative to the drop) remains constant* — either sentence scores the laminar mark (WPH11 October 2021, Q17(a)(i)).",
+        text: "*The layers of fluid flow past each other without mixing* · Or *Velocity at a fixed point (relative to the drop) remains constant* (WPH11 October 2021, Q17(a)(i)) — either sentence scores the laminar mark.",
       },
       {
         k: "def",
@@ -76,12 +76,12 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "note",
         label: "Mark scheme wording",
-        text: "*Small spherical object Or Spherical object moving at low speed* · *Laminar flow [allow non-turbulent flow]* — the printed pair (WPH11 October 2023, Q18(a)).",
+        text: "*Small spherical object Or Spherical object moving at low speed* · *Laminar flow [allow non-turbulent flow]* (WPH11 October 2023, Q18(a)) — the printed pair.",
       },
       {
         k: "note",
         label: "Not accepted",
-        text: "*Laminar* applied to the ==object== — *a statement that 'the object must be laminar' was not sufficient to score marking point 2*. Laminar describes the flow, not the object (WPH11 October 2023, Q18(a)). The printed CP2 rejections — *the flow around the sphere is turbulent* offered as an error, and *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and *mass* written where the mark scheme wants the weight.",
+        text: "*Laminar* applied to the ==object== — *a statement that 'the object must be laminar' was not sufficient to score marking point 2* (WPH11 October 2023, Q18(a)). Laminar describes the flow, not the object. The printed CP2 rejections — *the flow around the sphere is turbulent* offered as an error, and *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and *mass* written where the mark scheme wants the weight.",
       },
       {
         k: "def",
@@ -123,7 +123,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "note",
         label: "Mark scheme wording",
-        text: "The printed four-mark chain (WPH11 January 2025, Q20(a)): *(Initially) weight is greater than upthrust (+ drag)* · *(so) the sphere accelerates* · *drag increases (and upthrust remains constant)* · *(until) the resultant force becomes 0 (and the sphere moves at constant / terminal velocity)*.",
+        text: "The printed four-mark chain is *(Initially) weight is greater than upthrust (+ drag)* · *(so) the sphere accelerates* · *drag increases (and upthrust remains constant)* · *(until) the resultant force becomes 0 (and the sphere moves at constant / terminal velocity)* (WPH11 January 2025, Q20(a)).",
       },
       {
         k: "note",
@@ -196,7 +196,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "note",
         label: "Examiner's report",
-        text: "*Many responses … demonstrated confusion that when acceleration decreases, the velocity is still increasing, but is just increasing at a lower rate* (WPH11 October 2023, Q17(c)). While the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly. And finish the story the question asked for: answers that stopped at the terminal-velocity stage never reached the deceleration to rest.",
+        text: "*Many responses … demonstrated confusion that when acceleration decreases, the velocity is still increasing, but is just increasing at a lower rate* (WPH11 October 2023, Q17(c)). While the upthrust still exceeds the weight, the balloon ==still speeds up==, just more and more slowly. And finish the story the question asked for — answers that stopped at the terminal-velocity stage never reached the deceleration to rest.",
       },
       { k: "h", text: "A sphere sinking into colder, deeper water" },
       {
@@ -213,7 +213,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "*Mass* written where the mark scheme wants the *weight*; the $v$ in $D = 6\\pi\\eta r v$ read as a volume (examiner reports name this twice); *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and on a *without calculation* question, *many just quoted the terminal velocity formula without any explanation, despite being instructed not to use calculations* — one sentence comparing the viscosities scores (WPH11 June 2022, Q19(c)).",
+        text: "*Mass* written where the mark scheme wants the *weight*; the $v$ in $D = 6\\pi\\eta r v$ read as a volume (examiner reports name this twice); *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)); and on a *without calculation* question, *many just quoted the terminal velocity formula without any explanation, despite being instructed not to use calculations* (WPH11 June 2022, Q19(c)) — one sentence comparing the viscosities scores.",
       },
       { k: "h", text: "Worked examples" },
       {
@@ -235,7 +235,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "Falling through a viscous liquid",
         question:
-          "A sphere falls through a viscous liquid, accelerating downwards. Which row of the table describes the upthrust and the viscous drag on the sphere as it accelerates?\nA upthrust increasing · drag increasing\nB upthrust constant · drag increasing\nC upthrust increasing · drag constant\nD upthrust constant · drag constant\n*WPH11 June 2022, Q2*",
+          "A sphere falls through a viscous liquid as shown. Which row of the table describes the upthrust and the viscous drag on the sphere as it accelerates downwards?\nA upthrust increasing · drag increasing\nB upthrust constant · drag increasing\nC upthrust increasing · drag constant\nD upthrust constant · drag constant\n*WPH11 June 2022, Q2*",
         steps: [
           "The upthrust depends on the density of the liquid and the displaced volume, and ==neither changes== during the fall.\nSo the upthrust is constant.",
           "The drag grows with speed ($D = 6\\pi\\eta r v$), and the sphere is speeding up.\nOption B.",
@@ -250,16 +250,16 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The water droplet in oil",
         question:
-          "Water is dropped into oil and forms small spherical droplets that sink slowly. One droplet, of volume $3.35 \\times 10^{-8}\\ \\text{m}^3$, sinks at its terminal velocity.\n**(i)** Calculate the weight of the droplet.\ndensity of water $= 1.00 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3)\n**(ii)** Show that the upthrust on the droplet, completely submerged in oil, is about $3 \\times 10^{-4}$ N.\ndensity of oil $= 0.94 \\times 10^{3}\\ \\text{kg m}^{-3}$ (2)\n**(iii)** Calculate the terminal velocity of this droplet.\nviscosity of oil $= 0.11\\ \\text{Pa s}$ (4)\n*WPH11 October 2021, Q17*",
+          "Water is dropped into a container of oil. The water forms small spherical droplets that move slowly downwards.\n**(b)** A spherical droplet has a volume of $3.35 \\times 10^{-8}\\ \\text{m}^3$.\n**(b)(i)** Calculate the weight of the droplet.\ndensity of water $= 1.00 \\times 10^{3}\\ \\text{kg m}^{-3}$ (3)\n**(b)(ii)** Show that the upthrust on the water droplet when it's completely submerged in oil is about $3 \\times 10^{-4}$ N.\ndensity of oil $= 0.94 \\times 10^{3}\\ \\text{kg m}^{-3}$ (2)\n**(b)(iii)** Calculate the terminal velocity of this water droplet in the oil.\nviscosity of oil $= 0.11\\ \\text{Pa s}$ (4)\n*WPH11 October 2021, Q17*",
         steps: [
-          "(i) The mass and the weight of the droplet.\n$m = \\rho_{\\text{water}} V = 1.00 \\times 10^3 \\times 3.35 \\times 10^{-8} = 3.35 \\times 10^{-5}\\ \\text{kg}$\n$W = mg = 3.35 \\times 10^{-5} \\times 9.81 = 3.3 \\times 10^{-4}\\ \\text{N}$",
-          "(ii) Fully submerged, the droplet displaces its own volume of oil.\n$U = \\rho_{\\text{oil}} V g = 940 \\times 3.35 \\times 10^{-8} \\times 9.81 = 3.1 \\times 10^{-4}\\ \\text{N}$",
-          "(iii) Sinking at terminal velocity.\n$D = W - U = 3.29 \\times 10^{-4} - 3.09 \\times 10^{-4} = 2.0 \\times 10^{-5}\\ \\text{N}$",
+          "(b)(i) The mass and the weight of the droplet.\n$m = \\rho_{\\text{water}} V = 1.00 \\times 10^3 \\times 3.35 \\times 10^{-8} = 3.35 \\times 10^{-5}\\ \\text{kg}$\n$W = mg = 3.35 \\times 10^{-5} \\times 9.81 = 3.3 \\times 10^{-4}\\ \\text{N}$",
+          "(b)(ii) Fully submerged, the droplet displaces its own volume of oil.\n$U = \\rho_{\\text{oil}} V g = 940 \\times 3.35 \\times 10^{-8} \\times 9.81 = 3.1 \\times 10^{-4}\\ \\text{N}$",
+          "(b)(iii) Sinking at terminal velocity.\n$D = W - U = 3.29 \\times 10^{-4} - 3.09 \\times 10^{-4} = 2.0 \\times 10^{-5}\\ \\text{N}$",
           "The radius comes back out of the volume.\n$r = \\left(\\dfrac{3V}{4\\pi}\\right)^{1/3} = 2.0 \\times 10^{-3}\\ \\text{m}$",
           "$v = \\dfrac{D}{6\\pi\\eta r} = \\dfrac{2.0 \\times 10^{-5}}{6\\pi \\times 0.11 \\times 2.0 \\times 10^{-3}} = 4.8 \\times 10^{-3}\\ \\text{m s}^{-1}$",
         ],
         answer:
-          "(i) $3.3 \\times 10^{-4}$ N · (ii) $3.1 \\times 10^{-4}$ N · (iii) $v = 4.8 \\times 10^{-3}\\ \\text{m s}^{-1}$",
+          "(b)(i) $3.3 \\times 10^{-4}$ N · (b)(ii) $3.1 \\times 10^{-4}$ N · (b)(iii) $v = 4.8 \\times 10^{-3}\\ \\text{m s}^{-1}$",
         ms: {
           label: "Mark scheme",
           text: "*Use of ρ = m/V* · *Use of W = mg* · *Weight = 3.3 × 10−4 N* · *Use of upthrust = weight of fluid displaced* · *Upthrust = 3.1 × 10−4 (N)* · *Uses upthrust and weight to determine the viscous force F* · *Use of V = 4/3 π r³ to determine r* · *Use of F = 6πηrv* · *v = 4.8 × 10−3 m s−1*.",
@@ -269,7 +269,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The vacuum and the oil",
         question:
-          "A small sphere falls through a vacuum, and then through oil, with its motion recorded by a motion sensor. The two velocity-time graphs are drawn one above the other.\nExplain the differences between the shapes of the graphs. (6)\n*WPH11 October 2025 01A, Q14*",
+          "A teacher demonstrated the motion of a small sphere falling through a vacuum and through oil. The teacher used a motion sensor and data logger connected to a computer. The computer plotted graphs of velocity against time for the sphere as shown.\nExplain the differences between the shapes of the graphs. (6)\n*WPH11 October 2025 01A, Q14*",
         steps: [
           "The gradient of a velocity-time graph is the acceleration.",
           "In the vacuum there is no drag and no upthrust, so the resultant force on the sphere = its weight, and it never changes.\nThe vacuum line is straight — constant acceleration.",
@@ -289,7 +289,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The oil warms up",
         question:
-          "A ball bearing falls at terminal velocity through a liquid. The temperature of the liquid increases, and the ball bearing falls with a greater terminal velocity. Which row of the table is correct as the temperature of the liquid increases?\nA drag constant · viscosity increases\nB drag constant · viscosity decreases\nC drag decreases · viscosity increases\nD drag decreases · viscosity decreases\n*WPH11 June 2023, Q9*",
+          "A ball bearing falls at terminal velocity through a liquid. The temperature of the liquid increases and the ball bearing falls with a greater terminal velocity. Which row of the table is correct as the temperature of the liquid increases?\nA drag constant · viscosity increases\nB drag constant · viscosity decreases\nC drag decreases · viscosity increases\nD drag decreases · viscosity decreases\n*WPH11 June 2023, Q9*",
         steps: [
           "At terminal velocity the drag follows from the force balance, $D = W - U$, and neither the weight nor the upthrust changes.\nSo the drag stays ==constant==.",
           "The warmer liquid is ==less viscous==. The lower viscosity lets the same drag balance the weight at a higher speed.\nOption B.",
@@ -304,7 +304,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The helium balloon released",
         question:
-          "A child lets go of a helium balloon. The mass of the balloon and string is $9.20 \\times 10^{-3}$ kg and their volume is $5.00 \\times 10^{-2}\\ \\text{m}^3$.\n**(a)** Calculate the resultant force on the balloon immediately after it is released.\ndensity of air $= 1.20\\ \\text{kg m}^{-3}$ (4)\n**(b)** Explain how the forces acting on the balloon affect its motion as it moves upwards from the moment it is released. (6)\n*WPH11 October 2022, Q14*",
+          "A child is holding a balloon by a string, as shown. The balloon contains helium gas. Helium gas is less dense than air.\n**(a)** The child releases the balloon by letting go of the string. Calculate the resultant force on the balloon immediately after it is released.\nmass of balloon and string $= 9.20 \\times 10^{-3}$ kg, volume of balloon and string $= 5.00 \\times 10^{-2}\\ \\text{m}^3$, density of air $= 1.20\\ \\text{kg m}^{-3}$ (4)\n**(b)** Explain how the forces acting on the balloon affect its motion as it moves upwards from the moment it is released. (6)\n*WPH11 October 2022, Q14*",
         steps: [
           "(a) The upthrust of the air on the balloon = the weight of the air it displaces.\n$U = \\rho_{\\text{air}} V g = 1.20 \\times 5.00 \\times 10^{-2} \\times 9.81 = 0.589\\ \\text{N}$",
           "The weight.\n$W = mg = 9.20 \\times 10^{-3} \\times 9.81 = 0.090\\ \\text{N}$",
@@ -325,7 +325,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "A second, larger sphere",
         question:
-          "The student repeats the falling-sphere experiment with a sphere of greater diameter but the same density, in the same oil at the same temperature, and the conditions for Stokes' law still apply.\nExplain how the time taken for the second sphere to fall the same distance at terminal velocity compares with the time taken for the first. (3)\n*WPH11 January 2025, Q20(b)(ii)*",
+          "The student repeated the experiment using a second sphere with a greater diameter. The density of the second sphere was the same as the density of the original sphere. The temperature of the oil was the same and the conditions for Stokes' law applied.\nExplain how the time taken for the second sphere to fall through 0.45 m at terminal velocity compares with the time taken for the original sphere. (3)\n*WPH11 January 2025, Q20(b)(ii)*",
         steps: [
           "At the same speed the larger sphere feels more drag, because the drag is proportional to the radius.",
           "But its weight and the upthrust on it grow with the ==cube== of the radius, a greater factor than the growth of the drag.",
@@ -341,7 +341,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The glass spheres",
         question:
-          "A student measures the terminal velocities $v$ of glass spheres of different diameters $d$ falling through a liquid.\n**(a)** Explain what is meant by terminal velocity. (2)\n**(b)** A glass sphere of diameter 35 mm falls at terminal velocity. Show that the drag force on it is about 0.2 N.\ndensity of glass $= 2.52 \\times 10^{3}\\ \\text{kg m}^{-3}$, density of liquid $= 1.43 \\times 10^{3}\\ \\text{kg m}^{-3}$ (5)\n*WPH11 June 2021, Q18*",
+          "A student carried out an experiment to determine the viscosity of a liquid. He measured the terminal velocities $v$ of several different glass spheres of diameter $d$, as they fell through the liquid.\n**(a)** Explain what is meant by terminal velocity. (2)\n**(b)** A glass sphere of diameter 35 mm is travelling through the fluid at terminal velocity. Show that the drag force on this sphere is about 0.2 N.\ndensity of glass $\\rho_{\\text{glass}} = 2.52 \\times 10^{3}\\ \\text{kg m}^{-3}$, density of liquid $\\rho_{\\text{liquid}} = 1.43 \\times 10^{3}\\ \\text{kg m}^{-3}$ (5)\n*WPH11 June 2021, Q18*",
         steps: [
           "(a) Terminal velocity is the constant, maximum velocity reached by an object falling through a fluid.\nIt holds when the resultant force equals zero — when the drag plus the upthrust equals the weight.",
           "(b) At terminal velocity the drag = the weight − the upthrust, and both come from the same volume.\n$V = \\tfrac{4}{3}\\pi r^3 = \\tfrac{4}{3}\\pi \\times 0.0175^3 = 2.24 \\times 10^{-5}\\ \\text{m}^3$",
@@ -359,7 +359,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The d² graph",
         question:
-          "The same student plots $v$ against $d^2$ and the points lie close to a straight line through the origin, of gradient about $6\\ \\text{m}^{-1}\\ \\text{s}^{-1}$. The textbook says that if Stokes' law is obeyed, $v = kd^2$.\n**(i)** Deduce from the graph whether the flow of liquid around the spheres was laminar. (3)\n**(iii)** The constant is given by $k = \\dfrac{(\\rho_{\\text{glass}} - \\rho_{\\text{liquid}})g}{18\\eta}$. Determine a value for $\\eta$. (2)\n*WPH11 June 2021, Q18(c)*",
+          "The student reads in a textbook that if Stokes' law is obeyed $v = kd^2$ where $k$ is a constant.\n**(i)** Deduce from the graph whether the flow of liquid around the spheres was laminar. (3)\n**(iii)** The constant $k$ is given by $k = \\dfrac{(\\rho_{\\text{glass}} - \\rho_{\\text{liquid}})g}{18\\eta}$ where $\\eta$ is the viscosity of the liquid. Determine a value for $\\eta$.\ndensity of glass $\\rho_{\\text{glass}} = 2.52 \\times 10^{3}\\ \\text{kg m}^{-3}$, density of liquid $\\rho_{\\text{liquid}} = 1.43 \\times 10^{3}\\ \\text{kg m}^{-3}$ (2)\n*WPH11 June 2021, Q18(c)*",
         steps: [
           "(i) Stokes' flow predicts a straight line through the origin on $v$ against $d^2$.\nThe printed reading — *all data points are close to the straight line through origin*.\nStokes' law implies the flow around the spheres was ==laminar==.",
           "(iii) The gradient is $k$.\n$\\eta = \\dfrac{(\\rho_{\\text{glass}} - \\rho_{\\text{liquid}})g}{18k} = \\dfrac{(2.52 - 1.43) \\times 10^3 \\times 9.81}{18 \\times 6} = 99\\ \\text{Pa s}$",
@@ -393,7 +393,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The aluminium sphere in glycerol",
         question:
-          "A scientist measures the terminal velocity of an aluminium sphere falling through glycerol.\n**(i)** Show that the weight of the sphere is about $4.8 \\times 10^{-3}$ N.\ndensity of aluminium $= 2.70 \\times 10^{3}\\ \\text{kg m}^{-3}$, diameter of sphere $= 7.00 \\times 10^{-3}\\ \\text{m}$ (4)\n**(ii)** The terminal velocity is $4.05 \\times 10^{-2}\\ \\text{m s}^{-1}$. Deduce whether Stokes' law applied to the falling sphere.\ndensity of glycerol $= 1.26 \\times 10^{3}\\ \\text{kg m}^{-3}$, viscosity of glycerol $= 9.50 \\times 10^{-1}\\ \\text{Pa s}$ (3)\n*WPH11 June 2022, Q19*",
+          "A scientist measured the terminal velocity of an aluminium sphere as it fell through glycerol.\n**(i)** Show that the weight of the sphere is about $4.8 \\times 10^{-3}$ N.\ndensity of aluminium $= 2.70 \\times 10^{3}\\ \\text{kg m}^{-3}$, diameter of sphere $= 7.00 \\times 10^{-3}\\ \\text{m}$ (4)\n**(ii)** The terminal velocity of the sphere was $4.05 \\times 10^{-2}\\ \\text{m s}^{-1}$. Deduce whether Stokes' law applied to the falling sphere.\ndensity of glycerol $= 1.26 \\times 10^{3}\\ \\text{kg m}^{-3}$, viscosity of glycerol $= 9.50 \\times 10^{-1}\\ \\text{Pa s}$ (3)\n*WPH11 June 2022, Q19*",
         steps: [
           "(i) The volume, then the mass.\n$V = \\tfrac{4}{3}\\pi \\times (3.50 \\times 10^{-3})^3 = 1.80 \\times 10^{-7}\\ \\text{m}^3$\n$m = \\rho V = 2.70 \\times 10^3 \\times 1.80 \\times 10^{-7} = 4.85 \\times 10^{-4}\\ \\text{kg}$",
           "$W = mg = 4.85 \\times 10^{-4} \\times 9.81 = 4.76 \\times 10^{-3}\\ \\text{N} \\approx 4.8 \\times 10^{-3}\\ \\text{N}$",
@@ -412,16 +412,16 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The rising air bubble",
         question:
-          "A small, spherical air bubble moves upwards through water at a constant velocity of $0.035\\ \\text{m s}^{-1}$. Its volume is $5.3 \\times 10^{-11}\\ \\text{m}^3$.\n**(i)** Show that the upthrust on the bubble is about $5 \\times 10^{-7}$ N.\ndensity of water $= 998\\ \\text{kg m}^{-3}$ (2)\n**(ii)** Deduce whether Stokes' law applies to the bubble. You may ignore the weight of the bubble.\nviscosity of water $= 9.5 \\times 10^{-4}\\ \\text{Pa s}$ (4)\n*WPH11 June 2023, Q16*",
+          "A small, spherical air bubble moves upwards in a glass of water. The drag force on the bubble can be calculated using Stokes' law.\n**(b)** The bubble moves upwards at a constant velocity. The volume of the bubble is $5.3 \\times 10^{-11}\\ \\text{m}^3$.\n**(b)(i)** Show that the upthrust on the bubble is about $5 \\times 10^{-7}$ N.\ndensity of water $= 998\\ \\text{kg m}^{-3}$ (2)\n**(b)(ii)** The bubble moves upwards at a constant velocity of $0.035\\ \\text{m s}^{-1}$. Deduce whether Stokes' law applies to the bubble. You may ignore the weight of the bubble.\nviscosity of water $= 9.5 \\times 10^{-4}\\ \\text{Pa s}$ (4)\n*WPH11 June 2023, Q16*",
         steps: [
-          "(i) The bubble displaces its own volume of water.\n$U = \\rho_{\\text{water}} V g = 998 \\times 5.3 \\times 10^{-11} \\times 9.81 = 5.2 \\times 10^{-7}\\ \\text{N}$",
-          "(ii) Rising at constant velocity with a negligible weight, the drag = the upthrust.\n$D = U = 5.19 \\times 10^{-7}\\ \\text{N}$",
+          "(b)(i) The bubble displaces its own volume of water.\n$U = \\rho_{\\text{water}} V g = 998 \\times 5.3 \\times 10^{-11} \\times 9.81 = 5.2 \\times 10^{-7}\\ \\text{N}$",
+          "(b)(ii) Rising at constant velocity with a negligible weight, the drag = the upthrust.\n$D = U = 5.19 \\times 10^{-7}\\ \\text{N}$",
           "The radius comes out of the volume.\n$r = \\left(\\dfrac{3V}{4\\pi}\\right)^{1/3} = 2.33 \\times 10^{-4}\\ \\text{m}$",
           "The drag Stokes' law predicts.\n$F = 6\\pi\\eta r v = 6\\pi \\times 9.5 \\times 10^{-4} \\times 2.33 \\times 10^{-4} \\times 3.5 \\times 10^{-2} = 1.5 \\times 10^{-7}\\ \\text{N}$",
           "$1.5 \\times 10^{-7}\\ \\text{N} \\ne 5.2 \\times 10^{-7}\\ \\text{N}$ — Stokes' law does not apply to this bubble.",
         ],
         answer:
-          "(i) $U = 5.2 \\times 10^{-7}$ N · (ii) $F = 1.5 \\times 10^{-7}$ N ≠ $D$ — Stokes' law does not apply",
+          "(b)(i) $U = 5.2 \\times 10^{-7}$ N · (b)(ii) $F = 1.5 \\times 10^{-7}$ N ≠ $D$ — Stokes' law does not apply",
         ms: {
           label: "Mark scheme",
           text: "*Use of upthrust = weight of displaced fluid* · *U = 5.2 × 10−7 (N)* · *Use of F = 6πηrv* · *F = 1.5 × 10−7 N* · *Valid conclusion by comparison of relevant student values*.",
@@ -431,7 +431,7 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The polystyrene bead rising in oil",
         question:
-          "A spherical polystyrene bead of diameter $4.00 \\times 10^{-3}\\ \\text{m}$ rises through oil at a constant velocity.\n**(b)** Show that the upthrust the oil exerts on the bead is about $3.1 \\times 10^{-4}$ N.\ndensity of oil $= 930\\ \\text{kg m}^{-3}$ (3)\n**(c)(ii)** For Stokes' law to be valid, the speed of the bead must be less than $v_R$, where $v_R = \\dfrac{10 \\times \\text{viscosity of oil}}{\\text{density of oil} \\times \\text{diameter of the bead}}$. Deduce whether Stokes' law can be applied to this bead.\nviscosity of oil $= 4.90 \\times 10^{-2}\\ \\text{Pa s}$, weight of bead $= 1.05 \\times 10^{-5}$ N (5)\n*WPH11 January 2021, Q18*",
+          "A spherical polystyrene bead is immersed in oil. The bead has diameter $4.00 \\times 10^{-3}\\ \\text{m}$. The bead is released and moves upwards through the oil at a constant velocity.\n**(b)** Show that the upthrust the oil exerts on the bead is about $3.1 \\times 10^{-4}$ N.\ndensity of oil $= 930\\ \\text{kg m}^{-3}$ (3)\n**(c)(ii)** For Stokes' law to be valid the speed of the bead through the oil must be less than $v_R$, where $v_R = \\dfrac{10 \\times \\text{viscosity of oil}}{\\text{density of oil} \\times \\text{diameter of the bead}}$. Deduce whether Stokes' law can be applied to this bead.\nviscosity of oil $= 4.90 \\times 10^{-2}\\ \\text{Pa s}$, weight of polystyrene bead $= 1.05 \\times 10^{-5}$ N (5)\n*WPH11 January 2021, Q18*",
         steps: [
           "(b) The bead is fully submerged, so the displaced volume = the bead's volume.\n$V = \\tfrac{4}{3}\\pi \\times (2.00 \\times 10^{-3})^3 = 3.35 \\times 10^{-8}\\ \\text{m}^3$",
           "$U = \\rho_{\\text{oil}} V g = 930 \\times 3.35 \\times 10^{-8} \\times 9.81 = 3.06 \\times 10^{-4}\\ \\text{N} \\approx 3.1 \\times 10^{-4}\\ \\text{N}$",
@@ -451,17 +451,17 @@ export const SECTIONS_PH04_B: SpecSection[] = [
         k: "worked",
         title: "The foram sinking deeper",
         question:
-          "A spherical foram of mass $1.15 \\times 10^{-8}$ kg sinks at terminal velocity in seawater, where the upthrust on it is $4.37 \\times 10^{-8}$ N.\n**(i)** Show that the viscous drag on it is about $7 \\times 10^{-8}$ N. (3)\n**(ii)** Calculate the terminal velocity of this foram.\ndiameter $= 9.2 \\times 10^{-4}\\ \\text{m}$, viscosity of seawater $= 1.41 \\times 10^{-3}\\ \\text{Pa s}$ (2)\n**(b)** As the forams sink deeper into the sea, the water becomes colder and denser. Discuss how their terminal velocities change. (4)\n*WPH11 October 2022, Q17*",
+          "Foraminifera, known as 'forams', are small sea creatures with shells.\n**(a)** When forams die they sink slowly through the seawater to form a layer at the bottom of the sea.\n**(a)(i)** A spherical foram with a mass of $1.15 \\times 10^{-8}$ kg is sinking at terminal velocity in seawater. The upthrust due to the seawater is $4.37 \\times 10^{-8}$ N. The flow of seawater around the sinking foram is laminar.\nShow that the viscous drag on the foram is about $7 \\times 10^{-8}$ N. (3)\n**(a)(ii)** Calculate the terminal velocity of this foram.\ndiameter of foram $= 9.2 \\times 10^{-4}\\ \\text{m}$, viscosity of seawater $= 1.41 \\times 10^{-3}\\ \\text{Pa s}$ (2)\n**(b)** As the forams sink deeper into the sea, the temperature of the water becomes lower. Discuss how the terminal velocities of forams change as they sink deeper into the sea. (4)\n*WPH11 October 2022, Q17*",
         steps: [
-          "(i) Sinking at terminal velocity, $W = U + D$, and the weight of the foram.\n$W = mg = 1.15 \\times 10^{-8} \\times 9.81 = 1.13 \\times 10^{-7}\\ \\text{N}$",
+          "(a)(i) Sinking at terminal velocity, $W = U + D$, and the weight of the foram.\n$W = mg = 1.15 \\times 10^{-8} \\times 9.81 = 1.13 \\times 10^{-7}\\ \\text{N}$",
           "$D = W - U = 1.13 \\times 10^{-7} - 4.37 \\times 10^{-8} = 6.9 \\times 10^{-8}\\ \\text{N} \\approx 7 \\times 10^{-8}\\ \\text{N}$",
-          "(ii) Stokes' law rearranged for the speed, with $r = 4.6 \\times 10^{-4}\\ \\text{m}$.\n$v = \\dfrac{7 \\times 10^{-8}}{6\\pi \\times 1.41 \\times 10^{-3} \\times 4.6 \\times 10^{-4}} = 5.7 \\times 10^{-3}\\ \\text{m s}^{-1}$",
+          "(a)(ii) Stokes' law rearranged for the speed, with $r = 4.6 \\times 10^{-4}\\ \\text{m}$.\n$v = \\dfrac{7 \\times 10^{-8}}{6\\pi \\times 1.41 \\times 10^{-3} \\times 4.6 \\times 10^{-4}} = 5.7 \\times 10^{-3}\\ \\text{m s}^{-1}$",
           "(b) Colder water is more viscous, so the drag at any given speed is larger.\nDenser water gives a larger upthrust, while the weight of a foram is constant.",
           "Both changes move the balance the same way, so the forces now balance at a smaller speed.",
           "So the terminal velocities ==decrease== as the forams sink deeper.",
         ],
         answer:
-          "(i) $6.9 \\times 10^{-8}$ N · (ii) $5.7 \\times 10^{-3}\\ \\text{m s}^{-1}$ · (b) the terminal velocity decreases with depth",
+          "(a)(i) $6.9 \\times 10^{-8}$ N · (a)(ii) $5.7 \\times 10^{-3}\\ \\text{m s}^{-1}$ · (b) the terminal velocity decreases with depth",
         ms: {
           label: "Mark scheme",
           text: "*Use of W = m g* · *Use of Newton first law* · *6.9 × 10−8 (N)* · *Use of F = 6 π η r v [allow diameter for radius]* · *Terminal velocity = 5.7 × 10−3 m s−1 (ecf from (a)(i))* · *Viscosity increases (with lower temperature) so drag force increases (for given velocity)* · *Density increases (with increasing depth) so upthrust increases* · *Weight remains constant [do not accept \"mass\"]* · *Terminal velocity reduces (with increasing depth)*.",

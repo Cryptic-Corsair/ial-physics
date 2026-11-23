@@ -73,13 +73,18 @@ const allHeads = all.flatMap((s) => [...s.matchAll(/\{\s*k:\s*"h",\s*text:\s*"([
 const dupH = allHeads.filter((t, i) => allHeads.indexOf(t) !== i && t !== "Worked examples");
 ck("cross-file: subheadings unique across a/b/c", dupH.length === 0, dupH.join(", "));
 
-/* owner register rules (2026-11-23):
+/* owner register rules (2026-11-23, tightened):
    R1 — session/question citations appear only in worked questions,
-        mark-scheme wording and examiner-report quotes
+        mark-scheme wording and examiner-report quotes. Inside a quote
+        block a citation must sit directly against a verbatim span
+        boundary (the closing * of printed wording, or the = of a
+        ==highlighted== printed wording) — never against our own words.
    R2 — no ":" in the teaching prose; the sentence is split into two
-        bullets instead (never nested). Verbatim *printed wordings* and
-        $math$ are exempt; worked question text is the papers' own. */
-const CIT = /\(WPH11 (?:January|June|October) 20\d{2}(?: 01A)?, Q(?:[^()]|\([^()]*\))*?\)/;
+        bullets instead (never nested). Exempt: $math$, the verbatim
+        *printed wordings* (a colon inside a quoted span is the
+        scheme's own), and the worked question/ms text. Our commentary
+        inside a quote block keeps the ban, ==highlights== included. */
+const CIT = new RegExp("\\(WPH11 (?:January|June|October) 20\\d{2}(?: 01A)?, Q(?:[^()]|\\([^()]*\\))*?\\)", "g");
 for (const [f, src] of all.map((s, i) => [files[i], s] as const)) {
   let citHits = 0;
   let colonHits = 0;
@@ -98,17 +103,23 @@ for (const [f, src] of all.map((s, i) => [files[i], s] as const)) {
     const strs = [...line.matchAll(/"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1]);
     if (strs.length === 0) continue;
     const quoteBlock = /mark scheme|examiner|not accepted/i.test(label);
-    const citOk = quoteBlock || (curK === "worked" && ["question", "ms"].includes(field));
-    const colonOk = quoteBlock || (curK === "worked" && ["question", "ms"].includes(field));
+    const inWorkedMs = curK === "worked" && ["question", "ms"].includes(field);
     for (const s of strs) {
-      if (!citOk) citHits += (s.match(new RegExp(CIT.source, "g")) ?? []).length;
-      if (!colonOk) {
+      if (quoteBlock) {
+        for (const m of s.matchAll(CIT)) {
+          const head = s.slice(0, m.index ?? 0).replace(/\s+$/, "");
+          if (!/[*=]$/.test(head)) citHits++;
+        }
+        const prose = s.replace(/\$[^$]*\$/g, "").replace(/\*[^*]+\*/g, "");
+        colonHits += (prose.match(/:/g) ?? []).length;
+      } else if (!inWorkedMs) {
+        citHits += (s.match(new RegExp(CIT.source, "g")) ?? []).length;
         const prose = s.replace(/\$[^$]*\$/g, "").replace(/\*[^*]+\*/g, "").replace(/==[^=]+==/g, "");
         colonHits += (prose.match(/:/g) ?? []).length;
       }
     }
   }
-  ck(`${f}: R1 citations only in worked/ms/ER text`, citHits === 0, `${citHits} found`);
+  ck(`${f}: R1 citations only beside quoted paper wording`, citHits === 0, `${citHits} found`);
   ck(`${f}: R2 no colon in teaching prose`, colonHits === 0, `${colonHits} found`);
 }
 

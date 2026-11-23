@@ -107,14 +107,14 @@ export const SECTIONS_PH04_C: SpecSection[] = [
       {
         k: "note",
         label: "Not accepted",
-        text: "*The temperature of the room* is rejected — the temperature that matters is the temperature of the ==oil==. *The flow around the sphere is turbulent* and *the densities used were incorrect* are both printed rejections (WPH11 October 2020, Q15(b)(iv)).",
+        text: "*The temperature of the room* is rejected — the temperature that matters is the temperature of the ==oil==. *The flow around the sphere is turbulent* and *the densities used were incorrect* (WPH11 October 2020, Q15(b)(iv)) are both printed rejections.",
       },
       { k: "h", text: "Worked examples" },
       {
         k: "worked",
         title: "The vegetable oil",
         question:
-          "A student uses a falling-ball method to determine the viscosity of vegetable oil. The ball-bearing reaches terminal velocity and takes 1.3 s to fall 20.0 cm. The student has already calculated a value of $5.6 \\times 10^{-5}$ N for the viscous drag on the ball-bearing.\n**(a)** The diameter of the ball-bearing was measured. Give one other measurement needed to determine the viscosity of the oil. (1)\n**(b)** Calculate the viscosity of the oil.\ndiameter of ball-bearing $= 1.24$ mm (3)\n*WPH11 June 2025, Q16*",
+          "A student used a falling-ball method to determine the viscosity of vegetable oil. He measured the diameter of a ball-bearing. He dropped the ball-bearing into a measuring cylinder containing vegetable oil, as shown. The ball-bearing reached terminal velocity. The student then measured the time taken for the ball-bearing to fall 20.0 cm.\n**(a)** Give one other measurement needed to determine the viscosity of the oil. (1)\n**(b)** The diameter of the ball-bearing was 1.24 mm. The time taken to fall 20.0 cm was 1.3 s. The student calculated a value of $5.6 \\times 10^{-5}$ N for the viscous drag on the ball-bearing.\nCalculate the viscosity of the oil. (3)\n*WPH11 June 2025, Q16*",
         steps: [
           "(a) The ==mass of the ball-bearing== — its weight is accepted, and so are the mass, volume or density of a known amount of the oil.\nThe diameter is already given, and the temperature of the oil is rejected as an answer here.",
           "(b) The terminal velocity.\n$v = \\dfrac{0.200}{1.3} = 0.154\\ \\text{m s}^{-1}$",
@@ -130,7 +130,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "worked",
         title: "Where to start timing",
         question:
-          "A student determines the terminal velocity of a ball bearing as it falls through oil. He releases the ball bearing at point V, near the top of the tube, and measures the time taken to fall between two of the marked points V, W, X, Y, Z, from top to bottom.\nWhich two points should he use?\nA V and Y\nB W and Y\nC X and Y\nD W and Z\n*WPH11 January 2021, Q7*",
+          "A student determines the terminal velocity of a ball bearing as it falls through oil. He releases the ball bearing at point V and measures the time taken for it to fall a measured distance.\nWhich two points should he use for the measured distance?\nA V and Y\nB W and Y\nC X and Y\nD W and Z\n*WPH11 January 2021, Q7*",
         steps: [
           "The timed distance must begin ==after== the ball bearing has reached terminal velocity.",
           "W is too early — the bearing is still speeding up there.\nX sits far enough down the tube, so X and Y is the printed answer.",
@@ -145,7 +145,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "worked",
         title: "The washing-up liquid",
         question:
-          "A student determines the viscosity of washing-up liquid by releasing a small solid sphere into a large measuring cylinder and timing its fall between rubber bands.\n**(a)(i)** Describe a method the student could use to determine an accurate value for the terminal velocity of the sphere. (5)\n**(a)(ii)** Explain why the use of a larger sphere would increase the percentage uncertainty in the calculated value of the terminal velocity. (4)\n**(b)(i)** Complete the free-body force diagram for the sphere when travelling at terminal velocity. (3)\n**(b)(ii)** The student obtains a value of $0.160\\ \\text{m s}^{-1}$ for the terminal velocity. Calculate the viscosity $\\eta$ of the washing-up liquid.\nradius of sphere $= 4.8 \\times 10^{-3}\\ \\text{m}$, weight of sphere $= 3.5 \\times 10^{-2}$ N, density of washing-up liquid $= 1.1 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4)\n*WPH11 October 2019, Q15*",
+          "A student carried out an experiment to determine the viscosity of washing up liquid using the apparatus shown.\n**(a)(i)** Describe a method that the student could use to determine an accurate value for the terminal velocity of the sphere. You may add to the diagram above. (5)\n**(a)(ii)** Explain why the use of a larger sphere would increase the percentage uncertainty in the calculated value of the terminal velocity. (4)\n**(b)(i)** Complete the free-body force diagram for the sphere when travelling at terminal velocity. (3)\n**(b)(ii)** The student obtained a value of $0.160\\ \\text{m s}^{-1}$ for the terminal velocity of the sphere. Calculate the viscosity $\\eta$ of the washing up liquid in Pa s.\nradius of sphere $= 4.8 \\times 10^{-3}\\ \\text{m}$, weight of sphere $= 3.5 \\times 10^{-2}$ N, density of washing up liquid $= 1.1 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4)\n*WPH11 October 2019, Q15*",
         steps: [
           "(a)(i) Place two or more rubber bands on the cylinder as markers.\nThe top band sits far enough below the surface for terminal velocity to have been reached.",
           "Measure the distance between the markers with the metre rule, and the time between them with the stopwatch.\nRepeat and average. The terminal velocity = distance between markers ÷ average time.",

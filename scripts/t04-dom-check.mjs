@@ -51,7 +51,7 @@ const folded = await page.evaluate(() => ({
 check("worked cards render as drop-downs", folded.heads >= 27, `${folded.heads} cards`);
 check("all cards start folded", folded.closed === folded.heads, `${folded.closed}/${folded.heads} closed`);
 let text = await flowText();
-check("question hidden while folded", !text.includes("cartesian diver' toy floats"));
+check("question hidden while folded", !text.includes("A student has a toy called a 'cartesian diver'"));
 check("steps hidden while folded", !text.includes("Use of V = m/ρ for water"));
 
 /* — 1 · unfold every card, then read the whole flow — */
@@ -166,8 +166,8 @@ check(
   layout.perCard.every((c) => c.brs >= 2),
   `min ${Math.min(...layout.perCard.map((c) => c.brs))} breaks, total ${layout.perCard.reduce((n, c) => n + c.brs, 0)}`,
 );
-check("foram card: the paper's six lines (data on its own line, as WPH11 prints it)", layout.foram && layout.foram.brs === 5, `${layout.foram?.brs} breaks`);
-check("foram card: scenario, (i), (ii), (b) and citation all present", text.includes("(i) Show that the viscous drag on it is about") && text.includes("(b) As the forams sink deeper into the sea") && text.includes("WPH11 October 2022, Q17"));
+check("foram card: the paper's eight lines (data on its own line, as WPH11 prints it)", layout.foram && layout.foram.brs === 7, `${layout.foram?.brs} breaks`);
+check("foram card: scenario, (a)(i), (a)(ii), (b) and citation all present", text.includes("(a)(i) A spherical foram with a mass of") && text.includes("Show that the viscous drag on the foram is about") && text.includes("(b) As the forams sink deeper into the sea") && text.includes("WPH11 October 2022, Q17"));
 check("MCQ card: rows one to a line", layout.mcq && layout.mcq.brs >= 5, `${layout.mcq?.brs} breaks`);
 check("no literal \\n leaks into prose", !layout.literalNl);
 
