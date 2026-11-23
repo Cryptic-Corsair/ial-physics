@@ -2,15 +2,22 @@ import type { SpecSection } from "../notes-types";
 
 /* ═══════════════════════════════════════════════════════════════
    WPH11 · Topic 4 · Part C (statement 26)
-   Core Practical 2, the falling-ball viscometer — condensed after
-   the owner's review (2026-11-23): the same teaching — the
-   free-body diagram section in the teaching half, plain
-   subheadings — with the method bullets tightened and the
-   repeated terminal-velocity-before-timing warning said once in
-   the principle and once in the design choices. Worked cards
-   grouped at the end of the section, collapsed until clicked.
-   Same register as Parts A and B; quotes verified by
-   scripts/t04-quotes.ts, numbers by scripts/t04-numbers.ts.
+   Polish pass (2026-11-23, owner review): the worked questions are
+   now set out the way the papers set them — scenario first, then
+   each part on its own line with its mark count, the given data
+   where the paper prints it, the multiple-choice rows one to a
+   line, the citation on the last line (the question text, the
+   numbers and the marks are unchanged; only the layout moves).
+   The subheadings stay as the condense pass cut them — "The
+   principle", "The measurements", "The method", "Design choices",
+   "Errors and validity" — and the teaching stays put: the
+   free-body diagram section in the teaching half, the repeated
+   terminal-velocity-before-timing warning said once in the
+   principle and once in the design choices. The spacing and block
+   rhythm the owner approved stay untouched. Mark scheme and
+   examiner-report wordings stay quoted verbatim
+   (scripts/t04-quotes.ts; every number re-computed by
+   scripts/t04-numbers.ts).
    ═══════════════════════════════════════════════════════════════ */
 
 export const SECTIONS_PH04_C: SpecSection[] = [
@@ -115,7 +122,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "worked",
         title: "The vegetable oil",
         question:
-          "A student uses a falling-ball method to determine the viscosity of vegetable oil. The ball-bearing reaches terminal velocity and takes 1.3 s to fall 20.0 cm. The student has already calculated a value of $5.6 \\times 10^{-5}$ N for the viscous drag on the ball-bearing. **(a)** The diameter of the ball-bearing was measured. Give one other measurement needed to determine the viscosity of the oil. (1) **(b)** Calculate the viscosity of the oil. diameter of ball-bearing $= 1.24$ mm (3) — *WPH11 June 2025, Q16*",
+          "A student uses a falling-ball method to determine the viscosity of vegetable oil. The ball-bearing reaches terminal velocity and takes 1.3 s to fall 20.0 cm. The student has already calculated a value of $5.6 \\times 10^{-5}$ N for the viscous drag on the ball-bearing.\n**(a)** The diameter of the ball-bearing was measured. Give one other measurement needed to determine the viscosity of the oil. (1)\n**(b)** Calculate the viscosity of the oil.\ndiameter of ball-bearing $= 1.24$ mm (3)\n*WPH11 June 2025, Q16*",
         steps: [
           "(a) The ==mass of the ball-bearing== — its weight is accepted, and so are the mass, volume or density of a known amount of the oil.\nThe diameter is already given, and the temperature of the oil is rejected as an answer here.",
           "(b) The terminal velocity:\n$v = \\dfrac{0.200}{1.3} = 0.154\\ \\text{m s}^{-1}$",
@@ -131,7 +138,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "worked",
         title: "Where to start timing",
         question:
-          "A student determines the terminal velocity of a ball bearing as it falls through oil. He releases the ball bearing at point V, near the top of the tube, and measures the time taken to fall between two of the marked points V, W, X, Y, Z, from top to bottom. Which two points should he use?  A V and Y · B W and Y · C X and Y · D W and Z — *WPH11 January 2021, Q7*",
+          "A student determines the terminal velocity of a ball bearing as it falls through oil. He releases the ball bearing at point V, near the top of the tube, and measures the time taken to fall between two of the marked points V, W, X, Y, Z, from top to bottom.\nWhich two points should he use?\nA V and Y\nB W and Y\nC X and Y\nD W and Z\n*WPH11 January 2021, Q7*",
         steps: [
           "The timed distance must begin ==after== the ball bearing has reached terminal velocity.",
           "W is too early: the bearing is still speeding up there.\nX sits far enough down the tube, so X and Y is the printed answer.",
@@ -146,7 +153,7 @@ export const SECTIONS_PH04_C: SpecSection[] = [
         k: "worked",
         title: "The washing-up liquid",
         question:
-          "A student determines the viscosity of washing-up liquid by releasing a small solid sphere into a large measuring cylinder and timing its fall between rubber bands. **(a)(i)** Describe a method the student could use to determine an accurate value for the terminal velocity of the sphere. (5) **(a)(ii)** Explain why the use of a larger sphere would increase the percentage uncertainty in the calculated value of the terminal velocity. (4) **(b)(i)** Complete the free-body force diagram for the sphere when travelling at terminal velocity. (3) **(b)(ii)** The student obtains a value of $0.160\\ \\text{m s}^{-1}$ for the terminal velocity. Calculate the viscosity $\\eta$ of the washing-up liquid. radius of sphere $= 4.8 \\times 10^{-3}\\ \\text{m}$, weight of sphere $= 3.5 \\times 10^{-2}$ N, density of washing-up liquid $= 1.1 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4) — *WPH11 October 2019, Q15*",
+          "A student determines the viscosity of washing-up liquid by releasing a small solid sphere into a large measuring cylinder and timing its fall between rubber bands.\n**(a)(i)** Describe a method the student could use to determine an accurate value for the terminal velocity of the sphere. (5)\n**(a)(ii)** Explain why the use of a larger sphere would increase the percentage uncertainty in the calculated value of the terminal velocity. (4)\n**(b)(i)** Complete the free-body force diagram for the sphere when travelling at terminal velocity. (3)\n**(b)(ii)** The student obtains a value of $0.160\\ \\text{m s}^{-1}$ for the terminal velocity. Calculate the viscosity $\\eta$ of the washing-up liquid.\nradius of sphere $= 4.8 \\times 10^{-3}\\ \\text{m}$, weight of sphere $= 3.5 \\times 10^{-2}$ N, density of washing-up liquid $= 1.1 \\times 10^{3}\\ \\text{kg m}^{-3}$ (4)\n*WPH11 October 2019, Q15*",
         steps: [
           "(a)(i) Place two or more rubber bands on the cylinder as markers.\nThe top band sits far enough below the surface for terminal velocity to have been reached.",
           "Measure the distance between the markers with the metre rule, and the time between them with the stopwatch.\nRepeat and average: the terminal velocity = distance between markers ÷ average time.",
