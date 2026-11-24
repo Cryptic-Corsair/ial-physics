@@ -108,7 +108,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
       {
         k: "eq",
         eq: "p = mv        1 N s = 1 kg m s⁻¹",
-        note: "Because p is a vector, opposite directions carry opposite signs. In free fall the only force on an object is its weight, so its momentum grows in proportion to the time fallen, **Δp = mg × t** — a heavier object gains momentum faster ==because the force on it is larger==, even though its acceleration is the same.",
+        note: "Because p is a vector, opposite directions carry opposite signs. In free fall the only force on an object is its weight, so its momentum increases in proportion to the time fallen, **Δp = mg × t** — a heavier object gains momentum faster ==because the force on it is larger==, even though its acceleration is the same.",
       },
       {
         k: "bullets",
@@ -228,7 +228,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
         steps: [
           "The weight acts vertically, so its component perpendicular to the crank is W cos 24° — *use of appropriate trigonometry* is marking point 1.",
           "Moment = 580 × cos 24° × 0.21 = 111 N m — quoted as ==110 N m== to two significant figures, with the ==N m== unit on the end.",
-          "As the angle grows the perpendicular distance between the weight's line of action and the pivot falls (cos θ falls from 1 to 0), so the moment falls and ==F falls to zero==.",
+          "As the angle increases the perpendicular distance between the weight's line of action and the pivot falls (cos θ falls from 1 to 0), so the moment falls and ==F falls to zero==.",
           "*Examiner's report:* *The most common error was to use incorrect trigonometry. Candidates who used sin instead of cos could still score marking point 2.* · *A small minority of candidates appeared to have their calculator in radians rather than in degrees.* · the unit rarely went missing but often came out wrong — *common errors being Nm⁻¹ or N instead of Nm*.",
         ],
         answer: "(a) 110 N m · (b) F falls to zero as the perpendicular distance falls",
@@ -299,7 +299,7 @@ export const SECTIONS_PH01_C: SpecSection[] = [
           "Take moments about X — X's own force acts through the pivot, so it drops out of the equation.",
           "Clockwise: 9.8 × 10⁵ × 60 + 4.2 × 10⁵ × 35 = 7.35 × 10⁷ N m (the deck's weight acts at its ==midpoint==, 60 m from X).",
           "Q × 120 = 7.35 × 10⁷, so **Q = 6.1 × 10⁵ N**; the force balance finishes it: P + 6.1 × 10⁵ = 9.8 × 10⁵ + 4.2 × 10⁵, so **P = 7.9 × 10⁵ N**.",
-          "(b) As the lorry moves towards Q, its moment about X grows, so Q ==increases== and P falls — ==the sum of moments remains zero for equilibrium==, and the distance from X to Q stays the same.",
+          "(b) As the lorry moves towards Q, its moment about X increases, so Q ==increases== and P falls — ==the sum of moments remains zero for equilibrium==, and the distance from X to Q stays the same.",
           "Both answers carry their unit — the printed cap is *Maximum 4 marks if incorrect / no unit with answers* (WPH11 June 2024, Q18).",
         ],
         answer: "Q = 6.1 × 10⁵ N · P = 7.9 × 10⁵ N",

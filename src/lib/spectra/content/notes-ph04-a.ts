@@ -130,7 +130,7 @@ export const SECTIONS_PH04_A: SpecSection[] = [
         k: "bullets",
         items: [
           "The fluid presses on every surface of the object.",
-          "The pressure of the fluid grows with depth, so the push on the bottom face is greater than the push on the top face, and the pushes on opposite sides cancel in pairs.",
+          "The pressure of the fluid increases with depth, so the push on the bottom face is greater than the push on the top face, and the pushes on opposite sides cancel in pairs.",
           "The resultant push on the object acts upwards.",
           "That force is the ==upthrust==.",
           "Every object in a fluid feels an upthrust, floating, sinking, or held by a string.",

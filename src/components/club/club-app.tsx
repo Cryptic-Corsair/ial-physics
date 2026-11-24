@@ -1468,6 +1468,7 @@ export default function ClubApp() {
                     desk={desk}
                     onOpenUnit={openUnit}
                     onOpenTopic={openTopic}
+                    onOpenDoc={openNotes}
                     onOpenSticker={openSticker}
                     onOpenPack={openPack}
                     onOpenSpec={openSpec}

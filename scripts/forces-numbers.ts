@@ -137,6 +137,58 @@ ck("photo scale 6.2/1.8 = 3.4", 6.2 / 1.8, 3.4, 0.05);
 /* light gates (Oct-25 Q13) */
 ck("gates a = 9.6", (2.96 * 2.96 - 1.39 * 1.39) / (2 * 0.355), 9.62, 0.02);
 
+/* — 2026-11-24 rebuild additions — */
+
+/* spec 1 — car suvat MCQ (Jun-23 Q7) */
+ck("car MCQ a = (25-9)/30 = 0.53", (25 - 9) / 30, 0.533, 0.005);
+/* moon drop MCQ (Jan-26 01A Q6) */
+ck("moon g = 2*0.32/0.63² = 1.61", (2 * 0.32) / (0.63 * 0.63), 1.61, 0.01);
+
+/* spec 2 — walker (Jan-22 Q1) */
+ck("walker v = 3/6 = 0.5", (2 - -1) / 6, 0.5, 0);
+/* describe (Jan-19 Q11) */
+ck("describe a1 = 14/9 = 1.56", 14 / 9, 1.56, 0.01);
+ck("describe a2 = -44/8.5 = -5.18 (printed -4.9 to -5.2)", -44 / 8.5, -5.18, 0.03);
+/* conversion figure gradients */
+ck("conversion g1 = 6/2 = 3", 6 / 2, 3, 0);
+ck("conversion g2 = 12/2 = 6", 12 / 2, 6, 0);
+ck("conversion g4 = -8/2 = -4", -8 / 2, -4, 0);
+
+/* spec 3 — elevator (Jun-26 Q15) */
+const elA = 0.5 * 1.4 * 2.6;
+const elB = 2.6 * 3.4;
+const elC = 0.5 * 2.8 * 2.6;
+ck("elevator tri1 = 1.82", elA, 1.82, 0.01);
+ck("elevator rect = 8.84", elB, 8.84, 0.01);
+ck("elevator tri2 = 3.64", elC, 3.64, 0.01);
+ck("elevator total = 14.3", elA + elB + elC, 14.3, 0.05);
+ck("elevator max a = 2.6/1.4 = 1.86", 2.6 / 1.4, 1.86, 0.05);
+ck("elevator floors = 14.3/3.5 = 4.09", (elA + elB + elC) / 3.5, 4.09, 0.05);
+
+/* spec 5 — painting (Jun-26 01A Q12) */
+const pegW = 1.8 * 9.81;
+ck("painting W = 17.7", pegW, 17.66, 0.05);
+ck("painting T = 21", pegW / (2 * Math.sin(rad(25))), 20.9, 0.2);
+/* skier energy route re-check */
+const skDrop = 15 * Math.sin(rad(14));
+ck("skier energy v² = 121.7", 7.1 * 7.1 + 2 * g * skDrop, 121.6, 0.3);
+
+/* spec 6 — boat triangle (Oct-25 Q12) */
+const btR = Math.sqrt(350 * 350 + 410 * 410 + 2 * 350 * 410 * Math.cos(rad(120)));
+ck("boat R = 384 (printed 380, range 370-390)", btR, 383.5, 1);
+const btAng = (Math.atan2(410 * Math.sin(rad(120)), 350 + 410 * Math.cos(rad(120))) * 180) / Math.PI;
+ck("boat angle = 67.8 ≈ 68", btAng, 67.8, 0.3);
+/* ladder (Jun-26 Q20a) */
+ck("ladder Fg = 120/cos15 = 124.2", 120 / Math.cos(rad(15)), 124.2, 0.5);
+
+/* spec 8 — car FBD proportions (Jan-26 Q11) */
+ck("car N = W = 2 × F", 15000 / 7500, 2, 0);
+
+/* spec 10 — density chain (Jun-21 Q2) */
+const alM = 35.0 / 9.81;
+ck("aluminium m = 3.57", alM, 3.57, 0.01);
+ck("aluminium ρ = 2.70e3", 35.0 / (9.81 * 1.32e-3), 2703, 5);
+
 console.log(out.join("\n"));
 console.log(`\n${out.length - fail}/${out.length} numeric checks pass`);
 if (fail > 0) process.exit(1);

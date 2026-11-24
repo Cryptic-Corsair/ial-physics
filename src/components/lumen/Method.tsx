@@ -75,7 +75,7 @@ const STATIONS = [
     n: '2',
     icon: IcoWatch,
     title: 'Watch it move',
-    body: 'The figure library animates the physics: curves that draw on, force arrows that grow, projectile trails, the falling-ball rig. Understanding arrives before notation does.',
+    body: 'The figure library animates the physics: curves that draw on, force arrows that lengthen, projectile trails, the falling-ball rig. Understanding arrives before notation does.',
   },
   {
     n: '3',

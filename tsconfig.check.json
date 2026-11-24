@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/lib/spectra/types.ts",
+    "src/lib/spectra/notes-types.ts",
+    "src/lib/spectra/units.ts",
+    "src/lib/spectra/content/wph11.ts",
+    "src/lib/spectra/content/notes-ph04-a.ts",
+    "src/lib/spectra/content/notes-ph04-b.ts",
+    "src/lib/spectra/content/notes-ph04-c.ts",
+    "src/components/portal/data/ialData.ts"
+  ]
+}

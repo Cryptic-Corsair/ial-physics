@@ -20,6 +20,18 @@ import { fade, Kicker, liftWash, Reveal, ScrollFade, readableInk, shade, sunkWas
 import { inkMix } from "./bands";
 import {
   FigPhMotionGraphs,
+  FigPhDtGraph,
+  FigPhVtGraph,
+  FigPhAtGraph,
+  FigPhGraphConversion,
+  FigPhAreaStrips,
+  FigPhCurvedSlide,
+  FigPhResolveDraw,
+  FigPhVectorTriangle,
+  FigPhProjectileJourney,
+  FigPhLaunchTypes,
+  FigPhFbdGallery,
+  FigPhCp1Setups,
   FigPhProjectile,
   FigPhVectors,
   FigPhFreebody,
@@ -881,6 +893,42 @@ export function figureArt(kind: string, accent: string): ReactNode {
   switch (kind) {
     case "ph-motion-graphs":
       node = <FigPhMotionGraphs accent={accent} />;
+      break;
+    case "ph-dt-graph":
+      node = <FigPhDtGraph accent={accent} />;
+      break;
+    case "ph-vt-graph":
+      node = <FigPhVtGraph accent={accent} />;
+      break;
+    case "ph-at-graph":
+      node = <FigPhAtGraph accent={accent} />;
+      break;
+    case "ph-graph-conversion":
+      node = <FigPhGraphConversion accent={accent} />;
+      break;
+    case "ph-area-strips":
+      node = <FigPhAreaStrips accent={accent} />;
+      break;
+    case "ph-curved-slide":
+      node = <FigPhCurvedSlide accent={accent} />;
+      break;
+    case "ph-resolve-draw":
+      node = <FigPhResolveDraw accent={accent} />;
+      break;
+    case "ph-vector-triangle":
+      node = <FigPhVectorTriangle accent={accent} />;
+      break;
+    case "ph-projectile-journey":
+      node = <FigPhProjectileJourney accent={accent} />;
+      break;
+    case "ph-launch-types":
+      node = <FigPhLaunchTypes accent={accent} />;
+      break;
+    case "ph-fbd-gallery":
+      node = <FigPhFbdGallery accent={accent} />;
+      break;
+    case "ph-cp1-setups":
+      node = <FigPhCp1Setups accent={accent} />;
       break;
     case "ph-projectile":
       node = <FigPhProjectile accent={accent} />;

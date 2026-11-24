@@ -171,7 +171,7 @@ export const SECTIONS_PH05_C: SpecSection[] = [
         k: "bullets",
         items: [
           "Elastic strain energy = the energy stored in a stretched or compressed sample while the deformation is elastic.",
-          "The ½ appears because the force grows from zero to F while the extension grows.",
+          "The ½ appears because the force increases from zero to F while the extension increases.",
           "The average force during a straight-line stretch is $\\tfrac{1}{2} F$.",
           "So the energy = the average force × the extension, $\\Delta E_{\\text{el}} = \\tfrac{1}{2} F \\Delta x$.",
           "Stretching the same spring to twice the extension stores ==four== times the energy — the energy carries a $\\Delta x^2$.",

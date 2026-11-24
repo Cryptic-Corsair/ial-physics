@@ -56,18 +56,23 @@ const text = await flowText();
 
 /* — 1 · the rebuilt sections all render, in order — */
 for (const t of [
-  "The equations of uniformly accelerated motion",
-  "Reading and drawing motion graphs",
-  "Slopes and areas — including non-uniform acceleration",
+  "The SUVAT equations",
+  "Motion graphs",
+  "Slopes and areas, including non-uniform acceleration",
   "Scalars and vectors",
   "Resolving a vector into components",
   "Finding a resultant",
-  "Projectiles — the two independent motions",
+  "Projectiles",
   "Free-body diagrams and centre of gravity",
-  "ΣF = ma — Newton's second law, the first law, and terminal velocity",
+  "Newton's laws and terminal velocity",
   "Weight and gravitational field strength",
   "Core Practical 1 — the acceleration of free fall",
 ]) check(`section renders: ${t}`, text.includes(t));
+
+/* — 1b · the owner's plain-style layout: teaching first, Advice in
+   spec 1, and every card group after the teaching — */
+check("owner intro line renders", text.includes("For the SUVAT equations, the acceleration must always be constant"));
+check("advice section renders", text.includes("For a show that question, your answer should be one more significant figure"));
 
 /* — 2 · the spec statements are verbatim — */
 check("spec 1 statement verbatim", text.includes("s = (u + v)t/2, v = u + at"));
@@ -96,7 +101,7 @@ const worked = await page.evaluate(() => ({
     (el) => el.children.length === 0 && /Examiner's report|Mark scheme/i.test(el.textContent || ""),
   ).length,
 }));
-check("worked cards render", worked.cards >= 25, `${worked.cards} cards`);
+check("worked cards render", worked.cards >= 40, `${worked.cards} cards`);
 check("ruled math lines render", worked.mathLines >= 30, `${worked.mathLines}`);
 check("ms notes render inside cards", worked.msNotes >= 10, `${worked.msNotes}`);
 check("cards cite papers", text.includes("WPH11 January 2024, Q12") && text.includes("WPH11 October 2024, Q17"));
@@ -107,8 +112,13 @@ for (const q of [
   "It was reasonably common for students to incorrectly round their calculated answer to 0.138 s",
   "As lift decelerates reaction is less than weight",
   "the components of T acting vertically should be cos and should form the denominator",
-  "(Downward) air resistance force, (initially zero) increases as velocity/speed increases",
-  "Balloon continues to move (upwards) at constant velocity",
+  "efficiency is not a vector quantity",
+  "Direction is changing (so velocity changes)",
+  "Curved line starting at zero with negative gradient decreasing in magnitude",
+  "upthrust = weight + drag",
+  "Gradient of the graph represents velocity",
+  "Highest floor reached = 10",
+  "Coherent and logical structure with linkages",
 ]) check(`verbatim present: ${q.slice(0, 48)}…`, text.includes(q));
 
 /* — 6 · screenshot the dart card (the spacious look, unfolded) — */

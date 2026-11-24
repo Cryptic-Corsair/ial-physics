@@ -335,10 +335,12 @@ function NotesGalleryBody({
      (the same label the unit page and the desk serve). The number
      is only the fallback for a doc whose topic never joined. The
      editorial reader derives the identical line. */
-  const topicNo = Number(doc.topicId.slice(1));
+  const topicNo = Number(doc.topicId.replace(/r$/, "").slice(1));
   const topicLabel =
     unit.topics.find((t) => t.id === doc.topicId)?.label ??
-    `Topic ${topicNo}`;
+    (doc.topicId.endsWith("r")
+      ? `${unit.topics.find((t) => t.id === doc.topicId.slice(0, -1))?.label ?? `Topic ${topicNo}`} · revised`
+      : `Topic ${topicNo}`);
   useSpecMapRegister(
     useMemo(
       () => ({

@@ -18,17 +18,20 @@ function Frame({
   h,
   xLabel,
   yLabel,
+  label,
   children,
 }: {
   w: number;
   h: number;
   xLabel?: string;
   yLabel?: string;
+  label?: string;
   children: ReactNode;
 }) {
   const pad = { l: 52, r: 16, t: 18, b: 38 };
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="w-full" role="img">
+    <svg viewBox={`0 0 ${w} ${h}`} className="w-full" role="img" aria-label={label}>
+      <title>{label}</title>
       <line x1={pad.l} y1={h - pad.b} x2={w - pad.r} y2={h - pad.b} stroke={INK} strokeWidth="2.6" strokeLinecap="round" />
       <line x1={pad.l} y1={pad.t} x2={pad.l} y2={h - pad.b} stroke={INK} strokeWidth="2.6" strokeLinecap="round" />
       {xLabel && (
@@ -184,7 +187,7 @@ export function FigPhTerminal({ accent = "#339AF0" }: { accent?: string }) {
       <text x={344} y={230} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">terminal velocity: gradient falls to 0, ΣF = 0</text>
       <line x1={52} y1={120} x2={92} y2={84} stroke={INK} strokeWidth="2.2" markerEnd="url(#pharrow)" />
       <text x={96} y={80} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">initial gradient ≈ g (drag ≈ 0)</text>
-      <text x={180} y={160} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gradient decays as drag grows —</text>
+      <text x={180} y={160} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gradient decays as drag increases —</text>
       <text x={180} y={178} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">velocity still increasing</text>
     </Frame>
   );
@@ -276,6 +279,490 @@ export function FigPhFallingBall({ accent = "#339AF0" }: { accent?: string }) {
       <line x1={90} y1={120} x2={90} y2={270} stroke={INK} strokeWidth="2" markerEnd="url(#phb-a)" />
       <text x={78} y={200} textAnchor="middle" fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)" transform="rotate(-90 78 200)">measure d</text>
       <text x={225} y={370} textAnchor="middle" fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">v = d ÷ t, then F = 6πηrv, then η = F/(6πrv)</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · the curved slide where suvat fails ————— */
+
+export function FigPhCurvedSlide({ accent = "#339AF0" }: { accent?: string }) {
+  return (
+    <svg viewBox="0 0 560 300" className="w-full" role="img" aria-label="A curved slide whose gradient changes along its length, so the acceleration is not constant">
+      <Arrow id="phcs-a" />
+      <path
+        d="M 60 40 Q 140 60 210 140 T 470 246"
+        fill="none"
+        stroke={INK}
+        strokeWidth="7"
+        strokeLinecap="round"
+        opacity={0.35}
+      />
+      <path
+        d="M 60 40 Q 140 60 210 140 T 470 246"
+        fill="none"
+        stroke={INK}
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <circle cx={110} cy={57} r="11" fill={accent} opacity={0.9} />
+      <circle cx={210} cy={140} r="11" fill={accent} opacity={0.9} />
+      <circle cx={410} cy={230} r="11" fill={accent} opacity={0.9} />
+      <line x1={110} y1={57} x2={168} y2={71} stroke={accent} strokeWidth="3" markerEnd="url(#phcs-a)" />
+      <line x1={210} y1={140} x2={276} y2={152} stroke={accent} strokeWidth="3" markerEnd="url(#phcs-a)" />
+      <line x1={410} y1={230} x2={478} y2={238} stroke={accent} strokeWidth="3" markerEnd="url(#phcs-a)" />
+      <text x={88} y={26} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">steep here — big acceleration</text>
+      <text x={252} y={122} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">shallower — smaller acceleration</text>
+      <text x={372} y={278} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">almost flat — acceleration nearly zero</text>
+      <text x={36} y={205} fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">the gradient never stays constant</text>
+      <text x={36} y={223} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">so no single a works in s = ut + ½at²</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · displacement-time journey, four phases ————— */
+
+export function FigPhDtGraph({ accent = "#339AF0" }: { accent?: string }) {
+  const X = (t: number) => 66 + 44 * t;
+  const Y = (s: number) => 268 - 12 * s;
+  return (
+    <Frame w={740} h={330} xLabel="time / s" yLabel="displacement / m" label="A displacement-time journey in four phases: fast, slower, stopped, then back below the start line">
+      <Arrow id="phdt-a" />
+      {[2, 4, 6, 8, 10].map((t) => (
+        <g key={t}>
+          <line x1={X(t)} y1={268} x2={X(t)} y2={274} stroke={INK} strokeWidth="2" />
+          <text x={X(t)} y={290} textAnchor="middle" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{t}</text>
+        </g>
+      ))}
+      {[10, 15].map((s) => (
+        <g key={s}>
+          <line x1={60} y1={Y(s)} x2={66} y2={Y(s)} stroke={INK} strokeWidth="2" />
+          <text x={54} y={Y(s) + 4} textAnchor="end" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{s}</text>
+        </g>
+      ))}
+      <line x1={66} y1={268} x2={606} y2={268} stroke={FAINT} strokeWidth="1.6" strokeDasharray="5 7" />
+      <path
+        d={`M ${X(0)} ${Y(0)} L ${X(2)} ${Y(8)} L ${X(5)} ${Y(14)} L ${X(7)} ${Y(14)} L ${X(9.5)} ${Y(-2)}`}
+        fill="none"
+        stroke={accent}
+        strokeWidth="3.6"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        className="fig-draw"
+        pathLength={1}
+      />
+      <circle cx={X(0)} cy={Y(0)} r="5" fill={INK} />
+      <circle cx={X(2)} cy={Y(8)} r="5" fill={INK} />
+      <circle cx={X(5)} cy={Y(14)} r="5" fill={INK} />
+      <circle cx={X(7)} cy={Y(14)} r="5" fill={INK} />
+      <circle cx={X(9.5)} cy={Y(-2)} r="5" fill={INK} />
+      <text x={118} y={150} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">steep — fast</text>
+      <text x={118} y={168} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gradient = velocity</text>
+      <text x={256} y={214} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">shallower — slower</text>
+      <text x={430} y={88} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">flat — stopped</text>
+      <text x={432} y={106} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gradient = 0</text>
+      <text x={420} y={316} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">below the start line — heading back the other way</text>
+    </Frame>
+  );
+}
+
+/* ————— t01 · velocity-time journey with both regions (2019-Jan Q11) ————— */
+
+export function FigPhVtGraph({ accent = "#339AF0" }: { accent?: string }) {
+  const X = (t: number) => 76 + 22 * t;
+  const Y = (v: number) => 170 - 6.6 * v;
+  return (
+    <Frame w={640} h={430} xLabel="time / s" yLabel="velocity / m s⁻¹" label="A velocity-time journey with both regions: rising, falling through zero, and flat at negative velocity">
+      <Arrow id="phvt-a" />
+      {[5, 10, 15, 20].map((t) => (
+        <g key={t}>
+          <line x1={X(t)} y1={Y(0)} x2={X(t)} y2={Y(0) + 5} stroke={INK} strokeWidth="2" />
+          <text x={X(t)} y={Y(0) + 20} textAnchor="middle" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{t}</text>
+        </g>
+      ))}
+      {[20, 10, -10, -20, -30].map((v) => (
+        <g key={v}>
+          <line x1={70} y1={Y(v)} x2={76} y2={Y(v)} stroke={INK} strokeWidth="2" />
+          <text x={64} y={Y(v) + 4} textAnchor="end" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{v}</text>
+        </g>
+      ))}
+      <path
+        d={`M ${X(0)} ${Y(0)} L ${X(9)} ${Y(14)} L ${X(17.5)} ${Y(-30)} L ${X(20)} ${Y(-30)}`}
+        fill="none"
+        stroke={accent}
+        strokeWidth="3.6"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        className="fig-draw"
+        pathLength={1}
+      />
+      <circle cx={X(9)} cy={Y(14)} r="5" fill={INK} />
+      <circle cx={X(12)} cy={Y(0)} r="5" fill={INK} />
+      <circle cx={X(17.5)} cy={Y(-30)} r="5" fill={INK} />
+      <text x={112} y={74} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = +1.6 m s⁻²</text>
+      <text x={318} y={116} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = −5 m s⁻² — steeper</text>
+      <text x={404} y={152} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">crosses zero at 12 s</text>
+      <text x={236} y={322} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">area below the axis — motion the other way</text>
+      <text x={110} y={252} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">area above the axis — displacement forwards</text>
+    </Frame>
+  );
+}
+
+/* ————— t01 · acceleration-time graphs: the throw and the rocket ————— */
+
+export function FigPhAtGraph({ accent = "#339AF0" }: { accent?: string }) {
+  return (
+    <svg viewBox="0 0 860 300" className="fig-live w-full" role="img" aria-label="Two acceleration-time graphs: a thrown ball with constant negative acceleration for the whole flight, and a burning rocket that steps from positive to negative acceleration">
+      <Arrow id="phat-a" />
+      {[0, 1].map((i) => {
+        const ox = 24 + i * 430;
+        return (
+          <g key={i}>
+            <line x1={ox + 44} y1={210} x2={ox + 250} y2={210} stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+            <line x1={ox + 44} y1={200} x2={ox + 44} y2={54} stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+            <text x={ox + 147} y={242} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">time</text>
+            <text x={ox + 18} y={130} textAnchor="middle" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)" transform={`rotate(-90 ${ox + 18} 130)`}>acceleration</text>
+            <line x1={ox + 44} y1={132} x2={ox + 250} y2={132} stroke={FAINT} strokeWidth="1.6" strokeDasharray="5 7" />
+          </g>
+        );
+      })}
+      <line x1={68} y1={186} x2={274} y2={186} stroke={accent} strokeWidth="3.6" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <text x={68} y={76} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">one flat line below the axis —</text>
+      <text x={68} y={94} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">g, downwards, the whole flight,</text>
+      <text x={68} y={112} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">even at the top, where v = 0</text>
+      <line x1={498} y1={100} x2={648} y2={100} stroke={accent} strokeWidth="3.6" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <line x1={648} y1={186} x2={738} y2={186} stroke={accent} strokeWidth="3.6" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <text x={498} y={76} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">thrust burns: a positive, constant</text>
+      <text x={498} y={168} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">fuel out: a = −g</text>
+      <text x={498} y={94} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">the step is where the forces change</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · the numbered d–t → v–t conversion ————— */
+
+export function FigPhGraphConversion({ accent = "#339AF0" }: { accent?: string }) {
+  const X = (t: number, ox: number, k = 44) => ox + 44 + k * t;
+  const Ys = (s: number) => 250 - 11 * s;
+  const Yv = (v: number) => 246 - 15 * v;
+  return (
+    <svg viewBox="0 0 900 320" className="w-full" role="img" aria-label="A displacement-time journey converted into a velocity-time graph by computing the gradient of each phase">
+      <Arrow id="phgc-a" />
+      {[0, 1].map((i) => (
+        <g key={i}>
+          <line x1={X(0, 24 + i * 440)} y1={246} x2={X(8, 24 + i * 440)} y2={246} stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+          <line x1={X(0, 24 + i * 440)} y1={238} x2={X(0, 24 + i * 440)} y2={56} stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+          <text x={X(4, 24 + i * 440)} y={298} textAnchor="middle" fontSize="12.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">time / s</text>
+          <text x={X(0, 24 + i * 440) - 22} y={150} textAnchor="middle" fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)" transform={`rotate(-90 ${X(0, 24 + i * 440) - 22} 150)`}>
+            {i === 0 ? "displacement / m" : "velocity / m s⁻¹"}
+          </text>
+          {[2, 4, 6, 8].map((t) => (
+            <text key={t} x={X(t, 24 + i * 440)} y={266} textAnchor="middle" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{t}</text>
+          ))}
+        </g>
+      ))}
+      <path
+        d={`M ${X(0, 24)} ${Ys(0)} L ${X(2, 24)} ${Ys(6)} L ${X(4, 24)} ${Ys(18)} L ${X(6, 24)} ${Ys(18)} L ${X(8, 24)} ${Ys(10)}`}
+        fill="none"
+        stroke={accent}
+        strokeWidth="3.4"
+        strokeLinejoin="round"
+        className="fig-draw"
+        pathLength={1}
+      />
+      <text x={88} y={188} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = 6 ÷ 2 = 3</text>
+      <text x={252} y={104} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = 12 ÷ 2 = 6</text>
+      <text x={368} y={172} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = 0</text>
+      <text x={430} y={222} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">gradient = −8 ÷ 2 = −4</text>
+      <path
+        d={`M ${X(0, 464)} ${Yv(3)} L ${X(2, 464)} ${Yv(3)} L ${X(2, 464)} ${Yv(6)} L ${X(4, 464)} ${Yv(6)} L ${X(4, 464)} ${Yv(0)} L ${X(6, 464)} ${Yv(0)} L ${X(6, 464)} ${Yv(-4)} L ${X(8, 464)} ${Yv(-4)}`}
+        fill="none"
+        stroke={accent}
+        strokeWidth="3.4"
+        strokeLinejoin="round"
+        className="fig-draw"
+        pathLength={1}
+      />
+      <text x={508} y={196} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">+3</text>
+      <text x={600} y={150} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">+6</text>
+      <text x={700} y={238} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">0</text>
+      <text x={764} y={300} fontSize="11.5" fontWeight="700" fill={INK} fontFamily="var(--font-body)">−4</text>
+      <text x={442} y={44} fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">each gradient lands on the next graph</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · areas under curves by strips ————— */
+
+export function FigPhAreaStrips({ accent = "#339AF0" }: { accent?: string }) {
+  const curve = "M 70 250 Q 200 240 320 180 T 540 62";
+  return (
+    <Frame w={620} h={310} xLabel="time" yLabel="velocity" label="A velocity curve whose area is split into trapezium strips for counting">
+      <path d={curve} fill="none" stroke={accent} strokeWidth="3.4" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      {[70, 170, 270, 370, 470].map((x, i) => (
+        <g key={x}>
+          <line x1={x} y1={250} x2={x} y2={252 - 190 + i * 44} stroke={FAINT} strokeWidth="1.8" />
+        </g>
+      ))}
+      <line x1={540} y1={250} x2={540} y2={62} stroke={FAINT} strokeWidth="1.8" />
+      {[68, 168, 268, 368, 468].map((x, i) => (
+        <rect
+          key={i}
+          x={x + 2}
+          y={250 - [26, 62, 102, 144, 178][i]}
+          width={98}
+          height={[26, 62, 102, 144, 178][i]}
+          fill={accent}
+          opacity={i % 2 ? 0.1 : 0.2}
+        />
+      ))}
+      <text x={120} y={224} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">split the area into strips</text>
+      <text x={120} y={242} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">each strip ≈ a trapezium</text>
+      <text x={356} y={128} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">add the strips, then count</text>
+      <text x={356} y={146} fontSize="12" fontWeight="700" fill={INK} fontFamily="var(--font-body)">the leftover squares</text>
+      <text x={340} y={236} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">total area = displacement</text>
+    </Frame>
+  );
+}
+
+/* ————— t01 · resolving by drawing on a grid ————— */
+
+export function FigPhResolveDraw({ accent = "#339AF0" }: { accent?: string }) {
+  const gx = 300;
+  const gy = 260;
+  const u = 20;
+  return (
+    <svg viewBox="0 0 560 330" className="w-full" role="img" aria-label="A 10 kilometre walk resolved on a grid into 6 kilometres east and 8 kilometres north by drawing">
+      <Arrow id="phrd-a" />
+      {Array.from({ length: 11 }, (_, i) => (
+        <line key={`v${i}`} x1={60 + i * u} y1={40} x2={60 + i * u} y2={gy + 20} stroke={FAINT} strokeWidth="1.2" />
+      ))}
+      {Array.from({ length: 12 }, (_, i) => (
+        <line key={`h${i}`} x1={60} y1={40 + i * u} x2={60 + 10 * u} y2={40 + i * u} stroke={FAINT} strokeWidth="1.2" />
+      ))}
+      <line x1={60} y1={gy} x2={60 + 6 * u} y2={gy} stroke={INK} strokeWidth="2.6" markerEnd="url(#phrd-a)" />
+      <line x1={60} y1={gy} x2={60} y2={gy - 8 * u} stroke={INK} strokeWidth="2.6" markerEnd="url(#phrd-a)" />
+      <line x1={60} y1={gy} x2={60 + 6 * u} y2={gy - 8 * u} stroke={accent} strokeWidth="3.6" strokeLinecap="round" markerEnd="url(#phrd-a)" className="fig-draw" pathLength={1} />
+      <text x={60 + 3 * u} y={gy + 22} textAnchor="middle" fontSize="12" fontWeight="800" fill={INK} fontFamily="var(--font-body)">6 km east</text>
+      <text x={34} y={gy - 4 * u} textAnchor="middle" fontSize="12" fontWeight="800" fill={INK} fontFamily="var(--font-body)" transform={`rotate(-90 34 ${gy - 4 * u})`}>8 km north</text>
+      <text x={188} y={gy - 170} fontSize="12.5" fontWeight="800" fill={accent} fontFamily="var(--font-body)">10 km</text>
+      <path d={`M 100 ${gy} A 40 40 0 0 0 90 ${gy - 22}`} fill="none" stroke={SOFT} strokeWidth="2" />
+      <text x={106} y={gy - 26} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">53°</text>
+      <text x={330} y={110} fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">scale: 1 cm = 1 km</text>
+      <text x={330} y={132} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">draw east 6 cm, north 8 cm,</text>
+      <text x={330} y={150} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">then close the triangle</text>
+      <text x={330} y={176} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">measure: 10 cm → 10 km</text>
+      <text x={330} y={202} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">protractor: 53° from east</text>
+      <text x={330} y={252} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">check: √(6² + 8²) = 10 ✓</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · the completed scaled vector triangle (2025-Oct Q12) ————— */
+
+export function FigPhVectorTriangle({ accent = "#339AF0" }: { accent?: string }) {
+  const ox = 200;
+  const oy = 292;
+  const k = 0.28; // px per newton
+  const windTip = { x: ox, y: oy - 350 * k }; // wind: 350 N to the north
+  const waterTip = {
+    x: windTip.x + 410 * k * Math.sin((120 * Math.PI) / 180),
+    y: windTip.y - 410 * k * Math.cos((120 * Math.PI) / 180),
+  };
+  return (
+    <svg viewBox="0 0 560 340" className="w-full" role="img" aria-label="The scaled vector triangle for the sailing boat: 350 newtons north, 410 newtons at 120 degrees from north, resultant 380 newtons at 68 degrees from north">
+      <Arrow id="phrvt-a" />
+      <line x1={ox} y1={oy} x2={ox} y2={34} stroke={FAINT} strokeWidth="1.8" strokeDasharray="5 7" />
+      <text x={ox + 10} y={46} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">N</text>
+      <line x1={ox} y1={oy} x2={windTip.x} y2={windTip.y} stroke={INK} strokeWidth="3.2" markerEnd="url(#phrvt-a)" />
+      <line x1={windTip.x} y1={windTip.y} x2={waterTip.x} y2={waterTip.y} stroke={INK} strokeWidth="3.2" markerEnd="url(#phrvt-a)" />
+      <line x1={ox} y1={oy} x2={waterTip.x} y2={waterTip.y} stroke={accent} strokeWidth="4" strokeLinecap="round" markerEnd="url(#phrvt-a)" className="fig-draw" pathLength={1} />
+      <text x={ox - 12} y={oy - 350 * k / 2} textAnchor="end" fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">wind, 350 N</text>
+      <text x={waterTip.x + 14} y={waterTip.y + 26} fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">water, 410 N</text>
+      <text x={352} y={218} fontSize="12.5" fontWeight="800" fill={accent} fontFamily="var(--font-body)">resultant, 380 N at 68°</text>
+      <path d={`M ${ox} ${oy - 26} A 26 26 0 0 1 ${ox + 24.1} ${oy - 9.7}`} fill="none" stroke={SOFT} strokeWidth="2" />
+      <text x={ox + 30} y={oy - 32} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">68°</text>
+      <text x={368} y={120} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">tip-to-tail at the true angle</text>
+      <text x={368} y={138} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">of 120°, then close: tail of</text>
+      <text x={368} y={156} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">first → tip of last. Label the</text>
+      <text x={368} y={174} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">arrows with forces, never cm.</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · the projectile journey, launch to apex to landing ————— */
+
+export function FigPhProjectileJourney({ accent = "#339AF0" }: { accent?: string }) {
+  const path = "M 60 300 Q 280 30 500 300";
+  return (
+    <svg viewBox="0 0 560 360" className="fig-live w-full" role="img" aria-label="A projectile's journey annotated at launch, the top and landing, showing the constant horizontal velocity and the shared time">
+      <Arrow id="phpj-a" />
+      <line x1={40} y1={320} x2={520} y2={320} stroke={INK} strokeWidth="2.6" strokeLinecap="round" />
+      <path d={path} fill="none" stroke={accent} strokeWidth="3.6" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <circle cx={60} cy={300} r="7" fill={INK} />
+      <circle cx={280} cy={165} r="7" fill={INK} />
+      <circle cx={500} cy={300} r="7" fill={INK} />
+      <line x1={60} y1={300} x2={150} y2={300} stroke={SOFT} strokeWidth="2.6" markerEnd="url(#phpj-a)" />
+      <line x1={60} y1={300} x2={60} y2={210} stroke={accent} strokeWidth="2.6" markerEnd="url(#phpj-a)" />
+      <text x={66} y={196} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">launch: u cos θ along, u sin θ up</text>
+      <line x1={280} y1={165} x2={370} y2={165} stroke={SOFT} strokeWidth="2.6" markerEnd="url(#phpj-a)" />
+      <text x={280} y={140} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">top: vertical v = 0 — but a is still g</text>
+      <line x1={500} y1={300} x2={410} y2={300} stroke={SOFT} strokeWidth="2.6" markerEnd="url(#phpj-a)" />
+      <line x1={500} y1={300} x2={500} y2={210} stroke={accent} strokeWidth="2.6" markerEnd="url(#phpj-a)" />
+      <text x={312} y={196} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">landing: u cos θ along, u sin θ down</text>
+      <text x={150} y={110} fontSize="11.5" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">same height → vertical v returns with the same size, reversed</text>
+      <text x={72} y={344} fontSize="12" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">one clock runs both columns: t is shared</text>
+    </svg>
+  );
+}
+
+/* ————— t01 · the three ways a projectile is launched ————— */
+
+export function FigPhLaunchTypes({ accent = "#339AF0" }: { accent?: string }) {
+  const Panel = ({ ox, title, lines }: { ox: number; title: string; lines: string[] }) => (
+    <g>
+      <line x1={ox + 30} y1={252} x2={ox + 210} y2={252} stroke={INK} strokeWidth="2.4" strokeLinecap="round" />
+      <text x={ox + 120} y={284} textAnchor="middle" fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">{title}</text>
+      {lines.map((l, i) => (
+        <text key={i} x={ox + 120} y={302 + i * 16} textAnchor="middle" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{l}</text>
+      ))}
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 760 340" className="w-full" role="img" aria-label="Three launch types: thrown straight up, launched horizontally off a cliff, and launched at an angle">
+      <Arrow id="phlt-a" />
+      <line x1={110} y1={252} x2={110} y2={70} stroke={accent} strokeWidth="3.4" strokeLinecap="round" markerEnd="url(#phlt-a)" />
+      <circle cx={110} cy={160} r="6" fill={INK} />
+      <text x={122} y={156} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">no horizontal motion at all</text>
+      <Panel ox={0} title="Thrown straight up" lines={"one column: vertical only|a = −g the whole flight".split("|")} />
+      <path d="M 400 90 Q 452 90 504 252" fill="none" stroke={accent} strokeWidth="3.4" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <line x1={352} y1={90} x2={400} y2={90} stroke={INK} strokeWidth="2.6" />
+      <line x1={352} y1={252} x2={400} y2={252} stroke={INK} strokeWidth="2.6" />
+      <text x={330} y={74} textAnchor="end" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">cliff</text>
+      <line x1={400} y1={90} x2={456} y2={90} stroke={SOFT} strokeWidth="2.4" markerEnd="url(#phlt-a)" />
+      <circle cx={400} cy={90} r="6" fill={INK} />
+      <Panel ox={260} title="Launched horizontally" lines={"vertical column starts at u = 0|horizontal column does the range work".split("|")} />
+      <path d="M 645 252 Q 700 60 745 90" fill="none" stroke={accent} strokeWidth="3.4" strokeLinecap="round" className="fig-draw" pathLength={1} />
+      <circle cx={645} cy={252} r="6" fill={INK} />
+      <line x1={645} y1={252} x2={715} y2={252} stroke={SOFT} strokeWidth="2.4" markerEnd="url(#phlt-a)" />
+      <line x1={645} y1={252} x2={645} y2={172} stroke={INK} strokeWidth="2.4" markerEnd="url(#phlt-a)" />
+      <text x={758} y={246} textAnchor="end" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">u cos θ</text>
+      <text x={634} y={176} textAnchor="end" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">u sin θ</text>
+      <Panel ox={520} title="Launched at an angle" lines={"resolve u first, then both columns|same t joins them".split("|")} />
+    </svg>
+  );
+}
+
+/* ————— t01 · the free-body gallery ————— */
+
+export function FigPhFbdGallery({ accent = "#339AF0" }: { accent?: string }) {
+  const dot = (cx: number, cy: number) => <circle cx={cx} cy={cy} r="5" fill={INK} />;
+  const a = (x1: number, y1: number, x2: number, y2: number) => (
+    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={INK} strokeWidth="2.6" markerEnd="url(#phfg-a)" />
+  );
+  const panels = [
+    { cx: 110, cap: "accelerating car", sub: "N and W equal, F half of them" },
+    { cx: 330, cap: "hung painting", sub: "two tensions share the weight" },
+    { cx: 550, cap: "sphere at terminal velocity", sub: "U + D = W — lengths show it" },
+    { cx: 770, cap: "ball released in liquid", sub: "U > W + D — it accelerates up" },
+  ];
+  return (
+    <svg viewBox="0 0 880 320" className="w-full" role="img" aria-label="Free-body diagrams of four bodies: an accelerating car, a painting hung from two wires, a sphere falling through liquid at terminal velocity, and a rising ball in liquid">
+      <Arrow id="phfg-a" />
+      {/* car: N up = W down (15000 N each), F forward 7500 N */}
+      {dot(110, 120)}
+      {a(110, 120, 110, 58)}
+      {a(110, 120, 110, 182)}
+      {a(110, 120, 192, 120)}
+      <text x={120} y={62} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">N = 15 000 N</text>
+      <text x={120} y={192} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">W = 15 000 N</text>
+      <text x={200} y={124} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">F = 7500 N</text>
+      {/* painting: T, T, W */}
+      {dot(330, 120)}
+      {a(330, 120, 278, 74)}
+      {a(330, 120, 382, 74)}
+      {a(330, 120, 330, 182)}
+      <text x={258} y={66} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">T</text>
+      <text x={390} y={66} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">T</text>
+      <text x={340} y={192} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">W</text>
+      {/* sphere terminal: U up, D down (small), W down */}
+      {dot(550, 120)}
+      {a(550, 120, 550, 62)}
+      {a(550, 120, 550, 178)}
+      {a(550, 120, 550, 148)}
+      <text x={560} y={66} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">upthrust, U</text>
+      <text x={560} y={148} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">drag, D</text>
+      <text x={560} y={190} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">W</text>
+      {/* rising ball: U biggest, D down, W down */}
+      {dot(770, 120)}
+      {a(770, 120, 770, 48)}
+      {a(770, 120, 770, 178)}
+      {a(770, 120, 770, 150)}
+      <text x={780} y={58} fontSize="11.5" fontWeight="800" fill={accent} fontFamily="var(--font-body)">U — the big one</text>
+      <text x={780} y={150} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">D</text>
+      <text x={780} y={190} fontSize="11.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">W</text>
+      <line x1={660} y1={40} x2={660} y2={200} stroke={FAINT} strokeWidth="1.6" />
+      {panels.map((p) => (
+        <g key={p.cap}>
+          <text x={p.cx} y={272} textAnchor="middle" fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">{p.cap}</text>
+          <text x={p.cx} y={292} textAnchor="middle" fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">{p.sub}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+/* ————— t01 · Core Practical 1: the three setups ————— */
+
+export function FigPhCp1Setups({ accent = "#339AF0" }: { accent?: string }) {
+  return (
+    <svg viewBox="0 0 900 340" className="w-full" role="img" aria-label="Three free-fall apparatus setups: strobe photography beside a metre rule, light gates connected to a data logger, and a stopwatch timing a drop over a known height">
+      <Arrow id="phcp-a" />
+      {[0, 1, 2].map((i) => {
+        const ox = 30 + i * 296;
+        return (
+          <g key={i}>
+            <line x1={ox + 20} y1={296} x2={ox + 250} y2={296} stroke={INK} strokeWidth="2.2" strokeLinecap="round" />
+            <text x={ox + 135} y={322} textAnchor="middle" fontSize="12.5" fontWeight="800" fill={INK} fontFamily="var(--font-body)">
+              {i === 0 ? "strobe photograph" : i === 1 ? "light gates" : "stopwatch and rule"}
+            </text>
+          </g>
+        );
+      })}
+      {/* strobe */}
+      <rect x={92} y={44} width={10} height={252} fill="none" stroke={INK} strokeWidth="2.4" />
+      {[0, 1, 2, 3, 4].map((i) => (
+        <circle key={i} cx={134} cy={58 + i * i * 12 + i * 14} r="7" fill={accent} opacity={0.85} />
+      ))}
+      {[70, 100, 148].map((y, i) => (
+        <line key={y} x1={84} y1={y} x2={100} y2={y} stroke={INK} strokeWidth="2" />
+      ))}
+      <text x={152} y={80} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">metre rule</text>
+      <text x={152} y={104} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">flashes at a fixed</text>
+      <text x={152} y={120} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">interval → s for each t</text>
+      <text x={152} y={144} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gap increases: s ∝ t²</text>
+      {/* light gates */}
+      <rect x={388} y={44} width={64} height={252} rx={12} fill="color-mix(in oklab, var(--color-ink) 6%, transparent)" stroke={INK} strokeWidth="2.4" />
+      <rect x={370} y={80} width={100} height={12} rx={4} fill={accent} opacity={0.8} stroke={INK} strokeWidth="2" />
+      <rect x={370} y={230} width={100} height={12} rx={4} fill={accent} opacity={0.8} stroke={INK} strokeWidth="2" />
+      <circle cx={420} cy={110} r="9" fill={INK} className="fig-drift" />
+      <circle cx={420} cy={190} r="9" fill={INK} />
+      <text x={478} y={90} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gate 1</text>
+      <text x={478} y={240} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">gate 2</text>
+      <text x={482} y={130} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">logger times</text>
+      <text x={482} y={146} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">each pass —</text>
+      <text x={482} y={162} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">v = length ÷ t</text>
+      <line x1={388} y1={60} x2={370} y2={60} stroke={FAINT} strokeWidth="1.6" strokeDasharray="4 5" />
+      <line x1={452} y1={60} x2={470} y2={60} stroke={FAINT} strokeWidth="1.6" strokeDasharray="4 5" />
+      {/* stopwatch */}
+      <rect x={680} y={44} width={10} height={252} fill="none" stroke={INK} strokeWidth="2.4" />
+      <circle cx={712} cy={70} r="9" fill={accent} opacity={0.85} />
+      <circle cx={712} cy={280} r="9" fill={INK} />
+      <line x1={712} y1={70} x2={712} y2={280} stroke={FAINT} strokeWidth="1.8" strokeDasharray="5 6" />
+      <circle cx={800} cy={80} r="26" fill="none" stroke={INK} strokeWidth="2.4" />
+      <line x1={800} y1={80} x2={800} y2={62} stroke={INK} strokeWidth="2.2" />
+      <text x={746} y={130} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">release at height s,</text>
+      <text x={746} y={146} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">time the fall → g = 2s ÷ t²</text>
+      <text x={746} y={170} fontSize="11" fontWeight="700" fill={SOFT} fontFamily="var(--font-body)">reaction time is the error</text>
     </svg>
   );
 }

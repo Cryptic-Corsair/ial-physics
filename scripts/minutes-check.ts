@@ -48,8 +48,16 @@ const sum = (m: Map<string, number>, from: number, to: number) => {
 };
 const sa = specWords(read("src/lib/spectra/content/notes-ph01f-a.ts"));
 const sb = specWords(read("src/lib/spectra/content/notes-ph01f-b.ts"));
+const sa2 = specWords(read("src/lib/spectra/content/notes-ph01f-c.ts"));
+const sb2 = specWords(read("src/lib/spectra/content/notes-ph01f-d.ts"));
 const sc = specWords(read("src/lib/spectra/content/notes-ph01-c.ts"));
 const sd = specWords(read("src/lib/spectra/content/notes-ph01-d.ts"));
+
+/* the alternate note (2026-11-25) */
+const srA = specWords(read("src/lib/spectra/content/notes-ph01r-a.ts"));
+const srB = specWords(read("src/lib/spectra/content/notes-ph01r-b.ts"));
+const srC = specWords(read("src/lib/spectra/content/notes-ph01r-c.ts"));
+const srD = specWords(read("src/lib/spectra/content/notes-ph01r-d.ts"));
 
 const rate = 19263 / 80; // w/min, the old t01 calibration
 const se = specWords(read("src/lib/spectra/content/notes-ph04-a.ts"));
@@ -60,11 +68,12 @@ const si = specWords(read("src/lib/spectra/content/notes-ph05-b.ts"));
 const sj = specWords(read("src/lib/spectra/content/notes-ph05-c.ts"));
 
 const rows: [string, number, number][] = [
-  ["t01 Forces  ", sum(sa, 1, 6) + sum(sb, 7, 11), landings[0]],
+  ["t01 Forces  ", sum(sa, 1, 3) + sum(sb, 4, 6) + sum(sa2, 7, 8) + sum(sb2, 9, 11), landings[0]],
   ["t02 M&M     ", sum(sc, 12, 16), landings[1]],
   ["t03 WEP     ", sum(sd, 17, 22), landings[2]],
   ["t04 fluids  ", sum(se, 23, 24) + sum(sf, 25, 25) + sum(sg, 26, 26), landings[3]],
   ["t05 elastic ", sum(sh, 27, 28) + sum(si, 29, 30) + sum(sj, 31, 32), landings[4]],
+  ["t01 revised ", sum(srA, 1, 2) + sum(srB, 3, 5) + sum(srC, 6, 8) + sum(srD, 9, 11), 0],
 ];
 for (const [name, sec, land] of rows) {
   const total = sec + land;

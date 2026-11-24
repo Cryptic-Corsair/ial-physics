@@ -13,9 +13,9 @@ import { monoFont, useCanvasScene, useLive } from './lib';
                        the cream, slow sparks (abstract ambience)
    · SceneTerminal   — the falling ball's velocity–time curve computed
                        from the linear-drag solution: steep at g,
-                       flattening as drag grows, horizontal at terminal
+                       flattening as drag increases, horizontal at terminal
    · SceneProjectile — the two independent columns, computed: equal-time
-                       ticks, constant spacing across, growing down
+                       ticks, constant spacing across, increasing down
    · SceneStokes     — the falling-ball rig as a force race: weight
                        against upthrust + drag, settling to W = U + D
    ═══════════════════════════════════════════════════════════════════════ */
@@ -311,7 +311,7 @@ export function SceneTerminal() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: a computed velocity-time curve for a falling ball, steep where only the weight acts, flattening as drag grows, horizontal at terminal velocity"
+      aria-label="Animation: a computed velocity-time curve for a falling ball, steep where only the weight acts, flattening as drag increases, horizontal at terminal velocity"
     />
   );
 }
@@ -319,7 +319,7 @@ export function SceneTerminal() {
 export function SceneProjectile() {
   const ref = useCanvasScene(() => {
     /* the two-column model, computed: x = v\u2093t, y = v\u1d67t − ½gt² —
-       equal-time ticks show constant spacing across, growing spacing down */
+       equal-time ticks show constant spacing across, increasing spacing down */
     const T = 2.0;
     const g = 9.81;
     const vx = 2.4;
@@ -399,7 +399,7 @@ export function SceneProjectile() {
       ctx.fillStyle = 'rgba(28, 126, 214, 0.9)';
       ctx.fillText('a\u2093 = 0 — equal spacing across', padL + 6, apexY + 6);
       ctx.fillStyle = 'rgba(194, 37, 92, 0.85)';
-      ctx.fillText('a\u1d67 = g — spacing grows down', padL + 6, apexY + 22);
+      ctx.fillText('a\u1d67 = g — spacing increases down', padL + 6, apexY + 22);
 
       chip(ctx, w - 14, 14, ['time is the bridge'], '#B25E00');
     };
@@ -409,14 +409,14 @@ export function SceneProjectile() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: a computed projectile arc with equal-time dots, horizontal spacing constant and vertical spacing growing, the two independent columns joined by time"
+      aria-label="Animation: a computed projectile arc with equal-time dots, horizontal spacing constant and vertical spacing increasing, the two independent columns joined by time"
     />
   );
 }
 
 export function SceneStokes() {
   const ref = useCanvasScene(() => {
-    /* the force race in a tube: the ball accelerates while drag grows,
+    /* the force race in a tube: the ball accelerates while drag increases,
        then settles to equal spacing once W = U + D — terminal velocity */
     const vT = 1.0;
     const tau = 0.5;
@@ -439,7 +439,7 @@ export function SceneStokes() {
 
       /* the release cycle: 9 s — fall, settle, hold, restart */
       const cyc = t % 9;
-      /* distance fallen in normalised units: grows fast, then linear */
+      /* distance fallen in normalised units: increases fast, then linear */
       const dist = vT * (cyc - tau * (1 - Math.exp(-cyc / tau)));
       const travel = botY - topY - 60;
       const norm = Math.min(dist / 2.2, 1);
@@ -483,7 +483,7 @@ export function SceneStokes() {
       const L = 46;
       arrow(fx, by - 14, by - 14 - L, '#C2255C'); /* weight, down */
       arrow(fx, by + 14, by + 14 + L * 0.42, '#1C7ED6'); /* upthrust, up */
-      arrow(fx + 26, by + 14, by + 14 + L * 0.42 * frac, '#12B886'); /* drag, up, growing */
+      arrow(fx + 26, by + 14, by + 14 + L * 0.42 * frac, '#12B886'); /* drag, up, lengthening */
 
       ctx.font = monoFont(600, 11);
       ctx.textAlign = 'left';
@@ -494,7 +494,7 @@ export function SceneStokes() {
       ctx.fillStyle = 'rgba(18, 184, 134, 0.95)';
       ctx.fillText('D', fx + 35, by + 30);
 
-      chip(ctx, w - 14, 14, [frac > 0.985 ? 'W = U + D — terminal' : 'drag growing…'], frac > 0.985 ? '#B25E00' : '#12B886');
+      chip(ctx, w - 14, 14, [frac > 0.985 ? 'W = U + D — terminal' : 'drag increasing…'], frac > 0.985 ? '#B25E00' : '#12B886');
     };
   });
 
@@ -502,7 +502,7 @@ export function SceneStokes() {
     <canvas
       ref={ref}
       role="img"
-      aria-label="Animation: a ball falling through liquid in a tube, its spacing settling to equal as drag grows, with the weight arrow balanced by the upthrust and growing drag arrows at terminal velocity"
+      aria-label="Animation: a ball falling through liquid in a tube, its spacing settling to equal as drag increases, with the weight arrow balanced by the upthrust and lengthening drag arrows at terminal velocity"
     />
   );
 }
@@ -532,7 +532,7 @@ export function MotionBand() {
               <SceneTerminal />
               <p className="cd-stage-cap">
                 The computed velocity–time curve of a falling ball: steep where only the weight
-                acts, flattening as the drag grows, horizontal once drag and weight balance —
+                acts, flattening as the drag increases, horizontal once drag and weight balance —
                 terminal velocity, exactly as the mark scheme draws it.
               </p>
             </div>
@@ -545,7 +545,7 @@ export function MotionBand() {
               <SceneProjectile />
               <p className="cd-stage-cap">
                 The two independent columns, computed live: constant spacing across (a = 0),
-                growing spacing down (a = g), and time the one bridge between them.
+                increasing spacing down (a = g), and time the one bridge between them.
               </p>
             </div>
           </Reveal>
@@ -557,7 +557,7 @@ export function MotionBand() {
               <SceneStokes />
               <p className="cd-stage-cap">
                 The falling ball in its tube: the weight holds, the upthrust holds, the drag
-                grows with speed — and when W = U + D the spacing goes equal. Terminal
+                increases with speed — and when W = U + D the spacing goes equal. Terminal
                 velocity, watched live.
               </p>
             </div>

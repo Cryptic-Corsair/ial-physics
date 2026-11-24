@@ -98,7 +98,7 @@ export function SpecEditorial({
             <p className="mt-5 max-w-[62ch] text-[calc(14.5px*var(--ts-body))] leading-[1.85] text-ink-soft">
               Every statement below is quoted from the specification and mapped
               to the note sections that teach it — nothing hand-maintained, the
-              index grows as the notes grow. Tick what you&apos;re revising and
+              index builds itself from the notes. Tick what you&apos;re revising and
               the pack assembles itself.
             </p>
           </div>

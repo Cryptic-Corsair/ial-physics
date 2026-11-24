@@ -223,7 +223,7 @@ export const SECTIONS_PH05_B: SpecSection[] = [
       {
         k: "bullets",
         items: [
-          "A stress-strain graph plots tensile stress against tensile strain as the load grows.",
+          "A stress-strain graph plots tensile stress against tensile strain as the load increases.",
           "Stress and strain divide out the size of the sample.",
           "So every sample of the same material follows the ==same curve==, whatever its length or area.",
         ],
@@ -234,7 +234,7 @@ export const SECTIONS_PH05_B: SpecSection[] = [
         items: [
           "The straight section through the origin — its gradient is the Young modulus $E$.",
           "The elastic limit — the last point the sample can return from.",
-          "The yield point — where the strain suddenly grows a large amount more.",
+          "The yield point — where the strain suddenly increases by a large amount more.",
           "The breaking stress — the stress at which the sample snaps, at the end of the curve.",
           "The breaking strain — the strain at the breaking point.",
           "A graph that ends at a higher stress — a larger breaking stress, a ==stronger== material.",

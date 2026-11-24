@@ -1,0 +1,1528 @@
+Topic 1 Mechanics
+1A Motion
+
+1A.1 Velocity and acceleration
+1           (a)        8.33 m s−1
+            (b)        2.08 m s−1
+            (c)        zero
+2           (a)        11.2 m s−1
+            (b)        1.5 s
+            (c)        4.5 m s−2
+3           (a)        1.5 × 108 m s−1
+            (b)        8.82 × 1022 m s−2
+
+
+1A.2 Motion graphs
+1           A: The bike is at constant speed for the first 10 s (2 m s−1).
+            B: The bike is stationary from 10 s to 30 s (20 m distance).
+            C: The bike is at constant speed from 30 s to 40 s (3 m s−1).
+            The bike finishes stationary.
+2           A: The car has constant acceleration for the first 10 s (0.5 m s−2).
+            B: The car is at constant speed from 10 s to 30 s (5 m s−1).
+            C: The car has constant acceleration from 30 s to 40 s (1 m s−2).
+            D: The car has constant deceleration from 40 s to 50 s (−1.5 m s−1).
+3           d = 240 m
+
+
+1A.3 Adding forces
+1           12.1 N forwards
+2           6621 N at an angle of 65.0° up from the horizontal
+3           Students should draw the weight force arrow vertically down from centre of body, exactly the same size as the
+            reaction force from the chair acting vertically upwards on bottom.
+4           (a)      800 N, θ = 18° (accuracy depends on quality of scale drawing)
+            (b)      As part (a)
+5           4100 N, 4° left of the forwards direction
+
+
+1A.4 Moments
+1           438 Nm
+2           1.51 m
+3           If the book swings past the position of the second picture, a moment will then act against the motion, slowing it
+            and pushing it back towards that position with the diagonal vertical. Thus it will oscillate back and forth until it
+            comes to rest as in the second picture. In reality, the swinging is likely to be minimal as the finger friction will be
+            significant.
+4           55 cm
+
+
+1A.5 Newton’s laws of motion
+1           In terms of Newton’s laws of motion:
+            (a)      Weight balanced by reaction force,
+                     so resultant force = zero, so acceleration = zero, as per Newton’s first law of motion.
+            (b)      It will accelerate upwards, as per Newton’s first law.
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.     1
+            (c)        Newton’s third law: the book will offer an equal and opposite force to that of the hands on the book.
+
+                       Touch sensors in the skin detect this reaction force.
+2           (a)        0.5 kg
+            (b)        accelerating force of 0.5 N
+3           (a)        a = 65.4 m s−2
+            (b)        a = 7.16 m s−2
+            (c)        a = 9.80 m s−2
+            (d)        a = 179 m s−2
+
+
+1A.6 Kinematics equations
+1           4 m s−1
+2           40 m
+3           (a)        a = 5.4 m s−2
+            (b)        a = 0.384 m s−2
+            (c)        a = 0.89 m s−2
+4           4.24 s
+5           −122 m s−2
+
+
+1A.7 Resolving vectors
+1           (a)      7.1 cm = 7.1 m s−1 for each arrow
+            (b)      same answers as (a)
+2           horizontal = 13.1 m s−1; vertical = 9.18 m s−1
+3           horizontal = 207 N; vertical = 388 N
+4           138 m s−1 southwards vector
+            197 m s−1 eastwards vector
+
+
+1A.8 Projectiles
+1           (a)        0.98 s
+            (b)        1.17 m
+2           (a)        1.92 s
+            (b)        5.94 m
+3           (a)        It will rise 1.08 m, so yes.
+            (b)        No. The horizontal velocity is 3.86 m s−1. Therefore,horizontal time of flight is 0.78 s. Time to
+                       maximum height is 0.47 s. Therefore,time from max height to horizontal hoop distance is 0.31. In
+                       0.31 s, the ball falls 0.47 m, so the ball will be below the hoop when it reaches it horizontally. (Even
+                       accounting for the diameter of the ball, it would not hit the hoop.)
+
+
+1A Exam practice
+1           B
+2           B
+3           C
+4           C
+5           A
+6           (a)        Magnitude and direction
+            (b)        Direction changing / not a straight line, so velocity is changing / not constant
+7           (a)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                       technical wording where appropriate; including:
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.    2
+                       State sufficient quantities to be measured (e.g. s and t or v, u and t or u, v and s)
+
+                       Relevant apparatus (includes rule and timer/datalogger/light gates)
+                       Describe how a distance is measured
+                       Describe how a speed or time is measured
+                       Further detail of measurement of speed or time
+                       Vary for described quantities and plot appropriate graph
+                       State how result calculated
+            (b)        Repeat and calculate the mean
+                       A suitable precaution relating to experimental procedure
+8           (a)        Draw a tangent at t = 4.0 s:
+
+                                  .   .
+                       v = 8.0 m s–1
+            (b)
+                              .       –1
+                       a
+                       a = 2 m s−2
+9           (a)        (i) Area under graph between 0.5 and 1.0 s / X and Y, or use average velocity between these points ×
+                       time
+                       (ii) Gradient of line at Y
+            (b)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                       technical wording where appropriate. Include up to four of the following:
+                       Lines not parallel
+                       Acceleration should be the same / both should have same gradient
+                       Max +ve and −ve speeds (from 0.5 s) all the same
+                       There will be some energy losses (bounce, air resistance) so max should have smaller magnitude each
+                       time
+                       Velocity at X/Z greater than that at the start
+                       Ball cannot gain energy
+                       Starts with positive velocity
+                       but initial movement is down
+                       Starts with non-zero velocity / graph starts in wrong place
+                       From photo, it is dropped from rest
+                       There is a vertical line
+                       Bounce must take some time / acceleration cannot be infinite
+                       The graph shows a change in direction of velocity between 0 and 0.5 s / release and striking the ground
+                       It is travelling in one direction / down this whole time
+                       Graph shows an initial deceleration
+                       It is actually accelerating downwards
+10          (a)        s = ut + ½at2
+
+
+                       a = 1.54 m s–2
+            (b)        v = u + at
+                       v = 0 + 1.5 m s–2 × (30 × 60)s
+                       v = 1.5 m s–2 × (30 × 60)s
+                       v = 2700 m s–1
+            (c)        F = ma
+                       F = 4.5 × 105 kg × 1.5 m s–2
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   3
+                    F = 675 000 N
+
+11       QWC (quality of written communication) – work must be clear and organised in a logical manner using technical
+         wording where appropriate, including the following points:
+         No acceleration / constant velocity (‘constant speed’ not sufficient) / (at rest or) uniform motion in straight line
+         unless unbalanced / net / resultant force
+         Acceleration proportional to force / F = ma
+         Qualify by stating resultant / net force / ΣF = ma
+         If (resultant) force zero, then Newton’s second law states that acceleration = 0
+         OR acceleration only non-zero if (resultant) force non-zero.
+                              .
+12       (a)        (i)
+                                  .
+                    v = 2.14 m s–1
+                    (ii) v = u + at
+                    0 = u + (−9.81 m s−2) × 0.44 s
+                    u = 9.81 m s−2 × 0.44 s
+                    u = 4.3 m s−1
+                    OR
+                    s = ut + ½at2
+                    0 = (u × 0.88 s) + (½ × (−9.81 m s−2) × (0.88 s)2)
+                    u = 4.3 m s−1
+         (iii)      velocity2 = (2.1 m s−1)2 + (4.3 m s−1)2
+                    velocity = 4.8 m s−1
+                                      .
+                    tan of angle =
+                                      .
+                    angle = 63.9°
+         (b)        (i) Air resistance has not been taken into account
+                    OR air resistance acts on the rocket
+                    OR friction of the rocket on the stand has not been taken into account
+                    OR energy dissipated/transferred due to air resistance
+                    (ii) Any two from:
+                    Can watch again
+                    Can slow down / watch frame by frame / stop at maximum height
+                    Too fast for humans to see
+                    Does not involve reaction time
+                    Can zoom in (to see height reached).
+
+
+
+
+ © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   4
+Topic 1 Mechanics
+1B Energy
+
+1B.1 Gravitational potential and kinetic energies
+1           If we assume that the coconut falls 5.0 m, then the speed would be 9.9 m s−1.
+2           17.2 m s−1
+3           29.7 m s−1
+4           1.90 m
+5           Air resistance and friction are negligible; energy is only transferred between kinetic and gravitational
+            potential stores.
+
+
+1B.2 Work and power
+1           (a)      Work done by lioness is 126 J.
+            (b)      Work done by eagle is 113 J, so lioness does more work by 13 J.
+2           4160 J
+3           (a)      0.20 W
+            (b)      0.33 or 33%
+4           0.29 or 29%
+
+
+1B Exam practice
+1           A
+2           A
+3           D
+4           B
+5           (a)        Wind exerts a force / push on the blades, blades move (through a distance in the direction of the force)
+                       OR energy is transferred from kinetic energy of wind to (KE of) the blades
+            (b)        (i) Volume per second = 6000 m2 × 9 m = 54 000 m3
+                       Total volume in 5 seconds = 54 000 m3 × 5 s = 270 000 (m3)
+                       (ii) Mass = 1.2 kg m−3 × 270 000 m3 = 324 000 kg
+                       (iii) Ek = ½ × 324 000 kg × (9 m s−1)2 = 13 122 000 J
+                       (iv) Energy from the wind in 5 seconds = 0.59 × 13 100 000 J = 7 741 980 J
+                       Power =           =            = 1.548 MW
+            (c)        Any one from:
+                       Would need to stop wind entirely
+                       Wind or air still moving
+                       Wind or air still has KE
+                       Not all the air hits the blades
+            (d)        Any two from:
+                       Wind does not always blow / if there is no wind they do not work / wind speeds are variable / need
+                       minimum amount of wind to generate the electricity / need a large amount of wind / cannot be
+                       used in very high winds
+                       Only 59% max efficiency
+                       Low power output / need a lot of turbines / need a lot of space
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   5
+6           (a)        x = 2 × π × 3.7 m = 23.2 m
+                       W = FΔx
+                       W = 800 N × 23.2 m
+                       W = 18 600 J
+
+
+            (b)        Power =
+
+                       =
+                      = 744 W (accept any dimensionally correct unit – ignore later units if W used as well)
+                      (use of 20 000 J gives 800 W)
+7           QWC (quality of written communication) – spelling of technical terms must be correct and the answer
+            must be organised in a logical sequence. Any six of the following:
+            It will not strike the student’s face / at most will just touch / returns to starting point
+            The total energy of the pendulum is constant / energy is conserved
+            It cannot move higher than its starting point because that would require extra gpe
+            Mention specific energy transfer: gpe → ke / ke → gpe
+            Energy dissipated against air resistance so will stop it quite reaching its starting point (consequent on
+            attempt at describing energy loss mechanism)
+            Pushing does work on the ball / pushing provides extra energy if pushed, it can move higher (accept
+            further) and will hit the student
+            If the face moves (forward) the ball may reach it (before it is at its maximum height)
+            OR if the face moves (back) the ball will not reach it
+8           (a)       (i) Horizontal component = 650 N × cos 42º
+                      = 483 (N)
+                      (ii) Work = 483 N × 15 × 7 m
+                      = 50 715 J
+            (b)       Force in the direction of motion
+                      OR force is parallel to the direction of motion
+                      OR force is applied in a horizontal direction
+                      OR there is no vertical component of force
+                      so less applied force
+9           W = mg
+            W = 0.98 N OR W = 0.1 (kg) × 9.81 (N kg−1) = 1 N
+            W = Fs OR gpe = mgh
+            gpe = 0.98 J
+            P=
+            P = 0.98 W
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   6
+Topic 1 Mechanics
+1C Momentum
+
+1C.1 Momentum
+1           (a)            240 kg m s−1
+            (b)            588 kg m s−1
+            (c)            2.5 × 10−4 kg m s−1
+2           Motorcyclist: estimate mass as 80 kg and speed as 30 m s−1, so p = 2400 kg m s−1
+            Skateboarder: estimate mass as 65 kg and speed as 4 m s−1, so p = 260 kg m s−1
+3           Larger forces cause greater injuries. Force required is proportional to rate of change of momentum (Newton’s
+            second law).
+            The airbag removes momentum in a greater time than the dashboard, so the rate of change of momentum is
+            lower, so the force needed is lower, resulting in less injuries.
+                                                     ∆𝑝
+4           Students’ own answers, using F =              :
+                                                     𝑡
+            e.g. a Frisbee’s estimated throw speed is 5 m s−1 (initially at rest); estimated mass is 100 g; estimated time for
+            which hand applies force to throw is 0.1 s:
+                  ∆𝑝       0.1 × 5
+            F=         =             =5N
+                  𝑡         0.1
+
+
+
+1C.2 Conservation of linear momentum
+1           0.15 m s−1
+2           (a)     0.2 m s−1
+            (b)     100 N
+3           The force that pushes the boy forwards from the boat has an equal and opposite reaction force pushing the boat
+            away, so it is likely that the boat will move out from under him without providing enough forward force to make
+            him reach the jetty before he falls into the water.
+4           (a)            Longer arrow labelled ‘1200 kg m s−1’ at 80° to shorter arrow labelled ‘600 kg m s−1’. Either drawn as
+                           parallelogram rule, or one after the other, with resultant momentum vector arrow drawn in. Resultant is
+                           1430 kg m s−1 at an angle of 56° to the river current (600 kg m s−1 vector).
+            (b)            Resulting velocity = 4.77 m s−1 at 56° to current, so 2.67 m s−1 along current direction and 3.94 m s−1
+                           towards riverbank. Time to reach waterfall = 37 s. Time to reach bank = 4.1 s, so they reach the bank
+                           safely.
+
+
+1C Exam practice
+1           C
+2           B
+3           A
+4           B
+5           A
+6           QWC (quality of written communication) – spelling of technical terms must be correct and the answer must be
+            organised in a logical sequence:
+            Momentum conservation
+            Total/initial momentum = 0
+            Momentum of slime equal momentum of bacteria, which moves in opposite direction
+            OR
+                                                                                                                            ∆𝑚𝑣
+            Force on slime, so equal and opposite force on bacteria. Thus cause the rate of change of momentum                    to
+                                                                                                                             𝑡
+            bacteria, which moves in opposite direction.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.
+7           (a)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                       technical wording where appropriate. Include the following:
+                       Measurement of appropriate quantity, e.g. height/distance/time
+
+                       Calculate the speed or inferred by an equation
+                       Speed on impact
+                       Statement of how method shows momentum has been conserved
+            (b)        Collisions inelastic / KE is transferred in collisions to internal energy / thermal energy / to KE of middle
+                       balls / to sound
+                       Eventually stops because all energy is transferred
+8           (a)        The weight of the hanging masses will be transferred as tension in the string to become a resultant force
+                       on the trolley. Newton’s second law tells us that this will lead to an acceleration equal to (W = weight
+                       of hanging masses; m = mass of trolley and hanging masses combined). This acceleration causes a
+                       change in velocity which means a change in momentum.
+                                               .
+            (b)        Mass of trolley =           = 0.291 kg
+                                               .
+                       Total mass = 0.350 + 0.291 = 0.641 kg
+                                      .
+                       a=     =           = 4.45 m s−2
+                                  .
+            (c)       p = mv = 0.35 × 11.1 = 3.89 kg m s−1
+            (d)       The total momentum of all objects involved in a collision, accounting for the vector nature of
+                      momentum, will be the same before and after the collision.
+            (e)       Initially, all the momentum of the system is carried by the moving trolley.
+                      When this stops it loses all its momentum.
+                      In order for momentum to be conserved, the second trolley must leave the collision with the amount of
+                      momentum that the first one had initially.
+                      As the trolleys are identical, the second trolley will leave at the same speed that the first one came in
+                      with.
+            (f)       Initially, all the momentum of the system is carried by the moving trolley.
+                      In order for momentum to be conserved, the combined pair of trolleys must leave the collision with the
+                      amount of momentum that the first one had initially.
+                      As the trolleys are identical, the total mass will be double that of the incoming trolley.
+                      So they will leave at half the same speed that the first one came in with.
+            (g)       Tie the two trolleys together, with a compressed spring, or repelling magnets, between them.
+                      With the combination stationary, burn through the tie so that they fly apart in an explosion.
+                      Have light gates to monitor speed of each trolley on either side of the explosion.
+9           Award 1 mark for the (QWC) quality of written communication.
+            Award a maximum of 5 marks from the following expected answer points:
+            When objects collide, there is a Newton’s third law force pair between
+            for the duration of the collision
+            Which means equal and opposite forces act on each object
+            for the same length of time
+            The change in the momentum of an object (impulse) is equal to F × t
+            Each object experiences equal change in momentum (impulse)
+            but in opposite directions
+            The total change in momentum is the sum of the individual changes in momentum
+            so the total change in momentum is zero / momentum is conserved
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.    8
+10       (a)        Momentum is initially constant at 0.8 kg m s (towards the goalkeeper) for the first 4 ms.
+                    Over the period 4−8 ms, it changes uniformly by −0.5 kg m s−1 per millisecond.
+                    Momentum is then constant at −1.2 kg m s−1 away from the goalkeeper for the remaining 2 ms.
+         (b)        The leg pads provide a resultant force on the ball, which will change the momentum according to
+                    Newton’s second law.
+         (c)        (i) 0 (zero) newtons
+
+                    (ii) 500 N
+                    (iii) (zero) newtons
+         (d)        Graph with the following points:
+                    First horizontal line at 0.4 kg m s−1, then momentum changes between 4−6 ms
+                    Final horizontal line is at a momentum of −0.6 kg m s−1
+
+
+
+
+ © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   9
+Topic 2 Materials
+2A Fluids
+
+2A.1 Fluids, density and upthrust
+1           1265 kg m−3
+2           (a)         1300 kg m−3
+            (b)      1.3 g cm−3
+3           Students’ own answers. Volume estimate is likely to be length × width × height in rectangular room, and then
+            multiply by density value of 1.2 from table A to give mass.
+4           (a)      0.40 N
+            (b)      0.042 N downwards
+            (c)      There is a resultant downwards force, so it will accelerate to the bottom (Newton’s first law). There, an
+                     additional reaction force (Newton’s third law) from the bed of the stream will cause a net force of zero
+                     so the ball will rest on the bottom stationary (Newton’s first law). Extra: initially on reaching the bottom
+                     the upwards reaction will be slightly greater to decelerate to rest. Students may also comment on drag
+                     forces affecting the rate of acceleration during descent (Newton’s second law).
+5           1.59 N
+6           Students’ own answers, using rectangular volume, V = width × depth × height, and density = :
+            e.g. estimated height is 1.7 m; estimated width is 40 cm; estimated depth is 20 cm; estimated mass is 75 kg
+            V = wdh = 0.4 × 0.2 × 1.7 = 0.136 m3
+                    =       = 550 kg m−3
+                        .
+            Alternative route: The body is mostly water, and humans float, so density must be slightly less than water:
+            estimate = 900 kg m−3.
+
+
+2A.2 Fluid movement
+1       Students’ own answers
+2       Students’ own diagrams; streamline flow should have parallel streamlines, while turbulent flow should have
+        uneven flow lines and eddies
+3       ‘At any point’ the speed must remain the same over time, but the smoke can move faster or slower as it needs to
+        in order to move over the shape of the car. So, whilst it may move faster up the windscreen than over the roof, at
+        each of those points the speed will be constant over time.
+4       Left picture: water surface is smooth, because the flow is laminar, as the water is moving slowly
+        Right picture: water surface is disturbed in a random/unpredictable way, as the flow is turbulent as the water is
+moving fast past the bridge supports.
+
+
+2A.3 Viscosity
+1           Water viscosity causes greater drag than air
+2           Higher temperature causes reduced liquid viscosity but increases gas viscosity
+3           Reduced viscosity would allow greater speeds
+4           Decreased viscosity would enable faster flow of liquid chocolate, so faster production
+5           Depends on students’ own best-fit line, approximate gradient is 1.95 × 10−5, giving an approximate viscosity of
+            1.6 × 10−3 Pa s, compared with 20 °C figure in table B of 1.0 × 10−3 Pa s. Answers should discuss possible
+            sources of error to cause this difference.
+
+
+2A.4 Terminal velocity
+1           F = 1.88 × 10−3 N
+2           It is not a uniform or small object, and is not likely to fall slowly. Stokes’ law does not apply.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   10
+3           (a)        3.8 × 109 m s−1
+            (b)       5.97 × 107 m s−1
+            (c)       Have used Stokes’ law, though the answers clearly show that this object is too large and moving too fast
+                      for Stokes’ law to apply – answer to (a) is faster than the speed of light. Also assumed: viscosity of air at
+                      20 ºC, density of water = 1000 kg m−3.
+4           Students’ own answers:
+            e.g. the cat is larger than a golf ball and smaller than a human, so its terminal velocity should be between their
+            terminal velocities: estimate vterm = 40 m s−1
+5           (a)       (i) Volume increases for the same mass, so density reduces with increasing temperature
+                      (ii) Volume increases for the same mass, so density reduces with increasing temperature
+            (b)       Density reduction by glycerine is likely to be more than for the metal of the ball bearing, so upthrust
+                      would reduce, likely by only a small amount
+            (c)       Glycerine viscosity falls rapidly with increasing temperature
+            (d)       Stokes’ law includes both density comparisons and viscosity. The change in relative densities is likely to
+                      be small, but the change in viscosity is much more significant. The gradient is inversely proportional to
+                      viscosity, so would increase significantly across the various temperatures used.
+            (e)       The change in viscosity for water is very small, so the differences in terminal velocity, and hence
+                      gradient on the graphs, are likely to be imperceptible.
+
+
+2A Exam practice
+1           B
+2           C
+3           C
+4           B
+5           C
+6           (a)      (i) Laminar: at least two roughly parallel lines before object
+                     Turbulent: lines crossing or showing change in direction of greater than 90°
+                     Laminar flow lines should lead directly to turbulent flow lines
+                     Laminar flow lines should continue until they reach the peak of the obstruction
+                     (ii) Laminar flow:
+                     No abrupt change in velocity of flow
+                     OR no abrupt change in speed or direction of flow (must mention both speed and direction)
+                     OR velocity at a point is constant OR flows in layers / flowlines / streamlined
+                     OR layers do not mix / cross OR layers are parallel
+                     Turbulent flow:
+                     Mixing of layers / flowlines / streamlines OR crossing of layers, etc. OR contains eddies
+                     OR contains vortices / whirlpools OR abrupt / random changes in speed or direction
+            (b)      (i) Greater velocity with lower viscosity
+                     (ii) Lower viscosity so faster flow OR greater velocity
+7           Viscosity of the oil decreases at higher temperature, so the rate of flow increases and the oil spreads more
+            quickly.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   11
+8           (a)        (i) Laminar flow:
+                       No abrupt changes in direction or speed of flow OR air flows in layers / flowlines / streamlines OR no
+                       mixing of layers OR layers remain parallel OR velocity at a (particular) point remains constant
+                       Turbulent flow:
+                       Mixing of layers OR contains eddies / vortices OR abrupt random changes in speed or direction
+                       (ii) Relative speed of upper surface of ball to air is greater (than at lower surface) OR the idea that the
+                       direction of movement at the top (due to spin) is opposite to / against (direction of) air flow
+            (b)        The ball is applying an upward force on the air, so there must be an equal and opposite force on the ball
+                       downwards.
+                                        .
+            (c)        (i) Time =               = 0.087 s
+                       s = ½ × 9.81 m s−2 × (0.087 s)2
+                       = 0.037 (m)
+                       (ii) (Extra) downwards force (on the ball)
+                       Greater downwards acceleration
+                       Greater distance fallen OR drops further (in that time) OR needs to drop 15 cm; 4 cm drop not enough
+9           (a)        (i) Upthrust / U
+                       Weight / W / mg / gravitational force / force due to gravity
+                       (Viscous) drag / fluid resistance / friction / F / D / V
+                       (ii) QWC (quality of written communication) – work must be clear and organised in a logical manner
+                       using technical wording where appropriate and including the following points:
+                       Initially viscous drag = 0 OR viscous drag is very small
+                       OR resultant force is downwards OR W > U OR W > U + D
+                       Viscous drag increases until forces balanced OR resultant / net force zero OR forces in equilibrium
+                       therefore, no acceleration
+                       (iii) W = U + D
+            (b)        (i) Mass = 1.0 × 103 kg m−3 × 2.1 × 10−9 m3
+                       = 2.1 × 10−6 kg
+                       Upthrust = 2.1 × 10−6 kg × 9.81 N kg−1
+                       = 2.1 × 10−5 N
+                       (ii) F = 5.7 × 10−5 N − 2.1 × 10−5 N = 3.6 × 10−5 N
+                             .
+
+
+                                            .
+                       v
+                                    .
+                     v = 2.0 m s−1
+            (c)      Viscous drag varies in proportion to radius (or area in proportion to radius squared) but weight varies in
+                     proportion to radius cubed. Therefore, terminal velocity is proportional to radius squared.
+10          Award 1 mark for (QWC) quality of written communication.
+            Award a maximum of 5 marks from the following expected answer points:
+            Stone’s weight is greater than upthrust
+            Upthrust is equal to the weight of water displaced, which equals the volume of the stone times the density of the
+            water
+            (OR: resultant = difference in densities × stone’s volume)
+            Resultant downwards force accelerates stone downwards
+            Drag increases with speed,
+            reducing resultant force, thus reducing acceleration
+            until weight = drag when acceleration is zero
+            Temperature higher in summer
+            Water viscosity lower with higher temperature
+            Correct expression of Stokes’ law equation OR Stokes’ force equation
+            Thus terminal velocity is higher in summer
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   12
+Topic 2 Materials
+2B Solid material properties
+
+2B.1 Hooke’s law
+1           7.0 N m−1
+2           The line would be steeper.
+3           Formula given in text is that ΔEel = ½FΔx. Hooke’s law has ΔF = kΔx so substituting expression for ΔF into
+            first equation gives the formula ΔEel = ½k(Δx)2
+4           (a)       From the graph, each square represents 1.25 × 10−3 J. There are approximately 100 squares under the
+                      line, so accept estimates of around 0.125 J.
+            (b)       Underneath unloading curve are about 80 squares, so accept estimates of approximately 0.10 J
+            (c)       Students calculate the difference between (a) and (b): approx. 0.025 J
+
+
+2B.2 Stress, strain and the Young modulus
+1           0.072
+2           7.81 × 107 Pa
+3           5.09 × 109 Pa
+4           (a)      3.50 × 105 Pa
+            (b)      3.50 × 10−5 m, assuming that the elephant’s weight is split evenly over two leg bones that are still
+                     vertical cylinders
+
+
+2B.3 Stress–strain graphs
+1           Straight line starts to curve beyond stress of 400 MPa.
+2           Any temperature variation that should alter the length of the test wire will also occur in the control wire. As the
+            extension is measured relative to the control wire, such temperature extensions will not be measured.
+
+
+2B Exam practice
+1           D
+2           C
+3           B
+4           D
+5           C
+6           (a)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                       technical wording where appropriate, and include some of the following points:
+                       Apparatus
+                           arrangement which secures wire
+                        arrangement allowing force to be varied
+                       What to measure
+                           force
+                           original length
+                           extension
+                        diameter
+                       Measurement
+                           diameter with micrometer
+                           length with metre rule
+                           force by adding known weights or use of tensometer
+                           extension with rule or vernier scale
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   13
+                       How to calculate
+                           substitution in E = Fx / AΔx OR plot F v Δx graph OR plot stress−strain graph
+                           determination gradient of F v Δx graph and process correctly
+                            OR determine a gradient of stress−strain graph
+            (b)        Any one from:
+                       Eye protection / watch out for feet / foam on floor, etc.
+            (c)        Any suitable precaution and explanation, such as:
+                       Measure diameter in different places
+                       Use a reference marker
+                       Avoid parallax when measuring extension
+                       Do not extend wire past limit of proportionality
+7           (a)        Straight line / constant gradient shown on graph
+                       So extension or change in length proportional to force
+                       Therefore k is constant
+            (b)        k=
+                            ∆
+                                        .
+                       k=
+                                    .       .
+                                .
+                       k=
+                            .
+                       k = 16 N m−1
+            (c)        (i) F = kΔx
+                       F = 16 N m−1 × (0.41 m − 0.09 m)
+                       F = 5.1 N
+                       (ii) E = ½FΔx
+                       E = 0.5 × 5.1 N × (0.41 − 0.09 m)
+                       E = 0.82 J
+            (d)        QWC (quality of written communication) – spelling of technical terms must be correct and the answer
+                       must be organised in a logical sequence. Include at least three of the following points:
+                       Change in length greater so the compression greater
+                       More force
+                       More elastic energy / more strain energy
+                       Greater acceleration
+                       Therefore more kinetic energy and greater speed
+8
+            (a)        Upthrust = (−)weight
+                       Thrust = (−)viscous drag
+            (b)        Calculate weight of water as U = W
+                       m = density × volume
+                       m = 1030 kg m−3 × 7100 m3
+                       m = 7.3 ×106 kg
+                       W = mg
+                       W = 7.3 × 106 kg × 9.81 N kg−1
+                       W = 7.2 × 107 N
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   14
+(c)         (i) Decrease in length
+                     (ii) Pump out water / replace water in tanks with air to decrease weight (accept mass) / to compensate
+                     for decreased upthrust / to make density the same as water
+                     (iii) QWC (quality of written communication) – work must be clear and organised in a logical manner
+                     using technical wording where appropriate, and include two of the following points:
+
+                       A much greater (compressive) strain will be produced
+                       Compresses more easily
+                       Producing a larger decrease in volume
+                       Compressive strain may exceed yield point.
+                                 .
+9           (a)        k=
+                            .
+                       k = 960 N m−1
+            (b)        F = 960 N m−1 × 0.047 m = 45.1 N
+                       Eel = 0.5 × 45.1 N × 0.047 = 1.06 J
+            (c)        (i) ½mv2 = 1.1. J
+                                                 .
+                       v= √                          = 15.3 m s−1
+                                     .
+                       (ii) All elastic energy to kinetic energy / no friction between parts of device for swatting flies
+                                             .
+            (d)        (i) t =                           = 0.196 s
+                                         .
+                       v = 9.81 m s−2 × 0.196 s = 1.92 m s−1
+                       v = √((15.3 m s−1)2 + (1.92 m s−1)2) = 15.4 m s−1
+                                                     .
+                       Angle = tan−1                            = 7.15°
+                                                         .
+                       (ii) Use of s = ½ × 9.81 m s−2 × (0.196 s)2
+                       s = 18.8 cm
+            (e)        Any sensible suggestion:
+                       e.g. Less air resistance
+                       Less warning given to fly from pressure changes
+                       Less mass so greater speed for same kinetic energy
+                       Less mass so greater acceleration for same force
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   15
+Topic 2 Waves and the Particle Nature of Light
+3A Basic waves
+
+3A.1 Wave basics
+1           Graphs from top to bottom: 0.2 m, 80 m, 5.5 m
+2           1240 m
+3           8.15 × 1014 Hz
+4           As frequency is defined as waves per second, multiplying frequency by wavelength is equivalent to dividing a
+            distance by a time.
+5           Students’ own answers, using v = fλ:
+            e.g. estimated wavelength is 5 m; estimated frequency is 1 wave every 3 seconds, so f = 0.33 Hz
+            v = fλ = 0.33 × 5 = 1.7 m s−1
+            Accept alternative answers using
+
+
+3A.2 Wave types
+1           amplitude = 0.5 cm and wavelength = 4.0 cm
+2           (a)      The oscillations are perpendicular to the direction of energy travel.
+            (b)      P-waves are longitudinal. Rock particles oscillate back and forth in the same line as the direction of the
+                     energy travel, causing regions of higher pressure (compressions) and regions of lower pressure
+                     (rarefactions).
+3           Greater amplitudes of displacement cause greater pressure variations. These affect the parts of the ear to a greater
+            degree, and the brain interprets this as increased loudness.
+
+
+3A Exam practice
+1        B
+2        D
+3        A
+4        A
+5        5(a) The amplitude indicates the energy of the sound waves.
+This will decrease as the wave travels, so the echo returns with a lower amplitude than the original pulse.
+(b) Time from pulse to echo = 50 ms
+Distance sound pulse has travelled = 5900 ´ 50 ´ 10-6 = 0.295 m
+Depth of rail = 0.295/2 = 0.15 m
+5(a) The amplitude indicates the energy of the sound waves.
+This will decrease as the wave travels, so the echo returns with a lower amplitude than the original pulse.
+(b) Time from pulse to echo = 50 s
+Distance sound pulse has travelled = 5900  50  10-6 = 0.295 m
+Depth of rail = 0.295/2 = 0.15 m
+
+6           (a)        Any three from:
+                       Sound waves are longitudinal waves
+                       Air molecules vibrate
+                       parallel to the direction of travel of the wave
+                       in a series of compressions and rarefactions
+            (b)        Frequency is the number of cycles / oscillations / waves per second / per unit time OR number of cycles
+                       / oscillations / waves passing a point per second
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   16
+            (c)        v = 1500 m s−1 × 2 Hz
+                       v = 3000 m s−1
+            (d)        Animals detect infrasound / lower frequencies than humans / vibrations through the ground and
+                       infrasound travels faster than the tidal wave
+7           λ=
+                   .
+            λ = 3.13 m
+8           (a)      (i) They are above the audible range / frequency
+                     (ii) Distance = speed × time
+                     = 1500 m s−1 × 0.8 × 10−4 s
+                     = 0.12 m
+                     (iii) The idea that one pulse must return before the next is sent
+            (b)      (i) X-rays cause ionisation OR can damage DNA / cells / tissue OR can cause mutation
+
+
+
+                       (ii) Any two from:
+                       X-rays transverse, ultrasound longitudinal OR X-rays can be polarised, ultrasound cannot
+                       X-rays travel in vacuum, ultrasound does not
+                       X-rays electromagnetic, ultrasound mechanical
+                       X-rays have (much) higher f / shorter λ / greater speed
+9           (a)        After reflection, amplitude is reduced
+                       Because the sound has travelled further OR because the sound has lost some energy/become more
+                       spread out
+            (b)        (i) There is only one microphone
+                       (ii) Add a second microphone (attached to the oscilloscope)
+                       (iii) Maximum 6 from:
+                       Set the signal generator to a known frequency, f
+                       Place both microphones the same distance from the loudspeaker
+                       Move one microphone further from the loudspeaker until the two traces have gone (out of phase and
+                       then) back again to being in phase
+                       Measure the distance between the two microphones.
+                       This distance equals the wavelength, λ
+                       Calculate speed from v = f λ
+                       The metal plate will introduce reflections/echoes which will confuse the trace comparisons
+            (c)        3700 × 0.09
+                       = 333 (m/s)
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   17
+Topic 3 Waves and the Particle Nature of Light
+3B The behaviour of waves
+
+3B.1 Wave phase and superposition
+
+1           Rays show the direction of travel of the wave energy, whilst wavefronts show positions of identical phase
+            position. Wavefronts and rays are always at right angles.
+2           180° or π radians
+3           (a)       0; or 360°; or 2π rad
+            (b)       180° or π rad
+            (c)       180°, π rad; or 900°, 5π rad
+4           t = 1.0 s: same pulses now separated by 3.0 cm
+            t = 2.0 s: pulses now overlap by 1.0 cm in the middle, and the overlap portion is at displacement = −1.0 cm
+            t = 3.0 s: same pulses but now on opposite sides of each other and separated by 1.0 cm
+
+
+3B.2 Stationary waves
+1           λ = 0.75 m; f = 560 Hz
+2           (a)      433 m s−1
+            (b)      293 Hz
+3           A graph of f on y-axis against on x-axis. Gradient is approximately 115, making mass per unit length
+            approximately 4.4 × 10−4 kg m−1.
+4           Students’ own answers, using v = f √
+
+            so µ =     =      :
+            e.g. estimated frequency is 256 Hz (middle C); estimated wavelength for fundamental is twice size of piano =
+            2 m; from school Young modulus experiments, wire snaps after about 2 kg loading, but piano wire is very thick,
+            so estimate tension as 100 N:
+            µ=        =                3.8 ×10−4 kg m−1
+
+
+3B.3 Diffraction
+1           The wave energy could be diffracted around the tanker and still hit the small boat behind.
+2           (a)      The degree of diffraction depends on the relative size of the diffracting object and the wavelength. The
+                     radio wavelength is the same in both cases, and so it is more diffracted in the first instance, where the
+                     radio dish is closer to the same size as the wavelength.
+            (b)      General broadcast transmissions would be preferred in the first instance, as the waves spread over a
+                     wide area. In the second instance, a directed beam would be preferred for situations in which the
+                     intended recipients location is known and fixed, such as communicating with an orbiting satellite.
+3           Grating spacing d = 1 × 10−6 m. Therefore, λ1 = 4.48 × 10−7 m; λ2 = 5.02 × 10−7 m; λ3 = 5.88 × 10−7 m
+4           For λ1, nmax = 2; λ2, nmax = 1; λ3, nmax = 1
+
+
+3B.4 Wave interference
+1           Coherent waves have the same frequency and a constant phase difference.
+2           (a)     0°; they are in phase
+            (b)         ; they are 180° out of phase
+            (c)        λ; 0°; they are in phase
+            (d)        The fringes would be further apart.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   18
+3B Exam practice
+1           C
+2           B
+3           B
+4           C
+5           D
+6           QWC (quality of written communication) – spelling of technical terms must be correct and the answer must be
+            organised in a logical sequence, including:
+            Identifies two rays of light
+            Two rays have same frequency / come from same source / are coherent
+            Path difference (between the two reflected rays)
+            They superpose (when they meet) / constructive and destructive interference occur
+            If they meet in phase / nλ / λ path difference, constructive interference / bright fringe
+            If they meet in antiphase / (n + ½) / λ / ½λ path difference, destructive interference / dark fringe
+7           (a)        d = 2  10−6 m
+            (b)                 
+                       = 5.18  10−7 m
+            (c)                 
+                       sin 90 = so n =
+                         
+8           (a)        Unit of LHS = m s−1
+                       Unit of T = kg m s−2
+                       Unit of µ = kg m−1
+            (b)        (i) Waves travel in both directions along wire
+                       Waves superpose / interference effect / superposition occurs
+                       Producing nodes and antinodes
+                       OR node is produced where waves are 180º out of phase / antiphase
+                       OR antinode is produced where waves are in phase
+                       OR node produced at a point of destructive interference
+                       OR antinode produced at a point of constructive interference
+                       OR produces points / positions of constructive interference and points / positions of destructive
+                       interference
+                       (ii) λ = 4 m
+                       (iii) v = √
+                                     .
+                       v = 173 m s−1
+                       (iv) Any three from:
+                       At most frequencies there is no standing wave / as frequency changes from a standing wave the wave no
+                       longer occurs / standing waves only occur at some frequencies
+                       At higher frequencies there are more nodes / antinodes / loops (not ‘more waves’)
+                       There is always a node at either end OR number of nodes = number of antinodes plus one
+                       Amplitude is less if there is a greater number of nodes
+                       Length = nλ/ 2 / after first standing wave, they occur when frequency ×2, ×3, ×4, etc. / for frequency nf0
+9           (a)        Diffraction is the spreading out of a wave (not bending, not bending round, not just change in direction)
+                       as it passes (through) a gap / slit / aperture OR passes (around) an obstacle
+            (b)        Indication that two or more (waves) meet / overlap / coincide and the (total) displacement at a point is
+                       the sum of the individual displacements
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   19
+         (c)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                    technical wording where appropriate, including:
+                    Identifies that the rock(s) or gap(s) in the rocks cause diffraction
+                    OR cause wave(front)s to become curved / waves to spread out
+                    Waves / wavefronts (from each gap) overlap / meet
+                    (At some places) waves are in phase (accept path difference equal to whole number of wavelengths)
+                    OR (at some places) waves are in antiphase (accept path difference equal to whole number of
+                    wavelengths plus half a wavelength)
+                    Constructive superposition / interference occurs
+                    OR destructive superposition / interference occurs (must correspond to phase differences if referred to
+                    elsewhere)
+                    Maximum / large amplitude erodes beach / disturbs sand the most
+                    OR minimum / zero amplitude does not disturb sand (as much)
+                    OR reduced amplitude disturbs sand less
+10       (a)        Half wave vibration, with wire at a maximum in the centre and S and T still at the fixed points
+                    Some indication that the whole wire moves up and down with a node in the centre and S and T always
+                    fixed – perhaps shown as a dashed curve opposite a solid curve
+         (b)        Ends fixed at S and T with 1.5 wavelengths shown in between
+                    Alternate positions for nodes also shown (perhaps as a dashed line)
+         (c)        Plucking the wire sends waves along it.
+                    These reflect from the fixed end points.
+                    The waves and their reflections are coherent / have the same frequency and a constant phase
+                    relationship.
+                    So they superpose/interfere (to produce a stationary wave).
+
+
+
+
+ © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   20
+Topic 3 Waves and the Particle Nature of Light
+3C More wave properties of light
+
+3C.1 Refraction
+1           (a)      speed reduces
+            (b)      wavelength reduces
+            (c)      frequency is constant
+2           The refraction of the light from the body of the giraffe causes it to appear in a false position, whilst the light from
+            the head is unaffected.
+3           16.4°
+
+
+3C.2 Total internal reflection
+1           The angle of incidence within a more dense medium, beyond which a ray will be totally internally reflected
+2           In all cases, the angle of incidence as the light tries to leave the glass is greater than the critical angle (which is
+            usually about 42° for glass).
+3           48.8°
+4           From any part of the sky, the angle the rays make underwater with the normal to the water surface must
+            always be less than the critical angle. This limits the range of angles that the fish needs to observe and yet still be
+            able to see everything above the water, as shown in fig F.
+
+
+3C.3 Polarisation
+1           Sound waves are longitudinal, and longitudinal waves cannot be polarised.
+2           There are numerous waves with oscillations oriented in all planes, favouring no particular plane.
+3           Light reflected from the surface of the snow is likely to be polarised in the horizontal plane, so the vertical
+            Polaroids will absorb this glare.
+4           Students’ own answers:
+            e.g. The models show the real outcomes of the design, in order to confirm any theoretical calculations that have
+            been done to check the design.
+            For large projects, it is important to be able to check the strength of the design using a cheap model before
+            investing in building the real thing.
+
+
+3C Exam practice
+1           D
+2           C
+3           C
+4           B
+5           (a)        Ray drawn along edge of prism (labelled X)
+            (b)        (i) n =
+                                 .
+                       n = 1.53
+                       (ii) sin (critical angle) = OR          =    =n
+                       c = 41º
+            (c)        Red light: refraction towards normal at first face but less than refraction for blue light
+                       Refracts into air at second face with angle in air > angle in glass
+6           (a)        Unpolarised light oscillates/vibrates in many planes/directions while polarised oscillates/vibrates in
+                       one plane/direction only
+            (b)        Sunglasses cut out the reflected light / polarised light / glare
+                       but not the light from the fish OR light from fish is unpolarised
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   21
+            (c)        Sound is a longitudinal wave and only transverse waves can be polarised.
+
+
+
+7           (a)        n=
+                       n = 1.5 (common answer will be 1.49)
+                       (n = 0.67 scores 1 mark for idea of ratio of sin of angles)
+            (b)        (i) QWC (quality of written communication) – spelling of technical terms must be correct and the
+                       answer must be organised in a logical sequence, including:
+                       As x increases, y increases
+                       OR at a certain angle / critical angle, y = 90º / the light travels along the boundary
+                       For angles greater than the critical angle (in glass) total internal reflection occurs
+                       (ii) sin c =
+                       c = 42º
+                                      .
+8           (a)               =
+                                      .
+                       c = 75º
+            (b)        It will be reflected (back into the core) / totally internally reflected
+            (c)        Most of the light will undergo repeated (total internal) reflection and light hits the bottom at less than
+                       the critical angle.
+9           (a)        Refraction
+            (b)        (i) Normal correctly added to diagram
+                       i and r correctly labelled
+                       (ii) Greater refraction than the red light as light enters the raindrop (must be between red light ray and
+                       centre)
+                       Reflection followed by refraction away from normal as ray emerges from the raindrop
+            (c)        (i) The angle of incidence (in the denser medium) for which angle of refraction is 90º OR angle of
+                       incidence for which a ray is transmitted along the boundary
+                       (ii)               = 1.3
+                       sin c =
+                                          .
+                       c = 50.3º
+                              .
+            (d)        λ=
+                                  .
+                      λ = 5.2 × 10−7 m
+10          Award 1 mark for the (QWC) quality of written communication.
+            Award a maximum of 5 marks from the following expected answer points:
+            Fibre made of glass
+            Light is totally internally reflected
+            when it strikes the edge of the fibre at more than the critical angle
+            Used for decorative lighting
+            Used to guide light to the interior of buildings for illumination
+            Used to communicate information as pulses of light
+            e.g. broadband internet
+            Endoscope for medical diagnosis
+            Has fibre carrying light into body for illumination
+            and fibre carrying reflection back out to form image
+            Some fibres are made with core and cladding of similar refractive indices
+            in order to increase critical angle
+            and reduce fibre damage / light leakage
+            and reduce multimode dispersion
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   22
+Topic 3 Waves and the Particle Nature of Light
+3D Quantum physics
+
+3D.1 Wave–particle duality
+1           (a)       Students’ own answers, e.g. two-slit interference, diffraction grating, refraction, polarisation
+                      experiments
+            (b)       Students’ own answers, e.g. electron diffraction
+2           9.95 × 10−19 J
+3           Polarisation is a wave property.
+4           Students’ own answers, explaining wave–particle duality
+5           Students should produce diagrams along the lines of fig B, but with only two secondary sources, one at each side
+            of the rock. The multiple wavelets are then overdrawn with the sum (new) wavefront to show diffraction behind
+            the rock.
+
+
+3D.2 The photoelectric effect
+1           2.3 eV
+2           (a)      Zinc will not do so, and iron has a higher work function than zinc
+            (b)      There would be no change.
+3           The stopping voltage is designed to stop and measure the energy of the electrons that are released with maximum
+            kinetic energy.
+4           5.07 × 1014 Hz
+
+
+3D.3 Electron diffraction and interference
+1           Electron diffraction: diffraction is a wave phenomenon
+2           Resolution is roughly the same size as the wavelength. Higher energy electrons have a shorter wavelength.
+3           6.14 10−11 m
+4           Students’ own answers, using = :
+            e.g. estimated speed of the football is 20 m s−1; estimated mass is 300 g
+                      .
+            = =                = 1.1 × 10−34 m
+                           .
+
+
+
+3D.4 Atomic electron energies
+1           1.22 × 10−7 m
+2           The photon’s energy is not enough to lift the electron to any other energy level.
+3           1.96 eV
+4           Through energy absorbed by conducting electricity
+5           The electrical energy will excite electrons in the mercury atoms to various levels. The electrons will then fall
+            various numbers of levels. The variety of level drops equate to a variety of photon energies, and hence various
+            wavelengths (colours).
+6           Students’ own answers, using photon energy E = hf, and intensity I:
+            e.g. estimated sunlight intensity is 1000 W m−2; estimated width of face is 15 cm; estimated face height is 20 cm;
+            estimated sunlight wavelength is 550 nm:
+            A = w h = 0.15 0.2 = 0.03 m2
+            P = I A = 1000 0.03 = 30 J s−1
+                                           .
+            photon energy, E =       =                         = 3.6 × 10−19 J
+
+            N = =                = 8.3 × 1019 photons per second
+                       .
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   23
+3D Exam Practice
+1           C
+2           C
+3           D
+4           D
+5           (a)        LED 1 green
+                       LED 2 orange
+                       LED 3 red
+            (b)        E = 6.63 × 10−34 Js × 4.41 × 1014 Hz
+                      E = 2.92 × 10−19 J
+6           QWC (quality of written communication) – work must be clear and organised in a logical sequence and include
+            four of the following points:
+            Particle theory
+            Reference to E = hf or quanta of energy / packets of energy / photons
+            Increased f means more energy of photon
+            Release of electron requires minimum energy / work function
+            One photon releases one electron
+            Greater energy of photon means greater KE of electrons
+            More intense light means more photons, therefore more electrons
+            And, an additional two of the following points:
+            Wave theory
+            Wave energy depends on intensity
+            More intense light should give greater KE of electrons
+            Energy is spread over the whole wave
+            If exposed for long enough, photons eventually released – does not happen
+7           (a)      Photon energy is too small / less than work function
+            (b)      Method 1: Use of intercept x-axis:
+                     Use of E = hf with f = 10 × 1014 Hz
+                     Divide by 1.6 × 10−19 to convert to eV
+                     Φ = 4.1 (eV)
+                     OR
+                     Method 2: Use of photoelectric equation:
+                     Use of hf = Φ + Emax with any pair of values
+                     Divide by 1.6 × 10−19 to convert to eV
+                     Φ = 4.1 to 4.5 (eV)
+            (c)      Planck’s constant / e
+            (d)      Line parallel to original line, cutting x-axis with a value less than 10
+8           (a)        (i)
+                                      .
+                       f = 4.57 × 1014 Hz
+                              .
+                       (ii)
+                                  .
+                       Transition from (−)1.5 eV to (−)3.4 eV
+            (b)        The light from the sun passes through a gas on the way to Earth. This gas has an electron transition for
+                       which the energy difference exactly matches the wavelength 656 nm.
+                       That wavelength is absorbed in exciting the electrons of the gas. When the light is re-emitted, it travels
+                       in a random direction so most will not come to Earth.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   24
+9           (a)        QWC (quality of written communication) – work must be clear and organised in a logical manner using
+                       technical wording where appropriate, including:
+                       Reference to photons (may be descriptive, e.g. quantum of energy / light arrives in small packets / light
+                       particles, etc.)
+                       Energy of photon greater than or equal to work function (of zinc) / hf ≥ φ
+                       Results in electrons being emitted
+                       So electroscope loses charge / charge decreases and the leaf falls
+            (b)        Photon energy for visible light is less than the work function
+                       OR frequency of visible light less than threshold frequency
+                                     .
+            (c)        KE =
+                                                   .
+
+                       KE = 3.07 × 10        −19
+                                                   J
+                                         .
+                       v=√
+                                 .
+                       v = 8.20 × 105 m s−1
+            (d)        No change, as the photon energy does not change (with distance)
+                       OR photon energy depends (only) on frequency / wavelength
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   25
+Topic 4 Electric Circuits
+4A Electrical quantities
+
+4A.1 Electric current
+1           (a)        0.625 A
+            (b)        7.6 C
+            (c)        2.35 × 10−8 s
+2           (a)        0.167 s
+            (b)        1.25 × 1011
+3           1.4 A
+
+
+4A.2 Electrical energy transfer
+1           Emf measures energy transferred to electrical energy (a supply voltage); pd measures energy transferred from
+            electrical to other stores
+2           (a)       1.58 V
+            (b)       9.26 V
+3           (a)       6.0 eV
+            (b)       7.68 × 10−13 J
+4           Students should include discussion of at least the following ideas in their evaluation of the strengths and
+            weaknesses of the snowpark model of an electric circuit:
+            The representation of charge carriers – small individual units within a large system is good; different types
+            (snowboarders and skiers) going in the same direction is less good (could be complex electrolysis, but unusual).
+            A complete circuit is needed – the piste is rather open, but it is the case that skiers will need to follow snow
+            routes all the way and return to the ski lift every time.
+            Gravitational potential as the analogy for electrical energy – good: easy to understand; both caused by field
+            potentials.
+            The ski lift as a cell – good modelling of energy input from transfers; height lifted analogy to emf also good.
+            The snowpark obstacles as components using electrical energy – some energy transferred to kinetic on obstacles
+            rather than only into heat/sound (other stores).
+            Differing speeds by different skiers – likely to be a poor model as we assume electron drift velocity to be constant
+            all round a circuit.
+5           Students’ own answers
+
+
+4A.3 Current and voltage relationships
+1           The current between two points is directly proportional to the voltage across them.
+            resistance =
+2           120 Ω
+3           An ohmic conductor has a constant resistance over a wide range of voltages, assuming the temperature remains
+            constant. Non-ohmic conductors have changing resistance with voltage applied.
+4           If the resistor is ohmic, then the gradient of the straight line would give the same answer as the resistance value.
+5           Component A has a higher resistance of 50 Ω, whilst the resistance of component B is 20 Ω.
+
+
+4A.4 Resistivity
+1           0.71 Ω
+2           Maintain constant temperature; measure wire diameter in several places and in right-angled pairs of readings; use
+            longest possible wire length in order to minimise percentage error in length
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   26
+3           Polyethene: σ = 5.0 × 10−12 S m−1
+            Copper: σ = 5.9 × 107 S m−1
+            Copper is a much better conductor than polythene, so it has a higher value for conductivity.
+
+4           (a)        Resistance = 2.3 × 10−4 Ω
+                       so resistance of each arm of ring in circuit = 4.6 × 10−4 Ω
+                      Cross-sectional area = 1.5 × 10−6 m2
+                      Length = half circumference = 0.0314 m
+                      so ρ = 2.2 × 10−8 Ω m
+            (b)       The high current is dangerous; the percentage error in the diameter and cross-section measurements will
+                      be large
+5           Students’ own answers, using cylinder volume, V = πr2h:
+            e.g. If the estimated length is 2 cm and the estimated diameter is 1 mm:
+            r = 5 × 10−m
+            V = πr2h = 3.14 × (5 ×10−4)2 × 0.02 = 1.6 ×10−8 m3
+
+
+4A.5 Conduction and resistance
+1           The net rate of movement of the electrons as they cause a current flow
+2           v = 6.0 × 10−4 m s−1
+3           Conduction electrons have to travel further through the lattice of fixed metal atoms, so there are a greater number
+            of collisions to reduce the drift velocity, reducing the current, which is an effective increase in resistance.
+4           Students’ own answers; their explanations should include reference to at least the following ideas:
+            Movement of charge carriers
+            Fixed lattice ions
+            Collisions between ions and charge carriers
+            Increased vibrations of fixed lattice ions with temperature
+            An evaluation of the strengths and weaknesses of their model
+5           Students’ own answers, using cylinder volume, V = πr2h and number density for copper, n = 8.4 × 1028 m−3:
+            e.g. estimated height is 1 mm; estimated diameter is 2 cm:
+            r = 1 × 10−2 m
+            V = πr2h = 3.14 × (1 × 10−2)2 × 0.001 = 3.1 × 10−7 m3
+            N = nV = 8.4 × 1028 × 3.1 × 10−7 = 2.6 × 1022 electrons
+
+
+4A.6 Semiconductors
+1           Higher temperature gives electrons more energy, so more electrons move up to the conduction band and the
+            charge carrier density increases, thereby increasing current and effectively reducing resistance.
+2           If lead is cooled below 7.2 K, its resistance falls to zero.
+3           The impurities will need to provide charge carriers for conduction. So the impurities will have a low enough
+            energy band gap that the electrons will be in the conduction band at room temperature.
+
+
+4A Exam practice
+1           C
+2           D
+3           C
+4           A
+5           pd is a measure of electrical energy transferred between two points, or the electrical energy transferred to other
+            stores
+            emf is a measure of the energy supplied to a circuit
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   27
+                  .                  .
+6           I=
+            I = 2.77 × 106 A
+
+
+
+7           (a)        Use of I = nqvA with e 1.6 × 10−19 C and 8 × 10−3 A
+                       v = 2.8 × 10−7 m s−1
+            (b)        Value for semiconductor is much greater
+                       n for semiconductor (much) less than for conductor
+            (c)        Its resistance decreases because as temperature increases n increases
+                       OR there are more electrons / charge carriers
+8           (a)        Resistivity is a constant for the material
+                       OR resistivity is a property of the material
+                       Resistance depends on resistivity and length / area / dimensions as R =
+                                 .       Ω    .
+            (b)        R=
+                       R = 0.0085 Ω
+9           (a)        Resistivity is a property of a material OR is constant for a material
+                       Resistance is a property of a wire / component and depends upon the dimensions of the wire /
+                       component
+            (b)        Circuit diagram: wire and power supply with an ammeter in series and a voltmeter in parallel with the
+                       wire
+                       Quantities measured: current and potential difference OR resistance; length of wire; diameter /
+                       thickness of wire
+                       Graph: plot R against l OR plot V against l OR plot R against OR plot RA against l
+                       Determination of resistivity: the gradient of relevant graph, correctly processed to find ρ
+10          (a)        Current through a conductor is directly proportional to the potential difference across it (providing the
+                       temperature of conductor remains constant OR external conditions remain constant)
+            (b)        Ohmic conductor: fixed resistor horizontal straight line
+                       Filament lamp: graph showing increasing resistance (straight line or curve) from a non-zero resistant
+                       start
+            (c)        As the temperature of the filament increases resistance of conductor changes OR the ions vibrate more
+11          (a)        Diode / LED
+            (b)        Infinite OR very high
+                             .
+            (c)        R=
+                             .
+                       R = 1.7 Ω
+            (d)        Any one from:
+                       To protect components / circuits
+                       Rectification
+                       Restricts current / flow (of charge) to one direction
+                       AC to DC
+                       Produce DC supply
+                       Power indicator light
+                       Light source, e.g. Christmas tree light, torch
+                       Regulate voltage
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   28
+12       (a)      Voltmeter, ammeter, low voltage supply, build complete circuit incorporating ink circle so current flows
+         from A to B.
+         Measure current and voltage between A and B
+         R = V/I
+         (b)      Resistance inversely proportional to area of conductor
+         - so doubling cross-sectional area halves the resistance
+
+
+
+
+ © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   29
+Topic 4 Electric Circuits
+4B Complete electrical circuits
+
+4B.1 Series and parallel circuits
+1           All ammeter readings show the same current, so the same quantity of charge passes through them per second. As
+            there is only one route the charge can take, it must be conserved.
+2           12.0 V
+3           0.25 A
+4           0.24 × 50 = 12 V, and 0.12 × 100 = 12 V
+5           1.53 mA
+6           (a)       30 A
+            (b)       5.0 A
+
+
+4B.2 Electrical circuit rules
+1           0.9 A
+2           0.9 A + 0.45 A = 1.35 A
+3           pd = I2R3 = 0.9 × 5.0 = 4.5 V = cell emf
+4           11.4 V
+
+
+4B.3 Potential dividers
+1           4.15 V
+2           11.3 V
+3           Drawing as per fig G, with lamp symbol replaced by a motor; LDR replaced by fixed resistor and the fixed
+            resistor becomes a thermistor
+4           The rotating contact is a variable resistance, which in series with the lamp forms a potential divider. As the
+            contact rotates clockwise, its resistance increases, so its share of the voltage increases, and so the lamp voltage
+            and brightness decrease.
+
+
+4B.4 Emf and internal resistance
+1           0.5 Ω
+2           0.77 Ω
+3           (a)      The potential difference across the internal resistance will be proportional to its resistance value. If this
+                     is high, the potential difference across the starter motor may be too low to turn it.
+            (b)      The car battery also powers the car headlights. As the starter draws a high current, the voltage lost
+                     across the internal resistance leaves a lower pd for the headlights, so they dim.
+4           Plot V on y-axis and I on x-axis. Internal resistance from gradient is approximately 0.35 Ω; emf from y-intercept,
+            ℰ = 1.49 V.
+
+
+4B.5 Power in electric circuits
+1           20.4 J
+2           1.85 W
+3           (a)    1460 W
+            (b)    0.172 W
+4           (a)    0.95 or 95%
+            (b)    The input and output energies labelled go together, so for every 100 J supplied, 95 J are delivered as
+                   heat, so the efficiency will always be 95%.
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   30
+4B Exam Practice
+1           B
+2           A
+3           B
+4           C
+5           A
+6           (a)        The current in lamp A is equal to the current in lamp B.
+                       The pd across lamp A is less than the pd across lamp B.
+                       The resistance of lamp A is less than the resistance of lamp B.
+            (b)        Bulb A brighter than bulb B; resistors in parallel have same pd
+                       Identifies P =     OR P = VI and IA ˃ IB
+                       Uses this equation to state PA ˃ PB
+7                      QWC (quality of written communication) – the answer must be clear and organised in a logical
+                       sequence, and include some of the following:
+                       Different currents / current divides in parallel circuit
+                       Same potential difference / voltage across each lamp
+                       Use of P =       OR P = VI if identified IA ˂ IB
+                       Leading to high resistance, smaller power
+                       Lamp B will be brighter / lamp A dimmer
+                       Each electron loses the same energy
+                       There are more electrons/sec in B
+                       Hence, greater total energy loss / sec in B
+                                    .
+8           (a)        pd =
+                       pd = 3.0 V
+            (b)        QWC (quality of written communication) – work must be clear and organised in a logical sequence and
+                       including the following:
+                       Resistance of parallel combination increases as temperature decreases
+                       Total resistance of circuit increases
+                       emf / pd remains constant therefore current decreases
+9           (a)        R=
+                       R=
+                       R = 48.4 Ω
+            (b)        Use of E = Pt OR E = VIt OR E =             with 3 OR 3 × 60 as the time
+                       E = 180 000 J
+
+
+
+
+    © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   31
+         (c)        (i) Attempts to calculate power
+                    Power = 250 W
+                    Time to boil = 12 mins / 720 s
+                    OR
+                    Calculates new current 2.27 A
+                    Use of E = VIt with their current
+                    Time = 12 mins / 720 s
+                    OR
+                    P α V 2α ¼
+                    tα1/Pα4
+
+                    Time = 12 mins
+                    (ii) Use of equation, V = IR OR P =          OR P = VI
+                    This will lead to increased current or power, so causing damage / fuse to melt / circuit breaker to trip /
+                    element to burn out / wire to melt
+                               .
+10       (a)        I= =           = 0.021 A
+         (b)        (i) P = VI, so W = V A
+                    OR V = J C−1, A = C s−1 so V A = J C−1 × C s−1 = J s−1 = W
+                    OR 5 V × 0.1 A = 0.5 W
+                                         .
+                    (ii) Efficiency =        × 100
+                                         .
+                    Efficiency = 10.42%
+                    (iii) Energy / power wasted / transferred / lost to thermal or heat energy
+11       (a)        (i) 4.0 Ω
+                    (ii) I =
+                               Ω
+                   I = 0.75 A
+                   (iii) P = (0.75 A)2 × 3.6 Ω
+                   P = 2.0 W
+         (b)       Total resistance (of circuit) will increase so current will decrease
+12       Award 1 mark for the (QWC) quality of written communication.
+         Award a maximum of 5 marks from the following expected answer points:
+         Current conservation rule is that the vector sum of the currents at any point in a circuit is zero.
+         This means that the total amount of current entering equals the total leaving that point.
+         In any given time, this will mean the same quantity of charge entering as leaving that point.
+         Hence, charge is conserved.
+         Voltages circuit rule is that the sum of the emfs around any closed circuit loop equals the sum of the pds in the
+         same loop.
+         This means that the energy gained by any given quantity of charge in that loop will be given up again by the time
+         it has travelled around the complete loop.
+         This will mean the same quantity of energy entering as leaving that circuit loop.
+         Hence, energy is conserved.
+
+
+
+
+ © Pearson Education Ltd 2018. Copying permitted for purchasing institution only. This material is not copyright free.   32
+

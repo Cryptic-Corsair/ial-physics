@@ -36,7 +36,17 @@ export const NOTES_META: NotesMeta[] = [
     kicker: "Physics Unit 1 · Forces — the WPH11 note, statement by statement",
     title: "Forces",
     source:
-      "the WPH11 Forces note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 Forces note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
+    specRange: "1 → 11",
+  },
+  {
+    id: "wph11-t01r",
+    unitCode: "WPH11",
+    topicId: "t01r",
+    kicker: "Physics Unit 1 · Topic 1 revised — the WPH11 note, statement by statement",
+    title: "Topic 1 revised",
+    source:
+      "the WPH11 Topic 1 revised note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     specRange: "1 → 11",
   },
   {

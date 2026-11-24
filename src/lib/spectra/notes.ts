@@ -1,6 +1,12 @@
 import type { NotesDoc } from "./notes-types";
 import { SECTIONS_PH01F_A } from "./content/notes-ph01f-a";
 import { SECTIONS_PH01F_B } from "./content/notes-ph01f-b";
+import { SECTIONS_PH01R_A } from "./content/notes-ph01r-a";
+import { SECTIONS_PH01R_B } from "./content/notes-ph01r-b";
+import { SECTIONS_PH01R_C } from "./content/notes-ph01r-c";
+import { SECTIONS_PH01R_D } from "./content/notes-ph01r-d";
+import { SECTIONS_PH01F_C } from "./content/notes-ph01f-c";
+import { SECTIONS_PH01F_D } from "./content/notes-ph01f-d";
 import { SECTIONS_PH01_C } from "./content/notes-ph01-c";
 import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH04_A } from "./content/notes-ph04-a";
@@ -17,17 +23,25 @@ import { NOTES_META } from "./notes-meta";
    since the owner's three-way split (2026-11-22) it is three docs
    — Forces (1–11), Moments and momentum (12–16), Work, energy and
    power (17–22) — with Materials (23–32) the fourth. The Forces
-   doc was rebuilt from scratch the same day against the 2020–2024
-   mark schemes (notes-ph01f-a/b; the old part files a/b stay on
-   disk untouched); the other two mechanics docs keep their
-   sections. The fluids half of the Materials doc (statements
+   doc was rebuilt from scratch against the complete 25-session
+   corpus on 2026-11-24 (notes-ph01f-a/b/c/d — one part per block:
+   motion and graphs, vectors, projectiles and free-body, laws and
+   labs), teaching every statement the way the mark schemes mark
+   it; the old part files a/b and the 2026-11-22 files f-a/f-b
+   stay on disk untouched. The fluids half of the Materials doc (statements
    23–26) was rebuilt from scratch the next day as the owner's new
    Topic 4, Density, upthrust and viscosity (notes-ph04-a/b/c; the
    old ph02 files stay on disk untouched). The elasticity
    statements 27–32 became the owner's Topic 5, Hooke's law,
    stress and strain (notes-ph05-a/b/c), built that same day from
    the 2020–2024 papers and mark schemes — every line an
-   independent bullet.
+   independent bullet. The owner's Topic 1 revised note
+   (wph11-t01r, notes-ph01r-a/b/c/d, 2026-11-25) is the alternate
+   mechanics note for statements 1–11, rebuilt to the Topic 4
+   pattern — the situations described first in their own
+   subsections, the three quote labels beside the teaching, and
+   the worked cards folded at the end of each section; parts c/d
+   (statements 6–11) completed the note the same day.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -43,18 +57,38 @@ export const NOTES_DOCS: NotesDoc[] = [
     kicker: "Physics Unit 1 · Forces — the WPH11 note, statement by statement",
     title: "Forces",
     source:
-      "the WPH11 Forces note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 Forces note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     intro: [
       {
         k: "p",
-        text: "Forces opens the mechanics half of WPH11. The sections run in specification order: the ==equations of uniformly accelerated motion==, the ==three motion graphs== and what their ==slopes and areas== give, ==scalars and vectors==, ==components== and ==resultants==, ==projectiles== on their two independent columns, ==free-body diagrams==, ==ΣF = ma== with the first law and ==terminal velocity==, ==weight==, and ==Core Practical 1==, the acceleration of free fall. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==.",
+        text: "Forces opens the mechanics half of WPH11. The sections run in specification order: the ==SUVAT equations== with the constant-acceleration condition, the ==three motion graphs==, ==slopes and areas== with non-uniform acceleration, ==scalars and vectors==, ==resolving== and ==resultants==, ==projectiles== on their two independent columns, ==free-body diagrams==, ==ΣF = ma== with the first law and ==terminal velocity==, ==weight==, and ==Core Practical 1==, the acceleration of free fall. Each section opens with the specification statement, then teaches the physics: the equation first, the condition it needs, and the method the question expects.",
       },
       {
         k: "p",
-        text: "Every situation from the papers — a dart at a dartboard, two cars racing, the scales in a lift, a projectile from a mountain — is ==a worked example card==: the question stated as the paper sets it, with the paper and question number on it, one marking point per step, and the answer sealed underneath. The workings are set out line by line, the mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Each section ends with its ==worked examples==: questions taken from the papers, with the session and question number on each, worked line by line, one marking point at a time. Wrong options are explained where the question is multiple choice, and the mark schemes' rejected wordings are quoted inside the cards.",
       },
     ],
-    sections: [...SECTIONS_PH01F_A, ...SECTIONS_PH01F_B],
+    sections: [...SECTIONS_PH01F_A, ...SECTIONS_PH01F_B, ...SECTIONS_PH01F_C, ...SECTIONS_PH01F_D],
+  },
+  {
+    id: "wph11-t01r",
+    unitCode: "WPH11",
+    topicId: "t01r",
+    kicker: "Physics Unit 1 · Topic 1 revised — the WPH11 note, statement by statement",
+    title: "Topic 1 revised",
+    source:
+      "the WPH11 Topic 1 revised note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
+    intro: [
+      {
+        k: "p",
+        text: "This note covers the eleven mechanics statements of WPH11 Unit 1, in specification order: the ==SUVAT equations== with the constant-acceleration condition, ==free fall== near the Earth's surface, ==when air resistance matters==, the ==braking distance==, the ==three motion graphs== each on its own terms, ==slopes and areas== with the tangent, the chord and the strip counting, ==scalars and vectors== with the printed quantity table, ==resolving== a vector into two components, the ==resultant== of two forces by drawing and by calculation, ==projectiles== on their two independent columns, ==free-body force diagrams== with the centre of gravity, ==ΣF = ma== with Newton's first law and ==terminal velocity==, ==weight== and gravitational field strength, and ==Core Practical 1==, the acceleration of free fall. Each section states the specification point first, then teaches it ==the way a student reads it==: one short sentence per bullet, each scenario built up step by step — the situation first, then the forces, then what follows, then the reason in the exam keywords, then ==Therefore== — with nothing a student would stumble over and nothing off track.",
+      },
+      {
+        k: "p",
+        text: "Every situation from the papers — the curved slide, the table tennis ball, the vacuum chamber, the braking car, the skydiver's sketch, the bouncing ball, the deep-sea diver, the traffic lights on a wire, the skier on a slope, the sailing boat, the dart, the stone off the cliff, the accelerating car, the ball-bearing at terminal velocity, the lifting rocket, the opened parachute, the strobe photograph — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Mark scheme wording, Examiner's report and Not accepted notes collect the traps beside the teaching.",
+      },
+    ],
+    sections: [...SECTIONS_PH01R_A, ...SECTIONS_PH01R_B, ...SECTIONS_PH01R_C, ...SECTIONS_PH01R_D],
   },
   {
     id: "wph11-t02",

@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import { Fragment, type CSSProperties } from "react";
 import {
   ClipboardList,
   Clock,
@@ -13,6 +13,7 @@ import {
 } from "./icons";
 import type { Unit, UnitCode } from "@/lib/spectra/types";
 import { TOTALS } from "@/lib/spectra/units";
+import { NOTES_META } from "@/lib/spectra/notes-meta";
 import { useRevised, useHydrated } from "@/lib/spectra/progress";
 import { usePacks } from "@/lib/spectra/packs";
 import {
@@ -50,6 +51,7 @@ export function Desk({
   desk,
   onOpenUnit,
   onOpenTopic,
+  onOpenDoc,
   onOpenSticker,
   onOpenPack,
   onOpenSpec,
@@ -59,6 +61,8 @@ export function Desk({
   desk: DeskState;
   onOpenUnit: (code: string) => void;
   onOpenTopic: (code: UnitCode, topicId: string) => void;
+  /** open a note doc by id — the alternate notes ride on the topic rows */
+  onOpenDoc: (docId: string) => void;
   onOpenSticker: () => void;
   onOpenPack: () => void;
   onOpenSpec: () => void;
@@ -292,48 +296,73 @@ export function Desk({
                     </span>
                   </button>
 
-                  {/* the topic rows */}
+                  {/* the topic rows — with any alternate notes as
+                      quiet sub-rows under their topic */}
                   <div className="flex flex-col">
                     {u.topics.map((t, i) => {
                       const key = `${u.code}/${t.id}`;
                       const isRevised = revised.includes(key);
                       const secs = topicSeconds(time, key);
+                      const alts = NOTES_META.filter(
+                        (m) => m.unitCode === u.code && m.topicId === `${t.id}r`,
+                      );
                       return (
-                        <button
-                          key={t.id}
-                          type="button"
-                          onClick={() => onOpenTopic(u.code, t.id)}
-                          aria-label={`Open ${t.label} — ${t.title}`}
-                          className={`group flex cursor-pointer items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition-colors hover:bg-ink/[0.035] ${i > 0 ? "border-t border-ink/[0.06]" : ""}`}
-                        >
-                          <span
-                            className="w-7 shrink-0 text-center font-display text-[calc(14px*var(--ts-body))] font-bold"
-                            style={{ color: u.candy.main }}
+                        <Fragment key={t.id}>
+                          <button
+                            type="button"
+                            onClick={() => onOpenTopic(u.code, t.id)}
+                            aria-label={`Open ${t.label} — ${t.title}`}
+                            className={`group flex cursor-pointer items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition-colors hover:bg-ink/[0.035] ${i > 0 ? "border-t border-ink/[0.06]" : ""}`}
                           >
-                            {t.no}
-                          </span>
-                          <span className="min-w-0 flex-1">
-                            <span className="block truncate text-[calc(14.5px*var(--ts-body))] leading-snug font-semibold text-ink">
-                              {t.title}
+                            <span
+                              className="w-7 shrink-0 text-center font-display text-[calc(14px*var(--ts-body))] font-bold"
+                              style={{ color: u.candy.main }}
+                            >
+                              {t.no}
                             </span>
-                          </span>
-                          <span className="flex shrink-0 items-center gap-2.5">
-                            {secs > 0 && (
-                              <span className="inline-flex items-center gap-1 text-[calc(11px*var(--ts-other))] font-bold text-ink-faint tabular-nums">
-                                <Clock className="h-3 w-3" /> {fmtShort(secs)}
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-[calc(14.5px*var(--ts-body))] leading-snug font-semibold text-ink">
+                                {t.title}
                               </span>
-                            )}
-                            {isRevised && (
-                              <span className="grid h-5 w-5 place-items-center rounded-full bg-mint/20 text-mint">
-                                <Check className="h-3 w-3" strokeWidth={3.2} />
+                            </span>
+                            <span className="flex shrink-0 items-center gap-2.5">
+                              {secs > 0 && (
+                                <span className="inline-flex items-center gap-1 text-[calc(11px*var(--ts-other))] font-bold text-ink-faint tabular-nums">
+                                  <Clock className="h-3 w-3" /> {fmtShort(secs)}
+                                </span>
+                              )}
+                              {isRevised && (
+                                <span className="grid h-5 w-5 place-items-center rounded-full bg-mint/20 text-mint">
+                                  <Check className="h-3 w-3" strokeWidth={3.2} />
+                                </span>
+                              )}
+                              <MoveRight
+                                className="h-4 w-4 text-ink-faint opacity-0 transition-opacity group-hover:opacity-100"
+                                strokeWidth={2.4}
+                              />
+                            </span>
+                          </button>
+                          {alts.map((a) => (
+                            <button
+                              key={a.id}
+                              type="button"
+                              onClick={() => onOpenDoc(a.id)}
+                              aria-label={`Open ${a.title} — the alternate note for ${t.label}`}
+                              className="group flex cursor-pointer items-center gap-2.5 rounded-2xl py-2 pr-3 pl-[52px] text-left transition-colors hover:bg-ink/[0.035]"
+                            >
+                              <span className="block truncate text-[calc(13px*var(--ts-body))] leading-snug font-semibold text-ink-faint group-hover:text-ink">
+                                {a.title}
                               </span>
-                            )}
-                            <MoveRight
-                              className="h-4 w-4 text-ink-faint opacity-0 transition-opacity group-hover:opacity-100"
-                              strokeWidth={2.4}
-                            />
-                          </span>
-                        </button>
+                              <span className="shrink-0 rounded-full bg-ink/[0.06] px-2 py-0.5 text-[calc(10px*var(--ts-other))] font-bold tracking-[0.08em] text-ink-faint uppercase">
+                                {a.specRange}
+                              </span>
+                              <MoveRight
+                                className="h-3.5 w-3.5 shrink-0 text-ink-faint opacity-0 transition-opacity group-hover:opacity-100"
+                                strokeWidth={2.4}
+                              />
+                            </button>
+                          ))}
+                        </Fragment>
                       );
                     })}
                   </div>

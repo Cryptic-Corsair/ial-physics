@@ -54,6 +54,7 @@ export const IFACE_ORDER: Iface[] = ["gallery", "editorial"];
 export const GALLERY_DOCS: ReadonlySet<string> = new Set([
   /* Physics · WPH11 — the mark-scheme-wise notes */
   "wph11-t01",
+  "wph11-t01r",
   "wph11-t02",
   "wph11-t03",
   "wph11-t04",

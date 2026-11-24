@@ -137,7 +137,7 @@ export const SECTIONS_PH05_A: SpecSection[] = [
           "$k = \\dfrac{EA}{x} = \\dfrac{2.70 \\times 10^9 \\times 3.00 \\times 10^{-4}}{6.00} = 1.35 \\times 10^5\\ \\text{N m}^{-1} \\approx 1.4 \\times 10^5\\ \\text{N m}^{-1}$",
           "(b)(ii) The moving pulley carries the load on two rope segments, so the tension in the rope is halved.\n$F = \\dfrac{5000}{2} = 2500\\ \\text{N}$",
           "$\\Delta x = \\dfrac{F}{k} = \\dfrac{2500}{1.35 \\times 10^5} = 1.85 \\times 10^{-2}\\ \\text{m}$",
-          "(b)(iii) The force grows from zero to 2500 N while the rope stretches, so the work is the area under the force-extension line.\n$\\Delta E_{\\text{el}} = \\tfrac{1}{2} F \\Delta x = \\tfrac{1}{2} \\times 2500 \\times 1.85 \\times 10^{-2} = 23.1\\ \\text{J}$",
+          "(b)(iii) The force increases from zero to 2500 N while the rope stretches, so the work is the area under the force-extension line.\n$\\Delta E_{\\text{el}} = \\tfrac{1}{2} F \\Delta x = \\tfrac{1}{2} \\times 2500 \\times 1.85 \\times 10^{-2} = 23.1\\ \\text{J}$",
         ],
         answer: "(b)(ii) $1.85 \\times 10^{-2}$ m · (b)(iii) 23.1 J",
         ms: {

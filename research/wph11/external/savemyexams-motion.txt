@@ -1,0 +1,1460 @@
+                               Head to www.savemyexams.com for more awesome resources
+
+
+
+
+   Edexcel International A Level                                                                        Your notes
+Physics
+Motion
+Contents
+  1.1 Equations of Motion
+  1.2 Motion Graphs
+  1.3 Slope & Area of Motion Graphs
+  1.4 Scalars & Vectors
+  1.5 Resolving Vectors
+  1.6 Adding Vectors
+  1.7 Components of Velocity
+  1.8 Free-body Force Diagrams
+
+
+
+
+                                                        Page 1 of 56
+                       © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.1 Equations of Motion
+                                                                                                                 Your notes
+Equations of Motion
+   The kinematic equations of motion are a set of four equations which can describe any object moving
+   with constant acceleration
+   They are often referred to as the 'suvat' equations due to the variables they include
+   These are:
+       s = displacement (m)
+       u = initial velocity (m s−1)
+       v = final velocity (m s−1)
+       a = acceleration (m s−2)
+       t = time interval (s)
+   The four SUVAT equations are:
+
+
+
+
+   These are all given on the data sheet
+   All the variables, apart from time t, are vector quantities
+         This means they can either be positive or negative depending on their direction
+Mastering the SUVAT Equations
+   The SUVAT equations are always used when acceleration is constant, but not zero
+   This is indicated in questions by
+        An explicit statement that an object is 'constantly accelerating' or 'constantly decelerating', or
+        words to that effect
+        A description of an object in freefall where either 'air resistance can be ignored' or 'air resistance
+        is negligible'
+        A statement that an accelerating or decelerating force is constant, since F = ma, constant force →
+        constant acceleration
+
+
+                                                                Page 2 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+  Questions may appear to be missing some information, this should be checked before starting to
+  calculate
+      Objects in motion often start or end at rest, making either u or v = zero                                Your notes
+      Objects in freefall have a constant acceleration of 9.81 m s−2
+      When an object is slowing down it has a negative value for acceleration, this must be included in
+      the calculation
+      Objects thrown or shot upwards also have negative acceleration (since they are slowing down as
+      they ascend) and reach a final velocity of zero at the top of their path
+
+    Worked example
+A pilot is landing a small aircraft. The airstrip is only 450 m long and the aircraft decelerates from 40 m
+s−1 at a constant rate of 2 m s−2.
+Determine if the plane will stop before it reaches the end of the runway.
+
+     Step 1: List the known values
+      Length of the runway, smax = 450 m (this is the maximum value of displacement)
+      Initial velocity, u = 40 m s−1
+      Final velocity, v = 0 m s−1 (since the plane will stop)
+      Acceleration, a = − 2 m s−2 (the negative sign indicates slowing down)
+     Step 2: Identify the missing values (the unknown answer and the one not given)
+      Known quantities: u, v and a
+      Unknown quantity: displacement, s
+      Time, t is not required in this question
+     Step 3: Choose the correct SUVAT equation and rearrange it
+      The SUVAT equation which contains u, v, a and s and omits t is:
+                                            v2 = u2 + 2as
+      Rearrange to make s the subject:
+                                                    v2 − u2
+                                                 s=
+                                                      2a
+     Step 4: Substitute the values into the equation and calculate s
+
+                                            02 − 402
+                                         s=          = 400 m
+                                            2 × (−2)
+     Step 5: Write the full answer to the question
+      The plane stops after 400 m, which is 50 m before the end of the runway
+
+                                                                Page 3 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                         Head to www.savemyexams.com for more awesome resources
+
+
+
+
+      Note: In this solution, the negative value produced by v2 − u2 is cancelled out by the negative value
+      for acceleration, giving a positive value for displacement
+                                                                                                                 Your notes
+    Worked example
+A rocket is launched vertically, using motors which give it a constant vertical acceleration of 6.5 m s−2
+for 30 s before switching off.
+At the point when the motors switch off, calculate:
+a) The velocity of the rocket
+b) The height of the rocket above the launchpad
+
+     Part (a)
+     Step 1: List the known values
+      Initial velocity, u = 0 m s−1
+      Acceleration, a = 6.5 m s−2 (the positive sign indicates the speed is increasing due to the motor)
+      Time, t = 30 s
+     Step 2: Identify the missing values (the unknown answer and the one not given)
+      Known quantities: u, a, t
+      Unknown quantity: final velocity, v
+      Displacement, s, is not required in this question
+     Step 3: Choose the correct SUVAT equation
+      The SUVAT equation which omits displacement, s, is:
+                                            v = u + at
+     Step 4: Substitute the values into the equation and calculate
+                                          v = 0 + (6.5 × 30) = 195 m s−1
+     Step 5: Write the full answer to the question, taking care to check significant figures
+      The final velocity, v, at 30 s is 200 m s−1 (2 s.f.)
+     Part (b)
+     Step 1: List the known values
+      Initial velocity, u = 0 m s−1
+      Acceleration, a = 6.5 m s−2
+      Time, t = 30 s
+      Final velocity, v = 195 m s−1
+
+                                                                   Page 4 of 56
+                                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Step 2: Identify the missing values (the unknown answer and the one not given)
+      Known quantities: u, a, t, and v (from part a)                                                            Your notes
+      Unknown quantity: final displacement, s
+      All the SUVAT values are available in this case, but since v was calculated, first look for an equation
+      that doesn't use it (in case of mistakes)
+    Step 3: Choose the correct SUVAT equation
+      The SUVAT equation which omits velocity is:
+                                                         1
+                                              s = ut +     at2
+                                                         2
+    Step 4: Substitute the values into the equation and calculate s
+
+                                                   1
+                                  s = (0 × 30) +     (6.5 × 302) = 2925 m
+                                                   2
+    Step 5: Write the full answer to the question, taking care to check significant figures
+      The height, s, above the launchpad is 2900 m (2 s.f)
+
+    Examiner Tip
+SUVAT questions are popular with examiners, who will find all sorts of ways to set these problems. The
+trick is practice.
+Learn the four equations (even though you are given them) so that you can easily pick the one you
+need. With lots of practice you will see that often the problem can be simplified, especially when the
+initial or final velocity is zero.
+Finally, never cut corners with these solutions! It's common for questions to have 5-6 marks available
+for a long calculation. Your job is to write down every step so that the examiner can award marks for as
+many elements of your answer as possible.
+
+
+
+
+                                                                 Page 5 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.2 Motion Graphs
+                                                                                                                Your notes
+Motion Graphs
+   Three types of graph that are used to represent motion are displacement-time graphs, velocity-time
+   graphs and acceleration-time graphs
+   Graphs are named 'y-axis - x-axis', so 'displacement-time' simply means 'displacement on the y-axis
+   and time on the x-axis'
+   Graphs of motion can be thought of as telling a story of something which has happened in the real
+   world, such as
+       the time, direction and average speed of a journey to school
+       initial and final velocity and acceleration as a rocket takes off from the launchpad
+       movement and speed in various directions as an athlete takes part in an event
+   Interpreting graphs means using the slope of the line, or the area under the line to find information
+   about that 'story'
+   Drawing graphs is a skill where careful planning, plotting and line drawing from some data yields
+   further information from an investigation
+Displacement-Time
+   On a displacement-time graph;
+       Slope equals velocity
+           A straight (diagonal) slope represents a constant velocity
+           A curved slope represents an acceleration
+       A positive slope represents motion in the positive direction
+       A negative slope represents motion in the negative direction
+       A zero slope (horizontal line) represents a state of rest
+       The area under the curve is meaningless
+
+
+
+
+                                                                Page 6 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                               Your notes
+
+
+
+
+Velocity-Time
+   On a velocity-time graph…
+       Slope equals acceleration
+           A straight line represents uniform acceleration
+           A curved line represents non-uniform acceleration
+       A positive slope represents an increase in velocity in the positive direction
+       A negative slope represents an increase in velocity in the negative direction
+       a zero slope (horizontal line) represents motion with constant velocity
+       The area under the curve equals the displacement or distance travelled
+
+
+
+
+                                                               Page 7 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                               Your notes
+
+
+
+
+Acceleration-Time
+   On an acceleration-time graph…
+   A zero slope (horizontal line) represents an object undergoing constant acceleration
+   The area under the curve equals the change in velocity
+   The steepness of the slope is meaningless
+
+
+
+
+              How displacement, velocity and acceleration graphs relate to each other
+
+Drawing Graphs
+   Drawing a good graph is an important skill
+   Good graphs have the following:
+
+                                                              Page 8 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                Head to www.savemyexams.com for more awesome resources
+
+
+
+
+Each axis has two labels; the name of the variable and the unit (and may include a multiplier, for
+example, m × 10−9)
+Values on the axes are evenly spaced, with the same number of divisions for each amount                   Your notes
+
+
+
+
+The axes start at the origin only when this fits the data or the relationship being graphed is directly
+proportional or when specified in the question
+Increments on the scale are in multiples of 2, 5 and 10 but never multiples of 3.
+The range of values being plotted takes up the length of the axis, so that the plotted line takes up
+most of the space on the graph
+Plots are accurate to within half a small square
+Plots and curves are drawn with sharp pencil so that they are narrow (don't take up more than half a
+small square)
+
+
+
+
+                                                         Page 9 of 56
+                        © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                        Your notes
+
+
+
+
+Lines of best fit match the data, so that lines go through as many of the plots as possible (ignoring
+outliers) with the remainder evenly spaced above and below the line
+
+
+
+
+                                                       Page 10 of 56
+                       © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                               Your notes
+A runner is practicing short sprints between two markers. A displacement-time graph showing part of
+their training is shown.
+
+
+
+
+(a) Find the distance between the markers
+(b) Determine the speed of the runner at the fastest part of their sprint
+
+
+     Part (a)
+     Step 1: Determine the direction of motion from the graph
+      Initially displacement increases from 0 - 50 m
+      This represents the sprinter running away from the starting position
+      Secondly displacement decreases from 50 - 0 m
+      This represents the sprinter returning towards the starting position
+     Step 2: Identify the sprinter's turning point on the graph
+      The distance between the markers is from 0 → turning around point
+      This is 50 m from the start point
+     Step 3: Write the correct answer
+                                     Distance between the markers = 50 m
+
+
+
+                                                              Page 11 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                  Head to www.savemyexams.com for more awesome resources
+
+
+
+
+Part (b)
+Step 1: Identify the part of the graph that represents the velocity                                      Your notes
+ The graph shows displacement against time
+ Velocity is equal to:
+                                              displacement
+                              Velocity =
+                                                  time
+ Therefore, the slope of the displacement-time graph gives velocity
+ Displacement × time (area under the graph) is not a physical quantity
+Step 2: Identify the steepest section of the graph
+ Select the section on the graph where the slope is the steepest
+     This represents the fastest velocity
+ Clearly mark two points on this line which are as far apart as possible
+
+
+
+
+Step 3: Use the coordinates from the graph to calculate the slope
+
+                                  increase in y   45
+                        slope =                 =    = 7.5 m s−1
+                                  increase in x   6
+Step 4: Write down the answer to the correct number of significant figures
+                            The sprinter's fastest speed = 7.5 m s−1
+
+
+                                                         Page 12 of 56
+                        © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                                Your notes
+Motion has been plotted on a displacement-time graph.
+
+
+
+
+Sketch a velocity-time graph for this motion. Include values and show your calculations.
+
+    Step 1: Calculate each stage:
+            Part A
+                     Step 1: Determine the time interval
+                                                        Time from 0 - 10 s
+                     Step 2: Calculate the velocity by finding the gradient
+
+                                                             Δy 20
+                                                Gradient =     =   = 2 m s−1
+                                                             Δx 10
+            Part B
+                     Step 1: Determine the time interval
+                                                       Time from 10 - 30 s
+                     Step 2: Calculate the velocity by finding the gradient
+
+
+                                                               Page 13 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                 Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                   Gradient = 0 (horizontal line), velocity = 0 m s−1
+      Part C                                                                                              Your notes
+               Step 1: Determine the time interval
+                                                 Time from 30 - 40 s
+               Step 2: Calculate the velocity by finding the gradient
+
+                                                     Δy 50 − 20
+                                      Gradient =       =        = 3 m s−1
+                                                     Δx 40 − 30
+      Part D
+               Step 1: Determine the time interval
+                                                 Time from 40 - 60 s
+               Step 2: Calculate the velocity by finding the gradient
+
+                                                 Δy 0 − 50
+                                    Gradient =     =        = − 2.5 m s−1
+                                                 Δx 60 − 40
+Step 2: Use the calculated values to sketch a graph
+
+
+
+
+                                                         Page 14 of 56
+                         © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Examiner Tip
+                                                                                                               Your notes
+Interpreting Graphs
+It's common for a question to ask you to solve something 'using a graphical method'. This just means
+'by finding your answer on a graph'.
+In AS Physics most (but not all) graphs will be a straight line, meaning they follow the equation y = mx +
+c
+This means that the 'graphical method' question is asking you to look at the gradient, or the area under
+the line. Once you are secure in finding these then graph questions will become much easier!
+Drawing Graphs
+A well-drawn graph will net you four or five quick and easy marks IF you have practiced the skill.
+Common mistakes are starting at the origin when there is no need (so the line takes up less than half of
+the page) and trying to work with a scale that goes in multiples of three (making it hard to get the
+plotting right).
+
+
+
+
+                                                               Page 15 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.3 Slope & Area of Motion Graphs
+                                                                                                                Your notes
+Slope & Area of Motion Graphs
+Slope & Area of Motion Graphs
+   Three types of graph that are used to represent motion are displacement-time graphs, velocity-time
+   graphs and acceleration-time graphs
+   To interpret these find either the slope or the area
+
+                                  change in y
+   Slope is found using slope =               , which can be related to any similar algebraic
+                                  change in x
+                                  d
+   relationship, for example, v =
+                                  t
+       The slope of a distance-time graph will equal velocity
+   Area is found using area = change in y × change in x, which can be related to any similar algebraic
+   relationship, for example, velocity × time = distance
+        The area under a velocity-time graph will equal distance
+Finding Slope of a Straight Line
+   The slope of a line is found using the formula:
+                                                          rise
+                                               slope =
+                                                          run
+   This is also written:
+                                                     increase in y
+                                         slope =
+                                                     increase in x
+   To find the slope;
+        Identify two points as far apart as possible which intercept with the grid of the graph paper
+
+
+
+
+                                                                 Page 16 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                        Your notes
+
+
+
+
+The points must be on the line itself, not the furthest apart plots
+Clearly mark the points chosen
+Find the co-ordinates of the two points
+Calculate to find the slope
+                           increase in y             (26 − 8 . 5)
+                                                =                   = 3.125
+                           increase in x            (6 . 6 − 1 . 0)
+
+
+
+
+                                                        Page 17 of 56
+                       © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                         Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                                 Your notes
+
+
+
+
+   Use the values on the axes of the graph (or in the data) to identify the correct significant figures
+   Use the units to find the correct units, which also equal
+                                                            units of y
+                                        units of slope =
+                                                            units of x
+   On this graph all values are to 2 significant figures,
+   Therefore slope = 3.1 m s−1
+
+Finding the Area Under the Line
+   The area underneath a line represents the x axis multiplied by the y axis.
+   For example, if velocity is plotted on the y-axis and time is on the x-axis, then
+       area = velocity × time = distance
+   When the area is a rectangle or a triangle it is easy to find by calculating
+                                      area of rectangle = base × height
+                                     area of a triangle = ½ base × height
+
+
+
+
+                                                                  Page 18 of 56
+                                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                   Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                            Your notes
+
+
+
+
+         To find the area under a straight-line graph treat is as any rectangle or triangle
+When the line is curved, area is found though the following steps
+   Divide the shape into rectangles and triangles as shown
+   Find the area for each by calculating
+   Count the remaining squares
+   Add the totals together
+
+
+
+
+                                                           Page 19 of 56
+                           © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+Find area under a curve by dividing it into sections which reduce the number of squares to be counted to
+                                                the minimum
+                                                                                                                Your notes
+
+
+
+
+Non-uniform Acceleration
+    In certain cases, acceleration changes throughout a period of motion
+    An example of this is a skydiver falling due to their weight, against air resistance
+         As speed increases, air resistance increases
+         The increasing resultant force against the direction of motion acts to reduce acceleration
+         Eventually the weight and air resistance balance and acceleration become zero
+         Acceleration for a falling object is conventionally shown as a negative value
+
+
+
+
+                                                               Page 20 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                               Your notes
+
+
+
+
+   Non-uniform acceleration will produce a curved velocity-time graph
+Finding the Slope of a Curved Line
+   Some questions ask for velocity or acceleration at a particular point or time
+   This is called 'instantaneous' velocity or acceleration
+   It is found by taking the slope of the curved line
+   Identify the point on the x-axis which corresponds with the question
+       Draw a line vertically to meet the curve
+   Take a tangent to the curve at this point
+       Do this carefully, trying out more than one attempt before choosing the correct tangent
+
+
+
+
+                                                              Page 21 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                             Your notes
+
+
+
+
+                    Tangents are a useful way to find the slope of a curved line
+Draw the tangent in place, making it as long as will fit onto the graph
+   Follow the steps above to find the slope of the tangent
+
+
+
+
+                                                             Page 22 of 56
+                            © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                              Your notes
+A skydiver jumps from a plane and reaches terminal velocity after 15 seconds. A graph of her motion is
+shown.
+Use the graph to find the acceleration at 5 seconds.
+
+
+
+
+    Step 1: Draw a tangent to the curve at the point where t = 5 s
+
+
+
+
+                                                             Page 23 of 56
+                             © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                         Your notes
+
+
+
+
+Step 2: Select points on the graph which are very far apart, and determine the corresponding
+values of x and y, write these down
+                                   Increase in y = (58 -20) = 38 m s−1
+                                   Increase in x = (9.75 - 0.75) = 9.0 s
+Step 3: Calculate the slope
+
+                                   increase in y   38
+                         slope =                 =    = 4.222 m s−2
+                                    inrease in x   9
+Step 4: Write the answer to the correct significant figures
+                              The acceleration at 5.0 s = 4.2 m s−2 (2 sf)
+
+
+
+
+                                                           Page 24 of 56
+                        © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Examiner Tip
+                                                                                                               Your notes
+When working with graphs follow the advice, 'show don't tell'. The examiner will want to see that you
+used the graph to find your answer, as this skill is part of the toolkit of a good scientist.
+Mark very clearly on the graph any points you use to calculate and indicate with clear lines or large
+triangles where you chose your data from.
+And always remember to use the largest section of the graph that you can to find the slope.
+You will be given an exam paper with pristine graphs. Don't leave them that way! By the time you finish
+with the paper, it should be clearly annotated with your method, so the examiner can see exactly where
+you have earned marks.
+
+
+
+
+                                                              Page 25 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                 Your notes
+
+
+
+
+                                Page 26 of 56
+© 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.4 Scalars & Vectors
+                                                                                                               Your notes
+Scalars & Vectors
+   All quantities can be one of two types:
+        a scalar
+        a vector
+Scalars
+   Scalars are quantities that have magnitude but not direction
+       For example, mass is a scalar quantity because it has magnitude but no direction
+Vectors
+   Vectors are quantities that have both magnitude and direction
+      For example, weight is a vector quantity because it is a force and has both magnitude and
+      direction
+Distance and displacement
+   Distance is a measure of how far an object has travelled, regardless of direction
+       Distance is the total length of the path taken
+       Distance, therefore, has a magnitude but no direction
+       So, distance is a scalar quantity
+   Displacement is a measure of how far it is between two points in space, including the direction
+       Displacement is the length and direction of a straight line drawn from the starting point to the
+       finishing point
+       Displacement, therefore, has a magnitude and a direction
+       So, displacement is a vector quantity
+                 What is the difference between distance and displacement?
+
+
+
+
+                                                              Page 27 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                                 Your notes
+
+
+
+
+                  Displacement is a vector quantity while distance is a scalar quantity
+   When a student travels to school, there will probably be a difference in the distance they travel and
+   their displacement
+        The overall distance they travel includes the total lengths of all the roads, including any twists and
+        turns
+        The overall displacement of the student would be a straight line between their home and school,
+        regardless of any obstacles, such as buildings, lakes or motorways, along the way
+Speed and velocity
+   Speed is a measure of the distance travelled by an object per unit time, regardless of the direction
+       The speed of an object describes how fast it is moving, but not the direction it is travelling in
+       Speed, therefore, has magnitude but no direction
+       So, speed is a scalar quantity
+   Velocity is a measure of the displacement of an object per unit time, including the direction
+       The velocity of an object describes how fast it is moving and which direction it is travelling in
+       An object can have a constant speed but a changing velocity if the object is changing direction
+       Velocity, therefore, has magnitude and direction
+       So, velocity is a vector quantity
+
+Examples of scalars & vectors
+   The table below lists some common examples of scalar and vector quantities
+                                      Table of scalars and vectors
+                                                                Page 28 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                      Scalars                                                   Vectors
+                                                                                                                 Your notes
+
+                     distance                                              displacement
+
+                      speed                                                     velocity
+
+                       mass                                                 acceleration
+
+                       time                                                      force
+
+                      energy                                                 momentum
+
+                      volume
+
+                      density
+
+                     pressure
+
+                  electric charge
+
+                   temperature
+
+Vector notation
+   Sometimes, vector quantities are written in a certain way to distinguish them from scalar quantities
+   Some examples of scalar and vector notation are shown below:
+
+
+
+
+                                                                Page 29 of 56
+                                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                                Your notes
+
+
+
+
+The arrow on vector notation does not indicate an actual direction, just that the quantity has a direction
+   This means writing the quantity to make it clear that it is a vector
+   In textbooks, vectors are often shown as bold and italic, for example, F or s
+   Another form of notation, and easier to do in handwriting, is putting an arrow over the top of the
+                             →
+   quantity, for example, or s
+        The arrow does not indicate the actual direction of the vector, only that it has a direction
+
+
+
+
+                                                               Page 30 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.5 Resolving Vectors
+                                                                                                               Your notes
+Resolving Vectors
+   Vectors are represented by an arrow
+      The arrowhead indicates the direction of the vector
+      The length of the arrow represents the magnitude
+      Component vectors are sometimes drawn with a dotted line and a subscript indicating horizontal
+      or vertical for example Fv is the vertical component of the force F
+Resolving Vectors
+   A single resultant vector can be resolved
+        This means it can be represented by two vectors, which in combination have the same effect as
+        the original one
+        Resolving vectors makes calculating much easier when working with projectiles or any motion or
+        force at an angle
+   When a single resultant vector is broken down into its parts, those parts are called components
+   A vector of magnitude F at angle theta to the horizontal is shown
+
+
+
+
+Resolving Vectors by Scale Drawing
+   To resolve vectors by scale drawing means carefully producing a scale drawing with all lengths and
+   angles correct
+        This should be done using a sharp pencil, ruler and protractor
+   Follow these steps
+        Choose a scale which fits to the page. For example, if resolving a resultant displacement of 100 m,
+        use 1 cm = 10 m so that the resultant drawing is around 10 cm high
+
+
+                                                              Page 31 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+      Clearly mark the starting point and a line to represent either the vertical or horizontal direction. This
+      will depend on the angle given in the question, for example if the direction is '30o east of north'
+      then start with a vertical line representing north                                                          Your notes
+      Carefully measure the angle and start by drawing the resultant vector
+      Draw a triangle using two of the sides of this rectangle
+
+    Worked example
+A hiker walks a distance of 6 km due east and 10 km due north.
+By making a scale drawing of their route, find the magnitude of their displacement and its direction
+from the horizontal.
+
+    Step 1: Choose a sensible scale
+    The distances are 6 and 10 km, so a scale of 1 cm = 1 km will fit easily on the page, but be large enough
+    for an accurate scale drawing
+    Step 2: Draw the two components using a ruler and making the measurements accurate to 1 mm
+
+
+
+
+    Step 3: Add the resultant vector, remembering the start and finish points of the journey
+
+
+
+
+                                                               Page 32 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                               Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                        Your notes
+
+
+
+
+Step 4: Carefully measure the length of the resultant and convert using the scale
+
+
+
+
+Step 5: Measure the angle between the vector and the horizontal line
+
+
+
+
+                                                       Page 33 of 56
+                       © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                               Your notes
+
+
+
+
+     Step 6: Write the complete answer, giving both magnitude and direction
+Resolving Vectors by Calculation
+   In this method a diagram is still essential but it does not need to be exactly to scale
+   The diagram can take the form of a sketch, as long as the resultant, component and sides are clearly
+   labelled
+   Use trigonometry to resolve the two sides
+   The mnemonic 'soh-cah-toa' is used to remember how to apply sines and cosines to resolving sides of
+   a triangle
+
+
+
+
+   It is possible to resolve this vector into its horizontal and vertical components using trigonometry
+
+
+                                                              Page 34 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                              Your notes
+
+
+
+
+            The resultant force F can be split into its horizontal and vertical components
+ For the horizontal component, Fx = F cos θ
+ For the vertical component, Fy = F sin θ
+
+
+    Worked example
+A hiker walks a distance of 6 km due east and 10 km due north.
+Calculate the magnitude of their displacement and its direction from the horizontal.
+
+
+
+
+                                                             Page 35 of 56
+                             © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                 Your notes
+
+
+
+
+Step 4: State the final answer complete with direction
+                           R = 2√34 = 11.66 = 12 km
+
+                                                Page 36 of 56
+                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                             θ = 59° east and upwards from the horizontal
+
+                                                                                                              Your notes
+    Examiner Tip
+Did you notice that the two worked examples above were the same question, being solved in two
+different ways?
+If the question specifies calculation or scale drawing you must solve the problem as asked. However, if
+the choice is left up to you then any correct method will lead to the correct answer.
+Scale drawing sometimes feels easier than calculating, but once you are confident with trigonometry
+and Pythagoras you will find calculating quicker and more accurate.
+A quick tip to remember whether to use sin or cos is that when the resultant is closing down onto the
+angle, use cos.
+
+
+
+
+                                                             Page 37 of 56
+                             © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.6 Adding Vectors
+                                                                                                                Your notes
+Adding Vectors
+   Vectors can be combined by adding or subtracting them to produce the resultant vector
+      The resultant vector is sometimes known as the ‘net’ vector (eg. the net force)
+   There are two methods that can be used to add vectors
+       Calculation – if the vectors are perpendicular
+       Scale drawing – if the vectors are not perpendicular
+
+Combining Vectors Using a Scale Diagram
+   There are two methods that can be used to combine vectors using a scale diagram: the triangle
+   method and the parallelogram method
+   To combine vectors using the triangle method:
+       Step 1: link the vectors head-to-tail
+       Step 2: the resultant vector is formed by connecting the tail of the first vector to the head of the
+       second vector
+   To combine vectors using the parallelogram method:
+       Step 1: link the vectors tail-to-tail
+       Step 2: complete the resulting parallelogram
+       Step 3: the resultant vector is the diagonal of the parallelogram
+
+
+     Worked example
+ Draw the vector c = a + b
+
+
+
+
+                                                               Page 38 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                    Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                             Your notes
+
+
+
+
+    Worked example
+Draw the vector c = a – b
+
+
+
+
+                                                            Page 39 of 56
+                            © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                 Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                          Your notes
+
+
+
+
+Combining Vectors by Calculating
+
+                                                         Page 40 of 56
+                         © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                    Head to www.savemyexams.com for more awesome resources
+
+
+
+
+Combining vectors by calculation is a two-step process
+   Finding the direction of the resultant using trigonometry
+   Finding the magnitude of the resultant using Pythagoras                                                   Your notes
+
+
+
+
+          The magnitude of the resultant vector is found by using Pythagoras’ Theorem
+
+The direction of the resultant vector is found from the angle it makes with the horizontal or vertical
+    The question should imply which angle it is referring to (ie. Calculate the angle from the x-axis)
+Calculating the angle of this resultant vector from the horizontal or vertical can be done using
+trigonometry
+    Either the sine, cosine or tangent formula can be used depending on which vector magnitudes are
+    calculated
+
+
+
+
+                                                             Page 41 of 56
+                            © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                               Your notes
+
+
+
+
+                       The direction of vectors is found by using trigonometry
+
+    Worked example
+A swimmer is crossing a river by swimming due north at 2 m s−1. The current flows east at 5 m s−1.
+Determine the resultant velocity of the swimmer's motion.
+
+     Step 1: Sketch a diagram, including all known values
+
+
+
+
+     Step 2: Calculate the magnitude of the resultant using Pythagoras
+
+                                   R = V s 2 + V c 2 = 4 + 25 = 5.4
+     Step 3: Calculate the angle using trigonometry
+                                                              Page 42 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                 Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                    2
+                                          tanθ =      = 0.4
+                                                    5                                                     Your notes
+                                          θ = tan−1 (0 . 4)
+                                                θ = 21.8
+
+Step 4: Write the answer in full giving both magnitude and direction of the velocity and all units
+The swimmer's velocity is 5.4 ms-1 at 22o to the horizontal direction
+
+
+
+
+                                                           Page 43 of 56
+                         © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                    Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.7 Components of Velocity
+                                                                                                             Your notes
+Components of Velocity
+  The trajectory of an object undergoing projectile motion consists of a vertical component and a
+  horizontal component
+      These need to be evaluated separately
+  Some key terms to know, and how to calculate them, are:
+     Time of flight: how long the projectile is in the air
+     Maximum height attained: the height at which the projectile is momentarily at rest
+     Range: the horizontal distance traveled by the projectile
+
+
+
+
+                                                            Page 44 of 56
+                            © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                 Your notes
+
+
+
+
+                                Page 45 of 56
+© 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                                Your notes
+
+
+
+
+                        How to find the time of flight, maximum height and range
+
+
+Problems Involving Projectile Motion
+   There are two main considerations for solving problems involving two-dimensional motion of a
+   projectile
+       Constant velocity in the horizontal direction
+       Constant acceleration in a perpendicular direction
+   The only force acting on the projectile, after it has been released, is gravity
+   There are three possible scenarios for projectile motion:
+       Vertical projection
+       Horizontal projection
+       Projection at an angle
+
+
+
+
+                                                                Page 46 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                                 Your notes
+To Calculate Vertical Projection (Free Fall)
+A science museum designed an experiment to show the fall of a feather in a vertical glass vacuum tube.
+The time of fall from rest is 0.5 s.
+
+
+
+
+What is the length of the tube, L?
+
+
+
+
+                                                                Page 47 of 56
+                                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                              Your notes
+To Calculate Horizontal Projection
+A motorcycle stunt-rider moving horizontally takes off from a point 1.25 m above the ground, landing
+10 m away as shown.
+What was the speed at take-off? (ignoring air resistance)
+
+
+
+
+                                                             Page 48 of 56
+                             © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                 Your notes
+
+
+
+
+                                Page 49 of 56
+© 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                         Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Worked example
+                                                                                                                 Your notes
+To calculate projection at an angle
+A ball is thrown from a point P with an initial velocity u of 12 m s-1 at 50° to the horizontal.
+What is the value of the maximum height at Q? (ignoring air resistance)
+
+
+
+
+                                                                  Page 50 of 56
+                                © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Examiner Tip
+                                                                                                                Your notes
+In almost every question using the SUVAT equations one component of velocity will have constant
+acceleration (for example, the vertical component of projectile motion) and the other will have no
+acceleration (for example the horizontal component of projectile motion when we ignore air
+resistance).
+The trick which you nearly always have to remember is find the common value - time - first, then
+substitute it into the second part of your calculation.
+As long as your working is clear, even if you forget, you are likely to still achieve half marks. But writing
+good clear Maths and remembering this tip should get you to the end of your calculation - and full
+marks!
+And finally.... don't forget that deceleration is negative as the object rises.
+
+
+
+
+                                                                 Page 51 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                        Head to www.savemyexams.com for more awesome resources
+
+
+
+
+ 1.8 Free-body Force Diagrams
+                                                                                                                Your notes
+Free-body Force Diagrams
+   Free body diagrams are useful for modeling the forces that are acting on an object
+   Each force is represented as a vector arrow, where each arrow:
+       Is scaled to the magnitude of the force it represents
+       Points in the direction that the force acts
+       Is labelled with the name of the force it represents or an appropriate symbol
+   Free body diagrams can be used:
+       To identify which forces act in which plane
+       To resolve the net force in a particular direction
+Simple Free Body Diagrams
+   The rules for drawing a free-body diagram are the following:
+       Rule 1: Draw a point in the centre of mass of the body
+       Rule 2: Draw the body free from contact with any other object
+       Rule 3: Draw the forces acting on that body using vectors with correct direction and proportional
+       length
+
+
+
+
+                                                               Page 52 of 56
+                               © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                       Head to www.savemyexams.com for more awesome resources
+
+
+
+
+            Free body diagrams can be used to show the various forces acting on objects
+
+Forces on a Particle or an Extended but Rigid Body                                                             Your notes
+
+   Free body diagrams simplify problems by reducing complex shapes into simple one
+   Any object can be thought of as a particle
+       Even something as large as the Earth can be modelled as a point mass for most calculations
+   Objects can also be thought of as being extended but rigid bodies
+       This simply means that all parts stay in the same position relative to each other when the object
+       moves
+
+
+
+
+                 Point particle representation of the forces acting on a moving object
+
+   The below example shows an object sitting on a slope in equilibrium
+
+
+
+
+                                                              Page 53 of 56
+                              © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                      Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                             Your notes
+
+
+
+
+               Three forces on an object in equilibrium form a closed vector triangle
+
+    Worked example
+Draw free-body diagrams for the following scenarios:
+      a) A picture frame hanging from a nail
+      b) A box sliding down a slope
+
+
+
+    Part (a)
+    A picture frame hanging from a nail:
+
+
+
+
+                                                            Page 54 of 56
+                            © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                 Head to www.savemyexams.com for more awesome resources
+
+
+
+
+                                                                                                         Your notes
+
+
+
+
+      The size of the arrows should be such that the 3 forces would make a closed triangle as they
+      are balanced
+
+
+Part (b)
+A box sliding down a slope:
+
+
+
+
+ There are three forces acting on the box:
+     The normal contact force, R, acts perpendicular to the slope
+     Friction, F, acts parallel to the slope and in the opposite direction to the direction of motion
+     Weight, W, acts down towards the Earth
+
+                                                         Page 55 of 56
+                        © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+                                     Head to www.savemyexams.com for more awesome resources
+
+
+
+
+    Examiner Tip                                                                                              Your notes
+When labeling force vectors, it is important to use conventional and appropriate naming or symbols
+such as:
+    w or Weight force or mg
+    N or R for normal reaction force (depending on your local context either of these could be
+    acceptable)
+Getting used to this notation will make labelling free-body diagrams automatic - leaving you time to
+focus on the Physics rather than the process. This is crucial as a good diagram will show you exactly
+what to include in your calculations.
+
+
+
+
+                                                             Page 56 of 56
+                             © 2015-2024 Save My Exams, Ltd. · Revision Notes, Topic Questions, Past Papers
+

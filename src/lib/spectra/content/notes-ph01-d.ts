@@ -304,7 +304,7 @@ export const SECTIONS_PH01_D: SpecSection[] = [
         question:
           "A person rides a bicycle to the top of a hill with enough speed to leave the ground. Stage A: constant acceleration on a horizontal surface until time T_A. Stage B: constant velocity up a curved ramp until time T_B. Stage C: the bicycle leaves the ground. Explain how the useful power output of the person varies through stages A, B and C. You should consider the energy changes; air resistance is negligible. (6) — *WPH11 October 2025, Q18*",
         steps: [
-          "Stage A: with a constant driving force and a growing v, P = Fv — the useful power output ==increases== as the chemical store transfers energy to kinetic energy faster and faster.",
+          "Stage A: with a constant driving force and an increasing v, P = Fv — the useful power output ==increases== as the chemical store transfers energy to kinetic energy faster and faster.",
           "Stage B: constant velocity up the ramp — energy is transferred to gravitational potential energy at a constant rate, P = mgv: ==constant==.",
           "Stage C: airborne, no contact force — the useful power output is ==zero==; nothing is being pushed.",
           "The linkage is what the 6 marks pay for — useful power output = the rate of useful energy transfer, tracked through all three stages.",

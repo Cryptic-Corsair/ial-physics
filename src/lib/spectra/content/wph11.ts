@@ -21,53 +21,52 @@ export const WPH11_TOPICS: Topic[] = [
     label: "Topic 1",
     title: "Forces",
     summary:
-      "The opening of WPH11 mechanics — the equations of motion and the three motion graphs, vectors resolved and combined, projectiles with their two independent columns, free-body diagrams, Newton's first and second laws with terminal velocity, weight and Core Practical 1 — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated after the from-scratch rebuild (2026-11-22,
-       scripts/minutes-check.ts): 8812 w at the mechanics rate — the
-       rebuilt note is cut shorter and wider apart, same statements */
-    minutes: 37,
+      "Forces, statement by statement: the SUVAT equations and the three motion graphs, vectors resolved and combined, projectiles on their two independent columns, free-body diagrams, Newton's first and second laws with terminal velocity, weight and Core Practical 1. Every section ends with worked examples from the papers, one marking point at a time.",
+    /* minutes recalibrated after the plain-style rewrite (2026-11-24,
+       scripts/minutes-check.ts): 13916 w at the mechanics rate */
+    minutes: 58,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Forces opens WPH11's mechanics: the ==equations of motion==, the ==three motion graphs==, ==vectors== resolved and combined, ==projectiles== on their two independent columns, ==free-body diagrams==, ==Newton's laws== with ==terminal velocity==, ==weight== and ==Core Practical 1==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols =, ×, <, > inside the sentences, and every force named with its owner and direction.",
+        text: "Forces opens WPH11's mechanics: the ==equations of motion==, the ==three motion graphs==, ==vectors== resolved and combined, ==projectiles== on their two independent columns, ==free-body diagrams==, ==Newton's laws== with ==terminal velocity==, ==weight== and ==Core Practical 1==. Every section teaches the equation first, the condition it needs, and ends with its worked examples.",
       },
       {
         k: "def",
         term: "Resultant force",
-        text: "The (vector) sum of all the forces acting on an object — or, in the mark scheme's words, ==the single force that would have the same effect as all the other forces acting together==. Write **resultant force** in definitions: one printed scheme rejects *net force* as a synonym there, even though it accepts the swap inside calculations.",
+        text: "The single force that would have the same effect as all the other forces acting together. Write **resultant force** in definitions: one printed scheme rejects *net force* there, even though it accepts the swap inside calculations.",
       },
       {
         k: "def",
         term: "Terminal velocity",
-        text: "The constant, maximum velocity reached when the drag force (plus upthrust, in a fluid) has grown until it balances the weight — the resultant force is zero, so by ==Newton's first law== the velocity stops changing.",
+        text: "The constant, maximum velocity reached when the drag force (plus upthrust, in a fluid) has grown until it balances the weight. The resultant force is then zero, so by ==Newton's first law== the velocity stops changing.",
       },
       {
         k: "eq",
         title: "The four equations the paper prints for you",
         eq: "$v = u + at$        $s = ut + \\tfrac{1}{2}at^2$        $v^2 = u^2 + 2as$        $s = \\tfrac{1}{2}(u + v)t$",
-        note: "All four appear on the WPH11 data sheet. The marks are never for remembering them — they are for choosing the right one, converting units, and finishing with a comparison and a conclusion when the command word is *deduce*.",
+        note: "All four appear on the WPH11 data sheet. The marks are never for remembering them. They are for choosing the right one, converting units, and finishing a deduce answer with a comparison and a conclusion.",
       },
       {
         k: "p",
-        text: "Each situation — a dart at a dartboard, two cars racing, the scales in a lift — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings set out line by line, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards.",
+        text: "The situations from the papers (a dart at a dartboard, two cars racing, the scales in a lift) appear as worked examples: the question as the paper sets it, worked one marking point at a time, with the answer at the end. The mark schemes' rejected wordings are quoted inside the cards.",
       },
       {
         k: "tips",
         items: [
-          "A 3-mark explanation almost always needs **3 distinct points** — the examiners' reports say exactly this.",
-          "*Show that X ≈ 300 N* means quote **at least one more significant figure** than 300 — 281 N or 296 N, never 300 exactly.",
-          "After a show-that, **use the given value** in later parts — ecf protects you, and the question expects it.",
+          "A 3-mark explanation almost always needs **3 distinct points**. The examiners' reports say exactly this.",
+          "*Show that X ≈ 300 N* means quote **at least one more significant figure** than 300: 281 N or 296 N, never 300 exactly.",
+          "After a show-that, **use the given value** in the later parts.",
           "g = 9.81 (9.8 is accepted). Using 10 costs one mark, once per paper. Missing units cost the final calculation mark.",
         ],
       },
       {
         k: "recap",
         items: [
-          "The equations of motion only when acceleration is constant — on a curved slide, switch to energy conservation.",
+          "The equations of motion need constant acceleration. On a curved slide, use energy conservation instead.",
           "Projectiles: two columns, horizontal a = 0, vertical a = g, time is the bridge.",
-          "ΣF = ma with the *resultant* force — draw the free-body diagram first.",
-          "Deduce questions end with a number, a comparison (<, >, =, ≈) and a sentence.",
+          "ΣF = ma with the *resultant* force. Draw the free-body diagram first.",
+          "A deduce answer needs a number, a comparison (<, >, =, ≈) and a sentence.",
         ],
       },
     ],

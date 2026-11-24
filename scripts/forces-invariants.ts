@@ -24,7 +24,9 @@ const oldB = sections(read("src/lib/spectra/content/notes-ph01-b.ts"));
 const oldAll = new Map([...oldA, ...oldB].map((s) => [s.spec, s]));
 const newA = sections(read("src/lib/spectra/content/notes-ph01f-a.ts"));
 const newB = sections(read("src/lib/spectra/content/notes-ph01f-b.ts"));
-const newAll = new Map([...newA, ...newB].map((s) => [s.spec, s]));
+const newC = sections(read("src/lib/spectra/content/notes-ph01f-c.ts"));
+const newD = sections(read("src/lib/spectra/content/notes-ph01f-d.ts"));
+const newAll = new Map([...newA, ...newB, ...newC, ...newD].map((s) => [s.spec, s]));
 
 let fail = 0;
 for (let i = 1; i <= 11; i++) {
@@ -48,7 +50,7 @@ for (let i = 1; i <= 11; i++) {
    its own parts, and t03/t04 both close with "The marking rules
    that never change". Those live in the exemption list.) */
 const DOCS: { name: string; files: string[] }[] = [
-  { name: "t01 Forces", files: ["src/lib/spectra/content/notes-ph01f-a.ts", "src/lib/spectra/content/notes-ph01f-b.ts"] },
+  { name: "t01 Forces", files: ["src/lib/spectra/content/notes-ph01f-a.ts", "src/lib/spectra/content/notes-ph01f-b.ts", "src/lib/spectra/content/notes-ph01f-c.ts", "src/lib/spectra/content/notes-ph01f-d.ts"] },
   { name: "t02 M&M", files: ["src/lib/spectra/content/notes-ph01-c.ts"] },
   { name: "t03 WEP", files: ["src/lib/spectra/content/notes-ph01-d.ts"] },
   { name: "t04 Materials", files: ["src/lib/spectra/content/notes-ph02-a.ts", "src/lib/spectra/content/notes-ph02-b.ts"] },
@@ -97,8 +99,8 @@ for (const m of landingSrc.matchAll(/\{\s*\n\s*k: "h", text: "([^"]+)"\s*\n\s*\}
   }
 }
 
-/* — every worked card cites a WPH11 session — */
-const citeRe = /WPH11 (?:January|June|October) \d{4}, Q\d+/;
+/* — every worked card cites a WPH11 session (01A regional papers included) — */
+const citeRe = /WPH11 (?:January|June|October) \d{4}(?: 01A)?, Q\d+/;
 for (const doc of DOCS) {
   for (const f of doc.files) {
     const src = read(f);
