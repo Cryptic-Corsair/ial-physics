@@ -56,7 +56,7 @@ export const NOTES_META: NotesMeta[] = [
     kicker: "Physics Unit 1 · Moments and momentum — the WPH11 note, statement by statement",
     title: "Moments and momentum",
     source:
-      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     specRange: "12 → 16",
   },
   {

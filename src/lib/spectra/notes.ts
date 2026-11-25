@@ -7,7 +7,9 @@ import { SECTIONS_PH01R_C } from "./content/notes-ph01r-c";
 import { SECTIONS_PH01R_D } from "./content/notes-ph01r-d";
 import { SECTIONS_PH01F_C } from "./content/notes-ph01f-c";
 import { SECTIONS_PH01F_D } from "./content/notes-ph01f-d";
-import { SECTIONS_PH01_C } from "./content/notes-ph01-c";
+import { SECTIONS_PH02R_A } from "./content/notes-ph02r-a";
+import { SECTIONS_PH02R_B } from "./content/notes-ph02r-b";
+import { SECTIONS_PH02R_C } from "./content/notes-ph02r-c";
 import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH04_A } from "./content/notes-ph04-a";
 import { SECTIONS_PH04_B } from "./content/notes-ph04-b";
@@ -41,7 +43,13 @@ import { NOTES_META } from "./notes-meta";
    pattern — the situations described first in their own
    subsections, the three quote labels beside the teaching, and
    the worked cards folded at the end of each section; parts c/d
-   (statements 6–11) completed the note the same day.
+   (statements 6–11) completed the note the same day. The Moments
+   and momentum doc (statements 12–16) was rebuilt from scratch the
+   same way on 2026-11-25 (notes-ph02r-a/b/c — one part per block:
+   the third law and momentum, conservation, moments and the
+   principle of moments), teaching every statement the way the mark
+   schemes mark it; the old notes-ph01-c file stays on disk
+   untouched, no longer imported.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -97,18 +105,18 @@ export const NOTES_DOCS: NotesDoc[] = [
     kicker: "Physics Unit 1 · Moments and momentum — the WPH11 note, statement by statement",
     title: "Moments and momentum",
     source:
-      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2025",
+      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     intro: [
       {
         k: "p",
-        text: "This note covers the five statements from ==Newton's third law== to the ==principle of moments==, in specification order — the ==force-pair rules== and their five properties, ==momentum== defined as p = mv, the ==principle of conservation of linear momentum== — related to ==Newton's laws of motion==, exactly as the statement asks — and its application in one dimension, then the ==moment of a force==, the ==centre of gravity== of an extended body and the ==principle of moments== in equilibrium. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==. The ==equation== comes first and is unpacked in a sentence; the working symbols =, ×, >, < sit inside the sentences; and every force is named with its owner and its direction.",
+        text: "This note covers the five statements from ==Newton's third law== to the ==principle of moments==, in specification order — the ==force-pair rules== and their five properties, ==momentum== defined as p = mv, the ==principle of conservation of linear momentum== — related to ==Newton's laws of motion==, exactly as the statement asks — and its application in one dimension, then the ==moment of a force==, the ==centre of gravity== of an extended body and the ==principle of moments== in equilibrium. Each section states the specification point first, then teaches it ==the way a student reads it==: one short sentence per bullet, each scenario built up step by step — the situation first, then the forces, then what follows, then the reason in the exam keywords, then ==Therefore== — with nothing a student would stumble over and nothing off track.",
       },
       {
         k: "p",
-        text: "Each situation — two gliders that collide and stick, a spaceship's separating modules, a stone on a step, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — is presented as ==a worked example card== — the question stated as the paper sets it, ==with the paper and question number on it==, the marking points as steps, and the answer sealed underneath. The mark schemes' ==rejected wordings== — the bare *every action has an equal and opposite reaction*, the conservation answers that never mention forces — are quoted inside the cards.",
+        text: "Every situation from the papers — the cable car's weight, the person on the chair, the box sliding down a ramp, the ejecting rocket, the jumping athlete, the magnetic gliders, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the flagpole on its wire, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Mark scheme wording, Examiner's report and Not accepted notes collect the traps beside the teaching.",
       },
     ],
-    sections: [...SECTIONS_PH01_C],
+    sections: [...SECTIONS_PH02R_A, ...SECTIONS_PH02R_B, ...SECTIONS_PH02R_C],
   },
   {
     id: "wph11-t03",

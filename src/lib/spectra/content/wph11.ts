@@ -78,17 +78,15 @@ export const WPH11_TOPICS: Topic[] = [
     title: "Moments and momentum",
     summary:
       "Newton's third law and the five properties of a force pair, momentum and its conservation in one dimension, then the turning effects — the moment of a force, the centre of gravity and the principle of moments, from a loft ladder to a crane's counterweight — statement by statement, written the way the mark schemes mark it.",
-    /* minutes recalibrated for the split (2026-11-22): statements
-       12–16 at the mechanics words-per-minute rate, the third-law
-       rules leading straight into momentum as the papers pair them;
-       nudged to 19 after the 2026-11-23 polish pass (minutes-check
-       now reads 18.8) */
-    minutes: 19,
+    /* minutes recalibrated (2026-11-25): the Topic 2 rebuild
+       (notes-ph02r-a/b/c) lifted the note to 13592 words at the
+       mechanics rate — 56.4 min by minutes-check.ts */
+    minutes: 56,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. The situations — two gliders that stick, a spaceship's separating modules, a loft ladder on a hinge, a crane and its counterweight, a bridge on two supports — are all worked example cards — the question as the paper sets it, the marking points as steps, the answer sealed.",
+        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. Every situation from the papers — the cable car's weight, the person on the chair, the ejecting rocket, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf — is ==described first==, in its own subsection, then carried by a worked example card — the question as the paper sets it, the marking points as steps, the answer sealed.",
       },
       {
         k: "def",

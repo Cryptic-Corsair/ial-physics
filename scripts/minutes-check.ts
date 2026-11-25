@@ -50,7 +50,9 @@ const sa = specWords(read("src/lib/spectra/content/notes-ph01f-a.ts"));
 const sb = specWords(read("src/lib/spectra/content/notes-ph01f-b.ts"));
 const sa2 = specWords(read("src/lib/spectra/content/notes-ph01f-c.ts"));
 const sb2 = specWords(read("src/lib/spectra/content/notes-ph01f-d.ts"));
-const sc = specWords(read("src/lib/spectra/content/notes-ph01-c.ts"));
+const sc = specWords(read("src/lib/spectra/content/notes-ph02r-a.ts"));
+const sc2 = specWords(read("src/lib/spectra/content/notes-ph02r-b.ts"));
+const sc3 = specWords(read("src/lib/spectra/content/notes-ph02r-c.ts"));
 const sd = specWords(read("src/lib/spectra/content/notes-ph01-d.ts"));
 
 /* the alternate note (2026-11-25) */
@@ -69,7 +71,7 @@ const sj = specWords(read("src/lib/spectra/content/notes-ph05-c.ts"));
 
 const rows: [string, number, number][] = [
   ["t01 Forces  ", sum(sa, 1, 3) + sum(sb, 4, 6) + sum(sa2, 7, 8) + sum(sb2, 9, 11), landings[0]],
-  ["t02 M&M     ", sum(sc, 12, 16), landings[1]],
+  ["t02 M&M     ", sum(sc, 12, 13) + sum(sc2, 14, 14) + sum(sc3, 15, 16), landings[1]],
   ["t03 WEP     ", sum(sd, 17, 22), landings[2]],
   ["t04 fluids  ", sum(se, 23, 24) + sum(sf, 25, 25) + sum(sg, 26, 26), landings[3]],
   ["t05 elastic ", sum(sh, 27, 28) + sum(si, 29, 30) + sum(sj, 31, 32), landings[4]],

@@ -202,7 +202,7 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     unitCode: 'WPH11',
     unitTitle: 'WPH11 · Unit 1',
     category: 'IAS Topic',
-    minutes: 18,
+    minutes: 56,
     targetAnchor: '#units',
     keywords: ['momentum', 'conservation of momentum', 'third law', 'moment', 'centre of gravity', 'principle of moments'],
   },
@@ -385,21 +385,35 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
     title: 'Moments and momentum',
     specRange: '12 → 16',
     sectionsTotal: 5,
-    readMinutes: 18,
+    readMinutes: 56,
     clauses: [
       {
-        spec: '13',
-        title: 'Momentum',
-        statement: 'understand that momentum is defined as p = mv',
+        spec: '12',
+        title: 'Newton\'s third law \u2014 the force-pair rules',
+        statement:
+          'know and understand Newton\'s third law of motion and know the properties of pairs of forces in an interaction between two bodies',
         blocks: [
           {
             kind: 'def',
-            term: 'Momentum',
-            text: 'The product of mass and velocity, **p = mv** — a ==vector== in the direction of the velocity, measured in ==kg m s\u207b\u00b9== (equivalently N s).',
+            term: 'Newton\'s third law pair',
+            text: 'When body A exerts a force on body B, body B exerts a force on body A \u2014 ==equal in magnitude, opposite in direction, of the same type, acting on the other body, at the same time==. Two forces failing any one property are not a pair.',
+          },
+        ],
+      },
+      {
+        spec: '14',
+        title: 'Conservation of momentum',
+        statement:
+          'know the principle of conservation of linear momentum, understand how to relate this to Newton\'s laws of motion and understand how to apply this to problems in one dimension',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'The principle of conservation of linear momentum',
+            text: '==Total momentum before a collision = total momentum after it==, ==provided no external resultant force acts on the system== \u2014 the sum and the condition, a mark each.',
           },
           {
             kind: 'eq',
-            eq: 'p = mv        1 N s = 1 kg m s\u207b\u00b9',
+            eq: 'm\u2081u\u2081 + m\u2082u\u2082 = m\u2081v\u2081 + m\u2082v\u2082        one direction positive, the other negative',
           },
         ],
       },
@@ -411,8 +425,8 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
         blocks: [
           {
             kind: 'def',
-            term: 'Equilibrium',
-            text: 'A body is in equilibrium when there is ==no resultant force on it== ==and no resultant moment about any point==. Two marks, two sentences \u2014 *clockwise moment = anticlockwise moment* alone is not sufficient, because it omits the forces half.',
+            term: 'Centre of gravity',
+            text: '==The point through which the weight of the object may be taken to act== \u2014 not where the weight *is* or where the mass *is concentrated*; the printed wording is *may be considered to act*.',
           },
         ],
       },
