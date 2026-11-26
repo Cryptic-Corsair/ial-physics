@@ -1,14 +1,22 @@
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the PDF paper — the note set as its own document.
 
-   v3, redesigned after the first files came back disappointing.
-   The model now is the revision-handout genre the students already
-   read every day (the Save My Exams look): a clean white page, ONE
-   accent colour per document, numbered sections that flow straight
-   down the page instead of each squatting on a page of its own,
-   running furniture on every sheet (header line + YOUR NOTES tab
-   above, breadcrumb + page numbers below), a contents cover and a
-   ruled notes box to scribble in.
+   v4, the dash-ledger redesign. One grammar across the whole
+   sheet:
+
+   — a short horizontal dash in the accent opens every title (the
+     section head, the block head, the card label, the answer);
+     the dash is the only icon on the page;
+   — content sits one indent step under its own title, so
+     hierarchy is carried by the indent, never by a marker on the
+     text;
+   — body text carries no icons: bullet lists are plain stacked
+     sentences;
+   — worked examples wear no chrome (no strips, no borders, no
+     fills beyond the answer's tint);
+   — two quiet plates only: the accent tint for the term, the key
+     idea and the answer, a neutral one for the verbatim quotes
+     and the figures.
 
    The accent is the doc's own, from the map in note-paper.tsx —
    the whole sheet dresses in that single pair (a candy for fills,
@@ -56,6 +64,7 @@ body:has(.print-paper) {
    A4 with 14 mm side margins leaves a 182 mm measure; the sheet is
    laid out at exactly that width, so what you see is what the PDF
    paginates. */
+
 .print-paper {
   /* the paper's own palette — the site's SVG diagrams resolve
      their theme vars against this scope */
@@ -73,6 +82,16 @@ body:has(.print-paper) {
      deep tone for the whole document */
   --acc: #339af0;
   --acc-deep: #1971c2;
+
+  /* the ledger's columns. The dash column is the page margin
+     itself: every flow title hangs its dash back to it, so all the
+     dashes read as one spine down the left edge. The title text
+     column (22 px) carries every title's words. The body column
+     (32 px) is the section's own reading. And content that
+     belongs to a block head or a card title steps to 50 px — the
+     one indent the eye is asked to learn. */
+  --pp-ind: 32px;
+  --pp-step: 18px;
 
   width: 182mm;
   margin: 0 auto;
@@ -115,8 +134,10 @@ body:has(.print-paper) {
   font-weight: 600;
 }
 
-/* ————— shared furniture ————— */
-
+/* ————— the label — the dash, the sheet's signature —————
+   Every small title on the sheet is a Fredoka caps label opened
+   by a short horizontal dash in the accent. This is the only icon
+   the page carries; the reading itself is never marked. */
 .pp-label {
   font-family: var(--font-display);
   font-weight: 600;
@@ -124,6 +145,17 @@ body:has(.print-paper) {
   text-transform: uppercase;
   font-size: 9px;
   line-height: 1.4;
+}
+
+.pp-label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--acc);
+  margin-right: 10px;
+  vertical-align: 2px;
 }
 
 .pp-chip {
@@ -140,9 +172,9 @@ body:has(.print-paper) {
 }
 
 /* ————— the cover —————
-   One white opening page in the genre's own dress: the wordmark
-   row, the accent kicker, the big title, the honest counts, the
-   contents, the about, and a ruled box to write in. */
+   One white opening page: the wordmark row, the accent kicker,
+   the big title, the honest counts, the contents, the about, and a
+   ruled box to write in. */
 
 .pp-cover {
   padding-top: 1mm;
@@ -203,6 +235,19 @@ body:has(.print-paper) {
   color: var(--acc-deep);
 }
 
+/* the kicker is a label — it opens with the dash like every
+   other title on the sheet */
+.pp-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--acc);
+  margin-right: 9px;
+  vertical-align: 2px;
+}
+
 .pp-cover h1 {
   margin: 7px 0 0;
   font-family: var(--font-display);
@@ -214,11 +259,24 @@ body:has(.print-paper) {
   max-width: 20ch;
 }
 
-/* the short accent bar under the title — the sheet's own signature */
+/* the big title opens with a dash of its own, in step with every
+   smaller title below it */
+.pp-cover h1::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 4px;
+  border-radius: 3px;
+  background: var(--acc);
+  margin-right: 13px;
+  vertical-align: 11px;
+}
+
+/* the short accent bar under the title */
 .pp-cover-rule {
-  margin-top: 11px;
-  width: 64px;
-  height: 5px;
+  margin-top: 12px;
+  width: 56px;
+  height: 4px;
   border-radius: 3px;
   background: var(--acc);
 }
@@ -258,6 +316,17 @@ body:has(.print-paper) {
   font-weight: 600;
   font-size: 16.5px;
   color: #26292d;
+}
+
+.pp-toc-title::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2.5px;
+  background: var(--acc);
+  margin-right: 10px;
+  vertical-align: 4.5px;
 }
 
 .pp-toc-count {
@@ -366,40 +435,54 @@ body:has(.print-paper) {
 }
 
 /* ————— the sections —————
-   The genre's one big lesson: content FLOWS. A section header is
-   a typographic event, not a page of its own — the text runs on
-   down the sheet and no page ends half empty. */
+   The title sits at the margin; everything it owns sits one
+   indent step in. A section head is a typographic event, not a
+   page of its own — the reading flows on down the sheet. */
 
 .pp-section {
   padding-top: 10px;
 }
 
 .pp-section + .pp-section {
-  padding-top: 16px;
+  padding-top: 18px;
 }
 
 .pp-sec-head {
+  border-bottom: 1px solid var(--rooms-hairline-soft);
+  padding-bottom: 9px;
   break-inside: avoid;
   break-after: avoid;
-  margin-bottom: 10px;
 }
 
-.pp-sec-eyebrow {
-  margin-bottom: 3px;
-}
-
-.pp-sec-eyebrow .pp-label {
-  color: var(--acc-deep);
+.pp-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8f96;
 }
 
 .pp-sec-head h2 {
-  margin: 0;
+  margin: 3px 0 0;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 22px;
-  line-height: 1.18;
+  font-size: 21px;
+  line-height: 1.2;
   letter-spacing: -0.005em;
   color: #26292d;
+}
+
+/* the section title's dash — it hangs at the margin, in column
+   with every other dash on the sheet */
+.pp-sec-head h2 .pp-dash {
+  display: inline-block;
+  width: 16px;
+  height: 3.5px;
+  border-radius: 3px;
+  background: var(--acc);
+  margin-right: 6px;
+  vertical-align: 5.5px;
 }
 
 .pp-sec-head h2 .pp-sec-no {
@@ -407,44 +490,32 @@ body:has(.print-paper) {
   margin-right: 6px;
 }
 
-/* the thin accent rule under a section header — the header's own
-   signature, quiet and full-width */
-.pp-sec-rule {
-  margin-top: 8px;
-  height: 2px;
-  background: var(--rooms-hairline-soft);
-  position: relative;
+/* the section's body — the ledger's body column */
+.pp-section-body {
+  padding-left: var(--pp-ind);
 }
 
-.pp-sec-rule::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 64px;
-  border-radius: 2px;
-  background: var(--acc);
-}
-
-/* the statement panel — the spec's own words, quoted quiet */
+/* the spec statement — the official words. The label hangs back
+   to the dash column; the statement itself sits in the body
+   column, set in the display face so it never reads as ordinary
+   reading. */
 .pp-statement {
-  margin-top: 10px;
-  border-left: 3px solid var(--acc);
-  border-radius: 0 10px 10px 0;
-  padding: 9px 14px 10px;
-  background: color-mix(in oklab, var(--acc) 5%, #ffffff);
+  margin-top: 12px;
   break-inside: avoid;
   break-after: avoid;
 }
 
 .pp-statement .pp-label {
+  display: block;
+  margin-left: calc(var(--pp-ind) * -1);
   color: var(--acc-deep);
 }
 
 .pp-statement p {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.5;
   color: #33383d;
 }
@@ -456,7 +527,7 @@ body:has(.print-paper) {
   gap: 11px;
 }
 
-/* ————— the blocks ————— */
+/* ————— the reading ————— */
 
 .pp-p {
   margin: 0;
@@ -464,20 +535,25 @@ body:has(.print-paper) {
   widows: 3;
 }
 
+/* the block head — a title: its dash hangs back to the dash
+   column, its words sit in the title column, and the reading
+   that follows it is pushed to the head-content column */
 .pp-h {
   display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 4px;
+  align-items: flex-start;
+  margin-top: 3px;
+  margin-left: calc(var(--pp-ind) * -1);
   break-after: avoid;
 }
 
-.pp-h i {
-  width: 4px;
-  height: 17px;
-  border-radius: 2px;
+.pp-h::before {
+  content: "";
   flex: none;
+  width: 13px;
+  height: 3px;
+  border-radius: 2.5px;
   background: var(--acc);
+  margin: 8px 9px 0 0;
 }
 
 .pp-h h4 {
@@ -485,43 +561,43 @@ body:has(.print-paper) {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 15px;
-  line-height: 1.3;
+  line-height: 1.35;
   color: #26292d;
 }
 
+/* the reading that follows a block head — pushed one step in
+   under the head it belongs to. This is the ledger's second
+   step, and the only place the indent is earned. */
+.pp-under-h {
+  padding-left: var(--pp-step);
+}
+
+/* bullet lists — plain stacked sentences. No markers, no icons:
+   the indent and the stack are the whole device. */
 .pp-bullets {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 5.5px;
+  gap: 5px;
 }
 
 .pp-bullets li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
   break-inside: avoid;
 }
 
-.pp-bullets li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  flex: none;
-  margin-top: 7.5px;
-  background: var(--acc);
-}
+/* ————— the plates —————
+   Two quiet surfaces only: the neutral one for verbatim quotes
+   and figures, the accent tint for the term, the key idea and the
+   answer. */
 
-/* the mark-scheme callout — a quiet neutral plate, the accent only
-   in its label, so a page of these never turns confetti */
+/* the verbatim quote plate — examiner reports, mark-scheme
+   wordings */
 .pp-note {
-  border: 1px solid var(--rooms-hairline);
   background: #f6f8f9;
   border-radius: 10px;
-  padding: 9px 13px 10px;
+  padding: 10px 14px 11px;
   break-inside: avoid;
 }
 
@@ -530,9 +606,9 @@ body:has(.print-paper) {
 }
 
 .pp-note p {
-  margin: 3px 0 0;
+  margin: 4px 0 0;
   font-size: 12.5px;
-  line-height: 1.56;
+  line-height: 1.58;
   color: #4d5359;
 }
 
@@ -562,12 +638,33 @@ body:has(.print-paper) {
   color: #3d4247;
 }
 
-/* the display equation — a whisper of the accent, centred */
-.pp-eq {
-  background: color-mix(in oklab, var(--acc) 4%, #ffffff);
-  border: 1px solid color-mix(in oklab, var(--acc) 14%, #ffffff);
+/* the key idea — one quiet tint, no border */
+.pp-wow {
+  background: color-mix(in oklab, var(--acc) 11%, #ffffff);
   border-radius: 11px;
-  padding: 11px 14px;
+  padding: 10px 14px 11px;
+  break-inside: avoid;
+}
+
+.pp-wow .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-wow p {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #26292d;
+}
+
+/* the display equation — centred on the page's own centre line
+   (the box hangs back to the margin so the optical centre is
+   honest), no plate */
+.pp-eq {
+  margin-left: calc(var(--pp-ind) * -1);
+  padding: 2px 0;
   text-align: center;
   break-inside: avoid;
 }
@@ -580,32 +677,13 @@ body:has(.print-paper) {
 }
 
 .pp-eq .pp-eq-note {
-  margin-top: 5px;
+  margin: 5px 0 0;
+  /* the note is reading, not part of the centred display: it
+     steps back into the body column and keeps its ragged right */
+  margin-left: var(--pp-ind);
+  text-align: left;
   font-size: 11.5px;
-  font-style: italic;
   color: #6f757c;
-}
-
-/* the key idea — solid accent presence, the one loud plate */
-.pp-wow {
-  background: color-mix(in oklab, var(--acc) 11%, #ffffff);
-  border-left: 3px solid var(--acc-deep);
-  border-radius: 0 11px 11px 0;
-  padding: 9px 14px 10px;
-  break-inside: avoid;
-}
-
-.pp-wow .pp-label {
-  color: var(--acc-deep);
-}
-
-.pp-wow p {
-  margin: 3px 0 0;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 13.5px;
-  line-height: 1.5;
-  color: #26292d;
 }
 
 /* ————— the table ————— */
@@ -621,13 +699,14 @@ body:has(.print-paper) {
   align-items: center;
   gap: 9px;
   margin-bottom: 7px;
+  margin-left: calc(var(--pp-ind) * -1);
   break-after: avoid;
 }
 
 .pp-table-cap i {
-  width: 18px;
-  height: 4px;
-  border-radius: 2px;
+  width: 13px;
+  height: 3px;
+  border-radius: 2.5px;
   flex: none;
   background: var(--acc);
 }
@@ -681,162 +760,177 @@ body:has(.print-paper) {
 .pp-table tr { break-inside: avoid; }
 
 /* ————— the worked example —————
-   The genre's own exam-card: a solid accent header strip, the
-   question on its tint, the reasoning numbered, and the answer on
-   a solid strip of the deep tone — the card's one loud move, so
-   leafing pages finds every final line at a glance. */
+   No chrome: no border, no strip, no fill. The dash and the label
+   open the card, the name follows, the question rides a thin
+   accent rule, the reasoning is numbered, and the answer closes
+   on the accent's own tint. Everything the title owns sits one
+   indent step in. With no box to break, the card fragments across
+   pages without a seam. */
 
 .pp-worked {
-  border: 1.5px solid var(--acc-deep);
-  border-radius: 12px;
-  /* NO overflow: hidden here — an overflow-hidden box cannot
-     fragment across pages in Chromium, so a long card near a page
-     end would jump whole to the next sheet and leave the old page
-     half empty. The strip rounds its own top corners instead. */
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+  margin: 3px 0 1px;
 }
 
-.pp-worked-opener {
-  break-inside: avoid;
-  break-after: avoid;
-}
-
+/* the card's label hangs back to the dash column, its words in
+   the title column */
 .pp-worked-head {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 14px;
-  background: var(--acc-deep);
-  color: #ffffff;
-  border-radius: 10.5px 10.5px 0 0;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-left: calc(var(--pp-ind) * -1);
   break-inside: avoid;
   break-after: avoid;
 }
 
 .pp-worked-head .pp-label {
-  color: #ffffff;
+  color: var(--acc-deep);
   font-size: 9.5px;
 }
 
-.pp-worked-head .steps-count {
-  margin-left: auto;
+.pp-worked-count {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 9.5px;
-  letter-spacing: 0.08em;
+  font-size: 9px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: #8a8f96;
   white-space: nowrap;
 }
 
-.pp-worked-opener h4 {
-  margin: 0;
-  padding: 10px 15px 2px;
+.pp-worked-title {
+  margin: 5px 0 0;
+  /* the name sits in the title column, in step with the label's
+     words and every other title on the sheet */
+  margin-left: -10px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 14.5px;
   line-height: 1.3;
   color: #26292d;
+  break-after: avoid;
 }
 
+/* the ledger's step — everything the card's title owns */
+.pp-worked-body {
+  margin-top: 8px;
+  padding-left: var(--pp-step);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* the question — the exam's own words, on a thin accent rule */
 .pp-worked-q {
-  margin: 8px 15px 0;
-  padding: 9px 12px;
-  border-radius: 9px;
-  background: color-mix(in oklab, var(--acc) 6%, #ffffff);
+  padding: 1px 0 1px 11px;
+  border-left: 2px solid var(--acc);
   break-inside: avoid;
 }
 
 .pp-worked-q p {
   margin: 0;
   font-size: 12.5px;
-  line-height: 1.56;
+  line-height: 1.58;
   color: #33383d;
 }
 
+/* the reasoning — numbered in the accent, plain text, hairlines
+   between steps */
 .pp-worked-steps {
   list-style: none;
-  margin: 8px 15px 0;
+  margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .pp-worked-steps li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 6px 0 5px;
-  border-bottom: 1px solid var(--rooms-hairline-soft);
+  gap: 8px;
   break-inside: avoid;
 }
 
-.pp-worked-steps li:last-child { border-bottom: 0; }
-
 .pp-worked-steps .n {
-  width: 22px;
   flex: none;
+  width: 14px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 12px;
-  padding-top: 1px;
+  font-size: 11.5px;
+  padding-top: 2px;
   color: var(--acc-deep);
 }
 
-.pp-worked-steps .s { min-width: 0; }
+.pp-worked-steps .s {
+  min-width: 0;
+  font-size: 12.5px;
+  color: #4d5359;
+}
 
-/* the verbatim mark-scheme note rides the site's own component —
-   the sheet re-inks it here: quieter, one calm measure */
-.pp-worked-ms { margin: 8px 15px 0 47px; }
+/* the verbatim mark-scheme note — no plate inside the card, just
+   the label and the quote */
+.pp-worked-ms .pp-label {
+  color: var(--acc-deep);
+}
 
 .pp-worked-ms p {
-  font-size: 12px !important;
-  line-height: 1.62 !important;
+  margin: 3px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #6f757c;
 }
 
 .pp-worked-ms em { font-weight: 600; }
 
-.pp-worked-ms span.font-display {
-  font-size: 9.5px !important;
-  letter-spacing: 0.09em !important;
-}
-
-/* the answer — the card's one loud strip */
+/* the answer — the accent's own tint, the label and the line set
+   as one row so a short answer reads in a single glance */
 .pp-worked-answer {
-  margin: 10px 15px 13px;
-  padding: 9px 13px 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: color-mix(in oklab, var(--acc) 10%, #ffffff);
   border-radius: 9px;
-  background: var(--acc-deep);
-  color: #ffffff;
+  padding: 9px 13px 10px;
   break-inside: avoid;
 }
 
 .pp-worked-answer .pp-label {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--acc-deep);
   white-space: nowrap;
   padding-top: 2px;
+  flex: none;
 }
 
 .pp-worked-answer p {
   margin: 0;
+  min-width: 0;
   font-weight: 700;
   font-size: 13px;
   line-height: 1.5;
 }
 
-/* ————— the method list ————— */
-
-.pp-steps {
-  background: #f6f8f9;
-  border-radius: 11px;
-  padding: 10px 14px 4px;
-  break-inside: avoid;
-}
+/* ————— the method card —————
+   The scenario's own shape: the caption opens with its dash, and
+   every line of the method sits one indent step in under it. */
 
 .pp-steps-head {
   display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 3px;
+  align-items: flex-start;
+  margin-bottom: 7px;
+  margin-left: calc(var(--pp-ind) * -1);
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.pp-steps-head::before {
+  content: "";
+  flex: none;
+  width: 13px;
+  height: 3px;
+  border-radius: 2.5px;
+  background: var(--acc);
+  margin: 8px 9px 0 0;
 }
 
 .pp-steps-head h4 {
@@ -844,73 +938,53 @@ body:has(.print-paper) {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 14.5px;
+  line-height: 1.35;
   color: #26292d;
 }
 
-.pp-steps ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.pp-steps-body {
+  padding-left: var(--pp-step);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.pp-steps li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 6px 0 6px;
-  border-top: 1px solid var(--rooms-hairline-soft);
+.pp-steps-item {
   break-inside: avoid;
 }
 
-.pp-steps li:first-child { border-top: 0; }
-
-.pp-steps .n {
-  width: 22px;
-  flex: none;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 12px;
-  padding-top: 1px;
-  color: var(--acc-deep);
-}
-
-.pp-steps .t b {
+.pp-steps-item b {
   display: block;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 12.5px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.4;
   color: #26292d;
 }
 
-.pp-steps .t p {
+.pp-steps-item p {
   margin: 1px 0 0;
   font-size: 12.5px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #4d5359;
 }
 
-/* ————— the figure plate ————— */
+/* ————— the figure plate —————
+   The neutral surface, the dash and the number, the drawing
+   centred, the caption beneath. */
 
 .pp-fig {
-  border: 1px solid var(--rooms-hairline);
+  background: #f6f8f9;
   border-radius: 12px;
-  padding: 9px 12px 8px;
+  padding: 10px 14px 9px;
   break-inside: avoid;
 }
 
 .pp-fig .pp-fig-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin-bottom: 5px;
 }
 
 .pp-fig .pp-label {
   color: var(--acc-deep);
-  background: color-mix(in oklab, var(--acc) 9%, #ffffff);
-  border-radius: 999px;
-  padding: 2px 9px;
-  font-size: 8.5px;
 }
 
 .pp-fig .pp-fig-body {

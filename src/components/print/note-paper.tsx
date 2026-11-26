@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import {
-  figureArt,
-  StepLines,
-  WorkedMsNote,
-} from "@/components/club/note-section";
+import { figureArt, StepLines } from "@/components/club/note-section";
 import { Fmt } from "@/components/club/format";
 import type { NotesBlock, NotesDoc, SpecSection } from "@/lib/spectra/notes-types";
 import type { Unit } from "@/lib/spectra/types";
@@ -22,14 +18,23 @@ import "./print-paper.css";
    sheet: Fredoka for every label and heading, Arial for the
    reading.
 
-   v3, the revision-handout redesign. One accent per document
-   (the map below), sections numbered like the genre's own index
-   (5.1, 5.2 …) and flowing straight down the sheet — no section
-   gets a page of its own, so no page ends half empty. The cover
-   is the genre's own contents page, ending in a ruled box to
-   write in. The generator paints the running furniture (header
-   line + YOUR NOTES tab, breadcrumb + page numbers) from its own
-   templates; the sheet only carries the reading.
+   v4, the dash-ledger redesign. The sheet speaks one grammar:
+
+   — every TITLE opens with a short horizontal dash in the
+     accent (the section heads, the block heads, the card labels,
+     the worked example, the answer) and no other marker exists
+     anywhere on the page;
+   — every piece of content sits one indent step under its own
+     title (a scenario's title at the section measure, its
+     reading pushed in under it), so the eye always knows what
+     belongs to what;
+   — the body text carries no icons at all: bullet lists are
+     plain stacked sentences, set off by the indent alone;
+   — worked examples wear no chrome: no strips, no borders, no
+     fills — a dash and the label, the name, the question under
+     a thin accent rule, numbered reasoning, and the answer on a
+     quiet tint. Cards fragment across pages cleanly because
+     there is no box to break.
 
    Nothing here reads a theme or a preference: the sheet is laid
    out at the exact 182 mm measure of an A4 page, every colour is
@@ -55,9 +60,6 @@ const ACCENTS: Record<string, { candy: string; deep: string }> = {
 
 const accentFor = (topicId: string) =>
   ACCENTS[topicId] ?? { candy: "#339AF0", deep: "#1971C2" };
-
-const tint = (hex: string, pct: number) =>
-  `color-mix(in oklab, ${hex} ${pct}%, #ffffff)`;
 
 export function NotePaper({
   doc,
@@ -214,15 +216,20 @@ export function NotePaper({
       ))}
 
       {doc.outro && doc.outro.length > 0 && (
-        <section className="pp-section">
-          <PaperBlocks blocks={doc.outro} />
+        <section className="pp-section pp-outro">
+          <div className="pp-section-body">
+            <div className="pp-blocks">
+              <PaperBlocks blocks={doc.outro} />
+            </div>
+          </div>
         </section>
       )}
     </div>
   );
 }
 
-/* one spec section — a typographic event, not a page of its own */
+/* one spec section — the title at the margin, everything it owns
+   pushed in one indent step under it */
 
 function PaperSection({
   section,
@@ -238,51 +245,60 @@ function PaperSection({
   return (
     <section className="pp-section">
       <div className="pp-sec-head">
-        <div className="pp-sec-eyebrow">
-          <span className="pp-label">
-            Spec {section.spec} · {unit.code} · {topicLabel}
-          </span>
-        </div>
+        <span className="pp-eyebrow">
+          Spec {section.spec} · {unit.code} · {topicLabel}
+        </span>
         <h2>
+          <i className="pp-dash" aria-hidden />
           <span className="pp-sec-no">{secNo}</span>
           {section.title}
           <Dot candy="var(--acc)" />
         </h2>
-        <div className="pp-sec-rule" />
       </div>
 
-      <div className="pp-statement">
-        <span className="pp-label">The specification</span>
-        <p>
-          <Fmt text={section.statement} />
-        </p>
-      </div>
+      <div className="pp-section-body">
+        <div className="pp-statement">
+          <span className="pp-label">Specification</span>
+          <p>
+            <Fmt text={section.statement} />
+          </p>
+        </div>
 
-      <div className="pp-blocks">
-        <PaperBlocks blocks={section.blocks} />
+        <div className="pp-blocks">
+          <PaperBlocks blocks={section.blocks} />
+        </div>
       </div>
     </section>
   );
 }
 
-/* the blocks — the reader's own furniture, re-inked for the sheet */
+/* the blocks — the ledger's whole logic lives here: a block head
+   opens a scope, and the reading that follows it (paragraphs,
+   bullet lists, equations) is pushed one indent step in under
+   that head. A self-contained card (a worked example, a table, a
+   figure, a plate) closes the scope: what comes after a card
+   belongs to the section again, not to a head above it. */
 
 function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
   const out: ReactNode[] = [];
   let figNo = 0;
+  let underH = false;
   for (const b of blocks) {
     switch (b.k) {
       case "p":
         out.push(
-          <p key={out.length} className="pp-p">
+          <p
+            key={out.length}
+            className={underH ? "pp-p pp-under-h" : "pp-p"}
+          >
             <Fmt text={b.text} />
           </p>,
         );
         break;
       case "h":
+        underH = true;
         out.push(
           <div key={out.length} className="pp-h">
-            <i aria-hidden />
             <h4>
               <Fmt text={b.text} />
             </h4>
@@ -291,7 +307,10 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         break;
       case "bullets":
         out.push(
-          <ul key={out.length} className="pp-bullets">
+          <ul
+            key={out.length}
+            className={underH ? "pp-bullets pp-under-h" : "pp-bullets"}
+          >
             {b.items.map((t, i) => (
               <li key={i}>
                 <span>
@@ -303,6 +322,7 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         );
         break;
       case "note":
+        underH = false;
         out.push(
           <aside key={out.length} className="pp-note">
             <span className="pp-label">{b.label}</span>
@@ -313,6 +333,7 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         );
         break;
       case "def":
+        underH = false;
         out.push(
           <div key={out.length} className="pp-def">
             <span className="pp-label">Key term</span>
@@ -334,7 +355,7 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
                   {i > 0 && (
                     <span
                       aria-hidden
-                      style={{ color: "var(--acc-deep)", padding: "0 10px" }}
+                      style={{ color: "var(--acc-deep)", padding: "0 12px" }}
                     >
                       ·
                     </span>
@@ -352,6 +373,7 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         );
         break;
       case "table":
+        underH = false;
         out.push(
           <div key={out.length} className="pp-table-wrap">
             {b.caption && (
@@ -388,9 +410,11 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         );
         break;
       case "worked":
+        underH = false;
         out.push(<PaperWorked key={out.length} b={b} />);
         break;
       case "steps":
+        underH = false;
         out.push(
           <div key={out.length} className="pp-steps">
             {b.caption && (
@@ -400,26 +424,28 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
                 </h4>
               </div>
             )}
-            <ol>
+            <div className="pp-steps-body">
               {b.items.map((it, i) => {
-                const bare = it.title.replace(/^\s*\d+\s*[·•]\s*/, "");
+                const bare = it.title.replace(/^\s*\d+\s*[·•]\s*/, "").trim();
                 return (
-                  <li key={i}>
-                    <span className="n">{String(i + 1).padStart(2, "0")}</span>
-                    <div className="t">
-                      <b>{bare}</b>
-                      <p>
-                        <Fmt text={it.text} />
-                      </p>
-                    </div>
-                  </li>
+                  <div key={i} className="pp-steps-item">
+                    {bare && (
+                      <b>
+                        <Fmt text={bare} />
+                      </b>
+                    )}
+                    <p>
+                      <Fmt text={it.text} />
+                    </p>
+                  </div>
                 );
               })}
-            </ol>
+            </div>
           </div>,
         );
         break;
       case "figure":
+        underH = false;
         ++figNo;
         out.push(
           <figure key={out.length} className="pp-fig">
@@ -440,6 +466,7 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
         );
         break;
       case "wow":
+        underH = false;
         out.push(
           <aside key={out.length} className="pp-wow">
             <span className="pp-label">Key idea</span>
@@ -454,7 +481,11 @@ function PaperBlocks({ blocks }: { blocks: NotesBlock[] }) {
   return <>{out}</>;
 }
 
-/* ————— the worked example, as the paper sets it ————— */
+/* ————— the worked example, as the paper sets it —————
+   No chrome. The dash and the label name the card, the question
+   rides a thin accent rule, the reasoning is numbered in the
+   accent, and the answer closes on a quiet tint. Everything the
+   title owns sits one indent step in. */
 
 function PaperWorked({
   b,
@@ -464,40 +495,43 @@ function PaperWorked({
   const bare = b.title.replace(/^Worked example\s*·\s*/i, "");
   return (
     <div className="pp-worked">
-      <div className="pp-worked-opener">
-        <div className="pp-worked-head">
-          <span className="pp-label">Worked example</span>
-          <span className="steps-count">
-            {b.steps.length} {b.steps.length === 1 ? "step" : "steps"}
-          </span>
-        </div>
-        <h4>{bare}</h4>
+      <div className="pp-worked-head">
+        <span className="pp-label">Worked example</span>
+        <span className="pp-worked-count">
+          {b.steps.length} {b.steps.length === 1 ? "step" : "steps"}
+        </span>
+      </div>
+      <h4 className="pp-worked-title">{bare}</h4>
+      <div className="pp-worked-body">
         <div className="pp-worked-q">
           <p>
             <Fmt text={b.question} />
           </p>
         </div>
-      </div>
-      <ol className="pp-worked-steps">
-        {b.steps.map((s, i) => (
-          <li key={i}>
-            <span className="n">{String(i + 1).padStart(2, "0")}</span>
-            <span className="s">
-              <StepLines text={s} />
-            </span>
-          </li>
-        ))}
-      </ol>
-      {b.ms && (
-        <div className="pp-worked-ms">
-          <WorkedMsNote ms={b.ms} />
+        <ol className="pp-worked-steps">
+          {b.steps.map((s, i) => (
+            <li key={i}>
+              <span className="n">{i + 1}</span>
+              <span className="s">
+                <StepLines text={s} />
+              </span>
+            </li>
+          ))}
+        </ol>
+        {b.ms && (
+          <div className="pp-worked-ms">
+            <span className="pp-label">{b.ms.label}</span>
+            <p>
+              <Fmt text={b.ms.text} />
+            </p>
+          </div>
+        )}
+        <div className="pp-worked-answer">
+          <span className="pp-label">Answer</span>
+          <p>
+            <Fmt text={b.answer} />
+          </p>
         </div>
-      )}
-      <div className="pp-worked-answer">
-        <span className="pp-label">Answer</span>
-        <p>
-          <Fmt text={b.answer} />
-        </p>
       </div>
     </div>
   );
