@@ -391,7 +391,7 @@ export function Desk({
                   icon: ClipboardList,
                   color: "#FFD43B",
                   label: "Revision pack",
-                  hint: picks.length > 0 ? `${picks.length} points ticked` : "tick points, get one read",
+                  hint: picks.length > 0 ? `${picks.length} points ticked` : "tick spec points, get one pack",
                   open: onOpenPack,
                 },
                 {
@@ -431,7 +431,7 @@ export function Desk({
                   <span className="block font-display text-[calc(15px*var(--ts-body))] leading-tight font-semibold text-ink">
                     {tool.label}
                   </span>
-                  <span className="mt-0.5 block truncate text-[calc(11.5px*var(--ts-other))] font-semibold text-ink-faint">
+                  <span className="mt-0.5 block text-[calc(11.5px*var(--ts-other))] leading-snug font-semibold text-ink-faint">
                     {tool.hint}
                   </span>
                 </span>

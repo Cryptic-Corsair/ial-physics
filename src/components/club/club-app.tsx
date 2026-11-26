@@ -915,7 +915,7 @@ function Footer({
                       {String(u.index).padStart(2, "0")}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[calc(12.5px*var(--ts-other))] font-bold text-milk/85 transition-colors group-hover:text-milk">
+                      <span className="block text-[calc(12.5px*var(--ts-other))] leading-snug font-bold text-milk/85 transition-colors group-hover:text-milk">
                         {u.shortTitle}
                       </span>
                       <span className="mt-1 block text-[calc(10.5px*var(--ts-other))] font-bold uppercase tracking-[0.14em] text-milk/35">

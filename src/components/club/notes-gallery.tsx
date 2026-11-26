@@ -27,7 +27,6 @@ import {
   GAL_ACCENT,
   figOffsetsOf,
 } from "./gallery-section";
-import { PdfDownloadButton } from "./pdf-download";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the notes reader, in the gallery dress.
@@ -403,7 +402,7 @@ function NotesGalleryBody({
 
       {/* ————— back ————— */}
       <PopIn>
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
           <button
             type="button"
             onClick={onBack}
@@ -418,12 +417,6 @@ function NotesGalleryBody({
             </span>
             Back to {unit.code}
           </button>
-          {/* the PDF handout — the note as a file, behind the owner's gate */}
-          <PdfDownloadButton
-            docId={doc.id}
-            title={doc.title}
-            fileName={`IAL PHYSICS — ${unit.code} ${topicLabel} — ${doc.title}.pdf`}
-          />
         </div>
       </PopIn>
 

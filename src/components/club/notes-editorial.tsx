@@ -23,7 +23,6 @@ import { useFarPause } from "./use-far-pause";
 import { useSpecMapRegister } from "./spec-map";
 import { EditorialSectionView, figOffsetsOf } from "./spec-section-editorial";
 import { EditorialLabel, SampleBlockView } from "./sample-blocks";
-import { PdfDownloadButton } from "./pdf-download";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the notes reader, in the editorial dress.
@@ -320,7 +319,7 @@ function NotesEditorialBody({
       />
 
       <PopIn>
-        <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
           <SoftButton
             onClick={onBack}
             className="min-h-[calc(42px*var(--ui-scale))] px-4 py-2 text-[calc(13.5px*var(--ts-body))]"
@@ -328,12 +327,6 @@ function NotesEditorialBody({
           >
             <ArrowLeft className="h-4 w-4" /> Back to {unit.code}
           </SoftButton>
-          {/* the PDF handout — the note as a file, behind the owner's gate */}
-          <PdfDownloadButton
-            docId={doc.id}
-            title={doc.title}
-            fileName={`IAL PHYSICS — ${unit.code} ${topicLabel} — ${doc.title}.pdf`}
-          />
         </div>
       </PopIn>
 
