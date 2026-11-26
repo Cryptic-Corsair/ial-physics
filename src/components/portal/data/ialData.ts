@@ -231,6 +231,18 @@ export const SEARCH_ITEMS: readonly SearchEntry[] = [
     keywords: ['density', 'upthrust', 'flotation', 'stokes', 'viscosity', 'terminal velocity', 'laminar', 'core practical 2'],
   },
   {
+    id: 'topic-5',
+    kind: 'topic',
+    code: 'Topic 5',
+    title: 'Topic 5 · Hooke\'s law, stress and strain',
+    unitCode: 'WPH11',
+    unitTitle: 'WPH11 · Unit 1',
+    category: 'IAS Topic',
+    minutes: 81,
+    targetAnchor: '#units',
+    keywords: ['hooke', 'stiffness', 'young modulus', 'stress', 'strain', 'force-extension', 'stress-strain', 'elastic limit', 'yield point', 'elastic strain energy', 'core practical 3'],
+  },
+  {
     id: 'topic-suvat',
     kind: 'topic',
     code: '1',
@@ -319,7 +331,7 @@ export const PREVIEW_THEMES: Record<PreviewThemeId, PreviewThemeTokens> = {
   },
 };
 
-/* Four real notes from the workspace's own corpus (NOTES_META in
+/* Five real notes from the workspace's own corpus (NOTES_META in
    src/lib/spectra/notes-meta.ts — same ids, same titles, same spec
    ranges, the real per-topic reading minutes), each cut down to a
    handful of its actual specification sections. Every statement,
@@ -550,6 +562,67 @@ export const NOTE_PREVIEW_DOCS: readonly NotePreviewDoc[] = [
           {
             kind: 'eq',
             eq: '$\\eta = (W - U) \\div 6\\pi r v$',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'wph11-t05',
+    unitCode: 'WPH11',
+    topicLabel: 'Topic 5',
+    title: 'Hooke\'s law, stress and strain',
+    specRange: '27 → 32',
+    sectionsTotal: 6,
+    readMinutes: 81,
+    clauses: [
+      {
+        spec: '27',
+        title: 'Hooke\'s law and stiffness',
+        statement:
+          'be able to use the Hooke\'s law equation, ΔF = kΔx, where k is the stiffness of the object',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'Stiffness',
+            text: 'The stiffness k of an object = the force per unit extension it produces, $k = \\Delta F \\div \\Delta x$. The unit of k is **N m⁻¹**. The stiffness belongs to the ==object== — a longer wire of the same material has a smaller stiffness, and a thinner wire has a smaller stiffness too.',
+          },
+          {
+            kind: 'eq',
+            eq: '$\\Delta F = k \\Delta x$',
+          },
+        ],
+      },
+      {
+        spec: '29',
+        title: 'Force-extension graphs and the limit points',
+        statement:
+          'a be able to draw and interpret force-extension and force-compression graphs b understand the terms limit of proportionality, elastic limit, yield point, elastic deformation and plastic deformation and be able to apply them to these graphs',
+        blocks: [
+          {
+            kind: 'def',
+            term: 'Elastic limit',
+            text: 'It\'s the force / stress beyond which the cable does not return to its original length ==when the force / stress is removed== (WPH11 June 2022, Q12(a)) — that clause carries the mark.',
+          },
+        ],
+      },
+      {
+        spec: '32',
+        title: 'Elastic strain energy',
+        statement:
+          'be able to calculate the elastic strain energy Eel in a deformed material sample, using the equation ΔEel = ½ FΔx, and from the area under the force-extension graph',
+        blocks: [
+          {
+            kind: 'eq',
+            eq: '$\\Delta E_{\\text{el}} = \\tfrac{1}{2} F \\Delta x$        $\\Delta E_{\\text{el}} = \\tfrac{1}{2} k \\Delta x^2$',
+          },
+          {
+            kind: 'worked',
+            title: 'Worked example · the bungee jumper',
+            question:
+              'A student bungee-jumps from a bridge on an elastic rope. The river is reached if the rope stretches to a total length of 35 m. Deduce whether the student reaches the river. mass of student = 65 kg, original rope length = 17 m, rope stiffness constant = 250 N m⁻¹ (4)',
+            steps: 5,
+            answer: '40 500 J > 22 300 J — the river is not reached',
           },
         ],
       },

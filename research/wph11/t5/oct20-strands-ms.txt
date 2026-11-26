@@ -1,0 +1,80 @@
+           •   Use of v2 = u2 + 2as to determine deceleration along ramp
+           •   v = 0 and a negative
+           •   Use of sin 30° to determine component of weight of disc down slope
+           •   Use of ΣF = m a to determine resultant force along ramp
+           •   Subtraction of weight component from resultant force.
+           •    FF = 6.6 N
+
+
+
+
+           Total for question 18                                                           9
+Question     Answer                                                                      Mark
+Number
+19(a)(i)     The distance between pylons Or length of cable Or the                 (1)          1
+             weight/mass/density of the cable/material
+
+19(a)(ii)                                                                          (1)
+              •    See Mg = 2T sin θ Or weight (or W or Mg) is proportional
+                   to T sin θ                                                      (1)
+              •    as the sag increases, θ (or sin θ) increases (for a constant
+                   weight)                                                         (1)          3
+              •    (as the sag increases) sinθ increases hence T decreases
+
+
+19(b)(i)      •    Use of region of graph 0 to 300 MPa to determine the            (1)
+                   gradient Or tangent from origin
+                                                                                   (1)          2
+              •    Esteel = 1.5 × 1011 (Pa) to 1.8 × 1011 (Pa)
+
+
+             Example of calculation
+                        𝟐𝟐𝟐𝟐𝟐𝟐 ×𝟏𝟏𝟏𝟏𝟔𝟔 𝑷𝑷𝑷𝑷
+             Esteel =       𝟎𝟎.𝟎𝟎𝟎𝟎𝟎𝟎𝟎𝟎
+                                               = 1.53 × 1011 Pa
+
+19(b)(ii)                                                                          (1)
+                                          𝐹𝐹
+              •    Use of σ = 𝐴𝐴 to obtain the stress
+                                                                                                2
+                                                                                   (1)
+              • stress = 73 MPa
+             Example of calculations
+             F = 0.62 N m−1× 270 m = 167.4 N
+                  0.62 N m−1 ×270 m
+             σ = 2.3 × 10−6 m2
+             σ = 72.8 MPa
+
+
+                   METHOD 1                                                        (1)
+19(b)(iii)    •    Use of graph to obtain the strain in steel
+                   Or use of Young Modulus                                         (1)
+                             ∆𝑒𝑒
+              •    Use of ε = 𝑙𝑙 (for steel ∆e = 0.14 m)
+                                                                                   (1)          3
+              •    Comparison of the two extensions/strains
+                   e.g. the extension/strain of aluminium is larger than that of
+                   steel, so steel is used to reduce the (total) extension/sag
+                   Or
+                   Comparison of two strains/extensions e.g. lower strain for
+                   steel so stiffness of cable increased to reduce (total)
+                   extension/sag
+     METHOD 2
+               ∆𝑒𝑒
+ •   Use of ε = 𝑙𝑙 to find strain (for extension of 0.95 m)
+ •   Use of graph to obtain the stress in aluminium and steel.
+ •   Comparison of two stresses (e.g. greater stress required for
+     steel) so stiffness of cable increased to reduce (total)
+     extension/sag
+
+Example of calculation
+Read off strain (when stress is 70 MPa) on Steel graph
+(0.0005)
+For Steel, Δe = 0.0005 × 270 m = 0.14 m
+
+
+
+Total for question 19                                               11
+Pearson Education Limited. Registered company number 872828
+with its registered office at 80 Strand, London, WC2R 0RL, United Kingdom
+

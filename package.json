@@ -7,6 +7,7 @@
     "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
     "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
     "lint": "eslint .",
+    "pdf:gen": "bun scripts/gen-note-pdfs.mjs",
     "db:push": "echo \"db:push skipped — IAL PHYSICS stores progress in the browser, no database\""
   },
   "dependencies": {

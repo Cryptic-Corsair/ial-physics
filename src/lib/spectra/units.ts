@@ -13,7 +13,7 @@ export const UNITS: Unit[] = [
     code: "WPH11",
     index: 1,
     stage: "IAS",
-    title: "Physics — Mechanics and Materials",
+    title: "Mechanics and Materials",
     shortTitle: "Physics: mechanics & materials",
     topicRange: "Physics 1.3 & 1.4",
     paper: {

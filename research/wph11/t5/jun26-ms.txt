@@ -1,0 +1,77 @@
+                                                  𝑣𝑣 = �                  = 24.8 m s −1
+                                                              390 kg
+
+           Total for question 11
+
+Question
+                                   Answer                                 Additional Guidance   Mark
+Number
+12         Use of 𝐹𝐹 = 𝑘𝑘∆𝑥𝑥                (1) Example calculation
+                           1
+           Use of 𝐸𝐸el = 𝐹𝐹∆𝑥𝑥              (1)             3.8 N
+                           2                      ∆𝑥𝑥 =            = 0.152 m
+                                                          25 N m−1
+                                                                                                 3
+           𝐸𝐸el = 0.29 J                    (1)           1
+                                                  𝐸𝐸el = × 3.8 N × 0.152 m = 0.289 J
+                                                          2
+
+
+           Total for question 12                                                                 3
+Question
+                                           Answer                                                             Additional Guidance                    Mark
+Number
+13(a)      Momentum is conserved during the collision
+           Or total momentum before the collision = total momentum              (1)
+           after the collision
+
+
+           So the change in momentum of the racket is equal (in                 (1)
+           magnitude) to the change in momentum of the ball.
+
+
+18(b)        Drag increases with speed / velocity                                (1) Allow air resistance for drag throughout
+
+             (At terminal velocity, upthrust plus)                                   Allow weight, (upthrust) and drag cause the stone to be in
+             drag is equal (in size) to weight of ball                           (1) equilibrium
+
+             (So) resultant force becomes zero (and the ball moves at terminal         Ignore forces become balanced
+             velocity)                                                           (1)                                                              3
+
+             Total for question 18                                                                                                                11
+Question
+                                                      Answer                                           Additional Guidance                     Mark
+Number
+19(a)      There is a larger (cross-sectional) area                           (1)
+
+           (each fishing line) has the same breaking stress                   (1)
+
+           (So the line will break at) a larger tension / force               (1)   Dependent on MP1 or MP2                                     3
+
+
+19(b)      Calculates cross-sectional area                                    (1)   Example of calculation
+
+           Use of 𝜎𝜎 =
+                         𝐹𝐹                                                   (1)   𝐴𝐴 = 𝜋𝜋 × (0.34 × 10−3 m)2 = 3.63 × 10−7 m2
+                         𝐴𝐴
+
+                         𝜎𝜎                     ∆𝑥𝑥                                             17 N
+           Use of 𝐸𝐸 =        and use of 𝜀𝜀 =                                 (1)   𝜎𝜎 =                  = 4.68 × 107 Pa
+                         𝜀𝜀                     𝑥𝑥                                         3.63 × 10−7 m2
+
+           Extension = 0.60 m                                                 (1)          4.68 × 107 Pa                                        4
+                                                                                    𝜀𝜀 =                 = 1.67 × 10−2
+                                                                                            2.8 × 109 Pa
+
+                                                                                    ∆𝑥𝑥 = 1.67 × 10−2 × 36 m
+                                                                                        = 0.601 m
+
+19(c)      Represents the elastic strain energy stored in the fishing line    (1)   Allow elastic potential energy for elastic strain energy
+
+           which is work done to stretch the fishing line                     (1)   Allow 𝑊𝑊 = 𝐹𝐹∆𝑠𝑠
+                                                                                    Allow which is the work done on the fishing line
+
+           (because) the area is the mean force multiplied by the extension   (1)                                        1
+                                                                                    Allow (because) the area is equal to 𝐹𝐹 ∆𝑥𝑥                 3
+                                                                                                                         2
+

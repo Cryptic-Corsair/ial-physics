@@ -31,7 +31,13 @@ export type FigureKind =
   | "ph-force-extension"
   | "ph-stress-strain"
   | "ph-falling-ball"
-  | "ph-young-rig";
+  | "ph-young-rig"
+  | "ph-springs-combo"
+  | "ph-unloading-set"
+  | "ph-hysteresis-loop"
+  | "ph-energy-strip"
+  | "ph-two-materials"
+  | "ph-concrete-sides";
 
 export type NotesBlock =
   | { k: "p"; text: string }

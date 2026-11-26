@@ -1,0 +1,66 @@
+        an asterisk.
+   5.2 Marks are awarded for indicative content and for how the answer is structured.
+   5.3 Linkage between ideas, and fully-sustained reasoning is expected.
+
+
+6. Graphs
+   6.1 A mark given for axes requires both axes to be labelled with quantities and units, and drawn the
+        correct way round.
+   6.2 Sometimes a separate mark will be given for units or for each axis if the units are complex. This will
+        be indicated on the mark scheme.
+   6.3 A mark given for choosing a scale requires that the chosen scale allows all points to be plotted,
+        spreads plotted points over more than half of each axis and is not an awkward scale e.g. multiples
+        of 3, 7 etc.
+   6.4 Points should be plotted to within 1 mm.
+           • Check the two points furthest from the best line. If both OK award mark.
+           • If either is 2 mm out do not award mark.
+           • If both are 1 mm out do not award mark.
+           • If either is 1 mm out then check another two and award mark if both of these OK, otherwise
+               no mark.
+           •    For a line mark there must be a thin continuous line which is the best-fit line for the
+                candidate’s results.
+Question   Answer                                                                                    Mark
+Number
+1          D is the correct answer                                                                   (1)
+           A is incorrect because weight is a force, which is a vector
+           B is incorrect because momentum is a vector
+           C is incorrect because velocity is a vector
+2          C is the correct answer                                                                   (1)
+           A is incorrect because it give units of m3 kg−1
+           B is incorrect because it give units of m3 kg N−2
+           D is incorrect because it give units of N2 kg−1 m−3
+3          C is the correct answer                                                                   (1)
+           A is incorrect because the frictional force from the road is the driving force
+           B is incorrect because a drag force is also acting
+           D is incorrect because the frictional force from the road is the driving force
+4          B is the correct answer                                                                   (1)
+           A is incorrect because it gives units of J
+           C is incorrect because it gives an input power less than the output power
+           D is incorrect because it gives units of J
+5          D is the correct answer                                                                   (1)
+           A is incorrect because the units are inconsistent
+           B is incorrect because it gives a greater length, and F is a compressive force
+           C is incorrect because the units are inconsistent
+6          B is the correct answer                                                                   (1)
+           A is incorrect because it gives units of J m ≠ N
+           C is incorrect because it gives units of W m s−1 ≠ N
+           D is incorrect because it gives units of m s W−1 ≠ N
+7          B is the correct answer                                                                   (1)
+           A is incorrect because the acceleration is g which has constant magnitude and direction
+           C is incorrect because the objects gain the same k.e. for the same drop height
+           D is incorrect because both objects start with the same k.e. and gain the same k.e.
+8          C is the correct answer                                                                   (1)
+           A is incorrect because the acceleration does not reach zero
+           B is incorrect because the acceleration does not reach zero
+           D is incorrect because the acceleration does not reach zero
+9          D is the correct answer                                                                   (1)
+           A is incorrect because the fracture point is at the extreme end of the graph
+           B is incorrect because proportionality ends before point X is reached
+           C is incorrect because point X is not the highest point reached by the graph
+10         C is the correct answer                                                                   (1)
+           A is incorrect because R is in the wrong direction
+           B is incorrect because R is the wrong diagonal
+           D is incorrect because R is the wrong diagonal
+Question   Answer                                                                              Mark
+Number
+11(a)

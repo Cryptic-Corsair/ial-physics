@@ -77,21 +77,21 @@ export const WPH11_TOPICS: Topic[] = [
     label: "Topic 2",
     title: "Moments and momentum",
     summary:
-      "Newton's third law and the five properties of a force pair, momentum and its conservation in one dimension, then the turning effects — the moment of a force, the centre of gravity and the principle of moments, from a loft ladder to a crane's counterweight — statement by statement, written the way the mark schemes mark it.",
+      "Newton's third law and the five properties of a force pair, momentum and its conservation in one dimension, then the turning effects, the moment of a force, the centre of gravity and the principle of moments, from a loft ladder to a crane's counterweight, statement by statement, written the way the mark schemes mark it.",
     /* minutes recalibrated (2026-11-25): the Topic 2 rebuild
        (notes-ph02r-a/b/c) lifted the note to 13592 words at the
-       mechanics rate — 56.4 min by minutes-check.ts */
+       mechanics rate, 56.4 min by minutes-check.ts */
     minutes: 56,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions — *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. Every situation from the papers — the cable car's weight, the person on the chair, the ejecting rocket, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf — is ==described first==, in its own subsection, then carried by a worked example card — the question as the paper sets it, the marking points as steps, the answer sealed.",
+        text: "The force-pair rules lead this topic because the papers keep asking for them inside momentum questions, *state how Newton's third law applies during the collision* is a printed sub-part of a conservation question. From the pairs, ==momentum== and its ==conservation in one dimension==; from the turning effects, the ==moment of a force==, the ==centre of gravity== and the ==principle of moments==. Every situation from the papers, the cable car's weight, the person on the chair, the ejecting rocket, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf, is ==described first==, in its own subsection, then carried by a worked example card, the question as the paper sets it, the marking points as steps, the answer sealed.",
       },
       {
         k: "def",
         term: "Momentum",
-        text: "Mass in motion — **p = mv**, a ==vector== in the direction of the velocity, measured in ==kg m s⁻¹== (equivalently N s). Opposite directions carry opposite signs.",
+        text: "Mass in motion, **p = mv**, a ==vector== in the direction of the velocity, measured in ==kg m s⁻¹== (equivalently N s). Opposite directions carry opposite signs.",
       },
       {
         k: "def",
@@ -106,24 +106,24 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the traps — the third-law slogan on its own, the momentum answers that never mention forces.",
+        text: "The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the traps, the third-law slogan on its own, the momentum answers that never mention forces.",
       },
       {
         k: "tips",
         items: [
-          "The conservation principle is **two marks in one sentence** — ==total momentum before = total momentum after==, ==provided no external resultant force acts on the system==. Say both halves when the question asks for the principle in words.",
-          "A third-law pair is checked on **five properties at once** — equal magnitude · opposite directions · same type of force · acting on different bodies · acting at the same time.",
-          "A moments question is a table — choose the ==pivot==, mark the ==centre of gravity==, list each force's turning direction, write moment = Fx for each, balance.",
-          "The ==limiting case== (toppling, lifting, on the point of sliding) carries the final mark — state the comparison first, then the verdict.",
+          "The conservation principle is **two marks in one sentence**, ==total momentum before = total momentum after==, ==provided no external resultant force acts on the system==. Say both halves when the question asks for the principle in words.",
+          "A third-law pair is checked on **five properties at once**, equal magnitude · opposite directions · same type of force · acting on different bodies · acting at the same time.",
+          "A moments question is a table, choose the ==pivot==, mark the ==centre of gravity==, list each force's turning direction, write moment = Fx for each, balance.",
+          "The ==limiting case== (toppling, lifting, on the point of sliding) carries the final mark. State the comparison first, then the verdict.",
         ],
       },
       {
         k: "recap",
         items: [
           "Momentum is conserved in a closed system; say *total*, say *system*, say the condition.",
-          "Moment = Fx with the ==perpendicular== distance — or F cos θ × d with the force at θ to the lever.",
+          "Moment = Fx with the ==perpendicular== distance, or F cos θ × d with the force at θ to the lever.",
           "A uniform beam's weight acts at its ==middle==; the centre of gravity is where the weight *may be taken to act*.",
-          "Starred momentum questions chain — the pair rule, then the resultant force, then the momentum change, with so / because joining the sentences.",
+          "Starred momentum questions chain, the pair rule, then the resultant force, then the momentum change, with so / because joining the sentences.",
         ],
       },
     ],
@@ -244,15 +244,16 @@ export const WPH11_TOPICS: Topic[] = [
     label: "Topic 5",
     title: "Hooke's law, stress and strain",
     summary:
-      "The solid-materials close of WPH11's Materials, built from the 2020–2024 papers — Hooke's law and stiffness as properties of the object, stress, strain and the Young modulus as properties of the material, the force-extension and stress-strain graphs with their limit points read the way the mark schemes mark them, Core Practical 3 from the rig to the graph, and the elastic strain energy as the area under the graph — statement by statement.",
-    /* minutes calibrated after the build (2026-11-23,
-       scripts/minutes-check.ts): 8459 w at the mechanics rate */
-    minutes: 35,
+      "The elasticity close of WPH11's Materials, rebuilt from the complete 2019–2026 papers — Hooke's law and the stiffness of the object, springs in series and in parallel, stress, strain and the Young modulus as properties of the material, the force-extension and stress-strain graphs read the way the mark schemes mark them, Core Practical 3 from the rig to the graph, and the elastic strain energy as the area under the graph — statement by statement.",
+    /* minutes recalibrated after the rebuild (2026-11-25,
+       scripts/minutes-check.ts): 19544 w at the mechanics rate —
+       81.2 min, the largest note in the library */
+    minutes: 81,
     ao: ["AO1", "AO2", "AO3"],
     blocks: [
       {
         k: "p",
-        text: "Hooke's law, stress and strain close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==the ratio of stress to strain for a material==, ==the force/stress beyond which the sample does not return to its original length when the load is removed==, ==a sudden or large plastic deformation==. Every section teaches ==the way the mark schemes mark it==: the equation stated first, the working symbols (=, ×, ÷, >, <) inside the sentences, and every quantity named with its owner — the ==stiffness of the object==, the ==Young modulus of the material==.",
+        text: "Hooke's law, stress and strain close Unit 1 — and the mark schemes ask for the ==same sentences== every series: ==the ratio of stress to strain for a material==, ==the force/stress beyond which the sample does not return to its original length when the load is removed==, ==a sudden or large plastic deformation==. Every section teaches ==the way a student reads it==: the ==equation stated first==, one short sentence per bullet, each scenario built step by step to a ==Therefore==, and every quantity named with its owner — the ==stiffness of the object==, the ==Young modulus of the material==.",
       },
       {
         k: "def",
@@ -272,7 +273,7 @@ export const WPH11_TOPICS: Topic[] = [
       },
       {
         k: "p",
-        text: "Each situation — an elastic cord on an air track, a nylon rope in a pulley system, a spring loaded past its elastic limit, a steel cable at its elastic limit, a metal rod under compression, spider silk against steel, two Young modulus experiments — is ==a worked example card==: the question as the paper sets it, with the paper and question number on it, one marking point per step, the workings set out line by line, and the answer sealed underneath.",
+        text: "Each situation — the spring with the ball and the 200 g mass, the pinball launcher, the force meter on two strings, the trampoline springs, the tugboat rope, the violin string, the fishing line, the steel and aluminium strands, the titanium alloy, the stunt harness cable, the reinforced concrete, the concrete samples as they dry, the running blade, the toffee bar and the biscuit bar, the brick under compression, the bungee jumper, the climber's rope, the toaster springs — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row==: a click opens the question as the paper sets it, one marking point per step, the workings line by line, the answer sealed underneath.",
       },
       {
         k: "tips",
@@ -280,16 +281,16 @@ export const WPH11_TOPICS: Topic[] = [
           "Strain carries ==no unit== — a ratio of two lengths. Give it as a decimal or a percentage; the examiner reports say fraction answers do not score.",
           "The gradient of a stress-strain graph is E; the gradient of a force-extension graph is k — swap them and every mark after the first goes.",
           "Use a ==large triangle== for a graph gradient — the schemes give one mark only when the points cover less than half the drawn line.",
-          "A definition of the elastic limit without ==when the load is removed== scores nothing — the examiner reports flag it every series.",
+          "A definition of the elastic limit without ==when the load is removed== scores nothing — and a force added to an already-loaded spring stores the strip ==between== the two forces, never ½ of the extra force alone.",
         ],
       },
       {
         k: "recap",
         items: [
-          "Hooke's law — ΔF = kΔx up to the limit of proportionality; the gradient of the force-extension graph is the stiffness.",
-          "σ = F/A, ε = Δx/x, E = σ/ε — the Young modulus belongs to the material, the stiffness to the object.",
+          "Hooke's law — ΔF = kΔx up to the limit of proportionality; stiffness from a ==change== in force over a ==change== in length.",
+          "σ = F/A, ε = Δx/x, E = σ/ε — the Young modulus belongs to the material, the stiffness to the object; Δx ∝ x/A carries both.",
           "Limit of proportionality — the force stops being proportional to the extension. Elastic limit — the sample stops returning to its original length when the load is removed. Yield point — a sudden or large ==plastic== deformation.",
-          "ΔEel = ½FΔx = the area under the force-extension graph — count squares when the graph curves, and subtract the unloading area when heating occurs.",
+          "ΔEel = ½FΔx = the area under the force-extension graph — count squares when the graph curves, subtract the unloading area when heating occurs, and multiply a stress-strain area by the ==volume==.",
         ],
       },
     ],

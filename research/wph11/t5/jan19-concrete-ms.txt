@@ -1,0 +1,81 @@
+           (MP4 is conditional on candidates using the linear sections for both
+           graphs in MP1)
+
+           Example of calculation
+                   140 ×10 6 Pa
+           E28 =                  = 4.38  1010 Pa
+                       0.0032
+                   104 ×10 6 Pa
+           E2 =                   = 3.25  1010 Pa
+                     0.0032
+
+                      4.38 ×10 10 Pa
+           E28/ E2 = 3.25 ×10 10 Pa = 1.35
+17(b)          •     Use of counting squares or approximation of the area to a series
+                     of shapes from the 28-day graph                                       (1)
+
+                      0.35  106  area under 28−day graph
+               •                                                                           (1)
+                                     0.35  106
+
+
+               •     Percentage reduction = 12.0 % to 15.0 %                               (1)          3
+
+           Example of calculation
+           E28 = (½80  106 Pa0.0019) + [½(80 + 128) Pa  106  (0.0038 
+           0.0019)] + (64 0.0001  4  106 Pa) = 299 200 J m3
+
+                                         350 000 J m−3 −299 200 J m−3
+           Percentage reduction =                                        100 = 14.5 %
+                                                  350 000 J m−3
+17(c)      •   The breaking stress/force is greater                              (1)
+
+           •   The concrete is less flexible Or the concrete is stiffer
+                                                                                 (1)
+               (Do not accept a greater Young modulus)
+
+           •   There is a smaller plastic region
+               Or the elastic region is greater
+               Or there's little change in the toughness
+               Or a change in the properties of the concrete after you've used
+               it could cause problems                                           (1)    3
+        Total for question 17                                                          10
+Question     Answer                                                                                       Mark
+Number
+18(a)            •    Weight/W/mg labelled                                                          (1)
+                 •    (Normal) reaction/contact force (accept R/N/C)                                (1)
+                 •    Friction/F                                                                    (1)
+
+                 •    Lengths R<W and F<W                                                           (1)     4
+             ( -1 off total for each additional arrowed line and MP4 conditional on MP1, 2 and 3)
+             (do not accept components of forces, even if both given and accept correct
+             direction/size by eye)
+
+                                                R
+                                   F
+
+
+
+
+                                       W
+
+18(b)(i)         •    Initially friction/drag negligible/small/less (as the velocity is low)        (1)
+                 •    See mgsin Or Wsin                                                           (1)
+                 •    mgsin = ma and the masses cancel (so a independent of m)                     (1)     3
+
+
+18(b)(ii)       •     As velocity increases, air resistance increases                               (1)
+                •     Until frictional forces = component of weight down slope                      (1)
+                •     Resultant force = 0 and there is no more acceleration (at max velocity)       (1)     3
+                      (MP2 allow frictional forces = mg sin)
+18(b)(iii)       •    A larger person would have a greater area/volume                              (1)
+
+                 •    The air resistance would be greater                                           (1)     2
+                      (accept drag)
+18(c)(i)    See  = tan1 0.2 and  = 11.3
+            Or see tan = 0.2 and  = 11.3                                                    (1)   1
+
+18(c)(ii)   Either (Energy)
+            Use of Ek = ½ mv2
+                                                                                               (1)
+            Use of trig to determine the component of weight along the slope or the vertical

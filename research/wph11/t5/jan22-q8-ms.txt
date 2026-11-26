@@ -1,0 +1,26 @@
+6          B is the only correct answer                                                             1
+           A is incorrect because a greater viscosity would reduce terminal velocity giving a
+           lower gradient
+           C is incorrect because because a greater viscosity would reduce terminal velocity
+           giving a lower gradient
+           D is incorrect because because a greater viscosity would reduce terminal velocity
+           giving a lower gradient
+7          B is the only correct answer                                                             1
+           A is incorrect because force P and R act on the same object
+           C is incorrect because force Q and S act on the same object
+           D is incorrect because forces P and S are not the same type of force.
+8          A is the only correct answer                                                             1
+           B is incorrect because doubling the diameter gives four times the cross section,
+           requiring four times the tension for the same stress.
+           C is incorrect because increasing the diameter increases the cross section,
+           requiring a greater tension for the same stress, not less
+           D is incorrect because increasing the diameter increases the cross section,
+           requiring a greater tension for the same stress, not less
+9          C is the only correct answer                                                             1
+           A is incorrect because moments must balance about the centre of mass.
+           B is incorrect because moments must balance about the left support.
+           D is incorrect because the total reaction must be equal to the weight.
+10         B is the only correct answer                                                             1
+           A is incorrect because one watt is defined as one joule per second
+           C is incorrect because a 1 N = 1 kg m s−2
+           D is incorrect because a joule is the unit for work, and work = force × distance

@@ -23,6 +23,7 @@ import { useFarPause } from "./use-far-pause";
 import { useSpecMapRegister } from "./spec-map";
 import { EditorialSectionView, figOffsetsOf } from "./spec-section-editorial";
 import { EditorialLabel, SampleBlockView } from "./sample-blocks";
+import { PdfDownloadButton } from "./pdf-download";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the notes reader, in the editorial dress.
@@ -39,7 +40,7 @@ import { EditorialLabel, SampleBlockView } from "./sample-blocks";
    as true for the newest note as for the very first */
 const SUMMARY = [
   "One section per specification point, in syllabus order, with the official statement quoted above the teaching.",
-  "Key definitions boxed for recall — the terms the specification itself uses.",
+  "Key definitions boxed for recall, the terms the specification itself uses.",
   "Data tables, displayed equations and diagrams that turn the prose into a picture.",
   "Worked examples reasoned through line by line, so the method sticks, not just the answer.",
 ];
@@ -319,13 +320,21 @@ function NotesEditorialBody({
       />
 
       <PopIn>
-        <SoftButton
-          onClick={onBack}
-          className="min-h-[calc(42px*var(--ui-scale))] px-4 py-2 text-[calc(13.5px*var(--ts-body))]"
-          ariaLabel={`Back to ${unit.code}`}
-        >
-          <ArrowLeft className="h-4 w-4" /> Back to {unit.code}
-        </SoftButton>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <SoftButton
+            onClick={onBack}
+            className="min-h-[calc(42px*var(--ui-scale))] px-4 py-2 text-[calc(13.5px*var(--ts-body))]"
+            ariaLabel={`Back to ${unit.code}`}
+          >
+            <ArrowLeft className="h-4 w-4" /> Back to {unit.code}
+          </SoftButton>
+          {/* the PDF handout — the note as a file, behind the owner's gate */}
+          <PdfDownloadButton
+            docId={doc.id}
+            title={doc.title}
+            fileName={`IAL PHYSICS — ${unit.code} ${topicLabel} — ${doc.title}.pdf`}
+          />
+        </div>
       </PopIn>
 
       {/* ————— hero ————— */}
@@ -436,7 +445,7 @@ function NotesEditorialBody({
 
           {contentsExpanded && (
             <p className="etoc-foot mt-4 hidden border-t border-ink/10 pt-4 text-[calc(11px*var(--ts-other))] leading-[1.7] text-ink-faint lg:block">
-              {firstSpec} — {lastSpec} · read in order or hop — the map in
+              {firstSpec} to {lastSpec} · read in order or hop, the map in
               the navbar tracks you either way.
             </p>
           )}
@@ -491,7 +500,7 @@ function NotesEditorialBody({
                 </h2>
               </div>
               <span className="legal-meta hidden sm:block">
-                {doc.sections.length} sections · {firstSpec} — {lastSpec}
+                {doc.sections.length} sections · {firstSpec} to {lastSpec}
               </span>
             </div>
 
@@ -526,7 +535,7 @@ function NotesEditorialBody({
                   the end of the note like a living full stop */}
               <div className="mt-4 flex items-end gap-4">
                 <p className="max-w-[72ch] flex-1 text-[calc(14px*var(--ts-body))] leading-[1.9] sm:text-[calc(14.5px*var(--ts-body))]">
-                  Tick spec points along the way — the plus beside each clause
+                  Tick spec points along the way, the plus beside each clause
                   adds them to your revision pack, assembled in syllabus order
                   and ready to print. Mark the topic as revised from its unit
                   page when you can answer the statements unaided.

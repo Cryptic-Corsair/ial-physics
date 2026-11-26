@@ -65,9 +65,9 @@ const rate = 19263 / 80; // w/min, the old t01 calibration
 const se = specWords(read("src/lib/spectra/content/notes-ph04-a.ts"));
 const sf = specWords(read("src/lib/spectra/content/notes-ph04-b.ts"));
 const sg = specWords(read("src/lib/spectra/content/notes-ph04-c.ts"));
-const sh = specWords(read("src/lib/spectra/content/notes-ph05-a.ts"));
-const si = specWords(read("src/lib/spectra/content/notes-ph05-b.ts"));
-const sj = specWords(read("src/lib/spectra/content/notes-ph05-c.ts"));
+const sh = specWords(read("src/lib/spectra/content/notes-ph05r-a.ts"));
+const si = specWords(read("src/lib/spectra/content/notes-ph05r-b.ts"));
+const sj = specWords(read("src/lib/spectra/content/notes-ph05r-c.ts"));
 
 const rows: [string, number, number][] = [
   ["t01 Forces  ", sum(sa, 1, 3) + sum(sb, 4, 6) + sum(sa2, 7, 8) + sum(sb2, 9, 11), landings[0]],

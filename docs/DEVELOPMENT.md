@@ -472,6 +472,54 @@ browser → platform edge (*.space-z.ai) → Caddy :81 → Next dev :3000
 5. Home page: bands seamless, blobs static after entrance, glass footer and
    control panel legible in all labs.
 
+## 13. PDF handouts — the print room and the password gate
+
+Every note carries a **Download PDF** control (the editorial and gallery
+readers both wire `components/club/pdf-download.tsx` into their top row).
+The note exists as a real, committed file at `public/pdf/<docId>.pdf`, and
+the control hands it out **only behind the owner's password gate** (the
+word is checked client-side; one correct entry unlocks every note for the
+session via `sessionStorage`, a fresh tab asks again).
+
+The pipeline that builds the files:
+
+1. **The print room** — `src/app/print/[docId]/page.tsx` (noindexed, never
+   linked) renders the note through `components/print/note-paper.tsx` +
+   `print-paper.css`: a bespoke A4 paper, deliberately not the site's
+   editorial dress and not a stock print stylesheet — Fredoka for every
+   label, numeral and heading (served from `public/fonts/fredoka-var.woff2`),
+   Arial for the reading, one candy accent per spec section walking the
+   hard-coded wheel, KaTeX and the site's own `figureArt` diagrams reused
+   as-is. Its layout is fixed at the exact 182 mm measure of an A4 page with
+   14 mm margins and an 18 mm foot; the sheet's own `@page` rule declares
+   those margins because the app-wide print CSS otherwise imposes 15 mm.
+2. **The generator** — `bun scripts/gen-note-pdfs.mjs` (or `bun run pdf:gen`)
+   walks the card index in `notes-meta.ts`, opens each print room on a
+   server that is already up (`bun run dev` on :3000), waits for the
+   sheet's `[data-ready="fonts"]` handshake, and lifts the page into
+   `public/pdf/<docId>.pdf` with `page.pdf` — A4, backgrounds on, and a
+   running footer (site wordmark · unit · topic — title, then `page N of M`).
+3. **The files are committed artifacts** — regenerate after ANY content
+   change (`bun scripts/gen-note-pdfs.mjs [ids…]` regenerates selectively)
+   and commit the new PDFs, or the downloads serve stale notes. The
+   generator script lives in `scripts/` (gitignored as session tooling) —
+   force-add it (`git add -f scripts/gen-note-pdfs.mjs`) when porting a
+   push, or re-create it from this section.
+
+Layout rules that keep the paper precise (edit `print-paper.css`, then
+regenerate and re-eyeball): the cover is its own title page, the contents
+index its own second page, every spec section opens a fresh page
+(`break-before: page`); worked example cards may flow across a page (the
+opener — header, title, question — never parts from the steps, and each
+fragment keeps its full border via `box-decoration-break: clone`); def /
+eq / note / wow / table rows / figure plates / answer strips never split.
+
+QA for this pipeline: `bunx tsc --noEmit`, the guardrail suites, then
+generate and inspect — every PDF must open with its cover and contents
+pages, carry the running footer, hold zero blank pages and zero orphaned
+worked headers, and spot-eyeball one worked card, one table and one
+figure page per document.
+
 ---
 
 *Keep this file honest: when the architecture or the rules change, update it

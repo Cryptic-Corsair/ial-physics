@@ -1,0 +1,96 @@
+ Question
+ Number
+                                         Answer                                                         Additional Guidance                   Mark
+14(a)       The total momentum (of a system) is constant                  (1)
+                                                                                                                                               2
+            When no external forces act (dependent on MP1)
+            Or In a closed system (dependent on MP1)                      (1)
+
+14(b)                    1
+            Use of 𝐸𝐸k = 2 𝑚𝑚𝑣𝑣 2 to determine initial velocity of rock         Example calculation
+                                                                          (1)
+            B
+                                                                                                                                               4
+                                                                                     2 × 4.1 × 103 J
+            Use of 𝑝𝑝 = 𝑚𝑚𝑚𝑚                                                  𝑣𝑣B = �                = 12.1 m s −1
+                                                                          (1)            56  kg
+            Use of principle of conservation of momentum
+                                                                          (1) 𝑝𝑝B = 56 kg × 12.1 m s−1 = 678 kg m s−1
+            𝑣𝑣 = 11 m s −1
+                                                                          (1) 𝑝𝑝A = 43 kg × 7.8 m s −1 = 335 kg m s −1
+
+                                                                                335 kg m s −1 + 678 kg m s −1 = 43 kg × 𝑣𝑣A + 530 kg m s −1
+
+                                                                                        1013 kg m s−1 − 530 kg m s −1
+                                                                                𝑣𝑣A =                                 = 11.2 m s −1
+                                                                                                   43 kg
+
+            Total for question 14                                                                                                              6
+ Question
+ Number
+                                           Answer                                                  Additional Guidance            Mark
+15(a)       Use of 𝑊𝑊 = 𝑚𝑚𝑚𝑚                                         (1) Example calculation
+
+            Use of 𝐹𝐹 = 𝑘𝑘∆𝑥𝑥 to determine k                         (1) 0.200 kg × 9.81 N kg −1 = 1.962 N
+
+            Use of 𝐹𝐹 = 𝑘𝑘∆𝑥𝑥 to determine weight of ball            (1)               1.962 N
+                                                                           𝑘𝑘 =                     = 15.70 N m−1
+                                                                                  0.375 m − 0.250 m
+            𝑊𝑊 = 0.71 N                                              (1)                                                           4
+                                                                                           −1
+                                                                           𝐹𝐹 = 15.70 N m       × (0.295 m − 0.250 m) = 0.707 N
+
+15(b)       Elastic strain energy is equal to the area under graph
+            Or k is constant (because the gradient is constant)      (1)
+                                 1                  𝐹𝐹
+            Area under graph = 𝐹𝐹∆𝑥𝑥 and ∆𝑥𝑥 =
+                                 2                  𝑘𝑘
+                       1                  𝐹𝐹
+            Or 𝐸𝐸el = 2 𝐹𝐹∆𝑥𝑥 and ∆𝑥𝑥 = 𝑘𝑘                           (1)
+
+                                         𝐹𝐹 2
+            (So) elastic strain energy = 2𝑘𝑘                         (1)                                                           3
+
+
+            Total for question 15                                                                                                  7
+ Question
+                                      Answer                                                      Additional Guidance                       Mark
+ Number
+16(a)(i)    Stiffness                                             (1)                                                                        1
+
+                          𝜎𝜎
+16(a)(ii)   Use of 𝐸𝐸 = 𝜀𝜀                                        (1) Example calculation
+
+                          ∆𝑥𝑥                                     (1)          150 × 106 Pa
+            Use of 𝜀𝜀 =                                                 𝜀𝜀 =                = 7.89 × 10−3
+                           𝑥𝑥                                                   19 × 109 Pa
+            ∆𝑥𝑥 = 3.6 × 10−3 m                                    (1) ∆𝑥𝑥 = 7.89 × 10−3 × 0.45 m = 3.55 × 10−3 m
+
+            New length = 0.446 m                                  (1) New length = 0.45 m − 3.55 × 10−3 m = 0.446 m                          4
+
+
+16(b)       Use of 𝜎𝜎 = 𝐴𝐴
+                          𝐹𝐹                                      (1) Example calculation
+
+                                                                                330 × 103 N
+            Breaking stress of running blade = 390 Mpa                  𝜎𝜎 =                 = 3.88 × 108 Pa
+                                                                               8.5 × 10−4 m2
+            Or
+            Breaking force for glass fibre = 272 kN                     388 MPa ≈ 400 MPa, so the running blade is made from carbon fibre
+            Or
+            Breaking force for carbon fibre = 340 kN
+            Or
+            Breaking force for hybrid core = 289 kN               (1)
+
+            Comparison of breaking stress with value from table
+            and consistent conclusion
+            Or
+            Comparison of calculated breaking force for carbon
+            fibre with 330 kN and consistent conclusion           (1)                                                                        3
+
+
+            Total for question 16                                                                                                            8
+ Question
+                                       Answer                                                 Additional Guidance                        Mark
+ Number
+17(a)       Calculates volume of one lifting bag                (1) Example calculation

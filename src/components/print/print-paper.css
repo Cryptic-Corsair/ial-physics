@@ -1,0 +1,930 @@
+/* ═══════════════════════════════════════════════════════════════
+   IAL PHYSICS · the PDF paper — the note set as its own document.
+
+   v3, redesigned after the first files came back disappointing.
+   The model now is the revision-handout genre the students already
+   read every day (the Save My Exams look): a clean white page, ONE
+   accent colour per document, numbered sections that flow straight
+   down the page instead of each squatting on a page of its own,
+   running furniture on every sheet (header line + YOUR NOTES tab
+   above, breadcrumb + page numbers below), a contents cover and a
+   ruled notes box to scribble in.
+
+   The accent is the doc's own, from the map in note-paper.tsx —
+   the whole sheet dresses in that single pair (a candy for fills,
+   a deep tone for text-on-white), so a topic is recognisable by
+   its colour at a shelf's distance and no page is a rainbow.
+
+   Fonts stay the brief's own pair: Fredoka for every label,
+   number and heading, Arial for the reading. KaTeX's serif faces
+   never reach the file — every math span is forced onto the
+   sheet's Arial, so the working reads as one voice.
+
+   Everything is fixed, not themed: the sheet must render
+   identically on any machine and any mood, so no room tokens are
+   read — the theme vars the site's SVG diagrams ride (--color-ink
+   and friends) are re-declared locally, scoped to the paper, in
+   the paper's own ink. Served from /fonts/fredoka-var.woff2 so it
+   never depends on the app's hashed font URLs.
+   ═══════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: "Fredoka Paper";
+  src: url("/fonts/fredoka-var.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: block;
+}
+
+/* the paper's own page geometry — the top margin carries the
+   running header the generator paints there, the bottom margin
+   the breadcrumb + page numbers. This sheet loads only on the
+   print room's route, so the site's own print behaviour is
+   untouched; the values must stay in step with the generator's
+   page.pdf margin. */
+@page {
+  margin: 16mm 14mm 17mm 14mm;
+}
+
+/* the app paints its cream mood on <body>; the paper's margins must
+   print white, so the room repaints the canvas behind the sheet */
+body:has(.print-paper) {
+  background: #ffffff;
+}
+
+/* ————— the sheet —————
+   A4 with 14 mm side margins leaves a 182 mm measure; the sheet is
+   laid out at exactly that width, so what you see is what the PDF
+   paginates. */
+.print-paper {
+  /* the paper's own palette — the site's SVG diagrams resolve
+     their theme vars against this scope */
+  --color-ink: #26292d;
+  --color-ink-soft: #4d5359;
+  --color-ink-faint: #8a8f96;
+  --color-paper: #ffffff;
+  --rooms-hairline: #e4e7eb;
+  --rooms-hairline-soft: #ecEfF2;
+  --legal-rust: #d9480f;
+  --font-body: Arial, "Liberation Sans", "Helvetica Neue", sans-serif;
+  --font-display: "Fredoka Paper", Arial, "Liberation Sans", sans-serif;
+
+  /* the doc's own accent, set from the component — one candy + one
+     deep tone for the whole document */
+  --acc: #339af0;
+  --acc-deep: #1971c2;
+
+  width: 182mm;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #26292d;
+  font-family: Arial, "Liberation Sans", "Helvetica Neue", sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.print-paper * {
+  box-sizing: border-box;
+}
+
+/* the figures ride --font-body inside their SVG text */
+.print-paper svg { max-width: 100%; }
+
+/* ————— math, one voice —————
+   KaTeX builds its spans from its own serif faces, which clash with
+   the sheet. The sheet forces every KaTeX span onto the body face:
+   the structure (fractions, radicals, super and subscripts) is
+   em-relative and survives the swap; the glyphs become Arial's own. */
+.print-paper .katex,
+.print-paper .katex span {
+  font-family: Arial, "Liberation Sans", "Helvetica Neue", sans-serif !important;
+}
+.print-paper .math-chip .katex { font-size: 1.02em; }
+
+/* the paper's own highlight — the note's ==marked== terms set as a
+   flat highlighter underline in the document's accent */
+.print-paper mark {
+  background: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--acc) 26%, transparent) 34%,
+    transparent 34%
+  );
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+/* ————— shared furniture ————— */
+
+.pp-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.pp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+/* ————— the cover —————
+   One white opening page in the genre's own dress: the wordmark
+   row, the accent kicker, the big title, the honest counts, the
+   contents, the about, and a ruled box to write in. */
+
+.pp-cover {
+  padding-top: 1mm;
+  break-after: page;
+}
+
+.pp-cover-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pp-cover-top .pp-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.pp-cover-top .pp-wordmark b {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: 0.13em;
+  color: #26292d;
+}
+
+.pp-cover-top .pp-cred {
+  margin-left: 4px;
+  padding-left: 12px;
+  border-left: 1.5px solid var(--rooms-hairline);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8f96;
+  white-space: nowrap;
+}
+
+.pp-cover-top .pp-unit-pill {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  color: #ffffff;
+  background: var(--acc-deep);
+  border-radius: 999px;
+  padding: 5px 13px;
+  white-space: nowrap;
+}
+
+.pp-kicker {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--acc-deep);
+}
+
+.pp-cover h1 {
+  margin: 7px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 37px;
+  line-height: 1.09;
+  letter-spacing: -0.01em;
+  color: #26292d;
+  max-width: 20ch;
+}
+
+/* the short accent bar under the title — the sheet's own signature */
+.pp-cover-rule {
+  margin-top: 11px;
+  width: 64px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--acc);
+}
+
+.pp-cover-meta {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.pp-cover-meta .pp-chip {
+  background: #f2f4f6;
+  color: #4d5359;
+}
+
+.pp-cover-meta .pp-chip b {
+  font-weight: 600;
+  color: var(--acc-deep);
+}
+
+/* the contents — two columns of numbered rows, the genre's own
+   "1.1 / 1.2" index */
+.pp-toc {
+  margin-top: 16px;
+}
+
+.pp-toc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.pp-toc-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16.5px;
+  color: #26292d;
+}
+
+.pp-toc-count {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8f96;
+}
+
+.pp-toc-rows {
+  columns: 2;
+  column-gap: 34px;
+  margin-top: 4px;
+}
+
+.pp-toc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 6.5px 2px;
+  border-bottom: 1px solid var(--rooms-hairline-soft);
+  break-inside: avoid;
+}
+
+.pp-toc-row:last-child { border-bottom: 0; }
+
+.pp-toc-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  min-width: 3.4ch;
+  flex: none;
+  color: var(--acc-deep);
+}
+
+.pp-toc-row span.t {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: #3d4247;
+}
+
+/* the about — the note's opening words, two columns */
+.pp-intro {
+  margin-top: 14px;
+}
+
+.pp-intro .pp-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #8a8f96;
+}
+
+.pp-intro-cols {
+  columns: 2;
+  column-gap: 34px;
+}
+
+.pp-intro-cols p {
+  margin: 0 0 8px;
+  font-size: 11.5px;
+  line-height: 1.62;
+  color: #4d5359;
+}
+
+/* the ruled notes box — the sheet's own "your notes", the place a
+   printed page earns its keep */
+.pp-scribble {
+  margin-top: 14px;
+  break-inside: avoid;
+}
+
+.pp-scribble .pp-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #8a8f96;
+}
+
+.pp-scribble-lines {
+  border: 1.5px dashed #ccd2d8;
+  border-radius: 12px;
+  height: 34mm;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(8mm - 1px),
+    #e4e8ec calc(8mm - 1px),
+    #e4e8ec 8mm
+  );
+  background-position: 0 2mm;
+  background-repeat: no-repeat;
+  background-size: 100% calc(100% - 2mm);
+}
+
+/* the source line — the colophon, sitting above the ruled box so
+   the box is the cover's last word */
+.pp-source {
+  margin-top: 12px;
+  font-size: 9.5px;
+  line-height: 1.5;
+  color: #98a0a8;
+  break-inside: avoid;
+}
+
+/* ————— the sections —————
+   The genre's one big lesson: content FLOWS. A section header is
+   a typographic event, not a page of its own — the text runs on
+   down the sheet and no page ends half empty. */
+
+.pp-section {
+  padding-top: 10px;
+}
+
+.pp-section + .pp-section {
+  padding-top: 16px;
+}
+
+.pp-sec-head {
+  break-inside: avoid;
+  break-after: avoid;
+  margin-bottom: 10px;
+}
+
+.pp-sec-eyebrow {
+  margin-bottom: 3px;
+}
+
+.pp-sec-eyebrow .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-sec-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+  color: #26292d;
+}
+
+.pp-sec-head h2 .pp-sec-no {
+  color: var(--acc-deep);
+  margin-right: 6px;
+}
+
+/* the thin accent rule under a section header — the header's own
+   signature, quiet and full-width */
+.pp-sec-rule {
+  margin-top: 8px;
+  height: 2px;
+  background: var(--rooms-hairline-soft);
+  position: relative;
+}
+
+.pp-sec-rule::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 64px;
+  border-radius: 2px;
+  background: var(--acc);
+}
+
+/* the statement panel — the spec's own words, quoted quiet */
+.pp-statement {
+  margin-top: 10px;
+  border-left: 3px solid var(--acc);
+  border-radius: 0 10px 10px 0;
+  padding: 9px 14px 10px;
+  background: color-mix(in oklab, var(--acc) 5%, #ffffff);
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.pp-statement .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-statement p {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #33383d;
+}
+
+.pp-blocks {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* ————— the blocks ————— */
+
+.pp-p {
+  margin: 0;
+  orphans: 3;
+  widows: 3;
+}
+
+.pp-h {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 4px;
+  break-after: avoid;
+}
+
+.pp-h i {
+  width: 4px;
+  height: 17px;
+  border-radius: 2px;
+  flex: none;
+  background: var(--acc);
+}
+
+.pp-h h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3;
+  color: #26292d;
+}
+
+.pp-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5px;
+}
+
+.pp-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  break-inside: avoid;
+}
+
+.pp-bullets li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  flex: none;
+  margin-top: 7.5px;
+  background: var(--acc);
+}
+
+/* the mark-scheme callout — a quiet neutral plate, the accent only
+   in its label, so a page of these never turns confetti */
+.pp-note {
+  border: 1px solid var(--rooms-hairline);
+  background: #f6f8f9;
+  border-radius: 10px;
+  padding: 9px 13px 10px;
+  break-inside: avoid;
+}
+
+.pp-note .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-note p {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  line-height: 1.56;
+  color: #4d5359;
+}
+
+/* the key term — the accent's own plate */
+.pp-def {
+  background: color-mix(in oklab, var(--acc) 8%, #ffffff);
+  border-radius: 11px;
+  padding: 10px 14px 11px;
+  break-inside: avoid;
+}
+
+.pp-def .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-def h4 {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: #26292d;
+}
+
+.pp-def p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #3d4247;
+}
+
+/* the display equation — a whisper of the accent, centred */
+.pp-eq {
+  background: color-mix(in oklab, var(--acc) 4%, #ffffff);
+  border: 1px solid color-mix(in oklab, var(--acc) 14%, #ffffff);
+  border-radius: 11px;
+  padding: 11px 14px;
+  text-align: center;
+  break-inside: avoid;
+}
+
+.pp-eq .pp-eq-line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: #26292d;
+}
+
+.pp-eq .pp-eq-note {
+  margin-top: 5px;
+  font-size: 11.5px;
+  font-style: italic;
+  color: #6f757c;
+}
+
+/* the key idea — solid accent presence, the one loud plate */
+.pp-wow {
+  background: color-mix(in oklab, var(--acc) 11%, #ffffff);
+  border-left: 3px solid var(--acc-deep);
+  border-radius: 0 11px 11px 0;
+  padding: 9px 14px 10px;
+  break-inside: avoid;
+}
+
+.pp-wow .pp-label {
+  color: var(--acc-deep);
+}
+
+.pp-wow p {
+  margin: 3px 0 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #26292d;
+}
+
+/* ————— the table ————— */
+
+.pp-table-wrap {
+  break-inside: avoid;
+  margin: 0;
+  padding: 0;
+}
+
+.pp-table-cap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+  break-after: avoid;
+}
+
+.pp-table-cap i {
+  width: 18px;
+  height: 4px;
+  border-radius: 2px;
+  flex: none;
+  background: var(--acc);
+}
+
+.pp-table-cap h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: #26292d;
+}
+
+.pp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--rooms-hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 12.5px;
+}
+
+.pp-table th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  background: color-mix(in oklab, var(--acc) 10%, #ffffff);
+  color: var(--acc-deep);
+  border-bottom: 1px solid color-mix(in oklab, var(--acc) 22%, #ffffff);
+}
+
+.pp-table td {
+  vertical-align: top;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--rooms-hairline-soft);
+  color: #4d5359;
+  line-height: 1.52;
+}
+
+.pp-table tr:last-child td { border-bottom: 0; }
+
+.pp-table td:first-child {
+  font-weight: 700;
+  color: #26292d;
+}
+
+.pp-table tr { break-inside: avoid; }
+
+/* ————— the worked example —————
+   The genre's own exam-card: a solid accent header strip, the
+   question on its tint, the reasoning numbered, and the answer on
+   a solid strip of the deep tone — the card's one loud move, so
+   leafing pages finds every final line at a glance. */
+
+.pp-worked {
+  border: 1.5px solid var(--acc-deep);
+  border-radius: 12px;
+  /* NO overflow: hidden here — an overflow-hidden box cannot
+     fragment across pages in Chromium, so a long card near a page
+     end would jump whole to the next sheet and leave the old page
+     half empty. The strip rounds its own top corners instead. */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.pp-worked-opener {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.pp-worked-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  background: var(--acc-deep);
+  color: #ffffff;
+  border-radius: 10.5px 10.5px 0 0;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.pp-worked-head .pp-label {
+  color: #ffffff;
+  font-size: 9.5px;
+}
+
+.pp-worked-head .steps-count {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+}
+
+.pp-worked-opener h4 {
+  margin: 0;
+  padding: 10px 15px 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  line-height: 1.3;
+  color: #26292d;
+}
+
+.pp-worked-q {
+  margin: 8px 15px 0;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: color-mix(in oklab, var(--acc) 6%, #ffffff);
+  break-inside: avoid;
+}
+
+.pp-worked-q p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.56;
+  color: #33383d;
+}
+
+.pp-worked-steps {
+  list-style: none;
+  margin: 8px 15px 0;
+  padding: 0;
+}
+
+.pp-worked-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0 5px;
+  border-bottom: 1px solid var(--rooms-hairline-soft);
+  break-inside: avoid;
+}
+
+.pp-worked-steps li:last-child { border-bottom: 0; }
+
+.pp-worked-steps .n {
+  width: 22px;
+  flex: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  padding-top: 1px;
+  color: var(--acc-deep);
+}
+
+.pp-worked-steps .s { min-width: 0; }
+
+/* the verbatim mark-scheme note rides the site's own component —
+   the sheet re-inks it here: quieter, one calm measure */
+.pp-worked-ms { margin: 8px 15px 0 47px; }
+
+.pp-worked-ms p {
+  font-size: 12px !important;
+  line-height: 1.62 !important;
+}
+
+.pp-worked-ms em { font-weight: 600; }
+
+.pp-worked-ms span.font-display {
+  font-size: 9.5px !important;
+  letter-spacing: 0.09em !important;
+}
+
+/* the answer — the card's one loud strip */
+.pp-worked-answer {
+  margin: 10px 15px 13px;
+  padding: 9px 13px 10px;
+  border-radius: 9px;
+  background: var(--acc-deep);
+  color: #ffffff;
+  break-inside: avoid;
+}
+
+.pp-worked-answer .pp-label {
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.pp-worked-answer p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ————— the method list ————— */
+
+.pp-steps {
+  background: #f6f8f9;
+  border-radius: 11px;
+  padding: 10px 14px 4px;
+  break-inside: avoid;
+}
+
+.pp-steps-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 3px;
+}
+
+.pp-steps-head h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: #26292d;
+}
+
+.pp-steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pp-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0 6px;
+  border-top: 1px solid var(--rooms-hairline-soft);
+  break-inside: avoid;
+}
+
+.pp-steps li:first-child { border-top: 0; }
+
+.pp-steps .n {
+  width: 22px;
+  flex: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  padding-top: 1px;
+  color: var(--acc-deep);
+}
+
+.pp-steps .t b {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12.5px;
+  color: #26292d;
+}
+
+.pp-steps .t p {
+  margin: 1px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #4d5359;
+}
+
+/* ————— the figure plate ————— */
+
+.pp-fig {
+  border: 1px solid var(--rooms-hairline);
+  border-radius: 12px;
+  padding: 9px 12px 8px;
+  break-inside: avoid;
+}
+
+.pp-fig .pp-fig-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.pp-fig .pp-label {
+  color: var(--acc-deep);
+  background: color-mix(in oklab, var(--acc) 9%, #ffffff);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 8.5px;
+}
+
+.pp-fig .pp-fig-body {
+  display: flex;
+  justify-content: center;
+}
+
+.pp-fig .pp-fig-body > * { width: 100%; }
+
+.pp-fig figcaption {
+  margin: 6px auto 0;
+  max-width: 84ch;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #8a8f96;
+}

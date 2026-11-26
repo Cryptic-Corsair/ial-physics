@@ -27,6 +27,7 @@ import {
   GAL_ACCENT,
   figOffsetsOf,
 } from "./gallery-section";
+import { PdfDownloadButton } from "./pdf-download";
 
 /* ═══════════════════════════════════════════════════════════════
    IAL PHYSICS · the notes reader, in the gallery dress.
@@ -402,20 +403,28 @@ function NotesGalleryBody({
 
       {/* ————— back ————— */}
       <PopIn>
-        <button
-          type="button"
-          onClick={onBack}
-          aria-label={`Back to ${unit.code}`}
-          className="group inline-flex min-h-[calc(42px*var(--ui-scale))] cursor-pointer items-center gap-2.5 rounded-full pr-2 pl-1 font-display text-[calc(13px*var(--ts-body))] font-semibold text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2"
-        >
-          <span
-            className="grid h-[calc(30px*var(--ui-scale))] w-[calc(30px*var(--ui-scale))] place-items-center rounded-full border transition-colors group-hover:border-ink/30"
-            style={{ borderColor: hair(16) }}
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <button
+            type="button"
+            onClick={onBack}
+            aria-label={`Back to ${unit.code}`}
+            className="group inline-flex min-h-[calc(42px*var(--ui-scale))] cursor-pointer items-center gap-2.5 rounded-full pr-2 pl-1 font-display text-[calc(13px*var(--ts-body))] font-semibold text-ink-soft transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            <ArrowLeft className="h-[14px] w-[14px]" strokeWidth={2.1} />
-          </span>
-          Back to {unit.code}
-        </button>
+            <span
+              className="grid h-[calc(30px*var(--ui-scale))] w-[calc(30px*var(--ui-scale))] place-items-center rounded-full border transition-colors group-hover:border-ink/30"
+              style={{ borderColor: hair(16) }}
+            >
+              <ArrowLeft className="h-[14px] w-[14px]" strokeWidth={2.1} />
+            </span>
+            Back to {unit.code}
+          </button>
+          {/* the PDF handout — the note as a file, behind the owner's gate */}
+          <PdfDownloadButton
+            docId={doc.id}
+            title={doc.title}
+            fileName={`IAL PHYSICS — ${unit.code} ${topicLabel} — ${doc.title}.pdf`}
+          />
+        </div>
       </PopIn>
 
       {/* ————— the hero ————— */}
@@ -492,7 +501,7 @@ function NotesGalleryBody({
                 className="font-display text-[calc(10.5px*var(--ts-other))] font-semibold tracking-[0.18em] uppercase tabular-nums"
                 style={{ color: GAL_ACCENT }}
               >
-                {firstSpec} — {lastSpec}
+                {firstSpec} to {lastSpec}
               </span>
               <button
                 type="button"
@@ -679,7 +688,7 @@ function NotesGalleryBody({
           <div className="mt-5 flex items-end gap-4">
             <p className="max-w-[60ch] flex-1 text-[calc(14.5px*var(--ts-body))] leading-[1.9] text-ink-soft">
               Every spec point of {topicLabel}, walked once. Tick spec
-              points along the way — the quiet square beside each section
+              points along the way, the quiet square beside each section
               adds them to your revision pack, assembled in syllabus order
               and ready to print. Mark {topicLabel} as revised from its
               unit page when you can answer the statements unaided.

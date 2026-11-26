@@ -14,9 +14,9 @@ import { SECTIONS_PH01_D } from "./content/notes-ph01-d";
 import { SECTIONS_PH04_A } from "./content/notes-ph04-a";
 import { SECTIONS_PH04_B } from "./content/notes-ph04-b";
 import { SECTIONS_PH04_C } from "./content/notes-ph04-c";
-import { SECTIONS_PH05_A } from "./content/notes-ph05-a";
-import { SECTIONS_PH05_B } from "./content/notes-ph05-b";
-import { SECTIONS_PH05_C } from "./content/notes-ph05-c";
+import { SECTIONS_PH05R_A } from "./content/notes-ph05r-a";
+import { SECTIONS_PH05R_B } from "./content/notes-ph05r-b";
+import { SECTIONS_PH05R_C } from "./content/notes-ph05r-c";
 import { NOTES_META } from "./notes-meta";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -49,7 +49,13 @@ import { NOTES_META } from "./notes-meta";
    the third law and momentum, conservation, moments and the
    principle of moments), teaching every statement the way the mark
    schemes mark it; the old notes-ph01-c file stays on disk
-   untouched, no longer imported.
+   untouched, no longer imported. The elasticity statements 27–32
+   (the owner's Topic 5, Hooke's law, stress and strain) were rebuilt
+   the same extensive way on 2026-11-25 (notes-ph05r-a/b/c — one part
+   per statement pair: Hooke's law and stress/strain, the graphs and
+   their limit points, Core Practical 3 and the elastic strain
+   energy), mined from the complete 2019–2026 corpus — the old
+   notes-ph05-a/b/c files stay on disk untouched, no longer imported.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ————— kept in step with notes-meta.ts —————
@@ -102,18 +108,18 @@ export const NOTES_DOCS: NotesDoc[] = [
     id: "wph11-t02",
     unitCode: "WPH11",
     topicId: "t02",
-    kicker: "Physics Unit 1 · Moments and momentum — the WPH11 note, statement by statement",
+    kicker: "Physics Unit 1 · Moments and momentum, the WPH11 note, statement by statement",
     title: "Moments and momentum",
     source:
-      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
+      "the WPH11 Moments and momentum note, built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     intro: [
       {
         k: "p",
-        text: "This note covers the five statements from ==Newton's third law== to the ==principle of moments==, in specification order — the ==force-pair rules== and their five properties, ==momentum== defined as p = mv, the ==principle of conservation of linear momentum== — related to ==Newton's laws of motion==, exactly as the statement asks — and its application in one dimension, then the ==moment of a force==, the ==centre of gravity== of an extended body and the ==principle of moments== in equilibrium. Each section states the specification point first, then teaches it ==the way a student reads it==: one short sentence per bullet, each scenario built up step by step — the situation first, then the forces, then what follows, then the reason in the exam keywords, then ==Therefore== — with nothing a student would stumble over and nothing off track.",
+        text: "This note covers the five statements from ==Newton's third law== to the ==principle of moments==, in specification order, the ==force-pair rules== and their five properties, ==momentum== defined as p = mv, the ==principle of conservation of linear momentum== related to ==Newton's laws of motion== exactly as the statement asks, and its application in one dimension, then the ==moment of a force==, the ==centre of gravity== of an extended body and the ==principle of moments== in equilibrium. Each section states the specification point first, then teaches it ==the way a student reads it==: one short sentence per bullet, each scenario built up step by step, the situation first, then the forces, then what follows, then the reason in the exam keywords, then ==Therefore==, with nothing a student would stumble over and nothing off track.",
       },
       {
         k: "p",
-        text: "Every situation from the papers — the cable car's weight, the person on the chair, the box sliding down a ramp, the ejecting rocket, the jumping athlete, the magnetic gliders, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the flagpole on its wire, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Mark scheme wording, Examiner's report and Not accepted notes collect the traps beside the teaching.",
+        text: "Every situation from the papers, the cable car's weight, the person on the chair, the box sliding down a ramp, the ejecting rocket, the jumping athlete, the magnetic gliders, the child on the skateboard, the separating spaceship, the popping kernel, the pedal at an angle, the parasol in the wind, the stone on the step, the flagpole on its wire, the bridge with the lorry, the crane and its counterweight, the loft ladder, the coat hook, the book overhanging a shelf, is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row==, a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Mark scheme wording, Examiner's report and Not accepted notes collect the traps beside the teaching.",
       },
     ],
     sections: [...SECTIONS_PH02R_A, ...SECTIONS_PH02R_B, ...SECTIONS_PH02R_C],
@@ -162,21 +168,21 @@ export const NOTES_DOCS: NotesDoc[] = [
     id: "wph11-t05",
     unitCode: "WPH11",
     topicId: "t05",
-    kicker: "Physics Unit 1 · Hooke's law, stress and strain — the WPH11 note, statement by statement",
+    kicker: "Physics Unit 1 · Hooke's law, stress and strain, the WPH11 note, statement by statement",
     title: "Hooke's law, stress and strain",
     source:
-      "the WPH11 solid-materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2020–2024",
+      "the WPH11 solid-materials note, built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     intro: [
       {
         k: "p",
-        text: "This note covers the six elasticity statements of WPH11 Unit 1, in specification order: ==Hooke's law== (ΔF = kΔx) with the ==stiffness of the object==, ==stress== and ==strain== and the ==Young modulus== — the ratio of stress to strain ==for a material== — the ==force-extension== and ==force-compression== graphs with their ==limit points==, the ==stress-strain== graphs and the ==breaking stress==, ==Core Practical 3==, the Young modulus of a wire, and the ==elastic strain energy==, ΔEel = ½FΔx and the area under the graph. Each section states the specification point first, then teaches it ==the way the mark schemes mark it==: the ==equation stated first== and unpacked in a sentence, the working symbols — =, ×, ÷, >, < — inside the sentences, and every quantity named with its owner — the stiffness of the object, the Young modulus of the material.",
+        text: "This note covers the six elasticity statements of WPH11 Unit 1, in specification order. ==Hooke's law== (ΔF = kΔx) with the ==stiffness of the object==, springs in series and in parallel, stiffness read from a change in force and the matching change in length. ==Stress== and ==strain== and the ==Young modulus==, the ratio of stress to strain ==for a material==. The ==force-extension== and ==force-compression== graphs with their ==limit points==, the ==stress-strain== graphs and the ==breaking stress==. ==Core Practical 3==, the Young modulus of a wire. And the ==elastic strain energy==, ΔEel = ½FΔx and the area under the graph. Each section states the specification point first, then teaches it ==the way a student reads it==. One short sentence per bullet, each scenario built up step by step, the situation first, then the law, then what follows, then the reason in the exam keywords, then ==Therefore==, with nothing a student would stumble over and nothing off track.",
       },
       {
         k: "p",
-        text: "Every situation from the papers — an elastic cord on an air track, a nylon rope in a pulley system, a spring loaded past its elastic limit, a steel cable at its elastic limit, a metal rod under compression, spider silk against steel, two Young modulus experiments, an electromagnet's falling load, a rubber band's hysteresis loop — is ==described first==, in its own subsection, the way it behaves. The ==worked example cards== then sit together at the end of each section, ==folded to one row== — a click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Not accepted notes collect the general traps.",
+        text: "Every situation from the papers is ==described first==, in its own subsection, the way it behaves. An elastic cord on an air track, a nylon rope in a pulley system, the spring with the ball and the 200 g mass, the pinball launcher, the force meter on two strings, the trampoline springs, the stainless steel wire, the constantan wire, the tugboat rope, the violin string, the fishing line, the steel and aluminium strands, a spring loaded past its elastic limit, a steel cable at its elastic limit, the titanium alloy, the stunt harness cable, the reinforced concrete, the concrete samples as they dry, the running blade, spider silk against steel, two Young modulus experiments, the toffee bar and the biscuit bar, an electromagnet's falling load, the rubber band's hysteresis loop, the brick under compression, the bungee jumper, the climber's rope, the toaster springs. The ==worked example cards== then sit together at the end of each section, ==folded to one row==. A click opens the question as the paper sets it, ==with the paper and question number on it==, one marking point per step, and the answer sealed underneath. The ==diagrams== draw each graph and each setup the way the papers draw them, from the loading curve and the series/parallel spring pair to the unloading line, the hysteresis loop and the energy strip. The mark schemes' ==rejected wordings== are quoted inside the cards, and the Mark scheme wording, Examiner's report and Not accepted notes collect the traps beside the teaching.",
       },
     ],
-    sections: [...SECTIONS_PH05_A, ...SECTIONS_PH05_B, ...SECTIONS_PH05_C],
+    sections: [...SECTIONS_PH05R_A, ...SECTIONS_PH05R_B, ...SECTIONS_PH05R_C],
   },
 ];
 

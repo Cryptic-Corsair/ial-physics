@@ -84,6 +84,29 @@ export function Bookmark(p: IcoProps) {
   );
 }
 
+/* a download — an arrow landing in a tray (the PDF handout) */
+export function Download(p: IcoProps) {
+  return (
+    <Ico {...p}>
+      <path d="M12 4.4 V14" />
+      <path d="M7.7 10.3 12 14.4 16.3 10.3" />
+      <path d="M4.6 18.9 h14.8" strokeWidth={2.2} />
+    </Ico>
+  );
+}
+
+/* a key — the password that unlocks the PDF */
+export function Key(p: IcoProps) {
+  return (
+    <Ico {...p}>
+      <circle cx="8.3" cy="12" r="3.9" />
+      <path d="M12.2 12 H20" />
+      <path d="M16.2 12 v2.4" strokeWidth={1.9} />
+      <path d="M19 12 v2.4" strokeWidth={1.9} />
+    </Ico>
+  );
+}
+
 export function Maximize(p: IcoProps) {
   return (
     <Ico {...p}>

@@ -1,0 +1,1028 @@
+
+########## JAN20 Q2 (limit points order MCQ) (WPH11-2020-Jan-QP.txt lines 200-240) ##########
+350 × 25
+D
+0.68
+(Total for Question 8 = 1 mark)
+9 A length of steel wire is fixed at one end. An increasing force is applied to the other end
+of the wire. The force extension graph for the wire is shown.
+P
+Q
+R
+Force
+Extension
+Which row of the table identifies points P, Q and R on the graph?
+P Q R
+A elastic limit limit of proportionality yield point
+B elastic limit yield point limit of proportionality
+C yield point elastic limit limit of proportionality
+D yield point limit of proportionality elastic limit
+(Total for Question 9 = 1 mark)
+6
+10 Some students were shown a velocity-time graph for the motion of an object falling
+through a liquid.
+
+########## JAN21 Q16 titanium (WPH11-2021-Jan-QP.txt lines 760-905) ##########
+15
+Turn over
+16 A steadily increasing tensile force was applied to a sample of a titanium alloy.
+The sample had an original length of 40.0 cm and diameter of 5.05 mm.
+(a) State a suitable measuring instrument to measure the diameter of the sample.
+(1)
+(b) The graph shows how stress varied with strain for the sample.
+1400
+B
+1200
+1000
+800
+Stress / MPa
+600
+400
+200
+0
+0.00 0.01 0.02 0.03 0.04 0.05
+Strain
+16
+ (i) Determine the Young modulus of the sample.
+(3)
+Young modulus =
+(ii) The sample broke at point B.
+Determine the force required to break the sample.
+(4)
+Force =
+17
+Turn over
+ (iii) The graph below shows a linear section of the stress-strain graph for the sample.
+Stress
+0
+Strain
+Show that the area under this graph represents the work done per unit volume in
+stretching the sample.
+(3)
+
+########## JAN21 Q17 force meter (WPH11-2021-Jan-QP.txt lines 905-1060) ##########
+(iv) The area under any stress-strain graph represents the work done per unit volume.
+Estimate the amount of work required to break the titanium alloy sample.
+(4)
+Work =
+(Total for Question 16 = 15 marks)
+18
+ BLANK PAGE
+19
+Turn over
+17 A mass m is held in equilibrium by strings attached to two clamp stands. The force
+meter records the force F in the upper string. The force in the horizontal string is P.
+The angle made by the upper string to the horizontal is θ, as shown.
+Not to scale
+force meter
+stand stand
+F
+θ P
+m
+(a) The force meter allows force to be measured by means of Hooke’s law.
+The extension of the spring inside the force meter allows the stretching force to be
+read from a scale.
+When the force applied to stretch the spring is 15 N the extension of the spring is 8.0 cm.
+Show that the stiffness of the spring is about 2 N cm−1.
+(2)
+20
+ (b) When m is equal to 0.55 kg, the value of P is 8.5 N.
+Calculate the value of θ, and the extension of the spring in the force meter.
+(6)
+θ =
+Extension of the spring =
+(Total for Question 17 = 8 marks)
+21
+
+########## OCT20 Q19 strands (WPH11-2020-Oct-QP.txt lines 1140-1290) ##########
+(a) The temperature and the tension in the cable affect the sag.
+(i) Suggest one further factor that may increase the sag of a cable.
+(1)
+(ii) A cable of mass M is at an angle θ to the horizontal.
+Explain why the tension in the cable decreases as the sag increases.
+(3)
+24
+*P62591RA02428*
+ (b) A type of conducting cable used in overhead power lines is ACSR. This cable has a
+steel core surrounded by strands of aluminium cable of the same diameter.
+strands of aluminium cable
+steel core
+Stress-strain graphs for samples of steel and aluminium typically used in each strand
+of the cable are shown.
+600
+steel
+500
+400
+stress / MPa 300
+200
+aluminium
+100
+0
+0.000 0.005 0.010 0.015 0.020 0.025
+strain
+(i) Show that the Young modulus of steel is about 2 × 1011 Pa.
+(2)
+25
+*P62591RA02528* Turn over
+ (ii) The pylons are positioned every 270 m.
+Show that the stress in a strand of steel is about 70 MPa.
+(2)
+cross-sectional area of one strand = 2.3 × 10−6 m2
+tension per m for steel = 0.62 N m−1
+(iii) ACSR cables consist of a steel core surrounded by strands of aluminium cable.
+The extension produced, due to the tension, for each strand of aluminium is 0.95 m.
+Comment on why ACSR cables consist of both a steel core and strands of
+aluminium cable. You should include a calculation as part of your answer.
+(3)
+
+########## JAN22 Q8 wire breaks MCQ (WPH11-2022-Jan-QP.txt lines 268-296) ##########
+D P and S
+(Total for Question 7 = 1 mark)
+8 A wire breaks when a tensile force T is applied. A second wire, made of the same
+material, has twice the diameter.
+Which of the following is the force required to break the second wire?
+A 4T
+B 2T
+T
+C
+2
+T
+D
+4
+(Total for Question 8 = 1 mark)
+6
+
+9 A beam is balanced on two supports as shown.
+P Q
+
+########## JAN22 Q16 pinball (WPH11-2022-Jan-QP.txt lines 865-975) ##########
+(Total for Question 15 = 10 marks)
+17
+  Turn over
+16 The photograph shows a toy pinball machine. The launcher is pulled back, compressing
+a spring. The spring obeys Hooke’s law. When the launcher is released, the spring
+returns to its original length and a small ball is launched horizontally into the machine.
+ball
+spring
+launcher
+launcher
+(Source: © Valery Voennyy / Alamy Stock Photo)
+When the launcher is pulled back, the spring is compressed by 5.0 cm. When the spring
+is released, the ball is launched at a speed of 8.0 cm s−1.
+(a) Show that the kinetic energy of the ball just after launching is about 4 × 10−5 J.
+mass of ball = 12 g
+(2)
+(b) Determine the force on the ball when the spring is released.
+(2)
+Force =
+18
+
+ (c) Determine the stiffness of the spring.
+(2)
+Stiffness =
+(d) The spring returns to its original length L.
+Sketch a graph, on the axes below, to show how the velocity of the ball varies with
+the length of the spring.
+(4)
+velocity
+length of spring
+0
+     L
+(Total for Question 16 = 10 marks)
+
+########## JAN19 Q17 concrete drying (WPH11-2019-Jan-QP.txt lines 1195-1330) ##########
+properties change.
+A manufacturer of concrete carried out compression testing of cylindrical samples of
+concrete using the equipment shown.
+applied force
+concrete sample compression sensor
+under test
+The diagram shows stress-strain graphs, up to the fracture point, for concrete samples
+2 days and 28 days after being made.
+140
+28 days
+120
+100
+stress / MPa
+80
+2 days
+60
+40
+20
+0
+0 0.001 0.002 0.003 0.004 0.005 0.006 0.007
+strain
+(a) As the concrete dries its Young modulus increases.
+1.3 times greater.
+(4)
+20
+*P60790RA02028*
+ (b) The energy absorbed before fracture by the 28-day old sample is less than the energy
+absorbed before fracture by the 2-day old sample.
+The area under a stress-strain graph gives the energy absorbed per unit volume of the sample.
+The energy absorbed before fracture by the 2-day old sample is 0.35 MJ m–3.
+Determine the percentage reduction in the energy absorbed before fracture between
+the 2-day old and the 28-day old samples.
+You may assume that the volumes of the cylindrical samples are the same.
+(3)
+
+########## OCT19 Q16 concrete (WPH11-2019-Oct-QP.txt lines 900-1110) ##########
+Ș =
+(Total for Question 15 = 16 marks)
+20
+16 &RQFUHWHLVDPDWHULDORIWHQXVHGIRUEXLOGLQJ
+A stress-strain graph for one type of concrete is shown. Positive values of strain
+represent compression and negative values of strain represent tension.
+Stress / MPa
+50
+
+
+
+10
+Strain / %
+í í í 0   
+í
+í
+í
+í
+í
+ D  ([SODLQKRZWKHVWUHVVVWUDLQJUDSKVKRZVWKDWFRQFUHWHLVPRUHVXLWDEOHIRUXVHXQGHU
+compression than under tension.
+(2)
+21
+Turn over
+ E  6WHHOLVDPHWDORIWHQXVHGLQEXLOGLQJ7KHVWUHVVVWUDLQJUDSKIRUVWHHOLVVKRZQ
+Stress / u 10 Pa
+
+5
+
+
+
+1
+Strain / %
+í í í í 0 0.5 1.0 1.5 
+í
+í
+í
+í
+í
+í
+  $VWHHOURGKDVDGLDPHWHURIPP
+  &DOFXODWHWKHPD[LPXPIRUFHWKDWFRXOGEHDSSOLHGWRWKHVWHHOURGEHIRUHLWIUDFWXUHV
+(3)
+Maximum force =
+22
+ F  7RPDNHFRQFUHWHVXLWDEOHIRUXVHXQGHUODUJHIRUFHVVWHHOURGVDUHVRPHWLPHV
+embedded in the concrete.
+  $QH[WHUQDOWHQVLOHIRUFHLVDSSOLHGWRWKHVWHHOURGV&RQFUHWHLVSRXUHGLQWRDPRXOG
+around the rods. Once the concrete has set the external force is removed from the
+steel rods, placing the concrete in compression.
+concrete in mould
+steel rods
+Source: www.designingbuildings.co.uk
+  L  ([SODLQKRZWKLVSURFHVVLQFUHDVHVWKHPD[LPXPWHQVLOHIRUFHWKDWWKHFRQFUHWH
+can withstand before fracture.
+(4)
+  LL  ([SODLQZK\WKHH[WHUQDOWHQVLOHIRUFHLQWKHURGVPXVWQRWWDNHWKHVWHHOEH\RQG
+its elastic limit.
+(2)
+
+########## JUN19 Q16 copper CP3 (WPH11-2019-Jun-QP.txt lines 843-1010) ##########
+15
+*P61472RRA01528* Turn over
+16 A student carried out an experiment to determine the Young modulus of copper. She used the
+apparatus below to observe the position of a marker as a copper wire extended under increasing
+applied loads.
+clamp copper wire
+marker
+rule applied load
+(a) Describe how the diameter of the wire should have been determined.
+(3)
+(b) The student calculated the extension of the copper wire for each applied load. She then
+plotted a graph of load against extension.
+–
+–
+6–
+Load / N
+–
+–
+0–
+–
+–
+–
+–
+–
+–
+–
+–
+–
+0      6 7 
+([WHQVLRQ± m
+16
+*P61472RRA01628*
+ Determine a value for the Young modulus of copper.
+  RULJLQDOOHQJWKRIFRSSHUZLUH P
+  GLDPHWHURIFRSSHUZLUH ×í m
+(4)
+Young modulus of copper =
+*(c) Explain why the sample of wire used in this experiment should be long and thin.
+(6)
+
+########## JUN19 Q17 climber rope (WPH11-2019-Jun-QP.txt lines 1090-1250) ##########
+(a) The ‘fall factor’ is used by climbers to estimate the severity of a climbing fall and is
+given by
+height fallen before the rope begins to stretch
+‘fall factor’ =
+total unstretched length of rope
+  $FOLPEHUVOLSVDQGIDOOVZLWKDµIDOOIDFWRU¶RIEHIRUHFRPLQJWRUHVW
+The energy from the fall is absorbed by the climbing rope.
+The maximum strain in the rope is 9.0%.
+  L  6KRZWKDWWKHPD[LPXPIRUFHDFWLQJRQWKHFOLPEHUGXHWRWKHURSHLVDERXWN1
+Assume the extension of the rope is proportional to its tension.
+   WRWDOXQVWUHWFKHGOHQJWKRIURSH P
+   PDVVRIFOLPEHU NJ
+(5)
+19
+*P61472RRA01928* Turn over
+ (ii) A new climber suggests using a longer length of rope between the loop and the
+climber, as this would absorb more energy after a fall.
+Comment on this suggestion.
+(2)
+ E  &OLPELQJURSHPDQXIDFWXUHUVUHFRPPHQGWKDWURSHVDUHUHSODFHGHYHU\\HDUV
+7KHIRUFHH[WHQVLRQJUDSKVXSWRWKHEUHDNLQJSRLQWIRUDRQHPHWUHOHQJWKRIDURSHZKHQ
+QHZDQGDIWHU\HDUVDUHVKRZQ
+–
+new rope
+– rope after
+\HDUV
+Applied force / N
+–
+–
+0–
+–
+–
+–
+–
+–
+0    
+Extension / m
+20
+*P61472RRA02028*
+ Comment on the manufacturers’ recommendation. Your answer should include calculations.
+(6)
+
+########## JAN25 Q17 tugboat rope (WPH11-2025-Jan-QP.txt lines 845-955) ##########
+19
+  Turn over
+17 A tugboat is a small boat that can be used to pull large ships. A tugboat is attached to a
+ship using a thick rope.
+A sample of the rope is tested to make sure that the rope will not break when a ship
+is pulled.
+(a) The original length of the sample was 36.8 m.
+Calculate the strain in the sample when the length of the sample increased to 38.1 m.
+(2)
+Strain =
+(b) The stress-strain graph for the sample is shown.
+200
+150
+Stress / MPa 100
+50
+0
+0 0.01 0.02 0.03 0.04 0.05
+Strain
+20
+
+ (i) The diameter of the sample is 220 mm.
+Determine the force applied to the sample when the strain was 0.025
+(4)
+Force =
+(ii) Explain how the area under the stress-strain graph and the volume of the sample
+can be used to determine the energy stored.
+(3)
+
+########## JUN25 Q15 brick (WPH11-2025-Jun-QP.txt lines 595-670) ##########
+Efficiency =
+(Total for Question 14 = 4 marks)
+13
+  Turn over
+15: A builder uses bricks to build a wall.
+As the wall gets taller, the force on a brick at the bottom of the wall increases.
+A force‑compression graph for this brick is shown.
+250
+200
+150
+Force / N
+100
+50
+0
+0 50 100 150
+Compression / nm
+(a) Determine the increase in elastic strain energy in the brick as the force increases
+from 85 N to 140 N.
+(3)
+Increase in elastic strain energy =
+(b) The brick undergoes elastic deformation.
+State what is meant by elastic deformation.
+(1)
+
+########## JUN25 Q17 guitar string (WPH11-2025-Jun-QP.txt lines 795-945) ##########
+17
+  Turn over
+17: A violin is a musical instrument that has four strings, as shown.
+(Source: © bob_sato_1973/Getty Images)
+(a) A force‑extension graph for a sample of one of the strings is shown below.
+80
+60
+Force / N
+40
+20
+0
+0 10 20 30
+Extension / mm
+18
+
+ The table shows the stiffness for samples of three of the strings on the violin.
+Each sample was the same original length as the sample used to obtain the graph.
+String Stiffness / N m–1
+X 1700
+Y 2700
+Z 6100
+Deduce which string was used to obtain the force‑extension graph.
+(4)
+19
+  Turn over
+ (b) The fourth string on the violin has an original length of 0.750 m.
+When the tension applied to the string is 36 N, the new length of the string
+is 0.752 m.
+The radius of the string is 0.85 × 10–3 m.
+Determine the Young modulus of the material used to make the string.
+(5)
+Young modulus =
+(Total for Question 17 = 9 marks)
+
+########## JUN26 Q19 fishing line (WPH11-2026-Jun-QP.txt lines 1085-1185) ##########
+(a) The fishing line will break if the tension is too great.
+The student could use a fishing line made from the same material but with a
+larger diameter.
+Explain how using a fishing line with a larger diameter affects the tension at which
+the fishing line will break.
+(3)
+23
+ *P79335RA02332* Turn over
+ (b) The student uses a fishing line with an original length of 36 m and a radius
+of 0.34 mm.
+Calculate the extension of the fishing line when the tension is 17 N.
+Young modulus of material used for line = 2.8 GPa
+(4)
+Extension =
+24
+*P79335RA02432* 
+ (c) The graph shows the relationship between the applied force and the extension of the
+fishing line for small tensions.
+Applied force
+Extension
+Explain what is represented by the area between the graph and the x-axis.
+(3)
+
+########## JUN26-01A Q15 toffee (WPH11-2026-Jun-01A-QP.txt lines 305-395) ##########
+14 (b) The ball falls to the ground from a height of 2.0 m.
+14 (b) (i) Show that the velocity of the ball, as it hits the ground, is about 6 m s–1.
+(2)
+14 (b) (ii) Show that the time taken for the ball to fall to the ground is about 0.6 s.
+(2)
+14 (b)(iii) Sketch a velocity-time graph to show the motion of the ball from when it is
+dropped to when it comes to rest after bouncing three times.
+Sketch the graph using the grid provided in the Answer Book.
+You do not need to make further calculations.
+(4)
+(Total for Question 14 = 10 marks)
+P87903A 9
+ Turn over
+15 A food technician investigated the material properties of a biscuit bar and a toffee bar.
+He took some measurements for each bar and plotted the stress-strain graph shown.
+biscuit bar toffee bar
+Stress
+Strain
+15 (a) Compare and contrast the stress-strain graph for each bar.
+(4)
+15 (b) State what is meant by elastic deformation.
+(1)
+15 (c) The food technician determined the Young modulus of the toffee bar. He used the
+equipment shown.
+pulley
+toffee bar string
+clamp
+blocks
+masses
+bench
+15 (c) (i) Explain how the equipment shown should be used to determine the extension of
+the toffee bar for a range of masses.
+You should include the use of a suitable piece of measuring equipment.
+(3)
+10 P87903A
+
+15 (c) (ii) The food technician plotted a force-extension graph for the toffee bar, as shown.
+4.0
+3.5
+3.0
+2.5
+Force / N 2.0
+1.5
+1.0
+0.5
+0.0
+0.00 0.02 0.04 0.06 0.08 0.10
+Extension / m
+Determine the Young modulus of the toffee bar.
+cross-sectional area of toffee bar = 1.27 × 10–4 m2
+initial length of toffee bar = 15.5 cm
+(4)
+(Total for Question 15 = 12 marks)
+P87903A 11
+
+########## OCT25 Q15 spring calibration (WPH11-2025-Oct-QP.txt lines 560-665) ##########
+BLANK PAGE
+
+15 A student investigated a spring.
+The student measured the unstretched length of the spring. The student suspended
+different objects from the spring, as shown. She measured the new length of the spring
+each time.
+Not to scale
+spring
+ball 200 g mass
+(a) The unstretched length of the spring was 0.250 m.
+When the ball was suspended from the spring, the length of the spring was 0.295 m.
+When the 200 g mass was suspended from the spring, the length of the spring was
+0.375 m.
+Calculate the weight of the ball.
+(4)
+Weight of ball =
+14
+
+ (b) The sketch graph shows how the extension Δx of the spring varies with the total
+force F on the spring.
+F
+Δx
+Explain why the elastic strain energy stored by the spring is proportional to F 2.
+(3)
+
+########## OCT25 Q16 running blade (WPH11-2025-Oct-QP.txt lines 680-790) ##########
+(Total for Question 15 = 7 marks)
+15
+  Turn over
+16 The photograph shows an athlete using a running blade.
+running blade
+(Source: © sportpoint/Getty Images)
+(a) The value of the Young modulus for the material used to make the running blade
+is 19 GPa.
+(i) State which property of the material relates to the Young modulus.
+(1)
+(ii) A sample of the material has a length of 0.450 m.
+In a laboratory test, a compressive stress of 150 MPa is applied to the sample.
+The sample deforms elastically.
+Determine the new length of the sample.
+(4)
+New length =
+16
+
+ (b) The running blade is made from a single material.
+The table shows the compressive breaking stress of three materials used to make
+different running blades.
+Material Compressive breaking stress / MPa
+Glass fibre 320
+Carbon fibre 400
+Hybrid fibre 340
+The cross‑sectional area of the running blade is 8.5 cm2. The maximum compressive
+force that can be applied to the running blade before it breaks is 330 kN.
+Deduce which material the running blade is made from.
+(3)
+
+########## JAN26 Q19 toaster (WPH11-2026-Jan-QP.txt lines 1230-1360) ##########
+(Total for Question 18 = 12 marks)
+26
+
+ 19 A toaster is a device used to heat a slice of bread.
+A platform in the toaster is supported by four springs. A slice of bread is placed in the
+toaster and a person pushes the platform downwards, stretching the springs. A hook then
+holds the platform in place, as shown.
+Empty toaster Slice of bread in toaster Platform held by hook
+slice of
+bread
+spring
+spring
+platform
+hook
+(a) Explain how the elastic strain energy stored by the springs compares with the work
+done by the person to push the platform downwards.
+(3)
+27
+  Turn over
+ (b) The platform is supported by one spring at each corner. The 4 springs are identical.
+A person places a slice of bread of weight 0.52 N in the toaster. The weight of the
+bread causes the platform to move 2.1 cm downwards.
+(i) Show that the stiffness of each spring is about 6 N m–1.
+(3)
+28
+
+ (ii) The hook exerts a downwards force of 1.2 N on the platform.
+The toaster heats the slice of bread and then releases the hook. The springs
+return to their unstretched length and the bread is launched upwards.
+The mass of the platform is negligible.
+Determine the speed of the bread at the instant the springs return to their
+unstretched length.
+(6)
+
+########## JUN23 Q20 stunt harness (WPH11-2023-Jun-QP.txt lines 1180-1350) ##########
+as shown.
+support
+cable
+harness
+actor
+(a) The force on the cable must not cause the material of the cable to reach its
+yield point.
+State what is meant by the yield point of a material.
+(1)
+(b) The cable and harness are used to accelerate the actor vertically off the ground.
+(i) Explain why the forces acting on the actor cause him to accelerate upwards.
+(2)
+23
+ *P71945RA02328* Turn over
+ (ii) The actor has a mass of 77 kg and is lifted vertically from the ground with an
+acceleration of 2.1 m s–2.
+Show that the tension in the cable is about 920 N.
+(3)
+(iii) To make sure the actor is safe, the stress in the cable must be less than 15% of
+the yield point stress.
+The cable has a yield point stress of 2.5 × 108 Pa.
+The diameter of the cable is 7.6 × 10–3 m.
+Deduce whether it is safe to lift the actor with an acceleration of 2.1 m s–2.
+(4)
+24
+*P71945RA02428* 
+ (c) The original cable is replaced with a new cable made from a different material.
+This material has a lower Young modulus than the material used to make the
+original cable.
+The new cable is the same length as the original cable but has a greater diameter.
+The breaking stress is the same for both cables.
+Explain how the work done to break the new cable is different from the work done
+to break the original cable. Assume that both materials obey Hooke’s law up to the
+breaking point.
+(4)
+
+########## JUN24 Q4-6 spring MCQs (WPH11-2024-Jun-QP.txt lines 138-195) ##########
+3
+  Turn over
+ Questions 5 and 6 refer to the information below.
+A student stretches a spring of original length p to a length q by applying an increasing force. The graph
+shows how the length of the spring changes as the student increases the force from zero to a magnitude R.
+Length
+q
+p
+0
+0 R Force
+5 Which of the following expressions gives the stiffness of the spring?
+q−p
+A
+R
+q
+B
+R
+R
+C
+q
+R
+D
+q−p
+(Total for Question 5 = 1 mark)
+6 Which of the following expressions gives the work done stretching the spring from its
+original length p to length q?
+p×R
+A
+2
+q  p  R
+B
+2
+q  p  R
+C
+2
+
+########## JUN23 Q3+Q4 MCQs (WPH11-2023-Jun-QP.txt lines 105-150) ##########
+Which row of the table shows the length and diameter of wire that would produce the
+greatest extension?
+Length of wire Diameter of wire
+A x D
+B x 2D
+C 2x D
+D 2x 2D
+(Total for Question 3 = 1 mark)
+4 A force‑extension graph for a spring is shown.
+3.0
+2.0
+Force / N
+1.0
+0
+0 0.10 0.20 0.30 0.40
+Extension / m
+Which of the following gives the work done, in joules, to extend the spring by 0.30 m
+from its original length?
+A 0.30 × 2.5
+B 0.5 × 0.30 × 2.5
+2.5
+
+########## JUN23 Q10 series MCQ (WPH11-2023-Jun-QP.txt lines 255-285) ##########
+(Total for Question 9 = 1 mark)
+5
+ *P71945RA0528* Turn over
+10 Two identical springs are arranged in series. A force of 45.0 N is applied to the springs,
+as shown.
+45.0 N
+The springs extend a total distance of 15 mm.
+Which of the following expressions gives the stiffness of each spring in N mm–1?
+15
+A
+2 × 45
+45
+B
+2 × 15
+2 × 15
+C
+
+########## JUN22 Q4+Q7 MCQs (WPH11-2022-Jun-QP.txt lines 120-232) ##########
+(Total for Question 3 = 1 mark)
+4 The graph shows the relationship between tensile stress and tensile strain for a material.
+breaking point
+Tensile stress elastic limit
+Tensile strain
+Which of the following gives the Young modulus of the material?
+A the area under the line up to the breaking point
+B the area under the line up to the elastic limit
+C the gradient of the tangent to the line at the origin
+D the stress divided by the strain at the breaking point
+(Total for Question 4 = 1 mark)
+3
+  Turn over
+5 A student determined a value for g by dropping a metal sphere from rest. The student
+measured the distance fallen and the time taken for the sphere to fall.
+The student obtained a value for g of 11.2 m s–2.
+Which of the following could explain the difference between the student’s value and the
+accepted value?
+A The air resistance was not negligible.
+B The student’s measured distance was greater than the actual distance.
+C The sphere did not fall vertically.
+D The student’s measured time was greater than the actual time taken.
+(Total for Question 5 = 1 mark)
+6 A rocket is accelerating horizontally due to a constant resultant force.
+The mass of the rocket decreases steadily as it uses up its fuel.
+Which graph shows how the acceleration of the rocket could change?
+A B
+Acceleration
+Acceleration
+Time Time
+C D
+Acceleration
+Acceleration
+Time Time
+A
+B
+C
+D
+(Total for Question 6 = 1 mark)
+4
+
+7 Two arrangements, P and Q, of identical springs are subjected to the same tensile
+force F as shown.
+Q
+P
+F F F F
+When one spring is subjected to a tensile force F, the elastic strain energy for the spring
+is E.
+Which row of the table gives the total elastic strain energy for each arrangement?
+P Q
+A ½E 2E
+B ½E ½E
+C 2E 2E
+
+########## JUN22 Q10 compression MCQ (WPH11-2022-Jun-QP.txt lines 285-300) ##########
+F Δh
+D
+sin θ
+(Total for Question 9 = 1 mark)
+10 When compressed by a force of 50 N, a spring had a length of 12.0 cm.
+When compressed by a force of 70 N, the same spring had a length of 7.1 cm.
+Which of the following expressions gives the stiffness k of the spring in N cm–1?
+70 50
+A −
+12.0 7.1
+(70 − 50)
+B
+
+########## OCT22 Q6 rubber band areas MCQ (WPH11-2022-Oct-QP.txt lines 188-218) ##########
+D After removing a large stress the sample returns to its original length.
+(Total for Question 5 = 1 mark)
+6 A rubber band is initially stretched by an increasing force. When the force is gradually
+decreased, the rubber band returns to its original length.
+The force-extension graph for the rubber band is shown.
+P
+Force
+Q
+R
+Extension
+P, Q and R represent different areas of the graph.
+Which of the following gives the work done in stretching the rubber band up to its
+maximum extension?
+A P+Q
+B Q+R
+
+########## OCT22 Q8 parallel energy MCQ (WPH11-2022-Oct-QP.txt lines 272-292) ##########
+8 When a certain spring is stretched by a tensile force F, the elastic energy stored in the
+spring is E.
+Three of these springs are arranged in parallel and stretched by a tensile force of 2F,
+as shown.
+2F
+Which of the following expressions gives the elastic energy stored in the
+parallel system?
+1
+A E
+3
+
+########## OCT21 Q3 strain energy MCQ (WPH11-2021-Oct-QP.txt lines 108-136) ##########
+2
+
+3 Two different springs, S1 and S2, are suspended from a fixed support. Masses are
+attached to the bottom of S1 and S2 as shown.
+fixed support
+S1 S2
+x
+3
+x 2m
+m
+x
+The extension of S1 is x, and the extension of S2 is . The elastic strain energy in
+spring S1 is E. 3
+Which of the following is the elastic strain energy in spring S2?
+A 6E
+3E
+B
+2
+2E
+C
+3
+E
+
+########## JUN21 Q5+Q9 MCQs (WPH11-2021-Jun-QP.txt lines 133-148) ##########
+3
+Turn over
+5 A compressive force F is applied to an object made of a material with Young modulus E.
+The original length of the object in the direction of the force is x, and its cross‑sectional
+area is A.
+Which expression gives the length of the object after the force is applied?
+AE
+A x−
+Fx
+Fx
+B x+
+AE
+AE
+
+########## JUN21 Q9 copper rod MCQ (WPH11-2021-Jun-QP.txt lines 255-290) ##########
+6
+9 A copper rod was placed under tensile stress and the tensile strain in the rod was measured.
+The graph shows how the tensile stress required to cause a tensile strain in the rod
+depends upon the tensile strain.
+Tensile
+stress
+X
+Tensile strain
+What does point X represent?
+A the fracture point of the rod
+B the limit of proportionality for copper
+C the maximum tensile stress in the rod
+D the yield point of copper
+(Total for Question 9 = 1 mark)
+7
+Turn over
+
+########## JAN26 Q8-10 MCQs (WPH11-2026-Jan-QP.txt lines 232-330) ##########
+5
+  Turn over
+8 A student applied a tensile force to a metal wire of length x and cross‑sectional area A.
+The extension of the wire was Δx.
+The student applied the same force to a second wire made of the same material.
+Δx
+The extension of the second wire was .
+2
+Which row of the table could show the length and cross‑sectional area of the
+second wire?
+Length Cross-sectional area
+A x 0.5A
+B x 2A
+C 2x 0.5A
+D 2x 2A
+(Total for Question 8 = 1 mark)
+6
+
+ 9 The force‑extension graph for a spring is shown.
+400
+300
+Force / N 200
+100
+0
+0 1 2 3 4 5 6 7 8
+Extension / mm
+A tensile force of 50 N is applied to the spring.
+An additional tensile force of 300 N is then applied to the spring.
+Which expression gives the change in elastic strain energy, in J, when the additional
+force is applied?
+A 300 × 6 × 10−3
+2
+B (300  50) × 6 × 103
+2
+C (300  50  50) × 6 × 103
+2
+D (300  50) × 7 × 103
+2
+(Total for Question 9 = 1 mark)
+7
+  Turn over
+10 A student hangs a 3 kg mass and a 2 kg mass from a spring, as shown.
+The forces on the 3 kg mass are in equilibrium.
+spring
+3 kg
+string
+2 kg
+The string holding the 2 kg mass breaks.
+
+########## JUN26 Q1+Q12 MCQ (WPH11-2026-Jun-QP.txt lines 60-130) ##########
+For questions 1–10, in Section A, select one answer from A to D and put a cross in the box . If you
+change your mind, put a line through the box and then mark your new answer with a cross .
+1 Which of the following is an SI unit for the Young modulus of a material?
+A kg m–3
+B N m–1
+C N m–2
+D Pa s
+(Total for Question 1 = 1 mark)
+2 A car moves in a circular path at a constant speed.
+Which row of the table describes the momentum and kinetic energy of the car?
+Momentum Kinetic energy
+A constant constant
+B constant changing
+C changing constant
+D changing changing
+(Total for Question 2 = 1 mark)
+2
+*P79335RA0232* 
+ 3 A student applies a force F to a wire.
+The force-extension graph for the wire is shown.
+F
+Force
+Extension
+Which of the following could explain what happens when the force F is removed?
+A The wire will not return to its original length because it has
+deformed elastically.
+B The wire will not return to its original length because it has gone beyond its
+elastic limit.
+C The wire will return to its original length because it has deformed plastically.
+D The wire will return to its original length because it has gone beyond its
+yield point.
+(Total for Question 3 = 1 mark)
+3
+ *P79335RA0332* Turn over
+4 A student made measurements to determine the acceleration of a free-falling object.
+The student dropped an object from rest.
+
+########## JUN26 Q12 spring calc (WPH11-2026-Jun-QP.txt lines 385-420) ##########
+9
+ *P79335RA0932* Turn over
+12 A student applies a force of 3.8 N to a spring. The spring extends.
+The stiffness constant of the spring is 25 N m–1.
+Calculate the elastic strain energy stored in the extended spring.
+elastic strain energy =
+(Total for Question 12 = 3 marks)
+10
+*P79335RA01032* 
+
+########## JAN26 Q9 strain energy MCQ (dup guard) (WPH11-2026-Jan-QP.txt lines 262-308) ##########
+6
+
+ 9 The force‑extension graph for a spring is shown.
+400
+300
+Force / N 200
+100
+0
+0 1 2 3 4 5 6 7 8
+Extension / mm
+A tensile force of 50 N is applied to the spring.
+An additional tensile force of 300 N is then applied to the spring.
+Which expression gives the change in elastic strain energy, in J, when the additional
+force is applied?
+A 300 × 6 × 10−3
+2
+B (300  50) × 6 × 103
+2
+C (300  50  50) × 6 × 103
+2
+D (300  50) × 7 × 103
+2
+(Total for Question 9 = 1 mark)
+7

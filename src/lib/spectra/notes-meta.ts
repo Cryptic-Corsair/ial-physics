@@ -53,10 +53,10 @@ export const NOTES_META: NotesMeta[] = [
     id: "wph11-t02",
     unitCode: "WPH11",
     topicId: "t02",
-    kicker: "Physics Unit 1 · Moments and momentum — the WPH11 note, statement by statement",
+    kicker: "Physics Unit 1 · Moments and momentum, the WPH11 note, statement by statement",
     title: "Moments and momentum",
     source:
-      "the WPH11 Moments and momentum note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
+      "the WPH11 Moments and momentum note, built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     specRange: "12 → 16",
   },
   {
@@ -83,10 +83,10 @@ export const NOTES_META: NotesMeta[] = [
     id: "wph11-t05",
     unitCode: "WPH11",
     topicId: "t05",
-    kicker: "Physics Unit 1 · Hooke's law, stress and strain — the WPH11 note, statement by statement",
+    kicker: "Physics Unit 1 · Hooke's law, stress and strain, the WPH11 note, statement by statement",
     title: "Hooke's law, stress and strain",
     source:
-      "the WPH11 solid-materials note — built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2020–2024",
+      "the WPH11 solid-materials note, built from the Pearson Edexcel IAL Physics specification (2018, Issue 3), WPH11/01 question papers, mark schemes and Principal Examiners' reports, 2019–2026",
     specRange: "27 → 32",
   },
 ];

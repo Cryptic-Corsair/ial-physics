@@ -41,6 +41,12 @@ import {
   FigPhStressStrain,
   FigPhFallingBall,
   FigPhYoungRig,
+  FigPhSpringsCombo,
+  FigPhUnloadingSet,
+  FigPhHysteresisLoop,
+  FigPhEnergyStrip,
+  FigPhTwoMaterials,
+  FigPhConcreteSides,
 } from "./notes-figures-physics";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -956,6 +962,24 @@ export function figureArt(kind: string, accent: string): ReactNode {
       break;
     case "ph-young-rig":
       node = <FigPhYoungRig accent={accent} />;
+      break;
+    case "ph-springs-combo":
+      node = <FigPhSpringsCombo accent={accent} />;
+      break;
+    case "ph-unloading-set":
+      node = <FigPhUnloadingSet accent={accent} />;
+      break;
+    case "ph-hysteresis-loop":
+      node = <FigPhHysteresisLoop accent={accent} />;
+      break;
+    case "ph-energy-strip":
+      node = <FigPhEnergyStrip accent={accent} />;
+      break;
+    case "ph-two-materials":
+      node = <FigPhTwoMaterials accent={accent} />;
+      break;
+    case "ph-concrete-sides":
+      node = <FigPhConcreteSides accent={accent} />;
       break;
   }
   return node;
